@@ -619,7 +619,7 @@ def main():
                         # The predictions are valid at 720 points; regrid() can interpolate back to 721 if needed.
                         pred_cpu = pred.to("cpu")
                         
-                        # Save prediction
+                                                # Save prediction
                         if args.save_predictions:
                             lead_hours = step * 6
                             # Do NOT regrid - keep 720 lat points to match WB2 reference
@@ -633,6 +633,10 @@ def main():
                             ))
                             print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name}")
                             del pred_ds, pred_for_save
+
+                            # FIX: Prevent memory overflow by waiting once we queue 3 items
+                            if len(pending_saves) >= 3:
+                                pending_saves.pop(0).result()
 
                         # Save Latents & Attention (ONLY on Step 1)
                         if step == 1 and extract_latents:
