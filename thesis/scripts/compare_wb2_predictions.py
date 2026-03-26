@@ -70,15 +70,7 @@ def main():
     print("  AURORA vs WB2 PREDICTION COMPARISON")
     print("=" * 70)
     
-    # Open WB2 reference
-    print("\nLoading WB2 Aurora reference...")
-    wb2 = xr.open_zarr(fsspec.get_mapper(WB2_URL), chunks=None)
-    wb2_lead_hours = wb2.prediction_timedelta.values.astype('timedelta64[h]').astype(int)
-    print(f"  Init times: {len(wb2.time.values)}")
-    print(f"  Lead times: {wb2_lead_hours.min()}h - {wb2_lead_hours.max()}h ({len(wb2_lead_hours)} steps)")
-    print(f"  Levels: {wb2.level.values}")
-    
-    # Find local prediction files
+    # Find local prediction files first
     nc_files = sorted(input_dir.glob("aurora_pred_*.nc"))
     print(f"\nFound {len(nc_files)} local prediction files")
     
@@ -86,9 +78,49 @@ def main():
         print("No prediction files found!")
         return
     
+    # Parse all files to find what init times and lead times we need
+    needed_inits = set()
+    needed_leads = set()
+    for nc_path in nc_files:
+        parts = nc_path.stem.split("_")
+        date_str = parts[2]
+        init_str = parts[3]
+        lead_hours = int(parts[5].replace("h", ""))
+        init_time = pd.Timestamp(f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:8]} {init_str[:2]}:{init_str[2:]}")
+        needed_inits.add(init_time)
+        needed_leads.add(lead_hours)
+    
+    print(f"  Init times needed: {sorted(needed_inits)}")
+    print(f"  Lead times needed: {sorted(needed_leads)}")
+    
+    # Open WB2 reference and preload just what we need
+    print("\nLoading WB2 Aurora reference (preloading subset)...")
+    wb2 = xr.open_zarr(fsspec.get_mapper(WB2_URL), chunks=None)
+    
+    # Select only the init times and lead times we need
+    needed_inits_list = sorted(needed_inits)
+    needed_leads_td = [np.timedelta64(h, 'h') for h in sorted(needed_leads)]
+    
+    # Preload atmospheric vars for comparison (t, u, v at 500, 700, 850 hPa)
+    print("  Preloading t, u, v at levels 500, 700, 850...")
+    wb2_atmos = wb2[["temperature", "u_component_of_wind", "v_component_of_wind"]].sel(
+        time=needed_inits_list,
+        level=WB2_LEVELS
+    ).compute()
+    print("  ✓ Atmospheric data loaded")
+    
+    # Preload surface vars
+    print("  Preloading surface variables...")
+    wb2_surf = wb2[["2m_temperature", "10m_u_component_of_wind", "10m_v_component_of_wind", "mean_sea_level_pressure"]].sel(
+        time=needed_inits_list
+    ).compute()
+    print("  ✓ Surface data loaded")
+    
     results = []
     
-    for nc_path in nc_files:
+    for i, nc_path in enumerate(nc_files):
+        print(f"  [{i+1}/{len(nc_files)}] {nc_path.name}", end=" ", flush=True)
+        
         # Parse filename: aurora_pred_YYYYMMDD_HHMM_stepXX_XXXh.nc
         parts = nc_path.stem.split("_")
         date_str = parts[2]  # YYYYMMDD
@@ -99,16 +131,6 @@ def main():
         # Compute init time
         init_time = pd.Timestamp(f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:8]} {init_str[:2]}:{init_str[2:]}")
         lead_td = np.timedelta64(lead_hours, 'h')
-        
-        # Check if init time is in WB2
-        if init_time not in wb2.time.values:
-            print(f"  Skipping {nc_path.name}: init time {init_time} not in WB2")
-            continue
-        
-        # Check if lead time is in WB2
-        if lead_td not in wb2.prediction_timedelta.values:
-            print(f"  Skipping {nc_path.name}: lead time {lead_hours}h not in WB2")
-            continue
         
         try:
             local = xr.open_dataset(nc_path)
@@ -127,15 +149,15 @@ def main():
                     # Get local data (should be 720 lats, same as WB2)
                     local_data = local[our_var].sel(level=level).values
                     
-                    # Get WB2 data
-                    wb2_data = wb2[wb2_var].sel(
+                    # Get WB2 data from preloaded dataset
+                    wb2_data = wb2_atmos[wb2_var].sel(
                         time=init_time, 
                         prediction_timedelta=lead_td, 
                         level=level
                     ).values
                     
                     # WB2 might have different lat ordering - check and align
-                    if wb2.latitude.values[0] < wb2.latitude.values[-1]:
+                    if wb2_atmos.latitude.values[0] < wb2_atmos.latitude.values[-1]:
                         # WB2 is S->N, local is N->S, flip WB2
                         wb2_data = wb2_data[::-1, :]
                     
@@ -158,13 +180,13 @@ def main():
                 
                 local_data = local[our_var].values
                     
-                wb2_data = wb2[wb2_var].sel(
+                wb2_data = wb2_surf[wb2_var].sel(
                     time=init_time, 
                     prediction_timedelta=lead_td
                 ).values
                 
                 # Check lat ordering
-                if wb2.latitude.values[0] < wb2.latitude.values[-1]:
+                if wb2_surf.latitude.values[0] < wb2_surf.latitude.values[-1]:
                     wb2_data = wb2_data[::-1, :]
                 
                 metrics = compute_metrics(local_data, wb2_data)
@@ -178,10 +200,10 @@ def main():
                 })
             
             local.close()
-            print(f"  ✓ {nc_path.name}")
+            print("✓")
             
         except Exception as e:
-            print(f"  ⚠ Error processing {nc_path.name}: {e}")
+            print(f"⚠ {e}")
     
     # Create results DataFrame
     df = pd.DataFrame(results)
