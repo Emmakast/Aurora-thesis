@@ -54,24 +54,35 @@ def main():
         description="Compare Aurora predictions against WB2 reference"
     )
     parser.add_argument(
-        "--input-dir", type=str, required=True,
-        help="Directory containing Aurora prediction .nc files"
+        "--input-dir", type=str, default=None,
+        help="Directory containing Aurora prediction .nc files (processes all matching files)"
+    )
+    parser.add_argument(
+        "--files", type=str, nargs="+", default=None,
+        help="List of specific Aurora prediction .nc files to process"
     )
     parser.add_argument(
         "--output-csv", type=str, default=None,
-        help="Output CSV file for results (default: input-dir/comparison_results.csv)"
+        help="Output CSV file for results"
     )
     args = parser.parse_args()
     
-    input_dir = Path(args.input_dir)
-    output_csv = Path(args.output_csv) if args.output_csv else input_dir / "comparison_results.csv"
+    if args.files:
+        nc_files = [Path(f) for f in args.files]
+        base_dir = nc_files[0].parent
+    elif args.input_dir:
+        base_dir = Path(args.input_dir)
+        nc_files = sorted(base_dir.glob("aurora_pred_*.nc"))
+    else:
+        print("Error: Must provide either --input-dir or --files")
+        return
+        
+    output_csv = Path(args.output_csv) if args.output_csv else base_dir / "comparison_results.csv"
     
     print("=" * 70)
     print("  AURORA vs WB2 PREDICTION COMPARISON")
     print("=" * 70)
     
-    # Find local prediction files first
-    nc_files = sorted(input_dir.glob("aurora_pred_*.nc"))
     print(f"\nFound {len(nc_files)} local prediction files")
     
     if len(nc_files) == 0:

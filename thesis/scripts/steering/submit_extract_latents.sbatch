@@ -26,12 +26,13 @@ $PYTHON --version
 # --num-steps 40: 40 × 6h = 10 days (WB2 evaluation range)
 # --init-hours 0 12: Both init times for WB2 submission
 # --latent-init-hour 12: Only extract latents for 12:00 UTC (thesis)
-# --compile: Use torch.compile for faster inference (disabled for test run)
-$PYTHON -u /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py \
+# --compile: Use torch.compile for faster inference
+$PYTHON /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py \
     --num-steps 40 \
     --init-hours 0 12 \
     --latent-init-hour 12 \
-    --save-predictions
+    --save-predictions \
+    --compile
 
 echo ""
 echo "========================================"
