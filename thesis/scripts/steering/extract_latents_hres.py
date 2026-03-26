@@ -45,35 +45,56 @@ from aurora import Aurora, Batch, Metadata, rollout
 torch.set_float32_matmul_precision('high')
 
 # ══════════════════════════════════════════════════════════════════════════════
-# Custom SDPA for Attention Extraction
+# Context Manager for Safe Attention Extraction
 # ══════════════════════════════════════════════════════════════════════════════
-original_sdpa = F.scaled_dot_product_attention
-attention_activations = {}
-current_capture_key = None
+class AttentionExtractor:
+    """Safely intercepts SDPA to extract attention weights during a specific forward pass."""
+    def __init__(self):
+        self.original_sdpa = F.scaled_dot_product_attention
+        self.activations = {}
+        self.current_key = None
+        self.is_active = False
 
+    def __enter__(self):
+        self.is_active = True
+        # Temporarily patch PyTorch's SDPA
+        F.scaled_dot_product_attention = self._custom_sdpa
+        return self
 
-def custom_sdpa(q, k, v, attn_mask=None, dropout_p=0.0, is_causal=False, scale=None):
-    global current_capture_key, attention_activations
-    res = original_sdpa(q, k, v, attn_mask=attn_mask, dropout_p=dropout_p, is_causal=is_causal, scale=scale)
-    
-    if current_capture_key is not None:
-        scale_factor = scale if scale is not None else (1.0 / (q.size(-1) ** 0.5))
-        attn = torch.matmul(q, k.transpose(-2, -1)) * scale_factor
-        if attn_mask is not None:
-            if attn_mask.dtype == torch.bool:
-                attn.masked_fill_(~attn_mask, float('-inf'))
-            else:
-                attn = attn + attn_mask
-        attn_weights = torch.nn.functional.softmax(attn, dim=-1)
-        # Keep ONLY the last attention weights (overwrites any previous ones for this key)
-        attention_activations[current_capture_key] = [attn_weights.detach().cpu()]
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.is_active = False
+        # Restore original PyTorch behavior immediately
+        F.scaled_dot_product_attention = self.original_sdpa
+
+    def _custom_sdpa(self, q, k, v, attn_mask=None, dropout_p=0.0, is_causal=False, scale=None):
+        res = self.original_sdpa(q, k, v, attn_mask=attn_mask, dropout_p=dropout_p, is_causal=is_causal, scale=scale)
         
-    return res
+        if self.is_active and self.current_key is not None:
+            scale_factor = scale if scale is not None else (1.0 / (q.size(-1) ** 0.5))
+            attn = torch.matmul(q, k.transpose(-2, -1)) * scale_factor
+            if attn_mask is not None:
+                if attn_mask.dtype == torch.bool:
+                    attn.masked_fill_(~attn_mask, float('-inf'))
+                else:
+                    attn = attn + attn_mask
+            attn_weights = F.softmax(attn, dim=-1)
+            # Store the weight and detach to prevent memory leaks
+            self.activations[self.current_key] = [attn_weights.detach().cpu()]
+            
+        return res
 
+# Initialize the extractor
+attn_extractor = AttentionExtractor()
 
-if not hasattr(F, '_patched'):
-    F.scaled_dot_product_attention = custom_sdpa
-    F._patched = True
+def make_attn_pre_hook(key: str):
+    def pre_hook(module, args):
+        attn_extractor.current_key = key
+    return pre_hook
+
+def make_attn_post_hook(key: str):
+    def post_hook(module, args, output):
+        attn_extractor.current_key = None
+    return post_hook
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -139,22 +160,31 @@ def download_data(day: str, download_path: Path):
 
 
 def download_static(download_path: Path):
-    """Download static variables from HuggingFace."""
+    """Download static variables safely via CDS API (Microsoft's exact method)."""
+    import cdsapi
+    
     if not (download_path / "static.nc").exists():
-        print("  Downloading static variables from HuggingFace...")
-        path = hf_hub_download(repo_id="microsoft/aurora", filename="aurora-0.25-static.pickle")
-        with open(path, "rb") as f:
-            static_vars = pickle.load(f)
-        
-        ds_static = xr.Dataset(
-            data_vars={k: (["latitude", "longitude"], v) for k, v in static_vars.items()},
-            coords={
-                "latitude": ("latitude", np.linspace(90, -90, 721)),
-                "longitude": ("longitude", np.linspace(0, 360, 1440, endpoint=False)),
-            },
-        )
-        ds_static.to_netcdf(str(download_path / "static.nc"))
-        print("    ✓ Static variables cached")
+        print("  Downloading static variables from Copernicus CDS (This only happens ONCE)...")
+        try:
+            c = cdsapi.Client()
+            c.retrieve(
+                "reanalysis-era5-single-levels",
+                {
+                    "product_type": "reanalysis",
+                    "variable": ["geopotential", "land_sea_mask", "soil_type"],
+                    "year": "2023",
+                    "month": "01",
+                    "day": "01",
+                    "time": "00:00",
+                    "format": "netcdf",
+                },
+                str(download_path / "static.nc"),
+            )
+            print("    ✓ Static variables cached securely")
+        except Exception as e:
+            print(f"\n  [ERROR] CDS API Failed: {e}")
+            print("  Please ensure your ~/.cdsapirc file is configured correctly.")
+            raise e
 
 
 def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
@@ -583,103 +613,64 @@ def main():
                 init_time = batch.metadata.time[0]
                 print(f"    Init time: {init_time}")
                 
-                # Transform and crop batch like official rollout does
+                # Transform and crop batch safely
                 batch = model.batch_transform_hook(batch)
                 p = next(model.parameters())
-                batch = batch.type(p.dtype)
-                batch = batch.crop(model.patch_size)
-                batch = batch.to(device)
+                batch = batch.type(p.dtype).to(device)
                 
-                # Format init time for filenames (e.g., "20220115_1200")
+                # Format init time for filenames
                 init_dt = init_time
                 date_fmt = init_dt.strftime("%Y%m%d")
                 init_fmt = init_dt.strftime("%H%M")
                 
-                # Step 1: Run forward pass (with or without hooks)
-                with torch.inference_mode():
-                    pred = model.forward(batch)
-                
-                # Save step 1 prediction immediately
-                if args.save_predictions:
-                    pred_cpu = pred.to("cpu")
-                    pred_ds = batch_to_dataset(pred_cpu, 1, use_fp64=args.fp64)
-                    out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step01_06h.nc"
-                    pending_saves.append(save_executor.submit(
-                        async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
-                    ))
-                    print(f"    pred step 1 (+6h) -> {out_path.name}")
-                    del pred_cpu, pred_ds
-                
-                # Save latent activations (only from step 1, only if extracting)
-                if extract_latents:
-                    for key, tensor in activations.items():
-                        out_path = output_dir / f"latent_{date_fmt}_{init_fmt}_{key}.pt"
-                        tensor_fp16 = tensor.half()
-                        # Async save
-                        pending_saves.append(save_executor.submit(
-                            async_save_pt, tensor_fp16, out_path, s3_client, bucket_name, s3_folder
-                        ))
-                        print(f"    {key}: shape={tuple(tensor_fp16.shape)} -> {out_path.name}")
+                # Use the Context Manager for attention extraction
+                with torch.inference_mode(), attn_extractor:
+                    # Native Aurora rollout generator handles all historical state concatenations
+                    rollout_gen = rollout(model, batch, steps=args.num_steps)
                     
-                    # Save attention weights (only from step 1)
-                    for key, attn_list in attention_activations.items():
-                        out_path = output_dir / f"attn_{date_fmt}_{init_fmt}_{key}.pt"
-                        stacked_attn = torch.cat(attn_list, dim=0) if len(attn_list) > 1 else attn_list[0]
-                        stacked_attn_fp16 = stacked_attn.half()
-                        # Async save
-                        pending_saves.append(save_executor.submit(
-                            async_save_pt, stacked_attn_fp16, out_path, s3_client, bucket_name, s3_folder
-                        ))
-                        print(f"    {key}: shape={tuple(stacked_attn_fp16.shape)} -> {out_path.name}")
-                    
-                    # Disable hooks after step 1
-                    unregister_hooks(handles)
-                    activations.clear()
-                    attention_activations.clear()
-                
-                # Continue rollout for remaining steps (without hooks) - save immediately
-                if args.num_steps > 1:
-                    # For rollout, we need to maintain history (2 time steps)
-                    # Aurora expects batch.surf_vars/atmos_vars with shape (B, T=2, ...)
-                    # After step 1, we concatenate: [original_t1, pred] to form new input
-                    current_batch = batch  # Keep original batch for history
-                    current_pred = pred
-                    with torch.inference_mode():
-                        for step in range(2, args.num_steps + 1):
-                            # Build next input by concatenating history (like official rollout)
-                            # Take second timestep from current_batch, concat with prediction
-                            next_batch = dataclasses.replace(
-                                current_pred,
-                                surf_vars={
-                                    k: torch.cat([current_batch.surf_vars[k][:, 1:], v], dim=1)
-                                    for k, v in current_pred.surf_vars.items()
-                                },
-                                atmos_vars={
-                                    k: torch.cat([current_batch.atmos_vars[k][:, 1:], v], dim=1)
-                                    for k, v in current_pred.atmos_vars.items()
-                                },
-                            )
+                    for step, pred in enumerate(rollout_gen, start=1):
+                        
+                        # CRITICAL FIX: Uncrop the prediction restoring the full 721 latitudes!
+                        pred_uncropped = pred.uncrop(model.patch_size).to("cpu")
+                        
+                        # Save prediction
+                        if args.save_predictions:
+                            lead_hours = step * 6
+                            pred_ds = batch_to_dataset(pred_uncropped, step, use_fp64=args.fp64)
+                            out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:02d}h.nc"
                             
-                            pred = model(next_batch)
-                            
-                            # Save prediction immediately to avoid memory buildup
-                            if args.save_predictions:
-                                pred_cpu = pred.to("cpu")
-                                lead_hours = step * 6
-                                pred_ds = batch_to_dataset(pred_cpu, step, use_fp64=args.fp64)
-                                out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:02d}h.nc"
+                            pending_saves.append(save_executor.submit(
+                                async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
+                            ))
+                            print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name}")
+                            del pred_ds
+
+                        # Save Latents & Attention (ONLY on Step 1)
+                        if step == 1 and extract_latents:
+                            for key, tensor in activations.items():
+                                out_path = output_dir / f"latent_{date_fmt}_{init_fmt}_{key}.pt"
                                 pending_saves.append(save_executor.submit(
-                                    async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
+                                    async_save_pt, tensor.half(), out_path, s3_client, bucket_name, s3_folder
                                 ))
-                                print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name}")
-                                del pred_cpu, pred_ds
                             
-                            # Update for next iteration
-                            current_batch = next_batch
-                            current_pred = pred
-                    del current_batch, current_pred
-                
-                del batch, pred
+                            for key, attn_list in attn_extractor.activations.items():
+                                out_path = output_dir / f"attn_{date_fmt}_{init_fmt}_{key}.pt"
+                                stacked_attn = torch.cat(attn_list, dim=0) if len(attn_list) > 1 else attn_list[0]
+                                pending_saves.append(save_executor.submit(
+                                    async_save_pt, stacked_attn.half(), out_path, s3_client, bucket_name, s3_folder
+                                ))
+                            
+                            print(f"    ✓ Latents and Attention extracted for Step 1.")
+                            
+                            # Clean up hooks immediately so they don't slow down steps 2+
+                            unregister_hooks(handles)
+                            activations.clear()
+                            attn_extractor.activations.clear()
+                            attn_extractor.is_active = False # Turn off custom SDPA for remaining steps
+                            
+                        del pred_uncropped
+                        
+                del batch
                 torch.cuda.empty_cache()
                 gc.collect()
                 
