@@ -137,9 +137,9 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
                 "msl": _prepare_init00(prev_surf_ds["mean_sea_level_pressure"].values, surf_vars_ds["mean_sea_level_pressure"].values),
             },
             static_vars={
-                "z": torch.from_numpy(static_vars_ds["z"].values[0]),
-                "slt": torch.from_numpy(static_vars_ds["slt"].values[0]),
-                "lsm": torch.from_numpy(static_vars_ds["lsm"].values[0]),
+                "z": torch.from_numpy(static_vars_ds["z"].values[::-1, :].copy()),
+                "slt": torch.from_numpy(static_vars_ds["slt"].values[::-1, :].copy()),
+                "lsm": torch.from_numpy(static_vars_ds["lsm"].values[::-1, :].copy()),
             },
             atmos_vars={
                 "t": _prepare_init00(prev_atmos_ds["temperature"].values, atmos_vars_ds["temperature"].values),
@@ -177,9 +177,9 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
             "msl": _prepare(surf_vars_ds["mean_sea_level_pressure"].values),
         },
         static_vars={
-            "z": torch.from_numpy(static_vars_ds["z"].values[0]),
-            "slt": torch.from_numpy(static_vars_ds["slt"].values[0]),
-            "lsm": torch.from_numpy(static_vars_ds["lsm"].values[0]),
+            "z": torch.from_numpy(static_vars_ds["z"].values[::-1, :].copy()),
+            "slt": torch.from_numpy(static_vars_ds["slt"].values[::-1, :].copy()),
+            "lsm": torch.from_numpy(static_vars_ds["lsm"].values[::-1, :].copy()),
         },
         atmos_vars={
             "t": _prepare(atmos_vars_ds["temperature"].values),
