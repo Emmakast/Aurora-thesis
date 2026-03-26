@@ -208,11 +208,7 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
     surf_vars_ds = xr.open_dataset(download_path / f"{day}-surface-level.nc", engine="netcdf4")
     atmos_vars_ds = xr.open_dataset(download_path / f"{day}-atmospheric.nc", engine="netcdf4")
     
-    if init_hour == 12:
-        # Init 12:00 UTC: use indices 1 (06:00) and 2 (12:00)
-        time_indices = [1, 2]
-        init_time_idx = 2
-    elif init_hour == 0:
+    if init_hour == 0:
         # Init 00:00 UTC: need previous day's 18:00 and current day's 00:00
         # Load previous day data
         prev_day = (pd.to_datetime(day) - pd.Timedelta(days=1)).strftime("%Y-%m-%d")
@@ -254,6 +250,10 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
         prev_surf_ds.close()
         prev_atmos_ds.close()
         return batch
+    elif init_hour == 12:
+        # Init 12:00 UTC: use indices 1 (06:00) and 2 (12:00)
+        time_indices = [1, 2]
+        init_time_idx = 2
     else:
         raise ValueError(f"init_hour must be 0 or 12, got {init_hour}")
     
@@ -292,22 +292,8 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# Hook Registration (from extract_latents.py)
+# Hook Registration
 # ══════════════════════════════════════════════════════════════════════════════
-
-def make_attn_pre_hook(key: str):
-    def pre_hook(module, args):
-        global current_capture_key
-        current_capture_key = key
-    return pre_hook
-
-
-def make_attn_post_hook(key: str):
-    def post_hook(module, args, output):
-        global current_capture_key
-        current_capture_key = None
-    return post_hook
-
 
 def unregister_hooks(handles: list):
     """Remove all registered hooks."""
@@ -630,20 +616,24 @@ def main():
                     
                     for step, pred in enumerate(rollout_gen, start=1):
                         
-                        # CRITICAL FIX: Uncrop the prediction restoring the full 721 latitudes!
-                        pred_uncropped = pred.uncrop(model.patch_size).to("cpu")
+                        # Move prediction to CPU (predictions stay at 720 lat points after cropping)
+                        # Note: Aurora's rollout internally crops 721->720, and there's no uncrop method.
+                        # The predictions are valid at 720 points; regrid() can interpolate back to 721 if needed.
+                        pred_cpu = pred.to("cpu")
                         
                         # Save prediction
                         if args.save_predictions:
                             lead_hours = step * 6
-                            pred_ds = batch_to_dataset(pred_uncropped, step, use_fp64=args.fp64)
+                            # Optionally regrid back to 0.25° (721 lat points) for compatibility
+                            pred_for_save = pred_cpu.regrid(0.25) if pred_cpu.spatial_shape[0] == 720 else pred_cpu
+                            pred_ds = batch_to_dataset(pred_for_save, step, use_fp64=args.fp64)
                             out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:02d}h.nc"
                             
                             pending_saves.append(save_executor.submit(
                                 async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
                             ))
                             print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name}")
-                            del pred_ds
+                            del pred_ds, pred_for_save
 
                         # Save Latents & Attention (ONLY on Step 1)
                         if step == 1 and extract_latents:
@@ -668,7 +658,7 @@ def main():
                             attn_extractor.activations.clear()
                             attn_extractor.is_active = False # Turn off custom SDPA for remaining steps
                             
-                        del pred_uncropped
+                        del pred_cpu
                         
                 del batch
                 torch.cuda.empty_cache()
