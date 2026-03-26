@@ -1,0 +1,125 @@
+========================================
+  PHYSICS EVALUATION: graphcast (2020)
+========================================
+Job ID:       20996829
+Date:         Fri Mar 20 01:33:01 PM CET 2026
+Hostname:     tcn101.local.snellius.surf.nl
+Mode:         prediction
+Workers:      20
+Prediction:   gs://weatherbench2/datasets/graphcast/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr
+Output:       /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_graphcast_2020_ifs.csv
+========================================
+
+
+======================================================================
+  PHYSICS EVALUATION — WeatherBench 2 Zarr Streaming
+======================================================================
+  Prediction : gs://weatherbench2/datasets/graphcast/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr
+  ERA5       : gs://weatherbench2/datasets/hres_t0/2016-2022-6h-1440x721.zarr
+  Dates  : 366
+  Lead times : ['12h', '5d', '10d']
+  Total evals: 1098
+  Workers    : 20
+  Mode       : prediction
+  Output : /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_graphcast_2020_ifs.csv
+======================================================================
+
+  Checking Zarr stores (anonymous) …
+  Aurora vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'total_precipitation_24hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind']
+  ERA5 vars  : ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'surface_pressure', 'temperature', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind']
+  ERA5 time dtype: datetime64[ns]
+  ERA5 time range: 2016-01-01T00:00:00.000000000 → 2023-01-10T18:00:00.000000000
+
+  Sanity check — verifying ERA5 time selection on 'temperature':
+    requested=2017-10-03T18:00:00.000000000  actual=2017-10-03T18:00:00.000000000  mean=243.391
+    requested=2019-07-07T12:00:00.000000000  actual=2019-07-07T12:00:00.000000000  mean=244.781
+    requested=2021-04-09T06:00:00.000000000  actual=2021-04-09T06:00:00.000000000  mean=242.493
+  ✓ ERA5 time selection looks correct (values differ).
+
+
+  Launching 20 processes …
+
+  [14/1098] init=2020-01-05T00:00:00.000000000  lead=5d (120h)  valid=2020-01-10T00:00:00.000000000
+    [14] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [2/1098] init=2020-01-01T00:00:00.000000000  lead=5d (120h)  valid=2020-01-06T00:00:00.000000000
+    [2] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [18/1098] init=2020-01-06T00:00:00.000000000  lead=10d (240h)  valid=2020-01-16T00:00:00.000000000
+    [18] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [17/1098] init=2020-01-06T00:00:00.000000000  lead=5d (120h)  valid=2020-01-11T00:00:00.000000000
+    [17] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [5/1098] init=2020-01-02T00:00:00.000000000  lead=5d (120h)  valid=2020-01-07T00:00:00.000000000
+    [5] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [15/1098] init=2020-01-05T00:00:00.000000000  lead=10d (240h)  valid=2020-01-15T00:00:00.000000000
+    [15] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [19/1098] init=2020-01-07T00:00:00.000000000  lead=12h (12h)  valid=2020-01-07T12:00:00.000000000
+    [19] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [16/1098] init=2020-01-06T00:00:00.000000000  lead=12h (12h)  valid=2020-01-06T12:00:00.000000000
+    [16] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [4/1098] init=2020-01-02T00:00:00.000000000  lead=12h (12h)  valid=2020-01-02T12:00:00.000000000
+    [4] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [12/1098] init=2020-01-04T00:00:00.000000000  lead=10d (240h)  valid=2020-01-14T00:00:00.000000000
+    [12] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [9/1098] init=2020-01-03T00:00:00.000000000  lead=10d (240h)  valid=2020-01-13T00:00:00.000000000
+    [9] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [8/1098] init=2020-01-03T00:00:00.000000000  lead=5d (120h)  valid=2020-01-08T00:00:00.000000000
+    [8] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [11/1098] init=2020-01-04T00:00:00.000000000  lead=5d (120h)  valid=2020-01-09T00:00:00.000000000
+    [11] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [3/1098] init=2020-01-01T00:00:00.000000000  lead=10d (240h)  valid=2020-01-11T00:00:00.000000000
+    [3] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [13/1098] init=2020-01-05T00:00:00.000000000  lead=12h (12h)  valid=2020-01-05T12:00:00.000000000
+    [13] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [10/1098] init=2020-01-04T00:00:00.000000000  lead=12h (12h)  valid=2020-01-04T12:00:00.000000000
+    [10] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [20/1098] init=2020-01-07T00:00:00.000000000  lead=5d (120h)  valid=2020-01-12T00:00:00.000000000
+    [20] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [1/1098] init=2020-01-01T00:00:00.000000000  lead=12h (12h)  valid=2020-01-01T12:00:00.000000000
+    [1] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [7/1098] init=2020-01-03T00:00:00.000000000  lead=12h (12h)  valid=2020-01-03T12:00:00.000000000
+    [7] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [6/1098] init=2020-01-02T00:00:00.000000000  lead=10d (240h)  valid=2020-01-12T00:00:00.000000000
+    [6] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [9] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [9]   → mass/water/energy metrics will be NaN
+    [2] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [2]   → mass/water/energy metrics will be NaN
+    [13] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [13]   → mass/water/energy metrics will be NaN
+    [8] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [8]   → mass/water/energy metrics will be NaN
+    [14] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [14]   → mass/water/energy metrics will be NaN
+    [19] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [19]   → mass/water/energy metrics will be NaN
+    [10] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [10]   → mass/water/energy metrics will be NaN
+    [17] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [17]   → mass/water/energy metrics will be NaN
+    [5] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [5]   → mass/water/energy metrics will be NaN
+    [15] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [15]   → mass/water/energy metrics will be NaN
+    [3] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [3]   → mass/water/energy metrics will be NaN
+    [11] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [11]   → mass/water/energy metrics will be NaN
+    [1] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [1]   → mass/water/energy metrics will be NaN
+    [20] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [20]   → mass/water/energy metrics will be NaN
+    [4] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [4]   → mass/water/energy metrics will be NaN
+    [18] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [18]   → mass/water/energy metrics will be NaN
+    [16] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [16]   → mass/water/energy metrics will be NaN
+    [12] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [12]   → mass/water/energy metrics will be NaN
+    [7] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [7]   → mass/water/energy metrics will be NaN
+    [6] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [6]   → mass/water/energy metrics will be NaN
+    [16] Drift: 3 steps [12h–24h]  sp_method=failed
+    [13] Drift: 3 steps [12h–24h]  sp_method=failed
+    [7] Drift: 3 steps [12h–24h]  sp_method=failed
+    [19] Drift: 3 steps [12h–24h]  sp_method=failed

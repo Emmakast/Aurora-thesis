@@ -1,0 +1,543 @@
+========================================
+  KE SPECTRUM 850 hPa: aurora (2022)
+========================================
+Job ID:       20660151
+Date:         Wed Mar 11 16:10:21 CET 2026
+Hostname:     tcn5.local.snellius.surf.nl
+Prediction:   gs://weatherbench2/datasets/aurora/2022-1440x721.zarr
+Reference:    gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+Output:       /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_aurora_2022.csv
+========================================
+
+/home/ekasteleyn/aurora_thesis/thesis/scripts/run_ke_spectrum_850hpa.py:57: FutureWarning: In a future version, xarray will not decode the variable 'prediction_timedelta' into a timedelta64 dtype based on the presence of a timedelta-like 'units' attribute by default. Instead it will rely on the presence of a timedelta64 'dtype' attribute, which is now xarray's default way of encoding timedelta64 values.
+To continue decoding into a timedelta64 dtype, either set `decode_timedelta=True` when opening this dataset, or add the attribute `dtype='timedelta64[ns]'` to this variable on disk.
+To opt-in to future behavior, set `decode_timedelta=False`.
+  ds = xr.open_zarr(url, storage_options={"token": "anon"})
+/home/ekasteleyn/aurora_thesis/thesis/scripts/run_ke_spectrum_850hpa.py:57: FutureWarning: In a future version, xarray will not decode the variable 'prediction_timedelta' into a timedelta64 dtype based on the presence of a timedelta-like 'units' attribute by default. Instead it will rely on the presence of a timedelta64 'dtype' attribute, which is now xarray's default way of encoding timedelta64 values.
+To continue decoding into a timedelta64 dtype, either set `decode_timedelta=True` when opening this dataset, or add the attribute `dtype='timedelta64[ns]'` to this variable on disk.
+To opt-in to future behavior, set `decode_timedelta=False`.
+  ds = xr.open_zarr(url, storage_options={"token": "anon"})
+
+======================================================================
+  KE SPECTRUM (850 hPa): aurora (2022)
+  Prediction: gs://weatherbench2/datasets/aurora/2022-1440x721.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Level: 850 hPa (850 hPa) | Lead times: [6, 24, 48, 72, 120, 168, 240]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_aurora_2022.csv
+======================================================================
+
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2022-01-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [2/24] 2022-01-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [3/24] 2022-02-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [4/24] 2022-02-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [5/24] 2022-03-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [6/24] 2022-03-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [7/24] 2022-04-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [8/24] 2022-04-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [9/24] 2022-05-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [10/24] 2022-05-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [11/24] 2022-06-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [12/24] 2022-06-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [13/24] 2022-07-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [14/24] 2022-07-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [15/24] 2022-08-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [16/24] 2022-08-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [17/24] 2022-09-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [18/24] 2022-09-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [19/24] 2022-10-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [20/24] 2022-10-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+
+======================================================================
+  KE SPECTRUM (850 hPa): aurora (2022)
+  Prediction: gs://weatherbench2/datasets/aurora/2022-1440x721.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Level: 850 hPa (850 hPa) | Lead times: [6, 24, 48, 72, 120, 168, 240]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_aurora_2022.csv
+======================================================================
+
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2022-01-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [2/24] 2022-01-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [3/24] 2022-02-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [4/24] 2022-02-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [5/24] 2022-03-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [6/24] 2022-03-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [7/24] 2022-04-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [8/24] 2022-04-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [9/24] 2022-05-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [10/24] 2022-05-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [11/24] 2022-06-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [12/24] 2022-06-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [13/24] 2022-07-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [14/24] 2022-07-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [15/24] 2022-08-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [16/24] 2022-08-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [17/24] 2022-09-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [18/24] 2022-09-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [19/24] 2022-10-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [20/24] 2022-10-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [21/24] 2022-11-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [22/24] 2022-11-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [23/24] 2022-12-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [24/24] 2022-12-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+✓ Saved 120960 rows → /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_aurora_2022.csv
+  Unique lead times: [np.int64(6), np.int64(24), np.int64(48), np.int64(72), np.int64(120), np.int64(168), np.int64(240)]
+  Unique dates: 24
+
+========================================
+  COMPLETED SUCCESSFULLY
+  Rows: 725765
+========================================
+Finished: Wed Mar 11 18:18:06 CET 2026
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [21/24] 2022-11-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [22/24] 2022-11-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [23/24] 2022-12-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+  [24/24] 2022-12-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+    [flushed 5040 rows to ke_spectrum_850hpa_aurora_2022.csv]
+
+✓ Saved 120960 rows → /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_aurora_2022.csv
+  Unique lead times: [np.int64(6), np.int64(24), np.int64(48), np.int64(72), np.int64(120), np.int64(168), np.int64(240)]
+  Unique dates: 24
+
+========================================
+  COMPLETED SUCCESSFULLY
+  Rows: 725765
+========================================
+Finished: Wed Mar 11 18:18:06 CET 2026

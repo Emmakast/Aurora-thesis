@@ -1,0 +1,1199 @@
+========================================
+  PHYSICS EVALUATION: neuralgcm (2020)
+========================================
+Job ID:       20765581
+Date:         Mon Mar 16 12:54:30 PM CET 2026
+Hostname:     tcn363.local.snellius.surf.nl
+Mode:         prediction
+Workers:      48
+Prediction:   gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr
+Output:       /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_neuralgcm_2020.csv
+========================================
+
+
+======================================================================
+  PHYSICS EVALUATION — WeatherBench 2 Zarr Streaming
+======================================================================
+  Prediction : gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr
+  ERA5       : gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr
+  Dates  : 366
+  Lead times : ['12h', '5d', '10d']
+  Total evals: 1098
+  Workers    : 48
+  Mode       : prediction
+  Output : /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_neuralgcm_2020.csv
+======================================================================
+
+  Checking Zarr stores (anonymous) …
+  Aurora vars: ['P_minus_E_cumulative', 'geopotential', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']
+  ERA5 vars  : ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'angle_of_sub_gridscale_orography', 'anisotropy_of_sub_gridscale_orography', 'geopotential', 'geopotential_at_surface', 'high_vegetation_cover', 'lake_cover', 'lake_depth', 'land_sea_mask']
+  ERA5 time dtype: datetime64[ns]
+  ERA5 time range: 1959-01-01T00:00:00.000000000 → 2021-12-31T18:00:00.000000000
+
+  Sanity check — verifying ERA5 time selection on 'temperature':
+    requested=1974-10-01T18:00:00.000000000  actual=1974-10-01T18:00:00.000000000  mean=242.25
+    requested=1990-07-02T12:00:00.000000000  actual=1990-07-02T12:00:00.000000000  mean=244.234
+    requested=2006-04-02T06:00:00.000000000  actual=2006-04-02T06:00:00.000000000  mean=242.664
+  ✓ ERA5 time selection looks correct (values differ).
+
+
+  Launching 48 processes …
+
+  [32/1098] init=2020-01-11T00:00:00.000000000  lead=5d (120h)  valid=2020-01-16T00:00:00.000000000
+    [32] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [32] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [23/1098] init=2020-01-08T00:00:00.000000000  lead=5d (120h)  valid=2020-01-13T00:00:00.000000000
+    [23] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [23] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [3/1098] init=2020-01-01T00:00:00.000000000  lead=10d (240h)  valid=2020-01-11T00:00:00.000000000
+    [3] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [3] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [17/1098] init=2020-01-06T00:00:00.000000000  lead=5d (120h)  valid=2020-01-11T00:00:00.000000000
+  [35/1098] init=2020-01-12T00:00:00.000000000  lead=5d (120h)  valid=2020-01-17T00:00:00.000000000
+    [17] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [17] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [43/1098] init=2020-01-15T00:00:00.000000000  lead=12h (12h)  valid=2020-01-15T12:00:00.000000000
+    [35] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [35] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [27/1098] init=2020-01-09T00:00:00.000000000  lead=10d (240h)  valid=2020-01-19T00:00:00.000000000
+  [45/1098] init=2020-01-15T00:00:00.000000000  lead=10d (240h)  valid=2020-01-25T00:00:00.000000000
+    [43] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [43] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [45] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [45] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [27] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [27] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [38/1098] init=2020-01-13T00:00:00.000000000  lead=5d (120h)  valid=2020-01-18T00:00:00.000000000
+  [46/1098] init=2020-01-16T00:00:00.000000000  lead=12h (12h)  valid=2020-01-16T12:00:00.000000000
+    [38] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [38] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [46] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [46] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [42/1098] init=2020-01-14T00:00:00.000000000  lead=10d (240h)  valid=2020-01-24T00:00:00.000000000
+  [33/1098] init=2020-01-11T00:00:00.000000000  lead=10d (240h)  valid=2020-01-21T00:00:00.000000000
+    [42] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [42] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [33] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [33] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [12/1098] init=2020-01-04T00:00:00.000000000  lead=10d (240h)  valid=2020-01-14T00:00:00.000000000
+  [13/1098] init=2020-01-05T00:00:00.000000000  lead=12h (12h)  valid=2020-01-05T12:00:00.000000000
+  [25/1098] init=2020-01-09T00:00:00.000000000  lead=12h (12h)  valid=2020-01-09T12:00:00.000000000
+    [13] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [13] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [12] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [12] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [25] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [25] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [7/1098] init=2020-01-03T00:00:00.000000000  lead=12h (12h)  valid=2020-01-03T12:00:00.000000000
+    [7] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [7] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [1/1098] init=2020-01-01T00:00:00.000000000  lead=12h (12h)  valid=2020-01-01T12:00:00.000000000
+  [22/1098] init=2020-01-08T00:00:00.000000000  lead=12h (12h)  valid=2020-01-08T12:00:00.000000000
+  [31/1098] init=2020-01-11T00:00:00.000000000  lead=12h (12h)  valid=2020-01-11T12:00:00.000000000
+  [15/1098] init=2020-01-05T00:00:00.000000000  lead=10d (240h)  valid=2020-01-15T00:00:00.000000000
+  [39/1098] init=2020-01-13T00:00:00.000000000  lead=10d (240h)  valid=2020-01-23T00:00:00.000000000
+    [1] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+  [36/1098] init=2020-01-12T00:00:00.000000000  lead=10d (240h)  valid=2020-01-22T00:00:00.000000000
+    [1] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [31] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [22] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [31] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [22] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [39] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [39] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [15] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [15] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [36] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [36] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [26/1098] init=2020-01-09T00:00:00.000000000  lead=5d (120h)  valid=2020-01-14T00:00:00.000000000
+  [6/1098] init=2020-01-02T00:00:00.000000000  lead=10d (240h)  valid=2020-01-12T00:00:00.000000000
+    [26] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [26] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [6] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [6] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [2/1098] init=2020-01-01T00:00:00.000000000  lead=5d (120h)  valid=2020-01-06T00:00:00.000000000
+  [41/1098] init=2020-01-14T00:00:00.000000000  lead=5d (120h)  valid=2020-01-19T00:00:00.000000000
+    [2] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [2] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [41] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [41] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [16/1098] init=2020-01-06T00:00:00.000000000  lead=12h (12h)  valid=2020-01-06T12:00:00.000000000
+    [16] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [16] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [40/1098] init=2020-01-14T00:00:00.000000000  lead=12h (12h)  valid=2020-01-14T12:00:00.000000000
+    [40] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [40] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [10/1098] init=2020-01-04T00:00:00.000000000  lead=12h (12h)  valid=2020-01-04T12:00:00.000000000
+    [10] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [10] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [44/1098] init=2020-01-15T00:00:00.000000000  lead=5d (120h)  valid=2020-01-20T00:00:00.000000000
+  [48/1098] init=2020-01-16T00:00:00.000000000  lead=10d (240h)  valid=2020-01-26T00:00:00.000000000
+  [47/1098] init=2020-01-16T00:00:00.000000000  lead=5d (120h)  valid=2020-01-21T00:00:00.000000000
+  [4/1098] init=2020-01-02T00:00:00.000000000  lead=12h (12h)  valid=2020-01-02T12:00:00.000000000
+  [11/1098] init=2020-01-04T00:00:00.000000000  lead=5d (120h)  valid=2020-01-09T00:00:00.000000000
+    [44] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [44] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [48] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [48] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [47] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [47] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [11] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [11] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [4] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [4] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [30/1098] init=2020-01-10T00:00:00.000000000  lead=10d (240h)  valid=2020-01-20T00:00:00.000000000
+  [9/1098] init=2020-01-03T00:00:00.000000000  lead=10d (240h)  valid=2020-01-13T00:00:00.000000000
+    [30] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [30] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [19/1098] init=2020-01-07T00:00:00.000000000  lead=12h (12h)  valid=2020-01-07T12:00:00.000000000
+    [9] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [9] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [19] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [19] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [8/1098] init=2020-01-03T00:00:00.000000000  lead=5d (120h)  valid=2020-01-08T00:00:00.000000000
+  [21/1098] init=2020-01-07T00:00:00.000000000  lead=10d (240h)  valid=2020-01-17T00:00:00.000000000
+    [8] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [8] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [21] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [21] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [20/1098] init=2020-01-07T00:00:00.000000000  lead=5d (120h)  valid=2020-01-12T00:00:00.000000000
+    [20] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [20] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [18/1098] init=2020-01-06T00:00:00.000000000  lead=10d (240h)  valid=2020-01-16T00:00:00.000000000
+    [18] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [18] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [14/1098] init=2020-01-05T00:00:00.000000000  lead=5d (120h)  valid=2020-01-10T00:00:00.000000000
+    [14] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [14] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [37/1098] init=2020-01-13T00:00:00.000000000  lead=12h (12h)  valid=2020-01-13T12:00:00.000000000
+    [37] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [37] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [34/1098] init=2020-01-12T00:00:00.000000000  lead=12h (12h)  valid=2020-01-12T12:00:00.000000000
+    [34] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [34] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [5/1098] init=2020-01-02T00:00:00.000000000  lead=5d (120h)  valid=2020-01-07T00:00:00.000000000
+    [5] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [5] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [28/1098] init=2020-01-10T00:00:00.000000000  lead=12h (12h)  valid=2020-01-10T12:00:00.000000000
+    [28] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [28] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [24/1098] init=2020-01-08T00:00:00.000000000  lead=10d (240h)  valid=2020-01-18T00:00:00.000000000
+    [24] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [24] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [29/1098] init=2020-01-10T00:00:00.000000000  lead=5d (120h)  valid=2020-01-15T00:00:00.000000000
+    [29] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [29] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [7] Model grid differs from ERA5 — interpolating static fields
+    [7] Computing area from model grid (256 lats vs ERA5 256)
+    [43] Model grid differs from ERA5 — interpolating static fields
+    [43] Computing area from model grid (256 lats vs ERA5 256)
+    [33] Model grid differs from ERA5 — interpolating static fields
+    [17] Model grid differs from ERA5 — interpolating static fields
+    [33] Computing area from model grid (256 lats vs ERA5 256)
+    [17] Computing area from model grid (256 lats vs ERA5 256)
+    [18] Model grid differs from ERA5 — interpolating static fields
+    [27] Model grid differs from ERA5 — interpolating static fields
+    [18] Computing area from model grid (256 lats vs ERA5 256)
+    [15] Model grid differs from ERA5 — interpolating static fields
+    [27] Computing area from model grid (256 lats vs ERA5 256)
+    [15] Computing area from model grid (256 lats vs ERA5 256)
+    [26] Model grid differs from ERA5 — interpolating static fields
+    [26] Computing area from model grid (256 lats vs ERA5 256)
+    [47] Model grid differs from ERA5 — interpolating static fields
+    [47] Computing area from model grid (256 lats vs ERA5 256)
+    [35] Model grid differs from ERA5 — interpolating static fields
+    [35] Computing area from model grid (256 lats vs ERA5 256)
+    [14] Model grid differs from ERA5 — interpolating static fields
+    [21] Model grid differs from ERA5 — interpolating static fields
+    [14] Computing area from model grid (256 lats vs ERA5 256)
+    [36] Model grid differs from ERA5 — interpolating static fields
+    [21] Computing area from model grid (256 lats vs ERA5 256)
+    [36] Computing area from model grid (256 lats vs ERA5 256)
+    [41] Model grid differs from ERA5 — interpolating static fields
+    [28] Model grid differs from ERA5 — interpolating static fields
+    [41] Computing area from model grid (256 lats vs ERA5 256)
+    [28] Computing area from model grid (256 lats vs ERA5 256)
+    [10] Model grid differs from ERA5 — interpolating static fields
+    [10] Computing area from model grid (256 lats vs ERA5 256)
+    [42] Model grid differs from ERA5 — interpolating static fields
+    [37] Model grid differs from ERA5 — interpolating static fields
+    [42] Computing area from model grid (256 lats vs ERA5 256)
+    [37] Computing area from model grid (256 lats vs ERA5 256)
+    [3] Model grid differs from ERA5 — interpolating static fields
+    [46] Model grid differs from ERA5 — interpolating static fields
+    [30] Model grid differs from ERA5 — interpolating static fields
+    [16] Model grid differs from ERA5 — interpolating static fields
+    [3] Computing area from model grid (256 lats vs ERA5 256)
+    [46] Computing area from model grid (256 lats vs ERA5 256)
+    [4] Model grid differs from ERA5 — interpolating static fields
+    [30] Computing area from model grid (256 lats vs ERA5 256)
+    [24] Model grid differs from ERA5 — interpolating static fields
+    [16] Computing area from model grid (256 lats vs ERA5 256)
+    [38] Model grid differs from ERA5 — interpolating static fields
+    [4] Computing area from model grid (256 lats vs ERA5 256)
+    [24] Computing area from model grid (256 lats vs ERA5 256)
+    [2] Model grid differs from ERA5 — interpolating static fields
+    [38] Computing area from model grid (256 lats vs ERA5 256)
+    [2] Computing area from model grid (256 lats vs ERA5 256)
+    [48] Model grid differs from ERA5 — interpolating static fields
+    [45] Model grid differs from ERA5 — interpolating static fields
+    [48] Computing area from model grid (256 lats vs ERA5 256)
+    [6] Model grid differs from ERA5 — interpolating static fields
+    [45] Computing area from model grid (256 lats vs ERA5 256)
+    [31] Model grid differs from ERA5 — interpolating static fields
+    [6] Computing area from model grid (256 lats vs ERA5 256)
+    [31] Computing area from model grid (256 lats vs ERA5 256)
+    [5] Model grid differs from ERA5 — interpolating static fields
+    [5] Computing area from model grid (256 lats vs ERA5 256)
+    [11] Model grid differs from ERA5 — interpolating static fields
+    [23] Model grid differs from ERA5 — interpolating static fields
+    [12] Model grid differs from ERA5 — interpolating static fields
+    [11] Computing area from model grid (256 lats vs ERA5 256)
+    [13] Model grid differs from ERA5 — interpolating static fields
+    [20] Model grid differs from ERA5 — interpolating static fields
+    [23] Computing area from model grid (256 lats vs ERA5 256)
+    [34] Model grid differs from ERA5 — interpolating static fields
+    [8] Model grid differs from ERA5 — interpolating static fields
+    [12] Computing area from model grid (256 lats vs ERA5 256)
+    [19] Model grid differs from ERA5 — interpolating static fields
+    [44] Model grid differs from ERA5 — interpolating static fields
+    [13] Computing area from model grid (256 lats vs ERA5 256)
+    [20] Computing area from model grid (256 lats vs ERA5 256)
+    [34] Computing area from model grid (256 lats vs ERA5 256)
+    [8] Computing area from model grid (256 lats vs ERA5 256)
+    [19] Computing area from model grid (256 lats vs ERA5 256)
+    [44] Computing area from model grid (256 lats vs ERA5 256)
+    [32] Model grid differs from ERA5 — interpolating static fields
+    [32] Computing area from model grid (256 lats vs ERA5 256)
+    [9] Model grid differs from ERA5 — interpolating static fields
+    [40] Model grid differs from ERA5 — interpolating static fields
+    [9] Computing area from model grid (256 lats vs ERA5 256)
+    [40] Computing area from model grid (256 lats vs ERA5 256)
+    [39] Model grid differs from ERA5 — interpolating static fields
+    [39] Computing area from model grid (256 lats vs ERA5 256)
+    [1] Model grid differs from ERA5 — interpolating static fields
+    [1] Computing area from model grid (256 lats vs ERA5 256)
+    [25] Model grid differs from ERA5 — interpolating static fields
+    [25] Computing area from model grid (256 lats vs ERA5 256)
+    [29] Model grid differs from ERA5 — interpolating static fields
+    [29] Computing area from model grid (256 lats vs ERA5 256)
+    [22] Model grid differs from ERA5 — interpolating static fields
+    [22] Computing area from model grid (256 lats vs ERA5 256)
+    [4] Drift: 2 steps [12h–24h]
+    [1] Drift: 2 steps [12h–24h]
+    [7] Drift: 2 steps [12h–24h]
+    [46] Drift: 2 steps [12h–24h]
+    [16] Drift: 2 steps [12h–24h]
+    [13] Drift: 2 steps [12h–24h]
+    [28] Drift: 2 steps [12h–24h]
+    [43] Drift: 2 steps [12h–24h]
+    [40] Drift: 2 steps [12h–24h]
+    [25] Drift: 2 steps [12h–24h]
+    [31] Drift: 2 steps [12h–24h]
+    [10] Drift: 2 steps [12h–24h]
+    [22] Drift: 2 steps [12h–24h]
+    [19] Drift: 2 steps [12h–24h]
+    [37] Drift: 2 steps [12h–24h]
+    [34] Drift: 2 steps [12h–24h]
+    [4] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [4] ✓ Drift: dry=-0.00379083%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0237123%/day
+    [7] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [7] ✓ Drift: dry=-0.00137656%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.378773%/day
+    [1] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [1] ✓ Drift: dry=-0.00258733%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.343186%/day
+    [46] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [46] ✓ Drift: dry=-0.00455102%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.195872%/day
+    [13] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [13] ✓ Drift: dry=-0.00304836%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.294738%/day
+    [40] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [40] ✓ Drift: dry=-0.00321166%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.777062%/day
+    [4] ✓ KE spectrum saved (l_max=127)
+    [7] ✓ KE spectrum saved (l_max=127)
+    [28] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [28] ✓ Drift: dry=-0.00453323%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.200379%/day
+    [10] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [10] ✓ Drift: dry=-0.00279986%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0960377%/day
+    [1] ✓ KE spectrum saved (l_max=127)
+    [16] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [16] ✓ Drift: dry=-0.00291246%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.635792%/day
+    [22] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [22] ✓ Drift: dry=-0.00399436%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.754238%/day
+    [43] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [43] ✓ Drift: dry=-0.00228596%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0192826%/day
+  [50/1098] init=2020-01-17T00:00:00.000000000  lead=5d (120h)  valid=2020-01-22T00:00:00.000000000
+    [50] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [50] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [19] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [19] ✓ Drift: dry=-0.00509948%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.490118%/day
+    [13] ✓ KE spectrum saved (l_max=127)
+    [46] ✓ KE spectrum saved (l_max=127)
+    [40] ✓ KE spectrum saved (l_max=127)
+  [49/1098] init=2020-01-17T00:00:00.000000000  lead=12h (12h)  valid=2020-01-17T12:00:00.000000000
+    [49] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [49] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [25] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [25] ✓ Drift: dry=-0.00412506%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.464282%/day
+  [52/1098] init=2020-01-18T00:00:00.000000000  lead=12h (12h)  valid=2020-01-18T12:00:00.000000000
+    [52] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [52] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [53/1098] init=2020-01-18T00:00:00.000000000  lead=5d (120h)  valid=2020-01-23T00:00:00.000000000
+    [53] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [53] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [28] ✓ KE spectrum saved (l_max=127)
+  [54/1098] init=2020-01-18T00:00:00.000000000  lead=10d (240h)  valid=2020-01-28T00:00:00.000000000
+    [54] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [54] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [51/1098] init=2020-01-17T00:00:00.000000000  lead=10d (240h)  valid=2020-01-27T00:00:00.000000000
+    [51] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [51] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [10] ✓ KE spectrum saved (l_max=127)
+    [16] ✓ KE spectrum saved (l_max=127)
+    [43] ✓ KE spectrum saved (l_max=127)
+    [22] ✓ KE spectrum saved (l_max=127)
+  [55/1098] init=2020-01-19T00:00:00.000000000  lead=12h (12h)  valid=2020-01-19T12:00:00.000000000
+    [55] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [55] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [19] ✓ KE spectrum saved (l_max=127)
+    [31] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [31] ✓ Drift: dry=-0.00140471%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.532155%/day
+  [58/1098] init=2020-01-20T00:00:00.000000000  lead=12h (12h)  valid=2020-01-20T12:00:00.000000000
+    [58] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [58] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [60/1098] init=2020-01-20T00:00:00.000000000  lead=10d (240h)  valid=2020-01-30T00:00:00.000000000
+    [60] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [60] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [25] ✓ KE spectrum saved (l_max=127)
+  [57/1098] init=2020-01-19T00:00:00.000000000  lead=10d (240h)  valid=2020-01-29T00:00:00.000000000
+    [57] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [57] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [56/1098] init=2020-01-19T00:00:00.000000000  lead=5d (120h)  valid=2020-01-24T00:00:00.000000000
+    [56] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [56] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [59/1098] init=2020-01-20T00:00:00.000000000  lead=5d (120h)  valid=2020-01-25T00:00:00.000000000
+    [59] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [59] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [61/1098] init=2020-01-21T00:00:00.000000000  lead=12h (12h)  valid=2020-01-21T12:00:00.000000000
+    [61] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [61] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [37] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [37] ✓ Drift: dry=-0.00277352%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.303187%/day
+    [31] ✓ KE spectrum saved (l_max=127)
+  [62/1098] init=2020-01-21T00:00:00.000000000  lead=5d (120h)  valid=2020-01-26T00:00:00.000000000
+    [62] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [62] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [34] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [34] ✓ Drift: dry=-0.00270634%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.141703%/day
+    [37] ✓ KE spectrum saved (l_max=127)
+  [63/1098] init=2020-01-21T00:00:00.000000000  lead=10d (240h)  valid=2020-01-31T00:00:00.000000000
+    [63] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [63] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [34] ✓ KE spectrum saved (l_max=127)
+  [64/1098] init=2020-01-22T00:00:00.000000000  lead=12h (12h)  valid=2020-01-22T12:00:00.000000000
+    [64] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [64] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [53] Model grid differs from ERA5 — interpolating static fields
+    [53] Computing area from model grid (256 lats vs ERA5 256)
+    [50] Model grid differs from ERA5 — interpolating static fields
+    [50] Computing area from model grid (256 lats vs ERA5 256)
+    [49] Model grid differs from ERA5 — interpolating static fields
+    [49] Computing area from model grid (256 lats vs ERA5 256)
+    [51] Model grid differs from ERA5 — interpolating static fields
+    [55] Model grid differs from ERA5 — interpolating static fields
+    [54] Model grid differs from ERA5 — interpolating static fields
+    [51] Computing area from model grid (256 lats vs ERA5 256)
+    [54] Computing area from model grid (256 lats vs ERA5 256)
+    [55] Computing area from model grid (256 lats vs ERA5 256)
+    [58] Model grid differs from ERA5 — interpolating static fields
+    [58] Computing area from model grid (256 lats vs ERA5 256)
+    [52] Model grid differs from ERA5 — interpolating static fields
+    [52] Computing area from model grid (256 lats vs ERA5 256)
+    [60] Model grid differs from ERA5 — interpolating static fields
+    [60] Computing area from model grid (256 lats vs ERA5 256)
+    [59] Model grid differs from ERA5 — interpolating static fields
+    [59] Computing area from model grid (256 lats vs ERA5 256)
+    [56] Model grid differs from ERA5 — interpolating static fields
+    [61] Model grid differs from ERA5 — interpolating static fields
+    [57] Model grid differs from ERA5 — interpolating static fields
+    [61] Computing area from model grid (256 lats vs ERA5 256)
+    [56] Computing area from model grid (256 lats vs ERA5 256)
+    [57] Computing area from model grid (256 lats vs ERA5 256)
+    [63] Model grid differs from ERA5 — interpolating static fields
+    [64] Model grid differs from ERA5 — interpolating static fields
+    [63] Computing area from model grid (256 lats vs ERA5 256)
+    [64] Computing area from model grid (256 lats vs ERA5 256)
+    [62] Model grid differs from ERA5 — interpolating static fields
+    [62] Computing area from model grid (256 lats vs ERA5 256)
+    [29] Drift: 10 steps [12h–120h]
+    [47] Drift: 10 steps [12h–120h]
+    [29] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [29] ✓ Drift: dry=+0.00146228%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0185667%/day
+    [29] ✓ KE spectrum saved (l_max=127)
+    [47] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [47] ✓ Drift: dry=+0.0019313%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.351833%/day
+  [65/1098] init=2020-01-22T00:00:00.000000000  lead=5d (120h)  valid=2020-01-27T00:00:00.000000000
+    [65] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [65] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [55] Drift: 2 steps [12h–24h]
+    [38] Drift: 10 steps [12h–120h]
+    [47] ✓ KE spectrum saved (l_max=127)
+    [49] Drift: 2 steps [12h–24h]
+    [58] Drift: 2 steps [12h–24h]
+    [64] Drift: 2 steps [12h–24h]
+    [14] Drift: 10 steps [12h–120h]
+    [52] Drift: 2 steps [12h–24h]
+  [66/1098] init=2020-01-22T00:00:00.000000000  lead=10d (240h)  valid=2020-02-01T00:00:00.000000000
+    [66] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [66] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [61] Drift: 2 steps [12h–24h]
+    [17] Drift: 10 steps [12h–120h]
+    [5] Drift: 10 steps [12h–120h]
+    [32] Drift: 10 steps [12h–120h]
+    [41] Drift: 10 steps [12h–120h]
+    [26] Drift: 10 steps [12h–120h]
+    [65] Model grid differs from ERA5 — interpolating static fields
+    [65] Computing area from model grid (256 lats vs ERA5 256)
+    [8] Drift: 10 steps [12h–120h]
+    [20] Drift: 10 steps [12h–120h]
+    [55] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [55] ✓ Drift: dry=-0.00108138%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.647621%/day
+    [55] ✓ KE spectrum saved (l_max=127)
+    [64] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [64] ✓ Drift: dry=-0.00278136%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0899748%/day
+    [64] ✓ KE spectrum saved (l_max=127)
+    [66] Model grid differs from ERA5 — interpolating static fields
+    [66] Computing area from model grid (256 lats vs ERA5 256)
+    [58] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [58] ✓ Drift: dry=-0.00260125%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0437939%/day
+    [58] ✓ KE spectrum saved (l_max=127)
+    [52] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [52] ✓ Drift: dry=-0.00249256%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.334198%/day
+    [52] ✓ KE spectrum saved (l_max=127)
+    [23] Drift: 10 steps [12h–120h]
+  [68/1098] init=2020-01-23T00:00:00.000000000  lead=5d (120h)  valid=2020-01-28T00:00:00.000000000
+    [68] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [68] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [11] Drift: 10 steps [12h–120h]
+    [49] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [49] ✓ Drift: dry=-0.00337693%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.00215687%/day
+  [67/1098] init=2020-01-23T00:00:00.000000000  lead=12h (12h)  valid=2020-01-23T12:00:00.000000000
+    [67] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [67] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [49] ✓ KE spectrum saved (l_max=127)
+  [69/1098] init=2020-01-23T00:00:00.000000000  lead=10d (240h)  valid=2020-02-02T00:00:00.000000000
+    [69] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [69] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [14] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [14] ✓ Drift: dry=+0.000812792%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.463286%/day
+    [35] Drift: 10 steps [12h–120h]
+    [38] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [38] ✓ Drift: dry=+0.000692705%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0556827%/day
+  [70/1098] init=2020-01-24T00:00:00.000000000  lead=12h (12h)  valid=2020-01-24T12:00:00.000000000
+    [70] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [70] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [71/1098] init=2020-01-24T00:00:00.000000000  lead=5d (120h)  valid=2020-01-29T00:00:00.000000000
+    [71] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [71] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [61] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [61] ✓ Drift: dry=-0.00407414%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.31184%/day
+    [61] ✓ KE spectrum saved (l_max=127)
+    [14] ✓ KE spectrum saved (l_max=127)
+    [2] Drift: 10 steps [12h–120h]
+    [41] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [41] ✓ Drift: dry=+0.00105517%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0898553%/day
+    [38] ✓ KE spectrum saved (l_max=127)
+    [17] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [17] ✓ Drift: dry=+0.000740333%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.314589%/day
+  [73/1098] init=2020-01-25T00:00:00.000000000  lead=12h (12h)  valid=2020-01-25T12:00:00.000000000
+    [73] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [73] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [5] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [5] ✓ Drift: dry=+0.00159259%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.12194%/day
+    [32] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [32] ✓ Drift: dry=+0.000955092%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.172798%/day
+  [74/1098] init=2020-01-25T00:00:00.000000000  lead=5d (120h)  valid=2020-01-30T00:00:00.000000000
+    [74] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [74] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [72/1098] init=2020-01-24T00:00:00.000000000  lead=10d (240h)  valid=2020-02-03T00:00:00.000000000
+    [72] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [72] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [41] ✓ KE spectrum saved (l_max=127)
+    [17] ✓ KE spectrum saved (l_max=127)
+    [5] ✓ KE spectrum saved (l_max=127)
+  [75/1098] init=2020-01-25T00:00:00.000000000  lead=10d (240h)  valid=2020-02-04T00:00:00.000000000
+    [75] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [75] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [44] Drift: 10 steps [12h–120h]
+    [32] ✓ KE spectrum saved (l_max=127)
+  [76/1098] init=2020-01-26T00:00:00.000000000  lead=12h (12h)  valid=2020-01-26T12:00:00.000000000
+    [76] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [76] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [77/1098] init=2020-01-26T00:00:00.000000000  lead=5d (120h)  valid=2020-01-31T00:00:00.000000000
+    [77] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [77] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [78/1098] init=2020-01-26T00:00:00.000000000  lead=10d (240h)  valid=2020-02-05T00:00:00.000000000
+    [78] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [78] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [26] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [26] ✓ Drift: dry=+0.00177996%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.195223%/day
+    [26] ✓ KE spectrum saved (l_max=127)
+    [8] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [8] ✓ Drift: dry=+0.00121446%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.214089%/day
+  [79/1098] init=2020-01-27T00:00:00.000000000  lead=12h (12h)  valid=2020-01-27T12:00:00.000000000
+    [79] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [79] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [68] Model grid differs from ERA5 — interpolating static fields
+    [68] Computing area from model grid (256 lats vs ERA5 256)
+    [8] ✓ KE spectrum saved (l_max=127)
+    [20] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [20] ✓ Drift: dry=+0.000950644%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.14174%/day
+  [80/1098] init=2020-01-27T00:00:00.000000000  lead=5d (120h)  valid=2020-02-01T00:00:00.000000000
+    [80] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [80] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [70] Model grid differs from ERA5 — interpolating static fields
+    [69] Model grid differs from ERA5 — interpolating static fields
+    [70] Computing area from model grid (256 lats vs ERA5 256)
+    [69] Computing area from model grid (256 lats vs ERA5 256)
+    [67] Model grid differs from ERA5 — interpolating static fields
+    [67] Computing area from model grid (256 lats vs ERA5 256)
+    [20] ✓ KE spectrum saved (l_max=127)
+    [73] Model grid differs from ERA5 — interpolating static fields
+    [73] Computing area from model grid (256 lats vs ERA5 256)
+    [71] Model grid differs from ERA5 — interpolating static fields
+    [71] Computing area from model grid (256 lats vs ERA5 256)
+  [81/1098] init=2020-01-27T00:00:00.000000000  lead=10d (240h)  valid=2020-02-06T00:00:00.000000000
+    [81] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [81] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [74] Model grid differs from ERA5 — interpolating static fields
+    [72] Model grid differs from ERA5 — interpolating static fields
+    [11] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [11] ✓ Drift: dry=+0.000769167%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.376447%/day
+    [23] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [23] ✓ Drift: dry=+0.00142659%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0719382%/day
+    [35] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [35] ✓ Drift: dry=+0.000563454%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.19443%/day
+    [74] Computing area from model grid (256 lats vs ERA5 256)
+    [72] Computing area from model grid (256 lats vs ERA5 256)
+    [75] Model grid differs from ERA5 — interpolating static fields
+    [75] Computing area from model grid (256 lats vs ERA5 256)
+    [77] Model grid differs from ERA5 — interpolating static fields
+    [2] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [2] ✓ Drift: dry=+0.00186553%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.203698%/day
+    [77] Computing area from model grid (256 lats vs ERA5 256)
+    [78] Model grid differs from ERA5 — interpolating static fields
+    [78] Computing area from model grid (256 lats vs ERA5 256)
+    [11] ✓ KE spectrum saved (l_max=127)
+    [23] ✓ KE spectrum saved (l_max=127)
+    [35] ✓ KE spectrum saved (l_max=127)
+    [76] Model grid differs from ERA5 — interpolating static fields
+    [76] Computing area from model grid (256 lats vs ERA5 256)
+    [2] ✓ KE spectrum saved (l_max=127)
+  [84/1098] init=2020-01-28T00:00:00.000000000  lead=10d (240h)  valid=2020-02-07T00:00:00.000000000
+    [84] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [84] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [82/1098] init=2020-01-28T00:00:00.000000000  lead=12h (12h)  valid=2020-01-28T12:00:00.000000000
+    [82] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [82] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [83/1098] init=2020-01-28T00:00:00.000000000  lead=5d (120h)  valid=2020-02-02T00:00:00.000000000
+    [83] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [83] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [44] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [44] ✓ Drift: dry=+0.0015729%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.251963%/day
+  [85/1098] init=2020-01-29T00:00:00.000000000  lead=12h (12h)  valid=2020-01-29T12:00:00.000000000
+    [85] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [85] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [79] Model grid differs from ERA5 — interpolating static fields
+    [79] Computing area from model grid (256 lats vs ERA5 256)
+    [44] ✓ KE spectrum saved (l_max=127)
+  [86/1098] init=2020-01-29T00:00:00.000000000  lead=5d (120h)  valid=2020-02-03T00:00:00.000000000
+    [86] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [86] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [80] Model grid differs from ERA5 — interpolating static fields
+    [80] Computing area from model grid (256 lats vs ERA5 256)
+    [81] Model grid differs from ERA5 — interpolating static fields
+    [81] Computing area from model grid (256 lats vs ERA5 256)
+    [84] Model grid differs from ERA5 — interpolating static fields
+    [84] Computing area from model grid (256 lats vs ERA5 256)
+    [83] Model grid differs from ERA5 — interpolating static fields
+    [83] Computing area from model grid (256 lats vs ERA5 256)
+    [82] Model grid differs from ERA5 — interpolating static fields
+    [82] Computing area from model grid (256 lats vs ERA5 256)
+    [85] Model grid differs from ERA5 — interpolating static fields
+    [85] Computing area from model grid (256 lats vs ERA5 256)
+    [86] Model grid differs from ERA5 — interpolating static fields
+    [86] Computing area from model grid (256 lats vs ERA5 256)
+    [36] Drift: 20 steps [12h–240h]
+    [70] Drift: 2 steps [12h–24h]
+    [67] Drift: 2 steps [12h–24h]
+    [76] Drift: 2 steps [12h–24h]
+    [15] Drift: 20 steps [12h–240h]
+    [73] Drift: 2 steps [12h–24h]
+    [53] Drift: 10 steps [12h–120h]
+    [36] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [36] ✓ Drift: dry=+0.00165602%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.102038%/day
+    [42] Drift: 20 steps [12h–240h]
+    [36] ✓ KE spectrum saved (l_max=127)
+    [39] Drift: 20 steps [12h–240h]
+    [79] Drift: 2 steps [12h–24h]
+    [45] Drift: 20 steps [12h–240h]
+  [87/1098] init=2020-01-29T00:00:00.000000000  lead=10d (240h)  valid=2020-02-08T00:00:00.000000000
+    [87] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [87] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [50] Drift: 10 steps [12h–120h]
+    [33] Drift: 20 steps [12h–240h]
+    [9] Drift: 20 steps [12h–240h]
+    [70] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [70] ✓ Drift: dry=-0.00168366%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.180782%/day
+    [70] ✓ KE spectrum saved (l_max=127)
+  [88/1098] init=2020-01-30T00:00:00.000000000  lead=12h (12h)  valid=2020-01-30T12:00:00.000000000
+    [88] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [88] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [67] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [67] ✓ Drift: dry=-0.000566301%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.36687%/day
+    [67] ✓ KE spectrum saved (l_max=127)
+    [76] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [76] ✓ Drift: dry=-0.00354194%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.086955%/day
+    [76] ✓ KE spectrum saved (l_max=127)
+    [12] Drift: 20 steps [12h–240h]
+  [90/1098] init=2020-01-30T00:00:00.000000000  lead=10d (240h)  valid=2020-02-09T00:00:00.000000000
+    [90] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [90] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [3] Drift: 20 steps [12h–240h]
+  [89/1098] init=2020-01-30T00:00:00.000000000  lead=5d (120h)  valid=2020-02-04T00:00:00.000000000
+    [89] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [89] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [15] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [15] ✓ Drift: dry=+0.00175766%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0567621%/day
+    [73] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [73] ✓ Drift: dry=-0.00232119%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.135507%/day
+    [73] ✓ KE spectrum saved (l_max=127)
+    [53] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [53] ✓ Drift: dry=+0.00180474%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.199005%/day
+    [53] ✓ KE spectrum saved (l_max=127)
+    [59] Drift: 10 steps [12h–120h]
+  [91/1098] init=2020-01-31T00:00:00.000000000  lead=12h (12h)  valid=2020-01-31T12:00:00.000000000
+    [91] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [91] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [15] ✓ KE spectrum saved (l_max=127)
+    [87] Model grid differs from ERA5 — interpolating static fields
+    [87] Computing area from model grid (256 lats vs ERA5 256)
+    [56] Drift: 10 steps [12h–120h]
+    [82] Drift: 2 steps [12h–24h]
+  [92/1098] init=2020-01-31T00:00:00.000000000  lead=5d (120h)  valid=2020-02-05T00:00:00.000000000
+    [92] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [92] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [42] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [42] ✓ Drift: dry=+0.00181642%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.144859%/day
+  [93/1098] init=2020-01-31T00:00:00.000000000  lead=10d (240h)  valid=2020-02-10T00:00:00.000000000
+    [93] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [93] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [27] Drift: 20 steps [12h–240h]
+    [79] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [79] ✓ Drift: dry=-0.0026836%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.192867%/day
+    [79] ✓ KE spectrum saved (l_max=127)
+    [62] Drift: 10 steps [12h–120h]
+    [39] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [39] ✓ Drift: dry=+0.00178238%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.185938%/day
+    [42] ✓ KE spectrum saved (l_max=127)
+    [45] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [45] ✓ Drift: dry=+0.00216765%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.191578%/day
+  [94/1098] init=2020-02-01T00:00:00.000000000  lead=12h (12h)  valid=2020-02-01T12:00:00.000000000
+    [94] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [94] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [85] Drift: 2 steps [12h–24h]
+  [95/1098] init=2020-02-01T00:00:00.000000000  lead=5d (120h)  valid=2020-02-06T00:00:00.000000000
+    [95] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [95] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [39] ✓ KE spectrum saved (l_max=127)
+    [45] ✓ KE spectrum saved (l_max=127)
+    [50] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [50] ✓ Drift: dry=+0.00204481%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.348872%/day
+    [50] ✓ KE spectrum saved (l_max=127)
+  [96/1098] init=2020-02-01T00:00:00.000000000  lead=10d (240h)  valid=2020-02-11T00:00:00.000000000
+    [96] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [96] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [88] Model grid differs from ERA5 — interpolating static fields
+    [88] Computing area from model grid (256 lats vs ERA5 256)
+  [97/1098] init=2020-02-02T00:00:00.000000000  lead=12h (12h)  valid=2020-02-02T12:00:00.000000000
+    [97] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [97] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [98/1098] init=2020-02-02T00:00:00.000000000  lead=5d (120h)  valid=2020-02-07T00:00:00.000000000
+    [98] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [98] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [33] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [33] ✓ Drift: dry=+0.00147391%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0492017%/day
+    [9] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [9] ✓ Drift: dry=+0.00133977%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.275934%/day
+    [24] Drift: 20 steps [12h–240h]
+    [33] ✓ KE spectrum saved (l_max=127)
+    [90] Model grid differs from ERA5 — interpolating static fields
+    [12] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [12] ✓ Drift: dry=+0.00128696%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.180059%/day
+    [90] Computing area from model grid (256 lats vs ERA5 256)
+    [89] Model grid differs from ERA5 — interpolating static fields
+    [89] Computing area from model grid (256 lats vs ERA5 256)
+    [92] Model grid differs from ERA5 — interpolating static fields
+    [92] Computing area from model grid (256 lats vs ERA5 256)
+    [9] ✓ KE spectrum saved (l_max=127)
+  [99/1098] init=2020-02-02T00:00:00.000000000  lead=10d (240h)  valid=2020-02-12T00:00:00.000000000
+    [99] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [99] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [12] ✓ KE spectrum saved (l_max=127)
+  [101/1098] init=2020-02-03T00:00:00.000000000  lead=5d (120h)  valid=2020-02-08T00:00:00.000000000
+    [101] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [101] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [100/1098] init=2020-02-03T00:00:00.000000000  lead=12h (12h)  valid=2020-02-03T12:00:00.000000000
+    [100] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [100] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [93] Model grid differs from ERA5 — interpolating static fields
+    [93] Computing area from model grid (256 lats vs ERA5 256)
+    [91] Model grid differs from ERA5 — interpolating static fields
+    [91] Computing area from model grid (256 lats vs ERA5 256)
+    [94] Model grid differs from ERA5 — interpolating static fields
+    [59] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [59] ✓ Drift: dry=+0.00181117%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.225178%/day
+    [94] Computing area from model grid (256 lats vs ERA5 256)
+    [21] Drift: 20 steps [12h–240h]
+    [59] ✓ KE spectrum saved (l_max=127)
+    [3] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [3] ✓ Drift: dry=+0.00161396%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.116287%/day
+    [82] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [82] ✓ Drift: dry=-0.00437215%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.534749%/day
+    [82] ✓ KE spectrum saved (l_max=127)
+    [56] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [56] ✓ Drift: dry=+0.00146665%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0701922%/day
+    [56] ✓ KE spectrum saved (l_max=127)
+    [95] Model grid differs from ERA5 — interpolating static fields
+    [95] Computing area from model grid (256 lats vs ERA5 256)
+  [104/1098] init=2020-02-04T00:00:00.000000000  lead=5d (120h)  valid=2020-02-09T00:00:00.000000000
+    [104] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [104] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [103/1098] init=2020-02-04T00:00:00.000000000  lead=12h (12h)  valid=2020-02-04T12:00:00.000000000
+    [103] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [103] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [102/1098] init=2020-02-03T00:00:00.000000000  lead=10d (240h)  valid=2020-02-13T00:00:00.000000000
+    [102] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [102] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [62] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [62] ✓ Drift: dry=+0.00190648%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.399548%/day
+    [62] ✓ KE spectrum saved (l_max=127)
+    [27] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [27] ✓ Drift: dry=+0.0015857%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0109857%/day
+    [3] ✓ KE spectrum saved (l_max=127)
+    [98] Model grid differs from ERA5 — interpolating static fields
+    [96] Model grid differs from ERA5 — interpolating static fields
+    [98] Computing area from model grid (256 lats vs ERA5 256)
+    [85] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [85] ✓ Drift: dry=-0.00318701%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0107142%/day
+    [97] Model grid differs from ERA5 — interpolating static fields
+    [85] ✓ KE spectrum saved (l_max=127)
+    [96] Computing area from model grid (256 lats vs ERA5 256)
+    [97] Computing area from model grid (256 lats vs ERA5 256)
+  [106/1098] init=2020-02-05T00:00:00.000000000  lead=12h (12h)  valid=2020-02-05T12:00:00.000000000
+    [106] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [106] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [27] ✓ KE spectrum saved (l_max=127)
+  [105/1098] init=2020-02-04T00:00:00.000000000  lead=10d (240h)  valid=2020-02-14T00:00:00.000000000
+    [105] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [105] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [108/1098] init=2020-02-05T00:00:00.000000000  lead=10d (240h)  valid=2020-02-15T00:00:00.000000000
+    [108] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [108] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [107/1098] init=2020-02-05T00:00:00.000000000  lead=5d (120h)  valid=2020-02-10T00:00:00.000000000
+    [107] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [107] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [6] Drift: 20 steps [12h–240h]
+    [99] Model grid differs from ERA5 — interpolating static fields
+    [99] Computing area from model grid (256 lats vs ERA5 256)
+    [48] Drift: 20 steps [12h–240h]
+    [100] Model grid differs from ERA5 — interpolating static fields
+    [101] Model grid differs from ERA5 — interpolating static fields
+    [100] Computing area from model grid (256 lats vs ERA5 256)
+    [24] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [24] ✓ Drift: dry=+0.00163829%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0178096%/day
+    [101] Computing area from model grid (256 lats vs ERA5 256)
+    [24] ✓ KE spectrum saved (l_max=127)
+  [109/1098] init=2020-02-06T00:00:00.000000000  lead=12h (12h)  valid=2020-02-06T12:00:00.000000000
+    [109] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [109] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [104] Model grid differs from ERA5 — interpolating static fields
+    [104] Computing area from model grid (256 lats vs ERA5 256)
+    [103] Model grid differs from ERA5 — interpolating static fields
+    [103] Computing area from model grid (256 lats vs ERA5 256)
+    [102] Model grid differs from ERA5 — interpolating static fields
+    [102] Computing area from model grid (256 lats vs ERA5 256)
+    [21] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [21] ✓ Drift: dry=+0.00166171%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.00645561%/day
+    [30] Drift: 20 steps [12h–240h]
+    [106] Model grid differs from ERA5 — interpolating static fields
+    [21] ✓ KE spectrum saved (l_max=127)
+    [105] Model grid differs from ERA5 — interpolating static fields
+    [108] Model grid differs from ERA5 — interpolating static fields
+    [108] Computing area from model grid (256 lats vs ERA5 256)
+    [106] Computing area from model grid (256 lats vs ERA5 256)
+    [107] Model grid differs from ERA5 — interpolating static fields
+    [107] Computing area from model grid (256 lats vs ERA5 256)
+    [105] Computing area from model grid (256 lats vs ERA5 256)
+  [110/1098] init=2020-02-06T00:00:00.000000000  lead=5d (120h)  valid=2020-02-11T00:00:00.000000000
+    [110] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [110] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [18] Drift: 20 steps [12h–240h]
+    [6] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [6] ✓ Drift: dry=+0.00154046%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.156728%/day
+    [48] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [48] ✓ Drift: dry=+0.00194958%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.150078%/day
+    [109] Model grid differs from ERA5 — interpolating static fields
+    [109] Computing area from model grid (256 lats vs ERA5 256)
+    [6] ✓ KE spectrum saved (l_max=127)
+    [48] ✓ KE spectrum saved (l_max=127)
+  [112/1098] init=2020-02-07T00:00:00.000000000  lead=12h (12h)  valid=2020-02-07T12:00:00.000000000
+    [112] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [112] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [111/1098] init=2020-02-06T00:00:00.000000000  lead=10d (240h)  valid=2020-02-16T00:00:00.000000000
+    [111] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [111] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [110] Model grid differs from ERA5 — interpolating static fields
+    [110] Computing area from model grid (256 lats vs ERA5 256)
+    [88] Drift: 2 steps [12h–24h]
+    [30] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [30] ✓ Drift: dry=+0.00153043%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0579906%/day
+    [18] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [18] ✓ Drift: dry=+0.00163836%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0821472%/day
+    [65] Drift: 10 steps [12h–120h]
+    [30] ✓ KE spectrum saved (l_max=127)
+    [18] ✓ KE spectrum saved (l_max=127)
+  [113/1098] init=2020-02-07T00:00:00.000000000  lead=5d (120h)  valid=2020-02-12T00:00:00.000000000
+    [113] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [113] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [114/1098] init=2020-02-07T00:00:00.000000000  lead=10d (240h)  valid=2020-02-17T00:00:00.000000000
+    [114] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [114] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [111] Model grid differs from ERA5 — interpolating static fields
+    [111] Computing area from model grid (256 lats vs ERA5 256)
+    [112] Model grid differs from ERA5 — interpolating static fields
+    [112] Computing area from model grid (256 lats vs ERA5 256)
+    [94] Drift: 2 steps [12h–24h]
+    [91] Drift: 2 steps [12h–24h]
+    [88] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [88] ✓ Drift: dry=-0.00255459%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0795671%/day
+    [88] ✓ KE spectrum saved (l_max=127)
+  [115/1098] init=2020-02-08T00:00:00.000000000  lead=12h (12h)  valid=2020-02-08T12:00:00.000000000
+    [115] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [115] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [97] Drift: 2 steps [12h–24h]
+    [68] Drift: 10 steps [12h–120h]
+    [114] Model grid differs from ERA5 — interpolating static fields
+    [114] Computing area from model grid (256 lats vs ERA5 256)
+    [113] Model grid differs from ERA5 — interpolating static fields
+    [113] Computing area from model grid (256 lats vs ERA5 256)
+    [65] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [65] ✓ Drift: dry=+0.00217811%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.441979%/day
+    [65] ✓ KE spectrum saved (l_max=127)
+    [71] Drift: 10 steps [12h–120h]
+  [116/1098] init=2020-02-08T00:00:00.000000000  lead=5d (120h)  valid=2020-02-13T00:00:00.000000000
+    [116] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [116] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [100] Drift: 2 steps [12h–24h]
+    [103] Drift: 2 steps [12h–24h]
+    [77] Drift: 10 steps [12h–120h]
+    [94] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [94] ✓ Drift: dry=-0.0038563%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.00916953%/day
+    [94] ✓ KE spectrum saved (l_max=127)
+  [117/1098] init=2020-02-08T00:00:00.000000000  lead=10d (240h)  valid=2020-02-18T00:00:00.000000000
+    [117] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [117] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [115] Model grid differs from ERA5 — interpolating static fields
+    [115] Computing area from model grid (256 lats vs ERA5 256)
+    [74] Drift: 10 steps [12h–120h]
+    [91] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [91] ✓ Drift: dry=-0.00183228%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.195234%/day
+    [91] ✓ KE spectrum saved (l_max=127)
+    [80] Drift: 10 steps [12h–120h]
+  [118/1098] init=2020-02-09T00:00:00.000000000  lead=12h (12h)  valid=2020-02-09T12:00:00.000000000
+    [118] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [118] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [97] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [97] ✓ Drift: dry=-0.0023978%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.218505%/day
+    [106] Drift: 2 steps [12h–24h]
+    [97] ✓ KE spectrum saved (l_max=127)
+    [68] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [68] ✓ Drift: dry=+0.00219194%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.353135%/day
+    [116] Model grid differs from ERA5 — interpolating static fields
+    [68] ✓ KE spectrum saved (l_max=127)
+    [116] Computing area from model grid (256 lats vs ERA5 256)
+  [119/1098] init=2020-02-09T00:00:00.000000000  lead=5d (120h)  valid=2020-02-14T00:00:00.000000000
+    [119] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [119] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [120/1098] init=2020-02-09T00:00:00.000000000  lead=10d (240h)  valid=2020-02-19T00:00:00.000000000
+    [120] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [120] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [71] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [71] ✓ Drift: dry=+0.00186879%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.244351%/day
+    [71] ✓ KE spectrum saved (l_max=127)
+  [121/1098] init=2020-02-10T00:00:00.000000000  lead=12h (12h)  valid=2020-02-10T12:00:00.000000000
+    [121] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [121] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [103] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [103] ✓ Drift: dry=-0.00479598%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.734991%/day
+    [103] ✓ KE spectrum saved (l_max=127)
+    [100] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [100] ✓ Drift: dry=-0.00276839%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.239764%/day
+    [100] ✓ KE spectrum saved (l_max=127)
+  [122/1098] init=2020-02-10T00:00:00.000000000  lead=5d (120h)  valid=2020-02-15T00:00:00.000000000
+    [122] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [122] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [117] Model grid differs from ERA5 — interpolating static fields
+    [117] Computing area from model grid (256 lats vs ERA5 256)
+    [77] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [77] ✓ Drift: dry=+0.0012779%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.00933157%/day
+    [77] ✓ KE spectrum saved (l_max=127)
+  [123/1098] init=2020-02-10T00:00:00.000000000  lead=10d (240h)  valid=2020-02-20T00:00:00.000000000
+    [123] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [123] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [124/1098] init=2020-02-11T00:00:00.000000000  lead=12h (12h)  valid=2020-02-11T12:00:00.000000000
+    [124] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [124] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [74] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [74] ✓ Drift: dry=+0.00181651%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.171943%/day
+    [74] ✓ KE spectrum saved (l_max=127)
+  [125/1098] init=2020-02-11T00:00:00.000000000  lead=5d (120h)  valid=2020-02-16T00:00:00.000000000
+    [125] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [125] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [109] Drift: 2 steps [12h–24h]
+    [118] Model grid differs from ERA5 — interpolating static fields
+    [118] Computing area from model grid (256 lats vs ERA5 256)
+    [120] Model grid differs from ERA5 — interpolating static fields
+    [120] Computing area from model grid (256 lats vs ERA5 256)
+    [80] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [80] ✓ Drift: dry=+0.00152239%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0705637%/day
+    [80] ✓ KE spectrum saved (l_max=127)
+    [119] Model grid differs from ERA5 — interpolating static fields
+    [119] Computing area from model grid (256 lats vs ERA5 256)
+    [106] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [106] ✓ Drift: dry=-0.00438223%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.706477%/day
+    [106] ✓ KE spectrum saved (l_max=127)
+    [86] Drift: 10 steps [12h–120h]
+  [126/1098] init=2020-02-11T00:00:00.000000000  lead=10d (240h)  valid=2020-02-21T00:00:00.000000000
+    [126] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [126] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [127/1098] init=2020-02-12T00:00:00.000000000  lead=12h (12h)  valid=2020-02-12T12:00:00.000000000
+    [127] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [127] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [83] Drift: 10 steps [12h–120h]
+    [122] Model grid differs from ERA5 — interpolating static fields
+    [122] Computing area from model grid (256 lats vs ERA5 256)
+    [124] Model grid differs from ERA5 — interpolating static fields
+    [124] Computing area from model grid (256 lats vs ERA5 256)
+    [112] Drift: 2 steps [12h–24h]
+    [60] Drift: 20 steps [12h–240h]
+    [123] Model grid differs from ERA5 — interpolating static fields
+    [123] Computing area from model grid (256 lats vs ERA5 256)
+    [125] Model grid differs from ERA5 — interpolating static fields
+    [125] Computing area from model grid (256 lats vs ERA5 256)
+    [54] Drift: 20 steps [12h–240h]
+    [51] Drift: 20 steps [12h–240h]
+    [109] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [109] ✓ Drift: dry=-0.00529067%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.720783%/day
+    [109] ✓ KE spectrum saved (l_max=127)
+  [128/1098] init=2020-02-12T00:00:00.000000000  lead=5d (120h)  valid=2020-02-17T00:00:00.000000000
+    [128] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [128] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [121] Model grid differs from ERA5 — interpolating static fields
+    [121] Computing area from model grid (256 lats vs ERA5 256)
+    [127] Model grid differs from ERA5 — interpolating static fields
+    [126] Model grid differs from ERA5 — interpolating static fields
+    [126] Computing area from model grid (256 lats vs ERA5 256)
+    [127] Computing area from model grid (256 lats vs ERA5 256)
+    [86] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [86] ✓ Drift: dry=+0.00137475%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.186368%/day
+    [86] ✓ KE spectrum saved (l_max=127)
+  [129/1098] init=2020-02-12T00:00:00.000000000  lead=10d (240h)  valid=2020-02-22T00:00:00.000000000
+    [129] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [129] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [83] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [83] ✓ Drift: dry=+0.0017344%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.229141%/day
+    [83] ✓ KE spectrum saved (l_max=127)
+  [130/1098] init=2020-02-13T00:00:00.000000000  lead=12h (12h)  valid=2020-02-13T12:00:00.000000000
+    [130] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [130] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [112] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [112] ✓ Drift: dry=-0.00258734%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0287676%/day
+    [112] ✓ KE spectrum saved (l_max=127)
+    [60] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [60] ✓ Drift: dry=+0.00232249%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.264211%/day
+    [60] ✓ KE spectrum saved (l_max=127)
+  [131/1098] init=2020-02-13T00:00:00.000000000  lead=5d (120h)  valid=2020-02-18T00:00:00.000000000
+    [131] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [131] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [132/1098] init=2020-02-13T00:00:00.000000000  lead=10d (240h)  valid=2020-02-23T00:00:00.000000000
+    [132] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [132] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [54] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [54] ✓ Drift: dry=+0.00225666%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.273588%/day
+    [54] ✓ KE spectrum saved (l_max=127)
+    [115] Drift: 2 steps [12h–24h]
+    [57] Drift: 20 steps [12h–240h]
+    [128] Model grid differs from ERA5 — interpolating static fields
+    [128] Computing area from model grid (256 lats vs ERA5 256)
+  [133/1098] init=2020-02-14T00:00:00.000000000  lead=12h (12h)  valid=2020-02-14T12:00:00.000000000
+    [133] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [133] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [51] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [51] ✓ Drift: dry=+0.00218047%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.232979%/day
+    [51] ✓ KE spectrum saved (l_max=127)
+  [134/1098] init=2020-02-14T00:00:00.000000000  lead=5d (120h)  valid=2020-02-19T00:00:00.000000000
+    [134] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [134] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [63] Drift: 20 steps [12h–240h]
+    [129] Model grid differs from ERA5 — interpolating static fields
+    [129] Computing area from model grid (256 lats vs ERA5 256)
+    [130] Model grid differs from ERA5 — interpolating static fields
+    [130] Computing area from model grid (256 lats vs ERA5 256)
+    [131] Model grid differs from ERA5 — interpolating static fields
+    [131] Computing area from model grid (256 lats vs ERA5 256)
+    [132] Model grid differs from ERA5 — interpolating static fields
+    [132] Computing area from model grid (256 lats vs ERA5 256)
+    [133] Model grid differs from ERA5 — interpolating static fields
+    [92] Drift: 10 steps [12h–120h]
+    [133] Computing area from model grid (256 lats vs ERA5 256)
+    [115] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [115] ✓ Drift: dry=-0.00177849%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.209135%/day
+    [115] ✓ KE spectrum saved (l_max=127)
+    [134] Model grid differs from ERA5 — interpolating static fields
+    [134] Computing area from model grid (256 lats vs ERA5 256)
+  [135/1098] init=2020-02-14T00:00:00.000000000  lead=10d (240h)  valid=2020-02-24T00:00:00.000000000
+    [135] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [135] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [57] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [57] ✓ Drift: dry=+0.00224212%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.277574%/day
+    [57] ✓ KE spectrum saved (l_max=127)
+    [118] Drift: 2 steps [12h–24h]
+  [136/1098] init=2020-02-15T00:00:00.000000000  lead=12h (12h)  valid=2020-02-15T12:00:00.000000000
+    [136] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [136] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [63] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [63] ✓ Drift: dry=+0.00219997%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.259619%/day
+    [63] ✓ KE spectrum saved (l_max=127)
+  [137/1098] init=2020-02-15T00:00:00.000000000  lead=5d (120h)  valid=2020-02-20T00:00:00.000000000
+    [137] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [137] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [89] Drift: 10 steps [12h–120h]
+    [121] Drift: 2 steps [12h–24h]
+    [135] Model grid differs from ERA5 — interpolating static fields
+    [92] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [92] ✓ Drift: dry=+0.00110318%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0101497%/day
+    [135] Computing area from model grid (256 lats vs ERA5 256)
+    [92] ✓ KE spectrum saved (l_max=127)
+  [138/1098] init=2020-02-15T00:00:00.000000000  lead=10d (240h)  valid=2020-02-25T00:00:00.000000000
+    [138] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [138] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [124] Drift: 2 steps [12h–24h]
+    [136] Model grid differs from ERA5 — interpolating static fields
+    [136] Computing area from model grid (256 lats vs ERA5 256)
+    [137] Model grid differs from ERA5 — interpolating static fields
+    [137] Computing area from model grid (256 lats vs ERA5 256)
+    [118] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [118] ✓ Drift: dry=-0.00338799%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.471707%/day
+    [118] ✓ KE spectrum saved (l_max=127)
+    [98] Drift: 10 steps [12h–120h]
+  [139/1098] init=2020-02-16T00:00:00.000000000  lead=12h (12h)  valid=2020-02-16T12:00:00.000000000
+    [139] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [139] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [104] Drift: 10 steps [12h–120h]
+    [89] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [89] ✓ Drift: dry=+0.00119792%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.108377%/day
+    [89] ✓ KE spectrum saved (l_max=127)
+    [127] Drift: 2 steps [12h–24h]
+    [101] Drift: 10 steps [12h–120h]
+  [140/1098] init=2020-02-16T00:00:00.000000000  lead=5d (120h)  valid=2020-02-21T00:00:00.000000000
+    [140] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [140] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [138] Model grid differs from ERA5 — interpolating static fields
+    [121] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [121] ✓ Drift: dry=-0.00559321%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.427914%/day
+    [138] Computing area from model grid (256 lats vs ERA5 256)
+    [121] ✓ KE spectrum saved (l_max=127)
+  [141/1098] init=2020-02-16T00:00:00.000000000  lead=10d (240h)  valid=2020-02-26T00:00:00.000000000
+    [141] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [141] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [66] Drift: 20 steps [12h–240h]
+    [124] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [124] ✓ Drift: dry=-0.00392013%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.165239%/day
+    [124] ✓ KE spectrum saved (l_max=127)
+  [142/1098] init=2020-02-17T00:00:00.000000000  lead=12h (12h)  valid=2020-02-17T12:00:00.000000000
+    [142] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [142] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [139] Model grid differs from ERA5 — interpolating static fields
+    [139] Computing area from model grid (256 lats vs ERA5 256)
+    [98] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [98] ✓ Drift: dry=+0.000794773%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.279791%/day
+    [98] ✓ KE spectrum saved (l_max=127)
+  [143/1098] init=2020-02-17T00:00:00.000000000  lead=5d (120h)  valid=2020-02-22T00:00:00.000000000
+    [143] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [143] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [104] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [104] ✓ Drift: dry=+0.000545586%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.20179%/day
+    [104] ✓ KE spectrum saved (l_max=127)
+    [107] Drift: 10 steps [12h–120h]
+    [140] Model grid differs from ERA5 — interpolating static fields
+    [140] Computing area from model grid (256 lats vs ERA5 256)
+  [144/1098] init=2020-02-17T00:00:00.000000000  lead=10d (240h)  valid=2020-02-27T00:00:00.000000000
+    [144] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [144] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [127] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [127] ✓ Drift: dry=-0.00294049%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0869413%/day
+    [127] ✓ KE spectrum saved (l_max=127)
+    [101] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [101] ✓ Drift: dry=+0.000591021%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.323723%/day
+    [101] ✓ KE spectrum saved (l_max=127)
+  [145/1098] init=2020-02-18T00:00:00.000000000  lead=12h (12h)  valid=2020-02-18T12:00:00.000000000
+    [145] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [145] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [146/1098] init=2020-02-18T00:00:00.000000000  lead=5d (120h)  valid=2020-02-23T00:00:00.000000000
+    [146] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [146] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [130] Drift: 2 steps [12h–24h]
+    [141] Model grid differs from ERA5 — interpolating static fields
+    [141] Computing area from model grid (256 lats vs ERA5 256)
+    [133] Drift: 2 steps [12h–24h]
+    [142] Model grid differs from ERA5 — interpolating static fields
+    [142] Computing area from model grid (256 lats vs ERA5 256)
+    [69] Drift: 20 steps [12h–240h]
+    [66] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [66] ✓ Drift: dry=+0.00233719%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.238355%/day
+    [66] ✓ KE spectrum saved (l_max=127)
+    [143] Model grid differs from ERA5 — interpolating static fields
+    [143] Computing area from model grid (256 lats vs ERA5 256)
+  [147/1098] init=2020-02-18T00:00:00.000000000  lead=10d (240h)  valid=2020-02-28T00:00:00.000000000
+    [147] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [147] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [78] Drift: 20 steps [12h–240h]
+    [144] Model grid differs from ERA5 — interpolating static fields
+    [144] Computing area from model grid (256 lats vs ERA5 256)
+    [95] Drift: 10 steps [12h–120h]
+    [145] Model grid differs from ERA5 — interpolating static fields
+    [145] Computing area from model grid (256 lats vs ERA5 256)
+    [107] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [107] ✓ Drift: dry=+0.00092093%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0550992%/day
+    [107] ✓ KE spectrum saved (l_max=127)
+    [110] Drift: 10 steps [12h–120h]
+    [146] Model grid differs from ERA5 — interpolating static fields
+  [148/1098] init=2020-02-19T00:00:00.000000000  lead=12h (12h)  valid=2020-02-19T12:00:00.000000000
+    [148] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [148] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [146] Computing area from model grid (256 lats vs ERA5 256)
+    [72] Drift: 20 steps [12h–240h]
+    [130] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [130] ✓ Drift: dry=-0.00387872%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.679961%/day
+    [130] ✓ KE spectrum saved (l_max=127)
+  [149/1098] init=2020-02-19T00:00:00.000000000  lead=5d (120h)  valid=2020-02-24T00:00:00.000000000
+    [149] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [149] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [133] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [133] ✓ Drift: dry=-0.00509515%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.13252%/day
+    [133] ✓ KE spectrum saved (l_max=127)
+    [75] Drift: 20 steps [12h–240h]
+  [150/1098] init=2020-02-19T00:00:00.000000000  lead=10d (240h)  valid=2020-02-29T00:00:00.000000000
+    [150] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [150] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [69] ⚠ ERA5 drift series failed: operands could not be broadcast together with shapes (256,13) (512,256) 
+    [69] ✓ Drift: dry=+0.00218684%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.195116%/day

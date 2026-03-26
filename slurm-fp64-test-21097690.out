@@ -1,0 +1,9 @@
+Starting FP64 precision test...
+Node: gcn33.local.snellius.surf.nl
+GPU:
+NVIDIA A100-SXM4-40GB, 40960 MiB
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/test_fp64_precision.py", line 17, in <module>
+    import fsspec
+ModuleNotFoundError: No module named 'fsspec'
+Done!

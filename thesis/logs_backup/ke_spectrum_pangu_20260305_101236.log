@@ -1,0 +1,150 @@
+nohup: ignoring input
+
+======================================================================
+  KE SPECTRUM: pangu (2020)
+  Prediction: gs://weatherbench2/datasets/pangu/2018-2022_0012_0p25.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Level: 500 hPa | Lead times: [6, 24, 48, 72, 120, 168, 240]
+======================================================================
+
+/home/ekasteleyn/aurora_thesis/thesis/scripts/run_ke_spectrum.py:57: FutureWarning: In a future version, xarray will not decode the variable 'prediction_timedelta' into a timedelta64 dtype based on the presence of a timedelta-like 'units' attribute by default. Instead it will rely on the presence of a timedelta64 'dtype' attribute, which is now xarray's default way of encoding timedelta64 values.
+To continue decoding into a timedelta64 dtype, either set `decode_timedelta=True` when opening this dataset, or add the attribute `dtype='timedelta64[ns]'` to this variable on disk.
+To opt-in to future behavior, set `decode_timedelta=False`.
+  ds = xr.open_zarr(url, storage_options={"token": "anon"})
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [2/24] 2020-01-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [3/24] 2020-02-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [4/24] 2020-02-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [5/24] 2020-03-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [6/24] 2020-03-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [7/24] 2020-04-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [8/24] 2020-04-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [9/24] 2020-05-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [10/24] 2020-05-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [11/24] 2020-06-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [12/24] 2020-06-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [13/24] 2020-07-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [14/24] 2020-07-15
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓
+     240h pred ✓ (max_l=359) | era5 ✓
+
+  [15/24] 2020-08-01
+       6h pred ✓ (max_l=359) | era5 ✓
+      24h pred ✓ (max_l=359) | era5 ✓
+      48h pred ✓ (max_l=359) | era5 ✓
+      72h pred ✓ (max_l=359) | era5 ✓
+     120h pred ✓ (max_l=359) | era5 ✓
+     168h pred ✓ (max_l=359) | era5 ✓

@@ -1,0 +1,928 @@
+========================================
+  FULL-YEAR PHYSICS EVALUATION
+  aurora vs ERA5 — 2022
+========================================
+Job ID:       20255380
+Date:         Tue Mar  3 15:55:01 CET 2026
+Hostname:     tcn319.local.snellius.surf.nl
+----------------------------------------
+Script:       /home/ekasteleyn/aurora_thesis/thesis/scripts/run_physics_evaluation.py
+Year:         2022
+Model:        aurora
+Predictions:  gs://weatherbench2/datasets/aurora/2022-1440x721.zarr
+Output CSV:   /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_aurora_2022.csv
+Lead times:   6h, 120h, 240h
+Mode:         joint (Aurora + ERA5 intrinsic)
+========================================
+
+Starting evaluation...
+
+======================================================================
+  PHYSICS EVALUATION — WeatherBench 2 Zarr Streaming
+======================================================================
+  Prediction : gs://weatherbench2/datasets/aurora/2022-1440x721.zarr
+  ERA5       : gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Dates  : 365
+  Lead times : ['6h', '5d', '10d']
+  Total evals: 1095
+  Workers    : 48
+  Mode       : joint
+  Output : /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_aurora_2022.csv
+======================================================================
+
+  Checking Zarr stores (anonymous) …
+  Aurora vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']
+  ERA5 vars  : ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_dewpoint_temperature', '2m_temperature', 'above_ground', 'ageostrophic_wind_speed', 'angle_of_sub_gridscale_orography', 'anisotropy_of_sub_gridscale_orography', 'boundary_layer_height', 'divergence', 'eddy_kinetic_energy']
+  ERA5 time dtype: datetime64[ns]
+  ERA5 time range: 1959-01-01T00:00:00.000000000 → 2023-01-10T18:00:00.000000000
+
+  Sanity check — verifying ERA5 time selection on 'temperature':
+    requested=1975-01-03T12:00:00.000000000  actual=1975-01-03T12:00:00.000000000  mean=242.724
+    requested=1991-01-06T00:00:00.000000000  actual=1991-01-06T00:00:00.000000000  mean=242.87
+    requested=2007-01-08T12:00:00.000000000  actual=2007-01-08T12:00:00.000000000  mean=242.841
+  ✓ ERA5 time selection looks correct (values differ).
+
+
+  Launching 48 processes …
+
+  [41/1095] init=2022-01-14T00:00:00.000000000  lead=5d (120h)  valid=2022-01-19T00:00:00.000000000
+    [41] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [37/1095] init=2022-01-13T00:00:00.000000000  lead=6h (6h)  valid=2022-01-13T06:00:00.000000000
+  [9/1095] init=2022-01-03T00:00:00.000000000  lead=10d (240h)  valid=2022-01-13T00:00:00.000000000
+    [37] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [14/1095] init=2022-01-05T00:00:00.000000000  lead=5d (120h)  valid=2022-01-10T00:00:00.000000000
+    [9] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [14] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [22/1095] init=2022-01-08T00:00:00.000000000  lead=6h (6h)  valid=2022-01-08T06:00:00.000000000
+    [22] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [25/1095] init=2022-01-09T00:00:00.000000000  lead=6h (6h)  valid=2022-01-09T06:00:00.000000000
+  [27/1095] init=2022-01-09T00:00:00.000000000  lead=10d (240h)  valid=2022-01-19T00:00:00.000000000
+    [25] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [5/1095] init=2022-01-02T00:00:00.000000000  lead=5d (120h)  valid=2022-01-07T00:00:00.000000000
+    [27] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [5] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [47/1095] init=2022-01-16T00:00:00.000000000  lead=5d (120h)  valid=2022-01-21T00:00:00.000000000
+    [47] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [16/1095] init=2022-01-06T00:00:00.000000000  lead=6h (6h)  valid=2022-01-06T06:00:00.000000000
+  [44/1095] init=2022-01-15T00:00:00.000000000  lead=5d (120h)  valid=2022-01-20T00:00:00.000000000
+  [33/1095] init=2022-01-11T00:00:00.000000000  lead=10d (240h)  valid=2022-01-21T00:00:00.000000000
+    [16] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [44] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [17/1095] init=2022-01-06T00:00:00.000000000  lead=5d (120h)  valid=2022-01-11T00:00:00.000000000
+    [33] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [8/1095] init=2022-01-03T00:00:00.000000000  lead=5d (120h)  valid=2022-01-08T00:00:00.000000000
+    [17] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [8] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [4/1095] init=2022-01-02T00:00:00.000000000  lead=6h (6h)  valid=2022-01-02T06:00:00.000000000
+  [26/1095] init=2022-01-09T00:00:00.000000000  lead=5d (120h)  valid=2022-01-14T00:00:00.000000000
+    [4] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [43/1095] init=2022-01-15T00:00:00.000000000  lead=6h (6h)  valid=2022-01-15T06:00:00.000000000
+    [26] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [43] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [39/1095] init=2022-01-13T00:00:00.000000000  lead=10d (240h)  valid=2022-01-23T00:00:00.000000000
+    [39] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [19/1095] init=2022-01-07T00:00:00.000000000  lead=6h (6h)  valid=2022-01-07T06:00:00.000000000
+  [10/1095] init=2022-01-04T00:00:00.000000000  lead=6h (6h)  valid=2022-01-04T06:00:00.000000000
+    [19] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [30/1095] init=2022-01-10T00:00:00.000000000  lead=10d (240h)  valid=2022-01-20T00:00:00.000000000
+    [10] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [18/1095] init=2022-01-06T00:00:00.000000000  lead=10d (240h)  valid=2022-01-16T00:00:00.000000000
+  [35/1095] init=2022-01-12T00:00:00.000000000  lead=5d (120h)  valid=2022-01-17T00:00:00.000000000
+    [30] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [18] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [7/1095] init=2022-01-03T00:00:00.000000000  lead=6h (6h)  valid=2022-01-03T06:00:00.000000000
+    [35] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [34/1095] init=2022-01-12T00:00:00.000000000  lead=6h (6h)  valid=2022-01-12T06:00:00.000000000
+  [32/1095] init=2022-01-11T00:00:00.000000000  lead=5d (120h)  valid=2022-01-16T00:00:00.000000000
+  [29/1095] init=2022-01-10T00:00:00.000000000  lead=5d (120h)  valid=2022-01-15T00:00:00.000000000
+    [7] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [42/1095] init=2022-01-14T00:00:00.000000000  lead=10d (240h)  valid=2022-01-24T00:00:00.000000000
+    [34] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [29] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [32] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [15/1095] init=2022-01-05T00:00:00.000000000  lead=10d (240h)  valid=2022-01-15T00:00:00.000000000
+    [42] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [15] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [1/1095] init=2022-01-01T00:00:00.000000000  lead=6h (6h)  valid=2022-01-01T06:00:00.000000000
+    [1] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [28/1095] init=2022-01-10T00:00:00.000000000  lead=6h (6h)  valid=2022-01-10T06:00:00.000000000
+    [28] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [13/1095] init=2022-01-05T00:00:00.000000000  lead=6h (6h)  valid=2022-01-05T06:00:00.000000000
+    [13] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [38/1095] init=2022-01-13T00:00:00.000000000  lead=5d (120h)  valid=2022-01-18T00:00:00.000000000
+    [38] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [12/1095] init=2022-01-04T00:00:00.000000000  lead=10d (240h)  valid=2022-01-14T00:00:00.000000000
+  [21/1095] init=2022-01-07T00:00:00.000000000  lead=10d (240h)  valid=2022-01-17T00:00:00.000000000
+    [12] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [21] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [2/1095] init=2022-01-01T00:00:00.000000000  lead=5d (120h)  valid=2022-01-06T00:00:00.000000000
+  [45/1095] init=2022-01-15T00:00:00.000000000  lead=10d (240h)  valid=2022-01-25T00:00:00.000000000
+    [2] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [23/1095] init=2022-01-08T00:00:00.000000000  lead=5d (120h)  valid=2022-01-13T00:00:00.000000000
+  [46/1095] init=2022-01-16T00:00:00.000000000  lead=6h (6h)  valid=2022-01-16T06:00:00.000000000
+    [45] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [23] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [46] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [24/1095] init=2022-01-08T00:00:00.000000000  lead=10d (240h)  valid=2022-01-18T00:00:00.000000000
+  [40/1095] init=2022-01-14T00:00:00.000000000  lead=6h (6h)  valid=2022-01-14T06:00:00.000000000
+    [24] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [40] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [48/1095] init=2022-01-16T00:00:00.000000000  lead=10d (240h)  valid=2022-01-26T00:00:00.000000000
+  [36/1095] init=2022-01-12T00:00:00.000000000  lead=10d (240h)  valid=2022-01-22T00:00:00.000000000
+  [3/1095] init=2022-01-01T00:00:00.000000000  lead=10d (240h)  valid=2022-01-11T00:00:00.000000000
+  [31/1095] init=2022-01-11T00:00:00.000000000  lead=6h (6h)  valid=2022-01-11T06:00:00.000000000
+    [48] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [36] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [3] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [31] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [11/1095] init=2022-01-04T00:00:00.000000000  lead=5d (120h)  valid=2022-01-09T00:00:00.000000000
+    [11] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [6/1095] init=2022-01-02T00:00:00.000000000  lead=10d (240h)  valid=2022-01-12T00:00:00.000000000
+    [6] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [20/1095] init=2022-01-07T00:00:00.000000000  lead=5d (120h)  valid=2022-01-12T00:00:00.000000000
+    [20] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [44] Model grid differs from ERA5 — interpolating static fields
+    [42] Model grid differs from ERA5 — interpolating static fields
+    [31] Model grid differs from ERA5 — interpolating static fields
+    [21] Model grid differs from ERA5 — interpolating static fields
+    [39] Model grid differs from ERA5 — interpolating static fields
+    [27] Model grid differs from ERA5 — interpolating static fields
+    [17] Model grid differs from ERA5 — interpolating static fields
+    [7] Model grid differs from ERA5 — interpolating static fields
+    [38] Model grid differs from ERA5 — interpolating static fields
+    [4] Model grid differs from ERA5 — interpolating static fields
+    [45] Model grid differs from ERA5 — interpolating static fields
+    [12] Model grid differs from ERA5 — interpolating static fields
+    [37] Model grid differs from ERA5 — interpolating static fields
+    [1] Model grid differs from ERA5 — interpolating static fields
+    [9] Model grid differs from ERA5 — interpolating static fields
+    [26] Model grid differs from ERA5 — interpolating static fields
+    [18] Model grid differs from ERA5 — interpolating static fields
+    [23] Model grid differs from ERA5 — interpolating static fields
+    [5] Model grid differs from ERA5 — interpolating static fields
+    [41] Model grid differs from ERA5 — interpolating static fields
+    [36] Model grid differs from ERA5 — interpolating static fields
+    [35] Model grid differs from ERA5 — interpolating static fields
+    [32] Model grid differs from ERA5 — interpolating static fields
+    [14] Model grid differs from ERA5 — interpolating static fields
+    [2] Model grid differs from ERA5 — interpolating static fields
+    [30] Model grid differs from ERA5 — interpolating static fields
+    [47] Model grid differs from ERA5 — interpolating static fields
+    [13] Model grid differs from ERA5 — interpolating static fields
+    [8] Model grid differs from ERA5 — interpolating static fields
+    [42] Computing area from model grid (720 lats vs ERA5 721)
+    [27] Computing area from model grid (720 lats vs ERA5 721)
+    [38] Computing area from model grid (720 lats vs ERA5 721)
+    [39] Computing area from model grid (720 lats vs ERA5 721)
+    [33] Model grid differs from ERA5 — interpolating static fields
+    [45] Computing area from model grid (720 lats vs ERA5 721)
+    [18] Computing area from model grid (720 lats vs ERA5 721)
+    [31] Computing area from model grid (720 lats vs ERA5 721)
+    [5] Computing area from model grid (720 lats vs ERA5 721)
+    [2] Computing area from model grid (720 lats vs ERA5 721)
+    [26] Computing area from model grid (720 lats vs ERA5 721)
+    [14] Computing area from model grid (720 lats vs ERA5 721)
+    [32] Computing area from model grid (720 lats vs ERA5 721)
+    [17] Computing area from model grid (720 lats vs ERA5 721)
+    [12] Computing area from model grid (720 lats vs ERA5 721)
+    [48] Model grid differs from ERA5 — interpolating static fields
+    [30] Computing area from model grid (720 lats vs ERA5 721)
+    [47] Computing area from model grid (720 lats vs ERA5 721)
+    [16] Model grid differs from ERA5 — interpolating static fields
+    [15] Model grid differs from ERA5 — interpolating static fields
+    [11] Model grid differs from ERA5 — interpolating static fields
+    [3] Model grid differs from ERA5 — interpolating static fields
+    [36] Computing area from model grid (720 lats vs ERA5 721)
+    [37] Computing area from model grid (720 lats vs ERA5 721)
+    [9] Computing area from model grid (720 lats vs ERA5 721)
+    [41] Computing area from model grid (720 lats vs ERA5 721)
+    [13] Computing area from model grid (720 lats vs ERA5 721)
+    [44] Computing area from model grid (720 lats vs ERA5 721)
+    [35] Computing area from model grid (720 lats vs ERA5 721)
+    [1] Computing area from model grid (720 lats vs ERA5 721)
+    [4] Computing area from model grid (720 lats vs ERA5 721)
+    [23] Computing area from model grid (720 lats vs ERA5 721)
+    [21] Computing area from model grid (720 lats vs ERA5 721)
+    [7] Computing area from model grid (720 lats vs ERA5 721)
+    [8] Computing area from model grid (720 lats vs ERA5 721)
+    [46] Model grid differs from ERA5 — interpolating static fields
+    [25] Model grid differs from ERA5 — interpolating static fields
+    [34] Model grid differs from ERA5 — interpolating static fields
+    [33] Computing area from model grid (720 lats vs ERA5 721)
+    [48] Computing area from model grid (720 lats vs ERA5 721)
+    [16] Computing area from model grid (720 lats vs ERA5 721)
+    [11] Computing area from model grid (720 lats vs ERA5 721)
+    [15] Computing area from model grid (720 lats vs ERA5 721)
+    [24] Model grid differs from ERA5 — interpolating static fields
+    [3] Computing area from model grid (720 lats vs ERA5 721)
+    [43] Model grid differs from ERA5 — interpolating static fields
+    [25] Computing area from model grid (720 lats vs ERA5 721)
+    [29] Model grid differs from ERA5 — interpolating static fields
+    [46] Computing area from model grid (720 lats vs ERA5 721)
+    [34] Computing area from model grid (720 lats vs ERA5 721)
+    [24] Computing area from model grid (720 lats vs ERA5 721)
+    [43] Computing area from model grid (720 lats vs ERA5 721)
+    [29] Computing area from model grid (720 lats vs ERA5 721)
+    [22] Model grid differs from ERA5 — interpolating static fields
+    [19] Model grid differs from ERA5 — interpolating static fields
+    [20] Model grid differs from ERA5 — interpolating static fields
+    [40] Model grid differs from ERA5 — interpolating static fields
+    [22] Computing area from model grid (720 lats vs ERA5 721)
+    [28] Model grid differs from ERA5 — interpolating static fields
+    [19] Computing area from model grid (720 lats vs ERA5 721)
+    [20] Computing area from model grid (720 lats vs ERA5 721)
+    [40] Computing area from model grid (720 lats vs ERA5 721)
+    [28] Computing area from model grid (720 lats vs ERA5 721)
+    [10] Model grid differs from ERA5 — interpolating static fields
+    [10] Computing area from model grid (720 lats vs ERA5 721)
+    [6] Model grid differs from ERA5 — interpolating static fields
+    [6] Computing area from model grid (720 lats vs ERA5 721)
+    [46] Drift: 2 steps [6h–12h]
+    [16] Drift: 2 steps [6h–12h]
+    [25] Drift: 2 steps [6h–12h]
+    [37] Drift: 2 steps [6h–12h]
+    [34] Drift: 2 steps [6h–12h]
+    [19] Drift: 2 steps [6h–12h]
+    [43] Drift: 2 steps [6h–12h]
+    [10] Drift: 2 steps [6h–12h]
+    [1] Drift: 2 steps [6h–12h]
+    [28] Drift: 2 steps [6h–12h]
+    [7] Drift: 2 steps [6h–12h]
+    [40] Drift: 2 steps [6h–12h]
+    [4] Drift: 2 steps [6h–12h]
+    [22] Drift: 2 steps [6h–12h]
+    [13] Drift: 2 steps [6h–12h]
+    [31] Drift: 2 steps [6h–12h]
+    [37] ✓ Drift: dry=-0.0205371%/day  water=+0.06801%/day  energy=-0.0423751%/day
+    [46] ✓ Drift: dry=-0.0238067%/day  water=+0.114278%/day  energy=-0.0187654%/day
+    [34] ✓ Drift: dry=-0.020438%/day  water=+0.799791%/day  energy=-0.0440127%/day
+    [16] ✓ Drift: dry=-0.0132169%/day  water=+0.0649295%/day  energy=-0.0583994%/day
+    [28] ✓ Drift: dry=-0.0189845%/day  water=+0.710119%/day  energy=-0.0215631%/day
+    [25] ✓ Drift: dry=-0.0163573%/day  water=+0.854685%/day  energy=-0.00633079%/day
+    [10] ✓ Drift: dry=-0.0159403%/day  water=+1.32829%/day  energy=+0.00898144%/day
+    [19] ✓ Drift: dry=-0.0139837%/day  water=+0.61193%/day  energy=-0.0221895%/day
+    [43] ✓ Drift: dry=-0.0153314%/day  water=+0.748927%/day  energy=-0.0185825%/day
+    [1] ✓ Drift: dry=+0.0143833%/day  water=-0.38743%/day  energy=-0.0264509%/day
+  [51/1095] init=2022-01-17T00:00:00.000000000  lead=10d (240h)  valid=2022-01-27T00:00:00.000000000
+    [51] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [50/1095] init=2022-01-17T00:00:00.000000000  lead=5d (120h)  valid=2022-01-22T00:00:00.000000000
+    [50] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [4] ✓ Drift: dry=-0.0258949%/day  water=+1.09153%/day  energy=-0.0085896%/day
+  [49/1095] init=2022-01-17T00:00:00.000000000  lead=6h (6h)  valid=2022-01-17T06:00:00.000000000
+    [49] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [52/1095] init=2022-01-18T00:00:00.000000000  lead=6h (6h)  valid=2022-01-18T06:00:00.000000000
+    [52] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [22] ✓ Drift: dry=-0.0156445%/day  water=+0.754995%/day  energy=+0.000273376%/day
+  [54/1095] init=2022-01-18T00:00:00.000000000  lead=10d (240h)  valid=2022-01-28T00:00:00.000000000
+    [54] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [53/1095] init=2022-01-18T00:00:00.000000000  lead=5d (120h)  valid=2022-01-23T00:00:00.000000000
+    [53] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [7] ✓ Drift: dry=-0.0156828%/day  water=+1.32245%/day  energy=-0.0152233%/day
+  [55/1095] init=2022-01-19T00:00:00.000000000  lead=6h (6h)  valid=2022-01-19T06:00:00.000000000
+    [55] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [56/1095] init=2022-01-19T00:00:00.000000000  lead=5d (120h)  valid=2022-01-24T00:00:00.000000000
+    [56] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [57/1095] init=2022-01-19T00:00:00.000000000  lead=10d (240h)  valid=2022-01-29T00:00:00.000000000
+    [57] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [58/1095] init=2022-01-20T00:00:00.000000000  lead=6h (6h)  valid=2022-01-20T06:00:00.000000000
+    [58] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [40] ✓ Drift: dry=-0.0195565%/day  water=+0.664408%/day  energy=-0.0431957%/day
+  [59/1095] init=2022-01-20T00:00:00.000000000  lead=5d (120h)  valid=2022-01-25T00:00:00.000000000
+    [59] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [13] ✓ Drift: dry=-0.0252591%/day  water=+1.85458%/day  energy=-0.0147217%/day
+  [60/1095] init=2022-01-20T00:00:00.000000000  lead=10d (240h)  valid=2022-01-30T00:00:00.000000000
+    [60] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [61/1095] init=2022-01-21T00:00:00.000000000  lead=6h (6h)  valid=2022-01-21T06:00:00.000000000
+    [61] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [62/1095] init=2022-01-21T00:00:00.000000000  lead=5d (120h)  valid=2022-01-26T00:00:00.000000000
+    [62] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [31] ✓ Drift: dry=-0.0167532%/day  water=+0.39906%/day  energy=-0.0263093%/day
+  [63/1095] init=2022-01-21T00:00:00.000000000  lead=10d (240h)  valid=2022-01-31T00:00:00.000000000
+    [63] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [64/1095] init=2022-01-22T00:00:00.000000000  lead=6h (6h)  valid=2022-01-22T06:00:00.000000000
+    [64] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [51] Model grid differs from ERA5 — interpolating static fields
+    [51] Computing area from model grid (720 lats vs ERA5 721)
+    [50] Model grid differs from ERA5 — interpolating static fields
+    [53] Model grid differs from ERA5 — interpolating static fields
+    [53] Computing area from model grid (720 lats vs ERA5 721)
+    [50] Computing area from model grid (720 lats vs ERA5 721)
+    [49] Model grid differs from ERA5 — interpolating static fields
+    [49] Computing area from model grid (720 lats vs ERA5 721)
+    [55] Model grid differs from ERA5 — interpolating static fields
+    [55] Computing area from model grid (720 lats vs ERA5 721)
+    [57] Model grid differs from ERA5 — interpolating static fields
+    [57] Computing area from model grid (720 lats vs ERA5 721)
+    [52] Model grid differs from ERA5 — interpolating static fields
+    [58] Model grid differs from ERA5 — interpolating static fields
+    [52] Computing area from model grid (720 lats vs ERA5 721)
+    [54] Model grid differs from ERA5 — interpolating static fields
+    [58] Computing area from model grid (720 lats vs ERA5 721)
+    [59] Model grid differs from ERA5 — interpolating static fields
+    [54] Computing area from model grid (720 lats vs ERA5 721)
+    [56] Model grid differs from ERA5 — interpolating static fields
+    [59] Computing area from model grid (720 lats vs ERA5 721)
+    [56] Computing area from model grid (720 lats vs ERA5 721)
+    [60] Model grid differs from ERA5 — interpolating static fields
+    [60] Computing area from model grid (720 lats vs ERA5 721)
+    [62] Model grid differs from ERA5 — interpolating static fields
+    [62] Computing area from model grid (720 lats vs ERA5 721)
+    [63] Model grid differs from ERA5 — interpolating static fields
+    [63] Computing area from model grid (720 lats vs ERA5 721)
+    [61] Model grid differs from ERA5 — interpolating static fields
+    [61] Computing area from model grid (720 lats vs ERA5 721)
+    [29] Drift: 20 steps [6h–120h]
+    [64] Model grid differs from ERA5 — interpolating static fields
+    [64] Computing area from model grid (720 lats vs ERA5 721)
+    [32] Drift: 20 steps [6h–120h]
+    [26] Drift: 20 steps [6h–120h]
+    [38] Drift: 20 steps [6h–120h]
+    [44] Drift: 20 steps [6h–120h]
+    [41] Drift: 20 steps [6h–120h]
+    [20] Drift: 20 steps [6h–120h]
+    [2] Drift: 20 steps [6h–120h]
+    [8] Drift: 20 steps [6h–120h]
+    [35] Drift: 20 steps [6h–120h]
+    [47] Drift: 20 steps [6h–120h]
+    [17] Drift: 20 steps [6h–120h]
+    [14] Drift: 20 steps [6h–120h]
+    [23] Drift: 20 steps [6h–120h]
+    [5] Drift: 20 steps [6h–120h]
+    [11] Drift: 20 steps [6h–120h]
+    [49] Drift: 2 steps [6h–12h]
+    [55] Drift: 2 steps [6h–12h]
+    [52] Drift: 2 steps [6h–12h]
+    [58] Drift: 2 steps [6h–12h]
+    [30] Drift: 40 steps [6h–240h]
+    [49] ✓ Drift: dry=-0.0275846%/day  water=+0.160512%/day  energy=-0.0484122%/day
+    [6] Drift: 40 steps [6h–240h]
+    [26] ✓ Drift: dry=-0.00196058%/day  water=-0.363859%/day  energy=-0.0182342%/day
+    [32] ✓ Drift: dry=-0.000226324%/day  water=-0.526579%/day  energy=-0.0233916%/day
+    [61] Drift: 2 steps [6h–12h]
+  [65/1095] init=2022-01-22T00:00:00.000000000  lead=5d (120h)  valid=2022-01-27T00:00:00.000000000
+    [65] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [20] ✓ Drift: dry=+0.00118774%/day  water=-0.38764%/day  energy=-0.00988699%/day
+    [39] Drift: 40 steps [6h–240h]
+    [8] ✓ Drift: dry=+0.00210634%/day  water=-0.349357%/day  energy=-0.00901132%/day
+    [27] Drift: 40 steps [6h–240h]
+    [18] Drift: 40 steps [6h–240h]
+    [2] ✓ Drift: dry=-0.000188004%/day  water=-0.146356%/day  energy=-0.00397111%/day
+  [66/1095] init=2022-01-22T00:00:00.000000000  lead=10d (240h)  valid=2022-02-01T00:00:00.000000000
+    [66] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [35] ✓ Drift: dry=-0.000262586%/day  water=-0.469362%/day  energy=-0.0186914%/day
+  [67/1095] init=2022-01-23T00:00:00.000000000  lead=6h (6h)  valid=2022-01-23T06:00:00.000000000
+    [67] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [33] Drift: 40 steps [6h–240h]
+    [14] ✓ Drift: dry=+0.00473944%/day  water=-0.226741%/day  energy=-0.00633696%/day
+  [69/1095] init=2022-01-23T00:00:00.000000000  lead=10d (240h)  valid=2022-02-02T00:00:00.000000000
+    [69] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [64] Drift: 2 steps [6h–12h]
+  [68/1095] init=2022-01-23T00:00:00.000000000  lead=5d (120h)  valid=2022-01-28T00:00:00.000000000
+    [68] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [55] ✓ Drift: dry=-0.0254367%/day  water=-0.657674%/day  energy=-0.0612383%/day
+  [70/1095] init=2022-01-24T00:00:00.000000000  lead=6h (6h)  valid=2022-01-24T06:00:00.000000000
+    [70] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [5] ✓ Drift: dry=+0.000877129%/day  water=-0.25051%/day  energy=-0.00534347%/day
+    [17] ✓ Drift: dry=+0.00357598%/day  water=-0.314274%/day  energy=-0.00799945%/day
+  [71/1095] init=2022-01-24T00:00:00.000000000  lead=5d (120h)  valid=2022-01-29T00:00:00.000000000
+    [71] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [44] ✓ Drift: dry=-0.000716925%/day  water=-0.5635%/day  energy=-0.018542%/day
+    [11] ✓ Drift: dry=+0.00313844%/day  water=-0.297688%/day  energy=-0.0101248%/day
+    [42] Drift: 40 steps [6h–240h]
+  [73/1095] init=2022-01-25T00:00:00.000000000  lead=6h (6h)  valid=2022-01-25T06:00:00.000000000
+    [73] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [72/1095] init=2022-01-24T00:00:00.000000000  lead=10d (240h)  valid=2022-02-03T00:00:00.000000000
+    [72] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [3] Drift: 40 steps [6h–240h]
+    [21] Drift: 40 steps [6h–240h]
+    [23] ✓ Drift: dry=-0.000952986%/day  water=-0.489398%/day  energy=-0.0135713%/day
+    [48] Drift: 40 steps [6h–240h]
+    [24] Drift: 40 steps [6h–240h]
+    [58] ✓ Drift: dry=-0.0340795%/day  water=-0.157044%/day  energy=-0.0552554%/day
+    [52] ✓ Drift: dry=-0.0152068%/day  water=-0.693436%/day  energy=-0.050298%/day
+    [9] Drift: 40 steps [6h–240h]
+  [76/1095] init=2022-01-26T00:00:00.000000000  lead=6h (6h)  valid=2022-01-26T06:00:00.000000000
+    [76] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [75/1095] init=2022-01-25T00:00:00.000000000  lead=10d (240h)  valid=2022-02-04T00:00:00.000000000
+    [75] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [77/1095] init=2022-01-26T00:00:00.000000000  lead=5d (120h)  valid=2022-01-31T00:00:00.000000000
+    [77] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [29] ✓ Drift: dry=-0.000494883%/day  water=-0.538408%/day  energy=-0.0196952%/day
+    [47] ✓ Drift: dry=-0.000304491%/day  water=-0.590921%/day  energy=-0.021203%/day
+    [36] Drift: 40 steps [6h–240h]
+  [74/1095] init=2022-01-25T00:00:00.000000000  lead=5d (120h)  valid=2022-01-30T00:00:00.000000000
+    [74] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [15] Drift: 40 steps [6h–240h]
+  [78/1095] init=2022-01-26T00:00:00.000000000  lead=10d (240h)  valid=2022-02-05T00:00:00.000000000
+    [78] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [45] Drift: 40 steps [6h–240h]
+    [12] Drift: 40 steps [6h–240h]
+  [80/1095] init=2022-01-27T00:00:00.000000000  lead=5d (120h)  valid=2022-02-01T00:00:00.000000000
+    [80] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [79/1095] init=2022-01-27T00:00:00.000000000  lead=6h (6h)  valid=2022-01-27T06:00:00.000000000
+    [79] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [38] ✓ Drift: dry=-0.00084214%/day  water=-0.343307%/day  energy=-0.013699%/day
+    [65] Model grid differs from ERA5 — interpolating static fields
+    [65] Computing area from model grid (720 lats vs ERA5 721)
+  [81/1095] init=2022-01-27T00:00:00.000000000  lead=10d (240h)  valid=2022-02-06T00:00:00.000000000
+    [81] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [82/1095] init=2022-01-28T00:00:00.000000000  lead=6h (6h)  valid=2022-01-28T06:00:00.000000000
+    [82] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [41] ✓ Drift: dry=-0.000324951%/day  water=-0.345995%/day  energy=-0.0142326%/day
+    [61] ✓ Drift: dry=-0.0325679%/day  water=+0.73728%/day  energy=-0.0287341%/day
+  [83/1095] init=2022-01-28T00:00:00.000000000  lead=5d (120h)  valid=2022-02-02T00:00:00.000000000
+    [83] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [66] Model grid differs from ERA5 — interpolating static fields
+    [66] Computing area from model grid (720 lats vs ERA5 721)
+  [84/1095] init=2022-01-28T00:00:00.000000000  lead=10d (240h)  valid=2022-02-07T00:00:00.000000000
+    [84] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [85/1095] init=2022-01-29T00:00:00.000000000  lead=6h (6h)  valid=2022-01-29T06:00:00.000000000
+    [85] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [69] Model grid differs from ERA5 — interpolating static fields
+    [69] Computing area from model grid (720 lats vs ERA5 721)
+    [67] Model grid differs from ERA5 — interpolating static fields
+    [67] Computing area from model grid (720 lats vs ERA5 721)
+    [68] Model grid differs from ERA5 — interpolating static fields
+    [68] Computing area from model grid (720 lats vs ERA5 721)
+    [70] Model grid differs from ERA5 — interpolating static fields
+    [71] Model grid differs from ERA5 — interpolating static fields
+    [70] Computing area from model grid (720 lats vs ERA5 721)
+    [71] Computing area from model grid (720 lats vs ERA5 721)
+    [64] ✓ Drift: dry=-0.029838%/day  water=+0.292318%/day  energy=-0.0507911%/day
+    [72] Model grid differs from ERA5 — interpolating static fields
+    [72] Computing area from model grid (720 lats vs ERA5 721)
+    [73] Model grid differs from ERA5 — interpolating static fields
+    [73] Computing area from model grid (720 lats vs ERA5 721)
+  [86/1095] init=2022-01-29T00:00:00.000000000  lead=5d (120h)  valid=2022-02-03T00:00:00.000000000
+    [86] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [74] Model grid differs from ERA5 — interpolating static fields
+    [75] Model grid differs from ERA5 — interpolating static fields
+    [74] Computing area from model grid (720 lats vs ERA5 721)
+    [75] Computing area from model grid (720 lats vs ERA5 721)
+    [76] Model grid differs from ERA5 — interpolating static fields
+    [76] Computing area from model grid (720 lats vs ERA5 721)
+    [50] Drift: 20 steps [6h–120h]
+    [78] Model grid differs from ERA5 — interpolating static fields
+    [77] Model grid differs from ERA5 — interpolating static fields
+    [77] Computing area from model grid (720 lats vs ERA5 721)
+    [78] Computing area from model grid (720 lats vs ERA5 721)
+    [80] Model grid differs from ERA5 — interpolating static fields
+    [80] Computing area from model grid (720 lats vs ERA5 721)
+    [79] Model grid differs from ERA5 — interpolating static fields
+    [79] Computing area from model grid (720 lats vs ERA5 721)
+    [81] Model grid differs from ERA5 — interpolating static fields
+    [81] Computing area from model grid (720 lats vs ERA5 721)
+    [82] Model grid differs from ERA5 — interpolating static fields
+    [82] Computing area from model grid (720 lats vs ERA5 721)
+    [83] Model grid differs from ERA5 — interpolating static fields
+    [56] Drift: 20 steps [6h–120h]
+    [83] Computing area from model grid (720 lats vs ERA5 721)
+    [84] Model grid differs from ERA5 — interpolating static fields
+    [84] Computing area from model grid (720 lats vs ERA5 721)
+    [85] Model grid differs from ERA5 — interpolating static fields
+    [85] Computing area from model grid (720 lats vs ERA5 721)
+    [62] Drift: 20 steps [6h–120h]
+    [53] Drift: 20 steps [6h–120h]
+    [86] Model grid differs from ERA5 — interpolating static fields
+    [86] Computing area from model grid (720 lats vs ERA5 721)
+    [59] Drift: 20 steps [6h–120h]
+    [50] ✓ Drift: dry=-6.89122e-06%/day  water=-0.597711%/day  energy=-0.0209958%/day
+    [67] Drift: 2 steps [6h–12h]
+    [70] Drift: 2 steps [6h–12h]
+  [87/1095] init=2022-01-29T00:00:00.000000000  lead=10d (240h)  valid=2022-02-08T00:00:00.000000000
+    [87] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [76] Drift: 2 steps [6h–12h]
+    [73] Drift: 2 steps [6h–12h]
+    [79] Drift: 2 steps [6h–12h]
+    [56] ✓ Drift: dry=-0.00149882%/day  water=-0.665915%/day  energy=-0.0212479%/day
+    [82] Drift: 2 steps [6h–12h]
+    [70] ✓ Drift: dry=-0.0166387%/day  water=-1.00689%/day  energy=-0.0908407%/day
+  [88/1095] init=2022-01-30T00:00:00.000000000  lead=6h (6h)  valid=2022-01-30T06:00:00.000000000
+    [88] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [67] ✓ Drift: dry=-0.017826%/day  water=-0.720462%/day  energy=-0.0591815%/day
+    [63] Drift: 40 steps [6h–240h]
+    [87] Model grid differs from ERA5 — interpolating static fields
+    [53] ✓ Drift: dry=-0.00186271%/day  water=-0.661242%/day  energy=-0.024348%/day
+    [87] Computing area from model grid (720 lats vs ERA5 721)
+  [89/1095] init=2022-01-30T00:00:00.000000000  lead=5d (120h)  valid=2022-02-04T00:00:00.000000000
+    [89] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [90/1095] init=2022-01-30T00:00:00.000000000  lead=10d (240h)  valid=2022-02-09T00:00:00.000000000
+    [90] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [91/1095] init=2022-01-31T00:00:00.000000000  lead=6h (6h)  valid=2022-01-31T06:00:00.000000000
+    [91] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [51] Drift: 40 steps [6h–240h]
+    [73] ✓ Drift: dry=-0.0177827%/day  water=-0.161265%/day  energy=-0.0544518%/day
+    [76] ✓ Drift: dry=-0.00393153%/day  water=+0.240268%/day  energy=-0.0270065%/day
+    [57] Drift: 40 steps [6h–240h]
+  [93/1095] init=2022-01-31T00:00:00.000000000  lead=10d (240h)  valid=2022-02-10T00:00:00.000000000
+    [93] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [92/1095] init=2022-01-31T00:00:00.000000000  lead=5d (120h)  valid=2022-02-05T00:00:00.000000000
+    [92] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [85] Drift: 2 steps [6h–12h]
+    [59] ✓ Drift: dry=+0.000365396%/day  water=-0.721706%/day  energy=-0.0246903%/day
+    [79] ✓ Drift: dry=-0.0233372%/day  water=+0.533488%/day  energy=-0.0571408%/day
+  [94/1095] init=2022-02-01T00:00:00.000000000  lead=6h (6h)  valid=2022-02-01T06:00:00.000000000
+    [94] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [82] ✓ Drift: dry=-0.0292086%/day  water=+0.0255582%/day  energy=-0.0600614%/day
+    [88] Model grid differs from ERA5 — interpolating static fields
+    [27] ✓ Drift: dry=+0.00607967%/day  water=-0.476665%/day  energy=-0.00884366%/day
+    [88] Computing area from model grid (720 lats vs ERA5 721)
+    [39] ✓ Drift: dry=+0.00757023%/day  water=-0.448518%/day  energy=-0.00803144%/day
+  [95/1095] init=2022-02-01T00:00:00.000000000  lead=5d (120h)  valid=2022-02-06T00:00:00.000000000
+    [95] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [18] ✓ Drift: dry=+0.00680561%/day  water=-0.379821%/day  energy=-0.00192417%/day
+    [89] Model grid differs from ERA5 — interpolating static fields
+    [89] Computing area from model grid (720 lats vs ERA5 721)
+    [62] ✓ Drift: dry=+0.0030126%/day  water=-0.876532%/day  energy=-0.0318113%/day
+  [96/1095] init=2022-02-01T00:00:00.000000000  lead=10d (240h)  valid=2022-02-11T00:00:00.000000000
+    [96] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [60] Drift: 40 steps [6h–240h]
+    [33] ✓ Drift: dry=+0.00536665%/day  water=-0.45604%/day  energy=-0.0105473%/day
+    [90] Model grid differs from ERA5 — interpolating static fields
+    [90] Computing area from model grid (720 lats vs ERA5 721)
+  [98/1095] init=2022-02-02T00:00:00.000000000  lead=5d (120h)  valid=2022-02-07T00:00:00.000000000
+    [98] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [99/1095] init=2022-02-02T00:00:00.000000000  lead=10d (240h)  valid=2022-02-12T00:00:00.000000000
+    [99] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [24] ✓ Drift: dry=+0.00572777%/day  water=-0.469083%/day  energy=-0.0066736%/day
+  [97/1095] init=2022-02-02T00:00:00.000000000  lead=6h (6h)  valid=2022-02-02T06:00:00.000000000
+    [97] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [54] Drift: 40 steps [6h–240h]
+  [100/1095] init=2022-02-03T00:00:00.000000000  lead=6h (6h)  valid=2022-02-03T06:00:00.000000000
+    [100] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [91] Model grid differs from ERA5 — interpolating static fields
+    [91] Computing area from model grid (720 lats vs ERA5 721)
+  [101/1095] init=2022-02-03T00:00:00.000000000  lead=5d (120h)  valid=2022-02-08T00:00:00.000000000
+    [101] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [92] Model grid differs from ERA5 — interpolating static fields
+    [92] Computing area from model grid (720 lats vs ERA5 721)
+    [93] Model grid differs from ERA5 — interpolating static fields
+    [93] Computing area from model grid (720 lats vs ERA5 721)
+  [102/1095] init=2022-02-03T00:00:00.000000000  lead=10d (240h)  valid=2022-02-13T00:00:00.000000000
+    [102] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [3] ✓ Drift: dry=+0.00717374%/day  water=-0.173503%/day  energy=+0.00299313%/day
+    [21] ✓ Drift: dry=+0.00567916%/day  water=-0.418966%/day  energy=-0.00425635%/day
+    [9] ✓ Drift: dry=+0.00903163%/day  water=-0.21516%/day  energy=+0.0056795%/day
+    [12] ✓ Drift: dry=+0.00766053%/day  water=-0.295098%/day  energy=+0.000553031%/day
+  [104/1095] init=2022-02-04T00:00:00.000000000  lead=5d (120h)  valid=2022-02-09T00:00:00.000000000
+    [104] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [103/1095] init=2022-02-04T00:00:00.000000000  lead=6h (6h)  valid=2022-02-04T06:00:00.000000000
+    [103] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [85] ✓ Drift: dry=-0.0290442%/day  water=-0.246215%/day  energy=-0.055835%/day
+    [65] Drift: 20 steps [6h–120h]
+  [106/1095] init=2022-02-05T00:00:00.000000000  lead=6h (6h)  valid=2022-02-05T06:00:00.000000000
+    [106] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [105/1095] init=2022-02-04T00:00:00.000000000  lead=10d (240h)  valid=2022-02-14T00:00:00.000000000
+    [105] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [107/1095] init=2022-02-05T00:00:00.000000000  lead=5d (120h)  valid=2022-02-10T00:00:00.000000000
+    [107] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [94] Model grid differs from ERA5 — interpolating static fields
+    [94] Computing area from model grid (720 lats vs ERA5 721)
+    [42] ✓ Drift: dry=+0.00552763%/day  water=-0.437308%/day  energy=-0.00797084%/day
+    [45] ✓ Drift: dry=+0.00549111%/day  water=-0.587518%/day  energy=-0.00871686%/day
+    [95] Model grid differs from ERA5 — interpolating static fields
+    [95] Computing area from model grid (720 lats vs ERA5 721)
+    [71] Drift: 20 steps [6h–120h]
+    [30] ✓ Drift: dry=+0.00575024%/day  water=-0.450265%/day  energy=-0.00996681%/day
+    [96] Model grid differs from ERA5 — interpolating static fields
+    [96] Computing area from model grid (720 lats vs ERA5 721)
+    [99] Model grid differs from ERA5 — interpolating static fields
+    [99] Computing area from model grid (720 lats vs ERA5 721)
+  [108/1095] init=2022-02-05T00:00:00.000000000  lead=10d (240h)  valid=2022-02-15T00:00:00.000000000
+    [108] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [68] Drift: 20 steps [6h–120h]
+  [109/1095] init=2022-02-06T00:00:00.000000000  lead=6h (6h)  valid=2022-02-06T06:00:00.000000000
+    [109] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [74] Drift: 20 steps [6h–120h]
+    [98] Model grid differs from ERA5 — interpolating static fields
+    [98] Computing area from model grid (720 lats vs ERA5 721)
+  [110/1095] init=2022-02-06T00:00:00.000000000  lead=5d (120h)  valid=2022-02-11T00:00:00.000000000
+    [110] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [97] Model grid differs from ERA5 — interpolating static fields
+    [97] Computing area from model grid (720 lats vs ERA5 721)
+    [77] Drift: 20 steps [6h–120h]
+    [101] Model grid differs from ERA5 — interpolating static fields
+    [101] Computing area from model grid (720 lats vs ERA5 721)
+    [80] Drift: 20 steps [6h–120h]
+    [100] Model grid differs from ERA5 — interpolating static fields
+    [102] Model grid differs from ERA5 — interpolating static fields
+    [100] Computing area from model grid (720 lats vs ERA5 721)
+    [102] Computing area from model grid (720 lats vs ERA5 721)
+    [104] Model grid differs from ERA5 — interpolating static fields
+    [104] Computing area from model grid (720 lats vs ERA5 721)
+    [103] Model grid differs from ERA5 — interpolating static fields
+    [103] Computing area from model grid (720 lats vs ERA5 721)
+    [105] Model grid differs from ERA5 — interpolating static fields
+    [105] Computing area from model grid (720 lats vs ERA5 721)
+    [106] Model grid differs from ERA5 — interpolating static fields
+    [106] Computing area from model grid (720 lats vs ERA5 721)
+    [107] Model grid differs from ERA5 — interpolating static fields
+    [107] Computing area from model grid (720 lats vs ERA5 721)
+    [6] ✓ Drift: dry=+0.00795587%/day  water=-0.256702%/day  energy=+0.00337465%/day
+    [108] Model grid differs from ERA5 — interpolating static fields
+    [108] Computing area from model grid (720 lats vs ERA5 721)
+    [36] ✓ Drift: dry=+0.00794304%/day  water=-0.466681%/day  energy=-0.00893238%/day
+    [110] Model grid differs from ERA5 — interpolating static fields
+    [15] ✓ Drift: dry=+0.00896737%/day  water=-0.365205%/day  energy=-0.0012188%/day
+    [110] Computing area from model grid (720 lats vs ERA5 721)
+    [109] Model grid differs from ERA5 — interpolating static fields
+    [109] Computing area from model grid (720 lats vs ERA5 721)
+  [111/1095] init=2022-02-06T00:00:00.000000000  lead=10d (240h)  valid=2022-02-16T00:00:00.000000000
+    [111] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [112/1095] init=2022-02-07T00:00:00.000000000  lead=6h (6h)  valid=2022-02-07T06:00:00.000000000
+    [112] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [113/1095] init=2022-02-07T00:00:00.000000000  lead=5d (120h)  valid=2022-02-12T00:00:00.000000000
+    [113] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [86] Drift: 20 steps [6h–120h]
+    [48] ✓ Drift: dry=+0.00575642%/day  water=-0.603374%/day  energy=-0.0112052%/day
+  [114/1095] init=2022-02-07T00:00:00.000000000  lead=10d (240h)  valid=2022-02-17T00:00:00.000000000
+    [114] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [83] Drift: 20 steps [6h–120h]
+    [111] Model grid differs from ERA5 — interpolating static fields
+    [111] Computing area from model grid (720 lats vs ERA5 721)
+    [113] Model grid differs from ERA5 — interpolating static fields
+    [113] Computing area from model grid (720 lats vs ERA5 721)
+    [112] Model grid differs from ERA5 — interpolating static fields
+    [112] Computing area from model grid (720 lats vs ERA5 721)
+    [114] Model grid differs from ERA5 — interpolating static fields
+    [88] Drift: 2 steps [6h–12h]
+    [114] Computing area from model grid (720 lats vs ERA5 721)
+    [71] ✓ Drift: dry=+0.00259673%/day  water=-0.620874%/day  energy=-0.0357296%/day
+    [91] Drift: 2 steps [6h–12h]
+    [68] ✓ Drift: dry=+0.0052292%/day  water=-0.829225%/day  energy=-0.0346024%/day
+  [115/1095] init=2022-02-08T00:00:00.000000000  lead=6h (6h)  valid=2022-02-08T06:00:00.000000000
+    [115] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [116/1095] init=2022-02-08T00:00:00.000000000  lead=5d (120h)  valid=2022-02-13T00:00:00.000000000
+    [116] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [88] ✓ Drift: dry=-0.0120657%/day  water=-0.754866%/day  energy=-0.0761604%/day
+    [74] ✓ Drift: dry=-0.00130226%/day  water=-0.402554%/day  energy=-0.0319277%/day
+  [117/1095] init=2022-02-08T00:00:00.000000000  lead=10d (240h)  valid=2022-02-18T00:00:00.000000000
+    [117] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [118/1095] init=2022-02-09T00:00:00.000000000  lead=6h (6h)  valid=2022-02-09T06:00:00.000000000
+    [118] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [65] ✓ Drift: dry=+0.00558659%/day  water=-0.805387%/day  energy=-0.0316994%/day
+    [66] Drift: 40 steps [6h–240h]
+  [119/1095] init=2022-02-09T00:00:00.000000000  lead=5d (120h)  valid=2022-02-14T00:00:00.000000000
+    [119] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [77] ✓ Drift: dry=-0.00290537%/day  water=-0.451485%/day  energy=-0.0304623%/day
+    [91] ✓ Drift: dry=-0.0251322%/day  water=-0.455129%/day  energy=-0.0457991%/day
+  [120/1095] init=2022-02-09T00:00:00.000000000  lead=10d (240h)  valid=2022-02-19T00:00:00.000000000
+    [120] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [94] Drift: 2 steps [6h–12h]
+  [121/1095] init=2022-02-10T00:00:00.000000000  lead=6h (6h)  valid=2022-02-10T06:00:00.000000000
+    [121] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [115] Model grid differs from ERA5 — interpolating static fields
+    [115] Computing area from model grid (720 lats vs ERA5 721)
+    [69] Drift: 40 steps [6h–240h]
+    [116] Model grid differs from ERA5 — interpolating static fields
+    [116] Computing area from model grid (720 lats vs ERA5 721)
+    [103] Drift: 2 steps [6h–12h]
+    [100] Drift: 2 steps [6h–12h]
+    [80] ✓ Drift: dry=-0.000923918%/day  water=-0.532549%/day  energy=-0.0279374%/day
+    [106] Drift: 2 steps [6h–12h]
+    [72] Drift: 40 steps [6h–240h]
+    [97] Drift: 2 steps [6h–12h]
+    [118] Model grid differs from ERA5 — interpolating static fields
+    [118] Computing area from model grid (720 lats vs ERA5 721)
+  [122/1095] init=2022-02-10T00:00:00.000000000  lead=5d (120h)  valid=2022-02-15T00:00:00.000000000
+    [122] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [117] Model grid differs from ERA5 — interpolating static fields
+    [117] Computing area from model grid (720 lats vs ERA5 721)
+    [75] Drift: 40 steps [6h–240h]
+    [89] Drift: 20 steps [6h–120h]
+    [119] Model grid differs from ERA5 — interpolating static fields
+    [119] Computing area from model grid (720 lats vs ERA5 721)
+    [120] Model grid differs from ERA5 — interpolating static fields
+    [120] Computing area from model grid (720 lats vs ERA5 721)
+    [78] Drift: 40 steps [6h–240h]
+    [94] ✓ Drift: dry=-0.0150889%/day  water=-0.631491%/day  energy=-0.0425212%/day
+    [121] Model grid differs from ERA5 — interpolating static fields
+    [103] ✓ Drift: dry=-0.0213736%/day  water=-0.685058%/day  energy=-0.0414261%/day
+    [121] Computing area from model grid (720 lats vs ERA5 721)
+    [109] Drift: 2 steps [6h–12h]
+    [100] ✓ Drift: dry=-0.0146616%/day  water=-0.268674%/day  energy=-0.0526988%/day
+  [123/1095] init=2022-02-10T00:00:00.000000000  lead=10d (240h)  valid=2022-02-20T00:00:00.000000000
+    [123] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [124/1095] init=2022-02-11T00:00:00.000000000  lead=6h (6h)  valid=2022-02-11T06:00:00.000000000
+    [124] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [106] ✓ Drift: dry=-0.0210911%/day  water=-0.153198%/day  energy=-0.0477405%/day
+  [125/1095] init=2022-02-11T00:00:00.000000000  lead=5d (120h)  valid=2022-02-16T00:00:00.000000000
+    [125] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [122] Model grid differs from ERA5 — interpolating static fields
+    [122] Computing area from model grid (720 lats vs ERA5 721)
+  [126/1095] init=2022-02-11T00:00:00.000000000  lead=10d (240h)  valid=2022-02-21T00:00:00.000000000
+    [126] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [97] ✓ Drift: dry=-0.018768%/day  water=-0.592921%/day  energy=-0.0669846%/day
+  [127/1095] init=2022-02-12T00:00:00.000000000  lead=6h (6h)  valid=2022-02-12T06:00:00.000000000
+    [127] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [104] Drift: 20 steps [6h–120h]
+    [92] Drift: 20 steps [6h–120h]
+    [109] ✓ Drift: dry=-0.0136087%/day  water=+0.0847145%/day  energy=-0.0355032%/day
+    [123] Model grid differs from ERA5 — interpolating static fields
+    [124] Model grid differs from ERA5 — interpolating static fields
+    [81] Drift: 40 steps [6h–240h]
+  [128/1095] init=2022-02-12T00:00:00.000000000  lead=5d (120h)  valid=2022-02-17T00:00:00.000000000
+    [128] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [124] Computing area from model grid (720 lats vs ERA5 721)
+    [123] Computing area from model grid (720 lats vs ERA5 721)
+    [125] Model grid differs from ERA5 — interpolating static fields
+    [125] Computing area from model grid (720 lats vs ERA5 721)
+    [51] ✓ Drift: dry=+0.00597185%/day  water=-0.621938%/day  energy=-0.0131962%/day
+    [126] Model grid differs from ERA5 — interpolating static fields
+    [63] ✓ Drift: dry=+0.0108329%/day  water=-0.459234%/day  energy=-0.0094701%/day
+    [126] Computing area from model grid (720 lats vs ERA5 721)
+    [86] ✓ Drift: dry=+0.00160769%/day  water=-0.898663%/day  energy=-0.033211%/day
+  [129/1095] init=2022-02-12T00:00:00.000000000  lead=10d (240h)  valid=2022-02-22T00:00:00.000000000
+    [129] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [54] ✓ Drift: dry=+0.00580421%/day  water=-0.562513%/day  energy=-0.0105207%/day
+    [112] Drift: 2 steps [6h–12h]
+  [130/1095] init=2022-02-13T00:00:00.000000000  lead=6h (6h)  valid=2022-02-13T06:00:00.000000000
+    [130] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [98] Drift: 20 steps [6h–120h]
+    [95] Drift: 20 steps [6h–120h]
+  [131/1095] init=2022-02-13T00:00:00.000000000  lead=5d (120h)  valid=2022-02-18T00:00:00.000000000
+    [131] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [132/1095] init=2022-02-13T00:00:00.000000000  lead=10d (240h)  valid=2022-02-23T00:00:00.000000000
+    [132] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [57] ✓ Drift: dry=+0.00823931%/day  water=-0.48547%/day  energy=-0.00670605%/day
+    [83] ✓ Drift: dry=+0.000664468%/day  water=-0.637814%/day  energy=-0.0272112%/day
+    [127] Model grid differs from ERA5 — interpolating static fields
+    [127] Computing area from model grid (720 lats vs ERA5 721)
+    [84] Drift: 40 steps [6h–240h]
+  [133/1095] init=2022-02-14T00:00:00.000000000  lead=6h (6h)  valid=2022-02-14T06:00:00.000000000
+    [133] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [134/1095] init=2022-02-14T00:00:00.000000000  lead=5d (120h)  valid=2022-02-19T00:00:00.000000000
+    [134] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [128] Model grid differs from ERA5 — interpolating static fields
+    [128] Computing area from model grid (720 lats vs ERA5 721)
+    [101] Drift: 20 steps [6h–120h]
+    [129] Model grid differs from ERA5 — interpolating static fields
+    [129] Computing area from model grid (720 lats vs ERA5 721)
+    [130] Model grid differs from ERA5 — interpolating static fields
+    [130] Computing area from model grid (720 lats vs ERA5 721)
+    [112] ✓ Drift: dry=-0.013075%/day  water=+0.347637%/day  energy=-0.0526212%/day
+    [132] Model grid differs from ERA5 — interpolating static fields
+    [132] Computing area from model grid (720 lats vs ERA5 721)
+    [131] Model grid differs from ERA5 — interpolating static fields
+    [131] Computing area from model grid (720 lats vs ERA5 721)
+    [133] Model grid differs from ERA5 — interpolating static fields
+    [133] Computing area from model grid (720 lats vs ERA5 721)
+  [135/1095] init=2022-02-14T00:00:00.000000000  lead=10d (240h)  valid=2022-02-24T00:00:00.000000000
+    [135] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [134] Model grid differs from ERA5 — interpolating static fields
+    [115] Drift: 2 steps [6h–12h]
+    [134] Computing area from model grid (720 lats vs ERA5 721)
+    [107] Drift: 20 steps [6h–120h]
+    [60] ✓ Drift: dry=+0.00991179%/day  water=-0.480773%/day  energy=-0.00798488%/day
+  [136/1095] init=2022-02-15T00:00:00.000000000  lead=6h (6h)  valid=2022-02-15T06:00:00.000000000
+    [136] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [118] Drift: 2 steps [6h–12h]
+    [135] Model grid differs from ERA5 — interpolating static fields
+    [135] Computing area from model grid (720 lats vs ERA5 721)
+    [89] ✓ Drift: dry=+0.0012943%/day  water=-0.887979%/day  energy=-0.0310287%/day
+    [121] Drift: 2 steps [6h–12h]
+  [137/1095] init=2022-02-15T00:00:00.000000000  lead=5d (120h)  valid=2022-02-20T00:00:00.000000000
+    [137] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [110] Drift: 20 steps [6h–120h]
+    [115] ✓ Drift: dry=-0.0271829%/day  water=-0.823183%/day  energy=-0.0972233%/day
+    [87] Drift: 40 steps [6h–240h]
+  [138/1095] init=2022-02-15T00:00:00.000000000  lead=10d (240h)  valid=2022-02-25T00:00:00.000000000
+    [138] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [113] Drift: 20 steps [6h–120h]
+    [136] Model grid differs from ERA5 — interpolating static fields
+    [136] Computing area from model grid (720 lats vs ERA5 721)
+    [118] ✓ Drift: dry=-0.0224559%/day  water=-1.56828%/day  energy=-0.106316%/day
+    [92] ✓ Drift: dry=+0.000708115%/day  water=-0.839564%/day  energy=-0.0303666%/day
+    [121] ✓ Drift: dry=-0.0113564%/day  water=-0.147666%/day  energy=-0.0661091%/day
+  [139/1095] init=2022-02-16T00:00:00.000000000  lead=6h (6h)  valid=2022-02-16T06:00:00.000000000
+    [139] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [140/1095] init=2022-02-16T00:00:00.000000000  lead=5d (120h)  valid=2022-02-21T00:00:00.000000000
+    [140] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [137] Model grid differs from ERA5 — interpolating static fields
+    [137] Computing area from model grid (720 lats vs ERA5 721)
+  [141/1095] init=2022-02-16T00:00:00.000000000  lead=10d (240h)  valid=2022-02-26T00:00:00.000000000
+    [141] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [124] Drift: 2 steps [6h–12h]
+    [138] Model grid differs from ERA5 — interpolating static fields
+    [138] Computing area from model grid (720 lats vs ERA5 721)
+    [104] ✓ Drift: dry=-0.00289401%/day  water=-0.769837%/day  energy=-0.0306196%/day
+    [90] Drift: 40 steps [6h–240h]
+    [93] Drift: 40 steps [6h–240h]
+  [142/1095] init=2022-02-17T00:00:00.000000000  lead=6h (6h)  valid=2022-02-17T06:00:00.000000000
+    [142] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [66] ✓ Drift: dry=+0.0100297%/day  water=-0.353274%/day  energy=-0.00694026%/day
+  [143/1095] init=2022-02-17T00:00:00.000000000  lead=5d (120h)  valid=2022-02-22T00:00:00.000000000
+    [143] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [98] ✓ Drift: dry=-0.00322125%/day  water=-0.860529%/day  energy=-0.0291202%/day
+    [99] Drift: 40 steps [6h–240h]
+    [139] Model grid differs from ERA5 — interpolating static fields
+    [139] Computing area from model grid (720 lats vs ERA5 721)
+    [141] Model grid differs from ERA5 — interpolating static fields
+    [141] Computing area from model grid (720 lats vs ERA5 721)
+  [144/1095] init=2022-02-17T00:00:00.000000000  lead=10d (240h)  valid=2022-02-27T00:00:00.000000000
+    [144] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [140] Model grid differs from ERA5 — interpolating static fields
+    [96] Drift: 40 steps [6h–240h]
+    [140] Computing area from model grid (720 lats vs ERA5 721)
+    [116] Drift: 20 steps [6h–120h]
+    [124] ✓ Drift: dry=-0.00730943%/day  water=-0.449912%/day  energy=-0.050833%/day
+    [69] ✓ Drift: dry=+0.00865421%/day  water=-0.345127%/day  energy=-0.00591799%/day
+  [145/1095] init=2022-02-18T00:00:00.000000000  lead=6h (6h)  valid=2022-02-18T06:00:00.000000000
+    [145] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [146/1095] init=2022-02-18T00:00:00.000000000  lead=5d (120h)  valid=2022-02-23T00:00:00.000000000
+    [146] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [102] Drift: 40 steps [6h–240h]
+    [127] Drift: 2 steps [6h–12h]
+    [95] ✓ Drift: dry=-0.0011672%/day  water=-0.864638%/day  energy=-0.032032%/day
+    [142] Model grid differs from ERA5 — interpolating static fields
+    [142] Computing area from model grid (720 lats vs ERA5 721)
+    [101] ✓ Drift: dry=-0.00381222%/day  water=-0.83486%/day  energy=-0.0268959%/day
+  [147/1095] init=2022-02-18T00:00:00.000000000  lead=10d (240h)  valid=2022-02-28T00:00:00.000000000
+    [147] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [148/1095] init=2022-02-19T00:00:00.000000000  lead=6h (6h)  valid=2022-02-19T06:00:00.000000000
+    [148] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [143] Model grid differs from ERA5 — interpolating static fields
+    [143] Computing area from model grid (720 lats vs ERA5 721)
+    [122] Drift: 20 steps [6h–120h]
+    [144] Model grid differs from ERA5 — interpolating static fields
+    [144] Computing area from model grid (720 lats vs ERA5 721)
+    [133] Drift: 2 steps [6h–12h]
+    [145] Model grid differs from ERA5 — interpolating static fields
+    [145] Computing area from model grid (720 lats vs ERA5 721)
+    [130] Drift: 2 steps [6h–12h]
+    [105] Drift: 40 steps [6h–240h]
+    [119] Drift: 20 steps [6h–120h]
+    [108] Drift: 40 steps [6h–240h]
+    [127] ✓ Drift: dry=-0.0189626%/day  water=+0.881888%/day  energy=-0.0277861%/day
+    [146] Model grid differs from ERA5 — interpolating static fields
+    [75] ✓ Drift: dry=+0.00733792%/day  water=-0.4132%/day  energy=-0.00748793%/day
+    [146] Computing area from model grid (720 lats vs ERA5 721)
+    [147] Model grid differs from ERA5 — interpolating static fields
+    [147] Computing area from model grid (720 lats vs ERA5 721)
+  [149/1095] init=2022-02-19T00:00:00.000000000  lead=5d (120h)  valid=2022-02-24T00:00:00.000000000
+    [149] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [150/1095] init=2022-02-19T00:00:00.000000000  lead=10d (240h)  valid=2022-03-01T00:00:00.000000000
+    [150] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [148] Model grid differs from ERA5 — interpolating static fields
+    [148] Computing area from model grid (720 lats vs ERA5 721)
+    [72] ✓ Drift: dry=+0.00637664%/day  water=-0.355142%/day  energy=-0.00950732%/day
+    [107] ✓ Drift: dry=-0.00223379%/day  water=-0.722468%/day  energy=-0.0324286%/day
+    [133] ✓ Drift: dry=-0.0293731%/day  water=-0.264631%/day  energy=-0.0564911%/day
+    [125] Drift: 20 steps [6h–120h]
+  [151/1095] init=2022-02-20T00:00:00.000000000  lead=6h (6h)  valid=2022-02-20T06:00:00.000000000
+    [151] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [130] ✓ Drift: dry=-0.013459%/day  water=+0.401481%/day  energy=-0.00248956%/day
+  [152/1095] init=2022-02-20T00:00:00.000000000  lead=5d (120h)  valid=2022-02-25T00:00:00.000000000
+    [152] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [153/1095] init=2022-02-20T00:00:00.000000000  lead=10d (240h)  valid=2022-03-02T00:00:00.000000000
+    [153] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [150] Model grid differs from ERA5 — interpolating static fields
+    [150] Computing area from model grid (720 lats vs ERA5 721)
+  [154/1095] init=2022-02-21T00:00:00.000000000  lead=6h (6h)  valid=2022-02-21T06:00:00.000000000
+    [154] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [149] Model grid differs from ERA5 — interpolating static fields
+    [149] Computing area from model grid (720 lats vs ERA5 721)
+    [136] Drift: 2 steps [6h–12h]
+    [78] ✓ Drift: dry=+0.00604724%/day  water=-0.53531%/day  energy=-0.00934597%/day
+  [155/1095] init=2022-02-21T00:00:00.000000000  lead=5d (120h)  valid=2022-02-26T00:00:00.000000000
+    [155] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [151] Model grid differs from ERA5 — interpolating static fields
+    [151] Computing area from model grid (720 lats vs ERA5 721)
+    [110] ✓ Drift: dry=-0.000832674%/day  water=-0.796762%/day  energy=-0.0363101%/day
+    [153] Model grid differs from ERA5 — interpolating static fields
+    [153] Computing area from model grid (720 lats vs ERA5 721)
+    [152] Model grid differs from ERA5 — interpolating static fields
+  [156/1095] init=2022-02-21T00:00:00.000000000  lead=10d (240h)  valid=2022-03-03T00:00:00.000000000
+    [156] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [152] Computing area from model grid (720 lats vs ERA5 721)
+    [154] Model grid differs from ERA5 — interpolating static fields
+    [154] Computing area from model grid (720 lats vs ERA5 721)
+    [128] Drift: 20 steps [6h–120h]
+    [136] ✓ Drift: dry=-0.0166127%/day  water=-0.190563%/day  energy=-0.038563%/day
+    [111] Drift: 40 steps [6h–240h]
+    [113] ✓ Drift: dry=+0.00154113%/day  water=-0.612245%/day  energy=-0.0334398%/day
+    [139] Drift: 2 steps [6h–12h]
+  [157/1095] init=2022-02-22T00:00:00.000000000  lead=6h (6h)  valid=2022-02-22T06:00:00.000000000
+    [157] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [158/1095] init=2022-02-22T00:00:00.000000000  lead=5d (120h)  valid=2022-02-27T00:00:00.000000000
+    [158] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [155] Model grid differs from ERA5 — interpolating static fields
+    [155] Computing area from model grid (720 lats vs ERA5 721)
+    [81] ✓ Drift: dry=+0.00366811%/day  water=-0.523105%/day  energy=-0.0108446%/day
+  [159/1095] init=2022-02-22T00:00:00.000000000  lead=10d (240h)  valid=2022-03-04T00:00:00.000000000
+    [159] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [116] ✓ Drift: dry=+0.00302645%/day  water=-0.646218%/day  energy=-0.0307693%/day
+    [156] Model grid differs from ERA5 — interpolating static fields
+    [156] Computing area from model grid (720 lats vs ERA5 721)
+  [160/1095] init=2022-02-23T00:00:00.000000000  lead=6h (6h)  valid=2022-02-23T06:00:00.000000000
+    [160] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [131] Drift: 20 steps [6h–120h]
+    [139] ✓ Drift: dry=-0.00652945%/day  water=+0.525915%/day  energy=+0.0104342%/day
+    [142] Drift: 2 steps [6h–12h]
+    [158] Model grid differs from ERA5 — interpolating static fields
+    [158] Computing area from model grid (720 lats vs ERA5 721)
+  [161/1095] init=2022-02-23T00:00:00.000000000  lead=5d (120h)  valid=2022-02-28T00:00:00.000000000
+    [161] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [145] Drift: 2 steps [6h–12h]
+    [157] Model grid differs from ERA5 — interpolating static fields
+    [157] Computing area from model grid (720 lats vs ERA5 721)

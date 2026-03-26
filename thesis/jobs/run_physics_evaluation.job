@@ -1,0 +1,167 @@
+#!/bin/bash
+#SBATCH --job-name=physics_eval
+#SBATCH --partition=rome
+#SBATCH --time=24:00:00
+#SBATCH --mem=128G
+#SBATCH --cpus-per-task=64
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --output=slurm-%j.out
+#SBATCH --error=slurm-%j.out
+
+# ============================================================================
+# Unified Physics Evaluation Job
+# ============================================================================
+# Runs run_physics_evaluation.py for any supported model or ERA5 baseline.
+#
+# Usage:
+#   sbatch --export=ALL,MODEL=aurora          run_physics_evaluation.job
+#   sbatch --export=ALL,MODEL=pangu           run_physics_evaluation.job
+#   sbatch --export=ALL,MODEL=graphcast       run_physics_evaluation.job
+#   sbatch --export=ALL,MODEL=fuxi            run_physics_evaluation.job
+#   sbatch --export=ALL,MODEL=neuralgcm       run_physics_evaluation.job
+#   sbatch --export=ALL,MODEL=hres            run_physics_evaluation.job
+#   sbatch --export=ALL,MODEL=era5            run_physics_evaluation.job
+#   sbatch --export=ALL,MODEL=era5_512x256    run_physics_evaluation.job
+#
+# Use IFS HRES t=0 as reference instead of ERA5:
+#   sbatch --export=ALL,MODEL=pangu,REFERENCE=ifs      run_physics_evaluation.job
+#   sbatch --export=ALL,MODEL=graphcast,REFERENCE=ifs  run_physics_evaluation.job
+#   sbatch --export=ALL,MODEL=fuxi,REFERENCE=ifs       run_physics_evaluation.job
+#   sbatch --export=ALL,MODEL=neuralgcm,REFERENCE=ifs  run_physics_evaluation.job
+#
+# Override SLURM resources when needed (e.g. GraphCast):
+#   sbatch --export=ALL,MODEL=graphcast --mem=220G run_physics_evaluation.job
+# ============================================================================
+
+BASE_DIR="$HOME/aurora_thesis/thesis"
+SCRIPT="$BASE_DIR/scripts/run_physics_evaluation.py"
+RESULTS_DIR="$BASE_DIR/results"
+LOG_DIR="$BASE_DIR/logs"
+PY="$HOME/aurora_thesis/aurora_env/bin/python"
+
+MODEL="${MODEL:-aurora}"
+REFERENCE="${REFERENCE:-era5}"
+
+mkdir -p "$RESULTS_DIR" "$LOG_DIR"
+
+# --- Model-specific configuration ---
+# Defaults (overridden per model below)
+MODE="prediction"
+WORKERS=48
+EXTRA_ARGS=""
+
+case "$MODEL" in
+    aurora)
+        YEAR="${YEAR:-2022}"
+        MODE="joint"
+        PREDICTION_ZARR="gs://weatherbench2/datasets/aurora/2022-1440x721.zarr"
+        ;;
+    pangu)
+        YEAR="${YEAR:-2020}"
+        PREDICTION_ZARR="gs://weatherbench2/datasets/pangu/2018-2022_0012_0p25.zarr"
+        WORKERS=56
+        ;;
+    graphcast)
+        YEAR="${YEAR:-2020}"
+        PREDICTION_ZARR="gs://weatherbench2/datasets/graphcast/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr"
+        WORKERS=20
+        ;;
+    fuxi)
+        YEAR="${YEAR:-2020}"
+        PREDICTION_ZARR="gs://weatherbench2/datasets/fuxi/2020-1440x721.zarr"
+        WORKERS=56
+        ;;
+    neuralgcm)
+        YEAR="${YEAR:-2020}"
+        PREDICTION_ZARR="gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr"
+        WORKERS=64
+        if [ "$REFERENCE" = "ifs" ]; then
+            EXTRA_ARGS="--reference ifs"
+        else
+            EXTRA_ARGS="--era5-zarr gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr"
+        fi
+        ;;
+    hres)
+        YEAR="${YEAR:-2020}"
+        PREDICTION_ZARR="gs://weatherbench2/datasets/hres/2016-2022-0012-1440x721.zarr"
+        WORKERS=56
+        EXTRA_ARGS="--era5-zarr gs://weatherbench2/datasets/hres_t0/2016-2022-6h-1440x721.zarr --static-zarr gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr"
+        ;;
+    era5)
+        YEAR="${YEAR:-2020}"
+        MODE="era5"
+        PREDICTION_ZARR=""
+        WORKERS=32
+        ;;
+    era5_512x256)
+        YEAR="${YEAR:-2020}"
+        MODE="era5"
+        PREDICTION_ZARR=""
+        WORKERS=32
+        EXTRA_ARGS="--era5-zarr gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr"
+        ;;
+    *)
+        echo "Unknown model: $MODEL" >&2
+        exit 1
+        ;;
+esac
+
+# Add --reference flag for models that support it (not hres which uses HRES t0 as predictions)
+if [ "$REFERENCE" = "ifs" ] && [ "$MODEL" != "hres" ] && [ "$MODEL" != "neuralgcm" ]; then
+    EXTRA_ARGS="$EXTRA_ARGS --reference ifs"
+fi
+
+# Determine output suffix based on reference
+REF_SUFFIX=""
+if [ "$REFERENCE" = "ifs" ]; then
+    REF_SUFFIX="_ifs"
+fi
+
+LOG_FILE="$LOG_DIR/physics_eval_${MODEL}_${YEAR}${REF_SUFFIX}_$(date +%Y%m%d_%H%M%S).log"
+OUTPUT_CSV="$RESULTS_DIR/physics_evaluation_${MODEL}_${YEAR}${REF_SUFFIX}.csv"
+
+{
+    echo "========================================"
+    echo "  PHYSICS EVALUATION: ${MODEL} (${YEAR})"
+    echo "========================================"
+    echo "Job ID:       ${SLURM_JOB_ID:-local}"
+    echo "Date:         $(date)"
+    echo "Hostname:     $(hostname)"
+    echo "Mode:         $MODE"
+    echo "Workers:      $WORKERS"
+    if [ -n "$PREDICTION_ZARR" ]; then
+        echo "Prediction:   $PREDICTION_ZARR"
+    fi
+    echo "Output:       $OUTPUT_CSV"
+    echo "========================================"
+    echo ""
+} | tee "$LOG_FILE"
+
+# --- Build command ---
+CMD="$PY $SCRIPT --year $YEAR --model $MODEL --mode $MODE --workers $WORKERS --output $OUTPUT_CSV"
+if [ -n "$PREDICTION_ZARR" ]; then
+    CMD="$CMD --prediction-zarr $PREDICTION_ZARR"
+fi
+if [ -n "$EXTRA_ARGS" ]; then
+    CMD="$CMD $EXTRA_ARGS"
+fi
+
+eval $CMD 2>&1 | tee -a "$LOG_FILE"
+
+EXIT_CODE=${PIPESTATUS[0]}
+
+{
+    echo ""
+    echo "========================================"
+    if [ $EXIT_CODE -eq 0 ]; then
+        echo "  COMPLETED SUCCESSFULLY"
+        echo "  Output: $OUTPUT_CSV"
+    else
+        echo "  FAILED (exit code: $EXIT_CODE)"
+    fi
+    echo "========================================"
+    echo "Finished: $(date)"
+} | tee -a "$LOG_FILE"
+
+exit $EXIT_CODE

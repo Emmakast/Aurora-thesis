@@ -1,0 +1,44 @@
+#!/bin/bash
+
+#SBATCH --job-name=aurora_gen
+#SBATCH --partition=gpu_a100
+#SBATCH --time=02:00:00
+#SBATCH --mem=64G
+#SBATCH --gpus=1
+#SBATCH --cpus-per-task=12
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --output=$HOME/aurora_thesis/jobs/logs/gen_%j.out
+#SBATCH --error=$HOME/aurora_thesis/jobs/logs/gen_%j.err
+
+# Aurora Prediction Generation for GDAM Conservation Analysis
+# Generates predictions for 10 dates in 2020 with 3 rollout steps each
+
+# Environment
+PY="$HOME/aurora_thesis/aurora_env/bin/python"
+SCRIPT="$HOME/aurora_thesis/scripts/generate_predictions.py"
+LOG_DIR="$HOME/aurora_thesis/jobs/logs"
+
+# Create log directory
+mkdir -p "$LOG_DIR"
+
+echo "========================================"
+echo "Job ID: $SLURM_JOB_ID"
+echo "Date:   $(date)"
+echo "Node:   $(hostname)"
+echo "Script: $SCRIPT"
+echo "========================================"
+
+# Activate environment and run
+export PYTORCH_ALLOC_CONF=expandable_segments:True
+
+# Run prediction generation for all 10 dates with 3 steps each
+# Also save ERA5 ground truth for comparison
+srun $PY $SCRIPT \
+    --num-steps 3 \
+    --save-era5 \
+    --device cuda
+
+echo "========================================"
+echo "Job finished: $(date)"
+echo "========================================"

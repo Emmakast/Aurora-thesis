@@ -1,0 +1,1254 @@
+========================================
+  PHYSICS EVALUATION: graphcast (2020)
+========================================
+Job ID:       20988629
+Date:         Fri Mar 20 10:37:42 AM CET 2026
+Hostname:     tcn219.local.snellius.surf.nl
+Mode:         prediction
+Workers:      20
+Prediction:   gs://weatherbench2/datasets/graphcast/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr
+Output:       /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_graphcast_2020_ifs.csv
+========================================
+
+
+======================================================================
+  PHYSICS EVALUATION — WeatherBench 2 Zarr Streaming
+======================================================================
+  Prediction : gs://weatherbench2/datasets/graphcast/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr
+  ERA5       : gs://weatherbench2/datasets/hres_t0/2016-2022-6h-1440x721.zarr
+  Dates  : 366
+  Lead times : ['12h', '5d', '10d']
+  Total evals: 1098
+  Workers    : 20
+  Mode       : prediction
+  Output : /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_graphcast_2020_ifs.csv
+======================================================================
+
+  Checking Zarr stores (anonymous) …
+  Aurora vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'total_precipitation_24hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind']
+  ERA5 vars  : ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'surface_pressure', 'temperature', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind']
+  ERA5 time dtype: datetime64[ns]
+  ERA5 time range: 2016-01-01T00:00:00.000000000 → 2023-01-10T18:00:00.000000000
+
+  Sanity check — verifying ERA5 time selection on 'temperature':
+    requested=2017-10-03T18:00:00.000000000  actual=2017-10-03T18:00:00.000000000  mean=243.391
+    requested=2019-07-07T12:00:00.000000000  actual=2019-07-07T12:00:00.000000000  mean=244.781
+    requested=2021-04-09T06:00:00.000000000  actual=2021-04-09T06:00:00.000000000  mean=242.493
+  ✓ ERA5 time selection looks correct (values differ).
+
+
+  Launching 20 processes …
+
+  [14/1098] init=2020-01-05T00:00:00.000000000  lead=5d (120h)  valid=2020-01-10T00:00:00.000000000
+  [4/1098] init=2020-01-02T00:00:00.000000000  lead=12h (12h)  valid=2020-01-02T12:00:00.000000000
+    [14] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [12/1098] init=2020-01-04T00:00:00.000000000  lead=10d (240h)  valid=2020-01-14T00:00:00.000000000
+    [4] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [12] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [19/1098] init=2020-01-07T00:00:00.000000000  lead=12h (12h)  valid=2020-01-07T12:00:00.000000000
+    [19] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [6/1098] init=2020-01-02T00:00:00.000000000  lead=10d (240h)  valid=2020-01-12T00:00:00.000000000
+    [6] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [15/1098] init=2020-01-05T00:00:00.000000000  lead=10d (240h)  valid=2020-01-15T00:00:00.000000000
+  [17/1098] init=2020-01-06T00:00:00.000000000  lead=5d (120h)  valid=2020-01-11T00:00:00.000000000
+  [3/1098] init=2020-01-01T00:00:00.000000000  lead=10d (240h)  valid=2020-01-11T00:00:00.000000000
+    [15] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [17] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [3] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [9/1098] init=2020-01-03T00:00:00.000000000  lead=10d (240h)  valid=2020-01-13T00:00:00.000000000
+  [2/1098] init=2020-01-01T00:00:00.000000000  lead=5d (120h)  valid=2020-01-06T00:00:00.000000000
+    [9] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [2] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [8/1098] init=2020-01-03T00:00:00.000000000  lead=5d (120h)  valid=2020-01-08T00:00:00.000000000
+  [16/1098] init=2020-01-06T00:00:00.000000000  lead=12h (12h)  valid=2020-01-06T12:00:00.000000000
+    [8] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [16] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [13/1098] init=2020-01-05T00:00:00.000000000  lead=12h (12h)  valid=2020-01-05T12:00:00.000000000
+  [20/1098] init=2020-01-07T00:00:00.000000000  lead=5d (120h)  valid=2020-01-12T00:00:00.000000000
+    [13] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [5/1098] init=2020-01-02T00:00:00.000000000  lead=5d (120h)  valid=2020-01-07T00:00:00.000000000
+    [20] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [18/1098] init=2020-01-06T00:00:00.000000000  lead=10d (240h)  valid=2020-01-16T00:00:00.000000000
+    [5] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [18] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [10/1098] init=2020-01-04T00:00:00.000000000  lead=12h (12h)  valid=2020-01-04T12:00:00.000000000
+  [7/1098] init=2020-01-03T00:00:00.000000000  lead=12h (12h)  valid=2020-01-03T12:00:00.000000000
+    [10] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [7] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [1/1098] init=2020-01-01T00:00:00.000000000  lead=12h (12h)  valid=2020-01-01T12:00:00.000000000
+    [1] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [11/1098] init=2020-01-04T00:00:00.000000000  lead=5d (120h)  valid=2020-01-09T00:00:00.000000000
+    [11] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [19] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [19]   → mass/water/energy metrics will be NaN
+    [5] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [5]   → mass/water/energy metrics will be NaN
+    [13] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [13]   → mass/water/energy metrics will be NaN
+    [14] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [14]   → mass/water/energy metrics will be NaN
+    [15] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [15]   → mass/water/energy metrics will be NaN
+    [1] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [1]   → mass/water/energy metrics will be NaN
+    [10] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [10]   → mass/water/energy metrics will be NaN
+    [8] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [8]   → mass/water/energy metrics will be NaN
+    [18] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [18]   → mass/water/energy metrics will be NaN
+    [9] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [9]   → mass/water/energy metrics will be NaN
+    [3] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [3]   → mass/water/energy metrics will be NaN
+    [4] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [4]   → mass/water/energy metrics will be NaN
+    [20] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [20]   → mass/water/energy metrics will be NaN
+    [16] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [16]   → mass/water/energy metrics will be NaN
+    [2] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [2]   → mass/water/energy metrics will be NaN
+    [11] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [11]   → mass/water/energy metrics will be NaN
+    [6] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [6]   → mass/water/energy metrics will be NaN
+    [12] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [12]   → mass/water/energy metrics will be NaN
+    [7] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [7]   → mass/water/energy metrics will be NaN
+    [17] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [17]   → mass/water/energy metrics will be NaN
+    [19] Drift: 3 steps [12h–24h]  sp_method=failed
+    [13] Drift: 3 steps [12h–24h]  sp_method=failed
+    [1] Drift: 3 steps [12h–24h]  sp_method=failed
+    [16] Drift: 3 steps [12h–24h]  sp_method=failed
+    [7] Drift: 3 steps [12h–24h]  sp_method=failed
+    [4] Drift: 3 steps [12h–24h]  sp_method=failed
+    [10] Drift: 3 steps [12h–24h]  sp_method=failed
+    [13] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [19] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [13] ✓ KE spectrum saved (l_max=359)
+    [19] ✓ KE spectrum saved (l_max=359)
+  [22/1098] init=2020-01-08T00:00:00.000000000  lead=12h (12h)  valid=2020-01-08T12:00:00.000000000
+    [22] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [21/1098] init=2020-01-07T00:00:00.000000000  lead=10d (240h)  valid=2020-01-17T00:00:00.000000000
+    [21] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [1] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [7] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [4] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [1] ✓ KE spectrum saved (l_max=359)
+    [7] ✓ KE spectrum saved (l_max=359)
+  [23/1098] init=2020-01-08T00:00:00.000000000  lead=5d (120h)  valid=2020-01-13T00:00:00.000000000
+    [23] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [24/1098] init=2020-01-08T00:00:00.000000000  lead=10d (240h)  valid=2020-01-18T00:00:00.000000000
+    [24] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [4] ✓ KE spectrum saved (l_max=359)
+    [16] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+  [25/1098] init=2020-01-09T00:00:00.000000000  lead=12h (12h)  valid=2020-01-09T12:00:00.000000000
+    [25] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [16] ✓ KE spectrum saved (l_max=359)
+  [26/1098] init=2020-01-09T00:00:00.000000000  lead=5d (120h)  valid=2020-01-14T00:00:00.000000000
+    [26] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [10] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [10] ✓ KE spectrum saved (l_max=359)
+  [27/1098] init=2020-01-09T00:00:00.000000000  lead=10d (240h)  valid=2020-01-19T00:00:00.000000000
+    [27] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [21] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [21]   → mass/water/energy metrics will be NaN
+    [24] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [24]   → mass/water/energy metrics will be NaN
+    [25] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [25]   → mass/water/energy metrics will be NaN
+    [26] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [26]   → mass/water/energy metrics will be NaN
+    [22] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [22]   → mass/water/energy metrics will be NaN
+    [23] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [23]   → mass/water/energy metrics will be NaN
+    [27] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [27]   → mass/water/energy metrics will be NaN
+    [25] Drift: 3 steps [12h–24h]  sp_method=failed
+    [22] Drift: 3 steps [12h–24h]  sp_method=failed
+    [25] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [25] ✓ KE spectrum saved (l_max=359)
+  [28/1098] init=2020-01-10T00:00:00.000000000  lead=12h (12h)  valid=2020-01-10T12:00:00.000000000
+    [28] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [22] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [22] ✓ KE spectrum saved (l_max=359)
+  [29/1098] init=2020-01-10T00:00:00.000000000  lead=5d (120h)  valid=2020-01-15T00:00:00.000000000
+    [29] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [28] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [28]   → mass/water/energy metrics will be NaN
+    [29] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [29]   → mass/water/energy metrics will be NaN
+    [28] Drift: 3 steps [12h–24h]  sp_method=failed
+    [28] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [28] ✓ KE spectrum saved (l_max=359)
+  [30/1098] init=2020-01-10T00:00:00.000000000  lead=10d (240h)  valid=2020-01-20T00:00:00.000000000
+    [30] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [30] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [30]   → mass/water/energy metrics will be NaN
+    [2] Drift: 19 steps [12h–120h]  sp_method=failed
+    [11] Drift: 19 steps [12h–120h]  sp_method=failed
+    [17] Drift: 19 steps [12h–120h]  sp_method=failed
+    [8] Drift: 19 steps [12h–120h]  sp_method=failed
+    [5] Drift: 19 steps [12h–120h]  sp_method=failed
+    [14] Drift: 19 steps [12h–120h]  sp_method=failed
+    [20] Drift: 19 steps [12h–120h]  sp_method=failed
+    [11] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [11] ✓ KE spectrum saved (l_max=359)
+  [31/1098] init=2020-01-11T00:00:00.000000000  lead=12h (12h)  valid=2020-01-11T12:00:00.000000000
+    [31] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [26] Drift: 19 steps [12h–120h]  sp_method=failed
+    [2] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [23] Drift: 19 steps [12h–120h]  sp_method=failed
+    [2] ✓ KE spectrum saved (l_max=359)
+  [32/1098] init=2020-01-11T00:00:00.000000000  lead=5d (120h)  valid=2020-01-16T00:00:00.000000000
+    [32] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [17] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [5] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [17] ✓ KE spectrum saved (l_max=359)
+  [33/1098] init=2020-01-11T00:00:00.000000000  lead=10d (240h)  valid=2020-01-21T00:00:00.000000000
+    [33] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [5] ✓ KE spectrum saved (l_max=359)
+    [8] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [31] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [31]   → mass/water/energy metrics will be NaN
+  [34/1098] init=2020-01-12T00:00:00.000000000  lead=12h (12h)  valid=2020-01-12T12:00:00.000000000
+    [34] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [8] ✓ KE spectrum saved (l_max=359)
+  [35/1098] init=2020-01-12T00:00:00.000000000  lead=5d (120h)  valid=2020-01-17T00:00:00.000000000
+    [35] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [14] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [14] ✓ KE spectrum saved (l_max=359)
+  [36/1098] init=2020-01-12T00:00:00.000000000  lead=10d (240h)  valid=2020-01-22T00:00:00.000000000
+    [36] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [20] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [20] ✓ KE spectrum saved (l_max=359)
+  [37/1098] init=2020-01-13T00:00:00.000000000  lead=12h (12h)  valid=2020-01-13T12:00:00.000000000
+    [37] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [32] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [32]   → mass/water/energy metrics will be NaN
+    [34] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [34]   → mass/water/energy metrics will be NaN
+    [33] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [33]   → mass/water/energy metrics will be NaN
+    [35] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [35]   → mass/water/energy metrics will be NaN
+    [36] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [36]   → mass/water/energy metrics will be NaN
+    [37] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [37]   → mass/water/energy metrics will be NaN
+    [31] Drift: 3 steps [12h–24h]  sp_method=failed
+    [31] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [31] ✓ KE spectrum saved (l_max=359)
+  [38/1098] init=2020-01-13T00:00:00.000000000  lead=5d (120h)  valid=2020-01-18T00:00:00.000000000
+    [38] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [34] Drift: 3 steps [12h–24h]  sp_method=failed
+    [26] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [26] ✓ KE spectrum saved (l_max=359)
+    [37] Drift: 3 steps [12h–24h]  sp_method=failed
+  [39/1098] init=2020-01-13T00:00:00.000000000  lead=10d (240h)  valid=2020-01-23T00:00:00.000000000
+    [39] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [29] Drift: 19 steps [12h–120h]  sp_method=failed
+    [23] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [23] ✓ KE spectrum saved (l_max=359)
+    [34] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+  [40/1098] init=2020-01-14T00:00:00.000000000  lead=12h (12h)  valid=2020-01-14T12:00:00.000000000
+    [40] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [34] ✓ KE spectrum saved (l_max=359)
+  [41/1098] init=2020-01-14T00:00:00.000000000  lead=5d (120h)  valid=2020-01-19T00:00:00.000000000
+    [41] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [38] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [38]   → mass/water/energy metrics will be NaN
+    [39] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [39]   → mass/water/energy metrics will be NaN
+    [37] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [37] ✓ KE spectrum saved (l_max=359)
+  [42/1098] init=2020-01-14T00:00:00.000000000  lead=10d (240h)  valid=2020-01-24T00:00:00.000000000
+    [42] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [40] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [40]   → mass/water/energy metrics will be NaN
+    [41] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [41]   → mass/water/energy metrics will be NaN
+    [42] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [42]   → mass/water/energy metrics will be NaN
+    [40] Drift: 3 steps [12h–24h]  sp_method=failed
+    [3] Drift: 39 steps [12h–240h]  sp_method=failed
+    [9] Drift: 39 steps [12h–240h]  sp_method=failed
+    [40] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [40] ✓ KE spectrum saved (l_max=359)
+  [43/1098] init=2020-01-15T00:00:00.000000000  lead=12h (12h)  valid=2020-01-15T12:00:00.000000000
+    [43] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [18] Drift: 39 steps [12h–240h]  sp_method=failed
+    [29] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [29] ✓ KE spectrum saved (l_max=359)
+    [12] Drift: 39 steps [12h–240h]  sp_method=failed
+  [44/1098] init=2020-01-15T00:00:00.000000000  lead=5d (120h)  valid=2020-01-20T00:00:00.000000000
+    [44] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [6] Drift: 39 steps [12h–240h]  sp_method=failed
+    [43] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [43]   → mass/water/energy metrics will be NaN
+    [44] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [44]   → mass/water/energy metrics will be NaN
+    [15] Drift: 39 steps [12h–240h]  sp_method=failed
+    [43] Drift: 3 steps [12h–24h]  sp_method=failed
+    [43] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [43] ✓ KE spectrum saved (l_max=359)
+  [45/1098] init=2020-01-15T00:00:00.000000000  lead=10d (240h)  valid=2020-01-25T00:00:00.000000000
+    [45] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [45] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [45]   → mass/water/energy metrics will be NaN
+    [21] Drift: 39 steps [12h–240h]  sp_method=failed
+    [27] Drift: 39 steps [12h–240h]  sp_method=failed
+    [24] Drift: 39 steps [12h–240h]  sp_method=failed
+    [32] Drift: 19 steps [12h–120h]  sp_method=failed
+    [35] Drift: 19 steps [12h–120h]  sp_method=failed
+    [9] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [9] ✓ KE spectrum saved (l_max=359)
+  [46/1098] init=2020-01-16T00:00:00.000000000  lead=12h (12h)  valid=2020-01-16T12:00:00.000000000
+    [46] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [3] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [3] ✓ KE spectrum saved (l_max=359)
+    [18] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+  [47/1098] init=2020-01-16T00:00:00.000000000  lead=5d (120h)  valid=2020-01-21T00:00:00.000000000
+    [47] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [18] ✓ KE spectrum saved (l_max=359)
+  [48/1098] init=2020-01-16T00:00:00.000000000  lead=10d (240h)  valid=2020-01-26T00:00:00.000000000
+    [48] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [46] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [46]   → mass/water/energy metrics will be NaN
+    [6] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [6] ✓ KE spectrum saved (l_max=359)
+    [38] Drift: 19 steps [12h–120h]  sp_method=failed
+  [49/1098] init=2020-01-17T00:00:00.000000000  lead=12h (12h)  valid=2020-01-17T12:00:00.000000000
+    [49] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [12] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [12] ✓ KE spectrum saved (l_max=359)
+  [50/1098] init=2020-01-17T00:00:00.000000000  lead=5d (120h)  valid=2020-01-22T00:00:00.000000000
+    [50] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [47] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [47]   → mass/water/energy metrics will be NaN
+    [48] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [48]   → mass/water/energy metrics will be NaN
+    [49] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [49]   → mass/water/energy metrics will be NaN
+    [41] Drift: 19 steps [12h–120h]  sp_method=failed
+    [50] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [50]   → mass/water/energy metrics will be NaN
+    [15] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [15] ✓ KE spectrum saved (l_max=359)
+  [51/1098] init=2020-01-17T00:00:00.000000000  lead=10d (240h)  valid=2020-01-27T00:00:00.000000000
+    [51] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [32] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [32] ✓ KE spectrum saved (l_max=359)
+  [52/1098] init=2020-01-18T00:00:00.000000000  lead=12h (12h)  valid=2020-01-18T12:00:00.000000000
+    [52] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [35] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [35] ✓ KE spectrum saved (l_max=359)
+  [53/1098] init=2020-01-18T00:00:00.000000000  lead=5d (120h)  valid=2020-01-23T00:00:00.000000000
+    [53] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [51] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [51]   → mass/water/energy metrics will be NaN
+    [46] Drift: 3 steps [12h–24h]  sp_method=failed
+    [52] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [52]   → mass/water/energy metrics will be NaN
+    [30] Drift: 39 steps [12h–240h]  sp_method=failed
+    [53] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [53]   → mass/water/energy metrics will be NaN
+    [46] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [46] ✓ KE spectrum saved (l_max=359)
+  [54/1098] init=2020-01-18T00:00:00.000000000  lead=10d (240h)  valid=2020-01-28T00:00:00.000000000
+    [54] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [49] Drift: 3 steps [12h–24h]  sp_method=failed
+    [54] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [54]   → mass/water/energy metrics will be NaN
+    [21] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [21] ✓ KE spectrum saved (l_max=359)
+  [55/1098] init=2020-01-19T00:00:00.000000000  lead=12h (12h)  valid=2020-01-19T12:00:00.000000000
+    [55] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [49] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [49] ✓ KE spectrum saved (l_max=359)
+  [56/1098] init=2020-01-19T00:00:00.000000000  lead=5d (120h)  valid=2020-01-24T00:00:00.000000000
+    [56] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [44] Drift: 19 steps [12h–120h]  sp_method=failed
+    [27] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [56] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [56]   → mass/water/energy metrics will be NaN
+    [27] ✓ KE spectrum saved (l_max=359)
+    [55] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [55]   → mass/water/energy metrics will be NaN
+  [57/1098] init=2020-01-19T00:00:00.000000000  lead=10d (240h)  valid=2020-01-29T00:00:00.000000000
+    [57] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [38] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [38] ✓ KE spectrum saved (l_max=359)
+  [58/1098] init=2020-01-20T00:00:00.000000000  lead=12h (12h)  valid=2020-01-20T12:00:00.000000000
+    [58] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [52] Drift: 3 steps [12h–24h]  sp_method=failed
+    [41] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [41] ✓ KE spectrum saved (l_max=359)
+  [59/1098] init=2020-01-20T00:00:00.000000000  lead=5d (120h)  valid=2020-01-25T00:00:00.000000000
+    [59] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [57] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [57]   → mass/water/energy metrics will be NaN
+    [58] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [58]   → mass/water/energy metrics will be NaN
+    [52] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [52] ✓ KE spectrum saved (l_max=359)
+  [60/1098] init=2020-01-20T00:00:00.000000000  lead=10d (240h)  valid=2020-01-30T00:00:00.000000000
+    [60] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [59] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [59]   → mass/water/energy metrics will be NaN
+    [24] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [24] ✓ KE spectrum saved (l_max=359)
+  [61/1098] init=2020-01-21T00:00:00.000000000  lead=12h (12h)  valid=2020-01-21T12:00:00.000000000
+    [61] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [60] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [60]   → mass/water/energy metrics will be NaN
+    [61] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [61]   → mass/water/energy metrics will be NaN
+    [55] Drift: 3 steps [12h–24h]  sp_method=failed
+    [55] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [55] ✓ KE spectrum saved (l_max=359)
+  [62/1098] init=2020-01-21T00:00:00.000000000  lead=5d (120h)  valid=2020-01-26T00:00:00.000000000
+    [62] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [58] Drift: 3 steps [12h–24h]  sp_method=failed
+    [62] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [62]   → mass/water/energy metrics will be NaN
+    [44] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [44] ✓ KE spectrum saved (l_max=359)
+  [63/1098] init=2020-01-21T00:00:00.000000000  lead=10d (240h)  valid=2020-01-31T00:00:00.000000000
+    [63] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [58] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [58] ✓ KE spectrum saved (l_max=359)
+  [64/1098] init=2020-01-22T00:00:00.000000000  lead=12h (12h)  valid=2020-01-22T12:00:00.000000000
+    [64] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [61] Drift: 3 steps [12h–24h]  sp_method=failed
+    [63] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [63]   → mass/water/energy metrics will be NaN
+    [64] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [64]   → mass/water/energy metrics will be NaN
+    [61] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [61] ✓ KE spectrum saved (l_max=359)
+  [65/1098] init=2020-01-22T00:00:00.000000000  lead=5d (120h)  valid=2020-01-27T00:00:00.000000000
+    [65] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [65] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [65]   → mass/water/energy metrics will be NaN
+    [33] Drift: 39 steps [12h–240h]  sp_method=failed
+    [36] Drift: 39 steps [12h–240h]  sp_method=failed
+    [30] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [30] ✓ KE spectrum saved (l_max=359)
+  [66/1098] init=2020-01-22T00:00:00.000000000  lead=10d (240h)  valid=2020-02-01T00:00:00.000000000
+    [66] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [64] Drift: 3 steps [12h–24h]  sp_method=failed
+    [66] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [66]   → mass/water/energy metrics will be NaN
+    [64] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [64] ✓ KE spectrum saved (l_max=359)
+  [67/1098] init=2020-01-23T00:00:00.000000000  lead=12h (12h)  valid=2020-01-23T12:00:00.000000000
+    [67] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [67] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [67]   → mass/water/energy metrics will be NaN
+    [47] Drift: 19 steps [12h–120h]  sp_method=failed
+    [39] Drift: 39 steps [12h–240h]  sp_method=failed
+    [50] Drift: 19 steps [12h–120h]  sp_method=failed
+    [67] Drift: 3 steps [12h–24h]  sp_method=failed
+    [53] Drift: 19 steps [12h–120h]  sp_method=failed
+    [67] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [67] ✓ KE spectrum saved (l_max=359)
+  [68/1098] init=2020-01-23T00:00:00.000000000  lead=5d (120h)  valid=2020-01-28T00:00:00.000000000
+    [68] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [68] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [68]   → mass/water/energy metrics will be NaN
+    [42] Drift: 39 steps [12h–240h]  sp_method=failed
+    [56] Drift: 19 steps [12h–120h]  sp_method=failed
+    [47] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [47] ✓ KE spectrum saved (l_max=359)
+  [69/1098] init=2020-01-23T00:00:00.000000000  lead=10d (240h)  valid=2020-02-02T00:00:00.000000000
+    [69] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [59] Drift: 19 steps [12h–120h]  sp_method=failed
+    [69] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [69]   → mass/water/energy metrics will be NaN
+    [36] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [36] ✓ KE spectrum saved (l_max=359)
+  [70/1098] init=2020-01-24T00:00:00.000000000  lead=12h (12h)  valid=2020-01-24T12:00:00.000000000
+    [70] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [33] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [33] ✓ KE spectrum saved (l_max=359)
+  [71/1098] init=2020-01-24T00:00:00.000000000  lead=5d (120h)  valid=2020-01-29T00:00:00.000000000
+    [71] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [50] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [50] ✓ KE spectrum saved (l_max=359)
+  [72/1098] init=2020-01-24T00:00:00.000000000  lead=10d (240h)  valid=2020-02-03T00:00:00.000000000
+    [72] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [45] Drift: 39 steps [12h–240h]  sp_method=failed
+    [70] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [70]   → mass/water/energy metrics will be NaN
+    [71] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [71]   → mass/water/energy metrics will be NaN
+    [53] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [53] ✓ KE spectrum saved (l_max=359)
+  [73/1098] init=2020-01-25T00:00:00.000000000  lead=12h (12h)  valid=2020-01-25T12:00:00.000000000
+    [73] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [72] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [72]   → mass/water/energy metrics will be NaN
+    [62] Drift: 19 steps [12h–120h]  sp_method=failed
+    [73] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [73]   → mass/water/energy metrics will be NaN
+    [39] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [39] ✓ KE spectrum saved (l_max=359)
+  [74/1098] init=2020-01-25T00:00:00.000000000  lead=5d (120h)  valid=2020-01-30T00:00:00.000000000
+    [74] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [56] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [56] ✓ KE spectrum saved (l_max=359)
+  [75/1098] init=2020-01-25T00:00:00.000000000  lead=10d (240h)  valid=2020-02-04T00:00:00.000000000
+    [75] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [70] Drift: 3 steps [12h–24h]  sp_method=failed
+    [74] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [74]   → mass/water/energy metrics will be NaN
+    [75] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [75]   → mass/water/energy metrics will be NaN
+    [59] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [59] ✓ KE spectrum saved (l_max=359)
+    [65] Drift: 19 steps [12h–120h]  sp_method=failed
+  [76/1098] init=2020-01-26T00:00:00.000000000  lead=12h (12h)  valid=2020-01-26T12:00:00.000000000
+    [76] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [70] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [70] ✓ KE spectrum saved (l_max=359)
+  [77/1098] init=2020-01-26T00:00:00.000000000  lead=5d (120h)  valid=2020-01-31T00:00:00.000000000
+    [77] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [76] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [76]   → mass/water/energy metrics will be NaN
+    [73] Drift: 3 steps [12h–24h]  sp_method=failed
+    [77] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [77]   → mass/water/energy metrics will be NaN
+    [73] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [73] ✓ KE spectrum saved (l_max=359)
+  [78/1098] init=2020-01-26T00:00:00.000000000  lead=10d (240h)  valid=2020-02-05T00:00:00.000000000
+    [78] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [62] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [62] ✓ KE spectrum saved (l_max=359)
+  [79/1098] init=2020-01-27T00:00:00.000000000  lead=12h (12h)  valid=2020-01-27T12:00:00.000000000
+    [79] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [78] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [78]   → mass/water/energy metrics will be NaN
+    [79] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [79]   → mass/water/energy metrics will be NaN
+    [76] Drift: 3 steps [12h–24h]  sp_method=failed
+    [42] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [42] ✓ KE spectrum saved (l_max=359)
+  [80/1098] init=2020-01-27T00:00:00.000000000  lead=5d (120h)  valid=2020-02-01T00:00:00.000000000
+    [80] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [76] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [76] ✓ KE spectrum saved (l_max=359)
+  [81/1098] init=2020-01-27T00:00:00.000000000  lead=10d (240h)  valid=2020-02-06T00:00:00.000000000
+    [81] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [80] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [80]   → mass/water/energy metrics will be NaN
+    [81] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [81]   → mass/water/energy metrics will be NaN
+    [65] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [65] ✓ KE spectrum saved (l_max=359)
+  [82/1098] init=2020-01-28T00:00:00.000000000  lead=12h (12h)  valid=2020-01-28T12:00:00.000000000
+    [82] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [48] Drift: 39 steps [12h–240h]  sp_method=failed
+    [79] Drift: 3 steps [12h–24h]  sp_method=failed
+    [45] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [45] ✓ KE spectrum saved (l_max=359)
+  [83/1098] init=2020-01-28T00:00:00.000000000  lead=5d (120h)  valid=2020-02-02T00:00:00.000000000
+    [83] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [82] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [82]   → mass/water/energy metrics will be NaN
+    [79] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [79] ✓ KE spectrum saved (l_max=359)
+  [84/1098] init=2020-01-28T00:00:00.000000000  lead=10d (240h)  valid=2020-02-07T00:00:00.000000000
+    [84] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [83] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [83]   → mass/water/energy metrics will be NaN
+    [51] Drift: 39 steps [12h–240h]  sp_method=failed
+    [84] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [84]   → mass/water/energy metrics will be NaN
+    [54] Drift: 39 steps [12h–240h]  sp_method=failed
+    [82] Drift: 3 steps [12h–24h]  sp_method=failed
+    [68] Drift: 19 steps [12h–120h]  sp_method=failed
+    [82] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [82] ✓ KE spectrum saved (l_max=359)
+  [85/1098] init=2020-01-29T00:00:00.000000000  lead=12h (12h)  valid=2020-01-29T12:00:00.000000000
+    [85] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [85] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [85]   → mass/water/energy metrics will be NaN
+    [57] Drift: 39 steps [12h–240h]  sp_method=failed
+    [60] Drift: 39 steps [12h–240h]  sp_method=failed
+    [71] Drift: 19 steps [12h–120h]  sp_method=failed
+    [63] Drift: 39 steps [12h–240h]  sp_method=failed
+    [85] Drift: 3 steps [12h–24h]  sp_method=failed
+    [85] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [85] ✓ KE spectrum saved (l_max=359)
+  [86/1098] init=2020-01-29T00:00:00.000000000  lead=5d (120h)  valid=2020-02-03T00:00:00.000000000
+    [86] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [68] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [68] ✓ KE spectrum saved (l_max=359)
+  [87/1098] init=2020-01-29T00:00:00.000000000  lead=10d (240h)  valid=2020-02-08T00:00:00.000000000
+    [87] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [74] Drift: 19 steps [12h–120h]  sp_method=failed
+    [86] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [86]   → mass/water/energy metrics will be NaN
+    [87] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [87]   → mass/water/energy metrics will be NaN
+    [48] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [48] ✓ KE spectrum saved (l_max=359)
+  [88/1098] init=2020-01-30T00:00:00.000000000  lead=12h (12h)  valid=2020-01-30T12:00:00.000000000
+    [88] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [77] Drift: 19 steps [12h–120h]  sp_method=failed
+    [51] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [51] ✓ KE spectrum saved (l_max=359)
+  [89/1098] init=2020-01-30T00:00:00.000000000  lead=5d (120h)  valid=2020-02-04T00:00:00.000000000
+    [89] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [88] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [88]   → mass/water/energy metrics will be NaN
+    [66] Drift: 39 steps [12h–240h]  sp_method=failed
+    [71] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [71] ✓ KE spectrum saved (l_max=359)
+  [90/1098] init=2020-01-30T00:00:00.000000000  lead=10d (240h)  valid=2020-02-09T00:00:00.000000000
+    [90] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [89] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [89]   → mass/water/energy metrics will be NaN
+    [54] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [54] ✓ KE spectrum saved (l_max=359)
+  [91/1098] init=2020-01-31T00:00:00.000000000  lead=12h (12h)  valid=2020-01-31T12:00:00.000000000
+    [91] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [90] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [90]   → mass/water/energy metrics will be NaN
+    [91] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [91]   → mass/water/energy metrics will be NaN
+    [74] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [74] ✓ KE spectrum saved (l_max=359)
+  [92/1098] init=2020-01-31T00:00:00.000000000  lead=5d (120h)  valid=2020-02-05T00:00:00.000000000
+    [92] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [88] Drift: 3 steps [12h–24h]  sp_method=failed
+    [80] Drift: 19 steps [12h–120h]  sp_method=failed
+    [88] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [92] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [92]   → mass/water/energy metrics will be NaN
+    [88] ✓ KE spectrum saved (l_max=359)
+  [93/1098] init=2020-01-31T00:00:00.000000000  lead=10d (240h)  valid=2020-02-10T00:00:00.000000000
+    [93] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [57] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [57] ✓ KE spectrum saved (l_max=359)
+  [94/1098] init=2020-02-01T00:00:00.000000000  lead=12h (12h)  valid=2020-02-01T12:00:00.000000000
+    [94] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [83] Drift: 19 steps [12h–120h]  sp_method=failed
+    [77] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [77] ✓ KE spectrum saved (l_max=359)
+  [95/1098] init=2020-02-01T00:00:00.000000000  lead=5d (120h)  valid=2020-02-06T00:00:00.000000000
+    [95] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [93] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [93]   → mass/water/energy metrics will be NaN
+    [60] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [60] ✓ KE spectrum saved (l_max=359)
+  [96/1098] init=2020-02-01T00:00:00.000000000  lead=10d (240h)  valid=2020-02-11T00:00:00.000000000
+    [96] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [94] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [94]   → mass/water/energy metrics will be NaN
+    [91] Drift: 3 steps [12h–24h]  sp_method=failed
+    [95] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [95]   → mass/water/energy metrics will be NaN
+    [96] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [96]   → mass/water/energy metrics will be NaN
+    [91] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [91] ✓ KE spectrum saved (l_max=359)
+  [97/1098] init=2020-02-02T00:00:00.000000000  lead=12h (12h)  valid=2020-02-02T12:00:00.000000000
+    [97] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [63] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [63] ✓ KE spectrum saved (l_max=359)
+  [98/1098] init=2020-02-02T00:00:00.000000000  lead=5d (120h)  valid=2020-02-07T00:00:00.000000000
+    [98] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [97] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [97]   → mass/water/energy metrics will be NaN
+    [98] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [98]   → mass/water/energy metrics will be NaN
+    [94] Drift: 3 steps [12h–24h]  sp_method=failed
+    [69] Drift: 39 steps [12h–240h]  sp_method=failed
+    [80] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [80] ✓ KE spectrum saved (l_max=359)
+  [99/1098] init=2020-02-02T00:00:00.000000000  lead=10d (240h)  valid=2020-02-12T00:00:00.000000000
+    [99] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [94] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [94] ✓ KE spectrum saved (l_max=359)
+  [100/1098] init=2020-02-03T00:00:00.000000000  lead=12h (12h)  valid=2020-02-03T12:00:00.000000000
+    [100] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [83] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [83] ✓ KE spectrum saved (l_max=359)
+  [101/1098] init=2020-02-03T00:00:00.000000000  lead=5d (120h)  valid=2020-02-08T00:00:00.000000000
+    [101] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [97] Drift: 3 steps [12h–24h]  sp_method=failed
+    [99] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [99]   → mass/water/energy metrics will be NaN
+    [100] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [100]   → mass/water/energy metrics will be NaN
+    [101] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [101]   → mass/water/energy metrics will be NaN
+    [97] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [97] ✓ KE spectrum saved (l_max=359)
+  [102/1098] init=2020-02-03T00:00:00.000000000  lead=10d (240h)  valid=2020-02-13T00:00:00.000000000
+    [102] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [66] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [66] ✓ KE spectrum saved (l_max=359)
+  [103/1098] init=2020-02-04T00:00:00.000000000  lead=12h (12h)  valid=2020-02-04T12:00:00.000000000
+    [103] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [102] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [102]   → mass/water/energy metrics will be NaN
+    [103] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [103]   → mass/water/energy metrics will be NaN
+    [72] Drift: 39 steps [12h–240h]  sp_method=failed
+    [100] Drift: 3 steps [12h–24h]  sp_method=failed
+    [100] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [100] ✓ KE spectrum saved (l_max=359)
+  [104/1098] init=2020-02-04T00:00:00.000000000  lead=5d (120h)  valid=2020-02-09T00:00:00.000000000
+    [104] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [75] Drift: 39 steps [12h–240h]  sp_method=failed
+    [86] Drift: 19 steps [12h–120h]  sp_method=failed
+    [103] Drift: 3 steps [12h–24h]  sp_method=failed
+    [104] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [104]   → mass/water/energy metrics will be NaN
+    [103] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [103] ✓ KE spectrum saved (l_max=359)
+  [105/1098] init=2020-02-04T00:00:00.000000000  lead=10d (240h)  valid=2020-02-14T00:00:00.000000000
+    [105] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [89] Drift: 19 steps [12h–120h]  sp_method=failed
+    [105] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [105]   → mass/water/energy metrics will be NaN
+    [78] Drift: 39 steps [12h–240h]  sp_method=failed
+    [92] Drift: 19 steps [12h–120h]  sp_method=failed
+    [69] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [69] ✓ KE spectrum saved (l_max=359)
+  [106/1098] init=2020-02-05T00:00:00.000000000  lead=12h (12h)  valid=2020-02-05T12:00:00.000000000
+    [106] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [81] Drift: 39 steps [12h–240h]  sp_method=failed
+    [86] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [86] ✓ KE spectrum saved (l_max=359)
+  [107/1098] init=2020-02-05T00:00:00.000000000  lead=5d (120h)  valid=2020-02-10T00:00:00.000000000
+    [107] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [106] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [106]   → mass/water/energy metrics will be NaN
+    [95] Drift: 19 steps [12h–120h]  sp_method=failed
+    [107] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [107]   → mass/water/energy metrics will be NaN
+    [84] Drift: 39 steps [12h–240h]  sp_method=failed
+    [89] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [89] ✓ KE spectrum saved (l_max=359)
+  [108/1098] init=2020-02-05T00:00:00.000000000  lead=10d (240h)  valid=2020-02-15T00:00:00.000000000
+    [108] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [72] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [72] ✓ KE spectrum saved (l_max=359)
+  [109/1098] init=2020-02-06T00:00:00.000000000  lead=12h (12h)  valid=2020-02-06T12:00:00.000000000
+    [109] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [98] Drift: 19 steps [12h–120h]  sp_method=failed
+    [108] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [108]   → mass/water/energy metrics will be NaN
+    [106] Drift: 3 steps [12h–24h]  sp_method=failed
+    [109] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [109]   → mass/water/energy metrics will be NaN
+    [106] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [106] ✓ KE spectrum saved (l_max=359)
+  [110/1098] init=2020-02-06T00:00:00.000000000  lead=5d (120h)  valid=2020-02-11T00:00:00.000000000
+    [110] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [92] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [92] ✓ KE spectrum saved (l_max=359)
+  [111/1098] init=2020-02-06T00:00:00.000000000  lead=10d (240h)  valid=2020-02-16T00:00:00.000000000
+    [111] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [75] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [75] ✓ KE spectrum saved (l_max=359)
+  [112/1098] init=2020-02-07T00:00:00.000000000  lead=12h (12h)  valid=2020-02-07T12:00:00.000000000
+    [112] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [110] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [110]   → mass/water/energy metrics will be NaN
+    [111] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [111]   → mass/water/energy metrics will be NaN
+    [95] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [95] ✓ KE spectrum saved (l_max=359)
+  [113/1098] init=2020-02-07T00:00:00.000000000  lead=5d (120h)  valid=2020-02-12T00:00:00.000000000
+    [113] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [112] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [112]   → mass/water/energy metrics will be NaN
+    [113] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [113]   → mass/water/energy metrics will be NaN
+    [101] Drift: 19 steps [12h–120h]  sp_method=failed
+    [109] Drift: 3 steps [12h–24h]  sp_method=failed
+    [109] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [109] ✓ KE spectrum saved (l_max=359)
+  [114/1098] init=2020-02-07T00:00:00.000000000  lead=10d (240h)  valid=2020-02-17T00:00:00.000000000
+    [114] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [98] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [98] ✓ KE spectrum saved (l_max=359)
+  [115/1098] init=2020-02-08T00:00:00.000000000  lead=12h (12h)  valid=2020-02-08T12:00:00.000000000
+    [115] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [114] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [114]   → mass/water/energy metrics will be NaN
+    [112] Drift: 3 steps [12h–24h]  sp_method=failed
+    [115] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [115]   → mass/water/energy metrics will be NaN
+    [112] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [112] ✓ KE spectrum saved (l_max=359)
+  [116/1098] init=2020-02-08T00:00:00.000000000  lead=5d (120h)  valid=2020-02-13T00:00:00.000000000
+    [116] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [81] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [81] ✓ KE spectrum saved (l_max=359)
+  [117/1098] init=2020-02-08T00:00:00.000000000  lead=10d (240h)  valid=2020-02-18T00:00:00.000000000
+    [117] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [116] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [116]   → mass/water/energy metrics will be NaN
+    [84] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [84] ✓ KE spectrum saved (l_max=359)
+  [118/1098] init=2020-02-09T00:00:00.000000000  lead=12h (12h)  valid=2020-02-09T12:00:00.000000000
+    [118] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [78] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [78] ✓ KE spectrum saved (l_max=359)
+  [119/1098] init=2020-02-09T00:00:00.000000000  lead=5d (120h)  valid=2020-02-14T00:00:00.000000000
+    [119] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [117] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [117]   → mass/water/energy metrics will be NaN
+    [101] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [101] ✓ KE spectrum saved (l_max=359)
+  [120/1098] init=2020-02-09T00:00:00.000000000  lead=10d (240h)  valid=2020-02-19T00:00:00.000000000
+    [120] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [118] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [118]   → mass/water/energy metrics will be NaN
+    [115] Drift: 3 steps [12h–24h]  sp_method=failed
+    [119] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [119]   → mass/water/energy metrics will be NaN
+    [104] Drift: 19 steps [12h–120h]  sp_method=failed
+    [120] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [120]   → mass/water/energy metrics will be NaN
+    [87] Drift: 39 steps [12h–240h]  sp_method=failed
+    [115] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [115] ✓ KE spectrum saved (l_max=359)
+  [121/1098] init=2020-02-10T00:00:00.000000000  lead=12h (12h)  valid=2020-02-10T12:00:00.000000000
+    [121] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [121] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [121]   → mass/water/energy metrics will be NaN
+    [118] Drift: 3 steps [12h–24h]  sp_method=failed
+    [90] Drift: 39 steps [12h–240h]  sp_method=failed
+    [118] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [118] ✓ KE spectrum saved (l_max=359)
+  [122/1098] init=2020-02-10T00:00:00.000000000  lead=5d (120h)  valid=2020-02-15T00:00:00.000000000
+    [122] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [122] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [122]   → mass/water/energy metrics will be NaN
+    [121] Drift: 3 steps [12h–24h]  sp_method=failed
+    [93] Drift: 39 steps [12h–240h]  sp_method=failed
+    [107] Drift: 19 steps [12h–120h]  sp_method=failed
+    [104] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [104] ✓ KE spectrum saved (l_max=359)
+    [121] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+  [123/1098] init=2020-02-10T00:00:00.000000000  lead=10d (240h)  valid=2020-02-20T00:00:00.000000000
+    [123] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [121] ✓ KE spectrum saved (l_max=359)
+  [124/1098] init=2020-02-11T00:00:00.000000000  lead=12h (12h)  valid=2020-02-11T12:00:00.000000000
+    [124] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [96] Drift: 39 steps [12h–240h]  sp_method=failed
+    [124] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [124]   → mass/water/energy metrics will be NaN
+    [123] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [123]   → mass/water/energy metrics will be NaN
+    [99] Drift: 39 steps [12h–240h]  sp_method=failed
+    [110] Drift: 19 steps [12h–120h]  sp_method=failed
+    [124] Drift: 3 steps [12h–24h]  sp_method=failed
+    [124] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [124] ✓ KE spectrum saved (l_max=359)
+  [125/1098] init=2020-02-11T00:00:00.000000000  lead=5d (120h)  valid=2020-02-16T00:00:00.000000000
+    [125] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [113] Drift: 19 steps [12h–120h]  sp_method=failed
+    [107] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [107] ✓ KE spectrum saved (l_max=359)
+  [126/1098] init=2020-02-11T00:00:00.000000000  lead=10d (240h)  valid=2020-02-21T00:00:00.000000000
+    [126] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [125] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [125]   → mass/water/energy metrics will be NaN
+    [87] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [87] ✓ KE spectrum saved (l_max=359)
+  [127/1098] init=2020-02-12T00:00:00.000000000  lead=12h (12h)  valid=2020-02-12T12:00:00.000000000
+    [127] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [102] Drift: 39 steps [12h–240h]  sp_method=failed
+    [126] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [126]   → mass/water/energy metrics will be NaN
+    [127] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [127]   → mass/water/energy metrics will be NaN
+    [90] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [90] ✓ KE spectrum saved (l_max=359)
+    [116] Drift: 19 steps [12h–120h]  sp_method=failed
+  [128/1098] init=2020-02-12T00:00:00.000000000  lead=5d (120h)  valid=2020-02-17T00:00:00.000000000
+    [128] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [110] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [110] ✓ KE spectrum saved (l_max=359)
+  [129/1098] init=2020-02-12T00:00:00.000000000  lead=10d (240h)  valid=2020-02-22T00:00:00.000000000
+    [129] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [128] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [128]   → mass/water/energy metrics will be NaN
+    [127] Drift: 3 steps [12h–24h]  sp_method=failed
+    [129] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [129]   → mass/water/energy metrics will be NaN
+    [113] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [113] ✓ KE spectrum saved (l_max=359)
+  [130/1098] init=2020-02-13T00:00:00.000000000  lead=12h (12h)  valid=2020-02-13T12:00:00.000000000
+    [130] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [127] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [127] ✓ KE spectrum saved (l_max=359)
+    [93] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [93] ✓ KE spectrum saved (l_max=359)
+  [131/1098] init=2020-02-13T00:00:00.000000000  lead=5d (120h)  valid=2020-02-18T00:00:00.000000000
+    [131] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [132/1098] init=2020-02-13T00:00:00.000000000  lead=10d (240h)  valid=2020-02-23T00:00:00.000000000
+    [132] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [119] Drift: 19 steps [12h–120h]  sp_method=failed
+    [130] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [130]   → mass/water/energy metrics will be NaN
+    [131] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [131]   → mass/water/energy metrics will be NaN
+    [132] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [132]   → mass/water/energy metrics will be NaN
+    [96] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [96] ✓ KE spectrum saved (l_max=359)
+  [133/1098] init=2020-02-14T00:00:00.000000000  lead=12h (12h)  valid=2020-02-14T12:00:00.000000000
+    [133] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [105] Drift: 39 steps [12h–240h]  sp_method=failed
+    [133] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [133]   → mass/water/energy metrics will be NaN
+    [116] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [116] ✓ KE spectrum saved (l_max=359)
+  [134/1098] init=2020-02-14T00:00:00.000000000  lead=5d (120h)  valid=2020-02-19T00:00:00.000000000
+    [134] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [99] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [99] ✓ KE spectrum saved (l_max=359)
+  [135/1098] init=2020-02-14T00:00:00.000000000  lead=10d (240h)  valid=2020-02-24T00:00:00.000000000
+    [135] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [130] Drift: 3 steps [12h–24h]  sp_method=failed
+    [134] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [134]   → mass/water/energy metrics will be NaN
+    [135] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [135]   → mass/water/energy metrics will be NaN
+    [130] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [130] ✓ KE spectrum saved (l_max=359)
+  [136/1098] init=2020-02-15T00:00:00.000000000  lead=12h (12h)  valid=2020-02-15T12:00:00.000000000
+    [136] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [122] Drift: 19 steps [12h–120h]  sp_method=failed
+    [136] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [136]   → mass/water/energy metrics will be NaN
+    [133] Drift: 3 steps [12h–24h]  sp_method=failed
+    [119] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [119] ✓ KE spectrum saved (l_max=359)
+  [137/1098] init=2020-02-15T00:00:00.000000000  lead=5d (120h)  valid=2020-02-20T00:00:00.000000000
+    [137] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [133] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [133] ✓ KE spectrum saved (l_max=359)
+  [138/1098] init=2020-02-15T00:00:00.000000000  lead=10d (240h)  valid=2020-02-25T00:00:00.000000000
+    [138] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [102] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [102] ✓ KE spectrum saved (l_max=359)
+  [139/1098] init=2020-02-16T00:00:00.000000000  lead=12h (12h)  valid=2020-02-16T12:00:00.000000000
+    [139] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [137] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [137]   → mass/water/energy metrics will be NaN
+    [139] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [139]   → mass/water/energy metrics will be NaN
+    [138] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [138]   → mass/water/energy metrics will be NaN
+    [136] Drift: 3 steps [12h–24h]  sp_method=failed
+    [108] Drift: 39 steps [12h–240h]  sp_method=failed
+    [136] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [136] ✓ KE spectrum saved (l_max=359)
+  [140/1098] init=2020-02-16T00:00:00.000000000  lead=5d (120h)  valid=2020-02-21T00:00:00.000000000
+    [140] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [111] Drift: 39 steps [12h–240h]  sp_method=failed
+    [139] Drift: 3 steps [12h–24h]  sp_method=failed
+    [122] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [122] ✓ KE spectrum saved (l_max=359)
+  [141/1098] init=2020-02-16T00:00:00.000000000  lead=10d (240h)  valid=2020-02-26T00:00:00.000000000
+    [141] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [140] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [140]   → mass/water/energy metrics will be NaN
+    [139] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [139] ✓ KE spectrum saved (l_max=359)
+  [142/1098] init=2020-02-17T00:00:00.000000000  lead=12h (12h)  valid=2020-02-17T12:00:00.000000000
+    [142] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [114] Drift: 39 steps [12h–240h]  sp_method=failed
+    [141] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [141]   → mass/water/energy metrics will be NaN
+    [142] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [142]   → mass/water/energy metrics will be NaN
+    [125] Drift: 19 steps [12h–120h]  sp_method=failed
+    [105] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [105] ✓ KE spectrum saved (l_max=359)
+  [143/1098] init=2020-02-17T00:00:00.000000000  lead=5d (120h)  valid=2020-02-22T00:00:00.000000000
+    [143] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [143] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [143]   → mass/water/energy metrics will be NaN
+    [128] Drift: 19 steps [12h–120h]  sp_method=failed
+    [142] Drift: 3 steps [12h–24h]  sp_method=failed
+    [117] Drift: 39 steps [12h–240h]  sp_method=failed
+    [142] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [142] ✓ KE spectrum saved (l_max=359)
+  [144/1098] init=2020-02-17T00:00:00.000000000  lead=10d (240h)  valid=2020-02-27T00:00:00.000000000
+    [144] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [144] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [144]   → mass/water/energy metrics will be NaN
+    [131] Drift: 19 steps [12h–120h]  sp_method=failed
+    [125] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [125] ✓ KE spectrum saved (l_max=359)
+  [145/1098] init=2020-02-18T00:00:00.000000000  lead=12h (12h)  valid=2020-02-18T12:00:00.000000000
+    [145] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [120] Drift: 39 steps [12h–240h]  sp_method=failed
+    [145] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [145]   → mass/water/energy metrics will be NaN
+    [134] Drift: 19 steps [12h–120h]  sp_method=failed
+    [111] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [111] ✓ KE spectrum saved (l_max=359)
+  [146/1098] init=2020-02-18T00:00:00.000000000  lead=5d (120h)  valid=2020-02-23T00:00:00.000000000
+    [146] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [108] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [108] ✓ KE spectrum saved (l_max=359)
+  [147/1098] init=2020-02-18T00:00:00.000000000  lead=10d (240h)  valid=2020-02-28T00:00:00.000000000
+    [147] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [128] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [128] ✓ KE spectrum saved (l_max=359)
+  [148/1098] init=2020-02-19T00:00:00.000000000  lead=12h (12h)  valid=2020-02-19T12:00:00.000000000
+    [148] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [146] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [146]   → mass/water/energy metrics will be NaN
+    [148] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [148]   → mass/water/energy metrics will be NaN
+    [147] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [147]   → mass/water/energy metrics will be NaN
+    [114] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [114] ✓ KE spectrum saved (l_max=359)
+  [149/1098] init=2020-02-19T00:00:00.000000000  lead=5d (120h)  valid=2020-02-24T00:00:00.000000000
+    [149] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [145] Drift: 3 steps [12h–24h]  sp_method=failed
+    [131] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [131] ✓ KE spectrum saved (l_max=359)
+  [150/1098] init=2020-02-19T00:00:00.000000000  lead=10d (240h)  valid=2020-02-29T00:00:00.000000000
+    [150] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [149] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [149]   → mass/water/energy metrics will be NaN
+    [145] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [145] ✓ KE spectrum saved (l_max=359)
+  [151/1098] init=2020-02-20T00:00:00.000000000  lead=12h (12h)  valid=2020-02-20T12:00:00.000000000
+    [151] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [123] Drift: 39 steps [12h–240h]  sp_method=failed
+    [150] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [150]   → mass/water/energy metrics will be NaN
+    [137] Drift: 19 steps [12h–120h]  sp_method=failed
+    [151] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [151]   → mass/water/energy metrics will be NaN
+    [148] Drift: 3 steps [12h–24h]  sp_method=failed
+    [134] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [134] ✓ KE spectrum saved (l_max=359)
+  [152/1098] init=2020-02-20T00:00:00.000000000  lead=5d (120h)  valid=2020-02-25T00:00:00.000000000
+    [152] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [148] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [148] ✓ KE spectrum saved (l_max=359)
+  [153/1098] init=2020-02-20T00:00:00.000000000  lead=10d (240h)  valid=2020-03-01T00:00:00.000000000
+    [153] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [117] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [117] ✓ KE spectrum saved (l_max=359)
+  [154/1098] init=2020-02-21T00:00:00.000000000  lead=12h (12h)  valid=2020-02-21T12:00:00.000000000
+    [154] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [152] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [152]   → mass/water/energy metrics will be NaN
+    [153] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [153]   → mass/water/energy metrics will be NaN
+    [154] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [154]   → mass/water/energy metrics will be NaN
+    [140] Drift: 19 steps [12h–120h]  sp_method=failed
+    [151] Drift: 3 steps [12h–24h]  sp_method=failed
+    [120] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [120] ✓ KE spectrum saved (l_max=359)
+  [155/1098] init=2020-02-21T00:00:00.000000000  lead=5d (120h)  valid=2020-02-26T00:00:00.000000000
+    [155] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [151] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [151] ✓ KE spectrum saved (l_max=359)
+  [156/1098] init=2020-02-21T00:00:00.000000000  lead=10d (240h)  valid=2020-03-02T00:00:00.000000000
+    [156] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [155] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [155]   → mass/water/energy metrics will be NaN
+    [154] Drift: 3 steps [12h–24h]  sp_method=failed
+    [137] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [137] ✓ KE spectrum saved (l_max=359)
+  [157/1098] init=2020-02-22T00:00:00.000000000  lead=12h (12h)  valid=2020-02-22T12:00:00.000000000
+    [157] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [156] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [156]   → mass/water/energy metrics will be NaN
+    [154] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [154] ✓ KE spectrum saved (l_max=359)
+  [158/1098] init=2020-02-22T00:00:00.000000000  lead=5d (120h)  valid=2020-02-27T00:00:00.000000000
+    [158] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [157] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [157]   → mass/water/energy metrics will be NaN
+    [158] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [158]   → mass/water/energy metrics will be NaN
+    [143] Drift: 19 steps [12h–120h]  sp_method=failed
+    [126] Drift: 39 steps [12h–240h]  sp_method=failed
+    [140] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [140] ✓ KE spectrum saved (l_max=359)
+  [159/1098] init=2020-02-22T00:00:00.000000000  lead=10d (240h)  valid=2020-03-03T00:00:00.000000000
+    [159] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [129] Drift: 39 steps [12h–240h]  sp_method=failed
+    [159] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [159]   → mass/water/energy metrics will be NaN
+    [157] Drift: 3 steps [12h–24h]  sp_method=failed
+    [157] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [157] ✓ KE spectrum saved (l_max=359)
+  [160/1098] init=2020-02-23T00:00:00.000000000  lead=12h (12h)  valid=2020-02-23T12:00:00.000000000
+    [160] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [123] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [123] ✓ KE spectrum saved (l_max=359)
+  [161/1098] init=2020-02-23T00:00:00.000000000  lead=5d (120h)  valid=2020-02-28T00:00:00.000000000
+    [161] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [160] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [160]   → mass/water/energy metrics will be NaN
+    [132] Drift: 39 steps [12h–240h]  sp_method=failed
+    [161] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [161]   → mass/water/energy metrics will be NaN
+    [143] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [143] ✓ KE spectrum saved (l_max=359)
+  [162/1098] init=2020-02-23T00:00:00.000000000  lead=10d (240h)  valid=2020-03-04T00:00:00.000000000
+    [162] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [162] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [162]   → mass/water/energy metrics will be NaN
+    [135] Drift: 39 steps [12h–240h]  sp_method=failed
+    [160] Drift: 3 steps [12h–24h]  sp_method=failed
+    [146] Drift: 19 steps [12h–120h]  sp_method=failed
+    [160] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [160] ✓ KE spectrum saved (l_max=359)
+  [163/1098] init=2020-02-24T00:00:00.000000000  lead=12h (12h)  valid=2020-02-24T12:00:00.000000000
+    [163] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [149] Drift: 19 steps [12h–120h]  sp_method=failed
+    [163] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [163]   → mass/water/energy metrics will be NaN
+    [126] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [126] ✓ KE spectrum saved (l_max=359)
+  [164/1098] init=2020-02-24T00:00:00.000000000  lead=5d (120h)  valid=2020-02-29T00:00:00.000000000
+    [164] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [138] Drift: 39 steps [12h–240h]  sp_method=failed
+    [152] Drift: 19 steps [12h–120h]  sp_method=failed
+    [163] Drift: 3 steps [12h–24h]  sp_method=failed
+    [164] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [164]   → mass/water/energy metrics will be NaN
+    [129] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [163] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [129] ✓ KE spectrum saved (l_max=359)
+    [163] ✓ KE spectrum saved (l_max=359)
+  [165/1098] init=2020-02-24T00:00:00.000000000  lead=10d (240h)  valid=2020-03-05T00:00:00.000000000
+    [165] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [166/1098] init=2020-02-25T00:00:00.000000000  lead=12h (12h)  valid=2020-02-25T12:00:00.000000000
+    [166] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [149] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [149] ✓ KE spectrum saved (l_max=359)
+  [167/1098] init=2020-02-25T00:00:00.000000000  lead=5d (120h)  valid=2020-03-01T00:00:00.000000000
+    [167] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [165] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [165]   → mass/water/energy metrics will be NaN
+    [166] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [166]   → mass/water/energy metrics will be NaN
+    [141] Drift: 39 steps [12h–240h]  sp_method=failed
+    [146] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [146] ✓ KE spectrum saved (l_max=359)
+  [168/1098] init=2020-02-25T00:00:00.000000000  lead=10d (240h)  valid=2020-03-06T00:00:00.000000000
+    [168] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [167] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [167]   → mass/water/energy metrics will be NaN
+    [155] Drift: 19 steps [12h–120h]  sp_method=failed
+    [168] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [168]   → mass/water/energy metrics will be NaN
+    [132] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [132] ✓ KE spectrum saved (l_max=359)
+  [169/1098] init=2020-02-26T00:00:00.000000000  lead=12h (12h)  valid=2020-02-26T12:00:00.000000000
+    [169] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [169] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [169]   → mass/water/energy metrics will be NaN
+    [166] Drift: 3 steps [12h–24h]  sp_method=failed
+    [152] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [152] ✓ KE spectrum saved (l_max=359)
+  [170/1098] init=2020-02-26T00:00:00.000000000  lead=5d (120h)  valid=2020-03-02T00:00:00.000000000
+    [170] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [158] Drift: 19 steps [12h–120h]  sp_method=failed
+    [166] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [166] ✓ KE spectrum saved (l_max=359)
+  [171/1098] init=2020-02-26T00:00:00.000000000  lead=10d (240h)  valid=2020-03-07T00:00:00.000000000
+    [171] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [170] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [170]   → mass/water/energy metrics will be NaN
+    [135] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [171] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [171]   → mass/water/energy metrics will be NaN
+    [135] ✓ KE spectrum saved (l_max=359)
+  [172/1098] init=2020-02-27T00:00:00.000000000  lead=12h (12h)  valid=2020-02-27T12:00:00.000000000
+    [172] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [144] Drift: 39 steps [12h–240h]  sp_method=failed
+    [172] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [172]   → mass/water/energy metrics will be NaN
+    [169] Drift: 3 steps [12h–24h]  sp_method=failed
+    [155] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [155] ✓ KE spectrum saved (l_max=359)
+  [173/1098] init=2020-02-27T00:00:00.000000000  lead=5d (120h)  valid=2020-03-03T00:00:00.000000000
+    [173] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [169] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [169] ✓ KE spectrum saved (l_max=359)
+  [174/1098] init=2020-02-27T00:00:00.000000000  lead=10d (240h)  valid=2020-03-08T00:00:00.000000000
+    [174] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [173] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [173]   → mass/water/energy metrics will be NaN
+    [174] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [174]   → mass/water/energy metrics will be NaN
+    [158] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [138] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [158] ✓ KE spectrum saved (l_max=359)
+    [138] ✓ KE spectrum saved (l_max=359)
+  [175/1098] init=2020-02-28T00:00:00.000000000  lead=12h (12h)  valid=2020-02-28T12:00:00.000000000
+    [175] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [176/1098] init=2020-02-28T00:00:00.000000000  lead=5d (120h)  valid=2020-03-04T00:00:00.000000000
+    [176] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [161] Drift: 19 steps [12h–120h]  sp_method=failed
+    [172] Drift: 3 steps [12h–24h]  sp_method=failed
+    [175] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [175]   → mass/water/energy metrics will be NaN
+    [176] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [176]   → mass/water/energy metrics will be NaN
+    [172] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [172] ✓ KE spectrum saved (l_max=359)
+  [177/1098] init=2020-02-28T00:00:00.000000000  lead=10d (240h)  valid=2020-03-09T00:00:00.000000000
+    [177] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [141] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [141] ✓ KE spectrum saved (l_max=359)
+  [178/1098] init=2020-02-29T00:00:00.000000000  lead=12h (12h)  valid=2020-02-29T12:00:00.000000000
+    [178] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [177] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [177]   → mass/water/energy metrics will be NaN
+    [147] Drift: 39 steps [12h–240h]  sp_method=failed
+    [178] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [178]   → mass/water/energy metrics will be NaN
+    [150] Drift: 39 steps [12h–240h]  sp_method=failed
+    [175] Drift: 3 steps [12h–24h]  sp_method=failed
+    [175] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [175] ✓ KE spectrum saved (l_max=359)
+  [179/1098] init=2020-02-29T00:00:00.000000000  lead=5d (120h)  valid=2020-03-05T00:00:00.000000000
+    [179] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [178] Drift: 3 steps [12h–24h]  sp_method=failed
+    [161] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [161] ✓ KE spectrum saved (l_max=359)
+  [180/1098] init=2020-02-29T00:00:00.000000000  lead=10d (240h)  valid=2020-03-10T00:00:00.000000000
+    [180] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [179] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [179]   → mass/water/energy metrics will be NaN
+    [164] Drift: 19 steps [12h–120h]  sp_method=failed
+    [178] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day
+    [178] ✓ KE spectrum saved (l_max=359)
+  [181/1098] init=2020-03-01T00:00:00.000000000  lead=12h (12h)  valid=2020-03-01T12:00:00.000000000
+    [181] Dropping 7 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [180] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [180]   → mass/water/energy metrics will be NaN
+    [153] Drift: 39 steps [12h–240h]  sp_method=failed
+    [181] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [181]   → mass/water/energy metrics will be NaN
+    [167] Drift: 19 steps [12h–120h]  sp_method=failed

@@ -1,0 +1,60 @@
+#!/bin/bash
+
+#SBATCH --job-name=aurora_pred
+#SBATCH --partition=gpu_a100
+#SBATCH --time=00:20:00
+#SBATCH --mem=64G
+#SBATCH --gpus=1
+#SBATCH --cpus-per-task=12
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --output=$HOME/aurora_thesis/jobs/logs/pred_%j.out
+#SBATCH --error=$HOME/aurora_thesis/jobs/logs/pred_%j.err
+
+PY="$HOME/aurora_thesis/aurora_env/bin/python"
+SCRIPT="$HOME/aurora_thesis/scripts/aurora_pred.py"
+ZARR="/projects/2/managed_datasets/ERA5/era5-gcp-zarr/ar/1959-2022-wb13-6h-0p25deg-chunk-1.zarr-v2"
+STATIC="$HOME/downloads/era5/static.nc"
+RESULT_DIR="$HOME/aurora_thesis/results"
+LOG_DIR="$HOME/aurora_thesis/jobs/logs"
+DATE="1987-10-16"
+OUTPUT_IMG="$RESULT_DIR/prediction_${DATE}.png"
+LAT_MIN=25
+LAT_MAX=75
+LON_MIN=-30
+LON_MAX=50
+DEVICE="cuda"
+DPI=400
+QUIVER_DENSITY=30
+INTERP="bilinear"  # use "none" for raw grid, "bilinear" for smooth render
+WIND_ARROWS=""  # set to "--wind-arrows" if you want arrows
+
+mkdir -p "$RESULT_DIR" "$LOG_DIR"
+
+cat <<EOF
+========================================
+Job ID: $SLURM_JOB_ID
+Date:   $(date)
+Target: $DATE
+Script: $SCRIPT
+========================================
+EOF
+
+srun $PY $SCRIPT \
+    --zarr-path "$ZARR" \
+    --static-path "$STATIC" \
+    --date "$DATE" \
+    --output "$OUTPUT_IMG" \
+    --lat-min $LAT_MIN \
+    --lat-max $LAT_MAX \
+    --lon-min $LON_MIN \
+    --lon-max $LON_MAX \
+    --device $DEVICE \
+    --dpi $DPI \
+    --interp $INTERP \
+    $WIND_ARROWS
+
+cat <<EOF
+========================================
+Job finished successfully.
+EOF

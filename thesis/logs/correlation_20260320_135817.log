@@ -1,0 +1,18 @@
+========================================
+  PHYSICS vs RMSE CORRELATION
+========================================
+Job ID:       20997272
+Date:         Fri Mar 20 13:58:17 CET 2026
+Hostname:     tcn120.local.snellius.surf.nl
+Models:       pangu fuxi graphcast hres neuralgcm
+========================================
+
+
+============================================================
+  Processing: pangu
+============================================================
+  Loaded 1098 physics metric rows
+  Computing RMSE for 366 dates...
+  Loading datasets for pangu...
+    Variables: Z=geopotential, T=temperature
+    Pred TD dim: prediction_timedelta, Level dim: level

@@ -1,0 +1,11 @@
+========================================
+  AURORA LATENT EXTRACTION - HRES T0
+========================================
+Job ID:       21091262
+Date:         Tue Mar 24 09:39:45 CET 2026
+Hostname:     gcn57.local.snellius.surf.nl
+GPU:          0
+========================================
+Python: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python
+Python 3.11.3
+[2026-03-24T09:39:48.684] error: *** JOB 21091262 ON gcn57 CANCELLED AT 2026-03-24T09:39:48 DUE to SIGNAL Terminated ***

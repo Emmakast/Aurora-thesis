@@ -1,0 +1,273 @@
+========================================
+  PHYSICS EVALUATION: pangu (2020)
+========================================
+Job ID:       20697577
+Date:         Thu Mar 12 03:41:41 PM CET 2026
+Hostname:     tcn105.local.snellius.surf.nl
+Mode:         prediction
+Workers:      48
+Prediction:   gs://weatherbench2/datasets/pangu/2018-2022_0012_0p25.zarr
+Output:       /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_pangu_2020.csv
+========================================
+
+
+======================================================================
+  PHYSICS EVALUATION — WeatherBench 2 Zarr Streaming
+======================================================================
+  Prediction : gs://weatherbench2/datasets/pangu/2018-2022_0012_0p25.zarr
+  ERA5       : gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Dates  : 366
+  Lead times : ['6h', '5d', '10d']
+  Total evals: 1098
+  Workers    : 48
+  Mode       : prediction
+  Output : /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_pangu_2020.csv
+======================================================================
+
+  Checking Zarr stores (anonymous) …
+  Aurora vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']
+  ERA5 vars  : ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_dewpoint_temperature', '2m_temperature', 'above_ground', 'ageostrophic_wind_speed', 'angle_of_sub_gridscale_orography', 'anisotropy_of_sub_gridscale_orography', 'boundary_layer_height', 'divergence', 'eddy_kinetic_energy']
+  ERA5 time dtype: datetime64[ns]
+  ERA5 time range: 1959-01-01T00:00:00.000000000 → 2023-01-10T18:00:00.000000000
+
+  Sanity check — verifying ERA5 time selection on 'temperature':
+    requested=1975-01-03T12:00:00.000000000  actual=1975-01-03T12:00:00.000000000  mean=242.724
+    requested=1991-01-06T00:00:00.000000000  actual=1991-01-06T00:00:00.000000000  mean=242.87
+    requested=2007-01-08T12:00:00.000000000  actual=2007-01-08T12:00:00.000000000  mean=242.841
+  ✓ ERA5 time selection looks correct (values differ).
+
+
+  Launching 48 processes …
+
+  [39/1098] init=2020-01-13T00:00:00.000000000  lead=10d (240h)  valid=2020-01-23T00:00:00.000000000
+    [39] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [30/1098] init=2020-01-10T00:00:00.000000000  lead=10d (240h)  valid=2020-01-20T00:00:00.000000000
+    [30] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [18/1098] init=2020-01-06T00:00:00.000000000  lead=10d (240h)  valid=2020-01-16T00:00:00.000000000
+    [18] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [14/1098] init=2020-01-05T00:00:00.000000000  lead=5d (120h)  valid=2020-01-10T00:00:00.000000000
+    [14] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [5/1098] init=2020-01-02T00:00:00.000000000  lead=5d (120h)  valid=2020-01-07T00:00:00.000000000
+    [5] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [44/1098] init=2020-01-15T00:00:00.000000000  lead=5d (120h)  valid=2020-01-20T00:00:00.000000000
+    [44] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [17/1098] init=2020-01-06T00:00:00.000000000  lead=5d (120h)  valid=2020-01-11T00:00:00.000000000
+  [23/1098] init=2020-01-08T00:00:00.000000000  lead=5d (120h)  valid=2020-01-13T00:00:00.000000000
+    [17] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [23] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [12/1098] init=2020-01-04T00:00:00.000000000  lead=10d (240h)  valid=2020-01-14T00:00:00.000000000
+    [12] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [36/1098] init=2020-01-12T00:00:00.000000000  lead=10d (240h)  valid=2020-01-22T00:00:00.000000000
+    [36] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [3/1098] init=2020-01-01T00:00:00.000000000  lead=10d (240h)  valid=2020-01-11T00:00:00.000000000
+  [9/1098] init=2020-01-03T00:00:00.000000000  lead=10d (240h)  valid=2020-01-13T00:00:00.000000000
+  [4/1098] init=2020-01-02T00:00:00.000000000  lead=6h (6h)  valid=2020-01-02T06:00:00.000000000
+    [3] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [9] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [4] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [13/1098] init=2020-01-05T00:00:00.000000000  lead=6h (6h)  valid=2020-01-05T06:00:00.000000000
+    [13] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [45/1098] init=2020-01-15T00:00:00.000000000  lead=10d (240h)  valid=2020-01-25T00:00:00.000000000
+    [45] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [22/1098] init=2020-01-08T00:00:00.000000000  lead=6h (6h)  valid=2020-01-08T06:00:00.000000000
+    [22] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [21/1098] init=2020-01-07T00:00:00.000000000  lead=10d (240h)  valid=2020-01-17T00:00:00.000000000
+    [21] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [46/1098] init=2020-01-16T00:00:00.000000000  lead=6h (6h)  valid=2020-01-16T06:00:00.000000000
+  [24/1098] init=2020-01-08T00:00:00.000000000  lead=10d (240h)  valid=2020-01-18T00:00:00.000000000
+    [46] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [24] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [2/1098] init=2020-01-01T00:00:00.000000000  lead=5d (120h)  valid=2020-01-06T00:00:00.000000000
+    [2] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [33/1098] init=2020-01-11T00:00:00.000000000  lead=10d (240h)  valid=2020-01-21T00:00:00.000000000
+    [33] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [29/1098] init=2020-01-10T00:00:00.000000000  lead=5d (120h)  valid=2020-01-15T00:00:00.000000000
+    [29] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [8/1098] init=2020-01-03T00:00:00.000000000  lead=5d (120h)  valid=2020-01-08T00:00:00.000000000
+    [8] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [48/1098] init=2020-01-16T00:00:00.000000000  lead=10d (240h)  valid=2020-01-26T00:00:00.000000000
+    [48] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [16/1098] init=2020-01-06T00:00:00.000000000  lead=6h (6h)  valid=2020-01-06T06:00:00.000000000
+    [16] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [7/1098] init=2020-01-03T00:00:00.000000000  lead=6h (6h)  valid=2020-01-03T06:00:00.000000000
+    [7] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [1/1098] init=2020-01-01T00:00:00.000000000  lead=6h (6h)  valid=2020-01-01T06:00:00.000000000
+  [27/1098] init=2020-01-09T00:00:00.000000000  lead=10d (240h)  valid=2020-01-19T00:00:00.000000000
+    [1] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [27] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [37/1098] init=2020-01-13T00:00:00.000000000  lead=6h (6h)  valid=2020-01-13T06:00:00.000000000
+    [37] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [6/1098] init=2020-01-02T00:00:00.000000000  lead=10d (240h)  valid=2020-01-12T00:00:00.000000000
+    [6] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [26/1098] init=2020-01-09T00:00:00.000000000  lead=5d (120h)  valid=2020-01-14T00:00:00.000000000
+    [26] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [11/1098] init=2020-01-04T00:00:00.000000000  lead=5d (120h)  valid=2020-01-09T00:00:00.000000000
+    [11] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [15/1098] init=2020-01-05T00:00:00.000000000  lead=10d (240h)  valid=2020-01-15T00:00:00.000000000
+    [15] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [41/1098] init=2020-01-14T00:00:00.000000000  lead=5d (120h)  valid=2020-01-19T00:00:00.000000000
+  [32/1098] init=2020-01-11T00:00:00.000000000  lead=5d (120h)  valid=2020-01-16T00:00:00.000000000
+    [41] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [32] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [25/1098] init=2020-01-09T00:00:00.000000000  lead=6h (6h)  valid=2020-01-09T06:00:00.000000000
+  [35/1098] init=2020-01-12T00:00:00.000000000  lead=5d (120h)  valid=2020-01-17T00:00:00.000000000
+    [25] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [42/1098] init=2020-01-14T00:00:00.000000000  lead=10d (240h)  valid=2020-01-24T00:00:00.000000000
+    [35] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [10/1098] init=2020-01-04T00:00:00.000000000  lead=6h (6h)  valid=2020-01-04T06:00:00.000000000
+    [42] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [10] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [40/1098] init=2020-01-14T00:00:00.000000000  lead=6h (6h)  valid=2020-01-14T06:00:00.000000000
+  [38/1098] init=2020-01-13T00:00:00.000000000  lead=5d (120h)  valid=2020-01-18T00:00:00.000000000
+    [40] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [38] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [28/1098] init=2020-01-10T00:00:00.000000000  lead=6h (6h)  valid=2020-01-10T06:00:00.000000000
+    [28] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [20/1098] init=2020-01-07T00:00:00.000000000  lead=5d (120h)  valid=2020-01-12T00:00:00.000000000
+    [20] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [19/1098] init=2020-01-07T00:00:00.000000000  lead=6h (6h)  valid=2020-01-07T06:00:00.000000000
+    [19] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [34/1098] init=2020-01-12T00:00:00.000000000  lead=6h (6h)  valid=2020-01-12T06:00:00.000000000
+    [34] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [47/1098] init=2020-01-16T00:00:00.000000000  lead=5d (120h)  valid=2020-01-21T00:00:00.000000000
+    [47] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [31/1098] init=2020-01-11T00:00:00.000000000  lead=6h (6h)  valid=2020-01-11T06:00:00.000000000
+    [31] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [43/1098] init=2020-01-15T00:00:00.000000000  lead=6h (6h)  valid=2020-01-15T06:00:00.000000000
+    [43] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [43] Drift: 2 steps [6h–12h]
+    [1] Drift: 2 steps [6h–12h]
+    [7] Drift: 2 steps [6h–12h]
+    [4] Drift: 2 steps [6h–12h]
+    [34] Drift: 2 steps [6h–12h]
+    [22] Drift: 2 steps [6h–12h]
+    [19] Drift: 2 steps [6h–12h]
+    [37] Drift: 2 steps [6h–12h]
+    [10] Drift: 2 steps [6h–12h]
+    [28] Drift: 2 steps [6h–12h]
+    [13] Drift: 2 steps [6h–12h]
+    [31] Drift: 2 steps [6h–12h]
+    [46] Drift: 2 steps [6h–12h]
+    [40] Drift: 2 steps [6h–12h]
+    [25] Drift: 2 steps [6h–12h]
+    [16] Drift: 2 steps [6h–12h]
+    [43] ✓ Drift: dry=-0.00498535%/day  water=-0.827761%/day  energy=-0.0810814%/day
+    [1] ✓ Drift: dry=-0.0126255%/day  water=-0.160091%/day  energy=-0.0468922%/day
+    [43] ✓ KE spectrum saved (l_max=359)
+    [1] ✓ KE spectrum saved (l_max=359)
+  [49/1098] init=2020-01-17T00:00:00.000000000  lead=6h (6h)  valid=2020-01-17T06:00:00.000000000
+    [49] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [50/1098] init=2020-01-17T00:00:00.000000000  lead=5d (120h)  valid=2020-01-22T00:00:00.000000000
+    [50] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [4] ✓ Drift: dry=-0.00660907%/day  water=-0.520682%/day  energy=-0.0455059%/day
+    [7] ✓ Drift: dry=-0.0153678%/day  water=-0.770254%/day  energy=-0.0619407%/day
+    [4] ✓ KE spectrum saved (l_max=359)
+    [7] ✓ KE spectrum saved (l_max=359)
+    [19] ✓ Drift: dry=+0.00417987%/day  water=-0.908132%/day  energy=-0.067449%/day
+    [22] ✓ Drift: dry=+0.00380532%/day  water=-0.138082%/day  energy=-0.0391274%/day
+  [52/1098] init=2020-01-18T00:00:00.000000000  lead=6h (6h)  valid=2020-01-18T06:00:00.000000000
+    [52] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [51/1098] init=2020-01-17T00:00:00.000000000  lead=10d (240h)  valid=2020-01-27T00:00:00.000000000
+    [51] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [19] ✓ KE spectrum saved (l_max=359)
+    [37] ✓ Drift: dry=-0.00199212%/day  water=-1.00902%/day  energy=-0.0861091%/day
+    [22] ✓ KE spectrum saved (l_max=359)
+    [10] ✓ Drift: dry=+0.00155172%/day  water=-0.302421%/day  energy=-0.0404466%/day
+  [53/1098] init=2020-01-18T00:00:00.000000000  lead=5d (120h)  valid=2020-01-23T00:00:00.000000000
+    [53] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [54/1098] init=2020-01-18T00:00:00.000000000  lead=10d (240h)  valid=2020-01-28T00:00:00.000000000
+    [54] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [34] ✓ Drift: dry=-0.00389868%/day  water=-0.501369%/day  energy=-0.0710681%/day
+    [31] ✓ Drift: dry=-0.0103482%/day  water=-0.51424%/day  energy=-0.075714%/day
+    [37] ✓ KE spectrum saved (l_max=359)
+    [10] ✓ KE spectrum saved (l_max=359)
+  [55/1098] init=2020-01-19T00:00:00.000000000  lead=6h (6h)  valid=2020-01-19T06:00:00.000000000
+    [55] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [28] ✓ Drift: dry=+0.00353702%/day  water=-0.876739%/day  energy=-0.0559987%/day
+    [40] ✓ Drift: dry=-0.00473277%/day  water=-0.586513%/day  energy=-0.0667297%/day
+  [56/1098] init=2020-01-19T00:00:00.000000000  lead=5d (120h)  valid=2020-01-24T00:00:00.000000000
+    [56] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [31] ✓ KE spectrum saved (l_max=359)
+    [34] ✓ KE spectrum saved (l_max=359)
+  [57/1098] init=2020-01-19T00:00:00.000000000  lead=10d (240h)  valid=2020-01-29T00:00:00.000000000
+    [57] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [28] ✓ KE spectrum saved (l_max=359)
+  [58/1098] init=2020-01-20T00:00:00.000000000  lead=6h (6h)  valid=2020-01-20T06:00:00.000000000
+    [58] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [40] ✓ KE spectrum saved (l_max=359)
+    [13] ✓ Drift: dry=+0.00446879%/day  water=-0.702164%/day  energy=-0.0526477%/day
+    [25] ✓ Drift: dry=+0.0112057%/day  water=-0.308134%/day  energy=-0.041769%/day
+  [59/1098] init=2020-01-20T00:00:00.000000000  lead=5d (120h)  valid=2020-01-25T00:00:00.000000000
+    [59] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [46] ✓ Drift: dry=-0.0148157%/day  water=-0.906708%/day  energy=-0.0776528%/day
+  [60/1098] init=2020-01-20T00:00:00.000000000  lead=10d (240h)  valid=2020-01-30T00:00:00.000000000
+    [60] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [16] ✓ Drift: dry=+0.0120248%/day  water=-0.464338%/day  energy=-0.0339887%/day
+    [13] ✓ KE spectrum saved (l_max=359)
+    [25] ✓ KE spectrum saved (l_max=359)
+    [46] ✓ KE spectrum saved (l_max=359)
+  [62/1098] init=2020-01-21T00:00:00.000000000  lead=5d (120h)  valid=2020-01-26T00:00:00.000000000
+    [62] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [16] ✓ KE spectrum saved (l_max=359)
+  [61/1098] init=2020-01-21T00:00:00.000000000  lead=6h (6h)  valid=2020-01-21T06:00:00.000000000
+    [61] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [63/1098] init=2020-01-21T00:00:00.000000000  lead=10d (240h)  valid=2020-01-31T00:00:00.000000000
+    [63] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [64/1098] init=2020-01-22T00:00:00.000000000  lead=6h (6h)  valid=2020-01-22T06:00:00.000000000
+    [64] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [49] Drift: 2 steps [6h–12h]
+    [52] Drift: 2 steps [6h–12h]
+    [55] Drift: 2 steps [6h–12h]
+    [58] Drift: 2 steps [6h–12h]
+    [61] Drift: 2 steps [6h–12h]
+    [64] Drift: 2 steps [6h–12h]
+    [49] ✓ Drift: dry=-0.0124567%/day  water=-0.755765%/day  energy=-0.0751463%/day
+    [49] ✓ KE spectrum saved (l_max=359)
+  [65/1098] init=2020-01-22T00:00:00.000000000  lead=5d (120h)  valid=2020-01-27T00:00:00.000000000
+    [65] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [52] ✓ Drift: dry=-0.00332153%/day  water=-0.255525%/day  energy=-0.0177027%/day
+    [52] ✓ KE spectrum saved (l_max=359)
+  [66/1098] init=2020-01-22T00:00:00.000000000  lead=10d (240h)  valid=2020-02-01T00:00:00.000000000
+    [66] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [55] ✓ Drift: dry=-0.00463502%/day  water=-0.0633541%/day  energy=-0.0408913%/day
+    [55] ✓ KE spectrum saved (l_max=359)
+  [67/1098] init=2020-01-23T00:00:00.000000000  lead=6h (6h)  valid=2020-01-23T06:00:00.000000000
+    [67] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [58] ✓ Drift: dry=-0.00703467%/day  water=-0.420396%/day  energy=-0.0537958%/day
+    [58] ✓ KE spectrum saved (l_max=359)
+  [68/1098] init=2020-01-23T00:00:00.000000000  lead=5d (120h)  valid=2020-01-28T00:00:00.000000000
+    [68] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [61] ✓ Drift: dry=+0.000270269%/day  water=-0.376608%/day  energy=-0.037478%/day
+    [61] ✓ KE spectrum saved (l_max=359)
+  [69/1098] init=2020-01-23T00:00:00.000000000  lead=10d (240h)  valid=2020-02-02T00:00:00.000000000
+    [69] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [64] ✓ Drift: dry=-0.00102397%/day  water=-0.302903%/day  energy=-0.0330826%/day
+    [64] ✓ KE spectrum saved (l_max=359)
+  [70/1098] init=2020-01-24T00:00:00.000000000  lead=6h (6h)  valid=2020-01-24T06:00:00.000000000
+    [70] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [17] Drift: 20 steps [6h–120h]
+    [2] Drift: 20 steps [6h–120h]
+    [35] Drift: 20 steps [6h–120h]
+    [8] Drift: 20 steps [6h–120h]
+    [38] Drift: 20 steps [6h–120h]
+    [20] Drift: 20 steps [6h–120h]
+    [44] Drift: 20 steps [6h–120h]
+    [5] Drift: 20 steps [6h–120h]
+    [26] Drift: 20 steps [6h–120h]
+    [32] Drift: 20 steps [6h–120h]
+    [29] Drift: 20 steps [6h–120h]
+    [23] Drift: 20 steps [6h–120h]
+    [14] Drift: 20 steps [6h–120h]
+    [47] Drift: 20 steps [6h–120h]
+    [41] Drift: 20 steps [6h–120h]
+    [11] Drift: 20 steps [6h–120h]
+    [67] Drift: 2 steps [6h–12h]
+    [70] Drift: 2 steps [6h–12h]
+    [67] ✓ Drift: dry=+0.000899453%/day  water=-0.213382%/day  energy=-0.0365477%/day
+    [67] ✓ KE spectrum saved (l_max=359)
+  [71/1098] init=2020-01-24T00:00:00.000000000  lead=5d (120h)  valid=2020-01-29T00:00:00.000000000
+    [71] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [70] ✓ Drift: dry=-0.0048227%/day  water=-0.511275%/day  energy=-0.0547021%/day
+    [70] ✓ KE spectrum saved (l_max=359)
+  [72/1098] init=2020-01-24T00:00:00.000000000  lead=10d (240h)  valid=2020-02-03T00:00:00.000000000
+    [72] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']

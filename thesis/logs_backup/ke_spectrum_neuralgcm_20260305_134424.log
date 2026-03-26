@@ -1,0 +1,252 @@
+========================================
+  KE SPECTRUM: neuralgcm (2020)
+========================================
+Job ID:       20415875
+Date:         Thu Mar  5 13:44:24 CET 2026
+Hostname:     tcn395.local.snellius.surf.nl
+Prediction:   gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr
+Reference:    gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr
+Output:       /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_neuralgcm_2020.csv
+========================================
+
+/home/ekasteleyn/aurora_thesis/thesis/scripts/run_ke_spectrum.py:57: FutureWarning: In a future version, xarray will not decode the variable 'prediction_timedelta' into a timedelta64 dtype based on the presence of a timedelta-like 'units' attribute by default. Instead it will rely on the presence of a timedelta64 'dtype' attribute, which is now xarray's default way of encoding timedelta64 values.
+To continue decoding into a timedelta64 dtype, either set `decode_timedelta=True` when opening this dataset, or add the attribute `dtype='timedelta64[ns]'` to this variable on disk.
+To opt-in to future behavior, set `decode_timedelta=False`.
+  ds = xr.open_zarr(url, storage_options={"token": "anon"})
+
+======================================================================
+  KE SPECTRUM: neuralgcm (2020)
+  Prediction: gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr
+  Level: 500 hPa | Lead times: [12, 24, 48, 72, 120, 168, 240]
+======================================================================
+
+  Prediction vars: ['P_minus_E_cumulative', 'geopotential', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [2/24] 2020-01-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [3/24] 2020-02-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [4/24] 2020-02-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [5/24] 2020-03-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [6/24] 2020-03-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [7/24] 2020-04-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [8/24] 2020-04-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [9/24] 2020-05-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [10/24] 2020-05-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [11/24] 2020-06-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [12/24] 2020-06-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [13/24] 2020-07-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [14/24] 2020-07-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [15/24] 2020-08-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [16/24] 2020-08-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [17/24] 2020-09-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [18/24] 2020-09-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [19/24] 2020-10-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [20/24] 2020-10-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [21/24] 2020-11-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [22/24] 2020-11-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [23/24] 2020-12-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+  [24/24] 2020-12-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+
+✓ Saved 43008 rows → /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_neuralgcm_2020.csv
+  Unique lead times: [np.int64(12), np.int64(24), np.int64(48), np.int64(72), np.int64(120), np.int64(168), np.int64(240)]
+  Unique dates: 24
+
+========================================
+  COMPLETED SUCCESSFULLY
+  Rows: 43008
+========================================
+Finished: Thu Mar  5 15:00:23 CET 2026

@@ -1,0 +1,40 @@
+========================================
+  AURORA LATENT EXTRACTION - HRES T0
+========================================
+Job ID:       21090952
+Date:         Tue Mar 24 09:22:30 CET 2026
+Hostname:     gcn35.local.snellius.surf.nl
+GPU:          0
+========================================
+Python: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python
+Python 3.11.3
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2023/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/scratch-node/ekasteleyn/aurora_hres_latents'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2023/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/scratch-node/ekasteleyn'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 458, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 324, in main
+    output_dir.mkdir(parents=True, exist_ok=True)
+  File "/sw/arch/RHEL8/EB_production/2023/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/pathlib.py", line 1120, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/sw/arch/RHEL8/EB_production/2023/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/pathlib.py", line 1120, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/sw/arch/RHEL8/EB_production/2023/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/scratch-node'
+
+========================================
+  COMPLETE: Tue Mar 24 09:22:40 CET 2026
+========================================

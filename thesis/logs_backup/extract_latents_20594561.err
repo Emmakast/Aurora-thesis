@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/extract_latents.py", line 268, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/extract_latents.py", line 204, in main
+    raise FileNotFoundError(f"Dates CSV not found: {DATES_CSV}")
+FileNotFoundError: Dates CSV not found: /gpfs/home5/ekasteleyn/aurora_thesis/thesis/scripts/target_dates.csv

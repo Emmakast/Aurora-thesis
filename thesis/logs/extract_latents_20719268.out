@@ -1,0 +1,27 @@
+Job 20719268 started at Fri Mar 13 15:51:12 CET 2026
+Node: gcn126.local.snellius.surf.nl
+Working directory: /gpfs/home5/ekasteleyn/aurora_thesis/thesis/scripts
+GPU:
+NVIDIA H100, 95830 MiB
+
+Loaded 1 target dates from /gpfs/home5/ekasteleyn/aurora_thesis/thesis/scripts/target_dates.csv
+Output directory: /scratch-shared/ekasteleyn/aurora_latents
+Opening Zarr store (lazy) ...
+Loading and interpolating static variables ...
+Device: cuda
+Initialising AuroraPretrained (1.3 B params) ...
+Model ready.
+Hooks registered.
+
+[1/1] 2024-01-01
+  perceiver_0 latent shape=(2, 259200, 512) dtype=torch.float32 -> /scratch-shared/ekasteleyn/aurora_latents/latent_2024-01-01_perceiver_0.pt
+  encoder_0 latent shape=(2, 64800, 1024) dtype=torch.float32 -> /scratch-shared/ekasteleyn/aurora_latents/latent_2024-01-01_encoder_0.pt
+  encoder_1 latent shape=(2, 16200, 2048) dtype=torch.float32 -> /scratch-shared/ekasteleyn/aurora_latents/latent_2024-01-01_encoder_1.pt
+  encoder_2 latent shape=(2, 16200, 2048) dtype=torch.float32 -> /scratch-shared/ekasteleyn/aurora_latents/latent_2024-01-01_encoder_2.pt
+  perceiver_attn attn shape=(64800, 16, 3, 13) dtype=torch.float32 -> /scratch-shared/ekasteleyn/aurora_latents/perceiver_attn_2024-01-01.pt
+  encoder_0_attn attn shape=(3600, 8, 144, 144) dtype=torch.float32 -> /scratch-shared/ekasteleyn/aurora_latents/encoder_0_attn_2024-01-01.pt
+  encoder_1_attn attn shape=(900, 16, 144, 144) dtype=torch.float32 -> /scratch-shared/ekasteleyn/aurora_latents/encoder_1_attn_2024-01-01.pt
+  encoder_2_attn attn shape=(256, 32, 144, 144) dtype=torch.float32 -> /scratch-shared/ekasteleyn/aurora_latents/encoder_2_attn_2024-01-01.pt
+
+Done. Latents saved to /scratch-shared/ekasteleyn/aurora_latents
+Job 20719268 finished at Fri Mar 13 15:51:54 CET 2026

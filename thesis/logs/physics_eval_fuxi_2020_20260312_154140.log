@@ -1,0 +1,979 @@
+========================================
+  PHYSICS EVALUATION: fuxi (2020)
+========================================
+Job ID:       20697579
+Date:         Thu Mar 12 03:41:40 PM CET 2026
+Hostname:     tcn72.local.snellius.surf.nl
+Mode:         prediction
+Workers:      32
+Prediction:   gs://weatherbench2/datasets/fuxi/2020-1440x721.zarr
+Output:       /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_fuxi_2020.csv
+========================================
+
+
+======================================================================
+  PHYSICS EVALUATION — WeatherBench 2 Zarr Streaming
+======================================================================
+  Prediction : gs://weatherbench2/datasets/fuxi/2020-1440x721.zarr
+  ERA5       : gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Dates  : 366
+  Lead times : ['6h', '5d', '10d']
+  Total evals: 1098
+  Workers    : 32
+  Mode       : prediction
+  Output : /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_fuxi_2020.csv
+======================================================================
+
+  Checking Zarr stores (anonymous) …
+  Aurora vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']
+  ERA5 vars  : ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_dewpoint_temperature', '2m_temperature', 'above_ground', 'ageostrophic_wind_speed', 'angle_of_sub_gridscale_orography', 'anisotropy_of_sub_gridscale_orography', 'boundary_layer_height', 'divergence', 'eddy_kinetic_energy']
+  ERA5 time dtype: datetime64[ns]
+  ERA5 time range: 1959-01-01T00:00:00.000000000 → 2023-01-10T18:00:00.000000000
+
+  Sanity check — verifying ERA5 time selection on 'temperature':
+    requested=1975-01-03T12:00:00.000000000  actual=1975-01-03T12:00:00.000000000  mean=242.724
+    requested=1991-01-06T00:00:00.000000000  actual=1991-01-06T00:00:00.000000000  mean=242.87
+    requested=2007-01-08T12:00:00.000000000  actual=2007-01-08T12:00:00.000000000  mean=242.841
+  ✓ ERA5 time selection looks correct (values differ).
+
+
+  Launching 32 processes …
+
+  [18/1098] init=2020-01-06T00:00:00.000000000  lead=10d (240h)  valid=2020-01-16T00:00:00.000000000
+    [18] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [10/1098] init=2020-01-04T00:00:00.000000000  lead=6h (6h)  valid=2020-01-04T06:00:00.000000000
+    [10] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [16/1098] init=2020-01-06T00:00:00.000000000  lead=6h (6h)  valid=2020-01-06T06:00:00.000000000
+    [16] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [9/1098] init=2020-01-03T00:00:00.000000000  lead=10d (240h)  valid=2020-01-13T00:00:00.000000000
+    [9] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [13/1098] init=2020-01-05T00:00:00.000000000  lead=6h (6h)  valid=2020-01-05T06:00:00.000000000
+  [31/1098] init=2020-01-11T00:00:00.000000000  lead=6h (6h)  valid=2020-01-11T06:00:00.000000000
+    [13] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [31] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [2/1098] init=2020-01-01T00:00:00.000000000  lead=5d (120h)  valid=2020-01-06T00:00:00.000000000
+    [2] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [7/1098] init=2020-01-03T00:00:00.000000000  lead=6h (6h)  valid=2020-01-03T06:00:00.000000000
+    [7] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [23/1098] init=2020-01-08T00:00:00.000000000  lead=5d (120h)  valid=2020-01-13T00:00:00.000000000
+  [21/1098] init=2020-01-07T00:00:00.000000000  lead=10d (240h)  valid=2020-01-17T00:00:00.000000000
+    [23] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [26/1098] init=2020-01-09T00:00:00.000000000  lead=5d (120h)  valid=2020-01-14T00:00:00.000000000
+    [21] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [26] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [5/1098] init=2020-01-02T00:00:00.000000000  lead=5d (120h)  valid=2020-01-07T00:00:00.000000000
+  [20/1098] init=2020-01-07T00:00:00.000000000  lead=5d (120h)  valid=2020-01-12T00:00:00.000000000
+    [5] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [20] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [15/1098] init=2020-01-05T00:00:00.000000000  lead=10d (240h)  valid=2020-01-15T00:00:00.000000000
+    [15] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [17/1098] init=2020-01-06T00:00:00.000000000  lead=5d (120h)  valid=2020-01-11T00:00:00.000000000
+    [17] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [27/1098] init=2020-01-09T00:00:00.000000000  lead=10d (240h)  valid=2020-01-19T00:00:00.000000000
+    [27] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [11/1098] init=2020-01-04T00:00:00.000000000  lead=5d (120h)  valid=2020-01-09T00:00:00.000000000
+  [8/1098] init=2020-01-03T00:00:00.000000000  lead=5d (120h)  valid=2020-01-08T00:00:00.000000000
+  [3/1098] init=2020-01-01T00:00:00.000000000  lead=10d (240h)  valid=2020-01-11T00:00:00.000000000
+    [11] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [8] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [3] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [1/1098] init=2020-01-01T00:00:00.000000000  lead=6h (6h)  valid=2020-01-01T06:00:00.000000000
+    [1] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [24/1098] init=2020-01-08T00:00:00.000000000  lead=10d (240h)  valid=2020-01-18T00:00:00.000000000
+    [24] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [25/1098] init=2020-01-09T00:00:00.000000000  lead=6h (6h)  valid=2020-01-09T06:00:00.000000000
+    [25] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [32/1098] init=2020-01-11T00:00:00.000000000  lead=5d (120h)  valid=2020-01-16T00:00:00.000000000
+  [29/1098] init=2020-01-10T00:00:00.000000000  lead=5d (120h)  valid=2020-01-15T00:00:00.000000000
+    [32] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [29] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [12/1098] init=2020-01-04T00:00:00.000000000  lead=10d (240h)  valid=2020-01-14T00:00:00.000000000
+  [6/1098] init=2020-01-02T00:00:00.000000000  lead=10d (240h)  valid=2020-01-12T00:00:00.000000000
+    [12] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [6] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [30/1098] init=2020-01-10T00:00:00.000000000  lead=10d (240h)  valid=2020-01-20T00:00:00.000000000
+  [4/1098] init=2020-01-02T00:00:00.000000000  lead=6h (6h)  valid=2020-01-02T06:00:00.000000000
+    [30] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [4] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [19/1098] init=2020-01-07T00:00:00.000000000  lead=6h (6h)  valid=2020-01-07T06:00:00.000000000
+    [19] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [28/1098] init=2020-01-10T00:00:00.000000000  lead=6h (6h)  valid=2020-01-10T06:00:00.000000000
+    [28] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [14/1098] init=2020-01-05T00:00:00.000000000  lead=5d (120h)  valid=2020-01-10T00:00:00.000000000
+    [14] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [22/1098] init=2020-01-08T00:00:00.000000000  lead=6h (6h)  valid=2020-01-08T06:00:00.000000000
+    [22] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [3] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 3): not enough values to unpack (expected 3, got 2)
+  [33/1098] init=2020-01-11T00:00:00.000000000  lead=10d (240h)  valid=2020-01-21T00:00:00.000000000
+    [33] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [1] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 1): not enough values to unpack (expected 3, got 2)
+  [34/1098] init=2020-01-12T00:00:00.000000000  lead=6h (6h)  valid=2020-01-12T06:00:00.000000000
+    [34] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [2] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 2): not enough values to unpack (expected 3, got 2)
+    [10] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 10): not enough values to unpack (expected 3, got 2)
+    [11] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 11): not enough values to unpack (expected 3, got 2)
+    [12] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 12): not enough values to unpack (expected 3, got 2)
+  [35/1098] init=2020-01-12T00:00:00.000000000  lead=5d (120h)  valid=2020-01-17T00:00:00.000000000
+    [35] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [37/1098] init=2020-01-13T00:00:00.000000000  lead=6h (6h)  valid=2020-01-13T06:00:00.000000000
+    [37] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [36/1098] init=2020-01-12T00:00:00.000000000  lead=10d (240h)  valid=2020-01-22T00:00:00.000000000
+    [36] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [9] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 9): not enough values to unpack (expected 3, got 2)
+    [8] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 8): not enough values to unpack (expected 3, got 2)
+  [38/1098] init=2020-01-13T00:00:00.000000000  lead=5d (120h)  valid=2020-01-18T00:00:00.000000000
+    [38] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [40/1098] init=2020-01-14T00:00:00.000000000  lead=6h (6h)  valid=2020-01-14T06:00:00.000000000
+    [40] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [18] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 18): not enough values to unpack (expected 3, got 2)
+    [17] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+    [16] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 17): not enough values to unpack (expected 3, got 2)
+  ⚠ Worker exception (task 16): not enough values to unpack (expected 3, got 2)
+  [39/1098] init=2020-01-13T00:00:00.000000000  lead=10d (240h)  valid=2020-01-23T00:00:00.000000000
+    [39] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [7] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 7): not enough values to unpack (expected 3, got 2)
+  [42/1098] init=2020-01-14T00:00:00.000000000  lead=10d (240h)  valid=2020-01-24T00:00:00.000000000
+    [42] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [41/1098] init=2020-01-14T00:00:00.000000000  lead=5d (120h)  valid=2020-01-19T00:00:00.000000000
+    [41] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [43/1098] init=2020-01-15T00:00:00.000000000  lead=6h (6h)  valid=2020-01-15T06:00:00.000000000
+    [43] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [44/1098] init=2020-01-15T00:00:00.000000000  lead=5d (120h)  valid=2020-01-20T00:00:00.000000000
+    [44] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [15] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 15): not enough values to unpack (expected 3, got 2)
+    [14] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 14): not enough values to unpack (expected 3, got 2)
+    [13] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 13): not enough values to unpack (expected 3, got 2)
+  [47/1098] init=2020-01-16T00:00:00.000000000  lead=5d (120h)  valid=2020-01-21T00:00:00.000000000
+    [47] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [46/1098] init=2020-01-16T00:00:00.000000000  lead=6h (6h)  valid=2020-01-16T06:00:00.000000000
+    [46] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [45/1098] init=2020-01-15T00:00:00.000000000  lead=10d (240h)  valid=2020-01-25T00:00:00.000000000
+    [45] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [27] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 27): not enough values to unpack (expected 3, got 2)
+    [26] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 26): not enough values to unpack (expected 3, got 2)
+    [25] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 25): not enough values to unpack (expected 3, got 2)
+    [5] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 5): not enough values to unpack (expected 3, got 2)
+  [48/1098] init=2020-01-16T00:00:00.000000000  lead=10d (240h)  valid=2020-01-26T00:00:00.000000000
+    [48] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [49/1098] init=2020-01-17T00:00:00.000000000  lead=6h (6h)  valid=2020-01-17T06:00:00.000000000
+    [49] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [50/1098] init=2020-01-17T00:00:00.000000000  lead=5d (120h)  valid=2020-01-22T00:00:00.000000000
+    [50] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [4] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 4): not enough values to unpack (expected 3, got 2)
+    [6] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 6): not enough values to unpack (expected 3, got 2)
+  [51/1098] init=2020-01-17T00:00:00.000000000  lead=10d (240h)  valid=2020-01-27T00:00:00.000000000
+    [51] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [52/1098] init=2020-01-18T00:00:00.000000000  lead=6h (6h)  valid=2020-01-18T06:00:00.000000000
+    [52] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [24] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 24): not enough values to unpack (expected 3, got 2)
+    [22] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 22): not enough values to unpack (expected 3, got 2)
+    [23] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 23): not enough values to unpack (expected 3, got 2)
+  [53/1098] init=2020-01-18T00:00:00.000000000  lead=5d (120h)  valid=2020-01-23T00:00:00.000000000
+    [53] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [54/1098] init=2020-01-18T00:00:00.000000000  lead=10d (240h)  valid=2020-01-28T00:00:00.000000000
+    [54] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [55/1098] init=2020-01-19T00:00:00.000000000  lead=6h (6h)  valid=2020-01-19T06:00:00.000000000
+    [55] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [56/1098] init=2020-01-19T00:00:00.000000000  lead=5d (120h)  valid=2020-01-24T00:00:00.000000000
+    [56] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [32] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 32): not enough values to unpack (expected 3, got 2)
+    [31] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 31): not enough values to unpack (expected 3, got 2)
+  [58/1098] init=2020-01-20T00:00:00.000000000  lead=6h (6h)  valid=2020-01-20T06:00:00.000000000
+    [58] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [57/1098] init=2020-01-19T00:00:00.000000000  lead=10d (240h)  valid=2020-01-29T00:00:00.000000000
+    [57] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [21] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 21): not enough values to unpack (expected 3, got 2)
+    [19] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 19): not enough values to unpack (expected 3, got 2)
+    [20] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 20): not enough values to unpack (expected 3, got 2)
+  [59/1098] init=2020-01-20T00:00:00.000000000  lead=5d (120h)  valid=2020-01-25T00:00:00.000000000
+    [59] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [60/1098] init=2020-01-20T00:00:00.000000000  lead=10d (240h)  valid=2020-01-30T00:00:00.000000000
+    [60] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [61/1098] init=2020-01-21T00:00:00.000000000  lead=6h (6h)  valid=2020-01-21T06:00:00.000000000
+    [61] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [30] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 30): not enough values to unpack (expected 3, got 2)
+    [29] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 29): not enough values to unpack (expected 3, got 2)
+  [62/1098] init=2020-01-21T00:00:00.000000000  lead=5d (120h)  valid=2020-01-26T00:00:00.000000000
+    [62] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [63/1098] init=2020-01-21T00:00:00.000000000  lead=10d (240h)  valid=2020-01-31T00:00:00.000000000
+    [63] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [28] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 28): not enough values to unpack (expected 3, got 2)
+  [64/1098] init=2020-01-22T00:00:00.000000000  lead=6h (6h)  valid=2020-01-22T06:00:00.000000000
+    [64] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [33] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 33): not enough values to unpack (expected 3, got 2)
+  [65/1098] init=2020-01-22T00:00:00.000000000  lead=5d (120h)  valid=2020-01-27T00:00:00.000000000
+    [65] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [37] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 37): not enough values to unpack (expected 3, got 2)
+    [38] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 38): not enough values to unpack (expected 3, got 2)
+    [39] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 39): not enough values to unpack (expected 3, got 2)
+  [66/1098] init=2020-01-22T00:00:00.000000000  lead=10d (240h)  valid=2020-02-01T00:00:00.000000000
+    [66] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [67/1098] init=2020-01-23T00:00:00.000000000  lead=6h (6h)  valid=2020-01-23T06:00:00.000000000
+    [67] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [68/1098] init=2020-01-23T00:00:00.000000000  lead=5d (120h)  valid=2020-01-28T00:00:00.000000000
+    [68] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [40] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 40): not enough values to unpack (expected 3, got 2)
+    [41] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 41): not enough values to unpack (expected 3, got 2)
+  [69/1098] init=2020-01-23T00:00:00.000000000  lead=10d (240h)  valid=2020-02-02T00:00:00.000000000
+    [69] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [42] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 42): not enough values to unpack (expected 3, got 2)
+  [70/1098] init=2020-01-24T00:00:00.000000000  lead=6h (6h)  valid=2020-01-24T06:00:00.000000000
+    [70] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [71/1098] init=2020-01-24T00:00:00.000000000  lead=5d (120h)  valid=2020-01-29T00:00:00.000000000
+    [71] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [45] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 45): not enough values to unpack (expected 3, got 2)
+    [44] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 44): not enough values to unpack (expected 3, got 2)
+  [72/1098] init=2020-01-24T00:00:00.000000000  lead=10d (240h)  valid=2020-02-03T00:00:00.000000000
+    [72] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [47] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 47): not enough values to unpack (expected 3, got 2)
+    [48] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 48): not enough values to unpack (expected 3, got 2)
+    [46] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 46): not enough values to unpack (expected 3, got 2)
+  [73/1098] init=2020-01-25T00:00:00.000000000  lead=6h (6h)  valid=2020-01-25T06:00:00.000000000
+    [73] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [75/1098] init=2020-01-25T00:00:00.000000000  lead=10d (240h)  valid=2020-02-04T00:00:00.000000000
+    [75] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [74/1098] init=2020-01-25T00:00:00.000000000  lead=5d (120h)  valid=2020-01-30T00:00:00.000000000
+    [74] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [76/1098] init=2020-01-26T00:00:00.000000000  lead=6h (6h)  valid=2020-01-26T06:00:00.000000000
+    [76] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [53] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 53): not enough values to unpack (expected 3, got 2)
+    [54] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 54): not enough values to unpack (expected 3, got 2)
+    [56] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 56): not enough values to unpack (expected 3, got 2)
+  [78/1098] init=2020-01-26T00:00:00.000000000  lead=10d (240h)  valid=2020-02-05T00:00:00.000000000
+    [78] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [77/1098] init=2020-01-26T00:00:00.000000000  lead=5d (120h)  valid=2020-01-31T00:00:00.000000000
+    [77] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [34] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 34): not enough values to unpack (expected 3, got 2)
+    [57] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 57): not enough values to unpack (expected 3, got 2)
+  [79/1098] init=2020-01-27T00:00:00.000000000  lead=6h (6h)  valid=2020-01-27T06:00:00.000000000
+    [79] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [55] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 55): not enough values to unpack (expected 3, got 2)
+  [81/1098] init=2020-01-27T00:00:00.000000000  lead=10d (240h)  valid=2020-02-06T00:00:00.000000000
+    [81] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [80/1098] init=2020-01-27T00:00:00.000000000  lead=5d (120h)  valid=2020-02-01T00:00:00.000000000
+    [80] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [35] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 35): not enough values to unpack (expected 3, got 2)
+  [82/1098] init=2020-01-28T00:00:00.000000000  lead=6h (6h)  valid=2020-01-28T06:00:00.000000000
+    [82] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [83/1098] init=2020-01-28T00:00:00.000000000  lead=5d (120h)  valid=2020-02-02T00:00:00.000000000
+    [83] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [36] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 36): not enough values to unpack (expected 3, got 2)
+    [52] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 52): not enough values to unpack (expected 3, got 2)
+  [84/1098] init=2020-01-28T00:00:00.000000000  lead=10d (240h)  valid=2020-02-07T00:00:00.000000000
+    [84] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [85/1098] init=2020-01-29T00:00:00.000000000  lead=6h (6h)  valid=2020-01-29T06:00:00.000000000
+    [85] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [62] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 62): not enough values to unpack (expected 3, got 2)
+    [43] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 43): not enough values to unpack (expected 3, got 2)
+    [61] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 61): not enough values to unpack (expected 3, got 2)
+  [86/1098] init=2020-01-29T00:00:00.000000000  lead=5d (120h)  valid=2020-02-03T00:00:00.000000000
+    [86] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [59] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 59): not enough values to unpack (expected 3, got 2)
+  [87/1098] init=2020-01-29T00:00:00.000000000  lead=10d (240h)  valid=2020-02-08T00:00:00.000000000
+    [87] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [60] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 60): not enough values to unpack (expected 3, got 2)
+  [88/1098] init=2020-01-30T00:00:00.000000000  lead=6h (6h)  valid=2020-01-30T06:00:00.000000000
+    [88] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [58] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 58): not enough values to unpack (expected 3, got 2)
+  [89/1098] init=2020-01-30T00:00:00.000000000  lead=5d (120h)  valid=2020-02-04T00:00:00.000000000
+    [89] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [90/1098] init=2020-01-30T00:00:00.000000000  lead=10d (240h)  valid=2020-02-09T00:00:00.000000000
+    [90] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [91/1098] init=2020-01-31T00:00:00.000000000  lead=6h (6h)  valid=2020-01-31T06:00:00.000000000
+    [91] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [63] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 63): not enough values to unpack (expected 3, got 2)
+  [92/1098] init=2020-01-31T00:00:00.000000000  lead=5d (120h)  valid=2020-02-05T00:00:00.000000000
+    [92] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [49] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 49): not enough values to unpack (expected 3, got 2)
+    [50] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 50): not enough values to unpack (expected 3, got 2)
+    [51] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 51): not enough values to unpack (expected 3, got 2)
+  [93/1098] init=2020-01-31T00:00:00.000000000  lead=10d (240h)  valid=2020-02-10T00:00:00.000000000
+    [93] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [94/1098] init=2020-02-01T00:00:00.000000000  lead=6h (6h)  valid=2020-02-01T06:00:00.000000000
+    [94] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [95/1098] init=2020-02-01T00:00:00.000000000  lead=5d (120h)  valid=2020-02-06T00:00:00.000000000
+    [95] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [64] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 64): not enough values to unpack (expected 3, got 2)
+  [96/1098] init=2020-02-01T00:00:00.000000000  lead=10d (240h)  valid=2020-02-11T00:00:00.000000000
+    [96] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [66] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 66): not enough values to unpack (expected 3, got 2)
+  [97/1098] init=2020-02-02T00:00:00.000000000  lead=6h (6h)  valid=2020-02-02T06:00:00.000000000
+    [97] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [68] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 68): not enough values to unpack (expected 3, got 2)
+    [67] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 67): not enough values to unpack (expected 3, got 2)
+    [69] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 69): not enough values to unpack (expected 3, got 2)
+  [98/1098] init=2020-02-02T00:00:00.000000000  lead=5d (120h)  valid=2020-02-07T00:00:00.000000000
+    [98] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [99/1098] init=2020-02-02T00:00:00.000000000  lead=10d (240h)  valid=2020-02-12T00:00:00.000000000
+    [99] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [100/1098] init=2020-02-03T00:00:00.000000000  lead=6h (6h)  valid=2020-02-03T06:00:00.000000000
+    [100] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [71] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 71): not enough values to unpack (expected 3, got 2)
+    [65] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 65): not enough values to unpack (expected 3, got 2)
+    [70] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 70): not enough values to unpack (expected 3, got 2)
+  [101/1098] init=2020-02-03T00:00:00.000000000  lead=5d (120h)  valid=2020-02-08T00:00:00.000000000
+    [101] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [102/1098] init=2020-02-03T00:00:00.000000000  lead=10d (240h)  valid=2020-02-13T00:00:00.000000000
+    [102] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [103/1098] init=2020-02-04T00:00:00.000000000  lead=6h (6h)  valid=2020-02-04T06:00:00.000000000
+    [103] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [77] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 77): not enough values to unpack (expected 3, got 2)
+    [76] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 76): not enough values to unpack (expected 3, got 2)
+    [78] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 78): not enough values to unpack (expected 3, got 2)
+  [106/1098] init=2020-02-05T00:00:00.000000000  lead=6h (6h)  valid=2020-02-05T06:00:00.000000000
+    [106] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [105/1098] init=2020-02-04T00:00:00.000000000  lead=10d (240h)  valid=2020-02-14T00:00:00.000000000
+    [105] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [104/1098] init=2020-02-04T00:00:00.000000000  lead=5d (120h)  valid=2020-02-09T00:00:00.000000000
+    [104] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [72] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 72): not enough values to unpack (expected 3, got 2)
+    [75] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 75): not enough values to unpack (expected 3, got 2)
+    [74] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 74): not enough values to unpack (expected 3, got 2)
+    [73] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 73): not enough values to unpack (expected 3, got 2)
+    [79] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 79): not enough values to unpack (expected 3, got 2)
+    [81] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 81): not enough values to unpack (expected 3, got 2)
+  [108/1098] init=2020-02-05T00:00:00.000000000  lead=10d (240h)  valid=2020-02-15T00:00:00.000000000
+    [108] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [80] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 80): not enough values to unpack (expected 3, got 2)
+  [112/1098] init=2020-02-07T00:00:00.000000000  lead=6h (6h)  valid=2020-02-07T06:00:00.000000000
+    [112] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [109/1098] init=2020-02-06T00:00:00.000000000  lead=6h (6h)  valid=2020-02-06T06:00:00.000000000
+    [109] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [107/1098] init=2020-02-05T00:00:00.000000000  lead=5d (120h)  valid=2020-02-10T00:00:00.000000000
+    [107] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [111/1098] init=2020-02-06T00:00:00.000000000  lead=10d (240h)  valid=2020-02-16T00:00:00.000000000
+    [111] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [110/1098] init=2020-02-06T00:00:00.000000000  lead=5d (120h)  valid=2020-02-11T00:00:00.000000000
+    [110] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [113/1098] init=2020-02-07T00:00:00.000000000  lead=5d (120h)  valid=2020-02-12T00:00:00.000000000
+    [113] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [84] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 84): not enough values to unpack (expected 3, got 2)
+    [82] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 82): not enough values to unpack (expected 3, got 2)
+  [114/1098] init=2020-02-07T00:00:00.000000000  lead=10d (240h)  valid=2020-02-17T00:00:00.000000000
+    [114] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [115/1098] init=2020-02-08T00:00:00.000000000  lead=6h (6h)  valid=2020-02-08T06:00:00.000000000
+    [115] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [93] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 93): not enough values to unpack (expected 3, got 2)
+    [91] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 91): not enough values to unpack (expected 3, got 2)
+    [92] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 92): not enough values to unpack (expected 3, got 2)
+  [117/1098] init=2020-02-08T00:00:00.000000000  lead=10d (240h)  valid=2020-02-18T00:00:00.000000000
+    [117] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [116/1098] init=2020-02-08T00:00:00.000000000  lead=5d (120h)  valid=2020-02-13T00:00:00.000000000
+    [116] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [118/1098] init=2020-02-09T00:00:00.000000000  lead=6h (6h)  valid=2020-02-09T06:00:00.000000000
+    [118] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [83] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 83): not enough values to unpack (expected 3, got 2)
+    [85] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+    [87] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 85): not enough values to unpack (expected 3, got 2)
+  ⚠ Worker exception (task 87): not enough values to unpack (expected 3, got 2)
+    [86] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 86): not enough values to unpack (expected 3, got 2)
+    [90] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 90): not enough values to unpack (expected 3, got 2)
+    [89] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 89): not enough values to unpack (expected 3, got 2)
+    [88] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 88): not enough values to unpack (expected 3, got 2)
+  [119/1098] init=2020-02-09T00:00:00.000000000  lead=5d (120h)  valid=2020-02-14T00:00:00.000000000
+    [119] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [122/1098] init=2020-02-10T00:00:00.000000000  lead=5d (120h)  valid=2020-02-15T00:00:00.000000000
+    [122] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [120/1098] init=2020-02-09T00:00:00.000000000  lead=10d (240h)  valid=2020-02-19T00:00:00.000000000
+    [120] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [121/1098] init=2020-02-10T00:00:00.000000000  lead=6h (6h)  valid=2020-02-10T06:00:00.000000000
+    [121] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [124/1098] init=2020-02-11T00:00:00.000000000  lead=6h (6h)  valid=2020-02-11T06:00:00.000000000
+    [124] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [125/1098] init=2020-02-11T00:00:00.000000000  lead=5d (120h)  valid=2020-02-16T00:00:00.000000000
+    [125] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [123/1098] init=2020-02-10T00:00:00.000000000  lead=10d (240h)  valid=2020-02-20T00:00:00.000000000
+    [123] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [94] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 94): not enough values to unpack (expected 3, got 2)
+    [95] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 95): not enough values to unpack (expected 3, got 2)
+  [127/1098] init=2020-02-12T00:00:00.000000000  lead=6h (6h)  valid=2020-02-12T06:00:00.000000000
+    [127] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [126/1098] init=2020-02-11T00:00:00.000000000  lead=10d (240h)  valid=2020-02-21T00:00:00.000000000
+    [126] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [99] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 99): not enough values to unpack (expected 3, got 2)
+    [97] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 97): not enough values to unpack (expected 3, got 2)
+    [98] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 98): not enough values to unpack (expected 3, got 2)
+  [129/1098] init=2020-02-12T00:00:00.000000000  lead=10d (240h)  valid=2020-02-22T00:00:00.000000000
+    [129] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [128/1098] init=2020-02-12T00:00:00.000000000  lead=5d (120h)  valid=2020-02-17T00:00:00.000000000
+    [128] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [100] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 100): not enough values to unpack (expected 3, got 2)
+  [130/1098] init=2020-02-13T00:00:00.000000000  lead=6h (6h)  valid=2020-02-13T06:00:00.000000000
+    [130] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [96] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 96): not enough values to unpack (expected 3, got 2)
+  [131/1098] init=2020-02-13T00:00:00.000000000  lead=5d (120h)  valid=2020-02-18T00:00:00.000000000
+    [131] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [132/1098] init=2020-02-13T00:00:00.000000000  lead=10d (240h)  valid=2020-02-23T00:00:00.000000000
+    [132] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [101] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 101): not enough values to unpack (expected 3, got 2)
+  [133/1098] init=2020-02-14T00:00:00.000000000  lead=6h (6h)  valid=2020-02-14T06:00:00.000000000
+    [133] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [102] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 102): not enough values to unpack (expected 3, got 2)
+  [134/1098] init=2020-02-14T00:00:00.000000000  lead=5d (120h)  valid=2020-02-19T00:00:00.000000000
+    [134] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [106] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 106): not enough values to unpack (expected 3, got 2)
+    [108] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 108): not enough values to unpack (expected 3, got 2)
+  [136/1098] init=2020-02-15T00:00:00.000000000  lead=6h (6h)  valid=2020-02-15T06:00:00.000000000
+    [136] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [135/1098] init=2020-02-14T00:00:00.000000000  lead=10d (240h)  valid=2020-02-24T00:00:00.000000000
+    [135] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [110] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 110): not enough values to unpack (expected 3, got 2)
+    [107] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 107): not enough values to unpack (expected 3, got 2)
+    [109] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 109): not enough values to unpack (expected 3, got 2)
+  [137/1098] init=2020-02-15T00:00:00.000000000  lead=5d (120h)  valid=2020-02-20T00:00:00.000000000
+    [137] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [139/1098] init=2020-02-16T00:00:00.000000000  lead=6h (6h)  valid=2020-02-16T06:00:00.000000000
+    [139] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [111] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 111): not enough values to unpack (expected 3, got 2)
+  [138/1098] init=2020-02-15T00:00:00.000000000  lead=10d (240h)  valid=2020-02-25T00:00:00.000000000
+    [138] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [140/1098] init=2020-02-16T00:00:00.000000000  lead=5d (120h)  valid=2020-02-21T00:00:00.000000000
+    [140] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [104] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 104): not enough values to unpack (expected 3, got 2)
+    [103] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 103): not enough values to unpack (expected 3, got 2)
+    [105] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 105): not enough values to unpack (expected 3, got 2)
+  [141/1098] init=2020-02-16T00:00:00.000000000  lead=10d (240h)  valid=2020-02-26T00:00:00.000000000
+    [141] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [120] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 120): not enough values to unpack (expected 3, got 2)
+    [118] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 118): not enough values to unpack (expected 3, got 2)
+  [143/1098] init=2020-02-17T00:00:00.000000000  lead=5d (120h)  valid=2020-02-22T00:00:00.000000000
+    [143] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [142/1098] init=2020-02-17T00:00:00.000000000  lead=6h (6h)  valid=2020-02-17T06:00:00.000000000
+    [142] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [112] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  [144/1098] init=2020-02-17T00:00:00.000000000  lead=10d (240h)  valid=2020-02-27T00:00:00.000000000
+  ⚠ Worker exception (task 112): not enough values to unpack (expected 3, got 2)
+    [144] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [145/1098] init=2020-02-18T00:00:00.000000000  lead=6h (6h)  valid=2020-02-18T06:00:00.000000000
+    [145] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [146/1098] init=2020-02-18T00:00:00.000000000  lead=5d (120h)  valid=2020-02-23T00:00:00.000000000
+    [146] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [114] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 114): not enough values to unpack (expected 3, got 2)
+    [119] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  [147/1098] init=2020-02-18T00:00:00.000000000  lead=10d (240h)  valid=2020-02-28T00:00:00.000000000
+  ⚠ Worker exception (task 119): not enough values to unpack (expected 3, got 2)
+    [147] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [148/1098] init=2020-02-19T00:00:00.000000000  lead=6h (6h)  valid=2020-02-19T06:00:00.000000000
+    [148] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [116] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 116): not enough values to unpack (expected 3, got 2)
+    [115] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 115): not enough values to unpack (expected 3, got 2)
+    [117] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 117): not enough values to unpack (expected 3, got 2)
+    [113] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 113): not enough values to unpack (expected 3, got 2)
+  [150/1098] init=2020-02-19T00:00:00.000000000  lead=10d (240h)  valid=2020-02-29T00:00:00.000000000
+    [150] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [152/1098] init=2020-02-20T00:00:00.000000000  lead=5d (120h)  valid=2020-02-25T00:00:00.000000000
+    [152] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [151/1098] init=2020-02-20T00:00:00.000000000  lead=6h (6h)  valid=2020-02-20T06:00:00.000000000
+    [151] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [149/1098] init=2020-02-19T00:00:00.000000000  lead=5d (120h)  valid=2020-02-24T00:00:00.000000000
+    [149] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [123] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 123): not enough values to unpack (expected 3, got 2)
+    [122] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 122): not enough values to unpack (expected 3, got 2)
+    [125] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 125): not enough values to unpack (expected 3, got 2)
+  [154/1098] init=2020-02-21T00:00:00.000000000  lead=6h (6h)  valid=2020-02-21T06:00:00.000000000
+    [154] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [153/1098] init=2020-02-20T00:00:00.000000000  lead=10d (240h)  valid=2020-03-01T00:00:00.000000000
+    [153] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [155/1098] init=2020-02-21T00:00:00.000000000  lead=5d (120h)  valid=2020-02-26T00:00:00.000000000
+    [155] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [124] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 124): not enough values to unpack (expected 3, got 2)
+  [156/1098] init=2020-02-21T00:00:00.000000000  lead=10d (240h)  valid=2020-03-02T00:00:00.000000000
+    [156] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [121] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 121): not enough values to unpack (expected 3, got 2)
+    [126] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 126): not enough values to unpack (expected 3, got 2)
+  [157/1098] init=2020-02-22T00:00:00.000000000  lead=6h (6h)  valid=2020-02-22T06:00:00.000000000
+    [157] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [158/1098] init=2020-02-22T00:00:00.000000000  lead=5d (120h)  valid=2020-02-27T00:00:00.000000000
+    [158] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [127] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 127): not enough values to unpack (expected 3, got 2)
+  [159/1098] init=2020-02-22T00:00:00.000000000  lead=10d (240h)  valid=2020-03-03T00:00:00.000000000
+    [159] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [129] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 129): not enough values to unpack (expected 3, got 2)
+    [128] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 128): not enough values to unpack (expected 3, got 2)
+    [131] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 131): not enough values to unpack (expected 3, got 2)
+    [130] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 130): not enough values to unpack (expected 3, got 2)
+  [160/1098] init=2020-02-23T00:00:00.000000000  lead=6h (6h)  valid=2020-02-23T06:00:00.000000000
+    [160] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [161/1098] init=2020-02-23T00:00:00.000000000  lead=5d (120h)  valid=2020-02-28T00:00:00.000000000
+    [161] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [162/1098] init=2020-02-23T00:00:00.000000000  lead=10d (240h)  valid=2020-03-04T00:00:00.000000000
+    [162] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [163/1098] init=2020-02-24T00:00:00.000000000  lead=6h (6h)  valid=2020-02-24T06:00:00.000000000
+    [163] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [132] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 132): not enough values to unpack (expected 3, got 2)
+    [133] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 133): not enough values to unpack (expected 3, got 2)
+  [164/1098] init=2020-02-24T00:00:00.000000000  lead=5d (120h)  valid=2020-02-29T00:00:00.000000000
+    [164] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [165/1098] init=2020-02-24T00:00:00.000000000  lead=10d (240h)  valid=2020-03-05T00:00:00.000000000
+    [165] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [134] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 134): not enough values to unpack (expected 3, got 2)
+  [166/1098] init=2020-02-25T00:00:00.000000000  lead=6h (6h)  valid=2020-02-25T06:00:00.000000000
+    [166] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [135] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 135): not enough values to unpack (expected 3, got 2)
+  [167/1098] init=2020-02-25T00:00:00.000000000  lead=5d (120h)  valid=2020-03-01T00:00:00.000000000
+    [167] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [136] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 136): not enough values to unpack (expected 3, got 2)
+    [138] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 138): not enough values to unpack (expected 3, got 2)
+  [168/1098] init=2020-02-25T00:00:00.000000000  lead=10d (240h)  valid=2020-03-06T00:00:00.000000000
+    [168] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [169/1098] init=2020-02-26T00:00:00.000000000  lead=6h (6h)  valid=2020-02-26T06:00:00.000000000
+    [169] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [137] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 137): not enough values to unpack (expected 3, got 2)
+  [170/1098] init=2020-02-26T00:00:00.000000000  lead=5d (120h)  valid=2020-03-02T00:00:00.000000000
+    [170] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [142] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 142): not enough values to unpack (expected 3, got 2)
+    [143] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 143): not enough values to unpack (expected 3, got 2)
+    [139] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 139): not enough values to unpack (expected 3, got 2)
+  [172/1098] init=2020-02-27T00:00:00.000000000  lead=6h (6h)  valid=2020-02-27T06:00:00.000000000
+    [172] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [171/1098] init=2020-02-26T00:00:00.000000000  lead=10d (240h)  valid=2020-03-07T00:00:00.000000000
+    [171] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [173/1098] init=2020-02-27T00:00:00.000000000  lead=5d (120h)  valid=2020-03-03T00:00:00.000000000
+    [173] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [140] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 140): not enough values to unpack (expected 3, got 2)
+  [174/1098] init=2020-02-27T00:00:00.000000000  lead=10d (240h)  valid=2020-03-08T00:00:00.000000000
+    [174] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [144] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 144): not enough values to unpack (expected 3, got 2)
+    [141] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 141): not enough values to unpack (expected 3, got 2)
+  [175/1098] init=2020-02-28T00:00:00.000000000  lead=6h (6h)  valid=2020-02-28T06:00:00.000000000
+    [175] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [176/1098] init=2020-02-28T00:00:00.000000000  lead=5d (120h)  valid=2020-03-04T00:00:00.000000000
+    [176] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [150] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 150): not enough values to unpack (expected 3, got 2)
+    [147] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 147): not enough values to unpack (expected 3, got 2)
+    [145] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 145): not enough values to unpack (expected 3, got 2)
+  [177/1098] init=2020-02-28T00:00:00.000000000  lead=10d (240h)  valid=2020-03-09T00:00:00.000000000
+    [177] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [146] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 146): not enough values to unpack (expected 3, got 2)
+  [178/1098] init=2020-02-29T00:00:00.000000000  lead=6h (6h)  valid=2020-02-29T06:00:00.000000000
+    [178] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [179/1098] init=2020-02-29T00:00:00.000000000  lead=5d (120h)  valid=2020-03-05T00:00:00.000000000
+    [179] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [180/1098] init=2020-02-29T00:00:00.000000000  lead=10d (240h)  valid=2020-03-10T00:00:00.000000000
+    [180] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [158] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 158): not enough values to unpack (expected 3, got 2)
+    [148] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 148): not enough values to unpack (expected 3, got 2)
+  [181/1098] init=2020-03-01T00:00:00.000000000  lead=6h (6h)  valid=2020-03-01T06:00:00.000000000
+    [181] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [157] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 157): not enough values to unpack (expected 3, got 2)
+  [182/1098] init=2020-03-01T00:00:00.000000000  lead=5d (120h)  valid=2020-03-06T00:00:00.000000000
+    [182] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [183/1098] init=2020-03-01T00:00:00.000000000  lead=10d (240h)  valid=2020-03-11T00:00:00.000000000
+    [183] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [153] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 153): not enough values to unpack (expected 3, got 2)
+    [152] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 152): not enough values to unpack (expected 3, got 2)
+    [151] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 151): not enough values to unpack (expected 3, got 2)
+    [155] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 155): not enough values to unpack (expected 3, got 2)
+    [154] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 154): not enough values to unpack (expected 3, got 2)
+  [184/1098] init=2020-03-02T00:00:00.000000000  lead=6h (6h)  valid=2020-03-02T06:00:00.000000000
+    [184] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [186/1098] init=2020-03-02T00:00:00.000000000  lead=10d (240h)  valid=2020-03-12T00:00:00.000000000
+    [186] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [185/1098] init=2020-03-02T00:00:00.000000000  lead=5d (120h)  valid=2020-03-07T00:00:00.000000000
+    [185] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [156] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 156): not enough values to unpack (expected 3, got 2)
+  [188/1098] init=2020-03-03T00:00:00.000000000  lead=5d (120h)  valid=2020-03-08T00:00:00.000000000
+    [188] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [187/1098] init=2020-03-03T00:00:00.000000000  lead=6h (6h)  valid=2020-03-03T06:00:00.000000000
+    [187] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [189/1098] init=2020-03-03T00:00:00.000000000  lead=10d (240h)  valid=2020-03-13T00:00:00.000000000
+    [189] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [159] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 159): not enough values to unpack (expected 3, got 2)
+  [190/1098] init=2020-03-04T00:00:00.000000000  lead=6h (6h)  valid=2020-03-04T06:00:00.000000000
+    [190] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [149] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 149): not enough values to unpack (expected 3, got 2)
+  [191/1098] init=2020-03-04T00:00:00.000000000  lead=5d (120h)  valid=2020-03-09T00:00:00.000000000
+    [191] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [163] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 163): not enough values to unpack (expected 3, got 2)
+    [164] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 164): not enough values to unpack (expected 3, got 2)
+    [165] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 165): not enough values to unpack (expected 3, got 2)
+    [161] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 161): not enough values to unpack (expected 3, got 2)
+    [162] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 162): not enough values to unpack (expected 3, got 2)
+    [160] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 160): not enough values to unpack (expected 3, got 2)
+  [192/1098] init=2020-03-04T00:00:00.000000000  lead=10d (240h)  valid=2020-03-14T00:00:00.000000000
+    [192] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [194/1098] init=2020-03-05T00:00:00.000000000  lead=5d (120h)  valid=2020-03-10T00:00:00.000000000
+    [194] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [195/1098] init=2020-03-05T00:00:00.000000000  lead=10d (240h)  valid=2020-03-15T00:00:00.000000000
+    [195] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [196/1098] init=2020-03-06T00:00:00.000000000  lead=6h (6h)  valid=2020-03-06T06:00:00.000000000
+    [196] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [197/1098] init=2020-03-06T00:00:00.000000000  lead=5d (120h)  valid=2020-03-11T00:00:00.000000000
+    [197] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [193/1098] init=2020-03-05T00:00:00.000000000  lead=6h (6h)  valid=2020-03-05T06:00:00.000000000
+    [193] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [166] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 166): not enough values to unpack (expected 3, got 2)
+    [167] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 167): not enough values to unpack (expected 3, got 2)
+    [168] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 168): not enough values to unpack (expected 3, got 2)
+  [198/1098] init=2020-03-06T00:00:00.000000000  lead=10d (240h)  valid=2020-03-16T00:00:00.000000000
+    [198] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [199/1098] init=2020-03-07T00:00:00.000000000  lead=6h (6h)  valid=2020-03-07T06:00:00.000000000
+    [199] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [200/1098] init=2020-03-07T00:00:00.000000000  lead=5d (120h)  valid=2020-03-12T00:00:00.000000000
+    [200] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [173] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 173): not enough values to unpack (expected 3, got 2)
+    [172] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 172): not enough values to unpack (expected 3, got 2)
+  [201/1098] init=2020-03-07T00:00:00.000000000  lead=10d (240h)  valid=2020-03-17T00:00:00.000000000
+    [201] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [174] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 174): not enough values to unpack (expected 3, got 2)
+    [171] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 171): not enough values to unpack (expected 3, got 2)
+    [170] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 170): not enough values to unpack (expected 3, got 2)
+  [202/1098] init=2020-03-08T00:00:00.000000000  lead=6h (6h)  valid=2020-03-08T06:00:00.000000000
+    [202] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [169] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 169): not enough values to unpack (expected 3, got 2)
+  [205/1098] init=2020-03-09T00:00:00.000000000  lead=6h (6h)  valid=2020-03-09T06:00:00.000000000
+    [205] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [204/1098] init=2020-03-08T00:00:00.000000000  lead=10d (240h)  valid=2020-03-18T00:00:00.000000000
+    [204] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [203/1098] init=2020-03-08T00:00:00.000000000  lead=5d (120h)  valid=2020-03-13T00:00:00.000000000
+    [203] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [206/1098] init=2020-03-09T00:00:00.000000000  lead=5d (120h)  valid=2020-03-14T00:00:00.000000000
+    [206] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [177] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 177): not enough values to unpack (expected 3, got 2)
+    [176] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 176): not enough values to unpack (expected 3, got 2)
+    [175] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 175): not enough values to unpack (expected 3, got 2)
+  [207/1098] init=2020-03-09T00:00:00.000000000  lead=10d (240h)  valid=2020-03-19T00:00:00.000000000
+    [207] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [178] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 178): not enough values to unpack (expected 3, got 2)
+  [208/1098] init=2020-03-10T00:00:00.000000000  lead=6h (6h)  valid=2020-03-10T06:00:00.000000000
+    [208] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [179] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 179): not enough values to unpack (expected 3, got 2)
+  [209/1098] init=2020-03-10T00:00:00.000000000  lead=5d (120h)  valid=2020-03-15T00:00:00.000000000
+    [209] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [180] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 180): not enough values to unpack (expected 3, got 2)
+  [210/1098] init=2020-03-10T00:00:00.000000000  lead=10d (240h)  valid=2020-03-20T00:00:00.000000000
+    [210] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [211/1098] init=2020-03-11T00:00:00.000000000  lead=6h (6h)  valid=2020-03-11T06:00:00.000000000
+    [211] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [212/1098] init=2020-03-11T00:00:00.000000000  lead=5d (120h)  valid=2020-03-16T00:00:00.000000000
+    [212] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [181] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 181): not enough values to unpack (expected 3, got 2)
+  [213/1098] init=2020-03-11T00:00:00.000000000  lead=10d (240h)  valid=2020-03-21T00:00:00.000000000
+    [213] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [183] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 183): not enough values to unpack (expected 3, got 2)
+  [214/1098] init=2020-03-12T00:00:00.000000000  lead=6h (6h)  valid=2020-03-12T06:00:00.000000000
+    [214] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [184] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 184): not enough values to unpack (expected 3, got 2)
+    [185] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 185): not enough values to unpack (expected 3, got 2)
+    [186] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 186): not enough values to unpack (expected 3, got 2)
+  [215/1098] init=2020-03-12T00:00:00.000000000  lead=5d (120h)  valid=2020-03-17T00:00:00.000000000
+    [215] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [182] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 182): not enough values to unpack (expected 3, got 2)
+  [216/1098] init=2020-03-12T00:00:00.000000000  lead=10d (240h)  valid=2020-03-22T00:00:00.000000000
+    [216] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [217/1098] init=2020-03-13T00:00:00.000000000  lead=6h (6h)  valid=2020-03-13T06:00:00.000000000
+    [217] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [218/1098] init=2020-03-13T00:00:00.000000000  lead=5d (120h)  valid=2020-03-18T00:00:00.000000000
+    [218] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [188] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 188): not enough values to unpack (expected 3, got 2)
+  [219/1098] init=2020-03-13T00:00:00.000000000  lead=10d (240h)  valid=2020-03-23T00:00:00.000000000
+    [219] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [189] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 189): not enough values to unpack (expected 3, got 2)
+    [187] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 187): not enough values to unpack (expected 3, got 2)
+  [220/1098] init=2020-03-14T00:00:00.000000000  lead=6h (6h)  valid=2020-03-14T06:00:00.000000000
+    [220] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [221/1098] init=2020-03-14T00:00:00.000000000  lead=5d (120h)  valid=2020-03-19T00:00:00.000000000
+    [221] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [190] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 190): not enough values to unpack (expected 3, got 2)
+  [222/1098] init=2020-03-14T00:00:00.000000000  lead=10d (240h)  valid=2020-03-24T00:00:00.000000000
+    [222] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [192] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 192): not enough values to unpack (expected 3, got 2)
+  [223/1098] init=2020-03-15T00:00:00.000000000  lead=6h (6h)  valid=2020-03-15T06:00:00.000000000
+    [223] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [196] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 196): not enough values to unpack (expected 3, got 2)
+    [197] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 197): not enough values to unpack (expected 3, got 2)
+  [224/1098] init=2020-03-15T00:00:00.000000000  lead=5d (120h)  valid=2020-03-20T00:00:00.000000000
+    [224] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [225/1098] init=2020-03-15T00:00:00.000000000  lead=10d (240h)  valid=2020-03-25T00:00:00.000000000
+    [225] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [198] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 198): not enough values to unpack (expected 3, got 2)
+  [226/1098] init=2020-03-16T00:00:00.000000000  lead=6h (6h)  valid=2020-03-16T06:00:00.000000000
+    [226] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [195] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 195): not enough values to unpack (expected 3, got 2)
+    [194] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 194): not enough values to unpack (expected 3, got 2)
+  [227/1098] init=2020-03-16T00:00:00.000000000  lead=5d (120h)  valid=2020-03-21T00:00:00.000000000
+    [227] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [228/1098] init=2020-03-16T00:00:00.000000000  lead=10d (240h)  valid=2020-03-26T00:00:00.000000000
+    [228] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [193] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 193): not enough values to unpack (expected 3, got 2)
+  [229/1098] init=2020-03-17T00:00:00.000000000  lead=6h (6h)  valid=2020-03-17T06:00:00.000000000
+    [229] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [191] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 191): not enough values to unpack (expected 3, got 2)
+    [200] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 200): not enough values to unpack (expected 3, got 2)
+    [199] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 199): not enough values to unpack (expected 3, got 2)
+  [230/1098] init=2020-03-17T00:00:00.000000000  lead=5d (120h)  valid=2020-03-22T00:00:00.000000000
+    [230] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [231/1098] init=2020-03-17T00:00:00.000000000  lead=10d (240h)  valid=2020-03-27T00:00:00.000000000
+    [231] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [232/1098] init=2020-03-18T00:00:00.000000000  lead=6h (6h)  valid=2020-03-18T06:00:00.000000000
+    [232] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [201] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 201): not enough values to unpack (expected 3, got 2)
+  [233/1098] init=2020-03-18T00:00:00.000000000  lead=5d (120h)  valid=2020-03-23T00:00:00.000000000
+    [233] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [206] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 206): not enough values to unpack (expected 3, got 2)
+    [205] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 205): not enough values to unpack (expected 3, got 2)
+  [234/1098] init=2020-03-18T00:00:00.000000000  lead=10d (240h)  valid=2020-03-28T00:00:00.000000000
+    [234] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [204] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 204): not enough values to unpack (expected 3, got 2)
+    [202] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 202): not enough values to unpack (expected 3, got 2)
+    [203] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 203): not enough values to unpack (expected 3, got 2)
+  [235/1098] init=2020-03-19T00:00:00.000000000  lead=6h (6h)  valid=2020-03-19T06:00:00.000000000
+    [235] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [236/1098] init=2020-03-19T00:00:00.000000000  lead=5d (120h)  valid=2020-03-24T00:00:00.000000000
+    [236] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [238/1098] init=2020-03-20T00:00:00.000000000  lead=6h (6h)  valid=2020-03-20T06:00:00.000000000
+    [238] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [237/1098] init=2020-03-19T00:00:00.000000000  lead=10d (240h)  valid=2020-03-29T00:00:00.000000000
+    [237] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [207] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 207): not enough values to unpack (expected 3, got 2)
+    [209] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 209): not enough values to unpack (expected 3, got 2)
+    [208] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 208): not enough values to unpack (expected 3, got 2)
+  [240/1098] init=2020-03-20T00:00:00.000000000  lead=10d (240h)  valid=2020-03-30T00:00:00.000000000
+    [240] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [239/1098] init=2020-03-20T00:00:00.000000000  lead=5d (120h)  valid=2020-03-25T00:00:00.000000000
+    [239] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [210] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 210): not enough values to unpack (expected 3, got 2)
+  [241/1098] init=2020-03-21T00:00:00.000000000  lead=6h (6h)  valid=2020-03-21T06:00:00.000000000
+    [241] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [242/1098] init=2020-03-21T00:00:00.000000000  lead=5d (120h)  valid=2020-03-26T00:00:00.000000000
+    [242] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [213] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 213): not enough values to unpack (expected 3, got 2)
+    [211] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 211): not enough values to unpack (expected 3, got 2)
+  [243/1098] init=2020-03-21T00:00:00.000000000  lead=10d (240h)  valid=2020-03-31T00:00:00.000000000
+    [243] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [244/1098] init=2020-03-22T00:00:00.000000000  lead=6h (6h)  valid=2020-03-22T06:00:00.000000000
+    [244] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [216] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 216): not enough values to unpack (expected 3, got 2)
+    [214] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 214): not enough values to unpack (expected 3, got 2)
+    [215] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 215): not enough values to unpack (expected 3, got 2)
+  [246/1098] init=2020-03-22T00:00:00.000000000  lead=10d (240h)  valid=2020-04-01T00:00:00.000000000
+    [246] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [247/1098] init=2020-03-23T00:00:00.000000000  lead=6h (6h)  valid=2020-03-23T06:00:00.000000000
+    [247] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [245/1098] init=2020-03-22T00:00:00.000000000  lead=5d (120h)  valid=2020-03-27T00:00:00.000000000
+    [245] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [219] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 219): not enough values to unpack (expected 3, got 2)
+    [217] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 217): not enough values to unpack (expected 3, got 2)
+    [218] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 218): not enough values to unpack (expected 3, got 2)
+  [248/1098] init=2020-03-23T00:00:00.000000000  lead=5d (120h)  valid=2020-03-28T00:00:00.000000000
+    [248] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [249/1098] init=2020-03-23T00:00:00.000000000  lead=10d (240h)  valid=2020-04-02T00:00:00.000000000
+    [249] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+  [250/1098] init=2020-03-24T00:00:00.000000000  lead=6h (6h)  valid=2020-03-24T06:00:00.000000000
+    [250] Dropping 6 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'wind_speed']
+    [222] ⚠ Data loading failed: Model grid (721×1440) does not match the static field grid (721×1440). Supply a --static-zarr on the model's native grid.
+  ⚠ Worker exception (task 222): not enough values to unpack (expected 3, got 2)

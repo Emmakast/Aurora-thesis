@@ -1,0 +1,43 @@
+Loading metrics from ../results/physics_evaluation_neuralgcm_2020.csv
+Merging with ERA5 metrics from ../results/physics_evaluation_era5_512x256_2020.csv
+=== Data Quality Check ===
+  geostrophic_rmse            737 unique ERA5 values  ✓ varies
+  hydrostatic_rmse            737 unique ERA5 values  ✓ varies
+  dry_mass_drift_pct_per_day                 732 finite values
+  water_mass_drift_pct_per_day               732 finite values
+  total_energy_drift_pct_per_day             732 finite values
+
+================================================================================
+Physics Evaluation Summary – Year 2022
+================================================================================
+
+--- Lead time: 6 h ---
+  geostrophic_rmse                ERA5=4.56008  (n=0)
+  hydrostatic_rmse                ERA5=260.476  (n=0)
+  small_scale_ratio               mean = 0.939097  (±0.0183, n=366)
+  spectral_divergence             mean = 0.002147  (±0.0005, n=366)
+  spectral_residual               mean = 0.141662  (±0.0135, n=366)
+
+--- Lead time: 120 h ---
+  geostrophic_rmse                Aurora=4.06061  ERA5=4.58118  Δ=-5.20574e-01 (±1.66e-01, n=366)
+  hydrostatic_rmse                Aurora=250.106  ERA5=260.203  Δ=-1.00970e+01 (±5.02e+00, n=366)
+  effective_resolution_km         mean = 435.1  (±135.8, n=23)
+  dry_mass_drift_pct_per_day      mean = -0.001568  (±0.0037, n=366)
+  small_scale_ratio               mean = 0.838716  (±0.0346, n=366)
+  spectral_divergence             mean = 0.006006  (±0.0018, n=366)
+  spectral_residual               mean = 0.231802  (±0.0302, n=366)
+  total_energy_drift_pct_per_day  mean = -0.000832  (±0.0054, n=366)
+  water_mass_drift_pct_per_day    mean = 0.062127  (±0.1226, n=366)
+
+--- Lead time: 240 h ---
+  geostrophic_rmse                Aurora=4.06208  ERA5=4.57402  Δ=-5.11947e-01 (±3.75e-01, n=366)
+  hydrostatic_rmse                Aurora=247.176  ERA5=260.04  Δ=-1.28634e+01 (±8.99e+00, n=366)
+  effective_resolution_km         mean = 959.4  (±474.3, n=144)
+  dry_mass_drift_pct_per_day      mean = -0.001717  (±0.0027, n=366)
+  small_scale_ratio               mean = 0.813160  (±0.0597, n=366)
+  spectral_divergence             mean = 0.027328  (±0.0099, n=366)
+  spectral_residual               mean = 0.286400  (±0.0473, n=366)
+  total_energy_drift_pct_per_day  mean = 0.000189  (±0.0041, n=366)
+  water_mass_drift_pct_per_day    mean = 0.023255  (±0.0918, n=366)
+
+Saved to ../results/physics_summary_neuralgcm_2020.csv

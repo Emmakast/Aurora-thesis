@@ -1,0 +1,276 @@
+========================================
+  SPECTRUM: ke_850hpa | neuralgcm (2020)
+========================================
+Job ID:       20697596
+Date:         Thu Mar 12 03:42:11 PM CET 2026
+Hostname:     tcn190.local.snellius.surf.nl
+Analysis:     ke_850hpa
+Prediction:   gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr
+Reference:    gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr
+========================================
+
+/home/ekasteleyn/aurora_thesis/thesis/scripts/run_spectrum.py:96: FutureWarning: In a future version, xarray will not decode the variable 'prediction_timedelta' into a timedelta64 dtype based on the presence of a timedelta-like 'units' attribute by default. Instead it will rely on the presence of a timedelta64 'dtype' attribute, which is now xarray's default way of encoding timedelta64 values.
+To continue decoding into a timedelta64 dtype, either set `decode_timedelta=True` when opening this dataset, or add the attribute `dtype='timedelta64[ns]'` to this variable on disk.
+To opt-in to future behavior, set `decode_timedelta=False`.
+  ds = xr.open_zarr(url, storage_options={"token": "anon"})
+
+======================================================================
+  KE SPECTRUM (850 hPa): neuralgcm (2020)
+  Prediction: gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr
+  Level: 850.0 hPa | Lead times: [12, 24, 48, 72, 120, 168, 240]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_neuralgcm_2020.csv
+======================================================================
+
+  Prediction vars: ['P_minus_E_cumulative', 'geopotential', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [2/24] 2020-01-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [3/24] 2020-02-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [4/24] 2020-02-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [5/24] 2020-03-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [6/24] 2020-03-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [7/24] 2020-04-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [8/24] 2020-04-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [9/24] 2020-05-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [10/24] 2020-05-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [11/24] 2020-06-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [12/24] 2020-06-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [13/24] 2020-07-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [14/24] 2020-07-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [15/24] 2020-08-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [16/24] 2020-08-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [17/24] 2020-09-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [18/24] 2020-09-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [19/24] 2020-10-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [20/24] 2020-10-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [21/24] 2020-11-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [22/24] 2020-11-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [23/24] 2020-12-01
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+  [24/24] 2020-12-15
+      12h pred ✓ (max_l=127) | era5 ✓
+      24h pred ✓ (max_l=127) | era5 ✓
+      48h pred ✓ (max_l=127) | era5 ✓
+      72h pred ✓ (max_l=127) | era5 ✓
+     120h pred ✓ (max_l=127) | era5 ✓
+     168h pred ✓ (max_l=127) | era5 ✓
+     240h pred ✓ (max_l=127) | era5 ✓
+    [flushed 1792 rows to ke_spectrum_850hpa_neuralgcm_2020.csv]
+
+✓ Saved 43008 rows → /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_neuralgcm_2020.csv
+  Unique lead times: [np.int64(12), np.int64(24), np.int64(48), np.int64(72), np.int64(120), np.int64(168), np.int64(240)]
+  Unique dates: 24
+
+========================================
+  COMPLETED SUCCESSFULLY
+========================================
+Finished: Thu Mar 12 04:01:57 PM CET 2026

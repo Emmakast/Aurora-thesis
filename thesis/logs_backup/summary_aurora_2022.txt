@@ -1,0 +1,47 @@
+Loading metrics from ../results/physics_evaluation_aurora_2022.csv
+Merging with ERA5 metrics from ../results/physics_evaluation_era5_2022.csv
+=== Data Quality Check ===
+  geostrophic_rmse            735 unique ERA5 values  ✓ varies
+  hydrostatic_rmse            735 unique ERA5 values  ✓ varies
+  dry_mass_drift_pct_per_day                1095 finite values
+  water_mass_drift_pct_per_day              1095 finite values
+  total_energy_drift_pct_per_day            1095 finite values
+
+================================================================================
+Physics Evaluation Summary – Year 2022
+================================================================================
+
+--- Lead time: 6 h ---
+  geostrophic_rmse                Aurora=7.16388  ERA5=5.14931  Δ=+2.01457e+00 (±3.16e-01, n=365)
+  hydrostatic_rmse                Aurora=266.535  ERA5=223.743  Δ=+4.27920e+01 (±5.00e+00, n=365)
+  effective_resolution_km         mean = 68.1  (±5.7, n=328)
+  dry_mass_drift_pct_per_day      mean = 0.015864  (±0.0087, n=365)
+  small_scale_ratio               mean = 0.542109  (±0.0898, n=365)
+  spectral_divergence             mean = 0.000486  (±0.0005, n=365)
+  spectral_residual               mean = 0.384488  (±0.0501, n=365)
+  total_energy_drift_pct_per_day  mean = 0.037318  (±0.0383, n=365)
+  water_mass_drift_pct_per_day    mean = 1.310509  (±1.0565, n=365)
+
+--- Lead time: 120 h ---
+  geostrophic_rmse                Aurora=6.63514  ERA5=5.20892  Δ=+1.42622e+00 (±4.17e-01, n=365)
+  hydrostatic_rmse                Aurora=249.887  ERA5=223.588  Δ=+2.62991e+01 (±6.70e+00, n=365)
+  effective_resolution_km         mean = 888.1  (±158.3, n=365)
+  dry_mass_drift_pct_per_day      mean = 0.001619  (±0.0022, n=365)
+  small_scale_ratio               mean = 0.073402  (±0.0173, n=365)
+  spectral_divergence             mean = 0.076815  (±0.0246, n=365)
+  spectral_residual               mean = 3.039605  (±0.3036, n=365)
+  total_energy_drift_pct_per_day  mean = -0.009863  (±0.0143, n=365)
+  water_mass_drift_pct_per_day    mean = -0.414133  (±0.3191, n=365)
+
+--- Lead time: 240 h ---
+  geostrophic_rmse                Aurora=6.9871  ERA5=5.20597  Δ=+1.78113e+00 (±4.69e-01, n=365)
+  hydrostatic_rmse                Aurora=212.523  ERA5=223.405  Δ=-1.08824e+01 (±8.03e+00, n=365)
+  effective_resolution_km         mean = 1875.4  (±145.1, n=365)
+  dry_mass_drift_pct_per_day      mean = 0.006050  (±0.0023, n=365)
+  small_scale_ratio               mean = 0.047153  (±0.0068, n=365)
+  spectral_divergence             mean = 0.333506  (±0.0579, n=365)
+  spectral_residual               mean = 3.845387  (±0.1802, n=365)
+  total_energy_drift_pct_per_day  mean = 0.001999  (±0.0098, n=365)
+  water_mass_drift_pct_per_day    mean = -0.335342  (±0.1675, n=365)
+
+Saved to ../results/physics_summary_aurora_2022.csv

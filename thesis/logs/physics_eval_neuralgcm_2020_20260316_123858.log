@@ -1,0 +1,1854 @@
+========================================
+  PHYSICS EVALUATION: neuralgcm (2020)
+========================================
+Job ID:       20765236
+Date:         Mon Mar 16 12:38:58 PM CET 2026
+Hostname:     tcn153.local.snellius.surf.nl
+Mode:         prediction
+Workers:      48
+Prediction:   gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr
+Output:       /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_neuralgcm_2020.csv
+========================================
+
+
+======================================================================
+  PHYSICS EVALUATION — WeatherBench 2 Zarr Streaming
+======================================================================
+  Prediction : gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr
+  ERA5       : gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr
+  Dates  : 366
+  Lead times : ['12h', '5d', '10d']
+  Total evals: 1098
+  Workers    : 48
+  Mode       : prediction
+  Output : /home/ekasteleyn/aurora_thesis/thesis/results/physics_evaluation_neuralgcm_2020.csv
+======================================================================
+
+  Checking Zarr stores (anonymous) …
+  Aurora vars: ['P_minus_E_cumulative', 'geopotential', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']
+  ERA5 vars  : ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'angle_of_sub_gridscale_orography', 'anisotropy_of_sub_gridscale_orography', 'geopotential', 'geopotential_at_surface', 'high_vegetation_cover', 'lake_cover', 'lake_depth', 'land_sea_mask']
+  ERA5 time dtype: datetime64[ns]
+  ERA5 time range: 1959-01-01T00:00:00.000000000 → 2021-12-31T18:00:00.000000000
+
+  Sanity check — verifying ERA5 time selection on 'temperature':
+    requested=1974-10-01T18:00:00.000000000  actual=1974-10-01T18:00:00.000000000  mean=242.25
+    requested=1990-07-02T12:00:00.000000000  actual=1990-07-02T12:00:00.000000000  mean=244.234
+    requested=2006-04-02T06:00:00.000000000  actual=2006-04-02T06:00:00.000000000  mean=242.664
+  ✓ ERA5 time selection looks correct (values differ).
+
+
+  Launching 48 processes …
+
+  [33/1098] init=2020-01-11T00:00:00.000000000  lead=10d (240h)  valid=2020-01-21T00:00:00.000000000
+    [33] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [33] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [21/1098] init=2020-01-07T00:00:00.000000000  lead=10d (240h)  valid=2020-01-17T00:00:00.000000000
+  [32/1098] init=2020-01-11T00:00:00.000000000  lead=5d (120h)  valid=2020-01-16T00:00:00.000000000
+  [47/1098] init=2020-01-16T00:00:00.000000000  lead=5d (120h)  valid=2020-01-21T00:00:00.000000000
+    [21] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [21] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [14/1098] init=2020-01-05T00:00:00.000000000  lead=5d (120h)  valid=2020-01-10T00:00:00.000000000
+  [43/1098] init=2020-01-15T00:00:00.000000000  lead=12h (12h)  valid=2020-01-15T12:00:00.000000000
+    [32] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [32] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [41/1098] init=2020-01-14T00:00:00.000000000  lead=5d (120h)  valid=2020-01-19T00:00:00.000000000
+    [47] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [47] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [25/1098] init=2020-01-09T00:00:00.000000000  lead=12h (12h)  valid=2020-01-09T12:00:00.000000000
+    [14] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [43] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [14] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [43] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [41] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [41] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [25] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [25] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [26/1098] init=2020-01-09T00:00:00.000000000  lead=5d (120h)  valid=2020-01-14T00:00:00.000000000
+    [26] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [26] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [1/1098] init=2020-01-01T00:00:00.000000000  lead=12h (12h)  valid=2020-01-01T12:00:00.000000000
+  [8/1098] init=2020-01-03T00:00:00.000000000  lead=5d (120h)  valid=2020-01-08T00:00:00.000000000
+  [34/1098] init=2020-01-12T00:00:00.000000000  lead=12h (12h)  valid=2020-01-12T12:00:00.000000000
+    [1] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [1] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [48/1098] init=2020-01-16T00:00:00.000000000  lead=10d (240h)  valid=2020-01-26T00:00:00.000000000
+  [37/1098] init=2020-01-13T00:00:00.000000000  lead=12h (12h)  valid=2020-01-13T12:00:00.000000000
+    [34] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [34] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [8] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [8] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [19/1098] init=2020-01-07T00:00:00.000000000  lead=12h (12h)  valid=2020-01-07T12:00:00.000000000
+    [48] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [37] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [48] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [37] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [19] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [19] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [6/1098] init=2020-01-02T00:00:00.000000000  lead=10d (240h)  valid=2020-01-12T00:00:00.000000000
+  [44/1098] init=2020-01-15T00:00:00.000000000  lead=5d (120h)  valid=2020-01-20T00:00:00.000000000
+  [13/1098] init=2020-01-05T00:00:00.000000000  lead=12h (12h)  valid=2020-01-05T12:00:00.000000000
+    [6] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [6] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [20/1098] init=2020-01-07T00:00:00.000000000  lead=5d (120h)  valid=2020-01-12T00:00:00.000000000
+  [9/1098] init=2020-01-03T00:00:00.000000000  lead=10d (240h)  valid=2020-01-13T00:00:00.000000000
+  [31/1098] init=2020-01-11T00:00:00.000000000  lead=12h (12h)  valid=2020-01-11T12:00:00.000000000
+    [44] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [44] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [4/1098] init=2020-01-02T00:00:00.000000000  lead=12h (12h)  valid=2020-01-02T12:00:00.000000000
+  [45/1098] init=2020-01-15T00:00:00.000000000  lead=10d (240h)  valid=2020-01-25T00:00:00.000000000
+  [2/1098] init=2020-01-01T00:00:00.000000000  lead=5d (120h)  valid=2020-01-06T00:00:00.000000000
+    [13] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [13] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [20] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [20] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [9] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [31] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [9] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [31] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [30/1098] init=2020-01-10T00:00:00.000000000  lead=10d (240h)  valid=2020-01-20T00:00:00.000000000
+    [4] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [4] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [23/1098] init=2020-01-08T00:00:00.000000000  lead=5d (120h)  valid=2020-01-13T00:00:00.000000000
+  [12/1098] init=2020-01-04T00:00:00.000000000  lead=10d (240h)  valid=2020-01-14T00:00:00.000000000
+  [35/1098] init=2020-01-12T00:00:00.000000000  lead=5d (120h)  valid=2020-01-17T00:00:00.000000000
+    [2] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [2] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [45] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [45] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [29/1098] init=2020-01-10T00:00:00.000000000  lead=5d (120h)  valid=2020-01-15T00:00:00.000000000
+    [23] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [23] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [35] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [12] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [35] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [12] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [30] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [30] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [29] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [29] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [3/1098] init=2020-01-01T00:00:00.000000000  lead=10d (240h)  valid=2020-01-11T00:00:00.000000000
+  [38/1098] init=2020-01-13T00:00:00.000000000  lead=5d (120h)  valid=2020-01-18T00:00:00.000000000
+  [27/1098] init=2020-01-09T00:00:00.000000000  lead=10d (240h)  valid=2020-01-19T00:00:00.000000000
+  [39/1098] init=2020-01-13T00:00:00.000000000  lead=10d (240h)  valid=2020-01-23T00:00:00.000000000
+    [3] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+  [16/1098] init=2020-01-06T00:00:00.000000000  lead=12h (12h)  valid=2020-01-06T12:00:00.000000000
+    [3] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [42/1098] init=2020-01-14T00:00:00.000000000  lead=10d (240h)  valid=2020-01-24T00:00:00.000000000
+    [38] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [38] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [18/1098] init=2020-01-06T00:00:00.000000000  lead=10d (240h)  valid=2020-01-16T00:00:00.000000000
+    [27] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [39] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [27] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [39] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [16] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [16] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [42] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [42] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [36/1098] init=2020-01-12T00:00:00.000000000  lead=10d (240h)  valid=2020-01-22T00:00:00.000000000
+    [18] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [18] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [24/1098] init=2020-01-08T00:00:00.000000000  lead=10d (240h)  valid=2020-01-18T00:00:00.000000000
+    [36] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [36] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [46/1098] init=2020-01-16T00:00:00.000000000  lead=12h (12h)  valid=2020-01-16T12:00:00.000000000
+    [24] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [24] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [46] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [46] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [11/1098] init=2020-01-04T00:00:00.000000000  lead=5d (120h)  valid=2020-01-09T00:00:00.000000000
+  [10/1098] init=2020-01-04T00:00:00.000000000  lead=12h (12h)  valid=2020-01-04T12:00:00.000000000
+  [7/1098] init=2020-01-03T00:00:00.000000000  lead=12h (12h)  valid=2020-01-03T12:00:00.000000000
+    [11] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [11] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [15/1098] init=2020-01-05T00:00:00.000000000  lead=10d (240h)  valid=2020-01-15T00:00:00.000000000
+    [10] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [10] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [7] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [7] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [15] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [15] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [40/1098] init=2020-01-14T00:00:00.000000000  lead=12h (12h)  valid=2020-01-14T12:00:00.000000000
+    [40] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [40] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [17/1098] init=2020-01-06T00:00:00.000000000  lead=5d (120h)  valid=2020-01-11T00:00:00.000000000
+    [17] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [17] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [28/1098] init=2020-01-10T00:00:00.000000000  lead=12h (12h)  valid=2020-01-10T12:00:00.000000000
+    [28] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [28] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [5/1098] init=2020-01-02T00:00:00.000000000  lead=5d (120h)  valid=2020-01-07T00:00:00.000000000
+    [5] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [5] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [22/1098] init=2020-01-08T00:00:00.000000000  lead=12h (12h)  valid=2020-01-08T12:00:00.000000000
+    [22] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [22] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [8] Model grid differs from ERA5 — using matching static Zarr
+    [8] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [8]   → mass/water/energy metrics will be NaN
+    [8] Computing area from model grid (256 lats vs ERA5 256)
+    [40] Model grid differs from ERA5 — using matching static Zarr
+    [40] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [40]   → mass/water/energy metrics will be NaN
+    [40] Computing area from model grid (256 lats vs ERA5 256)
+    [24] Model grid differs from ERA5 — using matching static Zarr
+    [24] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [24]   → mass/water/energy metrics will be NaN
+    [24] Computing area from model grid (256 lats vs ERA5 256)
+    [10] Model grid differs from ERA5 — using matching static Zarr
+    [46] Model grid differs from ERA5 — using matching static Zarr
+    [46] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [46]   → mass/water/energy metrics will be NaN
+    [46] Computing area from model grid (256 lats vs ERA5 256)
+    [10] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [10]   → mass/water/energy metrics will be NaN
+    [10] Computing area from model grid (256 lats vs ERA5 256)
+    [39] Model grid differs from ERA5 — using matching static Zarr
+    [39] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [39]   → mass/water/energy metrics will be NaN
+    [39] Computing area from model grid (256 lats vs ERA5 256)
+    [25] Model grid differs from ERA5 — using matching static Zarr
+    [37] Model grid differs from ERA5 — using matching static Zarr
+    [25] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [25]   → mass/water/energy metrics will be NaN
+    [25] Computing area from model grid (256 lats vs ERA5 256)
+    [37] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [37]   → mass/water/energy metrics will be NaN
+    [37] Computing area from model grid (256 lats vs ERA5 256)
+    [43] Model grid differs from ERA5 — using matching static Zarr
+    [29] Model grid differs from ERA5 — using matching static Zarr
+    [48] Model grid differs from ERA5 — using matching static Zarr
+    [45] Model grid differs from ERA5 — using matching static Zarr
+    [29] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [29]   → mass/water/energy metrics will be NaN
+    [29] Computing area from model grid (256 lats vs ERA5 256)
+    [48] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [48]   → mass/water/energy metrics will be NaN
+    [48] Computing area from model grid (256 lats vs ERA5 256)
+    [42] Model grid differs from ERA5 — using matching static Zarr
+    [12] Model grid differs from ERA5 — using matching static Zarr
+    [43] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [43]   → mass/water/energy metrics will be NaN
+    [43] Computing area from model grid (256 lats vs ERA5 256)
+    [42] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [42]   → mass/water/energy metrics will be NaN
+    [42] Computing area from model grid (256 lats vs ERA5 256)
+    [12] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [12]   → mass/water/energy metrics will be NaN
+    [12] Computing area from model grid (256 lats vs ERA5 256)
+    [45] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [45]   → mass/water/energy metrics will be NaN
+    [45] Computing area from model grid (256 lats vs ERA5 256)
+    [32] Model grid differs from ERA5 — using matching static Zarr
+    [17] Model grid differs from ERA5 — using matching static Zarr
+    [20] Model grid differs from ERA5 — using matching static Zarr
+    [32] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [32]   → mass/water/energy metrics will be NaN
+    [32] Computing area from model grid (256 lats vs ERA5 256)
+    [17] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [17]   → mass/water/energy metrics will be NaN
+    [17] Computing area from model grid (256 lats vs ERA5 256)
+    [20] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [20]   → mass/water/energy metrics will be NaN
+    [20] Computing area from model grid (256 lats vs ERA5 256)
+    [2] Model grid differs from ERA5 — using matching static Zarr
+    [2] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [2]   → mass/water/energy metrics will be NaN
+    [2] Computing area from model grid (256 lats vs ERA5 256)
+    [18] Model grid differs from ERA5 — using matching static Zarr
+    [23] Model grid differs from ERA5 — using matching static Zarr
+    [9] Model grid differs from ERA5 — using matching static Zarr
+    [18] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [18]   → mass/water/energy metrics will be NaN
+    [18] Computing area from model grid (256 lats vs ERA5 256)
+    [1] Model grid differs from ERA5 — using matching static Zarr
+    [38] Model grid differs from ERA5 — using matching static Zarr
+    [23] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [23]   → mass/water/energy metrics will be NaN
+    [23] Computing area from model grid (256 lats vs ERA5 256)
+    [5] Model grid differs from ERA5 — using matching static Zarr
+    [9] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [9]   → mass/water/energy metrics will be NaN
+    [9] Computing area from model grid (256 lats vs ERA5 256)
+    [28] Model grid differs from ERA5 — using matching static Zarr
+    [28] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [28]   → mass/water/energy metrics will be NaN
+    [28] Computing area from model grid (256 lats vs ERA5 256)
+    [38] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [38]   → mass/water/energy metrics will be NaN
+    [38] Computing area from model grid (256 lats vs ERA5 256)
+    [5] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [5]   → mass/water/energy metrics will be NaN
+    [5] Computing area from model grid (256 lats vs ERA5 256)
+    [41] Model grid differs from ERA5 — using matching static Zarr
+    [41] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [41]   → mass/water/energy metrics will be NaN
+    [41] Computing area from model grid (256 lats vs ERA5 256)
+    [14] Model grid differs from ERA5 — using matching static Zarr
+    [1] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [1]   → mass/water/energy metrics will be NaN
+    [1] Computing area from model grid (256 lats vs ERA5 256)
+    [14] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [14]   → mass/water/energy metrics will be NaN
+    [14] Computing area from model grid (256 lats vs ERA5 256)
+    [16] Model grid differs from ERA5 — using matching static Zarr
+    [21] Model grid differs from ERA5 — using matching static Zarr
+    [4] Model grid differs from ERA5 — using matching static Zarr
+    [21] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [21]   → mass/water/energy metrics will be NaN
+    [21] Computing area from model grid (256 lats vs ERA5 256)
+    [35] Model grid differs from ERA5 — using matching static Zarr
+    [16] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [16]   → mass/water/energy metrics will be NaN
+    [16] Computing area from model grid (256 lats vs ERA5 256)
+    [35] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [35]   → mass/water/energy metrics will be NaN
+    [35] Computing area from model grid (256 lats vs ERA5 256)
+    [4] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [4]   → mass/water/energy metrics will be NaN
+    [4] Computing area from model grid (256 lats vs ERA5 256)
+    [44] Model grid differs from ERA5 — using matching static Zarr
+    [44] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [44]   → mass/water/energy metrics will be NaN
+    [44] Computing area from model grid (256 lats vs ERA5 256)
+    [7] Model grid differs from ERA5 — using matching static Zarr
+    [33] Model grid differs from ERA5 — using matching static Zarr
+    [47] Model grid differs from ERA5 — using matching static Zarr
+    [7] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [7]   → mass/water/energy metrics will be NaN
+    [7] Computing area from model grid (256 lats vs ERA5 256)
+    [33] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [33]   → mass/water/energy metrics will be NaN
+    [33] Computing area from model grid (256 lats vs ERA5 256)
+    [47] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [47]   → mass/water/energy metrics will be NaN
+    [47] Computing area from model grid (256 lats vs ERA5 256)
+    [26] Model grid differs from ERA5 — using matching static Zarr
+    [36] Model grid differs from ERA5 — using matching static Zarr
+    [6] Model grid differs from ERA5 — using matching static Zarr
+    [30] Model grid differs from ERA5 — using matching static Zarr
+    [26] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [26]   → mass/water/energy metrics will be NaN
+    [26] Computing area from model grid (256 lats vs ERA5 256)
+    [36] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [36]   → mass/water/energy metrics will be NaN
+    [36] Computing area from model grid (256 lats vs ERA5 256)
+    [6] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [6]   → mass/water/energy metrics will be NaN
+    [6] Computing area from model grid (256 lats vs ERA5 256)
+    [30] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [30]   → mass/water/energy metrics will be NaN
+    [30] Computing area from model grid (256 lats vs ERA5 256)
+    [34] Model grid differs from ERA5 — using matching static Zarr
+    [34] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [34]   → mass/water/energy metrics will be NaN
+    [34] Computing area from model grid (256 lats vs ERA5 256)
+    [19] Model grid differs from ERA5 — using matching static Zarr
+    [27] Model grid differs from ERA5 — using matching static Zarr
+    [15] Model grid differs from ERA5 — using matching static Zarr
+    [3] Model grid differs from ERA5 — using matching static Zarr
+    [19] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [19]   → mass/water/energy metrics will be NaN
+    [19] Computing area from model grid (256 lats vs ERA5 256)
+    [27] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [27]   → mass/water/energy metrics will be NaN
+    [27] Computing area from model grid (256 lats vs ERA5 256)
+    [3] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [3]   → mass/water/energy metrics will be NaN
+    [3] Computing area from model grid (256 lats vs ERA5 256)
+    [15] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [15]   → mass/water/energy metrics will be NaN
+    [15] Computing area from model grid (256 lats vs ERA5 256)
+    [31] Model grid differs from ERA5 — using matching static Zarr
+    [31] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [31]   → mass/water/energy metrics will be NaN
+    [31] Computing area from model grid (256 lats vs ERA5 256)
+    [13] Model grid differs from ERA5 — using matching static Zarr
+    [13] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [13]   → mass/water/energy metrics will be NaN
+    [13] Computing area from model grid (256 lats vs ERA5 256)
+    [22] Model grid differs from ERA5 — using matching static Zarr
+    [22] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [22]   → mass/water/energy metrics will be NaN
+    [22] Computing area from model grid (256 lats vs ERA5 256)
+    [11] Model grid differs from ERA5 — using matching static Zarr
+    [11] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [11]   → mass/water/energy metrics will be NaN
+    [11] Computing area from model grid (256 lats vs ERA5 256)
+    [40] Drift: 2 steps [12h–24h]
+    [13] Drift: 2 steps [12h–24h]
+    [25] Drift: 2 steps [12h–24h]
+    [43] Drift: 2 steps [12h–24h]
+    [46] Drift: 2 steps [12h–24h]
+    [28] Drift: 2 steps [12h–24h]
+    [16] Drift: 2 steps [12h–24h]
+    [19] Drift: 2 steps [12h–24h]
+    [4] Drift: 2 steps [12h–24h]
+    [37] Drift: 2 steps [12h–24h]
+    [34] Drift: 2 steps [12h–24h]
+    [10] Drift: 2 steps [12h–24h]
+    [31] Drift: 2 steps [12h–24h]
+    [7] Drift: 2 steps [12h–24h]
+    [1] Drift: 2 steps [12h–24h]
+    [25] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [25] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.464282%/day
+    [40] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [40] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.777062%/day
+    [43] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [43] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0192826%/day
+    [13] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [13] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.294738%/day
+    [19] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [19] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.490118%/day
+    [25] ✓ KE spectrum saved (l_max=127)
+    [43] ✓ KE spectrum saved (l_max=127)
+    [40] ✓ KE spectrum saved (l_max=127)
+    [16] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [16] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.635792%/day
+    [46] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [46] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.195872%/day
+    [13] ✓ KE spectrum saved (l_max=127)
+  [50/1098] init=2020-01-17T00:00:00.000000000  lead=5d (120h)  valid=2020-01-22T00:00:00.000000000
+    [50] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [50] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [49/1098] init=2020-01-17T00:00:00.000000000  lead=12h (12h)  valid=2020-01-17T12:00:00.000000000
+    [49] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [49] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [51/1098] init=2020-01-17T00:00:00.000000000  lead=10d (240h)  valid=2020-01-27T00:00:00.000000000
+    [51] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [51] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [19] ✓ KE spectrum saved (l_max=127)
+  [52/1098] init=2020-01-18T00:00:00.000000000  lead=12h (12h)  valid=2020-01-18T12:00:00.000000000
+    [52] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [52] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [28] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [28] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.200379%/day
+  [53/1098] init=2020-01-18T00:00:00.000000000  lead=5d (120h)  valid=2020-01-23T00:00:00.000000000
+    [53] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [53] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [16] ✓ KE spectrum saved (l_max=127)
+    [31] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [31] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.532155%/day
+    [46] ✓ KE spectrum saved (l_max=127)
+    [4] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [4] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0237123%/day
+  [55/1098] init=2020-01-19T00:00:00.000000000  lead=12h (12h)  valid=2020-01-19T12:00:00.000000000
+    [55] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [55] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [28] ✓ KE spectrum saved (l_max=127)
+    [31] ✓ KE spectrum saved (l_max=127)
+  [54/1098] init=2020-01-18T00:00:00.000000000  lead=10d (240h)  valid=2020-01-28T00:00:00.000000000
+    [54] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [54] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [4] ✓ KE spectrum saved (l_max=127)
+    [37] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [37] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.303187%/day
+  [58/1098] init=2020-01-20T00:00:00.000000000  lead=12h (12h)  valid=2020-01-20T12:00:00.000000000
+    [58] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [58] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [57/1098] init=2020-01-19T00:00:00.000000000  lead=10d (240h)  valid=2020-01-29T00:00:00.000000000
+    [57] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [57] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [56/1098] init=2020-01-19T00:00:00.000000000  lead=5d (120h)  valid=2020-01-24T00:00:00.000000000
+    [56] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [56] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [34] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [34] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.141703%/day
+    [37] ✓ KE spectrum saved (l_max=127)
+    [10] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [10] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0960377%/day
+  [59/1098] init=2020-01-20T00:00:00.000000000  lead=5d (120h)  valid=2020-01-25T00:00:00.000000000
+    [59] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [59] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [7] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [7] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.378773%/day
+    [34] ✓ KE spectrum saved (l_max=127)
+  [60/1098] init=2020-01-20T00:00:00.000000000  lead=10d (240h)  valid=2020-01-30T00:00:00.000000000
+    [60] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [60] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [10] ✓ KE spectrum saved (l_max=127)
+    [7] ✓ KE spectrum saved (l_max=127)
+    [1] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [1] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.343186%/day
+  [61/1098] init=2020-01-21T00:00:00.000000000  lead=12h (12h)  valid=2020-01-21T12:00:00.000000000
+    [61] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [61] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [62/1098] init=2020-01-21T00:00:00.000000000  lead=5d (120h)  valid=2020-01-26T00:00:00.000000000
+    [62] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [62] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [49] Model grid differs from ERA5 — using matching static Zarr
+    [49] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [49]   → mass/water/energy metrics will be NaN
+    [49] Computing area from model grid (256 lats vs ERA5 256)
+    [1] ✓ KE spectrum saved (l_max=127)
+    [50] Model grid differs from ERA5 — using matching static Zarr
+    [50] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [50]   → mass/water/energy metrics will be NaN
+    [50] Computing area from model grid (256 lats vs ERA5 256)
+  [63/1098] init=2020-01-21T00:00:00.000000000  lead=10d (240h)  valid=2020-01-31T00:00:00.000000000
+    [63] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [63] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [53] Model grid differs from ERA5 — using matching static Zarr
+    [53] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [53]   → mass/water/energy metrics will be NaN
+    [53] Computing area from model grid (256 lats vs ERA5 256)
+    [52] Model grid differs from ERA5 — using matching static Zarr
+    [52] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [52]   → mass/water/energy metrics will be NaN
+    [52] Computing area from model grid (256 lats vs ERA5 256)
+    [51] Model grid differs from ERA5 — using matching static Zarr
+    [51] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [51]   → mass/water/energy metrics will be NaN
+    [51] Computing area from model grid (256 lats vs ERA5 256)
+    [55] Model grid differs from ERA5 — using matching static Zarr
+    [55] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [55]   → mass/water/energy metrics will be NaN
+    [55] Computing area from model grid (256 lats vs ERA5 256)
+    [54] Model grid differs from ERA5 — using matching static Zarr
+    [54] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [54]   → mass/water/energy metrics will be NaN
+    [54] Computing area from model grid (256 lats vs ERA5 256)
+    [56] Model grid differs from ERA5 — using matching static Zarr
+    [56] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [56]   → mass/water/energy metrics will be NaN
+    [56] Computing area from model grid (256 lats vs ERA5 256)
+    [58] Model grid differs from ERA5 — using matching static Zarr
+    [58] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [58]   → mass/water/energy metrics will be NaN
+    [58] Computing area from model grid (256 lats vs ERA5 256)
+    [57] Model grid differs from ERA5 — using matching static Zarr
+    [57] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [57]   → mass/water/energy metrics will be NaN
+    [57] Computing area from model grid (256 lats vs ERA5 256)
+    [59] Model grid differs from ERA5 — using matching static Zarr
+    [59] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [59]   → mass/water/energy metrics will be NaN
+    [59] Computing area from model grid (256 lats vs ERA5 256)
+    [60] Model grid differs from ERA5 — using matching static Zarr
+    [60] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [60]   → mass/water/energy metrics will be NaN
+    [60] Computing area from model grid (256 lats vs ERA5 256)
+    [62] Model grid differs from ERA5 — using matching static Zarr
+    [62] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [62]   → mass/water/energy metrics will be NaN
+    [62] Computing area from model grid (256 lats vs ERA5 256)
+    [61] Model grid differs from ERA5 — using matching static Zarr
+    [61] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [61]   → mass/water/energy metrics will be NaN
+    [61] Computing area from model grid (256 lats vs ERA5 256)
+    [63] Model grid differs from ERA5 — using matching static Zarr
+    [63] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [63]   → mass/water/energy metrics will be NaN
+    [63] Computing area from model grid (256 lats vs ERA5 256)
+    [41] Drift: 10 steps [12h–120h]
+    [8] Drift: 10 steps [12h–120h]
+    [49] Drift: 2 steps [12h–24h]
+    [2] Drift: 10 steps [12h–120h]
+    [29] Drift: 10 steps [12h–120h]
+    [41] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [41] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0898553%/day
+    [52] Drift: 2 steps [12h–24h]
+    [55] Drift: 2 steps [12h–24h]
+    [35] Drift: 10 steps [12h–120h]
+    [41] ✓ KE spectrum saved (l_max=127)
+  [64/1098] init=2020-01-22T00:00:00.000000000  lead=12h (12h)  valid=2020-01-22T12:00:00.000000000
+    [64] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [64] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [8] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [8] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.214089%/day
+    [58] Drift: 2 steps [12h–24h]
+    [8] ✓ KE spectrum saved (l_max=127)
+  [65/1098] init=2020-01-22T00:00:00.000000000  lead=5d (120h)  valid=2020-01-27T00:00:00.000000000
+    [65] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [65] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [26] Drift: 10 steps [12h–120h]
+    [61] Drift: 2 steps [12h–24h]
+    [49] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [49] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.00215687%/day
+    [49] ✓ KE spectrum saved (l_max=127)
+    [17] Drift: 10 steps [12h–120h]
+  [66/1098] init=2020-01-22T00:00:00.000000000  lead=10d (240h)  valid=2020-02-01T00:00:00.000000000
+    [66] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [66] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [2] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [2] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.203698%/day
+    [29] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [29] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0185667%/day
+    [47] Drift: 10 steps [12h–120h]
+    [23] Drift: 10 steps [12h–120h]
+    [14] Drift: 10 steps [12h–120h]
+    [2] ✓ KE spectrum saved (l_max=127)
+    [29] ✓ KE spectrum saved (l_max=127)
+    [64] Model grid differs from ERA5 — using matching static Zarr
+    [64] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [64]   → mass/water/energy metrics will be NaN
+    [64] Computing area from model grid (256 lats vs ERA5 256)
+  [68/1098] init=2020-01-23T00:00:00.000000000  lead=5d (120h)  valid=2020-01-28T00:00:00.000000000
+    [68] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [68] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [67/1098] init=2020-01-23T00:00:00.000000000  lead=12h (12h)  valid=2020-01-23T12:00:00.000000000
+    [67] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [67] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [38] Drift: 10 steps [12h–120h]
+    [52] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [52] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.334198%/day
+    [52] ✓ KE spectrum saved (l_max=127)
+    [32] Drift: 10 steps [12h–120h]
+    [35] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [35] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.19443%/day
+    [55] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [55] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.647621%/day
+    [55] ✓ KE spectrum saved (l_max=127)
+  [69/1098] init=2020-01-23T00:00:00.000000000  lead=10d (240h)  valid=2020-02-02T00:00:00.000000000
+    [69] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [69] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [70/1098] init=2020-01-24T00:00:00.000000000  lead=12h (12h)  valid=2020-01-24T12:00:00.000000000
+    [70] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [70] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [35] ✓ KE spectrum saved (l_max=127)
+  [71/1098] init=2020-01-24T00:00:00.000000000  lead=5d (120h)  valid=2020-01-29T00:00:00.000000000
+    [71] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [71] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [44] Drift: 10 steps [12h–120h]
+    [5] Drift: 10 steps [12h–120h]
+    [20] Drift: 10 steps [12h–120h]
+    [65] Model grid differs from ERA5 — using matching static Zarr
+    [65] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [65]   → mass/water/energy metrics will be NaN
+    [65] Computing area from model grid (256 lats vs ERA5 256)
+    [58] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [58] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0437939%/day
+    [58] ✓ KE spectrum saved (l_max=127)
+    [26] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [26] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.195223%/day
+    [66] Model grid differs from ERA5 — using matching static Zarr
+    [66] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [66]   → mass/water/energy metrics will be NaN
+    [66] Computing area from model grid (256 lats vs ERA5 256)
+  [72/1098] init=2020-01-24T00:00:00.000000000  lead=10d (240h)  valid=2020-02-03T00:00:00.000000000
+    [72] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [72] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [26] ✓ KE spectrum saved (l_max=127)
+    [61] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [61] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.31184%/day
+    [61] ✓ KE spectrum saved (l_max=127)
+  [73/1098] init=2020-01-25T00:00:00.000000000  lead=12h (12h)  valid=2020-01-25T12:00:00.000000000
+    [73] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [73] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [74/1098] init=2020-01-25T00:00:00.000000000  lead=5d (120h)  valid=2020-01-30T00:00:00.000000000
+    [74] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [74] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [68] Model grid differs from ERA5 — using matching static Zarr
+    [68] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [68]   → mass/water/energy metrics will be NaN
+    [68] Computing area from model grid (256 lats vs ERA5 256)
+    [47] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [47] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.351833%/day
+    [23] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [23] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0719382%/day
+    [67] Model grid differs from ERA5 — using matching static Zarr
+    [67] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [67]   → mass/water/energy metrics will be NaN
+    [67] Computing area from model grid (256 lats vs ERA5 256)
+    [14] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [14] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.463286%/day
+    [32] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [32] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.172798%/day
+    [47] ✓ KE spectrum saved (l_max=127)
+    [17] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [17] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.314589%/day
+    [23] ✓ KE spectrum saved (l_max=127)
+    [71] Model grid differs from ERA5 — using matching static Zarr
+    [71] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [71]   → mass/water/energy metrics will be NaN
+    [71] Computing area from model grid (256 lats vs ERA5 256)
+    [69] Model grid differs from ERA5 — using matching static Zarr
+    [69] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [69]   → mass/water/energy metrics will be NaN
+    [69] Computing area from model grid (256 lats vs ERA5 256)
+  [75/1098] init=2020-01-25T00:00:00.000000000  lead=10d (240h)  valid=2020-02-04T00:00:00.000000000
+    [75] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [75] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [70] Model grid differs from ERA5 — using matching static Zarr
+    [70] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [70]   → mass/water/energy metrics will be NaN
+    [70] Computing area from model grid (256 lats vs ERA5 256)
+  [76/1098] init=2020-01-26T00:00:00.000000000  lead=12h (12h)  valid=2020-01-26T12:00:00.000000000
+    [76] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [76] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [14] ✓ KE spectrum saved (l_max=127)
+    [32] ✓ KE spectrum saved (l_max=127)
+  [77/1098] init=2020-01-26T00:00:00.000000000  lead=5d (120h)  valid=2020-01-31T00:00:00.000000000
+    [77] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [77] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [17] ✓ KE spectrum saved (l_max=127)
+  [78/1098] init=2020-01-26T00:00:00.000000000  lead=10d (240h)  valid=2020-02-05T00:00:00.000000000
+    [78] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [78] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [79/1098] init=2020-01-27T00:00:00.000000000  lead=12h (12h)  valid=2020-01-27T12:00:00.000000000
+    [79] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [79] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [38] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [38] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0556827%/day
+    [44] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [44] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.251963%/day
+    [72] Model grid differs from ERA5 — using matching static Zarr
+    [72] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [72]   → mass/water/energy metrics will be NaN
+    [72] Computing area from model grid (256 lats vs ERA5 256)
+    [38] ✓ KE spectrum saved (l_max=127)
+    [44] ✓ KE spectrum saved (l_max=127)
+    [20] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [20] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.14174%/day
+    [5] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [5] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.12194%/day
+  [80/1098] init=2020-01-27T00:00:00.000000000  lead=5d (120h)  valid=2020-02-01T00:00:00.000000000
+    [80] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [80] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [81/1098] init=2020-01-27T00:00:00.000000000  lead=10d (240h)  valid=2020-02-06T00:00:00.000000000
+    [81] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [81] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [74] Model grid differs from ERA5 — using matching static Zarr
+    [73] Model grid differs from ERA5 — using matching static Zarr
+    [74] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [74]   → mass/water/energy metrics will be NaN
+    [74] Computing area from model grid (256 lats vs ERA5 256)
+    [73] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [73]   → mass/water/energy metrics will be NaN
+    [73] Computing area from model grid (256 lats vs ERA5 256)
+    [20] ✓ KE spectrum saved (l_max=127)
+    [5] ✓ KE spectrum saved (l_max=127)
+  [82/1098] init=2020-01-28T00:00:00.000000000  lead=12h (12h)  valid=2020-01-28T12:00:00.000000000
+    [82] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [82] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [83/1098] init=2020-01-28T00:00:00.000000000  lead=5d (120h)  valid=2020-02-02T00:00:00.000000000
+    [83] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [83] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [76] Model grid differs from ERA5 — using matching static Zarr
+    [76] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [76]   → mass/water/energy metrics will be NaN
+    [76] Computing area from model grid (256 lats vs ERA5 256)
+    [75] Model grid differs from ERA5 — using matching static Zarr
+    [75] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [75]   → mass/water/energy metrics will be NaN
+    [75] Computing area from model grid (256 lats vs ERA5 256)
+    [77] Model grid differs from ERA5 — using matching static Zarr
+    [77] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [77]   → mass/water/energy metrics will be NaN
+    [77] Computing area from model grid (256 lats vs ERA5 256)
+    [78] Model grid differs from ERA5 — using matching static Zarr
+    [78] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [78]   → mass/water/energy metrics will be NaN
+    [78] Computing area from model grid (256 lats vs ERA5 256)
+    [79] Model grid differs from ERA5 — using matching static Zarr
+    [79] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [79]   → mass/water/energy metrics will be NaN
+    [79] Computing area from model grid (256 lats vs ERA5 256)
+    [80] Model grid differs from ERA5 — using matching static Zarr
+    [80] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [80]   → mass/water/energy metrics will be NaN
+    [80] Computing area from model grid (256 lats vs ERA5 256)
+    [81] Model grid differs from ERA5 — using matching static Zarr
+    [81] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [81]   → mass/water/energy metrics will be NaN
+    [81] Computing area from model grid (256 lats vs ERA5 256)
+    [83] Model grid differs from ERA5 — using matching static Zarr
+    [83] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [83]   → mass/water/energy metrics will be NaN
+    [83] Computing area from model grid (256 lats vs ERA5 256)
+    [82] Model grid differs from ERA5 — using matching static Zarr
+    [82] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [82]   → mass/water/energy metrics will be NaN
+    [82] Computing area from model grid (256 lats vs ERA5 256)
+    [64] Drift: 2 steps [12h–24h]
+    [11] Drift: 10 steps [12h–120h]
+    [67] Drift: 2 steps [12h–24h]
+    [64] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [64] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0899748%/day
+    [64] ✓ KE spectrum saved (l_max=127)
+  [84/1098] init=2020-01-28T00:00:00.000000000  lead=10d (240h)  valid=2020-02-07T00:00:00.000000000
+    [84] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [84] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [70] Drift: 2 steps [12h–24h]
+    [11] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [11] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.376447%/day
+    [11] ✓ KE spectrum saved (l_max=127)
+  [85/1098] init=2020-01-29T00:00:00.000000000  lead=12h (12h)  valid=2020-01-29T12:00:00.000000000
+    [85] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [85] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [73] Drift: 2 steps [12h–24h]
+    [50] Drift: 10 steps [12h–120h]
+    [53] Drift: 10 steps [12h–120h]
+    [6] Drift: 20 steps [12h–240h]
+    [76] Drift: 2 steps [12h–24h]
+    [12] Drift: 20 steps [12h–240h]
+    [67] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [67] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.36687%/day
+    [67] ✓ KE spectrum saved (l_max=127)
+  [86/1098] init=2020-01-29T00:00:00.000000000  lead=5d (120h)  valid=2020-02-03T00:00:00.000000000
+    [86] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [86] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [84] Model grid differs from ERA5 — using matching static Zarr
+    [84] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [84]   → mass/water/energy metrics will be NaN
+    [84] Computing area from model grid (256 lats vs ERA5 256)
+    [79] Drift: 2 steps [12h–24h]
+    [56] Drift: 10 steps [12h–120h]
+    [70] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [70] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.180782%/day
+    [70] ✓ KE spectrum saved (l_max=127)
+    [85] Model grid differs from ERA5 — using matching static Zarr
+    [85] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [85]   → mass/water/energy metrics will be NaN
+    [85] Computing area from model grid (256 lats vs ERA5 256)
+    [18] Drift: 20 steps [12h–240h]
+  [87/1098] init=2020-01-29T00:00:00.000000000  lead=10d (240h)  valid=2020-02-08T00:00:00.000000000
+    [87] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [87] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [73] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [73] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.135507%/day
+    [73] ✓ KE spectrum saved (l_max=127)
+    [50] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [50] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.348872%/day
+  [88/1098] init=2020-01-30T00:00:00.000000000  lead=12h (12h)  valid=2020-01-30T12:00:00.000000000
+    [88] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [88] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [50] ✓ KE spectrum saved (l_max=127)
+  [89/1098] init=2020-01-30T00:00:00.000000000  lead=5d (120h)  valid=2020-02-04T00:00:00.000000000
+    [89] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [89] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [24] Drift: 20 steps [12h–240h]
+    [21] Drift: 20 steps [12h–240h]
+    [48] Drift: 20 steps [12h–240h]
+    [12] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [12] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.180059%/day
+    [53] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [53] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.199005%/day
+    [53] ✓ KE spectrum saved (l_max=127)
+    [6] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [6] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.156728%/day
+  [90/1098] init=2020-01-30T00:00:00.000000000  lead=10d (240h)  valid=2020-02-09T00:00:00.000000000
+    [90] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [90] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [86] Model grid differs from ERA5 — using matching static Zarr
+    [86] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [86]   → mass/water/energy metrics will be NaN
+    [86] Computing area from model grid (256 lats vs ERA5 256)
+    [59] Drift: 10 steps [12h–120h]
+    [33] Drift: 20 steps [12h–240h]
+    [76] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [76] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.086955%/day
+    [76] ✓ KE spectrum saved (l_max=127)
+    [12] ✓ KE spectrum saved (l_max=127)
+  [92/1098] init=2020-01-31T00:00:00.000000000  lead=5d (120h)  valid=2020-02-05T00:00:00.000000000
+    [92] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [92] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [91/1098] init=2020-01-31T00:00:00.000000000  lead=12h (12h)  valid=2020-01-31T12:00:00.000000000
+    [91] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [91] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [6] ✓ KE spectrum saved (l_max=127)
+    [82] Drift: 2 steps [12h–24h]
+  [93/1098] init=2020-01-31T00:00:00.000000000  lead=10d (240h)  valid=2020-02-10T00:00:00.000000000
+    [93] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [93] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [30] Drift: 20 steps [12h–240h]
+    [56] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [56] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0701922%/day
+    [56] ✓ KE spectrum saved (l_max=127)
+    [87] Model grid differs from ERA5 — using matching static Zarr
+    [88] Model grid differs from ERA5 — using matching static Zarr
+    [87] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [87]   → mass/water/energy metrics will be NaN
+    [87] Computing area from model grid (256 lats vs ERA5 256)
+    [88] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [88]   → mass/water/energy metrics will be NaN
+    [88] Computing area from model grid (256 lats vs ERA5 256)
+    [79] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [79] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.192867%/day
+    [79] ✓ KE spectrum saved (l_max=127)
+  [94/1098] init=2020-02-01T00:00:00.000000000  lead=12h (12h)  valid=2020-02-01T12:00:00.000000000
+    [94] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [94] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [95/1098] init=2020-02-01T00:00:00.000000000  lead=5d (120h)  valid=2020-02-06T00:00:00.000000000
+    [95] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [95] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [89] Model grid differs from ERA5 — using matching static Zarr
+    [89] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [89]   → mass/water/energy metrics will be NaN
+    [89] Computing area from model grid (256 lats vs ERA5 256)
+    [90] Model grid differs from ERA5 — using matching static Zarr
+    [90] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [90]   → mass/water/energy metrics will be NaN
+    [90] Computing area from model grid (256 lats vs ERA5 256)
+    [18] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [18] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0821472%/day
+    [24] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [24] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0178096%/day
+    [18] ✓ KE spectrum saved (l_max=127)
+  [96/1098] init=2020-02-01T00:00:00.000000000  lead=10d (240h)  valid=2020-02-11T00:00:00.000000000
+    [96] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [96] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [91] Model grid differs from ERA5 — using matching static Zarr
+    [91] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [91]   → mass/water/energy metrics will be NaN
+    [91] Computing area from model grid (256 lats vs ERA5 256)
+    [92] Model grid differs from ERA5 — using matching static Zarr
+    [92] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [92]   → mass/water/energy metrics will be NaN
+    [92] Computing area from model grid (256 lats vs ERA5 256)
+    [24] ✓ KE spectrum saved (l_max=127)
+    [21] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [21] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.00645561%/day
+  [97/1098] init=2020-02-02T00:00:00.000000000  lead=12h (12h)  valid=2020-02-02T12:00:00.000000000
+    [97] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [97] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [59] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [59] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.225178%/day
+    [59] ✓ KE spectrum saved (l_max=127)
+  [98/1098] init=2020-02-02T00:00:00.000000000  lead=5d (120h)  valid=2020-02-07T00:00:00.000000000
+    [98] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [98] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [9] Drift: 20 steps [12h–240h]
+    [48] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [48] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.150078%/day
+    [93] Model grid differs from ERA5 — using matching static Zarr
+    [93] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [93]   → mass/water/energy metrics will be NaN
+    [93] Computing area from model grid (256 lats vs ERA5 256)
+    [21] ✓ KE spectrum saved (l_max=127)
+    [33] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [33] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0492017%/day
+  [99/1098] init=2020-02-02T00:00:00.000000000  lead=10d (240h)  valid=2020-02-12T00:00:00.000000000
+    [99] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [99] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [42] Drift: 20 steps [12h–240h]
+    [48] ✓ KE spectrum saved (l_max=127)
+    [33] ✓ KE spectrum saved (l_max=127)
+  [100/1098] init=2020-02-03T00:00:00.000000000  lead=12h (12h)  valid=2020-02-03T12:00:00.000000000
+    [100] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [100] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [101/1098] init=2020-02-03T00:00:00.000000000  lead=5d (120h)  valid=2020-02-08T00:00:00.000000000
+    [101] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [101] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [62] Drift: 10 steps [12h–120h]
+    [95] Model grid differs from ERA5 — using matching static Zarr
+    [95] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [95]   → mass/water/energy metrics will be NaN
+    [95] Computing area from model grid (256 lats vs ERA5 256)
+    [94] Model grid differs from ERA5 — using matching static Zarr
+    [82] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [82] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.534749%/day
+    [94] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [94]   → mass/water/energy metrics will be NaN
+    [94] Computing area from model grid (256 lats vs ERA5 256)
+    [82] ✓ KE spectrum saved (l_max=127)
+  [102/1098] init=2020-02-03T00:00:00.000000000  lead=10d (240h)  valid=2020-02-13T00:00:00.000000000
+    [102] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [102] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [3] Drift: 20 steps [12h–240h]
+    [96] Model grid differs from ERA5 — using matching static Zarr
+    [96] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [96]   → mass/water/energy metrics will be NaN
+    [96] Computing area from model grid (256 lats vs ERA5 256)
+    [30] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [30] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0579906%/day
+    [97] Model grid differs from ERA5 — using matching static Zarr
+    [97] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [97]   → mass/water/energy metrics will be NaN
+    [97] Computing area from model grid (256 lats vs ERA5 256)
+    [9] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [9] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.275934%/day
+    [30] ✓ KE spectrum saved (l_max=127)
+    [98] Model grid differs from ERA5 — using matching static Zarr
+    [98] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [98]   → mass/water/energy metrics will be NaN
+    [98] Computing area from model grid (256 lats vs ERA5 256)
+    [99] Model grid differs from ERA5 — using matching static Zarr
+    [99] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [99]   → mass/water/energy metrics will be NaN
+    [99] Computing area from model grid (256 lats vs ERA5 256)
+  [103/1098] init=2020-02-04T00:00:00.000000000  lead=12h (12h)  valid=2020-02-04T12:00:00.000000000
+    [103] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [103] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [9] ✓ KE spectrum saved (l_max=127)
+    [100] Model grid differs from ERA5 — using matching static Zarr
+    [100] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [100]   → mass/water/energy metrics will be NaN
+    [100] Computing area from model grid (256 lats vs ERA5 256)
+    [45] Drift: 20 steps [12h–240h]
+  [104/1098] init=2020-02-04T00:00:00.000000000  lead=5d (120h)  valid=2020-02-09T00:00:00.000000000
+    [104] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [104] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [22] Drift: 2 steps [12h–24h]
+    [36] Drift: 20 steps [12h–240h]
+    [101] Model grid differs from ERA5 — using matching static Zarr
+    [101] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [101]   → mass/water/energy metrics will be NaN
+    [101] Computing area from model grid (256 lats vs ERA5 256)
+    [39] Drift: 20 steps [12h–240h]
+    [42] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [42] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.144859%/day
+    [62] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [62] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.399548%/day
+    [102] Model grid differs from ERA5 — using matching static Zarr
+    [62] ✓ KE spectrum saved (l_max=127)
+    [102] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [102]   → mass/water/energy metrics will be NaN
+    [102] Computing area from model grid (256 lats vs ERA5 256)
+    [15] Drift: 20 steps [12h–240h]
+    [27] Drift: 20 steps [12h–240h]
+    [42] ✓ KE spectrum saved (l_max=127)
+  [106/1098] init=2020-02-05T00:00:00.000000000  lead=12h (12h)  valid=2020-02-05T12:00:00.000000000
+    [106] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [106] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [105/1098] init=2020-02-04T00:00:00.000000000  lead=10d (240h)  valid=2020-02-14T00:00:00.000000000
+    [105] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [105] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [3] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [3] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.116287%/day
+    [3] ✓ KE spectrum saved (l_max=127)
+    [85] Drift: 2 steps [12h–24h]
+  [107/1098] init=2020-02-05T00:00:00.000000000  lead=5d (120h)  valid=2020-02-10T00:00:00.000000000
+    [107] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [107] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [104] Model grid differs from ERA5 — using matching static Zarr
+    [104] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [104]   → mass/water/energy metrics will be NaN
+    [104] Computing area from model grid (256 lats vs ERA5 256)
+    [103] Model grid differs from ERA5 — using matching static Zarr
+    [103] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [103]   → mass/water/energy metrics will be NaN
+    [103] Computing area from model grid (256 lats vs ERA5 256)
+    [71] Drift: 10 steps [12h–120h]
+    [22] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [22] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.754238%/day
+    [45] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [45] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.191578%/day
+    [22] ✓ KE spectrum saved (l_max=127)
+    [39] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [39] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.185938%/day
+    [88] Drift: 2 steps [12h–24h]
+  [108/1098] init=2020-02-05T00:00:00.000000000  lead=10d (240h)  valid=2020-02-15T00:00:00.000000000
+    [108] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [108] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [65] Drift: 10 steps [12h–120h]
+    [45] ✓ KE spectrum saved (l_max=127)
+    [36] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [36] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.102038%/day
+    [106] Model grid differs from ERA5 — using matching static Zarr
+    [106] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [106]   → mass/water/energy metrics will be NaN
+    [106] Computing area from model grid (256 lats vs ERA5 256)
+    [39] ✓ KE spectrum saved (l_max=127)
+    [105] Model grid differs from ERA5 — using matching static Zarr
+    [105] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [105]   → mass/water/energy metrics will be NaN
+    [105] Computing area from model grid (256 lats vs ERA5 256)
+  [110/1098] init=2020-02-06T00:00:00.000000000  lead=5d (120h)  valid=2020-02-11T00:00:00.000000000
+    [110] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [110] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [36] ✓ KE spectrum saved (l_max=127)
+    [107] Model grid differs from ERA5 — using matching static Zarr
+    [107] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [107]   → mass/water/energy metrics will be NaN
+    [107] Computing area from model grid (256 lats vs ERA5 256)
+  [109/1098] init=2020-02-06T00:00:00.000000000  lead=12h (12h)  valid=2020-02-06T12:00:00.000000000
+    [109] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [109] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [111/1098] init=2020-02-06T00:00:00.000000000  lead=10d (240h)  valid=2020-02-16T00:00:00.000000000
+    [111] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [111] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [27] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [27] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0109857%/day
+    [27] ✓ KE spectrum saved (l_max=127)
+    [15] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [15] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0567621%/day
+    [91] Drift: 2 steps [12h–24h]
+  [112/1098] init=2020-02-07T00:00:00.000000000  lead=12h (12h)  valid=2020-02-07T12:00:00.000000000
+    [112] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [112] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [15] ✓ KE spectrum saved (l_max=127)
+    [74] Drift: 10 steps [12h–120h]
+  [113/1098] init=2020-02-07T00:00:00.000000000  lead=5d (120h)  valid=2020-02-12T00:00:00.000000000
+    [113] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [113] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [85] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [85] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0107142%/day
+    [85] ✓ KE spectrum saved (l_max=127)
+  [114/1098] init=2020-02-07T00:00:00.000000000  lead=10d (240h)  valid=2020-02-17T00:00:00.000000000
+    [114] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [114] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [71] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [71] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.244351%/day
+    [71] ✓ KE spectrum saved (l_max=127)
+  [115/1098] init=2020-02-08T00:00:00.000000000  lead=12h (12h)  valid=2020-02-08T12:00:00.000000000
+    [115] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [115] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [108] Model grid differs from ERA5 — using matching static Zarr
+    [108] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [108]   → mass/water/energy metrics will be NaN
+    [108] Computing area from model grid (256 lats vs ERA5 256)
+    [68] Drift: 10 steps [12h–120h]
+    [88] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [88] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0795671%/day
+    [65] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [65] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.441979%/day
+    [110] Model grid differs from ERA5 — using matching static Zarr
+    [88] ✓ KE spectrum saved (l_max=127)
+    [110] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [110]   → mass/water/energy metrics will be NaN
+    [110] Computing area from model grid (256 lats vs ERA5 256)
+    [65] ✓ KE spectrum saved (l_max=127)
+  [117/1098] init=2020-02-08T00:00:00.000000000  lead=10d (240h)  valid=2020-02-18T00:00:00.000000000
+    [117] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [117] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [109] Model grid differs from ERA5 — using matching static Zarr
+  [116/1098] init=2020-02-08T00:00:00.000000000  lead=5d (120h)  valid=2020-02-13T00:00:00.000000000
+    [116] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [116] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [109] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [109]   → mass/water/energy metrics will be NaN
+    [109] Computing area from model grid (256 lats vs ERA5 256)
+    [111] Model grid differs from ERA5 — using matching static Zarr
+    [111] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [111]   → mass/water/energy metrics will be NaN
+    [111] Computing area from model grid (256 lats vs ERA5 256)
+    [112] Model grid differs from ERA5 — using matching static Zarr
+    [112] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [112]   → mass/water/energy metrics will be NaN
+    [112] Computing area from model grid (256 lats vs ERA5 256)
+    [94] Drift: 2 steps [12h–24h]
+    [91] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [91] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.195234%/day
+    [91] ✓ KE spectrum saved (l_max=127)
+    [113] Model grid differs from ERA5 — using matching static Zarr
+    [113] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [113]   → mass/water/energy metrics will be NaN
+    [113] Computing area from model grid (256 lats vs ERA5 256)
+    [114] Model grid differs from ERA5 — using matching static Zarr
+  [118/1098] init=2020-02-09T00:00:00.000000000  lead=12h (12h)  valid=2020-02-09T12:00:00.000000000
+    [118] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [118] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [114] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [114]   → mass/water/energy metrics will be NaN
+    [114] Computing area from model grid (256 lats vs ERA5 256)
+    [115] Model grid differs from ERA5 — using matching static Zarr
+    [115] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [115]   → mass/water/energy metrics will be NaN
+    [115] Computing area from model grid (256 lats vs ERA5 256)
+    [97] Drift: 2 steps [12h–24h]
+    [74] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [74] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.171943%/day
+    [74] ✓ KE spectrum saved (l_max=127)
+  [119/1098] init=2020-02-09T00:00:00.000000000  lead=5d (120h)  valid=2020-02-14T00:00:00.000000000
+    [119] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [119] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [77] Drift: 10 steps [12h–120h]
+    [116] Model grid differs from ERA5 — using matching static Zarr
+    [116] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [116]   → mass/water/energy metrics will be NaN
+    [116] Computing area from model grid (256 lats vs ERA5 256)
+    [117] Model grid differs from ERA5 — using matching static Zarr
+    [117] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [117]   → mass/water/energy metrics will be NaN
+    [117] Computing area from model grid (256 lats vs ERA5 256)
+    [100] Drift: 2 steps [12h–24h]
+    [68] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [68] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.353135%/day
+    [68] ✓ KE spectrum saved (l_max=127)
+  [120/1098] init=2020-02-09T00:00:00.000000000  lead=10d (240h)  valid=2020-02-19T00:00:00.000000000
+    [120] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [120] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [80] Drift: 10 steps [12h–120h]
+    [118] Model grid differs from ERA5 — using matching static Zarr
+    [118] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [118]   → mass/water/energy metrics will be NaN
+    [118] Computing area from model grid (256 lats vs ERA5 256)
+    [94] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [94] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.00916953%/day
+    [94] ✓ KE spectrum saved (l_max=127)
+  [121/1098] init=2020-02-10T00:00:00.000000000  lead=12h (12h)  valid=2020-02-10T12:00:00.000000000
+    [121] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [121] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [97] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [97] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.218505%/day
+    [97] ✓ KE spectrum saved (l_max=127)
+    [103] Drift: 2 steps [12h–24h]
+  [122/1098] init=2020-02-10T00:00:00.000000000  lead=5d (120h)  valid=2020-02-15T00:00:00.000000000
+    [122] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [122] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [119] Model grid differs from ERA5 — using matching static Zarr
+    [119] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [119]   → mass/water/energy metrics will be NaN
+    [119] Computing area from model grid (256 lats vs ERA5 256)
+    [120] Model grid differs from ERA5 — using matching static Zarr
+    [120] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [120]   → mass/water/energy metrics will be NaN
+    [120] Computing area from model grid (256 lats vs ERA5 256)
+    [77] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [77] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.00933157%/day
+    [77] ✓ KE spectrum saved (l_max=127)
+  [123/1098] init=2020-02-10T00:00:00.000000000  lead=10d (240h)  valid=2020-02-20T00:00:00.000000000
+    [123] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [123] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [100] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [100] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.239764%/day
+    [100] ✓ KE spectrum saved (l_max=127)
+  [124/1098] init=2020-02-11T00:00:00.000000000  lead=12h (12h)  valid=2020-02-11T12:00:00.000000000
+    [124] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [124] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [83] Drift: 10 steps [12h–120h]
+    [80] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [80] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0705637%/day
+    [80] ✓ KE spectrum saved (l_max=127)
+    [121] Model grid differs from ERA5 — using matching static Zarr
+    [121] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [121]   → mass/water/energy metrics will be NaN
+    [121] Computing area from model grid (256 lats vs ERA5 256)
+    [106] Drift: 2 steps [12h–24h]
+    [51] Drift: 20 steps [12h–240h]
+  [125/1098] init=2020-02-11T00:00:00.000000000  lead=5d (120h)  valid=2020-02-16T00:00:00.000000000
+    [125] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [125] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [54] Drift: 20 steps [12h–240h]
+    [122] Model grid differs from ERA5 — using matching static Zarr
+    [122] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [122]   → mass/water/energy metrics will be NaN
+    [122] Computing area from model grid (256 lats vs ERA5 256)
+    [103] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [103] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.734991%/day
+    [103] ✓ KE spectrum saved (l_max=127)
+    [123] Model grid differs from ERA5 — using matching static Zarr
+    [123] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [123]   → mass/water/energy metrics will be NaN
+    [123] Computing area from model grid (256 lats vs ERA5 256)
+  [126/1098] init=2020-02-11T00:00:00.000000000  lead=10d (240h)  valid=2020-02-21T00:00:00.000000000
+    [126] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [126] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [124] Model grid differs from ERA5 — using matching static Zarr
+    [124] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [124]   → mass/water/energy metrics will be NaN
+    [124] Computing area from model grid (256 lats vs ERA5 256)
+    [83] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [83] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.229141%/day
+    [83] ✓ KE spectrum saved (l_max=127)
+  [127/1098] init=2020-02-12T00:00:00.000000000  lead=12h (12h)  valid=2020-02-12T12:00:00.000000000
+    [127] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [127] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [125] Model grid differs from ERA5 — using matching static Zarr
+    [125] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [125]   → mass/water/energy metrics will be NaN
+    [125] Computing area from model grid (256 lats vs ERA5 256)
+    [57] Drift: 20 steps [12h–240h]
+    [51] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [51] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.232979%/day
+    [51] ✓ KE spectrum saved (l_max=127)
+    [115] Drift: 2 steps [12h–24h]
+    [54] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [54] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.273588%/day
+    [54] ✓ KE spectrum saved (l_max=127)
+    [106] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [106] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.706477%/day
+  [128/1098] init=2020-02-12T00:00:00.000000000  lead=5d (120h)  valid=2020-02-17T00:00:00.000000000
+    [128] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [128] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [60] Drift: 20 steps [12h–240h]
+    [106] ✓ KE spectrum saved (l_max=127)
+    [112] Drift: 2 steps [12h–24h]
+  [129/1098] init=2020-02-12T00:00:00.000000000  lead=10d (240h)  valid=2020-02-22T00:00:00.000000000
+    [129] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [129] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [109] Drift: 2 steps [12h–24h]
+  [130/1098] init=2020-02-13T00:00:00.000000000  lead=12h (12h)  valid=2020-02-13T12:00:00.000000000
+    [130] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [130] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [63] Drift: 20 steps [12h–240h]
+    [127] Model grid differs from ERA5 — using matching static Zarr
+    [127] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [127]   → mass/water/energy metrics will be NaN
+    [127] Computing area from model grid (256 lats vs ERA5 256)
+    [126] Model grid differs from ERA5 — using matching static Zarr
+    [126] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [126]   → mass/water/energy metrics will be NaN
+    [126] Computing area from model grid (256 lats vs ERA5 256)
+    [129] Model grid differs from ERA5 — using matching static Zarr
+    [129] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [129]   → mass/water/energy metrics will be NaN
+    [129] Computing area from model grid (256 lats vs ERA5 256)
+    [118] Drift: 2 steps [12h–24h]
+    [112] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [112] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0287676%/day
+    [112] ✓ KE spectrum saved (l_max=127)
+    [115] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [115] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.209135%/day
+    [115] ✓ KE spectrum saved (l_max=127)
+    [128] Model grid differs from ERA5 — using matching static Zarr
+    [128] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [128]   → mass/water/energy metrics will be NaN
+    [128] Computing area from model grid (256 lats vs ERA5 256)
+    [130] Model grid differs from ERA5 — using matching static Zarr
+    [130] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [130]   → mass/water/energy metrics will be NaN
+    [130] Computing area from model grid (256 lats vs ERA5 256)
+  [131/1098] init=2020-02-13T00:00:00.000000000  lead=5d (120h)  valid=2020-02-18T00:00:00.000000000
+    [131] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [131] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [132/1098] init=2020-02-13T00:00:00.000000000  lead=10d (240h)  valid=2020-02-23T00:00:00.000000000
+    [132] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [132] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [57] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [57] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.277574%/day
+    [57] ✓ KE spectrum saved (l_max=127)
+    [60] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [60] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.264211%/day
+    [60] ✓ KE spectrum saved (l_max=127)
+    [109] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [109] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.720783%/day
+    [86] Drift: 10 steps [12h–120h]
+  [133/1098] init=2020-02-14T00:00:00.000000000  lead=12h (12h)  valid=2020-02-14T12:00:00.000000000
+    [133] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [133] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [109] ✓ KE spectrum saved (l_max=127)
+  [134/1098] init=2020-02-14T00:00:00.000000000  lead=5d (120h)  valid=2020-02-19T00:00:00.000000000
+    [134] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [134] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [135/1098] init=2020-02-14T00:00:00.000000000  lead=10d (240h)  valid=2020-02-24T00:00:00.000000000
+    [135] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [135] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [89] Drift: 10 steps [12h–120h]
+    [132] Model grid differs from ERA5 — using matching static Zarr
+    [132] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [132]   → mass/water/energy metrics will be NaN
+    [132] Computing area from model grid (256 lats vs ERA5 256)
+    [131] Model grid differs from ERA5 — using matching static Zarr
+    [131] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [131]   → mass/water/energy metrics will be NaN
+    [131] Computing area from model grid (256 lats vs ERA5 256)
+    [63] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [63] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.259619%/day
+    [63] ✓ KE spectrum saved (l_max=127)
+    [133] Model grid differs from ERA5 — using matching static Zarr
+    [118] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [118] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.471707%/day
+    [133] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [133]   → mass/water/energy metrics will be NaN
+    [133] Computing area from model grid (256 lats vs ERA5 256)
+    [118] ✓ KE spectrum saved (l_max=127)
+  [136/1098] init=2020-02-15T00:00:00.000000000  lead=12h (12h)  valid=2020-02-15T12:00:00.000000000
+    [136] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [136] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [137/1098] init=2020-02-15T00:00:00.000000000  lead=5d (120h)  valid=2020-02-20T00:00:00.000000000
+    [137] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [137] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [121] Drift: 2 steps [12h–24h]
+    [135] Model grid differs from ERA5 — using matching static Zarr
+    [135] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [135]   → mass/water/energy metrics will be NaN
+    [135] Computing area from model grid (256 lats vs ERA5 256)
+    [134] Model grid differs from ERA5 — using matching static Zarr
+    [134] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [134]   → mass/water/energy metrics will be NaN
+    [134] Computing area from model grid (256 lats vs ERA5 256)
+    [86] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [86] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.186368%/day
+    [86] ✓ KE spectrum saved (l_max=127)
+    [92] Drift: 10 steps [12h–120h]
+  [138/1098] init=2020-02-15T00:00:00.000000000  lead=10d (240h)  valid=2020-02-25T00:00:00.000000000
+    [138] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [138] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [66] Drift: 20 steps [12h–240h]
+    [89] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [89] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.108377%/day
+    [89] ✓ KE spectrum saved (l_max=127)
+  [139/1098] init=2020-02-16T00:00:00.000000000  lead=12h (12h)  valid=2020-02-16T12:00:00.000000000
+    [139] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [139] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [137] Model grid differs from ERA5 — using matching static Zarr
+    [137] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [137]   → mass/water/energy metrics will be NaN
+    [137] Computing area from model grid (256 lats vs ERA5 256)
+    [95] Drift: 10 steps [12h–120h]
+    [124] Drift: 2 steps [12h–24h]
+    [136] Model grid differs from ERA5 — using matching static Zarr
+    [136] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [136]   → mass/water/energy metrics will be NaN
+    [136] Computing area from model grid (256 lats vs ERA5 256)
+    [98] Drift: 10 steps [12h–120h]
+    [138] Model grid differs from ERA5 — using matching static Zarr
+    [138] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [138]   → mass/water/energy metrics will be NaN
+    [138] Computing area from model grid (256 lats vs ERA5 256)
+    [121] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [121] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.427914%/day
+    [121] ✓ KE spectrum saved (l_max=127)
+  [140/1098] init=2020-02-16T00:00:00.000000000  lead=5d (120h)  valid=2020-02-21T00:00:00.000000000
+    [140] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [140] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [92] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [92] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0101497%/day
+    [92] ✓ KE spectrum saved (l_max=127)
+  [141/1098] init=2020-02-16T00:00:00.000000000  lead=10d (240h)  valid=2020-02-26T00:00:00.000000000
+    [141] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [141] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [66] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [66] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.238355%/day
+    [66] ✓ KE spectrum saved (l_max=127)
+    [139] Model grid differs from ERA5 — using matching static Zarr
+    [139] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [139]   → mass/water/energy metrics will be NaN
+    [139] Computing area from model grid (256 lats vs ERA5 256)
+    [101] Drift: 10 steps [12h–120h]
+  [142/1098] init=2020-02-17T00:00:00.000000000  lead=12h (12h)  valid=2020-02-17T12:00:00.000000000
+    [142] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [142] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [69] Drift: 20 steps [12h–240h]
+    [104] Drift: 10 steps [12h–120h]
+    [130] Drift: 2 steps [12h–24h]
+    [72] Drift: 20 steps [12h–240h]
+    [98] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [98] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.279791%/day
+    [98] ✓ KE spectrum saved (l_max=127)
+    [140] Model grid differs from ERA5 — using matching static Zarr
+    [140] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [140]   → mass/water/energy metrics will be NaN
+    [140] Computing area from model grid (256 lats vs ERA5 256)
+    [141] Model grid differs from ERA5 — using matching static Zarr
+    [124] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [124] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.165239%/day
+    [141] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [141]   → mass/water/energy metrics will be NaN
+    [141] Computing area from model grid (256 lats vs ERA5 256)
+    [124] ✓ KE spectrum saved (l_max=127)
+  [143/1098] init=2020-02-17T00:00:00.000000000  lead=5d (120h)  valid=2020-02-22T00:00:00.000000000
+    [143] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [143] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [95] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [95] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.169997%/day
+    [75] Drift: 20 steps [12h–240h]
+    [95] ✓ KE spectrum saved (l_max=127)
+  [144/1098] init=2020-02-17T00:00:00.000000000  lead=10d (240h)  valid=2020-02-27T00:00:00.000000000
+    [144] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [144] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [145/1098] init=2020-02-18T00:00:00.000000000  lead=12h (12h)  valid=2020-02-18T12:00:00.000000000
+    [145] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [145] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [127] Drift: 2 steps [12h–24h]
+    [78] Drift: 20 steps [12h–240h]
+    [142] Model grid differs from ERA5 — using matching static Zarr
+    [142] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [142]   → mass/water/energy metrics will be NaN
+    [142] Computing area from model grid (256 lats vs ERA5 256)
+    [101] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [101] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.323723%/day
+    [101] ✓ KE spectrum saved (l_max=127)
+  [146/1098] init=2020-02-18T00:00:00.000000000  lead=5d (120h)  valid=2020-02-23T00:00:00.000000000
+    [146] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [146] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [69] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [69] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.195116%/day
+    [69] ✓ KE spectrum saved (l_max=127)
+  [147/1098] init=2020-02-18T00:00:00.000000000  lead=10d (240h)  valid=2020-02-28T00:00:00.000000000
+    [147] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [147] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [133] Drift: 2 steps [12h–24h]
+    [104] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [104] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.20179%/day
+    [104] ✓ KE spectrum saved (l_max=127)
+    [143] Model grid differs from ERA5 — using matching static Zarr
+    [143] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [143]   → mass/water/energy metrics will be NaN
+    [143] Computing area from model grid (256 lats vs ERA5 256)
+    [145] Model grid differs from ERA5 — using matching static Zarr
+    [145] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [145]   → mass/water/energy metrics will be NaN
+    [145] Computing area from model grid (256 lats vs ERA5 256)
+  [148/1098] init=2020-02-19T00:00:00.000000000  lead=12h (12h)  valid=2020-02-19T12:00:00.000000000
+    [148] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [148] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [107] Drift: 10 steps [12h–120h]
+    [130] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [130] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.679961%/day
+    [130] ✓ KE spectrum saved (l_max=127)
+    [72] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [72] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.187248%/day
+    [72] ✓ KE spectrum saved (l_max=127)
+  [149/1098] init=2020-02-19T00:00:00.000000000  lead=5d (120h)  valid=2020-02-24T00:00:00.000000000
+    [149] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [149] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [144] Model grid differs from ERA5 — using matching static Zarr
+    [144] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [144]   → mass/water/energy metrics will be NaN
+    [144] Computing area from model grid (256 lats vs ERA5 256)
+  [150/1098] init=2020-02-19T00:00:00.000000000  lead=10d (240h)  valid=2020-02-29T00:00:00.000000000
+    [150] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [150] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [75] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [75] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.150579%/day
+    [75] ✓ KE spectrum saved (l_max=127)
+  [151/1098] init=2020-02-20T00:00:00.000000000  lead=12h (12h)  valid=2020-02-20T12:00:00.000000000
+    [151] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [151] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [127] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [127] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0869413%/day
+    [127] ✓ KE spectrum saved (l_max=127)
+    [147] Model grid differs from ERA5 — using matching static Zarr
+    [147] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [147]   → mass/water/energy metrics will be NaN
+    [147] Computing area from model grid (256 lats vs ERA5 256)
+    [81] Drift: 20 steps [12h–240h]
+    [78] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [78] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0191555%/day
+  [152/1098] init=2020-02-20T00:00:00.000000000  lead=5d (120h)  valid=2020-02-25T00:00:00.000000000
+    [152] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [152] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [78] ✓ KE spectrum saved (l_max=127)
+  [153/1098] init=2020-02-20T00:00:00.000000000  lead=10d (240h)  valid=2020-03-01T00:00:00.000000000
+    [153] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [153] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [146] Model grid differs from ERA5 — using matching static Zarr
+    [146] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [146]   → mass/water/energy metrics will be NaN
+    [146] Computing area from model grid (256 lats vs ERA5 256)
+    [149] Model grid differs from ERA5 — using matching static Zarr
+    [149] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [149]   → mass/water/energy metrics will be NaN
+    [149] Computing area from model grid (256 lats vs ERA5 256)
+    [148] Model grid differs from ERA5 — using matching static Zarr
+    [148] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [148]   → mass/water/energy metrics will be NaN
+    [148] Computing area from model grid (256 lats vs ERA5 256)
+    [133] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [133] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.13252%/day
+    [133] ✓ KE spectrum saved (l_max=127)
+    [150] Model grid differs from ERA5 — using matching static Zarr
+    [150] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [150]   → mass/water/energy metrics will be NaN
+    [150] Computing area from model grid (256 lats vs ERA5 256)
+  [154/1098] init=2020-02-21T00:00:00.000000000  lead=12h (12h)  valid=2020-02-21T12:00:00.000000000
+    [154] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [154] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [107] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [107] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0550992%/day
+    [110] Drift: 10 steps [12h–120h]
+    [107] ✓ KE spectrum saved (l_max=127)
+    [119] Drift: 10 steps [12h–120h]
+    [151] Model grid differs from ERA5 — using matching static Zarr
+    [116] Drift: 10 steps [12h–120h]
+    [151] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [151]   → mass/water/energy metrics will be NaN
+    [151] Computing area from model grid (256 lats vs ERA5 256)
+  [155/1098] init=2020-02-21T00:00:00.000000000  lead=5d (120h)  valid=2020-02-26T00:00:00.000000000
+    [155] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [155] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [152] Model grid differs from ERA5 — using matching static Zarr
+    [152] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [152]   → mass/water/energy metrics will be NaN
+    [152] Computing area from model grid (256 lats vs ERA5 256)
+    [153] Model grid differs from ERA5 — using matching static Zarr
+    [153] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [153]   → mass/water/energy metrics will be NaN
+    [153] Computing area from model grid (256 lats vs ERA5 256)
+    [136] Drift: 2 steps [12h–24h]
+    [139] Drift: 2 steps [12h–24h]
+    [81] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [81] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0220314%/day
+    [81] ✓ KE spectrum saved (l_max=127)
+  [156/1098] init=2020-02-21T00:00:00.000000000  lead=10d (240h)  valid=2020-03-02T00:00:00.000000000
+    [156] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [156] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [154] Model grid differs from ERA5 — using matching static Zarr
+    [154] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [154]   → mass/water/energy metrics will be NaN
+    [154] Computing area from model grid (256 lats vs ERA5 256)
+    [155] Model grid differs from ERA5 — using matching static Zarr
+    [155] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [155]   → mass/water/energy metrics will be NaN
+    [155] Computing area from model grid (256 lats vs ERA5 256)
+    [116] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [116] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0870741%/day
+    [116] ✓ KE spectrum saved (l_max=127)
+    [142] Drift: 2 steps [12h–24h]
+  [157/1098] init=2020-02-22T00:00:00.000000000  lead=12h (12h)  valid=2020-02-22T12:00:00.000000000
+    [157] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [157] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [119] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [119] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.00294145%/day
+    [113] Drift: 10 steps [12h–120h]
+    [119] ✓ KE spectrum saved (l_max=127)
+  [158/1098] init=2020-02-22T00:00:00.000000000  lead=5d (120h)  valid=2020-02-27T00:00:00.000000000
+    [158] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [158] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [156] Model grid differs from ERA5 — using matching static Zarr
+    [156] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [156]   → mass/water/energy metrics will be NaN
+    [156] Computing area from model grid (256 lats vs ERA5 256)
+    [110] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [110] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0598064%/day
+    [110] ✓ KE spectrum saved (l_max=127)
+    [139] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [139] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.637705%/day
+    [139] ✓ KE spectrum saved (l_max=127)
+  [160/1098] init=2020-02-23T00:00:00.000000000  lead=12h (12h)  valid=2020-02-23T12:00:00.000000000
+    [160] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [160] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [159/1098] init=2020-02-22T00:00:00.000000000  lead=10d (240h)  valid=2020-03-03T00:00:00.000000000
+    [159] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [159] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [136] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [136] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.258%/day
+    [136] ✓ KE spectrum saved (l_max=127)
+  [161/1098] init=2020-02-23T00:00:00.000000000  lead=5d (120h)  valid=2020-02-28T00:00:00.000000000
+    [161] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [161] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [145] Drift: 2 steps [12h–24h]
+    [160] Model grid differs from ERA5 — using matching static Zarr
+    [160] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [160]   → mass/water/energy metrics will be NaN
+    [160] Computing area from model grid (256 lats vs ERA5 256)
+    [157] Model grid differs from ERA5 — using matching static Zarr
+    [157] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [157]   → mass/water/energy metrics will be NaN
+    [157] Computing area from model grid (256 lats vs ERA5 256)
+    [142] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [142] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.936931%/day
+    [158] Model grid differs from ERA5 — using matching static Zarr
+    [142] ✓ KE spectrum saved (l_max=127)
+    [158] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [158]   → mass/water/energy metrics will be NaN
+    [158] Computing area from model grid (256 lats vs ERA5 256)
+    [90] Drift: 20 steps [12h–240h]
+    [159] Model grid differs from ERA5 — using matching static Zarr
+    [159] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [159]   → mass/water/energy metrics will be NaN
+    [159] Computing area from model grid (256 lats vs ERA5 256)
+  [162/1098] init=2020-02-23T00:00:00.000000000  lead=10d (240h)  valid=2020-03-04T00:00:00.000000000
+    [162] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [162] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [113] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [113] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0560953%/day
+    [113] ✓ KE spectrum saved (l_max=127)
+    [87] Drift: 20 steps [12h–240h]
+    [122] Drift: 10 steps [12h–120h]
+  [163/1098] init=2020-02-24T00:00:00.000000000  lead=12h (12h)  valid=2020-02-24T12:00:00.000000000
+    [163] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [163] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [161] Model grid differs from ERA5 — using matching static Zarr
+    [161] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [161]   → mass/water/energy metrics will be NaN
+    [161] Computing area from model grid (256 lats vs ERA5 256)
+    [84] Drift: 20 steps [12h–240h]
+    [148] Drift: 2 steps [12h–24h]
+    [125] Drift: 10 steps [12h–120h]
+    [162] Model grid differs from ERA5 — using matching static Zarr
+    [162] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [162]   → mass/water/energy metrics will be NaN
+    [162] Computing area from model grid (256 lats vs ERA5 256)
+    [145] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [145] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.480737%/day
+    [145] ✓ KE spectrum saved (l_max=127)
+  [164/1098] init=2020-02-24T00:00:00.000000000  lead=5d (120h)  valid=2020-02-29T00:00:00.000000000
+    [164] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [164] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [128] Drift: 10 steps [12h–120h]
+    [90] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [90] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0859952%/day
+    [151] Drift: 2 steps [12h–24h]
+    [90] ✓ KE spectrum saved (l_max=127)
+  [165/1098] init=2020-02-24T00:00:00.000000000  lead=10d (240h)  valid=2020-03-05T00:00:00.000000000
+    [165] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [165] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [163] Model grid differs from ERA5 — using matching static Zarr
+    [163] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [163]   → mass/water/energy metrics will be NaN
+    [163] Computing area from model grid (256 lats vs ERA5 256)
+    [84] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [84] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0556134%/day
+    [84] ✓ KE spectrum saved (l_max=127)
+    [122] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [122] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0282107%/day
+    [122] ✓ KE spectrum saved (l_max=127)
+  [166/1098] init=2020-02-25T00:00:00.000000000  lead=12h (12h)  valid=2020-02-25T12:00:00.000000000
+    [166] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [166] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [87] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [87] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0331798%/day
+    [87] ✓ KE spectrum saved (l_max=127)
+  [167/1098] init=2020-02-25T00:00:00.000000000  lead=5d (120h)  valid=2020-03-01T00:00:00.000000000
+    [167] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [167] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [168/1098] init=2020-02-25T00:00:00.000000000  lead=10d (240h)  valid=2020-03-06T00:00:00.000000000
+    [168] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [168] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [164] Model grid differs from ERA5 — using matching static Zarr
+    [164] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [164]   → mass/water/energy metrics will be NaN
+    [164] Computing area from model grid (256 lats vs ERA5 256)
+    [148] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [148] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.338055%/day
+    [148] ✓ KE spectrum saved (l_max=127)
+  [169/1098] init=2020-02-26T00:00:00.000000000  lead=12h (12h)  valid=2020-02-26T12:00:00.000000000
+    [169] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [169] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [125] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [125] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0160391%/day
+    [125] ✓ KE spectrum saved (l_max=127)
+    [154] Drift: 2 steps [12h–24h]
+  [170/1098] init=2020-02-26T00:00:00.000000000  lead=5d (120h)  valid=2020-03-02T00:00:00.000000000
+    [170] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [170] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [128] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [128] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0671519%/day
+    [128] ✓ KE spectrum saved (l_max=127)
+    [165] Model grid differs from ERA5 — using matching static Zarr
+    [165] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [165]   → mass/water/energy metrics will be NaN
+    [165] Computing area from model grid (256 lats vs ERA5 256)
+  [171/1098] init=2020-02-26T00:00:00.000000000  lead=10d (240h)  valid=2020-03-07T00:00:00.000000000
+    [171] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [171] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [166] Model grid differs from ERA5 — using matching static Zarr
+    [166] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [166]   → mass/water/energy metrics will be NaN
+    [166] Computing area from model grid (256 lats vs ERA5 256)
+    [167] Model grid differs from ERA5 — using matching static Zarr
+    [167] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [167]   → mass/water/energy metrics will be NaN
+    [167] Computing area from model grid (256 lats vs ERA5 256)
+    [151] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [151] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=-0.0188833%/day
+    [151] ✓ KE spectrum saved (l_max=127)
+    [168] Model grid differs from ERA5 — using matching static Zarr
+    [168] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [168]   → mass/water/energy metrics will be NaN
+    [168] Computing area from model grid (256 lats vs ERA5 256)
+  [172/1098] init=2020-02-27T00:00:00.000000000  lead=12h (12h)  valid=2020-02-27T12:00:00.000000000
+    [172] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [172] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [169] Model grid differs from ERA5 — using matching static Zarr
+    [169] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [169]   → mass/water/energy metrics will be NaN
+    [169] Computing area from model grid (256 lats vs ERA5 256)
+    [160] Drift: 2 steps [12h–24h]
+    [96] Drift: 20 steps [12h–240h]
+    [170] Model grid differs from ERA5 — using matching static Zarr
+    [170] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [170]   → mass/water/energy metrics will be NaN
+    [170] Computing area from model grid (256 lats vs ERA5 256)
+    [99] Drift: 20 steps [12h–240h]
+    [154] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [154] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.0174585%/day
+    [154] ✓ KE spectrum saved (l_max=127)
+    [134] Drift: 10 steps [12h–120h]
+  [173/1098] init=2020-02-27T00:00:00.000000000  lead=5d (120h)  valid=2020-03-03T00:00:00.000000000
+    [173] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [173] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [157] Drift: 2 steps [12h–24h]
+    [171] Model grid differs from ERA5 — using matching static Zarr
+    [171] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [171]   → mass/water/energy metrics will be NaN
+    [171] Computing area from model grid (256 lats vs ERA5 256)
+    [93] Drift: 20 steps [12h–240h]
+    [131] Drift: 10 steps [12h–120h]
+    [137] Drift: 10 steps [12h–120h]
+    [172] Model grid differs from ERA5 — using matching static Zarr
+    [172] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [172]   → mass/water/energy metrics will be NaN
+    [172] Computing area from model grid (256 lats vs ERA5 256)
+    [160] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [160] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.685953%/day
+    [160] ✓ KE spectrum saved (l_max=127)
+  [174/1098] init=2020-02-27T00:00:00.000000000  lead=10d (240h)  valid=2020-03-08T00:00:00.000000000
+    [174] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [174] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [96] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [96] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.254885%/day
+    [96] ✓ KE spectrum saved (l_max=127)
+    [134] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [134] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.239449%/day
+    [134] ✓ KE spectrum saved (l_max=127)
+  [175/1098] init=2020-02-28T00:00:00.000000000  lead=12h (12h)  valid=2020-02-28T12:00:00.000000000
+    [175] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [175] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [173] Model grid differs from ERA5 — using matching static Zarr
+    [173] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [173]   → mass/water/energy metrics will be NaN
+    [173] Computing area from model grid (256 lats vs ERA5 256)
+  [176/1098] init=2020-02-28T00:00:00.000000000  lead=5d (120h)  valid=2020-03-04T00:00:00.000000000
+    [176] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [176] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [99] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [99] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.18863%/day
+    [99] ✓ KE spectrum saved (l_max=127)
+  [177/1098] init=2020-02-28T00:00:00.000000000  lead=10d (240h)  valid=2020-03-09T00:00:00.000000000
+    [177] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [177] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [137] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [137] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.384311%/day
+    [137] ✓ KE spectrum saved (l_max=127)
+  [178/1098] init=2020-02-29T00:00:00.000000000  lead=12h (12h)  valid=2020-02-29T12:00:00.000000000
+    [178] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [178] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [157] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [157] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.546177%/day
+    [157] ✓ KE spectrum saved (l_max=127)
+  [179/1098] init=2020-02-29T00:00:00.000000000  lead=5d (120h)  valid=2020-03-05T00:00:00.000000000
+    [179] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [179] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [131] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [131] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.134066%/day
+    [131] ✓ KE spectrum saved (l_max=127)
+  [180/1098] init=2020-02-29T00:00:00.000000000  lead=10d (240h)  valid=2020-03-10T00:00:00.000000000
+    [180] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [180] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [93] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [93] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.19077%/day
+    [93] ✓ KE spectrum saved (l_max=127)
+  [181/1098] init=2020-03-01T00:00:00.000000000  lead=12h (12h)  valid=2020-03-01T12:00:00.000000000
+    [181] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [181] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [102] Drift: 20 steps [12h–240h]
+    [174] Model grid differs from ERA5 — using matching static Zarr
+    [174] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [174]   → mass/water/energy metrics will be NaN
+    [174] Computing area from model grid (256 lats vs ERA5 256)
+    [163] Drift: 2 steps [12h–24h]
+    [175] Model grid differs from ERA5 — using matching static Zarr
+    [175] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [175]   → mass/water/energy metrics will be NaN
+    [175] Computing area from model grid (256 lats vs ERA5 256)
+    [108] Drift: 20 steps [12h–240h]
+    [176] Model grid differs from ERA5 — using matching static Zarr
+    [176] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [176]   → mass/water/energy metrics will be NaN
+    [176] Computing area from model grid (256 lats vs ERA5 256)
+    [177] Model grid differs from ERA5 — using matching static Zarr
+    [177] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [177]   → mass/water/energy metrics will be NaN
+    [177] Computing area from model grid (256 lats vs ERA5 256)
+    [178] Model grid differs from ERA5 — using matching static Zarr
+    [178] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [178]   → mass/water/energy metrics will be NaN
+    [178] Computing area from model grid (256 lats vs ERA5 256)
+    [140] Drift: 10 steps [12h–120h]
+    [180] Model grid differs from ERA5 — using matching static Zarr
+    [180] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [180]   → mass/water/energy metrics will be NaN
+    [180] Computing area from model grid (256 lats vs ERA5 256)
+    [179] Model grid differs from ERA5 — using matching static Zarr
+    [179] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [179]   → mass/water/energy metrics will be NaN
+    [179] Computing area from model grid (256 lats vs ERA5 256)
+    [181] Model grid differs from ERA5 — using matching static Zarr
+    [181] ⚠ Could not derive surface pressure: Cannot derive surface pressure: no SP variable and hypsometric derivation from MSL failed. Available vars: ['geopotential', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+    [181]   → mass/water/energy metrics will be NaN
+    [181] Computing area from model grid (256 lats vs ERA5 256)
+    [166] Drift: 2 steps [12h–24h]
+    [117] Drift: 20 steps [12h–240h]
+    [105] Drift: 20 steps [12h–240h]
+    [102] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [102] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+0.182661%/day
+    [169] Drift: 2 steps [12h–24h]
+    [163] ⚠ ERA5 drift series failed: Area shape (256, 512) and data shape (512, 256) do not match.
+    [163] ✓ Drift: dry=+nan%/day  water=+nan%/day  energy=+nan%/day  mean_q=+1.00892%/day
+    [102] ✓ KE spectrum saved (l_max=127)
+    [163] ✓ KE spectrum saved (l_max=127)

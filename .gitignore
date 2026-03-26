@@ -1,0 +1,12 @@
+# Ignore a specific folder
+workshoppaper/
+aurora_env/
+
+# Ignore specific file types anywhere in the project
+*.csv
+*.h5
+*.pt
+*.nc
+
+# Ignore editor settings
+.vscode/

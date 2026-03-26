@@ -1,0 +1,58 @@
+#!/bin/bash
+
+#SBATCH --job-name=gdam_check
+#SBATCH --time=00:30:00
+#SBATCH --mem=32G
+#SBATCH --cpus-per-task=4
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --output=$HOME/aurora_thesis/jobs/logs/gdam_%j.out
+#SBATCH --error=$HOME/aurora_thesis/jobs/logs/gdam_%j.err
+
+# NOTE: This script does not require a GPU, so we don't request one.
+# If your cluster requires a specific partition for CPU jobs, uncomment/modify below:
+# #SBATCH --partition=genoa   # Example for Snellius CPU partition
+# #SBATCH --partition=broadwell # Example for older nodes
+
+# 1. Environment Setup
+PY="$HOME/aurora_thesis/aurora_env/bin/python"
+# Adjust path if you moved the script to verification/
+SCRIPT="$HOME/aurora_thesis/verification/gdam_conservation.py"
+
+# 2. Data Paths (Edit these!)
+# ERA5 Ground Truth (e.g., Zarr or NetCDF)
+ERA5_PATH="/projects/2/managed_datasets/ERA5/era5-gcp-zarr/ar/1959-2022-wb13-6h-0p25deg-chunk-1.zarr-v2"
+
+# Aurora Prediction (e.g., NetCDF output from aurora_pred.py or similar)
+# If you don't have a prediction file yet, you can run with --demo
+PRED_PATH="$HOME/aurora_thesis/results/prediction.nc"
+
+# 3. Execution
+echo "========================================"
+echo "Job ID: $SLURM_JOB_ID"
+echo "Date:   $(date)"
+echo "Script: $SCRIPT"
+echo "========================================"
+
+# Check if script exists in verification/ or scripts/
+if [ ! -f "$SCRIPT" ]; then
+    SCRIPT="$HOME/aurora_thesis/scripts/gdam_conservation.py"
+fi
+
+if [ ! -f "$SCRIPT" ]; then
+    echo "Error: Could not find gdam_conservation.py in verification/ or scripts/"
+    exit 1
+fi
+
+# Run with real data (uncomment when paths are set)
+# srun $PY $SCRIPT \
+#     --era5-path "$ERA5_PATH" \
+#     --pred-path "$PRED_PATH" \
+#     --time-idx 0
+
+# Run in DEMO mode (default for testing)
+echo "Running in DEMO mode..."
+srun $PY $SCRIPT --demo
+
+echo "========================================"
+echo "Job finished."
