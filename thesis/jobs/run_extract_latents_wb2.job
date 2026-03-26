@@ -28,7 +28,7 @@ OUTPUT_DIR="/scratch-shared/ekasteleyn/aurora_wb2_predictions_v2"
 
 PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python \
     /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py \
-    --dates 2022-01-15 \
+    --dates 2022-01-15 2022-01-16 \
     --num-steps 40 \
     --init-hours 0 12 \
     --save-predictions \
