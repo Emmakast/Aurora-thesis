@@ -1,0 +1,43 @@
+Job 21185072 started at Thu Mar 26 15:23:52 CET 2026
+Node: gcn113.local.snellius.surf.nl
+NVIDIA H100, 95830 MiB
+
+  ✓ S3 Client initialized securely via .env
+======================================================================
+  AURORA LATENT EXTRACTION - IFS HRES T0
+======================================================================
+  Dates: 1 dates
+  Init hours: [0, 12]
+  Latent extraction init: 12:00 UTC only
+  Rollout steps: 40
+  Device: cuda
+  Output: /scratch-shared/ekasteleyn/aurora_wb2_predictions_v2
+  Cache: /home/ekasteleyn/downloads/hres_t0
+  Target layers: [('perceiver', 0), ('encoder', 0), ('encoder', 1), ('encoder', 2)]
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+  2022-01-14
+  2022-01-15
+
+[3/4] Loading Aurora 0.25° Fine-Tuned model...
+  ✓ Model loaded
+
+[4/4] Processing 2 runs (1 dates × 2 init times)...
+
+  [15:25:08] [1/2] 2022-01-15 init 00:00 UTC [predictions only]
+    ⚠ Error: [Errno 2] No such file or directory: '/home/ekasteleyn/downloads/hres_t0/static.nc'
+
+  [15:25:08] [2/2] 2022-01-15 init 12:00 UTC [+latents] | ETA: 0.0 min
+    ⚠ Error: [Errno 2] No such file or directory: '/home/ekasteleyn/downloads/hres_t0/static.nc'
+
+  Waiting for file saves to complete...
+
+======================================================================
+  COMPLETE
+======================================================================
+  Output saved to: /scratch-shared/ekasteleyn/aurora_wb2_predictions_v2
+  Files: 0 .pt files, 0 .nc files
+Job 21185072 finished at Thu Mar 26 15:25:09 CET 2026

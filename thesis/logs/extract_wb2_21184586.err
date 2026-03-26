@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 615, in main
+    for step, pred in enumerate(rollout_gen, start=1):
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/rollout.py", line 30, in rollout
+    batch = batch.crop(model.patch_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/batch.py", line 154, in crop
+    static_vars={k: v[..., :-1, :] for k, v in self.static_vars.items()},
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/batch.py", line 154, in <dictcomp>
+    static_vars={k: v[..., :-1, :] for k, v in self.static_vars.items()},
+                    ~^^^^^^^^^^^^^
+IndexError: too many indices for tensor of dimension 1
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 615, in main
+    for step, pred in enumerate(rollout_gen, start=1):
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/rollout.py", line 30, in rollout
+    batch = batch.crop(model.patch_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/batch.py", line 154, in crop
+    static_vars={k: v[..., :-1, :] for k, v in self.static_vars.items()},
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/batch.py", line 154, in <dictcomp>
+    static_vars={k: v[..., :-1, :] for k, v in self.static_vars.items()},
+                    ~^^^^^^^^^^^^^
+IndexError: too many indices for tensor of dimension 1
