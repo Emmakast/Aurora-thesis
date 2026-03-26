@@ -228,9 +228,9 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
                 "msl": _prepare_init00(prev_surf_ds["mean_sea_level_pressure"].values, surf_vars_ds["mean_sea_level_pressure"].values),
             },
             static_vars={
-                "z": torch.from_numpy(static_vars_ds["z"].values),
-                "slt": torch.from_numpy(static_vars_ds["slt"].values),
-                "lsm": torch.from_numpy(static_vars_ds["lsm"].values),
+                "z": torch.from_numpy(static_vars_ds["z"].values[0]),
+                "slt": torch.from_numpy(static_vars_ds["slt"].values[0]),
+                "lsm": torch.from_numpy(static_vars_ds["lsm"].values[0]),
             },
             atmos_vars={
                 "t": _prepare_init00(prev_atmos_ds["temperature"].values, atmos_vars_ds["temperature"].values),
@@ -269,9 +269,9 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
             "msl": _prepare(surf_vars_ds["mean_sea_level_pressure"].values),
         },
         static_vars={
-            "z": torch.from_numpy(static_vars_ds["z"].values),
-            "slt": torch.from_numpy(static_vars_ds["slt"].values),
-            "lsm": torch.from_numpy(static_vars_ds["lsm"].values),
+            "z": torch.from_numpy(static_vars_ds["z"].values[0]),
+            "slt": torch.from_numpy(static_vars_ds["slt"].values[0]),
+            "lsm": torch.from_numpy(static_vars_ds["lsm"].values[0]),
         },
         atmos_vars={
             "t": _prepare(atmos_vars_ds["temperature"].values),
@@ -599,15 +599,13 @@ def main():
                 init_time = batch.metadata.time[0]
                 print(f"    Init time: {init_time}")
                 
-                # Transform and crop batch safely
-                batch = model.batch_transform_hook(batch)
-                p = next(model.parameters())
-                batch = batch.type(p.dtype).to(device)
-                
                 # Format init time for filenames
                 init_dt = init_time
                 date_fmt = init_dt.strftime("%Y%m%d")
                 init_fmt = init_dt.strftime("%H%M")
+                
+                p = next(model.parameters())
+                batch = batch.to(device).type(p.dtype)
                 
                 # Use the Context Manager for attention extraction
                 with torch.inference_mode(), attn_extractor:
