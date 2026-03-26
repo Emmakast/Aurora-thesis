@@ -1,0 +1,37 @@
+#!/bin/bash
+#SBATCH --job-name=extract_wb2
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/logs/extract_wb2_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/logs/extract_wb2_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=128G
+#SBATCH --partition=gpu_h100
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Diagnostics ──────────────────────────────────────────────────────────────
+echo "Job $SLURM_JOB_ID started at $(date)"
+echo "Node: $(hostname)"
+nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
+echo ""
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+# 40-step rollout, 1 date, 2 init times (00:00 and 12:00), predictions only (no latents)
+OUTPUT_DIR="/scratch-shared/ekasteleyn/aurora_wb2_predictions_v2"
+
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python \
+    /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py \
+    --dates 2022-01-15 \
+    --num-steps 40 \
+    --init-hours 0 12 \
+    --save-predictions \
+    --output-dir $OUTPUT_DIR
+
+echo "Job $SLURM_JOB_ID finished at $(date)"

@@ -228,9 +228,9 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
                 "msl": _prepare_init00(prev_surf_ds["mean_sea_level_pressure"].values, surf_vars_ds["mean_sea_level_pressure"].values),
             },
             static_vars={
-                "z": torch.from_numpy(static_vars_ds["z"].values[0]),
-                "slt": torch.from_numpy(static_vars_ds["slt"].values[0]),
-                "lsm": torch.from_numpy(static_vars_ds["lsm"].values[0]),
+            "z": torch.from_numpy(static_vars_ds["z"].values.squeeze()),
+            "slt": torch.from_numpy(static_vars_ds["slt"].values.squeeze()),
+            "lsm": torch.from_numpy(static_vars_ds["lsm"].values.squeeze()),
             },
             atmos_vars={
                 "t": _prepare_init00(prev_atmos_ds["temperature"].values, atmos_vars_ds["temperature"].values),
@@ -269,9 +269,9 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
             "msl": _prepare(surf_vars_ds["mean_sea_level_pressure"].values),
         },
         static_vars={
-            "z": torch.from_numpy(static_vars_ds["z"].values[0]),
-            "slt": torch.from_numpy(static_vars_ds["slt"].values[0]),
-            "lsm": torch.from_numpy(static_vars_ds["lsm"].values[0]),
+            "z": torch.from_numpy(static_vars_ds["z"].values.squeeze()),
+            "slt": torch.from_numpy(static_vars_ds["slt"].values.squeeze()),
+            "lsm": torch.from_numpy(static_vars_ds["lsm"].values.squeeze()),
         },
         atmos_vars={
             "t": _prepare(atmos_vars_ds["temperature"].values),
@@ -622,10 +622,11 @@ def main():
                         # Save prediction
                         if args.save_predictions:
                             lead_hours = step * 6
-                            # Optionally regrid back to 0.25° (721 lat points) for compatibility
-                            pred_for_save = pred_cpu.regrid(0.25) if pred_cpu.spatial_shape[0] == 720 else pred_cpu
+                            # Do NOT regrid - keep 720 lat points to match WB2 reference
+                            # pred_for_save = pred_cpu.regrid(0.25) if pred_cpu.spatial_shape[0] == 720 else pred_cpu
+                            pred_for_save = pred_cpu
                             pred_ds = batch_to_dataset(pred_for_save, step, use_fp64=args.fp64)
-                            out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:02d}h.nc"
+                            out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:03d}h.nc"
                             
                             pending_saves.append(save_executor.submit(
                                 async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
