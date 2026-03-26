@@ -137,9 +137,9 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
                 "msl": _prepare_init00(prev_surf_ds["mean_sea_level_pressure"].values, surf_vars_ds["mean_sea_level_pressure"].values),
             },
             static_vars={
-                "z": torch.from_numpy(static_vars_ds["z"].values[0]),
-                "slt": torch.from_numpy(static_vars_ds["slt"].values[0]),
-                "lsm": torch.from_numpy(static_vars_ds["lsm"].values[0]),
+                "z": torch.from_numpy(static_vars_ds["z"].values[::-1, :].copy()),
+                "slt": torch.from_numpy(static_vars_ds["slt"].values[::-1, :].copy()),
+                "lsm": torch.from_numpy(static_vars_ds["lsm"].values[::-1, :].copy()),
             },
             atmos_vars={
                 "t": _prepare_init00(prev_atmos_ds["temperature"].values, atmos_vars_ds["temperature"].values),
@@ -177,9 +177,9 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
             "msl": _prepare(surf_vars_ds["mean_sea_level_pressure"].values),
         },
         static_vars={
-            "z": torch.from_numpy(static_vars_ds["z"].values[0]),
-            "slt": torch.from_numpy(static_vars_ds["slt"].values[0]),
-            "lsm": torch.from_numpy(static_vars_ds["lsm"].values[0]),
+            "z": torch.from_numpy(static_vars_ds["z"].values[::-1, :].copy()),
+            "slt": torch.from_numpy(static_vars_ds["slt"].values[::-1, :].copy()),
+            "lsm": torch.from_numpy(static_vars_ds["lsm"].values[::-1, :].copy()),
         },
         atmos_vars={
             "t": _prepare(atmos_vars_ds["temperature"].values),
@@ -341,17 +341,15 @@ def main():
                 for step, pred in enumerate(rollout_gen, start=1):
                     pred_cpu = pred.to("cpu")
                     
-                    # Regrid back to 0.25° (721 lat points) for WB2 compatibility
-                    pred_regrid = pred_cpu.regrid(0.25) if pred_cpu.spatial_shape[0] == 720 else pred_cpu
-                    
+                    # Keep 720 lat points (no regrid) - matches WB2 Aurora reference
                     lead_hours = step * 6
-                    pred_ds = batch_to_dataset(pred_regrid, step)
+                    pred_ds = batch_to_dataset(pred_cpu, step)
                     out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:03d}h.nc"
                     
                     pred_ds.to_netcdf(out_path)
                     print(f"    Step {step:2d} (+{lead_hours:3d}h) -> {out_path.name}")
                     
-                    del pred_ds, pred_regrid, pred_cpu
+                    del pred_ds, pred_cpu
                     gc.collect()
             
             del batch
