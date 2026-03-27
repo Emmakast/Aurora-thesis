@@ -41,8 +41,10 @@ SPECTRAL_METRICS = [
     "effective_resolution_km",
     "spectral_residual",
     "spectral_divergence",
-    "small_scale_ratio",
 ]
+
+# Models where effective_resolution_km ~315.2 is their native resolution (should be white)
+NATIVE_RESOLUTION_MODELS = {"neuralgcm", "hres"}
 
 RMSE_CONSERVATION_METRICS = [
     "hydrostatic_rmse",
@@ -148,6 +150,12 @@ def build_table_data(lead: int, summaries: dict[str, pd.DataFrame],
             row_texts.append(text)
 
             if np.isnan(v):
+                row_colors.append(white)
+                continue
+
+            # For effective_resolution_km, NeuralGCM and HRES have native ~315km resolution
+            # so their values should be white (it's their maximum possible resolution)
+            if metric == "effective_resolution_km" and m in NATIVE_RESOLUTION_MODELS:
                 row_colors.append(white)
                 continue
 
