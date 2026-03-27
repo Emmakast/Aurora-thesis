@@ -1,0 +1,141 @@
+
+======================================================================
+  PHYSICS EVALUATION — WeatherBench 2 Zarr Streaming
+======================================================================
+  Prediction : gs://weatherbench2/datasets/hres/2016-2022-0012-1440x721.zarr
+  ERA5       : gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Dates  : 366
+  Lead times : ['12h', '5d', '10d']
+  Total evals: 1098
+  Workers    : 56
+  Mode       : prediction
+  Output : results/physics_evaluation_hres_2020_vs_era5.csv
+======================================================================
+
+  Checking Zarr stores (anonymous) …
+  Aurora vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'surface_pressure', 'temperature', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr']
+  ERA5 vars  : ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_dewpoint_temperature', '2m_temperature', 'above_ground', 'ageostrophic_wind_speed', 'angle_of_sub_gridscale_orography', 'anisotropy_of_sub_gridscale_orography', 'boundary_layer_height', 'divergence', 'eddy_kinetic_energy']
+  ERA5 time dtype: datetime64[ns]
+  ERA5 time range: 1959-01-01T00:00:00.000000000 → 2023-01-10T18:00:00.000000000
+
+  Sanity check — verifying ERA5 time selection on 'temperature':
+    requested=1975-01-03T12:00:00.000000000  actual=1975-01-03T12:00:00.000000000  mean=242.724
+    requested=1991-01-06T00:00:00.000000000  actual=1991-01-06T00:00:00.000000000  mean=242.87
+    requested=2007-01-08T12:00:00.000000000  actual=2007-01-08T12:00:00.000000000  mean=242.841
+  ✓ ERA5 time selection looks correct (values differ).
+
+
+  Launching 56 processes …
+
+  [32/1098] init=2020-01-11T00:00:00.000000000  lead=5d (120h)  valid=2020-01-16T00:00:00.000000000
+    [32] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [18/1098] init=2020-01-06T00:00:00.000000000  lead=10d (240h)  valid=2020-01-16T00:00:00.000000000
+  [37/1098] init=2020-01-13T00:00:00.000000000  lead=12h (12h)  valid=2020-01-13T12:00:00.000000000
+    [18] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [54/1098] init=2020-01-18T00:00:00.000000000  lead=10d (240h)  valid=2020-01-28T00:00:00.000000000
+    [37] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [54] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [23/1098] init=2020-01-08T00:00:00.000000000  lead=5d (120h)  valid=2020-01-13T00:00:00.000000000
+    [23] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [42/1098] init=2020-01-14T00:00:00.000000000  lead=10d (240h)  valid=2020-01-24T00:00:00.000000000
+    [42] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [26/1098] init=2020-01-09T00:00:00.000000000  lead=5d (120h)  valid=2020-01-14T00:00:00.000000000
+  [9/1098] init=2020-01-03T00:00:00.000000000  lead=10d (240h)  valid=2020-01-13T00:00:00.000000000
+    [26] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [9] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [50/1098] init=2020-01-17T00:00:00.000000000  lead=5d (120h)  valid=2020-01-22T00:00:00.000000000
+    [50] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [2/1098] init=2020-01-01T00:00:00.000000000  lead=5d (120h)  valid=2020-01-06T00:00:00.000000000
+    [2] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [10/1098] init=2020-01-04T00:00:00.000000000  lead=12h (12h)  valid=2020-01-04T12:00:00.000000000
+  [1/1098] init=2020-01-01T00:00:00.000000000  lead=12h (12h)  valid=2020-01-01T12:00:00.000000000
+    [10] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [1] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [16/1098] init=2020-01-06T00:00:00.000000000  lead=12h (12h)  valid=2020-01-06T12:00:00.000000000
+    [16] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [24/1098] init=2020-01-08T00:00:00.000000000  lead=10d (240h)  valid=2020-01-18T00:00:00.000000000
+    [24] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [48/1098] init=2020-01-16T00:00:00.000000000  lead=10d (240h)  valid=2020-01-26T00:00:00.000000000
+  [14/1098] init=2020-01-05T00:00:00.000000000  lead=5d (120h)  valid=2020-01-10T00:00:00.000000000
+    [48] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [14] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [28/1098] init=2020-01-10T00:00:00.000000000  lead=12h (12h)  valid=2020-01-10T12:00:00.000000000
+    [28] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [51/1098] init=2020-01-17T00:00:00.000000000  lead=10d (240h)  valid=2020-01-27T00:00:00.000000000
+    [51] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [8/1098] init=2020-01-03T00:00:00.000000000  lead=5d (120h)  valid=2020-01-08T00:00:00.000000000
+  [13/1098] init=2020-01-05T00:00:00.000000000  lead=12h (12h)  valid=2020-01-05T12:00:00.000000000
+    [8] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [13] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [34/1098] init=2020-01-12T00:00:00.000000000  lead=12h (12h)  valid=2020-01-12T12:00:00.000000000
+    [34] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [46/1098] init=2020-01-16T00:00:00.000000000  lead=12h (12h)  valid=2020-01-16T12:00:00.000000000
+    [46] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [44/1098] init=2020-01-15T00:00:00.000000000  lead=5d (120h)  valid=2020-01-20T00:00:00.000000000
+    [44] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [6/1098] init=2020-01-02T00:00:00.000000000  lead=10d (240h)  valid=2020-01-12T00:00:00.000000000
+    [6] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [19/1098] init=2020-01-07T00:00:00.000000000  lead=12h (12h)  valid=2020-01-07T12:00:00.000000000
+    [19] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [15/1098] init=2020-01-05T00:00:00.000000000  lead=10d (240h)  valid=2020-01-15T00:00:00.000000000
+    [15] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [36/1098] init=2020-01-12T00:00:00.000000000  lead=10d (240h)  valid=2020-01-22T00:00:00.000000000
+    [36] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [4/1098] init=2020-01-02T00:00:00.000000000  lead=12h (12h)  valid=2020-01-02T12:00:00.000000000
+    [4] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [45/1098] init=2020-01-15T00:00:00.000000000  lead=10d (240h)  valid=2020-01-25T00:00:00.000000000
+    [45] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [52/1098] init=2020-01-18T00:00:00.000000000  lead=12h (12h)  valid=2020-01-18T12:00:00.000000000
+  [12/1098] init=2020-01-04T00:00:00.000000000  lead=10d (240h)  valid=2020-01-14T00:00:00.000000000
+    [52] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [12] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [56/1098] init=2020-01-19T00:00:00.000000000  lead=5d (120h)  valid=2020-01-24T00:00:00.000000000
+  [20/1098] init=2020-01-07T00:00:00.000000000  lead=5d (120h)  valid=2020-01-12T00:00:00.000000000
+    [56] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [20] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [38/1098] init=2020-01-13T00:00:00.000000000  lead=5d (120h)  valid=2020-01-18T00:00:00.000000000
+  [25/1098] init=2020-01-09T00:00:00.000000000  lead=12h (12h)  valid=2020-01-09T12:00:00.000000000
+  [22/1098] init=2020-01-08T00:00:00.000000000  lead=12h (12h)  valid=2020-01-08T12:00:00.000000000
+    [38] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [25] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [22] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [53/1098] init=2020-01-18T00:00:00.000000000  lead=5d (120h)  valid=2020-01-23T00:00:00.000000000
+  [40/1098] init=2020-01-14T00:00:00.000000000  lead=12h (12h)  valid=2020-01-14T12:00:00.000000000
+    [53] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [40] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [3/1098] init=2020-01-01T00:00:00.000000000  lead=10d (240h)  valid=2020-01-11T00:00:00.000000000
+  [11/1098] init=2020-01-04T00:00:00.000000000  lead=5d (120h)  valid=2020-01-09T00:00:00.000000000
+    [3] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [11] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [21/1098] init=2020-01-07T00:00:00.000000000  lead=10d (240h)  valid=2020-01-17T00:00:00.000000000
+  [31/1098] init=2020-01-11T00:00:00.000000000  lead=12h (12h)  valid=2020-01-11T12:00:00.000000000
+    [21] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [27/1098] init=2020-01-09T00:00:00.000000000  lead=10d (240h)  valid=2020-01-19T00:00:00.000000000
+  [39/1098] init=2020-01-13T00:00:00.000000000  lead=10d (240h)  valid=2020-01-23T00:00:00.000000000
+    [31] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [27] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [30/1098] init=2020-01-10T00:00:00.000000000  lead=10d (240h)  valid=2020-01-20T00:00:00.000000000
+    [39] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [30] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [17/1098] init=2020-01-06T00:00:00.000000000  lead=5d (120h)  valid=2020-01-11T00:00:00.000000000
+    [17] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [49/1098] init=2020-01-17T00:00:00.000000000  lead=12h (12h)  valid=2020-01-17T12:00:00.000000000
+  [35/1098] init=2020-01-12T00:00:00.000000000  lead=5d (120h)  valid=2020-01-17T00:00:00.000000000
+    [49] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+    [35] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [41/1098] init=2020-01-14T00:00:00.000000000  lead=5d (120h)  valid=2020-01-19T00:00:00.000000000
+    [41] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [55/1098] init=2020-01-19T00:00:00.000000000  lead=12h (12h)  valid=2020-01-19T12:00:00.000000000
+    [55] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [7/1098] init=2020-01-03T00:00:00.000000000  lead=12h (12h)  valid=2020-01-03T12:00:00.000000000
+    [7] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [43/1098] init=2020-01-15T00:00:00.000000000  lead=12h (12h)  valid=2020-01-15T12:00:00.000000000
+    [43] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [29/1098] init=2020-01-10T00:00:00.000000000  lead=5d (120h)  valid=2020-01-15T00:00:00.000000000
+    [29] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [5/1098] init=2020-01-02T00:00:00.000000000  lead=5d (120h)  valid=2020-01-07T00:00:00.000000000
+    [5] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [33/1098] init=2020-01-11T00:00:00.000000000  lead=10d (240h)  valid=2020-01-21T00:00:00.000000000
+    [33] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
+  [47/1098] init=2020-01-16T00:00:00.000000000  lead=5d (120h)  valid=2020-01-21T00:00:00.000000000
+    [47] Dropping 8 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'total_precipitation', 'total_precipitation_24hr', 'total_precipitation_6hr', 'vertical_velocity', 'wind_speed']
