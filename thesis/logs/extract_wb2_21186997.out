@@ -1,0 +1,39 @@
+Job 21186997 started at Thu Mar 26 16:04:17 CET 2026
+Node: gcn110.local.snellius.surf.nl
+NVIDIA H100, 95830 MiB
+
+  ✓ S3 Client initialized securely via .env
+======================================================================
+  AURORA LATENT EXTRACTION - IFS HRES T0
+======================================================================
+  Dates: 2 dates
+  Init hours: [0, 12]
+  Latent extraction init: 12:00 UTC only
+  Rollout steps: 40
+  Device: cuda
+  Output: /scratch-shared/ekasteleyn/aurora_wb2_predictions_v2
+  Cache: /home/ekasteleyn/downloads/hres_t0
+  Target layers: [('perceiver', 0), ('encoder', 0), ('encoder', 1), ('encoder', 2)]
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+  2022-01-14
+  2022-01-15
+  2022-01-16
+    Downloading atmospheric variables...
+
+[3/4] Loading Aurora 0.25° Fine-Tuned model...
+  ✓ Model loaded
+
+[4/4] Processing 4 runs (2 dates × 2 init times)...
+
+  [16:05:41] [1/4] 2022-01-15 init 00:00 UTC [predictions only]
+    Init time: 2022-01-15 00:00:00
+    pred step 1 (+6h) -> aurora_pred_20220115_0000_step01_006h.nc
+    pred step 2 (+12h) -> aurora_pred_20220115_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220115_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220115_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220115_0000_step05_030h.nc
+Job 21186997 finished at Thu Mar 26 16:05:48 CET 2026
