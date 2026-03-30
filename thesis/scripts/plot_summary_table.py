@@ -24,9 +24,10 @@ NICE = {
 }
 
 # Metrics to show (in order) and whether lower is better
+# Labels with {ref} placeholder for ERA5/IFS
 METRICS = {
-    "hydrostatic_rmse":             ("Hydrostatic\nRMSE (Δ ERA5)",     True),
-    "geostrophic_rmse":             ("Geostrophic\nRMSE (Δ ERA5)",     True),
+    "hydrostatic_rmse":             ("Hydrostatic\nRMSE (Δ {ref})",     True),
+    "geostrophic_rmse":             ("Geostrophic\nRMSE (Δ {ref})",     True),
     "dry_mass_drift_pct_per_day":   ("Dry Mass Drift\n(%/day)",        True),  # closer to 0
     "water_mass_drift_pct_per_day": ("Water Mass Drift\n(%/day)",      True),
     "total_energy_drift_pct_per_day":("Energy Drift\n(%/day)",         True),
@@ -35,6 +36,12 @@ METRICS = {
     "spectral_divergence":          ("Spectral\nDivergence",           True),
     "small_scale_ratio":            ("Small-Scale\nRatio",             False),  # closer to 1 is better, >1 good
 }
+
+
+def get_col_labels(ifs_mode: bool = False) -> list[str]:
+    """Get column labels with correct reference (ERA5 or IFS)."""
+    ref = "IFS" if ifs_mode else "ERA5"
+    return [METRICS[m][0].format(ref=ref) for m in METRICS.keys()]
 
 # For drift metrics, "better" means closer to zero (use absolute value)
 ABS_METRICS = {
@@ -48,7 +55,11 @@ def load_summaries(results_dir: Path, ifs_mode: bool = False) -> dict[str, pd.Da
     out = {}
     suffix = "_ifs" if ifs_mode else ""
     for m in MODELS:
-        p = results_dir / f"physics_summary_{m}_2020{suffix}.csv"
+        # For HRES in ERA5 mode, use the _vs_era5 file
+        if m == "hres" and not ifs_mode:
+            p = results_dir / f"physics_summary_{m}_2020_vs_era5.csv"
+        else:
+            p = results_dir / f"physics_summary_{m}_2020{suffix}.csv"
         if p.exists():
             out[m] = pd.read_csv(p)
     return out
@@ -154,14 +165,14 @@ def build_table_data(lead: int, summaries: dict[str, pd.DataFrame],
 
 
 def render_combined_table(leads: list[int], summaries: dict[str, pd.DataFrame],
-                          outdir: Path):
+                          outdir: Path, ifs_mode: bool = False):
     """Render one figure with all lead times stacked vertically."""
     # Use union of all metrics across all leads
     metrics_list = list(METRICS.keys())
 
     n_metrics = len(metrics_list)
     n_models = len(MODELS)
-    col_labels = [METRICS[m][0] for m in metrics_list]
+    col_labels = get_col_labels(ifs_mode)
     model_labels = [NICE.get(m, m) for m in MODELS]
 
     n_leads = len(leads)
@@ -278,13 +289,13 @@ def render_combined_table(leads: list[int], summaries: dict[str, pd.DataFrame],
 
 
 def render_combined_table_by_model(leads: list[int], summaries: dict[str, pd.DataFrame],
-                                    outdir: Path):
+                                    outdir: Path, ifs_mode: bool = False):
     """Render one figure with all models stacked vertically (grouped by model)."""
     metrics_list = list(METRICS.keys())
 
     n_metrics = len(metrics_list)
     n_leads = len(leads)
-    col_labels = [METRICS[m][0] for m in metrics_list]
+    col_labels = get_col_labels(ifs_mode)
 
     # Total rows: (model label + n_leads) per model
     total_rows = len(MODELS) * (n_leads + 1)
@@ -388,8 +399,8 @@ def main():
     leads = [12, 120, 240]
     
     # Generate both table layouts
-    render_combined_table(leads, summaries, outdir)
-    render_combined_table_by_model(leads, summaries, outdir)
+    render_combined_table(leads, summaries, outdir, ifs_mode=args.ifs)
+    render_combined_table_by_model(leads, summaries, outdir, ifs_mode=args.ifs)
 
 
 if __name__ == "__main__":
