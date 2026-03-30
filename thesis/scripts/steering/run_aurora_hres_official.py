@@ -249,7 +249,7 @@ def compare_with_wb2(predictions: dict, dates: list) -> pd.DataFrame:
                 for level in [500, 700, 850]:
                     # Geopotential
                     pred_z = pred_ds['z'].sel(level=level).values
-                    wb2_z = wb2_slice['geopotential'].sel(level=level).values
+                    wb2_z = wb2_slice['geopotential\t'].sel(level=level).values
                     
                     # Get WB2 latitudes
                     wb2_lat = wb2_slice.latitude.values

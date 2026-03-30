@@ -1,0 +1,76 @@
+========================================
+  AURORA 0.25 FINE-TUNED - IFS HRES T0
+========================================
+Job ID:       21343273
+Date:         Mon Mar 30 10:58:22 CEST 2026
+Hostname:     gcn72.local.snellius.surf.nl
+GPU:          0
+========================================
+Python: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python
+Python 3.11.3
+/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/run_aurora_hres_official.py:226: FutureWarning: In a future version, xarray will not decode the variable 'prediction_timedelta' into a timedelta64 dtype based on the presence of a timedelta-like 'units' attribute by default. Instead it will rely on the presence of a timedelta64 'dtype' attribute, which is now xarray's default way of encoding timedelta64 values.
+To continue decoding into a timedelta64 dtype, either set `decode_timedelta=True` when opening this dataset, or add the attribute `dtype='timedelta64[ns]'` to this variable on disk.
+To opt-in to future behavior, set `decode_timedelta=False`.
+  wb2 = xr.open_zarr(fsspec.get_mapper("gs://weatherbench2/datasets/aurora/2022-1440x721.zarr"), chunks=None)
+======================================================================
+  AURORA 0.25° FINE-TUNED - IFS HRES T0
+  Following official Microsoft example
+======================================================================
+  Dates: ['2022-01-15', '2022-05-15', '2022-09-15']
+  Steps: 3
+  Output: /scratch-shared/ekasteleyn/aurora_hres_validation
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+
+[3/4] Loading model...
+  ✓ Model loaded
+
+[4/4] Running predictions...
+
+  Processing 2022-01-15...
+    Init time: 2022-01-15 12:00:00
+    Levels: (50, 100, 150, 200, 250, 300, 400, 500, 600, 700, 850, 925, 1000)
+    ✓ Step 1 (+6h): aurora_hres_20220115_step01.nc
+    ✓ Step 2 (+12h): aurora_hres_20220115_step02.nc
+    ✓ Step 3 (+18h): aurora_hres_20220115_step03.nc
+
+  Processing 2022-05-15...
+    Init time: 2022-05-15 12:00:00
+    Levels: (50, 100, 150, 200, 250, 300, 400, 500, 600, 700, 850, 925, 1000)
+    ✓ Step 1 (+6h): aurora_hres_20220515_step01.nc
+    ✓ Step 2 (+12h): aurora_hres_20220515_step02.nc
+    ✓ Step 3 (+18h): aurora_hres_20220515_step03.nc
+
+  Processing 2022-09-15...
+    Init time: 2022-09-15 12:00:00
+    Levels: (50, 100, 150, 200, 250, 300, 400, 500, 600, 700, 850, 925, 1000)
+    ✓ Step 1 (+6h): aurora_hres_20220915_step01.nc
+    ✓ Step 2 (+12h): aurora_hres_20220915_step02.nc
+    ✓ Step 3 (+18h): aurora_hres_20220915_step03.nc
+
+Comparing with WeatherBench2...
+
+======================================================================
+  COMPARING WITH WEATHERBENCH2 AURORA
+======================================================================
+  WB2 Aurora levels: [np.int64(500), np.int64(700), np.int64(850)]
+  ⚠ 2022-01-15 step 1: name 'pred_t' is not defined
+  ⚠ 2022-01-15 step 2: name 'pred_t' is not defined
+  ⚠ 2022-01-15 step 3: name 'pred_t' is not defined
+  ⚠ 2022-05-15 step 1: name 'pred_t' is not defined
+  ⚠ 2022-05-15 step 2: name 'pred_t' is not defined
+  ⚠ 2022-05-15 step 3: name 'pred_t' is not defined
+  ⚠ 2022-09-15 step 1: name 'pred_t' is not defined
+  ⚠ 2022-09-15 step 2: name 'pred_t' is not defined
+  ⚠ 2022-09-15 step 3: name 'pred_t' is not defined
+
+======================================================================
+  COMPLETE
+======================================================================
+
+========================================
+  COMPLETE: Mon Mar 30 11:01:08 CEST 2026
+========================================
