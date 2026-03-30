@@ -1,0 +1,10 @@
+==============================================
+Daily RMSE Computation (WB2 Methodology)
+==============================================
+Start time: Mon Mar 30 09:44:47 AM CEST 2026
+Models: hres_era5
+Script: /home/ekasteleyn/aurora_thesis/thesis/scripts/compute_daily_rmse_wb2.py
+==============================================
+
+>>> Processing hres_era5...
+[2026-03-30T09:47:14.912] error: *** JOB 21336567 ON tcn208 CANCELLED AT 2026-03-30T09:47:14 DUE to SIGNAL Terminated ***
