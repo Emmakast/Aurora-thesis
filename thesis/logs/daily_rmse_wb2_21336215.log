@@ -1,0 +1,9 @@
+==============================================
+Daily RMSE Computation (WB2 Methodology)
+==============================================
+Start time: Mon Mar 30 09:34:19 CEST 2026
+Models: pangu fuxi graphcast hres neuralgcm
+Script: /home/ekasteleyn/aurora_thesis/thesis/scripts/compute_daily_rmse_wb2.py
+==============================================
+
+>>> Processing pangu...
