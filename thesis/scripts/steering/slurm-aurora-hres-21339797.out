@@ -1,0 +1,16 @@
+========================================
+  AURORA 0.25 FINE-TUNED - IFS HRES T0
+========================================
+Job ID:       21339797
+Date:         Mon Mar 30 10:27:48 CEST 2026
+Hostname:     gcn47.local.snellius.surf.nl
+GPU:          0
+========================================
+Python: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python
+Python 3.11.3
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+apache-beam 2.71.0 requires grpcio!=1.48.0,!=1.59.*,!=1.60.*,!=1.61.*,!=1.62.0,!=1.62.1,<1.66.0,<2,>=1.33.1; python_version <= "3.12", but you have grpcio 1.78.0 which is incompatible.
+
+========================================
+  COMPLETE: Mon Mar 30 10:27:51 CEST 2026
+========================================
