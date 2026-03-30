@@ -262,6 +262,10 @@ def compare_with_wb2(predictions: dict, dates: list) -> pd.DataFrame:
                         wb2_z = wb2_z[::-1, :]
                         wb2_t = wb2_t[::-1, :]
 
+                    # Temperature
+                    pred_t = pred_ds['t'].sel(level=level).values
+                    wb2_t = wb2_slice['temperature'].sel(level=level).values
+
                     rmse_z = compute_rmse(pred_z, wb2_z, lat)
                     rmse_t = compute_rmse(pred_t, wb2_t, lat)
                     

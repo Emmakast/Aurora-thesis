@@ -1,0 +1,117 @@
+========================================
+  AURORA 0.25 FINE-TUNED - IFS HRES T0
+========================================
+Job ID:       21344433
+Date:         Mon Mar 30 11:09:27 CEST 2026
+Hostname:     gcn49.local.snellius.surf.nl
+GPU:          0
+========================================
+Python: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python
+Python 3.11.3
+/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/run_aurora_hres_official.py:226: FutureWarning: In a future version, xarray will not decode the variable 'prediction_timedelta' into a timedelta64 dtype based on the presence of a timedelta-like 'units' attribute by default. Instead it will rely on the presence of a timedelta64 'dtype' attribute, which is now xarray's default way of encoding timedelta64 values.
+To continue decoding into a timedelta64 dtype, either set `decode_timedelta=True` when opening this dataset, or add the attribute `dtype='timedelta64[ns]'` to this variable on disk.
+To opt-in to future behavior, set `decode_timedelta=False`.
+  wb2 = xr.open_zarr(fsspec.get_mapper("gs://weatherbench2/datasets/aurora/2022-1440x721.zarr"), chunks=None)
+======================================================================
+  AURORA 0.25° FINE-TUNED - IFS HRES T0
+  Following official Microsoft example
+======================================================================
+  Dates: ['2022-01-15', '2022-05-15', '2022-09-15']
+  Steps: 3
+  Output: /scratch-shared/ekasteleyn/aurora_hres_validation
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+
+[3/4] Loading model...
+  ✓ Model loaded
+
+[4/4] Running predictions...
+
+  Processing 2022-01-15...
+    Init time: 2022-01-15 12:00:00
+    Levels: (50, 100, 150, 200, 250, 300, 400, 500, 600, 700, 850, 925, 1000)
+    ✓ Step 1 (+6h): aurora_hres_20220115_step01.nc
+    ✓ Step 2 (+12h): aurora_hres_20220115_step02.nc
+    ✓ Step 3 (+18h): aurora_hres_20220115_step03.nc
+
+  Processing 2022-05-15...
+    Init time: 2022-05-15 12:00:00
+    Levels: (50, 100, 150, 200, 250, 300, 400, 500, 600, 700, 850, 925, 1000)
+    ✓ Step 1 (+6h): aurora_hres_20220515_step01.nc
+    ✓ Step 2 (+12h): aurora_hres_20220515_step02.nc
+    ✓ Step 3 (+18h): aurora_hres_20220515_step03.nc
+
+  Processing 2022-09-15...
+    Init time: 2022-09-15 12:00:00
+    Levels: (50, 100, 150, 200, 250, 300, 400, 500, 600, 700, 850, 925, 1000)
+    ✓ Step 1 (+6h): aurora_hres_20220915_step01.nc
+    ✓ Step 2 (+12h): aurora_hres_20220915_step02.nc
+    ✓ Step 3 (+18h): aurora_hres_20220915_step03.nc
+
+Comparing with WeatherBench2...
+
+======================================================================
+  COMPARING WITH WEATHERBENCH2 AURORA
+======================================================================
+  WB2 Aurora levels: [np.int64(500), np.int64(700), np.int64(850)]
+  ✓ 2022-01-15 step 1 (+6h)
+  ✓ 2022-01-15 step 2 (+12h)
+  ✓ 2022-01-15 step 3 (+18h)
+  ✓ 2022-05-15 step 1 (+6h)
+  ✓ 2022-05-15 step 2 (+12h)
+  ✓ 2022-05-15 step 3 (+18h)
+  ✓ 2022-09-15 step 1 (+6h)
+  ✓ 2022-09-15 step 2 (+12h)
+  ✓ 2022-09-15 step 3 (+18h)
+
+======================================================================
+  RESULTS (RMSE vs WB2 Aurora)
+======================================================================
+      date  step  lead_hours  level   z_rmse   t_rmse
+2022-01-15     1           6    500 8.619330 0.044781
+2022-01-15     1           6    700 5.152870 0.045308
+2022-01-15     1           6    850 3.603528 0.047831
+2022-01-15     2          12    500 8.510933 0.048706
+2022-01-15     2          12    700 5.363696 0.048532
+2022-01-15     2          12    850 3.809028 0.053674
+2022-01-15     3          18    500 8.861556 0.052077
+2022-01-15     3          18    700 5.539684 0.051210
+2022-01-15     3          18    850 4.067827 0.059006
+2022-05-15     1           6    500 9.090176 0.045593
+2022-05-15     1           6    700 5.455730 0.047467
+2022-05-15     1           6    850 3.582891 0.048737
+2022-05-15     2          12    500 9.353235 0.049075
+2022-05-15     2          12    700 5.670950 0.050865
+2022-05-15     2          12    850 3.796103 0.052976
+2022-05-15     3          18    500 9.544969 0.051923
+2022-05-15     3          18    700 5.891330 0.053399
+2022-05-15     3          18    850 4.091481 0.057373
+2022-09-15     1           6    500 9.369398 0.047383
+2022-09-15     1           6    700 5.794488 0.046685
+2022-09-15     1           6    850 4.111315 0.050628
+2022-09-15     2          12    500 9.653815 0.052082
+2022-09-15     2          12    700 6.061915 0.051251
+2022-09-15     2          12    850 4.337008 0.057386
+2022-09-15     3          18    500 9.795551 0.055730
+2022-09-15     3          18    700 6.264877 0.054023
+2022-09-15     3          18    850 4.529456 0.063289
+
+Mean RMSE by step:
+        z_rmse    t_rmse
+step                    
+1     6.086636  0.047157
+2     6.284076  0.051617
+3     6.509637  0.055337
+
+✓ Results saved: /scratch-shared/ekasteleyn/aurora_hres_validation/wb2_comparison.csv
+
+======================================================================
+  COMPLETE
+======================================================================
+
+========================================
+  COMPLETE: Mon Mar 30 11:13:32 CEST 2026
+========================================

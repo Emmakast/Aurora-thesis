@@ -27,7 +27,7 @@ $PYTHON --version
 $PIP install --quiet fsspec gcsfs zarr
 
 # Run the validation script
-$PYTHON /home/ekasteleyn/aurora_thesis/thesis/scripts/run_aurora_hres_official.py \
+$PYTHON /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/run_aurora_hres_official.py \
     --dates 2022-01-15 2022-05-15 2022-09-15 \
     --num-steps 3
 

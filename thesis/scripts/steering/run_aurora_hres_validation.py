@@ -458,7 +458,7 @@ def main():
     
     # Load model with autocast enabled to reduce memory usage
     print("\n[2/4] Loading Aurora 0.25° Fine-Tuned model...")
-    model = Aurora(autocast=True)  # Enable autocast for memory efficiency
+    model = Aurora(autocast=False)  # Enable autocast for memory efficiency
     model.load_checkpoint("microsoft/aurora", "aurora-0.25-finetuned.ckpt")
     model.eval()
     model = model.to(device)
