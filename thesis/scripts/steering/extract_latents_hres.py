@@ -636,9 +636,11 @@ def main():
                             attention_activations.clear()
                         
                         del pred_cpu
+                        del pred  # Also delete GPU tensor
                 
                 del batch
                 torch.cuda.empty_cache()
+                torch.cuda.synchronize()  # Ensure all GPU ops complete
                 gc.collect()
                 
                 # Log timing for this run
