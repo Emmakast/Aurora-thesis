@@ -12,8 +12,6 @@ Usage:
 """
 
 from __future__ import annotations
-
-import os
 import pickle
 from pathlib import Path
 
@@ -21,6 +19,13 @@ import fsspec
 import numpy as np
 import pandas as pd
 import torch
+
+# Force strict FP32 math and determinism
+torch.backends.cuda.matmul.allow_tf32 = False
+torch.backends.cudnn.allow_tf32 = False
+torch.use_deterministic_algorithms(True, warn_only=True)
+import os
+os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
 import xarray as xr
 from huggingface_hub import hf_hub_download
 
@@ -99,7 +104,7 @@ def download_data(day: str, download_path: Path):
         ds_atmos.to_netcdf(str(download_path / f"{day}-atmospheric.nc"))
 
 
-def prepare_batch(day: str, download_path: Path, init_hour: int = 12, dtype=torch.float32) -> Batch:
+def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
     """Prepare batch in specified dtype (float32 or float64)."""
     static_vars_ds = xr.open_dataset(download_path / "static.nc", engine="netcdf4")
     surf_vars_ds = xr.open_dataset(download_path / f"{day}-surface-level.nc", engine="netcdf4")
@@ -118,8 +123,7 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12, dtype=torc
         def _prepare_init00(x_prev: np.ndarray, x_curr: np.ndarray) -> torch.Tensor:
             """Prepare for init=00:00: prev day 18:00 (idx 3) + current day 00:00 (idx 0)."""
             combined = np.stack([x_prev[3], x_curr[0]], axis=0)
-            return torch.from_numpy(combined[None][..., ::-1, :].copy()).to(dtype)
-        
+            return torch.from_numpy(combined[None][..., ::-1, :].copy())
         batch = Batch(
             surf_vars={
                 "2t": _prepare_init00(prev_surf_ds["2m_temperature"].values, surf_vars_ds["2m_temperature"].values),
@@ -128,9 +132,9 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12, dtype=torc
                 "msl": _prepare_init00(prev_surf_ds["mean_sea_level_pressure"].values, surf_vars_ds["mean_sea_level_pressure"].values),
             },
             static_vars={
-                "z": torch.from_numpy(static_vars_ds["z"].values).to(dtype),
-                "slt": torch.from_numpy(static_vars_ds["slt"].values).to(dtype),
-                "lsm": torch.from_numpy(static_vars_ds["lsm"].values).to(dtype),
+                "z": torch.from_numpy(static_vars_ds["z"].values),
+                "slt": torch.from_numpy(static_vars_ds["slt"].values),
+                "lsm": torch.from_numpy(static_vars_ds["lsm"].values),
             },
             atmos_vars={
                 "t": _prepare_init00(prev_atmos_ds["temperature"].values, atmos_vars_ds["temperature"].values),
@@ -140,8 +144,8 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12, dtype=torc
                 "z": _prepare_init00(prev_atmos_ds["geopotential"].values, atmos_vars_ds["geopotential"].values),
             },
             metadata=Metadata(
-                lat=torch.from_numpy(surf_vars_ds.latitude.values[::-1].copy()).to(dtype),
-                lon=torch.from_numpy(surf_vars_ds.longitude.values).to(dtype),
+                lat=torch.from_numpy(surf_vars_ds.latitude.values[::-1].copy()),
+                lon=torch.from_numpy(surf_vars_ds.longitude.values),
                 time=(surf_vars_ds.time.values.astype("datetime64[s]").tolist()[0],),
                 atmos_levels=tuple(int(level) for level in atmos_vars_ds.level.values),
             ),
@@ -154,7 +158,7 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12, dtype=torc
     
     def _prepare(x: np.ndarray) -> torch.Tensor:
         """Prepare a variable with specified time indices."""
-        return torch.from_numpy(x[time_indices][None][..., ::-1, :].copy()).to(dtype)
+        return torch.from_numpy(x[time_indices][None][..., ::-1, :].copy())
     
     batch = Batch(
         surf_vars={
@@ -164,9 +168,9 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12, dtype=torc
             "msl": _prepare(surf_vars_ds["mean_sea_level_pressure"].values),
         },
         static_vars={
-            "z": torch.from_numpy(static_vars_ds["z"].values).to(dtype),
-            "slt": torch.from_numpy(static_vars_ds["slt"].values).to(dtype),
-            "lsm": torch.from_numpy(static_vars_ds["lsm"].values).to(dtype),
+            "z": torch.from_numpy(static_vars_ds["z"].values),
+            "slt": torch.from_numpy(static_vars_ds["slt"].values),
+            "lsm": torch.from_numpy(static_vars_ds["lsm"].values),
         },
         atmos_vars={
             "t": _prepare(atmos_vars_ds["temperature"].values),
@@ -176,8 +180,8 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12, dtype=torc
             "z": _prepare(atmos_vars_ds["geopotential"].values),
         },
         metadata=Metadata(
-            lat=torch.from_numpy(surf_vars_ds.latitude.values[::-1].copy()).to(dtype),
-            lon=torch.from_numpy(surf_vars_ds.longitude.values).to(dtype),
+            lat=torch.from_numpy(surf_vars_ds.latitude.values[::-1].copy()),
+            lon=torch.from_numpy(surf_vars_ds.longitude.values),
             time=(surf_vars_ds.time.values.astype("datetime64[s]").tolist()[init_time_idx],),
             atmos_levels=tuple(int(level) for level in atmos_vars_ds.level.values),
         ),
@@ -260,7 +264,7 @@ def main():
     model = Aurora()
     model.load_checkpoint("microsoft/aurora", "aurora-0.25-finetuned.ckpt")
     model.eval()
-    model = model.to(device).to(dtype)  # Convert model to fp64/fp32
+    model = model.to(device)  # Convert model to fp64/fp32
     print(f"  ✓ Model loaded in {dtype}")
     
     # Open WB2 Aurora dataset
@@ -292,7 +296,7 @@ def main():
         print("  " + "-" * 50)
         
         # Prepare batch in specified precision
-        batch = prepare_batch(date_str, CACHE_PATH, init_hour=init_hour, dtype=dtype)
+        batch = prepare_batch(date_str, CACHE_PATH, init_hour=init_hour)
         batch = batch.to(device)
         
         # Get init time and valid time
@@ -309,14 +313,13 @@ def main():
         pred = pred.to("cpu")
         
         # Get WB2 prediction for same valid time
+        lead_td = np.timedelta64(6, 'h') # Step 1 is +6 hours
         try:
-            wb2_slice = wb2.sel(time=np.datetime64(valid_time)).compute()
+            # Correctly index by init time and prediction timedelta
+            wb2_slice = wb2.sel(time=np.datetime64(init_time), prediction_timedelta=lead_td).compute()
         except Exception as e:
-            print(f"    ⚠ Could not find valid_time {valid_time} in WB2: {e}")
-            # Try nearest
-            wb2_slice = wb2.sel(time=np.datetime64(valid_time), method="nearest").compute()
-            actual_time = wb2_slice.time.values
-            print(f"    Using nearest time: {actual_time}")
+            print(f"    ⚠ Could not find init_time {init_time} in WB2: {e}")
+            continue
         
         # Compare surface variables
         print("\n    Surface variables:")
@@ -329,10 +332,20 @@ def main():
         
         for our_var, wb2_var in surf_mapping.items():
             if our_var in pred.surf_vars and wb2_var in wb2_slice:
-                ours = pred.surf_vars[our_var].numpy()[0, 0]  # Remove batch and time dims
+                ours = pred.surf_vars[our_var].numpy()[0, 0]
                 theirs = wb2_slice[wb2_var].values
                 
-                # Handle potential orientation differences
+                pred_lat = pred.metadata.lat.numpy()
+                wb2_lat = wb2_slice.latitude.values
+                
+                pred_is_descending = pred_lat[0] > pred_lat[-1]
+                wb2_is_descending = wb2_lat[0] > wb2_lat[-1]
+                
+                if pred_is_descending != wb2_is_descending:
+                    # If orientation mismatches, flip WB2 to match ours
+                    theirs = theirs[::-1, :]
+                # -------------------------------
+                
                 if ours.shape != theirs.shape:
                     print(f"      {our_var}: SHAPE MISMATCH ours={ours.shape} wb2={theirs.shape}")
                     continue
@@ -373,6 +386,15 @@ def main():
                 level_idx = our_levels.index(level)
                 ours = pred.atmos_vars[our_var].numpy()[0, 0, level_idx]  # batch, time, level
                 theirs = wb2_slice[wb2_var].sel(level=level).values
+                pred_lat = pred.metadata.lat.numpy()
+                wb2_lat = wb2_slice.latitude.values
+                
+                pred_is_descending = pred_lat[0] > pred_lat[-1]
+                wb2_is_descending = wb2_lat[0] > wb2_lat[-1]
+                
+                if pred_is_descending != wb2_is_descending:
+                    # If orientation mismatches, flip WB2 to match ours
+                    theirs = theirs[::-1, :]
                 
                 if ours.shape != theirs.shape:
                     print(f"      {our_var}@{level}hPa: SHAPE MISMATCH ours={ours.shape} wb2={theirs.shape}")
