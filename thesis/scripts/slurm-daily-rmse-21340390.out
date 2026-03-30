@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/scripts/compute_daily_rmse_wb2.py", line 23, in <module>
+    from weatherbench2 import metrics as wb2_metrics
+ModuleNotFoundError: No module named 'weatherbench2'
+Job completed at Mon Mar 30 10:32:00 CEST 2026
