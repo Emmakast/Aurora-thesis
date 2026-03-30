@@ -16,6 +16,7 @@ Usage:
 import argparse
 import warnings
 from pathlib import Path
+import sys
 
 import numpy as np
 import pandas as pd
@@ -23,6 +24,11 @@ import xarray as xr
 from weatherbench2 import metrics as wb2_metrics
 
 warnings.filterwarnings("ignore")
+
+
+def log(msg):
+    """Print with flush for immediate output."""
+    print(msg, flush=True)
 
 RESULTS_DIR = Path.home() / "aurora_thesis" / "thesis" / "results"
 
@@ -92,10 +98,10 @@ def compute_rmse_for_model(model: str, year: int = 2020) -> pd.DataFrame:
     """Compute daily RMSE for a model using WB2 240x121 data."""
     config = MODEL_CONFIG[model]
     
-    print(f"  Opening prediction Zarr: {config['pred_zarr']}")
+    log(f"  Opening prediction Zarr: {config['pred_zarr']}")
     ds_pred = xr.open_zarr(config["pred_zarr"], storage_options={"token": "anon"})
     
-    print(f"  Opening truth Zarr: {config['truth_zarr']}")
+    log(f"  Opening truth Zarr: {config['truth_zarr']}")
     ds_truth = xr.open_zarr(config["truth_zarr"], storage_options={"token": "anon"})
     
     # Normalize coordinate names
@@ -109,25 +115,25 @@ def compute_rmse_for_model(model: str, year: int = 2020) -> pd.DataFrame:
     level_dim_pred = get_dim_name(ds_pred, ["level", "pressure_level"])
     level_dim_truth = get_dim_name(ds_truth, ["level", "pressure_level"])
     
-    print(f"  Pred TD dim: {pred_td_dim}, Level dim: {level_dim_pred}")
+    log(f"  Pred TD dim: {pred_td_dim}, Level dim: {level_dim_pred}")
     
     # Get available times in prediction dataset for the year
     pred_times = pd.to_datetime(ds_pred.time.values)
     year_mask = pred_times.year == year
     year_times = pred_times[year_mask]
     
-    print(f"  Found {len(year_times)} init times in {year}")
+    log(f"  Found {len(year_times)} init times in {year}")
     
     # Get available lead times
     if pred_td_dim:
         avail_leads = ds_pred[pred_td_dim].values
         avail_leads_h = [int(td / np.timedelta64(1, 'h')) for td in avail_leads]
-        print(f"  Available lead times: {avail_leads_h[:10]}... (total {len(avail_leads_h)})")
+        log(f"  Available lead times: {avail_leads_h[:10]}... (total {len(avail_leads_h)})")
     
     results = []
     
     for lead_h in TARGET_LEAD_HOURS:
-        print(f"\n  Processing lead_time={lead_h}h...")
+        log(f"\n  Processing lead_time={lead_h}h...")
         lead_td = np.timedelta64(lead_h, 'h')
         
         # Check if this lead time exists
@@ -135,15 +141,16 @@ def compute_rmse_for_model(model: str, year: int = 2020) -> pd.DataFrame:
             nearest_idx = np.argmin(np.abs(np.array(avail_leads_h) - lead_h))
             actual_lead_h = avail_leads_h[nearest_idx]
             if abs(actual_lead_h - lead_h) > 6:
-                print(f"    ⚠ Lead time {lead_h}h not available, skipping")
+                log(f"    ⚠ Lead time {lead_h}h not available, skipping")
                 continue
             lead_td = avail_leads[nearest_idx]
-            print(f"    Using nearest lead time: {actual_lead_h}h")
+            log(f"    Using nearest lead time: {actual_lead_h}h")
         
         # Process each date
+        total_times = len(year_times)
         for i, init_time in enumerate(year_times):
-            if i % 50 == 0:
-                print(f"    Processing {i+1}/{len(year_times)}...")
+            if i % 10 == 0:
+                log(f"    [{i+1}/{total_times}] Processing {init_time.strftime('%Y-%m-%d %H:%M')}...")
             
             date_str = init_time.strftime("%Y-%m-%d")
             valid_time = init_time + pd.Timedelta(hours=lead_h)
@@ -193,10 +200,10 @@ def compute_rmse_for_model(model: str, year: int = 2020) -> pd.DataFrame:
                 })
                 
             except Exception as e:
-                print(f"    ⚠ Error for {date_str} lead={lead_h}h: {e}")
+                log(f"    ⚠ Error for {date_str} lead={lead_h}h: {e}")
                 continue
         
-        print(f"    ✓ Done with lead={lead_h}h")
+        log(f"    ✓ Done with lead={lead_h}h ({len([r for r in results if r['lead_time_hours']==lead_h])} samples)")
     
     return pd.DataFrame(results)
 
@@ -215,33 +222,33 @@ def main():
     
     for model in models:
         if model not in MODEL_CONFIG:
-            print(f"Unknown model: {model}")
+            log(f"Unknown model: {model}")
             continue
             
-        print(f"\n{'='*60}")
-        print(f"  {model.upper()}")
-        print(f"{'='*60}")
+        log(f"\n{'='*60}")
+        log(f"  {model.upper()}")
+        log(f"{'='*60}")
         
         try:
             df = compute_rmse_for_model(model, args.year)
             
             if len(df) == 0:
-                print(f"  ⚠ No results for {model}")
+                log(f"  ⚠ No results for {model}")
                 continue
             
             # Save
             out_path = RESULTS_DIR / f"daily_rmse_{model}_{args.year}.csv"
             df.to_csv(out_path, index=False)
-            print(f"\n  ✓ Saved {len(df)} rows to {out_path}")
+            log(f"\n  ✓ Saved {len(df)} rows to {out_path}")
             
             # Show summary
-            print(f"\n  Summary (mean RMSE):")
+            log(f"\n  Summary (mean RMSE):")
             for lt in df["lead_time_hours"].unique():
                 sub = df[df["lead_time_hours"] == lt]
-                print(f"    Lead {lt}h: Z500={sub['z500_rmse'].mean():.2f} m²/s², T850={sub['t850_rmse'].mean():.2f} K")
+                log(f"    Lead {lt}h: Z500={sub['z500_rmse'].mean():.2f} m²/s², T850={sub['t850_rmse'].mean():.2f} K")
             
         except Exception as e:
-            print(f"  ⚠ Error: {e}")
+            log(f"  ⚠ Error: {e}")
             import traceback
             traceback.print_exc()
 
