@@ -7,3 +7,4 @@ Hostname:     tcn371.local.snellius.surf.nl
 Output:       /home/ekasteleyn/aurora_thesis/thesis/results/daily_rmse_fuxi_2020.csv
 ========================================
 
+[2026-03-27T16:35:24.013] error: *** JOB 21224152 ON tcn371 CANCELLED AT 2026-03-27T16:35:24 DUE to SIGNAL Terminated ***
