@@ -36,6 +36,17 @@ METRICS = {
     "small_scale_ratio":            ("Small-Scale\nRatio",             False),  # closer to 1 is better, >1 good
 }
 
+# Split metrics into groups for separate tables
+METRICS_RMSE_CONSERVATION = [
+    "hydrostatic_rmse", "geostrophic_rmse",
+    "dry_mass_drift_pct_per_day", "water_mass_drift_pct_per_day",
+    "total_energy_drift_pct_per_day",
+]
+METRICS_SPECTRAL = [
+    "effective_resolution_km", "spectral_residual",
+    "spectral_divergence", "small_scale_ratio",
+]
+
 # For drift metrics, "better" means closer to zero (use absolute value)
 ABS_METRICS = {
     "dry_mass_drift_pct_per_day",
@@ -48,9 +59,16 @@ def load_summaries(results_dir: Path, ifs_mode: bool = False) -> dict[str, pd.Da
     out = {}
     suffix = "_ifs" if ifs_mode else ""
     for m in MODELS:
-        p = results_dir / f"physics_summary_{m}_2020{suffix}.csv"
+        # For HRES in non-IFS mode, use the _vs_era5 file if it exists
+        if m == "hres" and not ifs_mode:
+            p = results_dir / f"physics_summary_{m}_2020_vs_era5.csv"
+            if not p.exists():
+                p = results_dir / f"physics_summary_{m}_2020.csv"
+        else:
+            p = results_dir / f"physics_summary_{m}_2020{suffix}.csv"
         if p.exists():
             out[m] = pd.read_csv(p)
+            print(f"Loaded {p.name}")
     return out
 
 
@@ -366,6 +384,93 @@ def render_combined_table_by_model(leads: list[int], summaries: dict[str, pd.Dat
     print(f"Saved {out}")
 
 
+def render_split_tables(leads: list[int], summaries: dict[str, pd.DataFrame],
+                        outdir: Path):
+    """Render two separate tables: RMSE+Conservation and Spectral metrics."""
+    hres_grey = np.array([0.94, 0.94, 0.94])
+    header_color = np.array([0.82, 0.82, 0.82])
+    model_labels = [NICE.get(m, m) for m in MODELS]
+
+    for metrics_list, title_suffix, filename_suffix in [
+        (METRICS_RMSE_CONSERVATION, "RMSE & Conservation", "rmse_conservation"),
+        (METRICS_SPECTRAL, "Spectral", "spectral"),
+    ]:
+        n_metrics = len(metrics_list)
+        n_models = len(MODELS)
+        col_labels = [METRICS[m][0] for m in metrics_list]
+
+        n_leads = len(leads)
+        total_rows = n_leads * (n_models + 1)
+
+        fig_w = max(2.0 * n_metrics, 12)
+        fig_h = 0.48 * total_rows + 1.0
+        fig, ax = plt.subplots(figsize=(fig_w, fig_h))
+        ax.axis("off")
+
+        all_texts = []
+        all_colors = []
+        all_row_labels = []
+
+        for lead in leads:
+            lead_str = f"{lead}h" if lead < 24 else f"{lead // 24}d ({lead}h)"
+
+            # Sub-header row for this lead time
+            all_texts.append([""] * n_metrics)
+            all_colors.append([tuple(header_color)] * n_metrics)
+            all_row_labels.append(f"  Lead Time: {lead_str}")
+
+            texts, colors = build_table_data(lead, summaries, metrics_list)
+            for i in range(n_models):
+                all_texts.append(texts[i])
+                all_colors.append([tuple(c) for c in colors[i]])
+                all_row_labels.append(model_labels[i])
+
+        table = ax.table(
+            cellText=all_texts,
+            rowLabels=all_row_labels,
+            colLabels=col_labels,
+            cellColours=all_colors,
+            loc="center",
+            cellLoc="center",
+        )
+        table.auto_set_font_size(False)
+        table.set_fontsize(9)
+        table.scale(1.0, 1.7)
+
+        # Style column headers
+        for j in range(n_metrics):
+            cell = table[0, j]
+            cell.set_text_props(fontweight="bold", fontsize=8)
+            cell.set_facecolor("#d0d0d0")
+
+        # Style rows
+        row_idx = 0
+        for lead in leads:
+            row_idx += 1
+            for j in range(n_metrics):
+                table[row_idx, j].set_facecolor(tuple(header_color))
+            label_cell = table[row_idx, -1]
+            label_cell.set_text_props(fontweight="bold", fontsize=10)
+            label_cell.set_facecolor(tuple(header_color))
+
+            for i in range(n_models):
+                row_idx += 1
+                label_cell = table[row_idx, -1]
+                label_cell.set_text_props(fontweight="bold", fontsize=9)
+                if MODELS[i] == "hres":
+                    label_cell.set_facecolor(tuple(hres_grey))
+
+        ax.set_title(
+            f"Physics Metrics Summary — {title_suffix}\n"
+            "(White = 0, Blue = positive, Red = negative, *** = nearest available lead time)",
+            fontsize=13, fontweight="bold", pad=12,
+        )
+        out = outdir / f"summary_table_{filename_suffix}.png"
+        fig.savefig(out, dpi=200, bbox_inches="tight", pad_inches=0.15)
+        plt.close(fig)
+        print(f"Saved {out}")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--results-dir", default=None)
@@ -387,9 +492,10 @@ def main():
     # Lead times: 12h, 5d, 10d (aligned with NeuralGCM)
     leads = [12, 120, 240]
     
-    # Generate both table layouts
+    # Generate all table layouts
     render_combined_table(leads, summaries, outdir)
     render_combined_table_by_model(leads, summaries, outdir)
+    render_split_tables(leads, summaries, outdir)
 
 
 if __name__ == "__main__":

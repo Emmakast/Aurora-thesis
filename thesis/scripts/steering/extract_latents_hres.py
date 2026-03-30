@@ -528,17 +528,17 @@ def main():
     save_executor = ThreadPoolExecutor(max_workers=4)
     pending_saves = []
     
-    def async_save_pt(tensor, path, s3_client, bucket, folder):
-        """Save tensor and upload to S3 in background."""
-        torch.save(tensor, path)
-        if s3_client:
-            upload_to_s3(s3_client, path, bucket, folder)
+    # def async_save_pt(tensor, path, s3_client, bucket, folder):
+    #     """Save tensor and upload to S3 in background."""
+    #     torch.save(tensor, path)
+    #     if s3_client:
+    #         upload_to_s3(s3_client, path, bucket, folder)
     
-    def async_save_nc(ds, path, s3_client, bucket, folder):
-        """Save dataset and upload to S3 in background."""
-        ds.to_netcdf(path)
-        if s3_client:
-            upload_to_s3(s3_client, path, bucket, folder)
+    # def async_save_nc(ds, path, s3_client, bucket, folder):
+    #     """Save dataset and upload to S3 in background."""
+    #     ds.to_netcdf(path)
+    #     if s3_client:
+    #         upload_to_s3(s3_client, path, bucket, folder)
     
     # Process each date and init hour
     total_runs = len(dates) * len(args.init_hours)
@@ -602,33 +602,80 @@ def main():
                         step += 1
                         pred_cpu = pred.to("cpu")
                         
+                        # # Save prediction
+                        # if args.save_predictions:
+                        #     lead_hours = step * 6
+                        #     pred_ds = batch_to_dataset(pred_cpu, step)
+                        #     out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:03d}h.nc"
+                        #     pending_saves.append(save_executor.submit(
+                        #         async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
+                        #     ))
+                        #     print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name}")
+                        #     del pred_ds
+                        
+                        # # Save latents only from step 1 (already FP16 from hooks)
+                        # if step == 1 and extract_latents:
+                        #     for key, tensor in activations.items():
+                        #         out_path = output_dir / f"latent_{date_fmt}_{init_fmt}_{key}.pt"
+                        #         pending_saves.append(save_executor.submit(
+                        #             async_save_pt, tensor, out_path, s3_client, bucket_name, s3_folder
+                        #         ))
+                        #         print(f"    {key}: shape={tuple(tensor.shape)} -> {out_path.name}")
+                            
+                        #     for key, attn_list in attention_activations.items():
+                        #         out_path = output_dir / f"attn_{date_fmt}_{init_fmt}_{key}.pt"
+                        #         stacked_attn = torch.cat(attn_list, dim=0) if len(attn_list) > 1 else attn_list[0]
+                        #         pending_saves.append(save_executor.submit(
+                        #             async_save_pt, stacked_attn, out_path, s3_client, bucket_name, s3_folder
+                        #         ))
+                        #         print(f"    {key}: shape={tuple(stacked_attn.shape)} -> {out_path.name}")
                         # Save prediction
                         if args.save_predictions:
                             lead_hours = step * 6
                             pred_ds = batch_to_dataset(pred_cpu, step)
                             out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:03d}h.nc"
-                            pending_saves.append(save_executor.submit(
-                                async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
-                            ))
-                            print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name}")
+                            
+                            # 1. Write to disk synchronously on the main thread (Thread-safe & Memory-safe)
+                            pred_ds.to_netcdf(out_path)
+                            print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name} (Disk)")
+                            
+                            # 2. Upload to S3 asynchronously in the background
+                            if s3_client:
+                                pending_saves.append(save_executor.submit(
+                                    upload_to_s3, s3_client, out_path, bucket_name, s3_folder
+                                ))
+                            
+                            # Safe to delete now that disk write is finished
                             del pred_ds
                         
-                        # Save latents only from step 1 (already FP16 from hooks)
+                        # Save latents only from step 1
                         if step == 1 and extract_latents:
                             for key, tensor in activations.items():
                                 out_path = output_dir / f"latent_{date_fmt}_{init_fmt}_{key}.pt"
-                                pending_saves.append(save_executor.submit(
-                                    async_save_pt, tensor, out_path, s3_client, bucket_name, s3_folder
-                                ))
-                                print(f"    {key}: shape={tuple(tensor.shape)} -> {out_path.name}")
+                                
+                                # 1. Write to disk synchronously
+                                torch.save(tensor, out_path)
+                                print(f"    {key}: shape={tuple(tensor.shape)} -> {out_path.name} (Disk)")
+                                
+                                # 2. Upload asynchronously
+                                if s3_client:
+                                    pending_saves.append(save_executor.submit(
+                                        upload_to_s3, s3_client, out_path, bucket_name, s3_folder
+                                    ))
                             
                             for key, attn_list in attention_activations.items():
                                 out_path = output_dir / f"attn_{date_fmt}_{init_fmt}_{key}.pt"
                                 stacked_attn = torch.cat(attn_list, dim=0) if len(attn_list) > 1 else attn_list[0]
-                                pending_saves.append(save_executor.submit(
-                                    async_save_pt, stacked_attn, out_path, s3_client, bucket_name, s3_folder
-                                ))
-                                print(f"    {key}: shape={tuple(stacked_attn.shape)} -> {out_path.name}")
+                                
+                                # 1. Write to disk synchronously
+                                torch.save(stacked_attn, out_path)
+                                print(f"    {key}: shape={tuple(stacked_attn.shape)} -> {out_path.name} (Disk)")
+                                
+                                # 2. Upload asynchronously
+                                if s3_client:
+                                    pending_saves.append(save_executor.submit(
+                                        upload_to_s3, s3_client, out_path, bucket_name, s3_folder
+                                    ))
                             
                             # Disable hooks after step 1
                             unregister_hooks(handles)

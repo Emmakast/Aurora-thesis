@@ -91,3 +91,41 @@ NVIDIA A100-SXM4-40GB, 40960 MiB
       ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step06_036h.nc
     pred step 7 (+42h) -> aurora_pred_20220107_0000_step07_042h.nc
       ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220107_0000_step08_048h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220107_0000_step09_054h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220107_0000_step10_060h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220107_0000_step11_066h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220107_0000_step12_072h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220107_0000_step13_078h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220107_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220107_0000_step15_090h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step14_084h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220107_0000_step16_096h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220107_0000_step17_102h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220107_0000_step18_108h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220107_0000_step19_114h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220107_0000_step20_120h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220107_0000_step21_126h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220107_0000_step22_132h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220107_0000_step23_138h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220107_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220107_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220107_0000_step25_150h.nc
+
+========================================
+  COMPLETE: Mon Mar 30 16:11:22 CEST 2026
+========================================
