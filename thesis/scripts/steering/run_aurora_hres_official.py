@@ -22,7 +22,6 @@ import os
 os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
 import xarray as xr
 from huggingface_hub import hf_hub_download
-import pickle
 
 from aurora import Aurora, Batch, Metadata, rollout
 
@@ -78,21 +77,28 @@ def download_data(day: str, download_path: Path):
 
 
 def download_static(download_path: Path):
-    """Download static variables from HuggingFace."""
+    """Download static variables from ERA5 via CDS API (following official example)."""
     if not (download_path / "static.nc").exists():
-        print("  Downloading static variables from HuggingFace...")
-        path = hf_hub_download(repo_id="microsoft/aurora", filename="aurora-0.25-static.pickle")
-        with open(path, "rb") as f:
-            static_vars = pickle.load(f)
-        
-        ds_static = xr.Dataset(
-            data_vars={k: (["latitude", "longitude"], v) for k, v in static_vars.items()},
-            coords={
-                "latitude": ("latitude", np.linspace(90, -90, 721)),
-                "longitude": ("longitude", np.linspace(0, 360, 1440, endpoint=False)),
+        print("  Downloading static variables from ERA5...")
+        import cdsapi
+        c = cdsapi.Client()
+        c.retrieve(
+            "reanalysis-era5-single-levels",
+            {
+                "product_type": "reanalysis",
+                "variable": [
+                    "geopotential",
+                    "land_sea_mask",
+                    "soil_type",
+                ],
+                "year": "2023",
+                "month": "01",
+                "day": "01",
+                "time": "00:00",
+                "format": "netcdf",
             },
+            str(download_path / "static.nc"),
         )
-        ds_static.to_netcdf(str(download_path / "static.nc"))
         print(f"    ✓ Static variables downloaded")
 
 
@@ -111,14 +117,13 @@ def prepare_batch(day: str, download_path: Path) -> Batch:
         """Prepare a variable.
         
         This does the following things:
-        * Select time steps at 06:00 and 12:00 (indices 1,2) so init=12:00 UTC.
-        * This matches WB2 Aurora which has init times at 00:00 and 12:00.
+        * Select the first two time steps: 00:00 and 06:00.
         * Insert an empty batch dimension with `[None]`.
         * Flip along the latitude axis to ensure that the latitudes are decreasing.
         * Copy the data, because the data must be contiguous when converting to PyTorch.
         * Convert to PyTorch.
         """
-        return torch.from_numpy(x[1:3][None][..., ::-1, :].copy())
+        return torch.from_numpy(x[:2][None][..., ::-1, :].copy())
     
     batch = Batch(
         surf_vars={
@@ -131,9 +136,9 @@ def prepare_batch(day: str, download_path: Path) -> Batch:
             # The static variables are constant, so we just get them for the first time.
             # They don't need to be flipped along the latitude dimension, because they
             # are from ERA5.
-            "z": torch.from_numpy(static_vars_ds["z"].values),
-            "slt": torch.from_numpy(static_vars_ds["slt"].values),
-            "lsm": torch.from_numpy(static_vars_ds["lsm"].values),
+            "z": torch.from_numpy(static_vars_ds["z"].values[0]),
+            "slt": torch.from_numpy(static_vars_ds["slt"].values[0]),
+            "lsm": torch.from_numpy(static_vars_ds["lsm"].values[0]),
         },
         atmos_vars={
             "t": _prepare(atmos_vars_ds["temperature"].values),
@@ -149,9 +154,9 @@ def prepare_batch(day: str, download_path: Path) -> Batch:
             lon=torch.from_numpy(surf_vars_ds.longitude.values),
             # Converting to `datetime64[s]` ensures that the output of `tolist()` gives
             # `datetime.datetime`s. Note that this needs to be a tuple of length one:
-            # one value for every batch element. Select element 2, corresponding to
-            # time 12:00 (init time for WB2 comparison).
-            time=(surf_vars_ds.time.values.astype("datetime64[s]").tolist()[2],),
+            # one value for every batch element. Select element 1, corresponding to time
+            # 06:00.
+            time=(surf_vars_ds.time.values.astype("datetime64[s]").tolist()[1],),
             atmos_levels=tuple(int(level) for level in atmos_vars_ds.level.values),
         ),
     )
@@ -229,9 +234,8 @@ def compare_with_wb2(predictions: dict, dates: list) -> pd.DataFrame:
     results = []
     
     for date_str in dates:
-        # Init time is 12:00 UTC (we use times 06:00 and 12:00, init is 12:00)
-        # This matches WB2 Aurora init times at 00:00 and 12:00
-        init_time = pd.to_datetime(f"{date_str}T12:00:00")
+        # Init time is 06:00 UTC (we use times 00:00 and 06:00, init is 06:00)
+        init_time = pd.to_datetime(f"{date_str}T06:00:00")
         
         for step in [1, 2, 3]:
             key = f"{date_str}_step{step}"
@@ -246,10 +250,18 @@ def compare_with_wb2(predictions: dict, dates: list) -> pd.DataFrame:
                 wb2_slice = wb2.sel(time=init_time, prediction_timedelta=lead_td)
                 lat = pred_ds.latitude.values
                 
+                # Handle malformed variable name in WB2 (has trailing tab)
+                geo_var = 'geopotential' if 'geopotential' in wb2 else 'geopotential\t'
+                temp_var = 'temperature' if 'temperature' in wb2 else 'temperature\t'
+                
                 for level in [500, 700, 850]:
                     # Geopotential
                     pred_z = pred_ds['z'].sel(level=level).values
-                    wb2_z = wb2_slice['geopotential'].sel(level=level).values
+                    wb2_z = wb2_slice[geo_var].sel(level=level).values
+                    
+                    # Temperature
+                    pred_t = pred_ds['t'].sel(level=level).values
+                    wb2_t = wb2_slice[temp_var].sel(level=level).values
                     
                     # Get WB2 latitudes
                     wb2_lat = wb2_slice.latitude.values
