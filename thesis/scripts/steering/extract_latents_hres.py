@@ -427,8 +427,8 @@ def main():
         help="Init hours to process (0 and/or 12). Default: [12]"
     )
     parser.add_argument(
-        "--latent-init-hour", type=int, default=12,
-        help="Only extract latents for this init hour (default: 12)"
+        "--latent-init-hour", type=int, default=None,
+        help="Only extract latents for this init hour (default: same as first --init-hours value)"
     )
     parser.add_argument(
         "--compile", action="store_true",
@@ -440,6 +440,10 @@ def main():
         help="Run model and save predictions in float64 (for precision testing)"
     )
     args = parser.parse_args()
+    
+    # Default latent_init_hour to first init_hour if not specified
+    if args.latent_init_hour is None:
+        args.latent_init_hour = args.init_hours[0]
     
     # Determine dates
     if args.dates:
@@ -517,21 +521,31 @@ def main():
     
     print("  ✓ Model loaded")
     
-    # Thread pool for async file saving
+    # Thread pool for async file saving (local only, S3 batched per date)
     save_executor = ThreadPoolExecutor(max_workers=4)
     pending_saves = []
+    files_to_upload = []  # Collect files for batch S3 upload per date
     
-    def async_save_pt(tensor, path, s3_client, bucket, folder):
-        """Save tensor and upload to S3 in background."""
+    def async_save_pt(tensor, path):
+        """Save tensor to local disk."""
         torch.save(tensor, path)
-        if s3_client:
-            upload_to_s3(s3_client, path, bucket, folder)
     
-    def async_save_nc(ds, path, s3_client, bucket, folder):
-        """Save dataset and upload to S3 in background."""
+    def async_save_nc(ds, path):
+        """Save dataset to local disk."""
         ds.to_netcdf(path)
-        if s3_client:
-            upload_to_s3(s3_client, path, bucket, folder)
+    
+    def batch_upload_to_s3(file_paths: list, s3_client, bucket: str, folder: str):
+        """Upload multiple files to S3 in parallel."""
+        if not s3_client or not file_paths:
+            return
+        print(f"    Uploading {len(file_paths)} files to S3...")
+        for path in file_paths:
+            s3_key = f"{folder}/{path.name}"
+            try:
+                s3_client.upload_file(str(path), bucket, s3_key)
+            except Exception as e:
+                print(f"      ⚠ S3 upload failed for {path.name}: {e}")
+        print(f"    ✓ S3 upload complete")
     
     # Process each date and init hour
     total_runs = len(dates) * len(args.init_hours)
@@ -595,9 +609,8 @@ def main():
                             lead_hours = step * 6
                             pred_ds = batch_to_dataset(pred_cpu, step)
                             out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:03d}h.nc"
-                            pending_saves.append(save_executor.submit(
-                                async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
-                            ))
+                            pending_saves.append(save_executor.submit(async_save_nc, pred_ds, out_path))
+                            files_to_upload.append(out_path)
                             print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name}")
                             del pred_ds
                         
@@ -606,18 +619,16 @@ def main():
                             for key, tensor in activations.items():
                                 out_path = output_dir / f"latent_{date_fmt}_{init_fmt}_{key}.pt"
                                 tensor_fp16 = tensor.half()
-                                pending_saves.append(save_executor.submit(
-                                    async_save_pt, tensor_fp16, out_path, s3_client, bucket_name, s3_folder
-                                ))
+                                pending_saves.append(save_executor.submit(async_save_pt, tensor_fp16, out_path))
+                                files_to_upload.append(out_path)
                                 print(f"    {key}: shape={tuple(tensor_fp16.shape)} -> {out_path.name}")
                             
                             for key, attn_list in attention_activations.items():
                                 out_path = output_dir / f"attn_{date_fmt}_{init_fmt}_{key}.pt"
                                 stacked_attn = torch.cat(attn_list, dim=0) if len(attn_list) > 1 else attn_list[0]
                                 stacked_attn_fp16 = stacked_attn.half()
-                                pending_saves.append(save_executor.submit(
-                                    async_save_pt, stacked_attn_fp16, out_path, s3_client, bucket_name, s3_folder
-                                ))
+                                pending_saves.append(save_executor.submit(async_save_pt, stacked_attn_fp16, out_path))
+                                files_to_upload.append(out_path)
                                 print(f"    {key}: shape={tuple(stacked_attn_fp16.shape)} -> {out_path.name}")
                             
                             # Disable hooks after step 1
@@ -631,7 +642,7 @@ def main():
                 torch.cuda.empty_cache()
                 gc.collect()
                 
-                # Wait for pending saves to complete and clear the list to free memory
+                # Wait for pending saves to complete
                 for future in pending_saves:
                     future.result()
                 pending_saves.clear()
@@ -644,11 +655,13 @@ def main():
                 print(f"    ⚠ Error: {e}")
                 import traceback
                 traceback.print_exc()
+        
+        # Batch upload all files for this date to S3
+        if files_to_upload:
+            batch_upload_to_s3(files_to_upload, s3_client, bucket_name, s3_folder)
+            files_to_upload.clear()
     
-    # Wait for all saves to complete
-    print("\n  Waiting for file saves to complete...")
-    for future in pending_saves:
-        future.result()  # Raises exceptions if any
+    # Shutdown executor
     save_executor.shutdown()
     
     print("\n" + "=" * 70)
