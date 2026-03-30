@@ -1,0 +1,68 @@
+#!/bin/bash
+#SBATCH --job-name=daily_rmse
+#SBATCH --partition=rome
+#SBATCH --time=12:00:00
+#SBATCH --mem=32G
+#SBATCH --cpus-per-task=16
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --output=slurm-%j.out
+#SBATCH --error=slurm-%j.out
+
+# ============================================================================
+# Daily RMSE computation using WeatherBench2
+# ============================================================================
+# Computes Z500 and T850 RMSE for lead times 12h, 120h, 240h.
+#
+# Usage:
+#   sbatch --export=ALL,MODEL=fuxi        run_daily_rmse.job
+#   sbatch --export=ALL,MODEL=graphcast   run_daily_rmse.job
+#   sbatch --export=ALL,MODEL=neuralgcm   run_daily_rmse.job
+#   sbatch --export=ALL,MODEL=hres        run_daily_rmse.job
+#
+# Run all at once:
+#   for m in fuxi graphcast neuralgcm hres; do sbatch --export=ALL,MODEL=$m run_daily_rmse.job; done
+# ============================================================================
+
+BASE_DIR="$HOME/aurora_thesis/thesis"
+SCRIPT="$BASE_DIR/scripts/compute_daily_rmse_fast.py"
+RESULTS_DIR="$BASE_DIR/results"
+LOG_DIR="$BASE_DIR/logs"
+PY="$HOME/aurora_thesis/aurora_env/bin/python"
+
+MODEL="${MODEL:-fuxi}"
+YEAR="${YEAR:-2020}"
+
+mkdir -p "$RESULTS_DIR" "$LOG_DIR"
+
+LOG_FILE="$LOG_DIR/daily_rmse_${MODEL}_${YEAR}_$(date +%Y%m%d_%H%M%S).log"
+
+{
+    echo "========================================"
+    echo "  DAILY RMSE: ${MODEL} (${YEAR})"
+    echo "========================================"
+    echo "Job ID:       ${SLURM_JOB_ID:-local}"
+    echo "Date:         $(date)"
+    echo "Hostname:     $(hostname)"
+    echo "Output:       $RESULTS_DIR/daily_rmse_${MODEL}_${YEAR}.csv"
+    echo "========================================"
+    echo ""
+} | tee "$LOG_FILE"
+
+$PY $SCRIPT --model "$MODEL" --year "$YEAR" 2>&1 | tee -a "$LOG_FILE"
+
+EXIT_CODE=${PIPESTATUS[0]}
+
+{
+    echo ""
+    echo "========================================"
+    if [ $EXIT_CODE -eq 0 ]; then
+        echo "  COMPLETED SUCCESSFULLY"
+    else
+        echo "  FAILED (exit code: $EXIT_CODE)"
+    fi
+    echo "========================================"
+    echo "Finished: $(date)"
+} | tee -a "$LOG_FILE"
+
+exit $EXIT_CODE
