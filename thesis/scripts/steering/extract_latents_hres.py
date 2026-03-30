@@ -67,8 +67,8 @@ def custom_sdpa(q, k, v, attn_mask=None, dropout_p=0.0, is_causal=False, scale=N
             else:
                 attn = attn + attn_mask
         attn_weights = torch.nn.functional.softmax(attn, dim=-1)
-        # Keep ONLY the last attention weights (overwrites any previous ones for this key)
-        attention_activations[current_capture_key] = [attn_weights.detach().cpu()]
+        # Cast to FP16 on GPU (fast), then move half the data across PCIe
+        attention_activations[current_capture_key] = [attn_weights.detach().half().cpu()]
         
     return res
 
@@ -159,7 +159,7 @@ def download_static(download_path: Path):
         print("    ✓ Static variables cached")
 
 
-def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
+def prepare_batch(day: str, download_path: Path, init_hour: int = 12, static_vars_ds: xr.Dataset = None) -> Batch:
     """Prepare batch following official Microsoft example.
     
     Args:
@@ -170,13 +170,15 @@ def prepare_batch(day: str, download_path: Path, init_hour: int = 12) -> Batch:
             - init_hour=0: uses times 18:00 (prev day) and 00:00 (indices 3,0 effectively)
               For simplicity, we use indices 0,1 which is 00:00 and 06:00, init=06:00
               Actually for init=00:00, we need prev day 18:00 + current day 00:00.
+        static_vars_ds: Pre-loaded static variables dataset (to avoid repeated file access)
               
     Note: For init_hour=0, this requires the previous day's data to be available.
     The HRES T0 data has times: 00:00, 06:00, 12:00, 18:00 (indices 0,1,2,3).
     - init=12:00 uses t-6h=06:00 (idx 1) and t=12:00 (idx 2)
     - init=00:00 uses t-6h=18:00 (prev day idx 3) and t=00:00 (idx 0)
     """
-    static_vars_ds = xr.open_dataset(download_path / "static.nc", engine="netcdf4")
+    if static_vars_ds is None:
+        static_vars_ds = xr.open_dataset(download_path / "static.nc", engine="netcdf4")
     surf_vars_ds = xr.open_dataset(download_path / f"{day}-surface-level.nc", engine="netcdf4")
     atmos_vars_ds = xr.open_dataset(download_path / f"{day}-atmospheric.nc", engine="netcdf4")
     
@@ -302,7 +304,8 @@ def register_hooks(
         def _make_hook(k: str):
             def _hook(_module, _input, output):
                 tensor = output[0] if isinstance(output, tuple) else output
-                activations[k] = tensor.detach().cpu()
+                # Cast to FP16 on GPU (fast), then move half the data across PCIe
+                activations[k] = tensor.detach().half().cpu()
             return _hook
 
         if part == "perceiver":
@@ -521,35 +524,30 @@ def main():
     
     print("  ✓ Model loaded")
     
-    # Thread pool for async file saving (local only, S3 batched per date)
+    # Thread pool for async file saving
     save_executor = ThreadPoolExecutor(max_workers=4)
     pending_saves = []
-    files_to_upload = []  # Collect files for batch S3 upload per date
     
-    def async_save_pt(tensor, path):
-        """Save tensor to local disk."""
+    def async_save_pt(tensor, path, s3_client, bucket, folder):
+        """Save tensor and upload to S3 in background."""
         torch.save(tensor, path)
+        if s3_client:
+            upload_to_s3(s3_client, path, bucket, folder)
     
-    def async_save_nc(ds, path):
-        """Save dataset to local disk."""
+    def async_save_nc(ds, path, s3_client, bucket, folder):
+        """Save dataset and upload to S3 in background."""
         ds.to_netcdf(path)
-    
-    def batch_upload_to_s3(file_paths: list, s3_client, bucket: str, folder: str):
-        """Upload multiple files to S3 in parallel."""
-        if not s3_client or not file_paths:
-            return
-        print(f"    Uploading {len(file_paths)} files to S3...")
-        for path in file_paths:
-            s3_key = f"{folder}/{path.name}"
-            try:
-                s3_client.upload_file(str(path), bucket, s3_key)
-            except Exception as e:
-                print(f"      ⚠ S3 upload failed for {path.name}: {e}")
-        print(f"    ✓ S3 upload complete")
+        if s3_client:
+            upload_to_s3(s3_client, path, bucket, folder)
     
     # Process each date and init hour
     total_runs = len(dates) * len(args.init_hours)
     print(f"\n[4/4] Processing {total_runs} runs ({len(dates)} dates × {len(args.init_hours)} init times)...")
+    
+    # Load static data once to avoid race conditions with background I/O
+    print("  Loading static variables into memory...")
+    static_vars_ds = xr.open_dataset(download_path / "static.nc", engine="netcdf4").load()
+    print("  ✓ Static variables loaded")
     
     run_idx = 0
     total_start_time = time.time()
@@ -585,7 +583,7 @@ def main():
                     handles = []
                 
                 # Prepare batch
-                batch = prepare_batch(date_str, download_path, init_hour=init_hour)
+                batch = prepare_batch(date_str, download_path, init_hour=init_hour, static_vars_ds=static_vars_ds)
                 init_time = batch.metadata.time[0]
                 print(f"    Init time: {init_time}")
                 
@@ -609,27 +607,28 @@ def main():
                             lead_hours = step * 6
                             pred_ds = batch_to_dataset(pred_cpu, step)
                             out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:03d}h.nc"
-                            pending_saves.append(save_executor.submit(async_save_nc, pred_ds, out_path))
-                            files_to_upload.append(out_path)
+                            pending_saves.append(save_executor.submit(
+                                async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
+                            ))
                             print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name}")
                             del pred_ds
                         
-                        # Save latents only from step 1
+                        # Save latents only from step 1 (already FP16 from hooks)
                         if step == 1 and extract_latents:
                             for key, tensor in activations.items():
                                 out_path = output_dir / f"latent_{date_fmt}_{init_fmt}_{key}.pt"
-                                tensor_fp16 = tensor.half()
-                                pending_saves.append(save_executor.submit(async_save_pt, tensor_fp16, out_path))
-                                files_to_upload.append(out_path)
-                                print(f"    {key}: shape={tuple(tensor_fp16.shape)} -> {out_path.name}")
+                                pending_saves.append(save_executor.submit(
+                                    async_save_pt, tensor, out_path, s3_client, bucket_name, s3_folder
+                                ))
+                                print(f"    {key}: shape={tuple(tensor.shape)} -> {out_path.name}")
                             
                             for key, attn_list in attention_activations.items():
                                 out_path = output_dir / f"attn_{date_fmt}_{init_fmt}_{key}.pt"
                                 stacked_attn = torch.cat(attn_list, dim=0) if len(attn_list) > 1 else attn_list[0]
-                                stacked_attn_fp16 = stacked_attn.half()
-                                pending_saves.append(save_executor.submit(async_save_pt, stacked_attn_fp16, out_path))
-                                files_to_upload.append(out_path)
-                                print(f"    {key}: shape={tuple(stacked_attn_fp16.shape)} -> {out_path.name}")
+                                pending_saves.append(save_executor.submit(
+                                    async_save_pt, stacked_attn, out_path, s3_client, bucket_name, s3_folder
+                                ))
+                                print(f"    {key}: shape={tuple(stacked_attn.shape)} -> {out_path.name}")
                             
                             # Disable hooks after step 1
                             unregister_hooks(handles)
@@ -642,11 +641,6 @@ def main():
                 torch.cuda.empty_cache()
                 gc.collect()
                 
-                # Wait for pending saves to complete
-                for future in pending_saves:
-                    future.result()
-                pending_saves.clear()
-                
                 # Log timing for this run
                 run_elapsed = time.time() - run_start_time
                 print(f"    ✓ Done in {run_elapsed:.1f}s")
@@ -655,13 +649,11 @@ def main():
                 print(f"    ⚠ Error: {e}")
                 import traceback
                 traceback.print_exc()
-        
-        # Batch upload all files for this date to S3
-        if files_to_upload:
-            batch_upload_to_s3(files_to_upload, s3_client, bucket_name, s3_folder)
-            files_to_upload.clear()
     
-    # Shutdown executor
+    # Wait for all pending saves to complete
+    print("\n  Waiting for background saves to complete...")
+    for future in pending_saves:
+        future.result()
     save_executor.shutdown()
     
     print("\n" + "=" * 70)
