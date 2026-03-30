@@ -24,6 +24,12 @@ import fsspec
 import numpy as np
 import pandas as pd
 import torch
+# Force strict FP32 math and determinism (must be set before any CUDA ops)
+torch.backends.cuda.matmul.allow_tf32 = False
+torch.backends.cudnn.allow_tf32 = False
+torch.use_deterministic_algorithms(True, warn_only=True)
+import os
+os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
 import torch.nn.functional as F
 import xarray as xr
 from huggingface_hub import hf_hub_download
@@ -39,9 +45,6 @@ except ImportError:
         pass
 
 from aurora import Aurora, Batch, Metadata, rollout
-
-# Enable TF32 for faster float32 matmul on Ampere+ GPUs
-torch.set_float32_matmul_precision('high')
 
 # ══════════════════════════════════════════════════════════════════════════════
 # Custom SDPA for Attention Extraction
@@ -429,7 +432,8 @@ def main():
     )
     parser.add_argument(
         "--compile", action="store_true",
-        help="Use torch.compile() for faster inference (requires PyTorch 2.0+)"
+        help="Use torch.compile() for faster inference. WARNING: alters floating-point "
+             "accumulation order, breaking bit-exact reproducibility with WB2 Aurora."
     )
     parser.add_argument(
         "--fp64", action="store_true",
@@ -506,6 +510,7 @@ def main():
     
     # Optional: compile model for faster inference
     if args.compile:
+        print("  ⚠ WARNING: torch.compile() alters FP accumulation order, breaking reproducibility!")
         print("  Compiling model with torch.compile()...")
         model = torch.compile(model)
         print("  ✓ Model compiled")
@@ -577,71 +582,52 @@ def main():
                 date_fmt = init_dt.strftime("%Y%m%d")
                 init_fmt = init_dt.strftime("%H%M")
                 
-                # Step 1: Run forward pass (with or without hooks)
+                # Run rollout with hooks active for step 1
+                # Using rollout() ensures time metadata advances correctly for solar forcings
                 with torch.inference_mode():
-                    pred = model(batch)
-                
-                # Save step 1 prediction immediately
-                if args.save_predictions:
-                    pred_cpu = pred.to("cpu")
-                    pred_ds = batch_to_dataset(pred_cpu, 1)
-                    out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step01_006h.nc"
-                    pending_saves.append(save_executor.submit(
-                        async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
-                    ))
-                    print(f"    pred step 1 (+6h) -> {out_path.name}")
-                    del pred_cpu, pred_ds
-                
-                # Save latent activations (only from step 1, only if extracting)
-                if extract_latents:
-                    for key, tensor in activations.items():
-                        out_path = output_dir / f"latent_{date_fmt}_{init_fmt}_{key}.pt"
-                        tensor_fp16 = tensor.half()
-                        # Async save
-                        pending_saves.append(save_executor.submit(
-                            async_save_pt, tensor_fp16, out_path, s3_client, bucket_name, s3_folder
-                        ))
-                        print(f"    {key}: shape={tuple(tensor_fp16.shape)} -> {out_path.name}")
-                    
-                    # Save attention weights (only from step 1)
-                    for key, attn_list in attention_activations.items():
-                        out_path = output_dir / f"attn_{date_fmt}_{init_fmt}_{key}.pt"
-                        stacked_attn = torch.cat(attn_list, dim=0) if len(attn_list) > 1 else attn_list[0]
-                        stacked_attn_fp16 = stacked_attn.half()
-                        # Async save
-                        pending_saves.append(save_executor.submit(
-                            async_save_pt, stacked_attn_fp16, out_path, s3_client, bucket_name, s3_folder
-                        ))
-                        print(f"    {key}: shape={tuple(stacked_attn_fp16.shape)} -> {out_path.name}")
-                    
-                    # Disable hooks after step 1
-                    unregister_hooks(handles)
-                    activations.clear()
-                    attention_activations.clear()
-                
-                # Continue rollout for remaining steps (without hooks) - save immediately
-                if args.num_steps > 1:
-                    current_batch = pred
-                    with torch.inference_mode():
-                        for step in range(2, args.num_steps + 1):
-                            pred = model(current_batch)
-                            
-                            # Save prediction immediately to avoid memory buildup
-                            if args.save_predictions:
-                                pred_cpu = pred.to("cpu")
-                                lead_hours = step * 6
-                                pred_ds = batch_to_dataset(pred_cpu, step)
-                                out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:03d}h.nc"
+                    step = 0
+                    for pred in rollout(model, batch, steps=args.num_steps):
+                        step += 1
+                        pred_cpu = pred.to("cpu")
+                        
+                        # Save prediction
+                        if args.save_predictions:
+                            lead_hours = step * 6
+                            pred_ds = batch_to_dataset(pred_cpu, step)
+                            out_path = output_dir / f"aurora_pred_{date_fmt}_{init_fmt}_step{step:02d}_{lead_hours:03d}h.nc"
+                            pending_saves.append(save_executor.submit(
+                                async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
+                            ))
+                            print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name}")
+                            del pred_ds
+                        
+                        # Save latents only from step 1
+                        if step == 1 and extract_latents:
+                            for key, tensor in activations.items():
+                                out_path = output_dir / f"latent_{date_fmt}_{init_fmt}_{key}.pt"
+                                tensor_fp16 = tensor.half()
                                 pending_saves.append(save_executor.submit(
-                                    async_save_nc, pred_ds, out_path, s3_client, bucket_name, s3_folder
+                                    async_save_pt, tensor_fp16, out_path, s3_client, bucket_name, s3_folder
                                 ))
-                                print(f"    pred step {step} (+{lead_hours}h) -> {out_path.name}")
-                                del pred_cpu, pred_ds
+                                print(f"    {key}: shape={tuple(tensor_fp16.shape)} -> {out_path.name}")
                             
-                            current_batch = pred
-                    del current_batch
+                            for key, attn_list in attention_activations.items():
+                                out_path = output_dir / f"attn_{date_fmt}_{init_fmt}_{key}.pt"
+                                stacked_attn = torch.cat(attn_list, dim=0) if len(attn_list) > 1 else attn_list[0]
+                                stacked_attn_fp16 = stacked_attn.half()
+                                pending_saves.append(save_executor.submit(
+                                    async_save_pt, stacked_attn_fp16, out_path, s3_client, bucket_name, s3_folder
+                                ))
+                                print(f"    {key}: shape={tuple(stacked_attn_fp16.shape)} -> {out_path.name}")
+                            
+                            # Disable hooks after step 1
+                            unregister_hooks(handles)
+                            activations.clear()
+                            attention_activations.clear()
+                        
+                        del pred_cpu
                 
-                del batch, pred
+                del batch
                 torch.cuda.empty_cache()
                 gc.collect()
                 
