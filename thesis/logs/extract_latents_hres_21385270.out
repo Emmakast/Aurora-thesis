@@ -1,0 +1,205 @@
+========================================
+  AURORA HRES LATENT EXTRACTION - FEB-DEC 2022
+========================================
+Job ID:       21385270
+Date:         Tue Mar 31 10:18:18 CEST 2026
+Node:         gcn18.local.snellius.surf.nl
+GPU:
+NVIDIA A100-SXM4-40GB, 40960 MiB
+========================================
+
+  ✓ S3 Client initialized securely via .env
+======================================================================
+  AURORA LATENT EXTRACTION - IFS HRES T0
+======================================================================
+  Dates: 334 dates
+  Init hours: [0]
+  Latent extraction init: 0:00 UTC only
+  Rollout steps: 40
+  Device: cuda
+  Output: /scratch-local/ekasteleyn.21385270/aurora_hres_latents
+  Cache: /home/ekasteleyn/downloads/hres_t0
+  Target layers: [('perceiver', 0), ('encoder', 0), ('encoder', 1), ('encoder', 2)]
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+  2022-01-31
+  2022-02-01
+  2022-02-02
+  2022-02-03
+  2022-02-04
+  2022-02-05
+  2022-02-06
+  2022-02-07
+  2022-02-08
+  2022-02-09
+  2022-02-10
+  2022-02-11
+  2022-02-12
+  2022-02-13
+  2022-02-14
+  2022-02-15
+  2022-02-16
+  2022-02-17
+  2022-02-18
+  2022-02-19
+  2022-02-20
+  2022-02-21
+  2022-02-22
+  2022-02-23
+  2022-02-24
+  2022-02-25
+  2022-02-26
+  2022-02-27
+  2022-02-28
+  2022-03-01
+  2022-03-02
+  2022-03-03
+  2022-03-04
+  2022-03-05
+  2022-03-06
+  2022-03-07
+  2022-03-08
+  2022-03-09
+  2022-03-10
+  2022-03-11
+  2022-03-12
+  2022-03-13
+  2022-03-14
+  2022-03-15
+  2022-03-16
+  2022-03-17
+  2022-03-18
+  2022-03-19
+  2022-03-20
+  2022-03-21
+  2022-03-22
+  2022-03-23
+  2022-03-24
+  2022-03-25
+  2022-03-26
+  2022-03-27
+  2022-03-28
+  2022-03-29
+  2022-03-30
+  2022-03-31
+  2022-04-01
+  2022-04-02
+  2022-04-03
+  2022-04-04
+  2022-04-05
+  2022-04-06
+  2022-04-07
+  2022-04-08
+  2022-04-09
+  2022-04-10
+  2022-04-11
+  2022-04-12
+  2022-04-13
+  2022-04-14
+  2022-04-15
+  2022-04-16
+  2022-04-17
+  2022-04-18
+  2022-04-19
+  2022-04-20
+  2022-04-21
+  2022-04-22
+  2022-04-23
+  2022-04-24
+  2022-04-25
+  2022-04-26
+  2022-04-27
+  2022-04-28
+  2022-04-29
+  2022-04-30
+  2022-05-01
+  2022-05-02
+  2022-05-03
+  2022-05-04
+    Downloading atmospheric variables...
+  2022-05-05
+    Downloading atmospheric variables...
+  2022-05-06
+    Downloading atmospheric variables...
+  2022-05-07
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-08
+    Downloading atmospheric variables...
+  2022-05-09
+    Downloading atmospheric variables...
+  2022-05-10
+    Downloading atmospheric variables...
+  2022-05-11
+    Downloading atmospheric variables...
+  2022-05-12
+    Downloading atmospheric variables...
+  2022-05-13
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-14
+    Downloading atmospheric variables...
+  2022-05-15
+  2022-05-16
+    Downloading atmospheric variables...
+  2022-05-17
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-18
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-19
+    Downloading atmospheric variables...
+  2022-05-20
+    Downloading atmospheric variables...
+  2022-05-21
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-22
+    Downloading atmospheric variables...
+  2022-05-23
+    Downloading atmospheric variables...
+  2022-05-24
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-25
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-26
+    Downloading atmospheric variables...
+  2022-05-27
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-28
+    Downloading atmospheric variables...
+  2022-05-29
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-30
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-31
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-06-01
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-06-02
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-06-03
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-06-04
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-06-05
+    Downloading surface variables...
+    Downloading atmospheric variables...
+
+========================================
+  COMPLETE: Tue Mar 31 10:25:12 CEST 2026
+========================================

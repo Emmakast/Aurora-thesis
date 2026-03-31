@@ -82,7 +82,7 @@ if not hasattr(F, '_patched'):
 # Configuration
 # ══════════════════════════════════════════════════════════════════════════════
 
-DOWNLOAD_PATH = Path.home() / "downloads" / "hres_t0"
+DOWNLOAD_PATH = Path("/scratch-shared/ekasteleyn/downloads/hres_t0")
 
 # Use SLURM's $TMPDIR (e.g. /scratch-node/ekasteleyn.1234567). 
 # Fallback to local /tmp if running outside SLURM.

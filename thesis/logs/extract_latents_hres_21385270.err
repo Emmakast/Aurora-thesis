@@ -1,10 +1,10 @@
 Traceback (most recent call last):
-  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py", line 137, in <module>
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 718, in <module>
     main()
-  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py", line 122, in main
-    download_data(day, download_path, ds)
-  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py", line 79, in download_data
-    ds_atmos.to_netcdf(str(atmos_path))
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 509, in main
+    download_data(day, download_path)
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 140, in download_data
+    ds_atmos.to_netcdf(str(download_path / f"{day}-atmospheric.nc"))
   File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/core/dataset.py", line 2110, in to_netcdf
     return to_netcdf(  # type: ignore[return-value]  # mypy cannot resolve the overloads:(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

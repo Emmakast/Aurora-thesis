@@ -33,7 +33,7 @@ echo ""
 
 # ── Run ──────────────────────────────────────────────────────────────────────
 # February to December 2022 dates
-DATES=$(python -c 'import pandas as pd; print(" ".join(pd.date_range("2022-02-01", "2022-12-31").strftime("%Y-%m-%d").tolist()))')
+DATES=$(python -c 'import pandas as pd; print(" ".join(pd.date_range("2022-02-01", "2022-06-06").strftime("%Y-%m-%d").tolist()))')
 
 PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python \
     /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py \
