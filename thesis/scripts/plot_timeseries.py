@@ -282,7 +282,8 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
                     marker="*", markersize=10, label="ERA5 (intrinsic)",
                     zorder=5, alpha=0.8)
 
-        ax.set_title(f"{title} over Forecast Horizon (shading = ±1σ)", fontsize=14, pad=15)
+        mode_str = " (vs IFS HRES)" if ifs_mode else " (vs ERA5)"
+        ax.set_title(f"{title}{mode_str} over Forecast Horizon (shading = ±1σ)", fontsize=14, pad=15)
         ax.set_xlabel("Forecast Hour", fontsize=12)
         ax.set_ylabel(title, fontsize=12)
         ax.set_xticks(range(0, int(max_hour) + 1, 24))
@@ -316,7 +317,8 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
                                     color=style["color"], alpha=0.15, zorder=2)
 
             ax.axhline(y=0, color="grey", linestyle="-", linewidth=1, alpha=0.5)
-            ax.set_title(f"{title} — Relative Change from t₀ (%, shading = ±1σ)", fontsize=14, pad=15)
+            mode_str = " (vs IFS HRES)" if ifs_mode else " (vs ERA5)"
+            ax.set_title(f"{title}{mode_str} — Relative Change from t₀ (%, shading = ±1σ)", fontsize=14, pad=15)
             ax.set_xlabel("Forecast Hour", fontsize=12)
             ax.set_ylabel("Relative Change (%)", fontsize=12)
             ax.set_xticks(range(0, int(max_hour) + 1, 24))

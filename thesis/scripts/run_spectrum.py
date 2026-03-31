@@ -225,7 +225,7 @@ def compute_spectra_for_model(
         print(f"  Init dates: {len(init_dates)}")
 
     rows: list[dict] = []
-    header_written = False
+    header_written = output_path.exists() if output_path else False
 
     for i, init_time in enumerate(init_dates, 1):
         if verbose:
@@ -340,6 +340,7 @@ def main():
                         help="Comma-separated lead hours (default: 6,24,48,72,120,168,240)")
     parser.add_argument("--max-dates", type=int, default=None,
                         help="Limit number of init dates (for testing)")
+    parser.add_argument("--append", action="store_true", help="Append to existing output CSV")
     parser.add_argument("--output", type=str, default=None)
     parser.add_argument("--quiet", action="store_true")
     args = parser.parse_args()
@@ -357,7 +358,7 @@ def main():
     )
 
     output.parent.mkdir(parents=True, exist_ok=True)
-    if output.exists():
+    if output.exists() and not args.append:
         output.unlink()
 
     df = compute_spectra_for_model(

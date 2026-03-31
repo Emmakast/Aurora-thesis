@@ -1412,3 +1412,1274 @@ NVIDIA A100-SXM4-40GB, 40960 MiB
       ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step10_060h.nc
     pred step 11 (+66h) -> aurora_pred_20220525_0000_step11_066h.nc (Disk)
       ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220525_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220525_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220525_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220525_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220525_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220525_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220525_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220525_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220525_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220525_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220525_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220525_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220525_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220525_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220525_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220525_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220525_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220525_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220525_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220525_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220525_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220525_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220525_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220525_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220525_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220525_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220525_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220525_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220525_0000_step40_240h.nc (Disk)
+    ✓ Done in 672.1s
+
+  [12:17:12] [115/126] 2022-05-26 init 00:00 UTC [+latents] | ETA: 10.1 min
+    Init time: 2022-05-26 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220525_0000_step40_240h.nc
+    pred step 1 (+6h) -> aurora_pred_20220526_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220526_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220526_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220526_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220526_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220526_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220526_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220526_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220526_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220526_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220526_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220526_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220526_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220526_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220526_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220526_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220526_0000_encoder_2_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220526_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220526_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220526_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220526_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220526_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220526_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220526_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220526_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220526_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220526_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220526_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220526_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220526_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220526_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220526_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220526_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220526_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220526_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220526_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220526_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220526_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220526_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220526_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220526_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220526_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220526_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220526_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220526_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220526_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220526_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220526_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220526_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220526_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220526_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220526_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220526_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220526_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220526_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220526_0000_step40_240h.nc (Disk)
+    ✓ Done in 666.9s
+
+  [12:28:19] [116/126] 2022-05-27 init 00:00 UTC [+latents] | ETA: 10.2 min
+    Init time: 2022-05-27 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220526_0000_step40_240h.nc
+    pred step 1 (+6h) -> aurora_pred_20220527_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220527_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220527_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220527_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220527_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220527_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220527_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220527_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220527_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220527_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220527_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220527_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220527_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220527_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220527_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220527_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220527_0000_encoder_0_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220527_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220527_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220527_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220527_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220527_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220527_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220527_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220527_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220527_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220527_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220527_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220527_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220527_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220527_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220527_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220527_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220527_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220527_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220527_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220527_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220527_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220527_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220527_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220527_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220527_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220527_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220527_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220527_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220527_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220527_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220527_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220527_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220527_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220527_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220527_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220527_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220527_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220527_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220527_0000_step40_240h.nc (Disk)
+    ✓ Done in 664.0s
+
+  [12:39:23] [117/126] 2022-05-28 init 00:00 UTC [+latents] | ETA: 10.1 min
+    Init time: 2022-05-28 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220527_0000_step40_240h.nc
+    pred step 1 (+6h) -> aurora_pred_20220528_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220528_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220528_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220528_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220528_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220528_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220528_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220528_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220528_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220528_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220528_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220528_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220528_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220528_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220528_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220528_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220528_0000_encoder_0_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220528_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220528_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220528_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220528_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220528_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220528_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220528_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220528_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220528_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220528_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220528_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220528_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220528_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220528_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220528_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220528_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220528_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220528_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220528_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220528_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220528_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220528_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220528_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220528_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220528_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220528_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220528_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220528_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220528_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220528_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220528_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220528_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220528_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220528_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220528_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220528_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220528_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220528_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220528_0000_step40_240h.nc (Disk)
+    ✓ Done in 671.6s
+
+  [12:50:34] [118/126] 2022-05-29 init 00:00 UTC [+latents] | ETA: 9.9 min
+    Init time: 2022-05-29 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220528_0000_step40_240h.nc
+    pred step 1 (+6h) -> aurora_pred_20220529_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220529_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220529_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220529_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220529_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220529_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220529_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220529_0000_encoder_1_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220529_0000_encoder_1.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220529_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220529_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220529_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220529_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220529_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220529_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220529_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220529_0000_encoder_0_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220529_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220529_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220529_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220529_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220529_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220529_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220529_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220529_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220529_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220529_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220529_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220529_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220529_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220529_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220529_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220529_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220529_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220529_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220529_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220529_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220529_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220529_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220529_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220529_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220529_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220529_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220529_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220529_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220529_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220529_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220529_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220529_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220529_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220529_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220529_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220529_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220529_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220529_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220529_0000_step40_240h.nc (Disk)
+    ✓ Done in 660.7s
+
+  [13:01:35] [119/126] 2022-05-30 init 00:00 UTC [+latents] | ETA: 9.5 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220529_0000_step40_240h.nc
+    Init time: 2022-05-30 00:00:00
+    pred step 1 (+6h) -> aurora_pred_20220530_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220530_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220530_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220530_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220530_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220530_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220530_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220530_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220530_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220530_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220530_0000_encoder_1.pt      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220530_0000_encoder_0.pt
+
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220530_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220530_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220530_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220530_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220530_0000_encoder_0_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220530_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220530_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220530_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220530_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220530_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220530_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220530_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220530_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220530_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220530_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220530_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220530_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220530_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220530_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220530_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220530_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220530_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220530_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220530_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220530_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220530_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220530_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220530_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220530_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220530_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220530_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220530_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220530_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220530_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220530_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220530_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220530_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220530_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220530_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220530_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220530_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220530_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220530_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220530_0000_step40_240h.nc (Disk)
+    ✓ Done in 665.7s
+
+  [13:12:41] [120/126] 2022-05-31 init 00:00 UTC [+latents] | ETA: 8.9 min
+    Init time: 2022-05-31 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220530_0000_step40_240h.nc
+    pred step 1 (+6h) -> aurora_pred_20220531_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220531_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220531_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220531_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220531_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220531_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220531_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220531_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220531_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220531_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220531_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220531_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220531_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220531_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220531_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220531_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220531_0000_encoder_2_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220531_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220531_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220531_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220531_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220531_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220531_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220531_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220531_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220531_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220531_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220531_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220531_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220531_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220531_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220531_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220531_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220531_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220531_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220531_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220531_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220531_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220531_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220531_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220531_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220531_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220531_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220531_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220531_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220531_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220531_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220531_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220531_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220531_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220531_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220531_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220531_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220531_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220531_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220531_0000_step40_240h.nc (Disk)
+    ✓ Done in 665.1s
+
+  [13:23:46] [121/126] 2022-06-01 init 00:00 UTC [+latents] | ETA: 8.1 min
+    Init time: 2022-06-01 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220531_0000_step40_240h.nc
+    pred step 1 (+6h) -> aurora_pred_20220601_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220601_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220601_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220601_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220601_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220601_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220601_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220601_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220601_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220601_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220601_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220601_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220601_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220601_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220601_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220601_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220601_0000_encoder_0_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220601_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220601_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220601_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220601_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220601_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220601_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220601_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220601_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220601_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220601_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220601_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220601_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220601_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220601_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220601_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220601_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220601_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220601_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220601_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220601_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220601_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220601_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220601_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220601_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220601_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220601_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220601_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220601_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220601_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220601_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220601_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220601_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220601_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220601_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220601_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220601_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220601_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220601_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220601_0000_step40_240h.nc (Disk)
+    ✓ Done in 665.1s
+
+  [13:34:51] [122/126] 2022-06-02 init 00:00 UTC [+latents] | ETA: 7.2 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220601_0000_step40_240h.nc
+    Init time: 2022-06-02 00:00:00
+    pred step 1 (+6h) -> aurora_pred_20220602_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220602_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220602_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220602_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220602_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220602_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220602_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220602_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220602_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220602_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220602_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220602_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220602_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220602_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220602_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220602_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220602_0000_encoder_0_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220602_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220602_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220602_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220602_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220602_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220602_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220602_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220602_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220602_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220602_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220602_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220602_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220602_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220602_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220602_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220602_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220602_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220602_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220602_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220602_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220602_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220602_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220602_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220602_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220602_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220602_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220602_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220602_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220602_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220602_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220602_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220602_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220602_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220602_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220602_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220602_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220602_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220602_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220602_0000_step40_240h.nc (Disk)
+    ✓ Done in 660.3s
+
+  [13:45:51] [123/126] 2022-06-03 init 00:00 UTC [+latents] | ETA: 6.0 min
+    Init time: 2022-06-03 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220602_0000_step40_240h.nc
+    pred step 1 (+6h) -> aurora_pred_20220603_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220603_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220603_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220603_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220603_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220603_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220603_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220603_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220603_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220603_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220603_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220603_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220603_0000_perceiver_cross_attn.pt      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220603_0000_perceiver_0.pt
+
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220603_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220603_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220603_0000_encoder_1_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220603_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220603_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220603_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220603_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220603_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220603_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220603_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220603_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220603_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220603_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220603_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220603_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220603_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220603_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220603_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220603_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220603_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220603_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220603_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220603_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220603_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220603_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220603_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220603_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220603_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220603_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220603_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220603_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220603_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220603_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220603_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220603_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220603_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220603_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220603_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220603_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220603_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220603_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220603_0000_step40_240h.nc (Disk)
+    ✓ Done in 660.3s
+
+  [13:56:51] [124/126] 2022-06-04 init 00:00 UTC [+latents] | ETA: 4.8 min
+    Init time: 2022-06-04 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220603_0000_step40_240h.nc
+    pred step 1 (+6h) -> aurora_pred_20220604_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220604_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220604_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220604_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220604_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220604_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220604_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220604_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220604_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220604_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220604_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220604_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220604_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220604_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220604_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220604_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220604_0000_encoder_0_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220604_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220604_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220604_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220604_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220604_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220604_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220604_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220604_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220604_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220604_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220604_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220604_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220604_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220604_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220604_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220604_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220604_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220604_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220604_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220604_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220604_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220604_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220604_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220604_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220604_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220604_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220604_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220604_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220604_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220604_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220604_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220604_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220604_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220604_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220604_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220604_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220604_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220604_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220604_0000_step40_240h.nc (Disk)
+    ✓ Done in 673.2s
+
+  [14:08:05] [125/126] 2022-06-05 init 00:00 UTC [+latents] | ETA: 3.3 min
+    Init time: 2022-06-05 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220604_0000_step40_240h.nc
+    pred step 1 (+6h) -> aurora_pred_20220605_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220605_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220605_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220605_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220605_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220605_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220605_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220605_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220605_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220605_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220605_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220605_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220605_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220605_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220605_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220605_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220605_0000_encoder_0_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220605_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220605_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220605_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220605_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220605_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220605_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220605_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220605_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220605_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220605_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220605_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220605_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220605_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220605_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220605_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220605_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220605_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220605_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220605_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220605_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220605_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220605_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220605_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220605_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220605_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220605_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220605_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220605_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220605_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220605_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220605_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220605_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220605_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220605_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220605_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220605_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220605_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220605_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220605_0000_step40_240h.nc (Disk)
+    ✓ Done in 669.2s
+
+  [14:19:14] [126/126] 2022-06-06 init 00:00 UTC [+latents] | ETA: 1.7 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220605_0000_step40_240h.nc
+    Init time: 2022-06-06 00:00:00
+    pred step 1 (+6h) -> aurora_pred_20220606_0000_step01_006h.nc (Disk)
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220606_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220606_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220606_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220606_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220606_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220606_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220606_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220606_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220606_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220606_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220606_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220606_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220606_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220606_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220606_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220606_0000_encoder_1_attn.pt
+    pred step 2 (+12h) -> aurora_pred_20220606_0000_step02_012h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step02_012h.nc
+    pred step 3 (+18h) -> aurora_pred_20220606_0000_step03_018h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step03_018h.nc
+    pred step 4 (+24h) -> aurora_pred_20220606_0000_step04_024h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step04_024h.nc
+    pred step 5 (+30h) -> aurora_pred_20220606_0000_step05_030h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step05_030h.nc
+    pred step 6 (+36h) -> aurora_pred_20220606_0000_step06_036h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step06_036h.nc
+    pred step 7 (+42h) -> aurora_pred_20220606_0000_step07_042h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step07_042h.nc
+    pred step 8 (+48h) -> aurora_pred_20220606_0000_step08_048h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step08_048h.nc
+    pred step 9 (+54h) -> aurora_pred_20220606_0000_step09_054h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step09_054h.nc
+    pred step 10 (+60h) -> aurora_pred_20220606_0000_step10_060h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step10_060h.nc
+    pred step 11 (+66h) -> aurora_pred_20220606_0000_step11_066h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step11_066h.nc
+    pred step 12 (+72h) -> aurora_pred_20220606_0000_step12_072h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step12_072h.nc
+    pred step 13 (+78h) -> aurora_pred_20220606_0000_step13_078h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step13_078h.nc
+    pred step 14 (+84h) -> aurora_pred_20220606_0000_step14_084h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step14_084h.nc
+    pred step 15 (+90h) -> aurora_pred_20220606_0000_step15_090h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step15_090h.nc
+    pred step 16 (+96h) -> aurora_pred_20220606_0000_step16_096h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step16_096h.nc
+    pred step 17 (+102h) -> aurora_pred_20220606_0000_step17_102h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step17_102h.nc
+    pred step 18 (+108h) -> aurora_pred_20220606_0000_step18_108h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step18_108h.nc
+    pred step 19 (+114h) -> aurora_pred_20220606_0000_step19_114h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step19_114h.nc
+    pred step 20 (+120h) -> aurora_pred_20220606_0000_step20_120h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step20_120h.nc
+    pred step 21 (+126h) -> aurora_pred_20220606_0000_step21_126h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step21_126h.nc
+    pred step 22 (+132h) -> aurora_pred_20220606_0000_step22_132h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step22_132h.nc
+    pred step 23 (+138h) -> aurora_pred_20220606_0000_step23_138h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step23_138h.nc
+    pred step 24 (+144h) -> aurora_pred_20220606_0000_step24_144h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step24_144h.nc
+    pred step 25 (+150h) -> aurora_pred_20220606_0000_step25_150h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step25_150h.nc
+    pred step 26 (+156h) -> aurora_pred_20220606_0000_step26_156h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step26_156h.nc
+    pred step 27 (+162h) -> aurora_pred_20220606_0000_step27_162h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step27_162h.nc
+    pred step 28 (+168h) -> aurora_pred_20220606_0000_step28_168h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step28_168h.nc
+    pred step 29 (+174h) -> aurora_pred_20220606_0000_step29_174h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step29_174h.nc
+    pred step 30 (+180h) -> aurora_pred_20220606_0000_step30_180h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step30_180h.nc
+    pred step 31 (+186h) -> aurora_pred_20220606_0000_step31_186h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step31_186h.nc
+    pred step 32 (+192h) -> aurora_pred_20220606_0000_step32_192h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step32_192h.nc
+    pred step 33 (+198h) -> aurora_pred_20220606_0000_step33_198h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step33_198h.nc
+    pred step 34 (+204h) -> aurora_pred_20220606_0000_step34_204h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step34_204h.nc
+    pred step 35 (+210h) -> aurora_pred_20220606_0000_step35_210h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step35_210h.nc
+    pred step 36 (+216h) -> aurora_pred_20220606_0000_step36_216h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step36_216h.nc
+    pred step 37 (+222h) -> aurora_pred_20220606_0000_step37_222h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step37_222h.nc
+    pred step 38 (+228h) -> aurora_pred_20220606_0000_step38_228h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step38_228h.nc
+    pred step 39 (+234h) -> aurora_pred_20220606_0000_step39_234h.nc (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step39_234h.nc
+    pred step 40 (+240h) -> aurora_pred_20220606_0000_step40_240h.nc (Disk)
+    ✓ Done in 667.2s
+
+  Waiting for background saves to complete...
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220606_0000_step40_240h.nc
+
+======================================================================
+  COMPLETE
+======================================================================
+  Output saved to: /scratch-local/ekasteleyn.21386495/aurora_hres_latents
+  Files: 176 .pt files, 880 .nc files
+
+========================================
+  COMPLETE: Tue Mar 31 14:30:25 CEST 2026
+========================================

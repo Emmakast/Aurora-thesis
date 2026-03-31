@@ -9,6 +9,7 @@
 #SBATCH --gpus=1
 #SBATCH --mem=192G
 #SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
 #SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/scripts/steering
 
 # NOTE: Run download_hres_feb_to_dec2022.job FIRST to pre-download data!
@@ -32,12 +33,13 @@ echo "========================================"
 echo ""
 
 # ── Run ──────────────────────────────────────────────────────────────────────
-# February to December 2022 dates
-DATES=$(python -c 'import pandas as pd; print(" ".join(pd.date_range("2022-02-01", "2022-06-06").strftime("%Y-%m-%d").tolist()))')
+# June 7th to December 2022 dates
+DATES=$(python -c 'import pandas as pd; print(" ".join(pd.date_range("2022-06-07", "2022-12-31").strftime("%Y-%m-%d").tolist()))')
 
 PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python \
     /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py \
     --dates $DATES \
+    --cache-dir /scratch-shared/ekasteleyn/downloads/hres_t0 \
     --num-steps 40 \
     --save-predictions \
     --init-hours 0
