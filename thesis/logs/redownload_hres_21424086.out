@@ -1,0 +1,100 @@
+========================================
+  REDOWNLOAD CORRUPTED HRES T0 FILES
+========================================
+Job ID:       21424086
+Date:         Wed Apr  1 09:10:54 CEST 2026
+Node:         tcn452.local.snellius.surf.nl
+========================================
+
+============================================================
+  HRES T0 DATA DOWNLOAD
+============================================================
+  Dates: 64
+  Cache: /scratch-shared/ekasteleyn/downloads/hres_t0
+============================================================
+
+[1/3] Total dates to download: 64
+
+[2/3] Static variables...
+  ✓ Static variables already cached
+
+[3/3] HRES T0 / ERA5 data...
+  Opening WeatherBench2 datasets...
+  Downloading 2022-05-18 surface variables (HRES)...
+  Downloading 2022-05-18 atmospheric variables (HRES)...
+  ✓ 2022-05-18 downloaded
+  Downloading 2022-05-19 surface variables (HRES)...
+  Downloading 2022-05-19 atmospheric variables (HRES)...
+  ✓ 2022-05-19 downloaded
+  ✓ 2022-10-31 already cached
+  ✓ 2022-11-01 already cached
+  ✓ 2022-11-02 already cached
+  ✓ 2022-11-03 already cached
+  ✓ 2022-11-04 already cached
+  ✓ 2022-11-05 already cached
+  ✓ 2022-11-06 already cached
+  ✓ 2022-11-07 already cached
+  ✓ 2022-11-08 already cached
+  ✓ 2022-11-09 already cached
+  ✓ 2022-11-10 already cached
+  ✓ 2022-11-11 already cached
+  ✓ 2022-11-12 already cached
+  ✓ 2022-11-13 already cached
+  ✓ 2022-11-14 already cached
+  ✓ 2022-11-15 already cached
+  ✓ 2022-11-16 already cached
+  ✓ 2022-11-17 already cached
+  ✓ 2022-11-18 already cached
+  ✓ 2022-11-19 already cached
+  ✓ 2022-11-20 already cached
+  ✓ 2022-11-21 already cached
+  ✓ 2022-11-22 already cached
+  ✓ 2022-11-23 already cached
+  ✓ 2022-11-24 already cached
+  ✓ 2022-11-25 already cached
+  ✓ 2022-11-26 already cached
+  ✓ 2022-11-27 already cached
+  ✓ 2022-11-28 already cached
+  ✓ 2022-11-29 already cached
+  ✓ 2022-11-30 already cached
+  ✓ 2022-12-01 already cached
+  ✓ 2022-12-02 already cached
+  ✓ 2022-12-03 already cached
+  ✓ 2022-12-04 already cached
+  ✓ 2022-12-05 already cached
+  ✓ 2022-12-06 already cached
+  ✓ 2022-12-07 already cached
+  ✓ 2022-12-08 already cached
+  ✓ 2022-12-09 already cached
+  ✓ 2022-12-10 already cached
+  ✓ 2022-12-11 already cached
+  ✓ 2022-12-12 already cached
+  ✓ 2022-12-13 already cached
+  ✓ 2022-12-14 already cached
+  ✓ 2022-12-15 already cached
+  ✓ 2022-12-16 already cached
+  ✓ 2022-12-17 already cached
+  ✓ 2022-12-18 already cached
+  ✓ 2022-12-19 already cached
+  ✓ 2022-12-20 already cached
+  ✓ 2022-12-21 already cached
+  ✓ 2022-12-22 already cached
+  ✓ 2022-12-23 already cached
+  ✓ 2022-12-24 already cached
+  ✓ 2022-12-25 already cached
+  ✓ 2022-12-26 already cached
+  ✓ 2022-12-27 already cached
+  ✓ 2022-12-28 already cached
+  ✓ 2022-12-29 already cached
+  ✓ 2022-12-30 already cached
+  ✓ 2022-12-31 already cached
+
+============================================================
+  DOWNLOAD COMPLETE
+============================================================
+  Files cached at: /scratch-shared/ekasteleyn/downloads/hres_t0
+  Total size: 745.15 GB
+
+========================================
+  COMPLETE: Wed Apr  1 09:12:26 CEST 2026
+========================================
