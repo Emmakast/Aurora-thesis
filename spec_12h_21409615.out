@@ -1,0 +1,905 @@
+Running pangu ke_850hpa for 12h lead time...
+
+======================================================================
+  KE SPECTRUM (850 hPa): pangu (2020)
+  Prediction: gs://weatherbench2/datasets/pangu/2018-2022_0012_0p25.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Level: 850.0 hPa | Lead times: [12]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_pangu_2020.csv
+======================================================================
+
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [2/24] 2020-01-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [3/24] 2020-02-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [4/24] 2020-02-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [5/24] 2020-03-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [6/24] 2020-03-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [7/24] 2020-04-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [8/24] 2020-04-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [9/24] 2020-05-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [10/24] 2020-05-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [11/24] 2020-06-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [12/24] 2020-06-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [13/24] 2020-07-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [14/24] 2020-07-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [15/24] 2020-08-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [16/24] 2020-08-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [17/24] 2020-09-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [18/24] 2020-09-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [19/24] 2020-10-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [20/24] 2020-10-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [21/24] 2020-11-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [22/24] 2020-11-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [23/24] 2020-12-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+  [24/24] 2020-12-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_pangu_2020.csv]
+
+✓ Saved 17280 rows → /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_pangu_2020.csv
+  Unique lead times: [np.int64(12)]
+  Unique dates: 24
+Running pangu q for 12h lead time...
+
+======================================================================
+  Q SPECTRUM: pangu (2020)
+  Prediction: gs://weatherbench2/datasets/pangu/2018-2022_0012_0p25.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Level: 500.0 hPa | Lead times: [12]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/q_spectrum_pangu_2020.csv
+======================================================================
+
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [2/24] 2020-01-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [3/24] 2020-02-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [4/24] 2020-02-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [5/24] 2020-03-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [6/24] 2020-03-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [7/24] 2020-04-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [8/24] 2020-04-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [9/24] 2020-05-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [10/24] 2020-05-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [11/24] 2020-06-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [12/24] 2020-06-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [13/24] 2020-07-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [14/24] 2020-07-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [15/24] 2020-08-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [16/24] 2020-08-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [17/24] 2020-09-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [18/24] 2020-09-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [19/24] 2020-10-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [20/24] 2020-10-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [21/24] 2020-11-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [22/24] 2020-11-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [23/24] 2020-12-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+  [24/24] 2020-12-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_pangu_2020.csv]
+
+✓ Saved 17280 rows → /home/ekasteleyn/aurora_thesis/thesis/results/q_spectrum_pangu_2020.csv
+  Unique lead times: [np.int64(12)]
+  Unique dates: 24
+Running graphcast ke_850hpa for 12h lead time...
+
+======================================================================
+  KE SPECTRUM (850 hPa): graphcast (2020)
+  Prediction: gs://weatherbench2/datasets/graphcast/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Level: 850.0 hPa | Lead times: [12]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_graphcast_2020.csv
+======================================================================
+
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'total_precipitation_24hr', 'total_precipitation_6hr']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [2/24] 2020-01-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [3/24] 2020-02-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [4/24] 2020-02-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [5/24] 2020-03-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [6/24] 2020-03-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [7/24] 2020-04-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [8/24] 2020-04-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [9/24] 2020-05-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [10/24] 2020-05-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [11/24] 2020-06-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [12/24] 2020-06-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [13/24] 2020-07-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [14/24] 2020-07-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [15/24] 2020-08-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [16/24] 2020-08-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [17/24] 2020-09-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [18/24] 2020-09-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [19/24] 2020-10-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [20/24] 2020-10-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [21/24] 2020-11-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [22/24] 2020-11-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [23/24] 2020-12-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+  [24/24] 2020-12-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_graphcast_2020.csv]
+
+✓ Saved 17280 rows → /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_graphcast_2020.csv
+  Unique lead times: [np.int64(12)]
+  Unique dates: 24
+Running graphcast q for 12h lead time...
+
+======================================================================
+  Q SPECTRUM: graphcast (2020)
+  Prediction: gs://weatherbench2/datasets/graphcast/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Level: 500.0 hPa | Lead times: [12]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/q_spectrum_graphcast_2020.csv
+======================================================================
+
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'total_precipitation_24hr', 'total_precipitation_6hr']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [2/24] 2020-01-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [3/24] 2020-02-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [4/24] 2020-02-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [5/24] 2020-03-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [6/24] 2020-03-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [7/24] 2020-04-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [8/24] 2020-04-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [9/24] 2020-05-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [10/24] 2020-05-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [11/24] 2020-06-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [12/24] 2020-06-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [13/24] 2020-07-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [14/24] 2020-07-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [15/24] 2020-08-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [16/24] 2020-08-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [17/24] 2020-09-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [18/24] 2020-09-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [19/24] 2020-10-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [20/24] 2020-10-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [21/24] 2020-11-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [22/24] 2020-11-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [23/24] 2020-12-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+  [24/24] 2020-12-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_graphcast_2020.csv]
+
+✓ Saved 17280 rows → /home/ekasteleyn/aurora_thesis/thesis/results/q_spectrum_graphcast_2020.csv
+  Unique lead times: [np.int64(12)]
+  Unique dates: 24
+Running hres ke_850hpa for 12h lead time...
+
+======================================================================
+  KE SPECTRUM (850 hPa): hres (2020)
+  Prediction: gs://weatherbench2/datasets/hres/2016-2022-0012-1440x721.zarr
+  Reference:  gs://weatherbench2/datasets/hres_t0/2016-2022-6h-1440x721.zarr
+  Level: 850.0 hPa | Lead times: [12]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_hres_2020.csv
+======================================================================
+
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'surface_pressure', 'temperature', 'total_precipitation']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [2/24] 2020-01-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [3/24] 2020-02-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [4/24] 2020-02-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [5/24] 2020-03-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [6/24] 2020-03-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [7/24] 2020-04-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [8/24] 2020-04-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [9/24] 2020-05-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [10/24] 2020-05-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [11/24] 2020-06-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [12/24] 2020-06-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [13/24] 2020-07-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [14/24] 2020-07-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [15/24] 2020-08-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [16/24] 2020-08-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [17/24] 2020-09-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [18/24] 2020-09-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [19/24] 2020-10-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [20/24] 2020-10-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [21/24] 2020-11-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [22/24] 2020-11-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [23/24] 2020-12-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+  [24/24] 2020-12-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_hres_2020.csv]
+
+✓ Saved 17280 rows → /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_hres_2020.csv
+  Unique lead times: [np.int64(12)]
+  Unique dates: 24
+Running hres q for 12h lead time...
+
+======================================================================
+  Q SPECTRUM: hres (2020)
+  Prediction: gs://weatherbench2/datasets/hres/2016-2022-0012-1440x721.zarr
+  Reference:  gs://weatherbench2/datasets/hres_t0/2016-2022-6h-1440x721.zarr
+  Level: 500.0 hPa | Lead times: [12]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/q_spectrum_hres_2020.csv
+======================================================================
+
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'surface_pressure', 'temperature', 'total_precipitation']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [2/24] 2020-01-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [3/24] 2020-02-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [4/24] 2020-02-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [5/24] 2020-03-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [6/24] 2020-03-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [7/24] 2020-04-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [8/24] 2020-04-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [9/24] 2020-05-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [10/24] 2020-05-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [11/24] 2020-06-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [12/24] 2020-06-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [13/24] 2020-07-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [14/24] 2020-07-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [15/24] 2020-08-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [16/24] 2020-08-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [17/24] 2020-09-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [18/24] 2020-09-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [19/24] 2020-10-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [20/24] 2020-10-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [21/24] 2020-11-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [22/24] 2020-11-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [23/24] 2020-12-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+  [24/24] 2020-12-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to q_spectrum_hres_2020.csv]
+
+✓ Saved 17280 rows → /home/ekasteleyn/aurora_thesis/thesis/results/q_spectrum_hres_2020.csv
+  Unique lead times: [np.int64(12)]
+  Unique dates: 24
+Running fuxi ke_850hpa for 12h lead time...
+
+======================================================================
+  KE SPECTRUM (850 hPa): fuxi (2020)
+  Prediction: gs://weatherbench2/datasets/fuxi/2020-1440x721.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Level: 850.0 hPa | Lead times: [12]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_fuxi_2020.csv
+======================================================================
+
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [2/24] 2020-01-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [3/24] 2020-02-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [4/24] 2020-02-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [5/24] 2020-03-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [6/24] 2020-03-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [7/24] 2020-04-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [8/24] 2020-04-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [9/24] 2020-05-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [10/24] 2020-05-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [11/24] 2020-06-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [12/24] 2020-06-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [13/24] 2020-07-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [14/24] 2020-07-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [15/24] 2020-08-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [16/24] 2020-08-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [17/24] 2020-09-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [18/24] 2020-09-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [19/24] 2020-10-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [20/24] 2020-10-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [21/24] 2020-11-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [22/24] 2020-11-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [23/24] 2020-12-01
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+  [24/24] 2020-12-15
+      12h pred ✓ (max_l=359) | era5 ✓
+    [flushed 720 rows to ke_spectrum_850hpa_fuxi_2020.csv]
+
+✓ Saved 17280 rows → /home/ekasteleyn/aurora_thesis/thesis/results/ke_spectrum_850hpa_fuxi_2020.csv
+  Unique lead times: [np.int64(12)]
+  Unique dates: 24
+Running fuxi q for 12h lead time...
+
+======================================================================
+  Q SPECTRUM: fuxi (2020)
+  Prediction: gs://weatherbench2/datasets/fuxi/2020-1440x721.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Level: 500.0 hPa | Lead times: [12]
+  Incremental output: /home/ekasteleyn/aurora_thesis/thesis/results/q_spectrum_fuxi_2020.csv
+======================================================================
+
+  Prediction vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind']
+  Has prediction_timedelta: True (prediction_timedelta)
+  Init dates: 24
+
+  [1/24] 2020-01-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [2/24] 2020-01-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [3/24] 2020-02-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [4/24] 2020-02-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [5/24] 2020-03-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [6/24] 2020-03-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [7/24] 2020-04-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [8/24] 2020-04-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [9/24] 2020-05-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [10/24] 2020-05-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [11/24] 2020-06-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [12/24] 2020-06-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [13/24] 2020-07-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [14/24] 2020-07-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [15/24] 2020-08-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [16/24] 2020-08-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [17/24] 2020-09-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [18/24] 2020-09-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [19/24] 2020-10-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [20/24] 2020-10-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [21/24] 2020-11-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [22/24] 2020-11-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [23/24] 2020-12-01
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+  [24/24] 2020-12-15
+      12h pred ✗ (None of the needed variables ('specific_humidity', 'q') found in dataset. Available: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'temperature', 'total_precipitation_24hr_from_6hr', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']) | era5 ✓
+    [flushed 360 rows to q_spectrum_fuxi_2020.csv]
+
+✓ Saved 8640 rows → /home/ekasteleyn/aurora_thesis/thesis/results/q_spectrum_fuxi_2020.csv
+  Unique lead times: [np.int64(12)]
+  Unique dates: 24
+Done!
