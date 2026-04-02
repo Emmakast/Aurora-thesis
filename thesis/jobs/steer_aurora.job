@@ -1,0 +1,33 @@
+#!/bin/bash
+#SBATCH --job-name=steer_aurora
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/logs/steer_aurora_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/logs/steer_aurora_%j.err
+#SBATCH --time=2:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=128G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Diagnostics ──────────────────────────────────────────────────────────────
+echo "========================================"
+echo "  STEER AURORA"
+echo "========================================"
+echo "Job ID:       $SLURM_JOB_ID"
+echo "Date:         $(date)"
+echo "Node:         $(hostname)"
+echo "GPU:"
+nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
+echo "========================================"
+echo ""
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/steer_aurora.py
