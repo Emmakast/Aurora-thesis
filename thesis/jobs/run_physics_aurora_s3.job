@@ -14,6 +14,6 @@ source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
 echo "Started Aurora S3 Physics Evaluation at $(date)"
 
 # Run the physics evaluation (skipping the KE spectrum)
-PYTHONUNBUFFERED=1 python /home/ekasteleyn/aurora_thesis/thesis/scripts/run_physics_evaluation_s3.py --year 2022 --no-spectrum --workers 16
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/scripts/run_physics_evaluation_s3.py --year 2022 --no-spectrum --workers 16
 
 echo "Finished at $(date)"

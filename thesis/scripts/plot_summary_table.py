@@ -17,10 +17,10 @@ import pandas as pd
 
 # ── Config ───────────────────────────────────────────────────────────────────
 
-MODELS = ["hres", "fuxi", "graphcast", "neuralgcm", "pangu"]
+MODELS = ["hres", "fuxi", "graphcast", "neuralgcm", "pangu", "aurora"]
 NICE = {
     "hres": "HRES", "fuxi": "FuXi", "graphcast": "GraphCast",
-    "neuralgcm": "NeuralGCM", "pangu": "Pangu-Weather",
+    "neuralgcm": "NeuralGCM", "pangu": "Pangu", "aurora": "Aurora",
 }
 
 # Metrics to show (in order) and whether lower is better
@@ -64,6 +64,8 @@ def load_summaries(results_dir: Path, ifs_mode: bool = False) -> dict[str, pd.Da
             p = results_dir / f"physics_summary_{m}_2020_vs_era5.csv"
             if not p.exists():
                 p = results_dir / f"physics_summary_{m}_2020.csv"
+        elif m == "aurora":
+            p = results_dir / f"physics_summary_aurora_s3_2022{suffix}.csv"
         else:
             p = results_dir / f"physics_summary_{m}_2020{suffix}.csv"
         if p.exists():
@@ -254,7 +256,7 @@ def render_combined_table(leads: list[int], summaries: dict[str, pd.DataFrame],
         "(White = 0, Blue = positive, Red = negative, *** = nearest available lead time)",
         fontsize=13, fontweight="bold", pad=12,
     )
-    out = outdir / "summary_table_combined.png"
+    out = outdir / "summary_table_combined_aurora.png"
     fig.savefig(out, dpi=200, bbox_inches="tight", pad_inches=0.15)
     plt.close(fig)
     print(f"Saved {out}")
@@ -289,7 +291,7 @@ def render_combined_table(leads: list[int], summaries: dict[str, pd.DataFrame],
             fontsize=13, fontweight="bold", pad=20,
         )
         fig2.tight_layout()
-        out2 = outdir / f"summary_table_{lead_str}.png"
+        out2 = outdir / f"summary_table_{lead_str}_aurora.png"
         fig2.savefig(out2, dpi=200, bbox_inches="tight")
         plt.close(fig2)
         print(f"Saved {out2}")
@@ -378,7 +380,7 @@ def render_combined_table_by_model(leads: list[int], summaries: dict[str, pd.Dat
         "(White = 0, Blue = positive, Red = negative, *** = nearest available lead time)",
         fontsize=13, fontweight="bold", pad=12,
     )
-    out = outdir / "summary_table_combined_model.png"
+    out = outdir / "summary_table_combined_model_aurora.png"
     fig.savefig(out, dpi=200, bbox_inches="tight", pad_inches=0.15)
     plt.close(fig)
     print(f"Saved {out}")
@@ -465,10 +467,237 @@ def render_split_tables(leads: list[int], summaries: dict[str, pd.DataFrame],
             "(White = 0, Blue = positive, Red = negative, *** = nearest available lead time)",
             fontsize=13, fontweight="bold", pad=12,
         )
-        out = outdir / f"summary_table_{filename_suffix}.png"
+        out = outdir / f"summary_table_{filename_suffix}_aurora.png"
         fig.savefig(out, dpi=200, bbox_inches="tight", pad_inches=0.15)
         plt.close(fig)
         print(f"Saved {out}")
+
+
+def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame], outdir: Path):
+    """Renders a single unified PNG table with metrics on rows and models on columns."""
+    
+    models_to_plot = ["hres", "pangu", "graphcast", "fuxi", "neuralgcm", "aurora"]
+    model_labels = [NICE.get(m, m) for m in models_to_plot]
+
+    categories = {
+        "Conservation": [
+            ("dry_mass_drift_pct_per_day", "Dry Mass (→ 0)"),
+            ("water_mass_drift_pct_per_day", "Water Mass (→ 0)"),
+            ("total_energy_drift_pct_per_day", "Total Energy (→ 0)")
+        ],
+        "Structural": [
+            ("effective_resolution_km", "Eff. Res. km (↓)"),
+            ("spectral_divergence", "Spec. Div. (↓)"),
+            ("spectral_residual", "Spec. Res. (↓)")
+        ],
+        "Dynamical": [
+            ("geostrophic_rmse", "Geostrophic (↓)"),
+            ("hydrostatic_rmse", "Hydrostatic (↓)")
+        ]
+    }
+
+    # 1. Calculate max abs per metric for color scaling
+    max_abs = {}
+    for cat, metrics in categories.items():
+        for m_key, _ in metrics:
+            vals = []
+            for m in models_to_plot:
+                if m in summaries:
+                    df = summaries[m]
+                    for lead in leads:
+                        df_lt = df[df["lead_time_hours"] == lead]
+                        if df_lt.empty:
+                            avail = sorted(df["lead_time_hours"].unique())
+                            nearest = min(avail, key=lambda x: abs(x - lead))
+                            df_lt = df[df["lead_time_hours"] == nearest]
+                        val = get_value(df_lt, m_key)
+                        if not np.isnan(val):
+                            vals.append(abs(val))
+            max_abs[m_key] = max(vals) if vals else 1.0
+            if max_abs[m_key] == 0: max_abs[m_key] = 1.0
+
+    # 2. Build table data
+    cell_texts = []
+    cell_colors = []
+
+    white = np.array([1.0, 1.0, 1.0])
+    blue = np.array([0.7, 0.85, 1.0])
+    red = np.array([1.0, 0.75, 0.75])
+    header_color = np.array([0.9, 0.9, 0.9])
+    cat_color = np.array([0.95, 0.95, 0.95])
+
+    # Header Row 1: Lead times
+    row0_text = ["", ""]
+    row0_color = [header_color, header_color]
+    for lead in leads:
+        block = [""] * len(models_to_plot)
+        block[len(models_to_plot)//2] = f"Lead Time: {lead}h"
+        row0_text.extend(block)
+        row0_color.extend([header_color] * len(models_to_plot))
+    cell_texts.append(row0_text)
+    cell_colors.append(row0_color)
+
+    # Header Row 2: Models
+    row1_text = ["Category", "Metric"] + model_labels * len(leads)
+    row1_color = [header_color, header_color] + [header_color] * (len(models_to_plot) * len(leads))
+    cell_texts.append(row1_text)
+    cell_colors.append(row1_color)
+
+    # Data Rows
+    for cat_name, metrics in categories.items():
+        for i, (m_key, m_label) in enumerate(metrics):
+            row_t = [cat_name if i == len(metrics)//2 else "", m_label]
+            row_c = [cat_color, cat_color]
+
+            for lead in leads:
+                for m in models_to_plot:
+                    if m not in summaries:
+                        row_t.append("—")
+                        row_c.append(white)
+                        continue
+
+                    df = summaries[m]
+                    df_lt = df[df["lead_time_hours"] == lead]
+                    is_appx = False
+                    if df_lt.empty:
+                        avail = sorted(df["lead_time_hours"].unique())
+                        nearest = min(avail, key=lambda x: abs(x - lead))
+                        df_lt = df[df["lead_time_hours"] == nearest]
+                        is_appx = True
+
+                    val = get_value(df_lt, m_key)
+                    if np.isnan(val):
+                        row_t.append("—")
+                        row_c.append(white)
+                    else:
+                        text = fmt(val, m_key)
+                        if is_appx: text += "*"
+                        row_t.append(text)
+
+                        # Apply color logic
+                        intensity = min(abs(val) / max_abs[m_key], 1.0) * 0.8
+                        if val > 0: c = white * (1 - intensity) + blue * intensity
+                        elif val < 0: c = white * (1 - intensity) + red * intensity
+                        else: c = white
+                        row_c.append(c)
+
+            cell_texts.append(row_t)
+            cell_colors.append(row_c)
+
+    # 3. Matplotlib rendering
+    n_cols = len(cell_texts[0])
+    n_rows = len(cell_texts)
+    fig_w = max(1.2 * n_cols, 16)
+    fig_h = max(0.4 * n_rows, 6)
+
+    fig, ax = plt.subplots(figsize=(fig_w, fig_h))
+    ax.axis("off")
+
+    colWidths = [0.08, 0.17] + [0.05] * (len(leads) * len(models_to_plot))
+    table = ax.table(
+        cellText=cell_texts,
+        cellColours=[[tuple(c) for c in row] for row in cell_colors],
+        colWidths=colWidths,
+        loc="center",
+        cellLoc="center"
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(9)
+    table.scale(1.0, 1.8)
+
+    # Styling headers
+    for j in range(n_cols):
+        table[0, j].set_text_props(fontweight="bold", fontsize=11)
+        table[1, j].set_text_props(fontweight="bold", fontsize=10)
+
+    # Styling category and metric names
+    for i in range(2, n_rows):
+        table[i, 0].set_text_props(fontweight="bold")
+        table[i, 1].set_text_props(fontweight="bold")
+
+    # --- Cell Merging ---
+    # Top-left empty 2x2 area
+    table[0, 0].visible_edges = ''
+    table[0, 1].visible_edges = ''
+
+    # Top row Lead times merging
+    for l_idx in range(len(leads)):
+        start_col = 2 + l_idx * len(models_to_plot)
+        end_col = start_col + len(models_to_plot) - 1
+        for c in range(start_col, end_col + 1):
+            if c == start_col:
+                table[0, c].visible_edges = 'LBT'
+            elif c == end_col:
+                table[0, c].visible_edges = 'RBT'
+            else:
+                table[0, c].visible_edges = 'BT'
+
+    # First Column (Categories) merging
+    row_idx = 2
+    for _, metrics in categories.items():
+        start_row = row_idx
+        end_row = row_idx + len(metrics) - 1
+        for r in range(start_row, end_row + 1):
+            if r == start_row:
+                table[r, 0].visible_edges = 'LRT'
+            elif r == end_row:
+                table[r, 0].visible_edges = 'LRB'
+            else:
+                table[r, 0].visible_edges = 'LR'
+        row_idx += len(metrics)
+
+    # --- Draw Thick Lines ---
+    # Fix axes limits so that drawing plot lines doesn't move the table
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.autoscale(False)
+    fig.canvas.draw()
+
+    x_left = table[0, 0].get_x()
+    x_metric = table[0, 1].get_x() + table[0, 1].get_width()
+    x_right = table[0, n_cols - 1].get_x() + table[0, n_cols - 1].get_width()
+
+    y_top = table[0, 0].get_y() + table[0, 0].get_height()
+    y_bot = table[n_rows - 1, 0].get_y()
+    y_head_row0 = table[0, 0].get_y()
+    y_head_row1 = table[1, 0].get_y()
+
+    # Outer Border
+    ax.plot([x_left, x_right], [y_top, y_top], color='black', linewidth=2.5, clip_on=False)
+    ax.plot([x_left, x_right], [y_bot, y_bot], color='black', linewidth=2.5, clip_on=False)
+    ax.plot([x_left, x_left], [y_bot, y_top], color='black', linewidth=2.5, clip_on=False)
+    ax.plot([x_right, x_right], [y_bot, y_top], color='black', linewidth=2.5, clip_on=False)
+
+    # Header borders
+    ax.plot([x_left, x_right], [y_head_row1, y_head_row1], color='black', linewidth=2.5, clip_on=False)
+    ax.plot([x_metric, x_right], [y_head_row0, y_head_row0], color='black', linewidth=2.5, clip_on=False)
+
+    # Vertical Categories separator
+    ax.plot([x_metric, x_metric], [y_bot, y_top], color='black', linewidth=2.5, clip_on=False)
+    x_cat_edge = table[0, 0].get_x() + table[0, 0].get_width()
+    ax.plot([x_cat_edge, x_cat_edge], [y_bot, y_head_row1], color='black', linewidth=2.5, clip_on=False)
+
+    # Lead time separators
+    for l_idx in range(1, len(leads)):
+        c = 2 + l_idx * len(models_to_plot)
+        x = table[0, c].get_x()
+        ax.plot([x, x], [y_bot, y_top], color='black', linewidth=2.5, clip_on=False)
+
+    # Category separators
+    row_bounds = [
+        1 + len(categories["Conservation"]),
+        1 + len(categories["Conservation"]) + len(categories["Structural"]),
+    ]
+    for end_row in row_bounds:
+        y = table[end_row, 0].get_y()
+        ax.plot([x_left, x_right], [y, y], color='black', linewidth=2.5, clip_on=False)
+
+    ax.set_title("Unified Physics Metrics Summary\n(White=0, Blue=Pos Drift, Red=Neg Drift, *=Nearest Lead)", fontweight="bold", fontsize=14, pad=20)
+
+    out = outdir / "summary_table_unified_transposed_aurora.png"
+    fig.savefig(out, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+    print(f"Saved {out}")
 
 
 def main():
@@ -496,6 +725,7 @@ def main():
     render_combined_table(leads, summaries, outdir)
     render_combined_table_by_model(leads, summaries, outdir)
     render_split_tables(leads, summaries, outdir)
+    render_unified_png_table(leads, summaries, outdir)
 
 
 if __name__ == "__main__":

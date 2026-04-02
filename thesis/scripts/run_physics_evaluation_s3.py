@@ -135,15 +135,13 @@ def download_prediction(s3_client, date_str: str, init_hour: int, lead_hours: in
         s3_client.download_file(S3_BUCKET, s3_key, str(local_path))
         return local_path
     except Exception as e:
-        return None
+        raise RuntimeError(f"Failed to download {s3_key}: {e}")
 
 
 def load_prediction_from_s3(s3_client, date_str: str, init_hour: int, 
                            lead_hours: int, local_dir: Path) -> Optional[xr.Dataset]:
     """Load a prediction dataset from S3."""
     local_path = download_prediction(s3_client, date_str, init_hour, lead_hours, local_dir)
-    if local_path is None:
-        return None
     
     ds = xr.open_dataset(local_path)
     
@@ -215,6 +213,47 @@ def _get_ps(ds: xr.Dataset, ds_static: xr.Dataset, level_dim: str = "level",
     raise ValueError("Cannot derive surface pressure")
 
 
+def _align_era5_to_aurora(
+    ds_era5: xr.Dataset,
+    ds_aurora: xr.Dataset,
+    lat_name: str = "latitude",
+    lon_name: str = "longitude",
+) -> xr.Dataset:
+    """
+    Align ERA5 grid to match Aurora for spectral comparison.
+    """
+    n_era5 = ds_era5.sizes.get(lat_name, 0)
+    n_aurora = ds_aurora.sizes.get(lat_name, 0)
+    n_lon_era5 = ds_era5.sizes.get(lon_name, 0)
+    n_lon_aurora = ds_aurora.sizes.get(lon_name, 0)
+
+    if n_lon_era5 != n_lon_aurora:
+        raise ValueError(f"Longitude mismatch: {n_lon_era5} vs {n_lon_aurora}")
+
+    if n_era5 == n_aurora:
+        result = ds_era5
+    elif n_era5 == n_aurora + 1:
+        # ERA5 has 1 extra lat row (pole) — drop it
+        lats = ds_era5[lat_name].values
+        if lats[0] > lats[-1]:  # Descending (N→S): drop last row (south pole)
+            result = ds_era5.isel({lat_name: slice(0, -1)})
+        else:                   # Ascending (S→N): drop first row (south pole)
+            result = ds_era5.isel({lat_name: slice(1, None)})
+    else:
+        raise ValueError(f"Latitude mismatch: ERA5 has {n_era5}, aurora has {n_aurora}")
+
+    result = result.assign_coords({lat_name: ds_aurora[lat_name].values})
+
+    if lat_name in result.dims and lon_name in result.dims:
+        dims_list = list(result.dims)
+        idx_lon = dims_list.index(lon_name)
+        idx_lat = dims_list.index(lat_name)
+        if idx_lon < idx_lat:
+            dims_list[idx_lon], dims_list[idx_lat] = dims_list[idx_lat], dims_list[idx_lon]
+            result = result.transpose(*dims_list)
+
+    return result
+
 # ============================================================================
 # Single-Slice Evaluation
 # ============================================================================
@@ -226,6 +265,7 @@ def _evaluate_one(
     counter: int,
     total: int,
     verbose: bool,
+    no_spectrum: bool = False,
 ) -> list[dict]:
     """
     Evaluate physics metrics for one (date, init_hour, lead_time) combination.
@@ -246,13 +286,13 @@ def _evaluate_one(
         with tempfile.TemporaryDirectory() as tmpdir:
             tmpdir = Path(tmpdir)
             
-            # Load prediction from S3
-            ds_aurora = load_prediction_from_s3(
-                s3_client, date_str, init_hour, lead_hours, tmpdir
-            )
-            
-            if ds_aurora is None:
-                _log(f"    ⚠ File not found on S3")
+            try:
+                # Load prediction from S3
+                ds_aurora = load_prediction_from_s3(
+                    s3_client, date_str, init_hour, lead_hours, tmpdir
+                )
+            except Exception as e:
+                _log(f"    ⚠ {e}")
                 return rows
             
             # Load ERA5
@@ -260,17 +300,28 @@ def _evaluate_one(
             ds_era5_daily = open_zarr_anonymous(ERA5_DAILY_ZARR)
             ds_static = load_static_fields(ds_era5)
             
+            # Load Aurora data
+            ds_aurora = ds_aurora.load()
+            
             # Compute valid time
             init_time = np.datetime64(f"{date_str}T{init_hour:02d}:00", "ns")
             lead_td = np.timedelta64(lead_hours, "h")
             valid_time = init_time + lead_td
+
+            # Align ERA5 to Aurora Grid
+            ds_era5_t = ds_era5.sel(time=valid_time, method="nearest").load()
+            ds_era5_aligned = _align_era5_to_aurora(ds_era5_t, ds_aurora)
             
             # Grid cell area
-            area = get_grid_cell_area(ds_era5.isel(time=0, drop=True))
+            area_era5 = get_grid_cell_area(ds_era5.isel(time=0, drop=True))
+            area_aurora = _align_era5_to_aurora(area_era5.to_dataset(name="area"), ds_aurora)["area"]
             
             # Get static fields
             z_sfc_name = _find_var(ds_static, ZSFC_NAMES)
-            z_sfc = ds_static[z_sfc_name] if z_sfc_name else None
+            z_sfc_era5 = ds_static[z_sfc_name] if z_sfc_name else None
+            z_sfc_aurora = None
+            if z_sfc_era5 is not None:
+                z_sfc_aurora = _align_era5_to_aurora(z_sfc_era5.to_dataset(name="z_sfc"), ds_aurora)["z_sfc"]
             
             # Level dimension
             level_dim = _detect_level_dim(ds_aurora)
@@ -287,18 +338,12 @@ def _evaluate_one(
                     "n_levels": n_levels,
                 })
             
-            # Load Aurora data
-            ds_aurora = ds_aurora.load()
-            
-            # Load ERA5 at valid time
-            ds_era5_t = ds_era5.sel(time=valid_time, method="nearest").load()
-            
             # --- Compute Metrics ---
             
             # 1. Hydrostatic Imbalance
             try:
-                hydro_aurora = compute_hydrostatic_imbalance(ds_aurora, level_dim=level_dim)
-                hydro_era5 = compute_hydrostatic_imbalance(ds_era5_t)
+                hydro_aurora = compute_hydrostatic_imbalance(ds_aurora, area_aurora, level_dim=level_dim)
+                hydro_era5 = compute_hydrostatic_imbalance(ds_era5_t, area_era5)
                 _append("hydrostatic_rmse", float(hydro_aurora), float(hydro_era5))
                 _log(f"    Hydrostatic RMSE: {hydro_aurora:.4f} (ERA5: {hydro_era5:.4f})")
             except Exception as e:
@@ -306,8 +351,8 @@ def _evaluate_one(
             
             # 2. Geostrophic Imbalance
             try:
-                geo_aurora = compute_geostrophic_imbalance(ds_aurora, level_dim=level_dim)
-                geo_era5 = compute_geostrophic_imbalance(ds_era5_t)
+                geo_aurora = compute_geostrophic_imbalance(ds_aurora, area_aurora, level_dim=level_dim)
+                geo_era5 = compute_geostrophic_imbalance(ds_era5_t, area_era5)
                 _append("geostrophic_rmse", float(geo_aurora), float(geo_era5))
                 _log(f"    Geostrophic RMSE: {geo_aurora:.4f} (ERA5: {geo_era5:.4f})")
             except Exception as e:
@@ -315,34 +360,46 @@ def _evaluate_one(
             
             # 3. Conservation metrics (mass, water, energy)
             try:
+                # Interpolate static fields for Aurora
+                ds_static_aurora = ds_static.interp(
+                    latitude=ds_aurora.latitude,
+                    longitude=ds_aurora.longitude,
+                    method="nearest"
+                )
+                
                 # Get surface pressure
-                ps_aurora = _get_ps(ds_aurora, ds_static, level_dim=level_dim)
+                ps_aurora = _get_ps(ds_aurora, ds_static_aurora, level_dim=level_dim)
                 ps_era5 = _get_ps(ds_era5_t, ds_static)
                 
-                cons_aurora = compute_conservation_scalars(
-                    ds_aurora, ps_aurora, area, level_dim=level_dim
+                dry_aurora, water_aurora, energy_aurora = compute_conservation_scalars(
+                    ds_aurora, ps_aurora, area_aurora, z_sfc=z_sfc_aurora, level_dim=level_dim
                 )
-                cons_era5 = compute_conservation_scalars(ds_era5_t, ps_era5, area)
+                dry_era5, water_era5, energy_era5 = compute_conservation_scalars(
+                    ds_era5_t, ps_era5, area_era5, z_sfc=z_sfc_era5
+                )
                 
-                for key in ["dry_mass_Eg", "water_mass_kg", "total_energy_J"]:
-                    if key in cons_aurora and key in cons_era5:
-                        _append(key, cons_aurora[key], cons_era5[key])
-                        _log(f"    {key}: {cons_aurora[key]:.4e} (ERA5: {cons_era5[key]:.4e})")
+                _append("dry_mass_Eg", dry_aurora, dry_era5)
+                _append("water_mass_kg", water_aurora, water_era5)
+                _append("total_energy_J", energy_aurora, energy_era5)
+                _log(f"    Dry Mass [Eg]: {dry_aurora:.4f} (ERA5: {dry_era5:.4f})")
+                _log(f"    Water Mass [kg]: {water_aurora:.4e} (ERA5: {water_era5:.4e})")
+                _log(f"    Energy [J]: {energy_aurora:.4e} (ERA5: {energy_era5:.4e})")
             except Exception as e:
                 _log(f"    ⚠ Conservation error: {e}")
             
             # 4. KE Spectrum
-            try:
-                spec_aurora = compute_ke_spectrum(ds_aurora, level_dim=level_dim)
-                spec_era5 = compute_ke_spectrum(ds_era5_t)
-                
-                if spec_aurora is not None and spec_era5 is not None:
-                    scores = compute_spectral_scores(spec_aurora, spec_era5)
-                    for score_name, score_val in scores.items():
-                        _append(f"spectrum_{score_name}", score_val)
-                    _log(f"    Spectrum L1: {scores.get('l1_error', 'N/A'):.4f}")
-            except Exception as e:
-                _log(f"    ⚠ Spectrum error: {e}")
+            if not no_spectrum:
+                try:
+                    wn_aurora, e_aurora = compute_ke_spectrum(ds_aurora, level_dim=level_dim)
+                    wn_era5, e_era5 = compute_ke_spectrum(ds_era5_aligned)
+                    
+                    if e_aurora is not None and e_era5 is not None:
+                        spec_div, spec_res = compute_spectral_scores(e_aurora, e_era5)
+                        _append("spectrum_divergence", float(spec_div))
+                        _append("spectrum_residual", float(spec_res))
+                        _log(f"    Spectrum: div={spec_div:.4f}, res={spec_res:.4f}")
+                except Exception as e:
+                    _log(f"    ⚠ Spectrum error: {e}")
             
             ds_aurora.close()
     
@@ -382,6 +439,7 @@ def run_evaluation(
     lead_times: list[tuple[str, int]] = None,
     workers: int = DEFAULT_WORKERS,
     verbose: bool = True,
+    no_spectrum: bool = False,
 ) -> pd.DataFrame:
     """
     Run physics evaluation for Aurora S3 predictions.
@@ -415,7 +473,7 @@ def run_evaluation(
     if workers == 1:
         # Sequential execution
         for idx, (date_str, init_hr, lead_hours, _) in enumerate(work_items, 1):
-            rows = _evaluate_one(date_str, init_hr, lead_hours, idx, n_total, verbose)
+            rows = _evaluate_one(date_str, init_hr, lead_hours, idx, n_total, verbose, no_spectrum)
             all_rows.extend(rows)
     else:
         # Parallel execution
@@ -423,7 +481,7 @@ def run_evaluation(
             futures = {}
             for idx, (date_str, init_hr, lead_hours, _) in enumerate(work_items, 1):
                 fut = pool.submit(
-                    _evaluate_one, date_str, init_hr, lead_hours, idx, n_total, verbose
+                    _evaluate_one, date_str, init_hr, lead_hours, idx, n_total, verbose, no_spectrum
                 )
                 futures[fut] = (date_str, lead_hours)
             
@@ -443,6 +501,25 @@ def run_evaluation(
     if verbose:
         print(f"\n✓ Saved {len(df)} rows to {output_csv}")
     
+    if not df.empty:
+        try:
+            ts_df = df.pivot_table(
+                index=["date", "init_hour", "lead_time_hours"],
+                columns="metric_name",
+                values=["model_value", "era5_value"]
+            )
+            # Flatten columns
+            ts_df.columns = [f"{col[1]}_{col[0]}" for col in ts_df.columns]
+            ts_df.reset_index(inplace=True)
+            
+            ts_csv = output_csv.parent / output_csv.name.replace("physics_", "physics_timeseries_")
+            ts_df.to_csv(ts_csv, index=False)
+            if verbose:
+                print(f"✓ Saved timeseries to {ts_csv}")
+        except Exception as e:
+            if verbose:
+                print(f"⚠ Could not save timeseries: {e}")
+    
     return df
 
 
@@ -458,6 +535,7 @@ def main():
     parser.add_argument("--init-hour", type=int, default=0,
                        help="Initialization hour (0 or 12)")
     parser.add_argument("--workers", type=int, default=DEFAULT_WORKERS)
+    parser.add_argument("--no-spectrum", action="store_true", help="Skip KE spectrum computation")
     parser.add_argument("--output", type=str, default=None)
     parser.add_argument("-v", "--verbose", action="store_true", default=True)
     args = parser.parse_args()
@@ -475,6 +553,7 @@ def main():
         init_hour=args.init_hour,
         workers=args.workers,
         verbose=args.verbose,
+        no_spectrum=args.no_spectrum,
     )
 
 

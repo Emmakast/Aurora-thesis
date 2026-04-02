@@ -298,9 +298,14 @@ def main():
          df_era5 = df
          year = _infer_year(args.era5)
          model = "era5"
-         output_path = Path(args.era5).with_name(
-             Path(args.era5).name.replace("evaluation", "summary")
-         )
+         in_name = Path(args.era5).name
+         if "evaluation" in in_name:
+             out_name = in_name.replace("evaluation", "summary")
+         else:
+             out_name = in_name.replace("physics_", "physics_summary_")
+             if out_name == in_name:
+                 out_name = "summary_" + in_name
+         output_path = Path(args.era5).with_name(out_name)
 
     elif Path(input_path).exists():
         print(f"Loading metrics from {input_path}")
@@ -354,9 +359,14 @@ def main():
                          df[meta_col] = df[f"{meta_col}_era5"]
                      df = df.drop(columns=[f"{meta_col}_era5"])
 
-        output_path = Path(input_path).with_name(
-             Path(input_path).name.replace("evaluation", "summary")
-        )
+        in_name = Path(input_path).name
+        if "evaluation" in in_name:
+            out_name = in_name.replace("evaluation", "summary")
+        else:
+            out_name = in_name.replace("physics_", "physics_summary_")
+            if out_name == in_name:
+                out_name = "summary_" + in_name
+        output_path = Path(input_path).with_name(out_name)
         year = _infer_year(input_path)
         model = _infer_model(input_path)
     else:
