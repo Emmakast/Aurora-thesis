@@ -530,9 +530,9 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
     # Conservation: red/blue
     blue = np.array([0.7, 0.85, 1.0])
     red = np.array([1.0, 0.75, 0.75])
-    # Structural: beige tones
-    beige_light = np.array([1.0, 0.96, 0.88])
-    beige_dark = np.array([0.96, 0.87, 0.70])
+    # Structural: beige tones (darker for eff res, lighter for spec div/res)
+    beige_darker = np.array([0.92, 0.82, 0.60])   # for effective_resolution_km
+    beige_lighter = np.array([0.96, 0.90, 0.75])  # for spec_divergence, spec_residual
     # Dynamical (RMSE): moss green tones
     moss_light = np.array([0.9, 1.0, 0.9])
     moss_dark = np.array([0.6, 0.8, 0.6])
@@ -540,10 +540,17 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
     header_color = np.array([0.9, 0.9, 0.9])
     cat_color = np.array([0.95, 0.95, 0.95])
     
-    # Category-specific color schemes
+    # Metric-specific color overrides (for structural metrics with different shades)
+    metric_colors = {
+        "effective_resolution_km": (beige_darker, beige_darker),
+        "spectral_divergence": (beige_lighter, beige_lighter),
+        "spectral_residual": (beige_lighter, beige_lighter),
+    }
+    
+    # Category-specific color schemes (default)
     cat_colors = {
         "Conservation": (blue, red),      # positive=blue, negative=red
-        "Structural": (beige_dark, beige_dark),  # both directions beige
+        "Structural": (beige_lighter, beige_lighter),  # default for structural
         "Dynamical": (moss_dark, moss_dark),     # both directions moss green
     }
 
@@ -602,9 +609,12 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
                         if is_appx: text += "*"
                         row_t.append(text)
 
-                        # Apply color logic based on category
+                        # Apply color logic based on category (or metric-specific override)
                         intensity = min(abs(val) / max_abs[m_key], 1.0) * 0.8
-                        pos_color, neg_color = cat_colors[cat_name]
+                        if m_key in metric_colors:
+                            pos_color, neg_color = metric_colors[m_key]
+                        else:
+                            pos_color, neg_color = cat_colors[cat_name]
                         if val > 0: c = white * (1 - intensity) + pos_color * intensity
                         elif val < 0: c = white * (1 - intensity) + neg_color * intensity
                         else: c = white
