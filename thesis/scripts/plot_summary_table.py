@@ -486,13 +486,13 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
             ("total_energy_drift_pct_per_day", "Total Energy Drift [%/day]", "0")
         ],
         "Structural": [
-            ("effective_resolution_km", "Eff. Resolution [km]", "↓"),
-            ("spectral_divergence", "Spec. Divergence [-]", "↓"),
-            ("spectral_residual", "Spec. Residual [-]", "↓")
+            ("effective_resolution_km", "Eff. Resolution [km]", "111.5"),
+            ("spectral_divergence", "Spec. Divergence [-]", "0"),
+            ("spectral_residual", "Spec. Residual [-]", "0")
         ],
         "Dynamical": [
-            ("geostrophic_rmse", "Geostrophic RMSE Δ [Pa]", "→ 0"),
-            ("hydrostatic_rmse", "Hydrostatic RMSE Δ [Pa]", "→ 0")
+            ("geostrophic_rmse", "Geostrophic RMSE Δ [Pa]", "0"),
+            ("hydrostatic_rmse", "Hydrostatic RMSE Δ [Pa]", "0")
         ]
     }
 
@@ -557,7 +557,7 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
             if np.isnan(rng[0]) or np.isnan(rng[1]):
                 m_range = "—"
             else:
-                m_range = f"{fmt(rng[0], m_key)} – {fmt(rng[1], m_key)}"
+                m_range = f"{rng[0]:.2f} – {rng[1]:.2f}"
             
             row_t = [cat_name if i == len(metrics)//2 else "", m_label, m_target, m_range]
             row_c = [cat_color, cat_color, cat_color, cat_color]
@@ -606,7 +606,7 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
     fig, ax = plt.subplots(figsize=(fig_w, fig_h))
     ax.axis("off")
 
-    colWidths = [0.08, 0.17, 0.04, 0.05] + [0.05] * (len(leads) * len(models_to_plot))
+    colWidths = [0.08, 0.17, 0.04, 0.10] + [0.05] * (len(leads) * len(models_to_plot))
     table = ax.table(
         cellText=cell_texts,
         cellColours=[[tuple(c) for c in row] for row in cell_colors],
