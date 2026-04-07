@@ -481,25 +481,26 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
 
     categories = {
         "Conservation": [
-            ("dry_mass_drift_pct_per_day", "Dry Mass Drift [%/day]", "0", "±0.01"),
-            ("water_mass_drift_pct_per_day", "Water Mass Drift [%/day]", "0", "±0.05"),
-            ("total_energy_drift_pct_per_day", "Total Energy Drift [%/day]", "0", "±0.1")
+            ("dry_mass_drift_pct_per_day", "Dry Mass Drift [%/day]", "0"),
+            ("water_mass_drift_pct_per_day", "Water Mass Drift [%/day]", "0"),
+            ("total_energy_drift_pct_per_day", "Total Energy Drift [%/day]", "0")
         ],
         "Structural": [
-            ("effective_resolution_km", "Eff. Resolution [km]", "↓", "100–500"),
-            ("spectral_divergence", "Spec. Divergence [-]", "↓", "0–1"),
-            ("spectral_residual", "Spec. Residual [-]", "↓", "0–1")
+            ("effective_resolution_km", "Eff. Resolution [km]", "↓"),
+            ("spectral_divergence", "Spec. Divergence [-]", "↓"),
+            ("spectral_residual", "Spec. Residual [-]", "↓")
         ],
         "Dynamical": [
-            ("geostrophic_rmse", "Geostrophic RMSE Δ [Pa]", "→ 0", "0–50"),
-            ("hydrostatic_rmse", "Hydrostatic RMSE Δ [Pa]", "→ 0", "0–100")
+            ("geostrophic_rmse", "Geostrophic RMSE Δ [Pa]", "→ 0"),
+            ("hydrostatic_rmse", "Hydrostatic RMSE Δ [Pa]", "→ 0")
         ]
     }
 
-    # 1. Calculate max abs per metric for color scaling
+    # 1. Calculate max abs and min/max per metric for color scaling and range display
     max_abs = {}
+    metric_ranges = {}
     for cat, metrics in categories.items():
-        for m_key, _, _, _ in metrics:
+        for m_key, _, _ in metrics:
             vals = []
             for m in models_to_plot:
                 if m in summaries:
@@ -512,9 +513,14 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
                             df_lt = df[df["lead_time_hours"] == nearest]
                         val = get_value(df_lt, m_key)
                         if not np.isnan(val):
-                            vals.append(abs(val))
-            max_abs[m_key] = max(vals) if vals else 1.0
+                            vals.append(val)
+            max_abs[m_key] = max(abs(v) for v in vals) if vals else 1.0
             if max_abs[m_key] == 0: max_abs[m_key] = 1.0
+            # Store min/max for range display
+            if vals:
+                metric_ranges[m_key] = (min(vals), max(vals))
+            else:
+                metric_ranges[m_key] = (np.nan, np.nan)
 
     # 2. Build table data
     cell_texts = []
@@ -545,7 +551,14 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
 
     # Data Rows
     for cat_name, metrics in categories.items():
-        for i, (m_key, m_label, m_target, m_range) in enumerate(metrics):
+        for i, (m_key, m_label, m_target) in enumerate(metrics):
+            # Compute range string from actual data
+            rng = metric_ranges.get(m_key, (np.nan, np.nan))
+            if np.isnan(rng[0]) or np.isnan(rng[1]):
+                m_range = "—"
+            else:
+                m_range = f"{fmt(rng[0], m_key)} – {fmt(rng[1], m_key)}"
+            
             row_t = [cat_name if i == len(metrics)//2 else "", m_label, m_target, m_range]
             row_c = [cat_color, cat_color, cat_color, cat_color]
 
