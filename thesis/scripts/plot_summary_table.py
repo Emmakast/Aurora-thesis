@@ -476,30 +476,30 @@ def render_split_tables(leads: list[int], summaries: dict[str, pd.DataFrame],
 def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame], outdir: Path):
     """Renders a single unified PNG table with metrics on rows and models on columns."""
     
-    models_to_plot = ["hres", "pangu", "graphcast", "fuxi", "neuralgcm", "aurora"]
+    models_to_plot = ["hres", "pangu", "graphcast", "fuxi", "neuralgcm"]
     model_labels = [NICE.get(m, m) for m in models_to_plot]
 
     categories = {
         "Conservation": [
-            ("dry_mass_drift_pct_per_day", "Dry Mass (→ 0)"),
-            ("water_mass_drift_pct_per_day", "Water Mass (→ 0)"),
-            ("total_energy_drift_pct_per_day", "Total Energy (→ 0)")
+            ("dry_mass_drift_pct_per_day", "Dry Mass Drift [%/day]", "0", "±0.01"),
+            ("water_mass_drift_pct_per_day", "Water Mass Drift [%/day]", "0", "±0.05"),
+            ("total_energy_drift_pct_per_day", "Total Energy Drift [%/day]", "0", "±0.1")
         ],
         "Structural": [
-            ("effective_resolution_km", "Eff. Res. km (↓)"),
-            ("spectral_divergence", "Spec. Div. (↓)"),
-            ("spectral_residual", "Spec. Res. (↓)")
+            ("effective_resolution_km", "Eff. Resolution [km]", "↓", "100–500"),
+            ("spectral_divergence", "Spec. Divergence [-]", "↓", "0–1"),
+            ("spectral_residual", "Spec. Residual [-]", "↓", "0–1")
         ],
         "Dynamical": [
-            ("geostrophic_rmse", "Geostrophic (↓)"),
-            ("hydrostatic_rmse", "Hydrostatic (↓)")
+            ("geostrophic_rmse", "Geostrophic RMSE Δ [Pa]", "→ 0", "0–50"),
+            ("hydrostatic_rmse", "Hydrostatic RMSE Δ [Pa]", "→ 0", "0–100")
         ]
     }
 
     # 1. Calculate max abs per metric for color scaling
     max_abs = {}
     for cat, metrics in categories.items():
-        for m_key, _ in metrics:
+        for m_key, _, _, _ in metrics:
             vals = []
             for m in models_to_plot:
                 if m in summaries:
@@ -526,9 +526,9 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
     header_color = np.array([0.9, 0.9, 0.9])
     cat_color = np.array([0.95, 0.95, 0.95])
 
-    # Header Row 1: Lead times
-    row0_text = ["", ""]
-    row0_color = [header_color, header_color]
+    # Header Row 1: Lead times (with empty cells for Target and Range)
+    row0_text = ["", "", "", ""]
+    row0_color = [header_color, header_color, header_color, header_color]
     for lead in leads:
         block = [""] * len(models_to_plot)
         block[len(models_to_plot)//2] = f"Lead Time: {lead}h"
@@ -537,17 +537,17 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
     cell_texts.append(row0_text)
     cell_colors.append(row0_color)
 
-    # Header Row 2: Models
-    row1_text = ["Category", "Metric"] + model_labels * len(leads)
-    row1_color = [header_color, header_color] + [header_color] * (len(models_to_plot) * len(leads))
+    # Header Row 2: Models (with Target and Range columns)
+    row1_text = ["Category", "Metric", "Target", "Range"] + model_labels * len(leads)
+    row1_color = [header_color, header_color, header_color, header_color] + [header_color] * (len(models_to_plot) * len(leads))
     cell_texts.append(row1_text)
     cell_colors.append(row1_color)
 
     # Data Rows
     for cat_name, metrics in categories.items():
-        for i, (m_key, m_label) in enumerate(metrics):
-            row_t = [cat_name if i == len(metrics)//2 else "", m_label]
-            row_c = [cat_color, cat_color]
+        for i, (m_key, m_label, m_target, m_range) in enumerate(metrics):
+            row_t = [cat_name if i == len(metrics)//2 else "", m_label, m_target, m_range]
+            row_c = [cat_color, cat_color, cat_color, cat_color]
 
             for lead in leads:
                 for m in models_to_plot:
@@ -593,7 +593,7 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
     fig, ax = plt.subplots(figsize=(fig_w, fig_h))
     ax.axis("off")
 
-    colWidths = [0.08, 0.17] + [0.05] * (len(leads) * len(models_to_plot))
+    colWidths = [0.08, 0.17, 0.04, 0.05] + [0.05] * (len(leads) * len(models_to_plot))
     table = ax.table(
         cellText=cell_texts,
         cellColours=[[tuple(c) for c in row] for row in cell_colors],
@@ -610,19 +610,23 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
         table[0, j].set_text_props(fontweight="bold", fontsize=11)
         table[1, j].set_text_props(fontweight="bold", fontsize=10)
 
-    # Styling category and metric names
+    # Styling category, metric, target, and range names
     for i in range(2, n_rows):
         table[i, 0].set_text_props(fontweight="bold")
         table[i, 1].set_text_props(fontweight="bold")
+        table[i, 2].set_text_props(fontweight="bold")
+        table[i, 3].set_text_props(fontweight="bold")
 
     # --- Cell Merging ---
-    # Top-left empty 2x2 area
+    # Top-left empty 4-column area (Category, Metric, Target, Range)
     table[0, 0].visible_edges = ''
     table[0, 1].visible_edges = ''
+    table[0, 2].visible_edges = ''
+    table[0, 3].visible_edges = ''
 
     # Top row Lead times merging
     for l_idx in range(len(leads)):
-        start_col = 2 + l_idx * len(models_to_plot)
+        start_col = 4 + l_idx * len(models_to_plot)
         end_col = start_col + len(models_to_plot) - 1
         for c in range(start_col, end_col + 1):
             if c == start_col:
@@ -654,7 +658,7 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
     fig.canvas.draw()
 
     x_left = table[0, 0].get_x()
-    x_metric = table[0, 1].get_x() + table[0, 1].get_width()
+    x_range_end = table[0, 3].get_x() + table[0, 3].get_width()
     x_right = table[0, n_cols - 1].get_x() + table[0, n_cols - 1].get_width()
 
     y_top = table[0, 0].get_y() + table[0, 0].get_height()
@@ -670,16 +674,17 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
 
     # Header borders
     ax.plot([x_left, x_right], [y_head_row1, y_head_row1], color='black', linewidth=2.5, clip_on=False)
-    ax.plot([x_metric, x_right], [y_head_row0, y_head_row0], color='black', linewidth=2.5, clip_on=False)
+    ax.plot([x_range_end, x_right], [y_head_row0, y_head_row0], color='black', linewidth=2.5, clip_on=False)
 
-    # Vertical Categories separator
-    ax.plot([x_metric, x_metric], [y_bot, y_top], color='black', linewidth=2.5, clip_on=False)
+    # Vertical Categories separator (after Range column)
+    x_range_edge = table[0, 3].get_x() + table[0, 3].get_width()
+    ax.plot([x_range_edge, x_range_edge], [y_bot, y_top], color='black', linewidth=2.5, clip_on=False)
     x_cat_edge = table[0, 0].get_x() + table[0, 0].get_width()
     ax.plot([x_cat_edge, x_cat_edge], [y_bot, y_head_row1], color='black', linewidth=2.5, clip_on=False)
 
     # Lead time separators
     for l_idx in range(1, len(leads)):
-        c = 2 + l_idx * len(models_to_plot)
+        c = 4 + l_idx * len(models_to_plot)
         x = table[0, c].get_x()
         ax.plot([x, x], [y_bot, y_top], color='black', linewidth=2.5, clip_on=False)
 
