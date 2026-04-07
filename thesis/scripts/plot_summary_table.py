@@ -527,10 +527,25 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
     cell_colors = []
 
     white = np.array([1.0, 1.0, 1.0])
+    # Conservation: red/blue
     blue = np.array([0.7, 0.85, 1.0])
     red = np.array([1.0, 0.75, 0.75])
+    # Structural: beige tones
+    beige_light = np.array([1.0, 0.96, 0.88])
+    beige_dark = np.array([0.96, 0.87, 0.70])
+    # Dynamical (RMSE): moss green tones
+    moss_light = np.array([0.9, 1.0, 0.9])
+    moss_dark = np.array([0.6, 0.8, 0.6])
+    
     header_color = np.array([0.9, 0.9, 0.9])
     cat_color = np.array([0.95, 0.95, 0.95])
+    
+    # Category-specific color schemes
+    cat_colors = {
+        "Conservation": (blue, red),      # positive=blue, negative=red
+        "Structural": (beige_dark, beige_dark),  # both directions beige
+        "Dynamical": (moss_dark, moss_dark),     # both directions moss green
+    }
 
     # Header Row 1: Lead times (with empty cells for Target and Range)
     row0_text = ["", "", "", ""]
@@ -587,10 +602,11 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
                         if is_appx: text += "*"
                         row_t.append(text)
 
-                        # Apply color logic
+                        # Apply color logic based on category
                         intensity = min(abs(val) / max_abs[m_key], 1.0) * 0.8
-                        if val > 0: c = white * (1 - intensity) + blue * intensity
-                        elif val < 0: c = white * (1 - intensity) + red * intensity
+                        pos_color, neg_color = cat_colors[cat_name]
+                        if val > 0: c = white * (1 - intensity) + pos_color * intensity
+                        elif val < 0: c = white * (1 - intensity) + neg_color * intensity
                         else: c = white
                         row_c.append(c)
 
