@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/steer_aurora.py", line 175, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/steer_aurora.py", line 167, in main
+    ds = batch_to_dataset(pred_batch, step=1)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 359, in batch_to_dataset
+    lat = pred.metadata.lat.numpy()
+          ^^^^^^^^^^^^^
+AttributeError: 'generator' object has no attribute 'metadata'

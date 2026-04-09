@@ -1,0 +1,60 @@
+========================================
+  AURORA HRES LATENT EXTRACTION - JAN 2022
+========================================
+Job ID:       21359164
+Date:         Mon Mar 30 13:30:49 CEST 2026
+Node:         gcn102.local.snellius.surf.nl
+GPU:
+NVIDIA H100, 95830 MiB
+========================================
+
+  ✓ S3 Client initialized securely via .env
+======================================================================
+  AURORA LATENT EXTRACTION - IFS HRES T0
+======================================================================
+  Dates: 31 dates
+  Init hours: [12]
+  Latent extraction init: 12:00 UTC only
+  Rollout steps: 1
+  Device: cuda
+  Output: /scratch-local/ekasteleyn.21359164/aurora_hres_latents
+  Cache: /home/ekasteleyn/downloads/hres_t0
+  Target layers: [('perceiver', 0), ('encoder', 0), ('encoder', 1), ('encoder', 2)]
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+  2022-01-01
+  2022-01-02
+  2022-01-03
+  2022-01-04
+  2022-01-05
+  2022-01-06
+  2022-01-07
+  2022-01-08
+  2022-01-09
+  2022-01-10
+  2022-01-11
+  2022-01-12
+  2022-01-13
+  2022-01-14
+  2022-01-15
+  2022-01-16
+  2022-01-17
+  2022-01-18
+  2022-01-19
+  2022-01-20
+  2022-01-21
+  2022-01-22
+  2022-01-23
+  2022-01-24
+  2022-01-25
+  2022-01-26
+  2022-01-27
+  2022-01-28
+  2022-01-29
+  2022-01-30
+  2022-01-31
+
+[3/4] Loading Aurora 0.25° Fine-Tuned model...

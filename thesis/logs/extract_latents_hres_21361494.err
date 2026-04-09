@@ -1,0 +1,86 @@
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu", non_blocking=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu", non_blocking=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu", non_blocking=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu", non_blocking=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu", non_blocking=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu", non_blocking=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 596, in main
+    pred_cpu = pred.to("cpu")
+               ^^^^^^^^^^^^^^^
+TypeError: Batch.to() got an unexpected keyword argument 'non_blocking'
+[2026-03-30T14:47:18.361] error: *** JOB 21361494 ON gcn37 CANCELLED AT 2026-03-30T14:47:18 DUE to SIGNAL Terminated ***

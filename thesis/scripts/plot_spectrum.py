@@ -49,7 +49,7 @@ DEFAULT_THRESHOLDS = [0.3, 0.5, 0.7, 0.9]
 
 # ── Analysis configuration ───────────────────────────────────────────────────
 
-@dataclass(frozen=True)
+@dataclass(frozen=False)
 class AnalysisCfg:
     """All the strings that differ between ke / ke_850hpa / q."""
     csv_prefix: str          # e.g. "ke_spectrum_850hpa"
@@ -259,7 +259,7 @@ def plot_per_model_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, ref_labe
         era5_df = mdf[(mdf["source"] == "era5") & (mdf["lead_hours"] == lead_times[0])]
         if not era5_df.empty:
             ax.loglog(era5_df["wavenumber"], era5_df[vcol],
-                      color="black", linewidth=2, alpha=0.7, label=ref_label, zorder=5)
+                      color="black", linewidth=2, alpha=0.7, label=("IFS HRES" if "IFS" in outdir.name else "ERA5"), zorder=5)
 
         for i, lh in enumerate(lead_times):
             pred = mdf[(mdf["source"] == "pred") & (mdf["lead_hours"] == lh)]
@@ -290,7 +290,7 @@ def plot_combined_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, target_le
     if not era5_df.empty:
         era5_mean = era5_df.groupby("wavenumber")[vcol].mean()
         ax.loglog(era5_mean.index, era5_mean.values,
-                  color="black", linewidth=2, alpha=0.7, label=ref_label, zorder=5)
+                  color="black", linewidth=2, alpha=0.7, label=("IFS HRES" if "IFS" in outdir.name else "ERA5"), zorder=5)
 
     for model in sorted(df["model"].unique()):
         pred = df[(df["model"] == model) & (df["source"] == "pred") & (df["lead_hours"] == target_lead)]
@@ -328,7 +328,7 @@ def plot_per_model_wl(models: dict[str, pd.DataFrame], outdir: Path, cfg: Analys
         era5 = df[(df["lead_hours"] == lead_times[0]) & (df["wavenumber"] > 0)]
         if not era5.empty:
             ax.loglog(_wl(era5["wavenumber"].values), era5[cfg.wide_era5].values,
-                      color="black", linewidth=2, alpha=0.7, label=ref_label, zorder=5)
+                      color="black", linewidth=2, alpha=0.7, label=("IFS HRES" if "IFS" in outdir.name else "ERA5"), zorder=5)
 
         for i, lh in enumerate(lead_times):
             sub = df[(df["lead_hours"] == lh) & (df["wavenumber"] > 0)]
@@ -360,7 +360,7 @@ def plot_combined_wl(
     era5 = first[(first["lead_hours"] == target_lead) & (first["wavenumber"] > 0)]
     if not era5.empty:
         ax.loglog(_wl(era5["wavenumber"].values), era5[cfg.wide_era5].values,
-                  color="black", linewidth=2, alpha=0.7, label=ref_label, zorder=5)
+                  color="black", linewidth=2, alpha=0.7, label=("IFS HRES" if "IFS" in outdir.name else "ERA5"), zorder=5)
 
     for model, df in sorted(models.items()):
         sub = df[(df["lead_hours"] == target_lead) & (df["wavenumber"] > 0)]
@@ -577,13 +577,22 @@ def main():
     parser.add_argument("--results-dir", type=str, default=str(RESULTS_DIR))
     parser.add_argument("--combined-lead", type=int, default=240,
                         help="Primary lead time for combined plots (default: 240)")
+    parser.add_argument("--short-lead", type=int, default=6,
+                        help="Short lead time for combined plots (default: 6)")
     parser.add_argument("--thresholds", nargs="+", type=float, default=DEFAULT_THRESHOLDS,
                         help="Ratio thresholds for sensitivity table (default: 0.3 0.5 0.7 0.9)")
     parser.add_argument("--ifs", action="store_true",
-                        help="Use IFS HRES t=0 comparison files (*_ifs.csv)")
+                        help="Use IFS HRES comparison files (*_ifs.csv) instead of ERA5")
     args = parser.parse_args()
 
+    # Create a copy so we can mutate safely if needed, or just modify since frozen=False
     cfg = ANALYSES[args.analysis]
+    if args.ifs:
+        cfg.title += " (vs IFS HRES)"
+        cfg.ratio_ylabel = cfg.ratio_ylabel.replace("ERA5", "IFS")
+    else:
+        cfg.title += " (vs ERA5)"
+    
     results_dir = Path(args.results_dir)
     exclude = set(args.exclude)
     thresholds = sorted(args.thresholds)
@@ -606,17 +615,17 @@ def main():
     print(f"Loading from {results_dir} ...\n")
 
     # Load both representations
-    df_long = load_spectra_long(results_dir, cfg, models=args.models, exclude=exclude, ifs_mode=ifs_mode)
-    models_wide = load_spectra_wide(results_dir, cfg, models=args.models, exclude=exclude, ifs_mode=ifs_mode)
+    df_long = load_spectra_long(results_dir, cfg, models=args.models, exclude=exclude, ifs_mode=args.ifs)
+    models_wide = load_spectra_wide(results_dir, cfg, models=args.models, exclude=exclude, ifs_mode=args.ifs)
 
     df_mean = _mean_spectrum(df_long, cfg.value_col)
     print(f"\nTotal: {len(df_mean):,} rows after averaging ({df_mean['model'].nunique()} models)")
 
-    outdir = results_dir / cfg.outdir_name
+    outdir = results_dir / (f"{cfg.outdir_name}_IFS" if args.ifs else cfg.outdir_name)
 
     # Collect all available lead times
     all_leads = sorted({int(lh) for df in models_wide.values() for lh in df["lead_hours"].unique()})
-    key_leads = [lt for lt in [12, 120, 240, args.combined_lead] if lt in all_leads]
+    key_leads = [lt for lt in [args.short_lead, 120, args.combined_lead] if lt in all_leads]
     # Deduplicate while preserving order
     key_leads = list(dict.fromkeys(key_leads))
 

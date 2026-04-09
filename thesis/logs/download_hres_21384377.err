@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py", line 137, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py", line 122, in main
+    download_data(day, download_path, ds)
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py", line 79, in download_data
+    ds_atmos.to_netcdf(str(atmos_path))
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/core/dataset.py", line 2110, in to_netcdf
+    return to_netcdf(  # type: ignore[return-value]  # mypy cannot resolve the overloads:(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/writers.py", line 441, in to_netcdf
+    dump_to_store(
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/writers.py", line 491, in dump_to_store
+    store.store(variables, attrs, check_encoding, writer, unlimited_dims=unlimited_dims)
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/common.py", line 533, in store
+    self.set_variables(
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/common.py", line 575, in set_variables
+    writer.add(source, target)
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/common.py", line 403, in add
+    target[...] = source
+    ~~~~~~^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 96, in __setitem__
+    data[key] = value
+    ~~~~^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 5645, in netCDF4._netCDF4.Variable.__setitem__
+  File "src/netCDF4/_netCDF4.pyx", line 5932, in netCDF4._netCDF4.Variable._put
+  File "src/netCDF4/_netCDF4.pyx", line 2160, in netCDF4._netCDF4._ensure_nc_success
+RuntimeError: NetCDF: HDF error

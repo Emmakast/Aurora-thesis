@@ -1,0 +1,977 @@
+========================================
+  PHYSICS EVALUATION: Aurora S3
+========================================
+Job ID:       21436793
+Date:         Wed Apr  1 15:34:45 CEST 2026
+Hostname:     tcn464.local.snellius.surf.nl
+Year:         2022
+Month:        all
+Init hour:    0:00 UTC
+Workers:      16
+Output:       /home/ekasteleyn/aurora_thesis/thesis/results/physics_aurora_s3_2022_init0.csv
+========================================
+
+
+======================================================================
+  PHYSICS EVALUATION — S3 Aurora Predictions
+======================================================================
+  S3 Bucket  : s3://ekasteleyn-aurora-predictions/aurora_hres_validation
+  ERA5       : gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Dates      : 365
+  Init hour  : 00:00
+  Lead times : ['12h', '24h', '5d', '10d']
+  Total evals: 1460
+  Workers    : 16
+  Output     : /home/ekasteleyn/aurora_thesis/thesis/results/physics_aurora_s3_2022_init0.csv
+======================================================================
+  [1/1460] 2022-01-01 init=00:00 lead=+12h
+  [2/1460] 2022-01-01 init=00:00 lead=+24h
+  [3/1460] 2022-01-01 init=00:00 lead=+120h
+  [4/1460] 2022-01-01 init=00:00 lead=+240h
+  [5/1460] 2022-01-02 init=00:00 lead=+12h
+  [6/1460] 2022-01-02 init=00:00 lead=+24h
+  [7/1460] 2022-01-02 init=00:00 lead=+120h
+  [8/1460] 2022-01-02 init=00:00 lead=+240h
+  [9/1460] 2022-01-03 init=00:00 lead=+12h
+  [10/1460] 2022-01-03 init=00:00 lead=+24h
+  [11/1460] 2022-01-03 init=00:00 lead=+120h
+  [12/1460] 2022-01-03 init=00:00 lead=+240h
+  [13/1460] 2022-01-04 init=00:00 lead=+12h
+  [14/1460] 2022-01-04 init=00:00 lead=+24h
+  [15/1460] 2022-01-04 init=00:00 lead=+120h
+  [16/1460] 2022-01-04 init=00:00 lead=+240h
+    ⚠ File not found on S3
+  [17/1460] 2022-01-05 init=00:00 lead=+12h
+    ⚠ File not found on S3
+  [18/1460] 2022-01-05 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [19/1460] 2022-01-05 init=00:00 lead=+120h
+  [20/1460] 2022-01-05 init=00:00 lead=+240h
+  [21/1460] 2022-01-06 init=00:00 lead=+12h
+  [22/1460] 2022-01-06 init=00:00 lead=+24h
+    ⚠ File not found on S3
+  [23/1460] 2022-01-06 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [24/1460] 2022-01-06 init=00:00 lead=+240h
+    ⚠ File not found on S3
+  [25/1460] 2022-01-07 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [26/1460] 2022-01-07 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [27/1460] 2022-01-07 init=00:00 lead=+120h
+  [28/1460] 2022-01-07 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [29/1460] 2022-01-08 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [30/1460] 2022-01-08 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [31/1460] 2022-01-08 init=00:00 lead=+120h
+  [32/1460] 2022-01-08 init=00:00 lead=+240h
+  [33/1460] 2022-01-09 init=00:00 lead=+12h
+  [34/1460] 2022-01-09 init=00:00 lead=+24h
+  [35/1460] 2022-01-09 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [36/1460] 2022-01-09 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [37/1460] 2022-01-10 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [38/1460] 2022-01-10 init=00:00 lead=+24h
+  [39/1460] 2022-01-10 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+  [40/1460] 2022-01-10 init=00:00 lead=+240h
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [41/1460] 2022-01-11 init=00:00 lead=+12h
+  [42/1460] 2022-01-11 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [43/1460] 2022-01-11 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [44/1460] 2022-01-11 init=00:00 lead=+240h
+  [45/1460] 2022-01-12 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [46/1460] 2022-01-12 init=00:00 lead=+24h
+  [47/1460] 2022-01-12 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [48/1460] 2022-01-12 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [49/1460] 2022-01-13 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [50/1460] 2022-01-13 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [51/1460] 2022-01-13 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+  [52/1460] 2022-01-13 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [53/1460] 2022-01-14 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [54/1460] 2022-01-14 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [55/1460] 2022-01-14 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [56/1460] 2022-01-14 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [57/1460] 2022-01-15 init=00:00 lead=+12h
+  [58/1460] 2022-01-15 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [59/1460] 2022-01-15 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [60/1460] 2022-01-15 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [61/1460] 2022-01-16 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [62/1460] 2022-01-16 init=00:00 lead=+24h
+  [63/1460] 2022-01-16 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [64/1460] 2022-01-16 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [65/1460] 2022-01-17 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [66/1460] 2022-01-17 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [67/1460] 2022-01-17 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [68/1460] 2022-01-17 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [69/1460] 2022-01-18 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [70/1460] 2022-01-18 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [71/1460] 2022-01-18 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [72/1460] 2022-01-18 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [73/1460] 2022-01-19 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [74/1460] 2022-01-19 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [75/1460] 2022-01-19 init=00:00 lead=+120h
+  [76/1460] 2022-01-19 init=00:00 lead=+240h
+  [77/1460] 2022-01-20 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [78/1460] 2022-01-20 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [79/1460] 2022-01-20 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [80/1460] 2022-01-20 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [81/1460] 2022-01-21 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [82/1460] 2022-01-21 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [83/1460] 2022-01-21 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [84/1460] 2022-01-21 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [85/1460] 2022-01-22 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [86/1460] 2022-01-22 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [87/1460] 2022-01-22 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [88/1460] 2022-01-22 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [89/1460] 2022-01-23 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [90/1460] 2022-01-23 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [91/1460] 2022-01-23 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+  [92/1460] 2022-01-23 init=00:00 lead=+240h
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [93/1460] 2022-01-24 init=00:00 lead=+12h
+  [94/1460] 2022-01-24 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [95/1460] 2022-01-24 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [96/1460] 2022-01-24 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [97/1460] 2022-01-25 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [98/1460] 2022-01-25 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [99/1460] 2022-01-25 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [100/1460] 2022-01-25 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [101/1460] 2022-01-26 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [102/1460] 2022-01-26 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [103/1460] 2022-01-26 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [104/1460] 2022-01-26 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [105/1460] 2022-01-27 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [106/1460] 2022-01-27 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+  [107/1460] 2022-01-27 init=00:00 lead=+120h
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [108/1460] 2022-01-27 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [109/1460] 2022-01-28 init=00:00 lead=+12h
+  [110/1460] 2022-01-28 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [111/1460] 2022-01-28 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [112/1460] 2022-01-28 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [113/1460] 2022-01-29 init=00:00 lead=+12h
+  [114/1460] 2022-01-29 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [115/1460] 2022-01-29 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [116/1460] 2022-01-29 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [117/1460] 2022-01-30 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [118/1460] 2022-01-30 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [119/1460] 2022-01-30 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [120/1460] 2022-01-30 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [121/1460] 2022-01-31 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [122/1460] 2022-01-31 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [123/1460] 2022-01-31 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [124/1460] 2022-01-31 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [125/1460] 2022-02-01 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [126/1460] 2022-02-01 init=00:00 lead=+24h
+  [127/1460] 2022-02-01 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [128/1460] 2022-02-01 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [129/1460] 2022-02-02 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [130/1460] 2022-02-02 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [131/1460] 2022-02-02 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [132/1460] 2022-02-02 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [133/1460] 2022-02-03 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [134/1460] 2022-02-03 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [135/1460] 2022-02-03 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [136/1460] 2022-02-03 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [137/1460] 2022-02-04 init=00:00 lead=+12h
+  [138/1460] 2022-02-04 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [139/1460] 2022-02-04 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [140/1460] 2022-02-04 init=00:00 lead=+240h
+  [141/1460] 2022-02-05 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [142/1460] 2022-02-05 init=00:00 lead=+24h
+  [143/1460] 2022-02-05 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [144/1460] 2022-02-05 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [145/1460] 2022-02-06 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [146/1460] 2022-02-06 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [147/1460] 2022-02-06 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [148/1460] 2022-02-06 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [149/1460] 2022-02-07 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [150/1460] 2022-02-07 init=00:00 lead=+24h
+  [151/1460] 2022-02-07 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [152/1460] 2022-02-07 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [153/1460] 2022-02-08 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [154/1460] 2022-02-08 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [155/1460] 2022-02-08 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [156/1460] 2022-02-08 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [157/1460] 2022-02-09 init=00:00 lead=+12h
+  [158/1460] 2022-02-09 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [159/1460] 2022-02-09 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [160/1460] 2022-02-09 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [161/1460] 2022-02-10 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [162/1460] 2022-02-10 init=00:00 lead=+24h
+  [163/1460] 2022-02-10 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [164/1460] 2022-02-10 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [165/1460] 2022-02-11 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [166/1460] 2022-02-11 init=00:00 lead=+24h
+  [167/1460] 2022-02-11 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [168/1460] 2022-02-11 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [169/1460] 2022-02-12 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [170/1460] 2022-02-12 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [171/1460] 2022-02-12 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+  [172/1460] 2022-02-12 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [173/1460] 2022-02-13 init=00:00 lead=+12h
+  [174/1460] 2022-02-13 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [175/1460] 2022-02-13 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [176/1460] 2022-02-13 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [177/1460] 2022-02-14 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [178/1460] 2022-02-14 init=00:00 lead=+24h
+  [179/1460] 2022-02-14 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [180/1460] 2022-02-14 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [181/1460] 2022-02-15 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [182/1460] 2022-02-15 init=00:00 lead=+24h
+  [183/1460] 2022-02-15 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [184/1460] 2022-02-15 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [185/1460] 2022-02-16 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [186/1460] 2022-02-16 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [187/1460] 2022-02-16 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [188/1460] 2022-02-16 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [189/1460] 2022-02-17 init=00:00 lead=+12h
+  [190/1460] 2022-02-17 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [191/1460] 2022-02-17 init=00:00 lead=+120h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [192/1460] 2022-02-17 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [193/1460] 2022-02-18 init=00:00 lead=+12h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [194/1460] 2022-02-18 init=00:00 lead=+24h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [195/1460] 2022-02-18 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [196/1460] 2022-02-18 init=00:00 lead=+240h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [197/1460] 2022-02-19 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [198/1460] 2022-02-19 init=00:00 lead=+24h
+  [199/1460] 2022-02-19 init=00:00 lead=+120h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [200/1460] 2022-02-19 init=00:00 lead=+240h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [201/1460] 2022-02-20 init=00:00 lead=+12h
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+  [202/1460] 2022-02-20 init=00:00 lead=+24h
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+[2026-04-01T15:37:54.568] error: *** JOB 21436793 ON tcn464 CANCELLED AT 2026-04-01T15:37:54 DUE to SIGNAL Terminated ***
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Spectrum error: 'tuple' object has no attribute 'sum'
+    ⚠ Hydrostatic error: compute_hydrostatic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Geostrophic error: compute_geostrophic_imbalance() missing 1 required positional argument: 'area'
+    ⚠ Conservation error: compute_conservation_scalars() missing 1 required positional argument: 'z_sfc'
+  [203/1460] 2022-02-20 init=00:00 lead=+120h
+  [204/1460] 2022-02-20 init=00:00 lead=+240h

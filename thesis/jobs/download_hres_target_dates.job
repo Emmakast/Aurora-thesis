@@ -1,0 +1,46 @@
+#!/bin/bash
+#SBATCH --job-name=download_hres_target_dates
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/logs/download_hres_targets_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/logs/download_hres_targets_%j.err
+#SBATCH --time=24:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=32G
+#SBATCH --partition=rome
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/scripts/steering
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Diagnostics ──────────────────────────────────────────────────────────────
+echo "========================================"
+echo "  HRES T0 DATA DOWNLOAD - TARGET DATES  "
+echo "========================================"
+echo "Job ID:       $SLURM_JOB_ID"
+echo "Date:         $(date)"
+echo "Node:         $(hostname)"
+echo "========================================"
+echo ""
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+# Extract dates from target_dates.csv
+DATES=$(python -c '
+import pandas as pd
+df = pd.read_csv("../../../target_dates.csv")
+# Filter for only instances that need extraction if preferred
+df = df[df["Needs_Extraction"] == True]
+dates = pd.to_datetime(df[["Year", "Month", "Day"]]).dt.strftime("%Y-%m-%d").unique()
+print(" ".join(dates))
+')
+
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python \
+    /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py \
+    --dates $DATES
+
+echo ""
+echo "========================================"
+echo "  COMPLETE: $(date)"
+echo "========================================"

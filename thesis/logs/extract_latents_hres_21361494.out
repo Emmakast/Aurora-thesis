@@ -1,0 +1,133 @@
+========================================
+  AURORA HRES LATENT EXTRACTION - JAN 2022
+========================================
+Job ID:       21361494
+Date:         Mon Mar 30 14:43:05 CEST 2026
+Node:         gcn37.local.snellius.surf.nl
+GPU:
+NVIDIA A100-SXM4-40GB, 40960 MiB
+========================================
+
+  ✓ S3 Client initialized securely via .env
+======================================================================
+  AURORA LATENT EXTRACTION - IFS HRES T0
+======================================================================
+  Dates: 29 dates
+  Init hours: [0]
+  Latent extraction init: 0:00 UTC only
+  Rollout steps: 40
+  Device: cuda
+  Output: /scratch-local/ekasteleyn.21361494/aurora_hres_latents
+  Cache: /home/ekasteleyn/downloads/hres_t0
+  Target layers: [('perceiver', 0), ('encoder', 0), ('encoder', 1), ('encoder', 2)]
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+  2022-01-02
+  2022-01-03
+  2022-01-04
+  2022-01-05
+  2022-01-06
+  2022-01-07
+  2022-01-08
+  2022-01-09
+  2022-01-10
+  2022-01-11
+  2022-01-12
+  2022-01-13
+  2022-01-14
+  2022-01-15
+  2022-01-16
+  2022-01-17
+  2022-01-18
+  2022-01-19
+  2022-01-20
+  2022-01-21
+  2022-01-22
+  2022-01-23
+  2022-01-24
+  2022-01-25
+  2022-01-26
+  2022-01-27
+  2022-01-28
+  2022-01-29
+  2022-01-30
+  2022-01-31
+
+[3/4] Loading Aurora 0.25° Fine-Tuned model...
+  ✓ Model loaded
+
+[4/4] Processing 29 runs (29 dates × 1 init times)...
+
+  [14:44:48] [1/29] 2022-01-03 init 00:00 UTC [+latents]
+    Init time: 2022-01-03 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:44:57] [2/29] 2022-01-04 init 00:00 UTC [+latents] | ETA: 4.2 min
+    Init time: 2022-01-04 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:45:04] [3/29] 2022-01-05 init 00:00 UTC [+latents] | ETA: 3.7 min
+    Init time: 2022-01-05 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:45:12] [4/29] 2022-01-06 init 00:00 UTC [+latents] | ETA: 3.5 min
+    Init time: 2022-01-06 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:45:20] [5/29] 2022-01-07 init 00:00 UTC [+latents] | ETA: 3.4 min
+    Init time: 2022-01-07 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:45:28] [6/29] 2022-01-08 init 00:00 UTC [+latents] | ETA: 3.2 min
+    Init time: 2022-01-08 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:45:36] [7/29] 2022-01-09 init 00:00 UTC [+latents] | ETA: 3.1 min
+    Init time: 2022-01-09 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:45:44] [8/29] 2022-01-10 init 00:00 UTC [+latents] | ETA: 2.9 min
+    Init time: 2022-01-10 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:45:52] [9/29] 2022-01-11 init 00:00 UTC [+latents] | ETA: 2.8 min
+    Init time: 2022-01-11 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:46:00] [10/29] 2022-01-12 init 00:00 UTC [+latents] | ETA: 2.7 min
+    Init time: 2022-01-12 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:46:09] [11/29] 2022-01-13 init 00:00 UTC [+latents] | ETA: 2.6 min
+    Init time: 2022-01-13 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:46:17] [12/29] 2022-01-14 init 00:00 UTC [+latents] | ETA: 2.4 min
+    Init time: 2022-01-14 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:46:26] [13/29] 2022-01-15 init 00:00 UTC [+latents] | ETA: 2.3 min
+    Init time: 2022-01-15 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:46:34] [14/29] 2022-01-16 init 00:00 UTC [+latents] | ETA: 2.2 min
+    Init time: 2022-01-16 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:46:43] [15/29] 2022-01-17 init 00:00 UTC [+latents] | ETA: 2.1 min
+    Init time: 2022-01-17 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:46:52] [16/29] 2022-01-18 init 00:00 UTC [+latents] | ETA: 1.9 min
+    Init time: 2022-01-18 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:47:01] [17/29] 2022-01-19 init 00:00 UTC [+latents] | ETA: 1.8 min
+    Init time: 2022-01-19 00:00:00
+    ⚠ Error: Batch.to() got an unexpected keyword argument 'non_blocking'
+
+  [14:47:10] [18/29] 2022-01-20 init 00:00 UTC [+latents] | ETA: 1.7 min
+    Init time: 2022-01-20 00:00:00

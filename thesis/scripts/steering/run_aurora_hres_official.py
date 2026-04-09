@@ -9,12 +9,17 @@ Runs Aurora on 3 dates in 2022 and compares with WeatherBench2.
 """
 
 from pathlib import Path
-import os
 
 import fsspec
 import numpy as np
 import pandas as pd
 import torch
+# Force strict FP32 math and determinism
+torch.backends.cuda.matmul.allow_tf32 = False
+torch.backends.cudnn.allow_tf32 = False
+torch.use_deterministic_algorithms(True, warn_only=True)
+import os
+os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
 import xarray as xr
 from huggingface_hub import hf_hub_download
 import pickle
@@ -241,23 +246,27 @@ def compare_with_wb2(predictions: dict, dates: list) -> pd.DataFrame:
                 wb2_slice = wb2.sel(time=init_time, prediction_timedelta=lead_td)
                 lat = pred_ds.latitude.values
                 
+                # Check if latitude directions mismatch
+                wb2_lat = wb2_slice.latitude.values
+                pred_is_descending = lat[0] > lat[-1]
+                wb2_is_descending = wb2_lat[0] > wb2_lat[-1]
+                need_flip = pred_is_descending != wb2_is_descending
+
                 for level in [500, 700, 850]:
                     # Geopotential
                     pred_z = pred_ds['z'].sel(level=level).values
                     wb2_z = wb2_slice['geopotential\t'].sel(level=level).values
                     
-                    # Check latitude orientation
-                    if lat[0] < lat[-1]:  # ascending
-                        wb2_z = wb2_z[::-1, :]
-                    
-                    rmse_z = compute_rmse(pred_z, wb2_z, lat)
-                    
                     # Temperature
                     pred_t = pred_ds['t'].sel(level=level).values
                     wb2_t = wb2_slice['temperature'].sel(level=level).values
-                    if lat[0] < lat[-1]:
+
+                    # Flip WB2 if latitude directions mismatch
+                    if need_flip:
+                        wb2_z = wb2_z[::-1, :]
                         wb2_t = wb2_t[::-1, :]
-                    
+
+                    rmse_z = compute_rmse(pred_z, wb2_z, lat)
                     rmse_t = compute_rmse(pred_t, wb2_t, lat)
                     
                     results.append({

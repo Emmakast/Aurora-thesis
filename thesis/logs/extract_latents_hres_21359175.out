@@ -1,0 +1,169 @@
+========================================
+  AURORA HRES LATENT EXTRACTION - JAN 2022
+========================================
+Job ID:       21359175
+Date:         Mon Mar 30 13:31:38 CEST 2026
+Node:         gcn27.local.snellius.surf.nl
+GPU:
+NVIDIA A100-SXM4-40GB, 40960 MiB
+========================================
+
+  ✓ S3 Client initialized securely via .env
+======================================================================
+  AURORA LATENT EXTRACTION - IFS HRES T0
+======================================================================
+  Dates: 31 dates
+  Init hours: [12]
+  Latent extraction init: 12:00 UTC only
+  Rollout steps: 1
+  Device: cuda
+  Output: /scratch-local/ekasteleyn.21359175/aurora_hres_latents
+  Cache: /home/ekasteleyn/downloads/hres_t0
+  Target layers: [('perceiver', 0), ('encoder', 0), ('encoder', 1), ('encoder', 2)]
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+  2022-01-01
+  2022-01-02
+  2022-01-03
+  2022-01-04
+  2022-01-05
+  2022-01-06
+  2022-01-07
+  2022-01-08
+  2022-01-09
+  2022-01-10
+  2022-01-11
+  2022-01-12
+  2022-01-13
+  2022-01-14
+  2022-01-15
+  2022-01-16
+  2022-01-17
+  2022-01-18
+  2022-01-19
+  2022-01-20
+  2022-01-21
+  2022-01-22
+  2022-01-23
+  2022-01-24
+  2022-01-25
+  2022-01-26
+  2022-01-27
+  2022-01-28
+  2022-01-29
+  2022-01-30
+  2022-01-31
+
+[3/4] Loading Aurora 0.25° Fine-Tuned model...
+  ✓ Model loaded
+
+[4/4] Processing 31 runs (31 dates × 1 init times)...
+
+  [13:33:06] [1/31] 2022-01-01 init 12:00 UTC [+latents]
+    Init time: 2022-01-01 12:00:00
+    pred step 1 (+6h) -> aurora_pred_20220101_1200_step01_006h.nc
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220101_1200_perceiver_0.pt
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220101_1200_encoder_0.pt
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220101_1200_encoder_1.pt
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220101_1200_encoder_2.pt
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220101_1200_perceiver_cross_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220101_1200_encoder_0_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220101_1200_encoder_1_attn.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220101_1200_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220101_1200_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220101_1200_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220101_1200_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220101_1200_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220101_1200_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220101_1200_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220101_1200_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220101_1200_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220101_1200_encoder_0_attn.pt
+    ✓ Done in 17.8s
+
+  [13:33:24] [2/31] 2022-01-02 init 12:00 UTC [+latents] | ETA: 8.9 min
+    Init time: 2022-01-02 12:00:00
+    pred step 1 (+6h) -> aurora_pred_20220102_1200_step01_006h.nc
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220102_1200_perceiver_0.pt
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220102_1200_encoder_0.pt
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220102_1200_encoder_1.pt
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220102_1200_encoder_2.pt
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220102_1200_perceiver_cross_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220102_1200_encoder_0_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220102_1200_encoder_1_attn.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220102_1200_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220102_1200_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220102_1200_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220102_1200_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220102_1200_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220102_1200_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220102_1200_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220102_1200_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220102_1200_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220102_1200_encoder_0_attn.pt
+    ✓ Done in 17.9s
+
+  [13:33:42] [3/31] 2022-01-03 init 12:00 UTC [+latents] | ETA: 8.6 min
+    Init time: 2022-01-03 12:00:00
+    pred step 1 (+6h) -> aurora_pred_20220103_1200_step01_006h.nc
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220103_1200_perceiver_0.pt
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220103_1200_encoder_0.pt
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220103_1200_encoder_1.pt
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220103_1200_encoder_2.pt
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220103_1200_perceiver_cross_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220103_1200_encoder_0_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220103_1200_encoder_1_attn.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220103_1200_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220103_1200_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220103_1200_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220103_1200_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220103_1200_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220103_1200_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220103_1200_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220103_1200_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220103_1200_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220103_1200_encoder_0_attn.pt
+    ✓ Done in 16.4s
+
+  [13:33:58] [4/31] 2022-01-04 init 12:00 UTC [+latents] | ETA: 8.1 min
+    Init time: 2022-01-04 12:00:00
+    pred step 1 (+6h) -> aurora_pred_20220104_1200_step01_006h.nc
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220104_1200_perceiver_0.pt
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220104_1200_encoder_0.pt
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220104_1200_encoder_1.pt
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220104_1200_encoder_2.pt
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220104_1200_perceiver_cross_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220104_1200_encoder_0_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220104_1200_encoder_1_attn.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220104_1200_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220104_1200_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220104_1200_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220104_1200_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220104_1200_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220104_1200_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220104_1200_step01_006h.nc
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220104_1200_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220104_1200_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220104_1200_encoder_0_attn.pt
+    ✓ Done in 16.0s
+
+  [13:34:14] [5/31] 2022-01-05 init 12:00 UTC [+latents] | ETA: 7.7 min
+    Init time: 2022-01-05 12:00:00
+    pred step 1 (+6h) -> aurora_pred_20220105_1200_step01_006h.nc
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220105_1200_perceiver_0.pt
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220105_1200_encoder_0.pt
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220105_1200_encoder_1.pt
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220105_1200_encoder_2.pt
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220105_1200_perceiver_cross_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220105_1200_encoder_0_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220105_1200_encoder_1_attn.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220105_1200_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220105_1200_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220105_1200_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220105_1200_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20220105_1200_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20220105_1200_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/aurora_pred_20220105_1200_step01_006h.nc

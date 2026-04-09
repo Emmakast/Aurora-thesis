@@ -7,6 +7,7 @@ aurora_env/
 *.h5
 *.pt
 *.nc
+*.env
 
 # Ignore editor settings
 .vscode/

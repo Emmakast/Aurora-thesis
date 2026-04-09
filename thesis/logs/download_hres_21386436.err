@@ -1,0 +1,39 @@
+/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py:33: DeprecationWarning: numpy.core.numeric is deprecated and has been renamed to numpy._core.numeric. The numpy._core namespace contains private NumPy internals and its use is discouraged, as NumPy internals can change without warning in any release. In practice, most real-world usage of numpy.core is to access functionality in the public NumPy API. If that is the case, use the public NumPy API. If not, you are using NumPy internals. If you would still like to access an internal attribute, use numpy._core.numeric._frombuffer.
+  static_vars = pickle.load(f)
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py", line 137, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py", line 122, in main
+    download_data(day, download_path, ds)
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py", line 79, in download_data
+    ds_atmos.to_netcdf(str(atmos_path), engine="h5netcdf")
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/core/dataset.py", line 2110, in to_netcdf
+    return to_netcdf(  # type: ignore[return-value]  # mypy cannot resolve the overloads:(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/writers.py", line 441, in to_netcdf
+    dump_to_store(
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/writers.py", line 491, in dump_to_store
+    store.store(variables, attrs, check_encoding, writer, unlimited_dims=unlimited_dims)
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/common.py", line 533, in store
+    self.set_variables(
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/common.py", line 575, in set_variables
+    writer.add(source, target)
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/common.py", line 403, in add
+    target[...] = source
+    ~~~~~~^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 96, in __setitem__
+    data[key] = value
+    ~~~~^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/h5netcdf/core.py", line 769, in __setitem__
+    self._h5ds[key] = value
+    ~~~~~~~~~~^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/h5py/_hl/dataset.py", line 1110, in __setitem__
+    self.id.write(mspace, fspace, val, mtype, dxpl=self._dxpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5d.pyx", line 305, in h5py.h5d.DatasetID.write
+  File "h5py/_proxy.pyx", line 122, in h5py._proxy.dset_rw
+OSError: [Errno 122] Can't synchronously write data (file write failed: time = Tue Mar 31 10:45:53 2026
+, filename = '/home/ekasteleyn/downloads/hres_t0/2022-07-07-atmospheric.nc', file descriptor = 14, errno = 122, error message = 'Disk quota exceeded', buf = 0x14b075624010, total write size = 215953920, bytes this sub-write = 215953920, offset = 431918119)

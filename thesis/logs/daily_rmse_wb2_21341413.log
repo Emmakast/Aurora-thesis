@@ -1,0 +1,10 @@
+==============================================
+Daily RMSE Computation (WB2 Methodology)
+==============================================
+Start time: Mon Mar 30 10:41:21 CEST 2026
+Models: pangu fuxi graphcast hres neuralgcm
+Script: /home/ekasteleyn/aurora_thesis/thesis/scripts/compute_daily_rmse_wb2.py
+==============================================
+
+>>> Processing pangu...
+[2026-03-30T11:16:51.186] error: *** JOB 21341413 ON tcn54 CANCELLED AT 2026-03-30T11:16:51 DUE to SIGNAL Terminated ***

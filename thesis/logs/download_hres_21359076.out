@@ -1,0 +1,63 @@
+========================================
+  HRES T0 DATA DOWNLOAD - JAN 2022
+========================================
+Job ID:       21359076
+Date:         Mon Mar 30 13:28:36 CEST 2026
+Node:         tcn283.local.snellius.surf.nl
+========================================
+
+============================================================
+  HRES T0 DATA DOWNLOAD
+============================================================
+  Dates: 31
+  Cache: /home/ekasteleyn/downloads/hres_t0
+============================================================
+
+[1/3] Total dates to download: 31
+
+[2/3] Static variables...
+  ✓ Static variables already cached
+
+[3/3] HRES T0 data...
+  Opening WeatherBench2 dataset...
+  ✓ 2022-01-01 already cached
+  ✓ 2022-01-02 already cached
+  ✓ 2022-01-03 already cached
+  ✓ 2022-01-04 already cached
+  ✓ 2022-01-05 already cached
+  ✓ 2022-01-06 already cached
+  ✓ 2022-01-07 already cached
+  ✓ 2022-01-08 already cached
+  ✓ 2022-01-09 already cached
+  ✓ 2022-01-10 already cached
+  ✓ 2022-01-11 already cached
+  ✓ 2022-01-12 already cached
+  ✓ 2022-01-13 already cached
+  ✓ 2022-01-14 already cached
+  ✓ 2022-01-15 already cached
+  ✓ 2022-01-16 already cached
+  ✓ 2022-01-17 already cached
+  ✓ 2022-01-18 already cached
+  ✓ 2022-01-19 already cached
+  ✓ 2022-01-20 already cached
+  ✓ 2022-01-21 already cached
+  ✓ 2022-01-22 already cached
+  ✓ 2022-01-23 already cached
+  ✓ 2022-01-24 already cached
+  ✓ 2022-01-25 already cached
+  ✓ 2022-01-26 already cached
+  ✓ 2022-01-27 already cached
+  ✓ 2022-01-28 already cached
+  ✓ 2022-01-29 already cached
+  ✓ 2022-01-30 already cached
+  ✓ 2022-01-31 already cached
+
+============================================================
+  DOWNLOAD COMPLETE
+============================================================
+  Files cached at: /home/ekasteleyn/downloads/hres_t0
+  Total size: 37.84 GB
+
+========================================
+  COMPLETE: Mon Mar 30 13:29:34 CEST 2026
+========================================

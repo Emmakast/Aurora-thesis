@@ -1,0 +1,1 @@
+/var/spool/slurm/slurmd/job21363241/slurm_script: line 43: 985151 Segmentation fault      PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py --dates $DATES --num-steps 40 --save-predictions --init-hours 0
