@@ -30,11 +30,11 @@ except ImportError:
     print("Warning: Could not import Aurora. Make sure the aurora environment is active.")
 
 def main():
-    parser = argparse.ArgumentParser(description="Run CAA steering on Aurora")
+    parser = argparse.ArgumentParser(description="Contrastive Activation Addition Steering")
     parser.add_argument("--alpha", type=float, default=1.0, help="Steering strength")
     args = parser.parse_args()
     
-    print("Starting Contrastive Activation Addition (CAA) Steering Pipeline...")
+    print(f"Starting Contrastive Activation Addition (CAA) Steering Pipeline (alpha={args.alpha})...")
     
     # ==========================================
     # Step 1: Compute the Steering Vector
@@ -116,7 +116,10 @@ def main():
             return None
             
         stacked = torch.stack(tensors, dim=0)
-        return stacked.mean(dim=0)
+        # Use nanmean to ignore NaNs in the dataset, and zero out any fully-NaN results
+        mean_val = torch.nanmean(stacked, dim=0)
+        mean_val = torch.nan_to_num(mean_val, nan=0.0, posinf=0.0, neginf=0.0)
+        return mean_val
 
         
     print(f"Loading Active latents ({len(active_dates)} dates)...")
@@ -131,11 +134,15 @@ def main():
         delta_v = torch.zeros((1, 4, 18, 36, 1536))
     else:
         delta_v = mean_active - mean_neutral
+        # Ensure extremely clean data
+        delta_v = torch.nan_to_num(delta_v, nan=0.0, posinf=0.0, neginf=0.0)
         
-    print(f"Steering vector (delta_v) shape: {delta_v.shape}")
+    print(f"Steering vector (delta_v) shape: {delta_v.shape}, max= {torch.max(delta_v)}, min= {torch.min(delta_v)}, norm={torch.norm(delta_v)}")
     
-    # Use the full 3D steering vector (polar vortex is a 3D structure)
-    masked_delta_v = delta_v
+    # Keep all Z levels for full 3D storm structure
+    # Shape is (B, Z, Y, X, C) - we want steering across all vertical levels
+    masked_delta_v = delta_v.clone()
+    print(f"Keeping all Z levels for 3D structure (shape: {masked_delta_v.shape})")
         
     # ==========================================
     # Step 2: Implement the Intervention Hook
@@ -205,9 +212,23 @@ def main():
     print("Converting prediction to xarray...")
     ds = batch_to_dataset(pred_batch, step=1)
     
-    output_filename = f"steered_polar_vortex_alpha_{alpha_val}.nc"
+    date_tag = base_day_str.replace("-", "")
+    output_filename = f"steered_polar_vortex_{date_tag}_alpha_{alpha_val}.nc"
     ds.to_netcdf(output_filename)
     print(f"Saved steered output to {output_filename}")
+    
+    print("Running base inference (alpha=0.0) without hook...")
+    with torch.inference_mode():
+        for pred in rollout(model, batch, steps=1):
+            base_pred_batch = pred
+            break
+            
+    base_pred_batch = base_pred_batch.to("cpu")
+    base_ds = batch_to_dataset(base_pred_batch, step=1)
+    base_output_filename = f"base_polar_vortex_{date_tag}_alpha_0.0.nc"
+    base_ds.to_netcdf(base_output_filename)
+    print(f"Saved base output to {base_output_filename}")
+    
     print("Done!")
 
 if __name__ == "__main__":
