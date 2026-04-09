@@ -1,5 +1,6 @@
 import sys
 import os
+import argparse
 import torch
 import pandas as pd
 import numpy as np
@@ -29,7 +30,11 @@ except ImportError:
     print("Warning: Could not import Aurora. Make sure the aurora environment is active.")
 
 def main():
-    print("Starting Contrastive Activation Addition (CAA) Steering Pipeline...")
+    parser = argparse.ArgumentParser(description="Contrastive Activation Addition Steering")
+    parser.add_argument("--alpha", type=float, default=1.0, help="Steering strength")
+    args = parser.parse_args()
+    
+    print(f"Starting Contrastive Activation Addition (CAA) Steering Pipeline (alpha={args.alpha})...")
     
     # ==========================================
     # Step 1: Compute the Steering Vector
@@ -134,19 +139,10 @@ def main():
         
     print(f"Steering vector (delta_v) shape: {delta_v.shape}, max= {torch.max(delta_v)}, min= {torch.min(delta_v)}, norm={torch.norm(delta_v)}")
     
-    # Masking out all levels except Z=0
-    # Assuming shape is (B, Z, Y, X, C) corresponding to ndim=5
-    masked_delta_v = torch.zeros_like(delta_v)
-    
-    if delta_v.ndim == 5:
-        # Assuming dim 1 is Z/depth
-        masked_delta_v[:, 0, :, :, :] = delta_v[:, 0, :, :, :]
-        print("Masked all levels except Z=0 (dimension 1).")
-    elif delta_v.ndim == 4:
-        masked_delta_v[0, :, :, :] = delta_v[0, :, :, :]
-    else:
-        print(f"Warning: Unexpected ndim {delta_v.ndim}. Unable to precisely mask Z dimension without understanding shape. Masking whole tensor.")
-        masked_delta_v = delta_v
+    # Keep all Z levels for full 3D storm structure
+    # Shape is (B, Z, Y, X, C) - we want steering across all vertical levels
+    masked_delta_v = delta_v.clone()
+    print(f"Keeping all Z levels for 3D structure (shape: {masked_delta_v.shape})")
         
     # ==========================================
     # Step 2: Implement the Intervention Hook
@@ -195,7 +191,7 @@ def main():
     batch = prepare_batch(base_day_str, download_dir, init_hour=12)
     batch = batch.to(device)
     
-    alpha_val = 1.0
+    alpha_val = args.alpha
     hook_handle = model.backbone.encoder_layers[2].register_forward_hook(
         make_intervention_hook(masked_delta_v, alpha=alpha_val)
     )
@@ -216,7 +212,8 @@ def main():
     print("Converting prediction to xarray...")
     ds = batch_to_dataset(pred_batch, step=1)
     
-    output_filename = f"steered_polar_vortex_alpha_{alpha_val}.nc"
+    date_tag = base_day_str.replace("-", "")
+    output_filename = f"steered_polar_vortex_{date_tag}_alpha_{alpha_val}.nc"
     ds.to_netcdf(output_filename)
     print(f"Saved steered output to {output_filename}")
     
@@ -228,7 +225,7 @@ def main():
             
     base_pred_batch = base_pred_batch.to("cpu")
     base_ds = batch_to_dataset(base_pred_batch, step=1)
-    base_output_filename = "base_polar_vortex_alpha_0.0.nc"
+    base_output_filename = f"base_polar_vortex_{date_tag}_alpha_0.0.nc"
     base_ds.to_netcdf(base_output_filename)
     print(f"Saved base output to {base_output_filename}")
     
