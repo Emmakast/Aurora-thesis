@@ -155,6 +155,12 @@ def build_table_data(lead: int, summaries: dict[str, pd.DataFrame],
                 row_colors.append(white)
                 continue
 
+            # For effective_resolution_km, NeuralGCM and HRES have native ~315km resolution
+            # so their values should be white (it's their maximum possible resolution)
+            if metric == "effective_resolution_km" and m in NATIVE_RESOLUTION_MODELS:
+                row_colors.append(white)
+                continue
+
             # Color based on sign: white=0, blue=positive, red=negative
             # Intensity scales with |value| / max_abs for this metric
             intensity = min(abs(v) / max_abs_per_metric[j], 1.0) * 0.8  # cap at 0.8 for readability

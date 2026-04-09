@@ -113,8 +113,11 @@ def _model_style(model: str) -> dict:
 
 
 def _extract_model(path: str, prefix: str) -> str:
-    """Strip prefix and trailing _YYYY from stem → model name."""
+    """Strip prefix and trailing _YYYY or _YYYY_ifs from stem → model name."""
     stem = Path(path).stem.replace(f"{prefix}_", "")
+    # Handle _ifs suffix: ke_spectrum_ifs_fuxi_2020 → fuxi
+    if stem.endswith("_ifs"):
+        stem = stem[:-4]  # Remove _ifs
     parts = stem.rsplit("_", 1)
     return parts[0] if (len(parts) == 2 and parts[1].isdigit()) else stem
 
@@ -165,19 +168,19 @@ def load_spectra_long(
     ifs_mode: bool = False,
 ) -> pd.DataFrame:
     """Load CSVs into long format (for wavenumber-axis plots)."""
-    pattern = str(results_dir / f"{cfg.csv_prefix}_*.csv")
+    suffix = "_ifs" if ifs_mode else ""
+    pattern = str(results_dir / f"{cfg.csv_prefix}_*{suffix}.csv")
     csvs = sorted(glob.glob(pattern))
     # For 'ke' analysis, exclude 850hpa files that also match the glob
     if cfg.csv_prefix == "ke_spectrum":
         csvs = [p for p in csvs if "850hpa" not in Path(p).name]
-        
+    # In IFS mode, only keep files ending with _ifs.csv
     if ifs_mode:
-        csvs = [p for p in csvs if p.endswith("_ifs.csv")]
+        csvs = [p for p in csvs if Path(p).stem.endswith("_ifs")]
     else:
-        csvs = [p for p in csvs if not p.endswith("_ifs.csv")]
-
+        csvs = [p for p in csvs if not Path(p).stem.endswith("_ifs")]
     if not csvs:
-        raise FileNotFoundError(f"No {cfg.csv_prefix}_*.csv found in {results_dir}")
+        raise FileNotFoundError(f"No {cfg.csv_prefix}_*{suffix}.csv found in {results_dir}")
 
     exclude = exclude or set()
     dfs = []
@@ -203,16 +206,16 @@ def load_spectra_wide(
     ifs_mode: bool = False,
 ) -> dict[str, pd.DataFrame]:
     """Load CSVs into wide format, averaged over dates (for wavelength/ratio plots)."""
-    pattern = str(results_dir / f"{cfg.csv_prefix}_*.csv")
+    suffix = "_ifs" if ifs_mode else ""
+    pattern = str(results_dir / f"{cfg.csv_prefix}_*{suffix}.csv")
     csvs = sorted(glob.glob(pattern))
     if cfg.csv_prefix == "ke_spectrum":
         csvs = [p for p in csvs if "850hpa" not in Path(p).name]
-        
+    # In IFS mode, only keep files ending with _ifs.csv
     if ifs_mode:
-        csvs = [p for p in csvs if p.endswith("_ifs.csv")]
+        csvs = [p for p in csvs if Path(p).stem.endswith("_ifs")]
     else:
-        csvs = [p for p in csvs if not p.endswith("_ifs.csv")]
-
+        csvs = [p for p in csvs if not Path(p).stem.endswith("_ifs")]
     if not csvs:
         raise FileNotFoundError(f"No {cfg.csv_prefix}_*.csv found in {results_dir}")
 
@@ -242,8 +245,8 @@ def _mean_spectrum(df: pd.DataFrame, vcol: str) -> pd.DataFrame:
 
 # ── Spectrum plots (wavenumber x-axis) ───────────────────────────────────────
 
-def plot_per_model_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg):
-    """Per-model: spectrum at each lead time + ERA5 (wavenumber x-axis)."""
+def plot_per_model_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, ref_label: str = "ERA5"):
+    """Per-model: spectrum at each lead time + reference (wavenumber x-axis)."""
     sns.set_theme(style="whitegrid")
     outdir.mkdir(parents=True, exist_ok=True)
     vcol = cfg.value_col
@@ -276,7 +279,7 @@ def plot_per_model_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg):
         print(f"  Saved {cfg.csv_prefix}_{model}.png")
 
 
-def plot_combined_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, target_lead: int):
+def plot_combined_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, target_lead: int, ref_label: str = "ERA5"):
     """All models at one lead time (wavenumber x-axis)."""
     sns.set_theme(style="whitegrid")
     outdir.mkdir(parents=True, exist_ok=True)
@@ -311,8 +314,8 @@ def plot_combined_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, target_le
 
 # ── Spectrum plots (wavelength x-axis) ───────────────────────────────────────
 
-def plot_per_model_wl(models: dict[str, pd.DataFrame], outdir: Path, cfg: AnalysisCfg):
-    """Per-model: spectrum at each lead time + ERA5 (wavelength x-axis)."""
+def plot_per_model_wl(models: dict[str, pd.DataFrame], outdir: Path, cfg: AnalysisCfg, ref_label: str = "ERA5"):
+    """Per-model: spectrum at each lead time + reference (wavelength x-axis)."""
     sns.set_theme(style="whitegrid")
     outdir.mkdir(parents=True, exist_ok=True)
 
@@ -345,7 +348,7 @@ def plot_per_model_wl(models: dict[str, pd.DataFrame], outdir: Path, cfg: Analys
 
 
 def plot_combined_wl(
-    models: dict[str, pd.DataFrame], outdir: Path, cfg: AnalysisCfg, target_lead: int,
+    models: dict[str, pd.DataFrame], outdir: Path, cfg: AnalysisCfg, target_lead: int, ref_label: str = "ERA5",
 ):
     """All models at one lead time (wavelength x-axis)."""
     sns.set_theme(style="whitegrid")
@@ -593,6 +596,20 @@ def main():
     results_dir = Path(args.results_dir)
     exclude = set(args.exclude)
     thresholds = sorted(args.thresholds)
+    ifs_mode = args.ifs
+
+    # Modify config for IFS mode (titles and output directory only)
+    if ifs_mode:
+        cfg = AnalysisCfg(
+            csv_prefix=cfg.csv_prefix,  # Keep original prefix for file matching
+            value_col=cfg.value_col,
+            wide_pred=cfg.wide_pred,
+            wide_era5=cfg.wide_era5,
+            ylabel=cfg.ylabel,
+            title=cfg.title + " (vs IFS HRES)",
+            ratio_ylabel=cfg.ratio_ylabel.replace("ERA5", "IFS"),
+            outdir_name=cfg.outdir_name + "_ifs",
+        )
 
     print(f"=== {cfg.title} ===")
     print(f"Loading from {results_dir} ...\n")
@@ -612,23 +629,26 @@ def main():
     # Deduplicate while preserving order
     key_leads = list(dict.fromkeys(key_leads))
 
+    # Reference label for plots
+    ref_label = "IFS HRES" if ifs_mode else "ERA5"
+
     # 1. Per-model spectrum (wavenumber)
     print("\n--- Per-model spectrum (wavenumber) ---")
-    plot_per_model_wn(df_mean, outdir, cfg)
+    plot_per_model_wn(df_mean, outdir, cfg, ref_label=ref_label)
 
     # 2. Combined spectrum (wavenumber)
     print("\n--- Combined spectrum (wavenumber) ---")
     for lt in key_leads:
-        plot_combined_wn(df_mean, outdir, cfg, target_lead=lt)
+        plot_combined_wn(df_mean, outdir, cfg, target_lead=lt, ref_label=ref_label)
 
     # 3. Per-model spectrum (wavelength)
     print("\n--- Per-model spectrum (wavelength) ---")
-    plot_per_model_wl(models_wide, outdir, cfg)
+    plot_per_model_wl(models_wide, outdir, cfg, ref_label=ref_label)
 
     # 4. Combined spectrum (wavelength)
     print("\n--- Combined spectrum (wavelength) ---")
     for lt in key_leads:
-        plot_combined_wl(models_wide, outdir, cfg, target_lead=lt)
+        plot_combined_wl(models_wide, outdir, cfg, target_lead=lt, ref_label=ref_label)
 
     # 5. Spectral ratio per model
     print("\n--- Per-model spectral ratio ---")
