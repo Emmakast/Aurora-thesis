@@ -1,5 +1,6 @@
 import sys
 import os
+import argparse
 import torch
 import pandas as pd
 import numpy as np
@@ -29,6 +30,10 @@ except ImportError:
     print("Warning: Could not import Aurora. Make sure the aurora environment is active.")
 
 def main():
+    parser = argparse.ArgumentParser(description="Run CAA steering on Aurora")
+    parser.add_argument("--alpha", type=float, default=1.0, help="Steering strength")
+    args = parser.parse_args()
+    
     print("Starting Contrastive Activation Addition (CAA) Steering Pipeline...")
     
     # ==========================================
@@ -129,19 +134,8 @@ def main():
         
     print(f"Steering vector (delta_v) shape: {delta_v.shape}")
     
-    # Masking out all levels except Z=0
-    # Assuming shape is (B, Z, Y, X, C) corresponding to ndim=5
-    masked_delta_v = torch.zeros_like(delta_v)
-    
-    if delta_v.ndim == 5:
-        # Assuming dim 1 is Z/depth
-        masked_delta_v[:, 0, :, :, :] = delta_v[:, 0, :, :, :]
-        print("Masked all levels except Z=0 (dimension 1).")
-    elif delta_v.ndim == 4:
-        masked_delta_v[0, :, :, :] = delta_v[0, :, :, :]
-    else:
-        print(f"Warning: Unexpected ndim {delta_v.ndim}. Unable to precisely mask Z dimension without understanding shape. Masking whole tensor.")
-        masked_delta_v = delta_v
+    # Use the full 3D steering vector (polar vortex is a 3D structure)
+    masked_delta_v = delta_v
         
     # ==========================================
     # Step 2: Implement the Intervention Hook
@@ -190,7 +184,7 @@ def main():
     batch = prepare_batch(base_day_str, download_dir, init_hour=12)
     batch = batch.to(device)
     
-    alpha_val = 1.0
+    alpha_val = args.alpha
     hook_handle = model.backbone.encoder_layers[2].register_forward_hook(
         make_intervention_hook(masked_delta_v, alpha=alpha_val)
     )
