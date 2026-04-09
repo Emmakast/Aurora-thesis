@@ -32,9 +32,10 @@ except ImportError:
 def main():
     parser = argparse.ArgumentParser(description="Contrastive Activation Addition Steering")
     parser.add_argument("--alpha", type=float, default=1.0, help="Steering strength")
+    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "MJO", "ENSO"], help="Phenomenon to steer")
     args = parser.parse_args()
     
-    print(f"Starting Contrastive Activation Addition (CAA) Steering Pipeline (alpha={args.alpha})...")
+    print(f"Starting Contrastive Activation Addition (CAA) Steering Pipeline ({args.phenomenon}, alpha={args.alpha})...")
     
     # ==========================================
     # Step 1: Compute the Steering Vector
@@ -48,10 +49,10 @@ def main():
         
     df = pd.read_csv(csv_path)
     
-    # Filter for AO
-    ao_df = df[df['Phenomenon'] == 'AO']
-    active_dates = ao_df[ao_df['Type'] == 'Active']
-    neutral_dates = ao_df[ao_df['Type'] == 'Neutral']
+    # Filter for the chosen phenomenon
+    phenom_df = df[df['Phenomenon'] == args.phenomenon]
+    active_dates = phenom_df[phenom_df['Type'] == 'Active']
+    neutral_dates = phenom_df[phenom_df['Type'] == 'Neutral']
     
 # S3 Client setup
     s3_client = None
@@ -145,17 +146,29 @@ def main():
     print(f"Keeping all Z levels for 3D structure (shape: {masked_delta_v.shape})")
         
     # ==========================================
-    # Step 2: Implement the Intervention Hook
+    # Step 2: Implement the Intervention Hook (Normalized)
     # ==========================================
     def make_intervention_hook(steering_vec, alpha=1.0):
         def hook(module, args, output):
             is_tuple = isinstance(output, tuple)
             x = output[0] if is_tuple else output
             
-            # Broadcast batch if needed, cast dtype and device
+            # 1. Cast and move steering vector to match current activation
             s_vec = steering_vec.to(dtype=x.dtype, device=x.device)
-            # Add scaled steering vector
-            new_x = x + (alpha * s_vec)
+            
+            # 2. Calculate L2 norms
+            x_norm = torch.norm(x, p=2, dim=-1, keepdim=True)
+            s_vec_norm = torch.norm(s_vec, p=2, dim=-1, keepdim=True)
+            
+            # Prevent division by zero
+            s_vec_norm = torch.clamp(s_vec_norm, min=1e-6)
+            
+            # 3. Create a unit vector, then scale it relative to x's magnitude
+            # alpha now represents a percentage of x's norm (e.g., alpha=0.1 is 10%)
+            normalized_s_vec = (s_vec / s_vec_norm) * x_norm * alpha
+            
+            # 4. Inject
+            new_x = x + normalized_s_vec
             
             if is_tuple:
                 return (new_x,) + output[1:]
@@ -211,24 +224,34 @@ def main():
     # Convert and save
     print("Converting prediction to xarray...")
     ds = batch_to_dataset(pred_batch, step=1)
-    
+
     date_tag = base_day_str.replace("-", "")
-    output_filename = f"steered_polar_vortex_{date_tag}_alpha_{alpha_val}.nc"
+    output_filename = f"steered_{args.phenomenon.lower()}_{date_tag}_alpha_{alpha_val}.nc"
     ds.to_netcdf(output_filename)
     print(f"Saved steered output to {output_filename}")
     
-    print("Running base inference (alpha=0.0) without hook...")
-    with torch.inference_mode():
-        for pred in rollout(model, batch, steps=1):
-            base_pred_batch = pred
-            break
-            
-    base_pred_batch = base_pred_batch.to("cpu")
-    base_ds = batch_to_dataset(base_pred_batch, step=1)
-    base_output_filename = f"base_polar_vortex_{date_tag}_alpha_0.0.nc"
-    base_ds.to_netcdf(base_output_filename)
-    print(f"Saved base output to {base_output_filename}")
+    base_output_filename = f"base_{args.phenomenon.lower()}_{date_tag}_alpha_0.0.nc"
     
+    if not os.path.exists(base_output_filename):
+        print("Running base inference (alpha=0.0) without hook...")
+        with torch.inference_mode():
+            for pred in rollout(model, batch, steps=1):
+                base_pred_batch = pred
+                break
+                
+        base_pred_batch = base_pred_batch.to("cpu")
+        base_ds = batch_to_dataset(base_pred_batch, step=1)
+        
+        # Write to a temporary file unique to this task to avoid concurrent write collisions
+        tmp_base_filename = f"{base_output_filename}.tmp{alpha_val}"
+        base_ds.to_netcdf(tmp_base_filename)
+        
+        # Atomically rename to the final target
+        os.rename(tmp_base_filename, base_output_filename)
+        print(f"Saved base output to {base_output_filename}")
+    else:
+        print(f"Base output {base_output_filename} already exists, skipping base inference.")
+        
     print("Done!")
 
 if __name__ == "__main__":
