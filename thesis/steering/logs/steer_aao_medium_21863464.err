@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 362, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 53, in main
+    if not os.path.exists(csv_path):
+           ^^
+UnboundLocalError: cannot access local variable 'os' where it is not associated with a value

@@ -34,7 +34,7 @@ except ImportError:
 
 def main():
     parser = argparse.ArgumentParser(description="Contrastive Activation Addition Steering")
-    parser.add_argument("--alpha", type=float, default=1.0, help="Steering strength")
+    parser.add_argument("--alphas", type=float, nargs="+", default=[1.0], help="List of steering strengths")
     parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "MJO", "ENSO", "AAO"], help="Phenomenon to steer")
     parser.add_argument("--csv", type=str, default="target_dates.csv", help="Target dates CSV file")
     parser.add_argument("--name-suffix", type=str, default="", help="Suffix to append to the output filename (e.g., '_ao81')")
@@ -42,7 +42,7 @@ def main():
     args = parser.parse_args()
     
     suffix_str = args.name_suffix if args.name_suffix.startswith("_") or args.name_suffix == "" else f"_{args.name_suffix}"
-    print(f"Starting Contrastive Activation Addition (CAA) Steering Pipeline ({args.phenomenon}, alpha={args.alpha})...")
+    print(f"Starting Contrastive Activation Addition (CAA) Steering Pipeline ({args.phenomenon}, alphas={args.alphas})...")
     
     # ==========================================
     # Step 1: Compute the Steering Vector
@@ -309,31 +309,6 @@ def main():
     else:
         batch = batch.to(device)
     
-    alpha_val = args.alpha
-    hook_handle = model.backbone.encoder_layers[2].register_forward_hook(
-        make_intervention_hook(masked_delta_v, alpha=alpha_val)
-    )
-    
-    print(f"Running steered inference (alpha={alpha_val})...")
-    with torch.inference_mode():
-        # Single step rollout
-        for pred in rollout(model, batch, steps=1):
-            pred_batch = pred
-            break
-            
-    pred_batch = pred_batch.to("cpu")
-        
-    # Remove hook when done
-    hook_handle.remove()
-    
-    # Convert and save
-    print("Converting prediction to xarray...")
-    ds = batch_to_dataset(pred_batch, step=1)
-
-    output_filename = f"steered_{args.phenomenon.lower()}{suffix_str}_{date_tag}_alpha_{alpha_val}.nc"
-    ds.to_netcdf(output_filename)
-    print(f"Saved steered output to {output_filename}")
-    
     base_output_filename = f"base_{args.phenomenon.lower()}{suffix_str}_{date_tag}_alpha_0.0.nc"
     
     if not os.path.exists(base_output_filename):
@@ -346,16 +321,40 @@ def main():
         base_pred_batch = base_pred_batch.to("cpu")
         base_ds = batch_to_dataset(base_pred_batch, step=1)
         
-        # Write to a temporary file unique to this task to avoid concurrent write collisions
-        tmp_base_filename = f"{base_output_filename}.tmp{alpha_val}"
+        tmp_base_filename = f"{base_output_filename}.tmp_base"
         base_ds.to_netcdf(tmp_base_filename)
-        
-        # Atomically rename to the final target
         os.rename(tmp_base_filename, base_output_filename)
         print(f"Saved base output to {base_output_filename}")
     else:
         print(f"Base output {base_output_filename} already exists, skipping base inference.")
         
+    for alpha_val in args.alphas:
+        print(f"Applying hook with alpha={alpha_val}...")
+        
+        # NOTE: aurora batch tuples might have issues.
+        # But base inference logic is identical to steer inference logic inside the hook
+        hook_handle = model.backbone.encoder_layers[2].register_forward_hook(
+            make_intervention_hook(masked_delta_v, alpha=alpha_val)
+        )
+        
+        print(f"Running steered inference (alpha={alpha_val})...")
+        with torch.inference_mode():
+            for pred in rollout(model, batch, steps=1):
+                pred_batch = pred
+                break
+                
+        pred_batch = pred_batch.to("cpu")
+            
+        # Remove hook when done
+        hook_handle.remove()
+        
+        print(f"Converting prediction to xarray for alpha={alpha_val}...")
+        ds = batch_to_dataset(pred_batch, step=1)
+
+        output_filename = f"steered_{args.phenomenon.lower()}{suffix_str}_{date_tag}_alpha_{alpha_val}.nc"
+        ds.to_netcdf(output_filename)
+        print(f"Saved steered output to {output_filename}")
+
     print("Done!")
 
 if __name__ == "__main__":
