@@ -1,0 +1,37 @@
+========================================
+  HRES T0 DATA DOWNLOAD - TARGET DATES  
+========================================
+Job ID:       21851264
+Date:         Tue Apr 14 10:15:18 CEST 2026
+Node:         tcn352.local.snellius.surf.nl
+========================================
+
+============================================================
+  HRES T0 DATA DOWNLOAD
+============================================================
+  Dates: 183
+  Cache: /scratch-shared/ekasteleyn/downloads/hres_t0
+============================================================
+
+[1/3] Total dates to download: 183
+
+[2/3] Static variables...
+  ✓ Static variables already cached
+
+[3/3] HRES T0 / ERA5 data...
+  Opening WeatherBench2 datasets...
+  Downloading 2016-02-01 surface variables (HRES)...
+  Downloading 2016-02-01 atmospheric variables (HRES)...
+  ✓ 2016-02-01 downloaded
+  Downloading 2016-02-07 surface variables (HRES)...
+  Downloading 2016-02-07 atmospheric variables (HRES)...
+  ✓ 2016-02-07 downloaded
+  Downloading 2016-02-08 surface variables (HRES)...
+  Downloading 2016-02-08 atmospheric variables (HRES)...
+  ✓ 2016-02-08 downloaded
+  Downloading 2016-02-18 surface variables (HRES)...
+  Downloading 2016-02-18 atmospheric variables (HRES)...
+
+========================================
+  COMPLETE: Tue Apr 14 10:17:20 CEST 2026
+========================================

@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 219, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('/scratch-shared/ekasteleyn/downloads/hres_t0/2016-06-23-surface-level.nc',), 'a', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '853039e0-b3e5-407d-b9ed-74c87bf901b2']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 718, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 509, in main
+    download_data(day, download_path)
+  File "/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py", line 127, in download_data
+    ds_surf.to_netcdf(str(download_path / f"{day}-surface-level.nc"))
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/core/dataset.py", line 2110, in to_netcdf
+    return to_netcdf(  # type: ignore[return-value]  # mypy cannot resolve the overloads:(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/writers.py", line 422, in to_netcdf
+    store = get_writable_netcdf_store(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/writers.py", line 78, in get_writable_netcdf_store
+    return store_open(target, mode=mode, format=format, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 525, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 429, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 534, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 528, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/sw/arch/RHEL8/EB_production/2023/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 207, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 225, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2517, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2154, in netCDF4._netCDF4._ensure_nc_success
+PermissionError: [Errno 13] Permission denied: '/scratch-shared/ekasteleyn/downloads/hres_t0/2016-06-23-surface-level.nc'

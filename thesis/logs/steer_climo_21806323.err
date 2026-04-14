@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/steer_aurora.py", line 288, in <module>
+    break
+
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/steer_aurora.py", line 217, in main
+    print(f"Loaded batch for {day_str} from S3.")
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected Tensor as element 0 in argument 0, but got Batch
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/steer_aurora.py", line 306, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/steer_aurora.py", line 235, in main
+    batch = torch.mean(torch.stack(batch_list), dim=0)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected Tensor as element 0 in argument 0, but got Batch
+[2026-04-13T13:06:55.326] error: *** JOB 21806323 ON gcn60 CANCELLED AT 2026-04-13T13:06:55 DUE to SIGNAL Terminated ***
