@@ -393,3 +393,1155 @@ NVIDIA A100-SXM4-40GB, 40960 MiB
   2020-07-17
     Downloading surface variables...
     Downloading atmospheric variables...
+  2020-07-18
+  2020-07-20
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-07-21
+  2020-07-25
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-07-26
+  2020-08-07
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-08-08
+  2020-08-22
+  2020-08-23
+  2020-08-31
+  2020-09-01
+  2020-09-05
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-09-06
+  2020-09-18
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-09-19
+  2020-09-20
+  2020-09-24
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-09-25
+  2020-10-24
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-10-25
+  2020-10-26
+  2021-01-16
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-01-17
+  2021-01-20
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-01-21
+  2021-01-22
+  2021-01-27
+  2021-01-28
+  2021-01-29
+  2021-02-18
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-02-19
+  2021-03-02
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-03-03
+  2021-04-23
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-04-24
+  2021-05-19
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-05-20
+  2021-05-21
+  2021-06-02
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-06-03
+  2021-06-04
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-06-05
+  2021-06-26
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-06-27
+  2021-06-28
+  2021-07-06
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-07-07
+  2021-07-18
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-07-19
+  2021-07-21
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-07-22
+  2021-07-30
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-07-31
+  2021-08-03
+  2021-08-04
+  2021-08-05
+  2021-08-21
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-08-22
+  2021-08-24
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-08-25
+  2021-08-29
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-08-30
+  2021-08-31
+  2021-09-16
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-09-17
+  2021-09-18
+  2021-10-13
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-10-14
+  2021-10-15
+  2021-10-16
+
+[3/4] Loading Aurora 0.25° Fine-Tuned model...
+  ✓ Model loaded
+
+[4/4] Processing 178 runs (178 dates × 1 init times)...
+  Loading static variables into memory...
+  ✓ Static variables loaded
+
+  [12:53:42] [1/178] 2016-01-13 init 00:00 UTC [+latents]
+    Init time: 2016-01-13 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160113_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160113_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160113_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160113_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160113_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160113_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160113_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160113_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.6s
+
+  [12:53:55] [2/178] 2016-02-14 init 00:00 UTC [+latents] | ETA: 40.1 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160113_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160113_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160113_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160113_0000_perceiver_cross_attn.pt
+    Init time: 2016-02-14 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160113_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160113_0000_encoder_2_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160214_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160214_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160214_0000_encoder_1.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160113_0000_encoder_1_attn.pt
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160214_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160214_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160214_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160214_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160214_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.9s
+
+  [12:54:08] [3/178] 2016-02-22 init 00:00 UTC [+latents] | ETA: 38.9 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160214_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160214_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160113_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160214_0000_perceiver_0.pt
+    Init time: 2016-02-22 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160214_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160214_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160214_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160214_0000_encoder_1_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160222_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160222_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160222_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160222_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160222_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160222_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160222_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160222_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.8s
+
+  [12:54:21] [4/178] 2016-02-23 init 00:00 UTC [+latents] | ETA: 38.3 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160222_0000_encoder_1.pt
+    Init time: 2016-02-23 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160222_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160214_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160222_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160222_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160222_0000_perceiver_0.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160223_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160223_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160223_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160223_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160223_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160223_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160223_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160223_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [12:54:32] [5/178] 2016-02-24 init 00:00 UTC [+latents] | ETA: 36.8 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160222_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160222_0000_encoder_1_attn.pt
+    Init time: 2016-02-24 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160223_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160223_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160222_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160223_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160223_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160223_0000_perceiver_cross_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160224_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160224_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160224_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160224_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160224_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160224_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160224_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160224_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [12:54:43] [6/178] 2016-02-25 init 00:00 UTC [+latents] | ETA: 35.6 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160223_0000_encoder_2_attn.pt
+    Init time: 2016-02-25 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160223_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160224_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160224_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160224_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160223_0000_encoder_0_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160225_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160225_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160225_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160225_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160225_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160225_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160225_0000_encoder_1_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160224_0000_perceiver_cross_attn.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160225_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [12:54:55] [7/178] 2016-02-26 init 00:00 UTC [+latents] | ETA: 34.9 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160224_0000_encoder_2.pt
+    Init time: 2016-02-26 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160224_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160224_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160225_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160225_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160226_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160226_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160226_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160226_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160226_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160225_0000_encoder_2.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160226_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160226_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160226_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [12:55:06] [8/178] 2016-02-29 init 00:00 UTC [+latents] | ETA: 34.3 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160225_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160225_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160225_0000_encoder_2_attn.pt
+    Init time: 2016-02-29 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160224_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160225_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160226_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160226_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160229_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160229_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160229_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160229_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160229_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160229_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160229_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160229_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.3s
+
+  [12:55:19] [9/178] 2016-03-31 init 00:00 UTC [+latents] | ETA: 34.6 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160226_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160226_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160226_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160225_0000_encoder_0_attn.pt
+    Init time: 2016-03-31 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160226_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160226_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160229_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160229_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160331_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160331_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160331_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160331_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160331_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160229_0000_encoder_0.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160331_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160331_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160331_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.8s
+
+  [12:55:32] [10/178] 2016-04-01 init 00:00 UTC [+latents] | ETA: 34.6 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160229_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160229_0000_perceiver_cross_attn.pt
+    Init time: 2016-04-01 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160229_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160229_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160226_0000_encoder_0_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160401_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160401_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160401_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160401_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160401_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160401_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160331_0000_encoder_1.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160401_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160401_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [12:55:43] [11/178] 2016-04-02 init 00:00 UTC [+latents] | ETA: 34.0 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160331_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160229_0000_encoder_0_attn.pt
+    Init time: 2016-04-02 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160331_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160331_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160331_0000_perceiver_0.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160402_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160402_0000_encoder_0.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160331_0000_encoder_2_attn.pt
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160402_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160402_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160402_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160402_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160402_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160402_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.7s
+
+  [12:55:54] [12/178] 2016-04-04 init 00:00 UTC [+latents] | ETA: 33.4 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160331_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160401_0000_encoder_1.pt
+    Init time: 2016-04-04 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160401_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160401_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160331_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160401_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160401_0000_perceiver_cross_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160404_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160404_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160404_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160404_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160404_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160404_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160404_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160404_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.7s
+
+  [12:56:05] [13/178] 2016-04-14 init 00:00 UTC [+latents] | ETA: 33.1 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160401_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160401_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160401_0000_encoder_0_attn.pt
+    Init time: 2016-04-14 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160402_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160402_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160402_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160402_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160402_0000_encoder_2.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160414_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160414_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160414_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160414_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160414_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160414_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160414_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160414_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.3s
+
+  [12:56:18] [14/178] 2016-04-27 init 00:00 UTC [+latents] | ETA: 33.0 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160402_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160402_0000_encoder_2_attn.pt
+    Init time: 2016-04-27 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160404_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160402_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160404_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160404_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160404_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160404_0000_encoder_2.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160427_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160427_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160427_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160427_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160427_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160427_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160427_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160427_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.1s
+
+  [12:56:30] [15/178] 2016-04-28 init 00:00 UTC [+latents] | ETA: 32.8 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160404_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160404_0000_encoder_1_attn.pt
+    Init time: 2016-04-28 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160414_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160414_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160404_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160414_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160414_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160414_0000_perceiver_cross_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160428_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160428_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160428_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160428_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160428_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160414_0000_encoder_2_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160428_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160428_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160428_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.7s
+
+  [12:56:40] [16/178] 2016-04-29 init 00:00 UTC [+latents] | ETA: 32.4 min
+    Init time: 2016-04-29 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160414_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160427_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160427_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160427_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160427_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160427_0000_perceiver_cross_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160429_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160429_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160429_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160429_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160429_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160414_0000_encoder_0_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160429_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160429_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160429_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.8s
+
+  [12:56:51] [17/178] 2016-05-01 init 00:00 UTC [+latents] | ETA: 32.0 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160427_0000_encoder_2_attn.pt
+    Init time: 2016-05-01 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160427_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160428_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160428_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160428_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160428_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160428_0000_perceiver_cross_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160501_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160501_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160501_0000_encoder_1.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160427_0000_encoder_0_attn.pt
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160501_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160501_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160501_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160501_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160501_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.6s
+
+  [12:57:04] [18/178] 2016-05-07 init 00:00 UTC [+latents] | ETA: 31.9 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160428_0000_encoder_2_attn.pt
+    Init time: 2016-05-07 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160428_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160429_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160429_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160429_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160429_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160429_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160428_0000_encoder_0_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160507_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160507_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160507_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160507_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160507_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160507_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160507_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160507_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.4s
+
+  [12:57:16] [19/178] 2016-05-09 init 00:00 UTC [+latents] | ETA: 31.8 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160429_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160429_0000_encoder_1_attn.pt
+    Init time: 2016-05-09 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160501_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160501_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160501_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160501_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160501_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160429_0000_encoder_0_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160509_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160509_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160509_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160509_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160509_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160509_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160509_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160509_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.7s
+
+  [12:57:29] [20/178] 2016-05-20 init 00:00 UTC [+latents] | ETA: 31.7 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160501_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160501_0000_encoder_1_attn.pt
+    Init time: 2016-05-20 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160507_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160507_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160507_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160507_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160501_0000_encoder_0_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160520_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160520_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160520_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160520_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160520_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160507_0000_perceiver_cross_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160520_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160520_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160520_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.6s
+
+  [12:57:42] [21/178] 2016-07-11 init 00:00 UTC [+latents] | ETA: 31.6 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160507_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160509_0000_encoder_0.pt
+    Init time: 2016-07-11 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160507_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160509_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160509_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160509_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160509_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160507_0000_encoder_0_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160711_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160711_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160711_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160711_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160711_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160711_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160711_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160711_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.5s
+
+  [12:57:54] [22/178] 2016-07-24 init 00:00 UTC [+latents] | ETA: 31.5 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160509_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160509_0000_encoder_1_attn.pt
+    Init time: 2016-07-24 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160520_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160520_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160520_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160520_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160520_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160509_0000_encoder_0_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160724_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160724_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160724_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160724_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160724_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160724_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160724_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160724_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.0s
+
+  [12:58:06] [23/178] 2016-07-25 init 00:00 UTC [+latents] | ETA: 31.3 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160520_0000_encoder_2_attn.pt
+    Init time: 2016-07-25 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160711_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160520_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160711_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160520_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160711_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160725_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160725_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160725_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160725_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160725_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160725_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160711_0000_encoder_2.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160725_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160725_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.7s
+
+  [12:58:17] [24/178] 2016-07-26 init 00:00 UTC [+latents] | ETA: 30.9 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160711_0000_perceiver_cross_attn.pt
+    Init time: 2016-07-26 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160711_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160711_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160724_0000_perceiver_0.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160726_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160726_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160726_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160726_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160726_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160726_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160724_0000_encoder_1.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160726_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160726_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.9s
+
+  [12:58:29] [25/178] 2016-09-26 init 00:00 UTC [+latents] | ETA: 30.7 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160711_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160724_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160724_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160724_0000_encoder_2.pt
+    Init time: 2016-09-26 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160724_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160725_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160724_0000_encoder_1_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160926_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160926_0000_encoder_0.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160724_0000_encoder_0_attn.pt
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160926_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160926_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160926_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160725_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160725_0000_encoder_1.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160926_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160926_0000_encoder_1_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160725_0000_encoder_2.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160926_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.1s
+
+  [12:58:42] [26/178] 2016-09-30 init 00:00 UTC [+latents] | ETA: 30.6 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160725_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160725_0000_encoder_2_attn.pt
+    Init time: 2016-09-30 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160725_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160726_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160726_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160725_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160726_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160930_0000_perceiver_0.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160726_0000_perceiver_cross_attn.pt
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160930_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160930_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160930_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160930_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160930_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160930_0000_encoder_1_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160726_0000_encoder_2.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160930_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.3s
+
+  [12:58:55] [27/178] 2016-10-17 init 00:00 UTC [+latents] | ETA: 30.5 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160726_0000_encoder_2_attn.pt
+    Init time: 2016-10-17 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160726_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160926_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160926_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160926_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160926_0000_encoder_2.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161017_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161017_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161017_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161017_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161017_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161017_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161017_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161017_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.8s
+
+  [12:59:08] [28/178] 2016-10-18 init 00:00 UTC [+latents] | ETA: 30.4 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160726_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160926_0000_perceiver_cross_attn.pt
+    Init time: 2016-10-18 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160926_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160926_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160926_0000_encoder_0_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161018_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161018_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161018_0000_encoder_1.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160930_0000_perceiver_0.pt
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161018_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161018_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161018_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161018_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161018_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.2s
+
+  [12:59:19] [29/178] 2016-11-23 init 00:00 UTC [+latents] | ETA: 30.1 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160930_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160930_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160930_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20160930_0000_encoder_2.pt
+    Init time: 2016-11-23 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160930_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160930_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161017_0000_perceiver_0.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161123_0000_perceiver_0.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161017_0000_encoder_1.pt
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161123_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161123_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161123_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161123_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161123_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161123_0000_encoder_1_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20160930_0000_encoder_0_attn.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161123_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.9s
+
+  [12:59:32] [30/178] 2016-11-24 init 00:00 UTC [+latents] | ETA: 30.0 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161017_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161017_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161017_0000_perceiver_cross_attn.pt
+    Init time: 2016-11-24 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161017_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161018_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161017_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161018_0000_encoder_0.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161124_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161124_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161124_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161124_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161124_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161124_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161017_0000_encoder_0_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161124_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161124_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.8s
+
+  [12:59:44] [31/178] 2016-11-25 init 00:00 UTC [+latents] | ETA: 29.8 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161018_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161018_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161018_0000_encoder_1.pt
+    Init time: 2016-11-25 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161018_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161018_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161123_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161123_0000_encoder_0.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161125_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161125_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161125_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161125_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161125_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161123_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161123_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161123_0000_encoder_1.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161125_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161125_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161125_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.5s
+
+  [12:59:56] [32/178] 2016-12-08 init 00:00 UTC [+latents] | ETA: 29.6 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161018_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161123_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161123_0000_encoder_1_attn.pt
+    Init time: 2016-12-08 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161124_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161124_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161124_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161124_0000_encoder_2.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161208_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161208_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161208_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161208_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161208_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161124_0000_perceiver_cross_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161208_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161208_0000_encoder_1_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161123_0000_encoder_0_attn.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161208_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.1s
+
+  [13:00:09] [33/178] 2016-12-09 init 00:00 UTC [+latents] | ETA: 29.5 min
+    Init time: 2016-12-09 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161124_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161124_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161125_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161125_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161125_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161125_0000_encoder_2.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161209_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161209_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161209_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161209_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161209_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161125_0000_perceiver_cross_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161209_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161209_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161209_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.2s
+
+  [13:00:20] [34/178] 2016-12-10 init 00:00 UTC [+latents] | ETA: 29.2 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161124_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161125_0000_encoder_1_attn.pt
+    Init time: 2016-12-10 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161125_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161208_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161208_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161125_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161208_0000_encoder_2.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161210_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161210_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161210_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161210_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161210_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161208_0000_perceiver_cross_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161210_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161208_0000_perceiver_0.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161210_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161210_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.3s
+
+  [13:00:33] [35/178] 2016-12-11 init 00:00 UTC [+latents] | ETA: 29.0 min
+    Init time: 2016-12-11 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161208_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161208_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161209_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161209_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161209_0000_perceiver_0.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161211_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161211_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161211_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161211_0000_encoder_2.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161208_0000_encoder_0_attn.pt
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161211_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161211_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161209_0000_perceiver_cross_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161211_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161211_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [13:00:44] [36/178] 2016-12-12 init 00:00 UTC [+latents] | ETA: 28.8 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161209_0000_encoder_2.pt
+    Init time: 2016-12-12 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161209_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161209_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161210_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161210_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161212_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161212_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161212_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161212_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161212_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161212_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161209_0000_encoder_0_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161212_0000_encoder_1_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161210_0000_encoder_2.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161212_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [13:00:55] [37/178] 2017-01-29 init 00:00 UTC [+latents] | ETA: 28.5 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161210_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161210_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161210_0000_encoder_2_attn.pt
+    Init time: 2017-01-29 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161210_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161211_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161211_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161211_0000_perceiver_0.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170129_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170129_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170129_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170129_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170129_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161210_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161211_0000_encoder_2.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170129_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170129_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170129_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.6s
+
+  [13:01:08] [38/178] 2017-01-30 init 00:00 UTC [+latents] | ETA: 28.4 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161211_0000_perceiver_cross_attn.pt
+    Init time: 2017-01-30 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161211_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161211_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161212_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161212_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161211_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161212_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170130_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170130_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170130_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170130_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170130_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170130_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170130_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170130_0000_encoder_2_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20161212_0000_encoder_2.pt
+    ✓ Done in 10.8s
+
+  [13:01:19] [39/178] 2017-01-31 init 00:00 UTC [+latents] | ETA: 28.1 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161212_0000_perceiver_cross_attn.pt
+    Init time: 2017-01-31 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161212_0000_encoder_2_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170131_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170131_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170131_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170131_0000_encoder_2.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161212_0000_encoder_1_attn.pt
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170131_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170129_0000_encoder_0.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170131_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170129_0000_perceiver_0.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170131_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170131_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.6s
+
+  [13:01:30] [40/178] 2017-02-01 init 00:00 UTC [+latents] | ETA: 27.8 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20161212_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170129_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170129_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170129_0000_encoder_1.pt
+    Init time: 2017-02-01 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170129_0000_encoder_2_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170201_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170201_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170201_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170201_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170201_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170129_0000_encoder_1_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170201_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170201_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170201_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.6s
+
+  [13:01:40] [41/178] 2017-02-07 init 00:00 UTC [+latents] | ETA: 27.5 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170130_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170130_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170130_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170130_0000_encoder_2.pt
+    Init time: 2017-02-07 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170130_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170129_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170130_0000_encoder_2_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170207_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170207_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170207_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170207_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170207_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170207_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170130_0000_encoder_1_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170207_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170207_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.8s
+
+  [13:01:52] [42/178] 2017-02-10 init 00:00 UTC [+latents] | ETA: 27.3 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170131_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170131_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170131_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170130_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170131_0000_encoder_2.pt
+    Init time: 2017-02-10 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170131_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170131_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170131_0000_encoder_1_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170210_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170210_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170210_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170210_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170210_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170210_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170210_0000_encoder_1_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170201_0000_perceiver_0.pt
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170210_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.3s
+
+  [13:02:05] [43/178] 2017-02-11 init 00:00 UTC [+latents] | ETA: 27.2 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170201_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170201_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170201_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170201_0000_encoder_2.pt
+    Init time: 2017-02-11 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170201_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170131_0000_encoder_0_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170211_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170211_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170211_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170211_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170211_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170201_0000_encoder_1_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170211_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170211_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170211_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.5s
+
+  [13:02:17] [44/178] 2017-02-21 init 00:00 UTC [+latents] | ETA: 27.0 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170207_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170207_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170201_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170207_0000_perceiver_0.pt
+    Init time: 2017-02-21 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170207_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170207_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170207_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170207_0000_encoder_2_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170221_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170221_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170221_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170221_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170221_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170210_0000_perceiver_0.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170221_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170221_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170221_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.8s
+
+  [13:02:30] [45/178] 2017-02-24 init 00:00 UTC [+latents] | ETA: 26.8 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170207_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170210_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170210_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170210_0000_encoder_0.pt
+    Init time: 2017-02-24 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170210_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170210_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170210_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170211_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170211_0000_perceiver_0.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170224_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170224_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170224_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170224_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170224_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170224_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170224_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170224_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.5s
+
+  [13:02:42] [46/178] 2017-03-24 init 00:00 UTC [+latents] | ETA: 26.6 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170211_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170210_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170211_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170211_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170211_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170211_0000_encoder_2_attn.pt
+    Init time: 2017-03-24 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170221_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170221_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170221_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170221_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170211_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170221_0000_encoder_2.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170324_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170324_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170324_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170324_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170324_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170324_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170324_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170324_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.8s
+
+  [13:02:57] [47/178] 2017-04-19 init 00:00 UTC [+latents] | ETA: 26.6 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170221_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170224_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170221_0000_encoder_1_attn.pt
+    Init time: 2017-04-19 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170224_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170224_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170221_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170224_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170224_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170224_0000_encoder_2_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170419_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170419_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170419_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170419_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170419_0000_perceiver_cross_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170224_0000_encoder_1_attn.pt
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170419_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170419_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170419_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.4s
+
+  [13:03:10] [48/178] 2017-04-26 init 00:00 UTC [+latents] | ETA: 26.4 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170324_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170324_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170324_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170224_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170324_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170324_0000_perceiver_cross_attn.pt
+    Init time: 2017-04-26 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170324_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170324_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170419_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170419_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170426_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170426_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170426_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170426_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170426_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170426_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170419_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170419_0000_encoder_0.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170426_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170426_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.4s
+
+  [13:03:24] [49/178] 2017-04-27 init 00:00 UTC [+latents] | ETA: 26.3 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170419_0000_perceiver_cross_attn.pt
+    Init time: 2017-04-27 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170324_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170419_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170419_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170426_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170427_0000_perceiver_0.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170426_0000_perceiver_0.pt
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170427_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170427_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170427_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170427_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170427_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170426_0000_encoder_0.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170427_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170427_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.9s
+
+  [13:03:36] [50/178] 2017-04-28 init 00:00 UTC [+latents] | ETA: 26.1 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170426_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170426_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170419_0000_encoder_0_attn.pt
+    Init time: 2017-04-28 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170426_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170426_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170427_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170427_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170427_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170428_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170428_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170428_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170428_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170428_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170428_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170426_0000_encoder_0_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170428_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170428_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.9s
+
+  [13:03:47] [51/178] 2017-06-10 init 00:00 UTC [+latents] | ETA: 25.9 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170427_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170427_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170427_0000_encoder_2_attn.pt
+    Init time: 2017-06-10 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170427_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170428_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170427_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170428_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170428_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170428_0000_encoder_2.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170610_0000_perceiver_0.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170428_0000_perceiver_cross_attn.pt
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170610_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170610_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170610_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170610_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170610_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170610_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170610_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.3s
+
+  [13:04:02] [52/178] 2017-07-12 init 00:00 UTC [+latents] | ETA: 25.7 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170428_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170428_0000_encoder_1_attn.pt
+    Init time: 2017-07-12 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170610_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170610_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170610_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170610_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170610_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170428_0000_encoder_0_attn.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170712_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170712_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170712_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170712_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170712_0000_perceiver_cross_attn.pt (Disk)
