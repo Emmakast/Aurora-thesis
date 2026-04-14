@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=steer_aurora
-#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/logs/steer_aurora_%j.out
-#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/logs/steer_aurora_%j.err
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_aurora_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_aurora_%j.err
 #SBATCH --time=2:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1

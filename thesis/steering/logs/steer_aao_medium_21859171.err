@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 389, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 292, in main
+    running_sum = tuple(t.clone() if hasattr(t, 'clone') else t for t in b) if isinstance(b, tuple) else b.clone()
+                                                                                                         ^^^^^^^
+AttributeError: 'Batch' object has no attribute 'clone'
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 389, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 292, in main
+    running_sum = tuple(t.clone() if hasattr(t, 'clone') else t for t in b) if isinstance(b, tuple) else b.clone()
+                                                                                                         ^^^^^^^
+AttributeError: 'Batch' object has no attribute 'clone'
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 389, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 292, in main
+    running_sum = tuple(t.clone() if hasattr(t, 'clone') else t for t in b) if isinstance(b, tuple) else b.clone()
+                                                                                                         ^^^^^^^
+AttributeError: 'Batch' object has no attribute 'clone'
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 389, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 292, in main
+    running_sum = tuple(t.clone() if hasattr(t, 'clone') else t for t in b) if isinstance(b, tuple) else b.clone()
+                                                                                                         ^^^^^^^
+AttributeError: 'Batch' object has no attribute 'clone'
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 389, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 292, in main
+    running_sum = tuple(t.clone() if hasattr(t, 'clone') else t for t in b) if isinstance(b, tuple) else b.clone()
+                                                                                                         ^^^^^^^
+AttributeError: 'Batch' object has no attribute 'clone'
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 389, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 292, in main
+    running_sum = tuple(t.clone() if hasattr(t, 'clone') else t for t in b) if isinstance(b, tuple) else b.clone()
+                                                                                                         ^^^^^^^
+AttributeError: 'Batch' object has no attribute 'clone'
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 389, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 292, in main
+    running_sum = tuple(t.clone() if hasattr(t, 'clone') else t for t in b) if isinstance(b, tuple) else b.clone()
+                                                                                                         ^^^^^^^
+AttributeError: 'Batch' object has no attribute 'clone'
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 389, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 292, in main
+    running_sum = tuple(t.clone() if hasattr(t, 'clone') else t for t in b) if isinstance(b, tuple) else b.clone()
+                                                                                                         ^^^^^^^
+AttributeError: 'Batch' object has no attribute 'clone'

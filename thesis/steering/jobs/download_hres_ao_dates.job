@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH --job-name=download_hres_ao
-#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/logs/download_hres_ao_%j.out
-#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/logs/download_hres_ao_%j.err
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/download_hres_ao_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/download_hres_ao_%j.err
 #SBATCH --time=48:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
 #SBATCH --partition=rome
-#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/scripts/steering
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
 
 # ── Environment ──────────────────────────────────────────────────────────────
 module load 2023
@@ -29,13 +29,13 @@ echo ""
 # Extract dates from the neutral CSV
 DATES=$(python -c '
 import pandas as pd
-df = pd.read_csv("/home/ekasteleyn/aurora_thesis/dates_to_extract_neutral.csv")
+df = pd.read_csv("/home/ekasteleyn/aurora_thesis/thesis/steering/data/dates_to_extract_neutral.csv")
 dates = pd.to_datetime(df[["year", "month", "day"]]).dt.strftime("%Y-%m-%d").unique()
 print(" ".join(dates))
 ')
 
 PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python \
-    /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py \
+    /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/download_hres_data.py \
     --dates $DATES \
     --include-prev-day
 

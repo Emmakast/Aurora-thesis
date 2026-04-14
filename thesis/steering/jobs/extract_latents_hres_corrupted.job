@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=latents_hres_corrupted
-#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/logs/extract_latents_hres_%j.out
-#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/logs/extract_latents_hres_%j.err
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/extract_latents_hres_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/extract_latents_hres_%j.err
 #SBATCH --time=24:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -10,7 +10,7 @@
 #SBATCH --mem=192G
 #SBATCH --partition=gpu_a100
 #SBATCH --constraint=scratch-node
-#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/scripts/steering
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
 
 # NOTE: Run redownload_hres_corrupted.job FIRST to download fresh data!
 # This job processes previously corrupted dates: 2022-05-18, 2022-05-19, 2022-10-31 to 2022-12-31
@@ -37,7 +37,7 @@ echo ""
 DATES=$(python -c 'import pandas as pd; dates = ["2022-05-18", "2022-05-19"] + pd.date_range("2022-10-31", "2022-12-31").strftime("%Y-%m-%d").tolist(); print(" ".join(dates))')
 
 PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python \
-    /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/extract_latents_hres.py \
+    /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/extract_latents_hres.py \
     --dates $DATES \
     --cache-dir /scratch-shared/ekasteleyn/downloads/hres_t0 \
     --num-steps 40 \

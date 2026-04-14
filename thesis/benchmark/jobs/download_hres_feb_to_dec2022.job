@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH --job-name=download_hres_feb_to_dec
-#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/logs/download_hres_%j.out
-#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/logs/download_hres_%j.err
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/benchmark/logs/download_hres_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/benchmark/logs/download_hres_%j.err
 #SBATCH --time=24:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
 #SBATCH --partition=rome
-#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/scripts/steering
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/benchmark/scripts/steering
 
 # ── Environment ──────────────────────────────────────────────────────────────
 module load 2023
@@ -30,7 +30,7 @@ echo ""
 DATES=$(python -c 'import pandas as pd; print(" ".join(pd.date_range("2022-06-06", "2022-12-31").strftime("%Y-%m-%d").tolist()))')
 
 PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python \
-    /home/ekasteleyn/aurora_thesis/thesis/scripts/steering/download_hres_data.py \
+    /home/ekasteleyn/aurora_thesis/thesis/benchmark/scripts/steering/download_hres_data.py \
     --dates $DATES
 
 echo ""

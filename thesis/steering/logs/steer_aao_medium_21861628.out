@@ -1,0 +1,634 @@
+Running with alpha=-0.5
+Starting Contrastive Activation Addition (CAA) Steering Pipeline (AAO, alpha=-0.5)...
+Loaded CSV: /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_aao_steer.csv
+Found 284 Active dates and 284 Neutral dates.
+Loading Active latents (284 dates)...
+Warning: Latent file latent_20160130_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160131_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160201_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160207_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160208_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160218_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160219_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160303_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160304_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160305_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160306_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160307_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160308_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160312_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160313_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160314_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160315_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160320_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160321_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160322_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160323_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160324_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160325_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160326_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160327_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160407_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160408_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160602_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160603_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160604_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160609_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160610_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160611_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160612_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160613_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160614_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160615_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160616_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160617_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160618_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160619_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160620_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160621_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160624_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160625_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160626_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160627_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160628_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160701_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160702_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160703_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160901_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160902_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160903_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160904_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160905_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160906_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160907_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160908_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160909_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160910_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160911_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160912_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160913_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160914_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160915_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160916_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160917_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160918_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170509_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170510_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170511_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170512_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170513_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170514_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170701_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170702_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170703_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170704_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170705_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170706_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170707_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170708_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170709_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170801_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170802_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170827_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170828_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170829_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170901_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170922_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170923_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170924_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170925_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170926_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170927_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170928_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171123_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171124_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171125_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171126_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171127_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171128_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171203_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171204_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180115_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180116_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180117_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180118_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180119_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180120_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180121_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180213_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180828_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180829_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180831_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180901_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180903_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180904_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180905_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180906_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180907_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180908_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181003_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181004_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181005_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181112_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181113_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181120_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181214_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181215_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181216_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190103_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190104_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190204_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190316_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190317_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190510_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190511_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190512_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190612_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190613_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190614_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190615_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190621_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190622_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190628_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190916_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200308_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200327_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200328_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200523_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200524_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200525_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200526_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200603_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200604_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200605_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200606_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200607_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200608_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200616_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200617_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200618_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200619_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200803_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200804_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200805_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201009_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201010_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201011_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201012_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201013_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201015_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201101_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201102_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201103_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201104_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201105_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201106_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201108_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201109_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201110_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201219_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201220_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201221_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201230_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201231_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210101_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210102_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210103_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210104_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210105_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210106_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210107_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210108_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210204_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210205_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210213_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210214_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210420_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210421_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210510_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210511_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210512_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210513_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210619_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210620_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210621_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210701_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210702_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210925_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210926_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210927_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210928_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211125_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211126_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211127_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211128_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211202_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211203_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211204_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211205_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211206_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211207_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211208_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211209_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211210_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211211_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211212_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211223_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211224_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211225_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211226_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211227_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211228_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211229_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220109_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220110_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220322_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220421_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220627_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220628_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220703_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220821_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220822_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220823_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220824_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220829_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220830_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220831_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220901_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220907_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220908_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220909_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220910_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220930_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221009_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221010_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221103_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221104_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221105_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221106_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221107_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221108_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221109_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221110_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221111_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221112_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221115_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221116_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221126_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221211_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221212_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221220_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221221_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221222_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221223_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221226_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221227_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221228_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221229_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221230_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221231_0000_encoder_2.pt not found locally or on S3.
+Warning: No valid latent files found for Active. Returning empty.
+Loading Neutral latents (284 dates)...
+Warning: Latent file latent_20160113_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160214_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160222_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160223_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160224_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160225_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160226_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160229_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160331_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160401_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160402_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160403_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160404_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160414_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160427_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160428_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160429_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160501_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160507_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160509_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160514_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160520_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160711_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160713_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160724_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160725_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160726_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160823_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160926_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160929_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20160930_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20161017_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20161018_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20161123_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20161124_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20161125_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20161208_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20161209_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20161210_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20161211_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20161212_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170102_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170129_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170130_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170131_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170201_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170207_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170210_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170211_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170214_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170216_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170221_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170224_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170225_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170227_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170313_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170314_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170315_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170324_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170403_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170419_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170426_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170427_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170428_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170519_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170526_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170610_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170615_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170712_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170713_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170715_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170720_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170728_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170806_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170807_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170808_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170809_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170810_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170811_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170815_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170816_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170817_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170907_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170911_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170914_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171001_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171005_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171008_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171013_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171015_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171031_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171101_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171118_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171120_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171213_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171214_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171215_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180112_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180113_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180217_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180219_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180311_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180312_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180316_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180317_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180318_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180319_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180324_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180326_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180415_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180515_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180524_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180526_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180602_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180613_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180616_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180701_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180702_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180703_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180704_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180725_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180820_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180821_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180822_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180823_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180824_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180825_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180913_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180924_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180925_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180926_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181012_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181021_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181022_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181102_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181107_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181203_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181204_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181219_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181220_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181221_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181222_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190109_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190110_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190115_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190123_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190211_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190212_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190213_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190306_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190311_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190313_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190408_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190409_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190410_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190414_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190419_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190420_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190427_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190430_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190706_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190724_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190725_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190726_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190801_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190819_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190825_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190911_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190927_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20191002_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20191008_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20191013_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20191014_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20191223_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20191224_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20191228_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200102_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200103_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200112_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200128_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200202_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200207_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200211_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200214_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200216_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200218_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200220_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200227_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200228_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200304_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200406_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200407_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200412_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200414_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200415_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200506_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200507_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200508_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200514_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200623_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200705_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200718_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200721_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200726_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200808_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200823_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200901_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200906_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200919_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200920_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200925_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201025_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201026_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210117_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210121_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210122_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210128_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210129_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210219_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210303_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210310_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210324_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210424_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210428_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210430_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210520_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210521_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210603_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210605_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210627_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210628_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210707_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210719_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210722_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210731_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210803_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210804_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210805_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210822_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210825_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210830_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210831_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210917_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210918_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20210919_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211014_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211015_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211016_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220104_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220113_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220114_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220115_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220116_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220203_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220212_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220302_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220303_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220318_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220331_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220403_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220424_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220429_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220430_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220508_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220509_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220513_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220522_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220601_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220602_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220604_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220606_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220607_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220707_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220708_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220711_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220728_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220810_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20220817_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221005_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221006_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221022_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221023_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221130_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20221207_0000_encoder_2.pt not found locally or on S3.
+Warning: No valid latent files found for Neutral. Returning empty.
+Missing latents. Creating dummy delta_v for demonstration purposes.
+Steering vector (delta_v) shape: torch.Size([1, 4, 18, 36, 1536]), max= 0.0, min= 0.0, norm=0.0
+Keeping all Z levels for 3D structure (shape: torch.Size([1, 4, 18, 36, 1536]))
+Loading Aurora Model on cuda...
+Using /scratch-shared/ekasteleyn/aurora_data for data...
+Downloading static/base data if needed...
+Building climatological base state from 284 neutral dates...
+Loaded pre-computed batch for 2016-01-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-01-13.pt
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+Loaded pre-computed batch for 2016-05-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-05-14.pt
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...
+    Downloading surface variables...
+    Downloading atmospheric variables...

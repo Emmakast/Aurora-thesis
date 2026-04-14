@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=steer_climo
-#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_climo_%j.out
-#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_climo_%j.err
+#SBATCH --job-name=steer_aurora_aao_medium
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_aao_medium_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_aao_medium_%j.err
 #SBATCH --time=12:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -10,7 +10,7 @@
 #SBATCH --mem=192G
 #SBATCH --partition=gpu_a100
 #SBATCH --constraint=scratch-node
-#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
 
 # ── Environment ──────────────────────────────────────────────────────────────
 module load 2023
@@ -23,12 +23,12 @@ ALPHAS="-0.5 -0.2 -0.1 -0.05 0.05 0.1 0.2 0.5"
 
 for alpha in $ALPHAS; do
     echo "Running with alpha=$alpha"
-    PYTHONUNBUFFERED=1 aurora_env/bin/python steer_aurora.py \
-        --phenomenon AO \
+    PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python steer_aurora.py \
+        --phenomenon AAO \
         --alpha $alpha \
-        --csv target_dates_ao_232.csv \
+        --csv /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_aao_steer.csv \
         --use-climatology \
-        --name-suffix climo
+        --name-suffix medium_climo
 done
 
-echo "COMPLETE: $(date)"
+echo "COMPLETE: \$(date)"

@@ -3,12 +3,15 @@ import os
 import argparse
 import torch
 import pandas as pd
+import gc
 import numpy as np
 import xarray as xr
 from pathlib import Path
 from datetime import datetime
 
 import tempfile
+
+
 try:
     import boto3
     from dotenv import load_dotenv
@@ -32,7 +35,7 @@ except ImportError:
 def main():
     parser = argparse.ArgumentParser(description="Contrastive Activation Addition Steering")
     parser.add_argument("--alpha", type=float, default=1.0, help="Steering strength")
-    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "MJO", "ENSO"], help="Phenomenon to steer")
+    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "MJO", "ENSO", "AAO"], help="Phenomenon to steer")
     parser.add_argument("--csv", type=str, default="target_dates.csv", help="Target dates CSV file")
     parser.add_argument("--name-suffix", type=str, default="", help="Suffix to append to the output filename (e.g., '_ao81')")
     parser.add_argument("--use-climatology", action="store_true", help="Use an average of neutral dates as the base state")
@@ -64,7 +67,7 @@ def main():
 # S3 Client setup
     s3_client = None
     if HAS_BOTO3:
-        load_dotenv("/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/.env")
+        load_dotenv("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env")
         access_key = os.getenv('UVA_S3_ACCESS_KEY')
         secret_key = os.getenv('UVA_S3_SECRET_KEY')
         if access_key and secret_key:

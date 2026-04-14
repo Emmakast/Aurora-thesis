@@ -1,0 +1,32 @@
+usage: steer_aurora.py [-h] [--alpha ALPHA] [--phenomenon {AO,MJO,ENSO}]
+                       [--csv CSV] [--name-suffix NAME_SUFFIX]
+                       [--use-climatology]
+steer_aurora.py: error: argument --phenomenon: invalid choice: 'AAO' (choose from 'AO', 'MJO', 'ENSO')
+usage: steer_aurora.py [-h] [--alpha ALPHA] [--phenomenon {AO,MJO,ENSO}]
+                       [--csv CSV] [--name-suffix NAME_SUFFIX]
+                       [--use-climatology]
+steer_aurora.py: error: argument --phenomenon: invalid choice: 'AAO' (choose from 'AO', 'MJO', 'ENSO')
+usage: steer_aurora.py [-h] [--alpha ALPHA] [--phenomenon {AO,MJO,ENSO}]
+                       [--csv CSV] [--name-suffix NAME_SUFFIX]
+                       [--use-climatology]
+steer_aurora.py: error: argument --phenomenon: invalid choice: 'AAO' (choose from 'AO', 'MJO', 'ENSO')
+usage: steer_aurora.py [-h] [--alpha ALPHA] [--phenomenon {AO,MJO,ENSO}]
+                       [--csv CSV] [--name-suffix NAME_SUFFIX]
+                       [--use-climatology]
+steer_aurora.py: error: argument --phenomenon: invalid choice: 'AAO' (choose from 'AO', 'MJO', 'ENSO')
+usage: steer_aurora.py [-h] [--alpha ALPHA] [--phenomenon {AO,MJO,ENSO}]
+                       [--csv CSV] [--name-suffix NAME_SUFFIX]
+                       [--use-climatology]
+steer_aurora.py: error: argument --phenomenon: invalid choice: 'AAO' (choose from 'AO', 'MJO', 'ENSO')
+usage: steer_aurora.py [-h] [--alpha ALPHA] [--phenomenon {AO,MJO,ENSO}]
+                       [--csv CSV] [--name-suffix NAME_SUFFIX]
+                       [--use-climatology]
+steer_aurora.py: error: argument --phenomenon: invalid choice: 'AAO' (choose from 'AO', 'MJO', 'ENSO')
+usage: steer_aurora.py [-h] [--alpha ALPHA] [--phenomenon {AO,MJO,ENSO}]
+                       [--csv CSV] [--name-suffix NAME_SUFFIX]
+                       [--use-climatology]
+steer_aurora.py: error: argument --phenomenon: invalid choice: 'AAO' (choose from 'AO', 'MJO', 'ENSO')
+usage: steer_aurora.py [-h] [--alpha ALPHA] [--phenomenon {AO,MJO,ENSO}]
+                       [--csv CSV] [--name-suffix NAME_SUFFIX]
+                       [--use-climatology]
+steer_aurora.py: error: argument --phenomenon: invalid choice: 'AAO' (choose from 'AO', 'MJO', 'ENSO')
