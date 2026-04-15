@@ -1,0 +1,350 @@
+Running with alphas: -0.5 -0.2 -0.1 -0.05 0.05 0.1 0.2 0.5
+Starting Contrastive Activation Addition (CAA) Steering Pipeline (AAO, alphas=[-0.5, -0.2, -0.1, -0.05, 0.05, 0.1, 0.2, 0.5])...
+Loaded CSV: /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_aao_steer.csv
+Found 284 Active dates and 284 Neutral dates.
+S3 Client initialized.
+Loading Active latents (284 dates)...
+Warning: Latent file latent_20160624_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171128_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180115_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20181215_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190615_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20201015_0000_encoder_2.pt not found locally or on S3.
+Loading Neutral latents (284 dates)...
+Warning: Latent file latent_20170315_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170615_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170715_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20170815_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20171215_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180415_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20180515_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20190115_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20200415_0000_encoder_2.pt not found locally or on S3.
+Warning: Latent file latent_20211015_0000_encoder_2.pt not found locally or on S3.
+Steering vector (delta_v) shape: torch.Size([1, 16200, 2048]), max= 0.6885490417480469, min= -1.0125761032104492, norm=154.57235717773438
+Keeping all Z levels for 3D structure (shape: torch.Size([1, 16200, 2048]))
+Loading Aurora Model on cuda...
+Using /scratch-shared/ekasteleyn/aurora_data for data...
+Downloading static/base data if needed...
+Building climatological base state from 284 neutral dates...
+Loaded pre-computed batch for 2016-01-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-01-13.pt
+Loaded pre-computed batch for 2016-02-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-02-14.pt
+Loaded pre-computed batch for 2016-02-22 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-02-22.pt
+Loaded pre-computed batch for 2016-02-23 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-02-23.pt
+Loaded pre-computed batch for 2016-02-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-02-24.pt
+Loaded pre-computed batch for 2016-02-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-02-25.pt
+Loaded pre-computed batch for 2016-02-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-02-26.pt
+Loaded pre-computed batch for 2016-02-29 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-02-29.pt
+Loaded pre-computed batch for 2016-03-31 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-03-31.pt
+Loaded pre-computed batch for 2016-04-01 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-04-01.pt
+Loaded pre-computed batch for 2016-04-02 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-04-02.pt
+Loaded pre-computed batch for 2016-04-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-04-03.pt
+Loaded pre-computed batch for 2016-04-04 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-04-04.pt
+Loaded pre-computed batch for 2016-04-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-04-14.pt
+Loaded pre-computed batch for 2016-04-27 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-04-27.pt
+Loaded pre-computed batch for 2016-04-28 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-04-28.pt
+Loaded pre-computed batch for 2016-04-29 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-04-29.pt
+Loaded pre-computed batch for 2016-05-01 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-05-01.pt
+Loaded pre-computed batch for 2016-05-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-05-07.pt
+Loaded pre-computed batch for 2016-05-09 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-05-09.pt
+Loaded pre-computed batch for 2016-05-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-05-14.pt
+Loaded pre-computed batch for 2016-05-20 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-05-20.pt
+Loaded pre-computed batch for 2016-07-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-07-11.pt
+Loaded pre-computed batch for 2016-07-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-07-13.pt
+Loaded pre-computed batch for 2016-07-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-07-24.pt
+Loaded pre-computed batch for 2016-07-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-07-25.pt
+Loaded pre-computed batch for 2016-07-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-07-26.pt
+Loaded pre-computed batch for 2016-08-23 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-08-23.pt
+Loaded pre-computed batch for 2016-09-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-09-26.pt
+Loaded pre-computed batch for 2016-09-29 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-09-29.pt
+Loaded pre-computed batch for 2016-09-30 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-09-30.pt
+Loaded pre-computed batch for 2016-10-17 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-10-17.pt
+Loaded pre-computed batch for 2016-10-18 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-10-18.pt
+Loaded pre-computed batch for 2016-11-23 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-11-23.pt
+Loaded pre-computed batch for 2016-11-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-11-24.pt
+Loaded pre-computed batch for 2016-11-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-11-25.pt
+Loaded pre-computed batch for 2016-12-08 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-12-08.pt
+Loaded pre-computed batch for 2016-12-09 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-12-09.pt
+Loaded pre-computed batch for 2016-12-10 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-12-10.pt
+Loaded pre-computed batch for 2016-12-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-12-11.pt
+Loaded pre-computed batch for 2016-12-12 from: /scratch-shared/ekasteleyn/aurora_data/batch_2016-12-12.pt
+Loaded pre-computed batch for 2017-01-02 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-01-02.pt
+Loaded pre-computed batch for 2017-01-29 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-01-29.pt
+Loaded pre-computed batch for 2017-01-30 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-01-30.pt
+Loaded pre-computed batch for 2017-01-31 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-01-31.pt
+Loaded pre-computed batch for 2017-02-01 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-02-01.pt
+Loaded pre-computed batch for 2017-02-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-02-07.pt
+Loaded pre-computed batch for 2017-02-10 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-02-10.pt
+Loaded pre-computed batch for 2017-02-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-02-11.pt
+Loaded pre-computed batch for 2017-02-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-02-14.pt
+Loaded pre-computed batch for 2017-02-16 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-02-16.pt
+Loaded pre-computed batch for 2017-02-21 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-02-21.pt
+Loaded pre-computed batch for 2017-02-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-02-24.pt
+Loaded pre-computed batch for 2017-02-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-02-25.pt
+Loaded pre-computed batch for 2017-02-27 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-02-27.pt
+Loaded pre-computed batch for 2017-03-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-03-13.pt
+Loaded pre-computed batch for 2017-03-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-03-14.pt
+Loaded pre-computed batch for 2017-03-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-03-15.pt
+Loaded pre-computed batch for 2017-03-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-03-24.pt
+Loaded pre-computed batch for 2017-04-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-04-03.pt
+Loaded pre-computed batch for 2017-04-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-04-19.pt
+Loaded pre-computed batch for 2017-04-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-04-26.pt
+Loaded pre-computed batch for 2017-04-27 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-04-27.pt
+Loaded pre-computed batch for 2017-04-28 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-04-28.pt
+Loaded pre-computed batch for 2017-05-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-05-19.pt
+Loaded pre-computed batch for 2017-05-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-05-26.pt
+Loaded pre-computed batch for 2017-06-10 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-06-10.pt
+Loaded pre-computed batch for 2017-06-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-06-15.pt
+Loaded pre-computed batch for 2017-07-12 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-07-12.pt
+Loaded pre-computed batch for 2017-07-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-07-13.pt
+Loaded pre-computed batch for 2017-07-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-07-15.pt
+Loaded pre-computed batch for 2017-07-20 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-07-20.pt
+Loaded pre-computed batch for 2017-07-28 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-07-28.pt
+Loaded pre-computed batch for 2017-08-06 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-08-06.pt
+Loaded pre-computed batch for 2017-08-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-08-07.pt
+Loaded pre-computed batch for 2017-08-08 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-08-08.pt
+Loaded pre-computed batch for 2017-08-09 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-08-09.pt
+Loaded pre-computed batch for 2017-08-10 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-08-10.pt
+Loaded pre-computed batch for 2017-08-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-08-11.pt
+Loaded pre-computed batch for 2017-08-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-08-15.pt
+Loaded pre-computed batch for 2017-08-16 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-08-16.pt
+Loaded pre-computed batch for 2017-08-17 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-08-17.pt
+Loaded pre-computed batch for 2017-09-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-09-07.pt
+Loaded pre-computed batch for 2017-09-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-09-11.pt
+Loaded pre-computed batch for 2017-09-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-09-14.pt
+Loaded pre-computed batch for 2017-10-01 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-10-01.pt
+Loaded pre-computed batch for 2017-10-05 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-10-05.pt
+Loaded pre-computed batch for 2017-10-08 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-10-08.pt
+Loaded pre-computed batch for 2017-10-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-10-13.pt
+Loaded pre-computed batch for 2017-10-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-10-15.pt
+Loaded pre-computed batch for 2017-10-31 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-10-31.pt
+Loaded pre-computed batch for 2017-11-01 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-11-01.pt
+Loaded pre-computed batch for 2017-11-18 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-11-18.pt
+Loaded pre-computed batch for 2017-11-20 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-11-20.pt
+Loaded pre-computed batch for 2017-12-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-12-13.pt
+Loaded pre-computed batch for 2017-12-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-12-14.pt
+Loaded pre-computed batch for 2017-12-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2017-12-15.pt
+Loaded pre-computed batch for 2018-01-12 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-01-12.pt
+Loaded pre-computed batch for 2018-01-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-01-13.pt
+Loaded pre-computed batch for 2018-02-17 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-02-17.pt
+Loaded pre-computed batch for 2018-02-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-02-19.pt
+Loaded pre-computed batch for 2018-03-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-03-11.pt
+Loaded pre-computed batch for 2018-03-12 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-03-12.pt
+Loaded pre-computed batch for 2018-03-16 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-03-16.pt
+Loaded pre-computed batch for 2018-03-17 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-03-17.pt
+Loaded pre-computed batch for 2018-03-18 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-03-18.pt
+Loaded pre-computed batch for 2018-03-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-03-19.pt
+Loaded pre-computed batch for 2018-03-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-03-24.pt
+Loaded pre-computed batch for 2018-03-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-03-26.pt
+Loaded pre-computed batch for 2018-04-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-04-15.pt
+Loaded pre-computed batch for 2018-05-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-05-15.pt
+Loaded pre-computed batch for 2018-05-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-05-24.pt
+Loaded pre-computed batch for 2018-05-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-05-26.pt
+Loaded pre-computed batch for 2018-06-02 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-06-02.pt
+Loaded pre-computed batch for 2018-06-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-06-13.pt
+Loaded pre-computed batch for 2018-06-16 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-06-16.pt
+Loaded pre-computed batch for 2018-07-01 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-07-01.pt
+Loaded pre-computed batch for 2018-07-02 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-07-02.pt
+Loaded pre-computed batch for 2018-07-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-07-03.pt
+Loaded pre-computed batch for 2018-07-04 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-07-04.pt
+Loaded pre-computed batch for 2018-07-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-07-25.pt
+Loaded pre-computed batch for 2018-08-20 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-08-20.pt
+Loaded pre-computed batch for 2018-08-21 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-08-21.pt
+Loaded pre-computed batch for 2018-08-22 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-08-22.pt
+Loaded pre-computed batch for 2018-08-23 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-08-23.pt
+Loaded pre-computed batch for 2018-08-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-08-24.pt
+Loaded pre-computed batch for 2018-08-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-08-25.pt
+Loaded pre-computed batch for 2018-09-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-09-13.pt
+Loaded pre-computed batch for 2018-09-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-09-24.pt
+Loaded pre-computed batch for 2018-09-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-09-25.pt
+Loaded pre-computed batch for 2018-09-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-09-26.pt
+Loaded pre-computed batch for 2018-10-12 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-10-12.pt
+Loaded pre-computed batch for 2018-10-21 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-10-21.pt
+Loaded pre-computed batch for 2018-10-22 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-10-22.pt
+Loaded pre-computed batch for 2018-11-02 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-11-02.pt
+Loaded pre-computed batch for 2018-11-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-11-07.pt
+Loaded pre-computed batch for 2018-12-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-12-03.pt
+Loaded pre-computed batch for 2018-12-04 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-12-04.pt
+Loaded pre-computed batch for 2018-12-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-12-19.pt
+Loaded pre-computed batch for 2018-12-20 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-12-20.pt
+Loaded pre-computed batch for 2018-12-21 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-12-21.pt
+Loaded pre-computed batch for 2018-12-22 from: /scratch-shared/ekasteleyn/aurora_data/batch_2018-12-22.pt
+Loaded pre-computed batch for 2019-01-09 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-01-09.pt
+Loaded pre-computed batch for 2019-01-10 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-01-10.pt
+Loaded pre-computed batch for 2019-01-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-01-15.pt
+Loaded pre-computed batch for 2019-01-23 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-01-23.pt
+Loaded pre-computed batch for 2019-02-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-02-11.pt
+Loaded pre-computed batch for 2019-02-12 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-02-12.pt
+Loaded pre-computed batch for 2019-02-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-02-13.pt
+Loaded pre-computed batch for 2019-03-06 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-03-06.pt
+Loaded pre-computed batch for 2019-03-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-03-11.pt
+Loaded pre-computed batch for 2019-03-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-03-13.pt
+Loaded pre-computed batch for 2019-04-08 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-04-08.pt
+Loaded pre-computed batch for 2019-04-09 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-04-09.pt
+Loaded pre-computed batch for 2019-04-10 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-04-10.pt
+Loaded pre-computed batch for 2019-04-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-04-14.pt
+Loaded pre-computed batch for 2019-04-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-04-19.pt
+Loaded pre-computed batch for 2019-04-20 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-04-20.pt
+Loaded pre-computed batch for 2019-04-27 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-04-27.pt
+Loaded pre-computed batch for 2019-04-30 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-04-30.pt
+Loaded pre-computed batch for 2019-07-06 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-07-06.pt
+Loaded pre-computed batch for 2019-07-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-07-24.pt
+Loaded pre-computed batch for 2019-07-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-07-25.pt
+Loaded pre-computed batch for 2019-07-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-07-26.pt
+Loaded pre-computed batch for 2019-08-01 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-08-01.pt
+Loaded pre-computed batch for 2019-08-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-08-19.pt
+Loaded pre-computed batch for 2019-08-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-08-25.pt
+Loaded pre-computed batch for 2019-09-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-09-11.pt
+Loaded pre-computed batch for 2019-09-27 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-09-27.pt
+Loaded pre-computed batch for 2019-10-02 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-10-02.pt
+Loaded pre-computed batch for 2019-10-08 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-10-08.pt
+Loaded pre-computed batch for 2019-10-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-10-13.pt
+Loaded pre-computed batch for 2019-10-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-10-14.pt
+Loaded pre-computed batch for 2019-12-23 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-12-23.pt
+Loaded pre-computed batch for 2019-12-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-12-24.pt
+Loaded pre-computed batch for 2019-12-28 from: /scratch-shared/ekasteleyn/aurora_data/batch_2019-12-28.pt
+Loaded pre-computed batch for 2020-01-02 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-01-02.pt
+Loaded pre-computed batch for 2020-01-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-01-03.pt
+Loaded pre-computed batch for 2020-01-12 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-01-12.pt
+Loaded pre-computed batch for 2020-01-28 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-01-28.pt
+Loaded pre-computed batch for 2020-02-02 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-02-02.pt
+Loaded pre-computed batch for 2020-02-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-02-07.pt
+Loaded pre-computed batch for 2020-02-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-02-11.pt
+Loaded pre-computed batch for 2020-02-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-02-14.pt
+Loaded pre-computed batch for 2020-02-16 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-02-16.pt
+Loaded pre-computed batch for 2020-02-18 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-02-18.pt
+Loaded pre-computed batch for 2020-02-20 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-02-20.pt
+Loaded pre-computed batch for 2020-02-27 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-02-27.pt
+Loaded pre-computed batch for 2020-02-28 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-02-28.pt
+Loaded pre-computed batch for 2020-03-04 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-03-04.pt
+Loaded pre-computed batch for 2020-04-06 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-04-06.pt
+Loaded pre-computed batch for 2020-04-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-04-07.pt
+Loaded pre-computed batch for 2020-04-12 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-04-12.pt
+Loaded pre-computed batch for 2020-04-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-04-14.pt
+Loaded pre-computed batch for 2020-04-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-04-15.pt
+Loaded pre-computed batch for 2020-05-06 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-05-06.pt
+Loaded pre-computed batch for 2020-05-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-05-07.pt
+Loaded pre-computed batch for 2020-05-08 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-05-08.pt
+Loaded pre-computed batch for 2020-05-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-05-14.pt
+Loaded pre-computed batch for 2020-06-23 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-06-23.pt
+Loaded pre-computed batch for 2020-07-05 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-07-05.pt
+Loaded pre-computed batch for 2020-07-18 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-07-18.pt
+Loaded pre-computed batch for 2020-07-21 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-07-21.pt
+Loaded pre-computed batch for 2020-07-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-07-26.pt
+Loaded pre-computed batch for 2020-08-08 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-08-08.pt
+Loaded pre-computed batch for 2020-08-23 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-08-23.pt
+Loaded pre-computed batch for 2020-09-01 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-09-01.pt
+Loaded pre-computed batch for 2020-09-06 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-09-06.pt
+Loaded pre-computed batch for 2020-09-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-09-19.pt
+Loaded pre-computed batch for 2020-09-20 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-09-20.pt
+Loaded pre-computed batch for 2020-09-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-09-25.pt
+Loaded pre-computed batch for 2020-10-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-10-25.pt
+Loaded pre-computed batch for 2020-10-26 from: /scratch-shared/ekasteleyn/aurora_data/batch_2020-10-26.pt
+Loaded pre-computed batch for 2021-01-17 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-01-17.pt
+Loaded pre-computed batch for 2021-01-21 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-01-21.pt
+Loaded pre-computed batch for 2021-01-22 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-01-22.pt
+Loaded pre-computed batch for 2021-01-28 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-01-28.pt
+Loaded pre-computed batch for 2021-01-29 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-01-29.pt
+Loaded pre-computed batch for 2021-02-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-02-19.pt
+Loaded pre-computed batch for 2021-03-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-03-03.pt
+Loaded pre-computed batch for 2021-03-10 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-03-10.pt
+Loaded pre-computed batch for 2021-03-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-03-24.pt
+Loaded pre-computed batch for 2021-04-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-04-24.pt
+Loaded pre-computed batch for 2021-04-28 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-04-28.pt
+Loaded pre-computed batch for 2021-04-30 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-04-30.pt
+Loaded pre-computed batch for 2021-05-20 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-05-20.pt
+Loaded pre-computed batch for 2021-05-21 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-05-21.pt
+Loaded pre-computed batch for 2021-06-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-06-03.pt
+Loaded pre-computed batch for 2021-06-05 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-06-05.pt
+Loaded pre-computed batch for 2021-06-27 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-06-27.pt
+Loaded pre-computed batch for 2021-06-28 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-06-28.pt
+Loaded pre-computed batch for 2021-07-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-07-07.pt
+Loaded pre-computed batch for 2021-07-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-07-19.pt
+Loaded pre-computed batch for 2021-07-22 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-07-22.pt
+Loaded pre-computed batch for 2021-07-31 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-07-31.pt
+Loaded pre-computed batch for 2021-08-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-08-03.pt
+Loaded pre-computed batch for 2021-08-04 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-08-04.pt
+Loaded pre-computed batch for 2021-08-05 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-08-05.pt
+Loaded pre-computed batch for 2021-08-22 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-08-22.pt
+Loaded pre-computed batch for 2021-08-25 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-08-25.pt
+Loaded pre-computed batch for 2021-08-30 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-08-30.pt
+Loaded pre-computed batch for 2021-08-31 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-08-31.pt
+Loaded pre-computed batch for 2021-09-17 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-09-17.pt
+Loaded pre-computed batch for 2021-09-18 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-09-18.pt
+Loaded pre-computed batch for 2021-09-19 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-09-19.pt
+Loaded pre-computed batch for 2021-10-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-10-14.pt
+Loaded pre-computed batch for 2021-10-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-10-15.pt
+Loaded pre-computed batch for 2021-10-16 from: /scratch-shared/ekasteleyn/aurora_data/batch_2021-10-16.pt
+Loaded pre-computed batch for 2022-01-04 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-01-04.pt
+Loaded pre-computed batch for 2022-01-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-01-13.pt
+Loaded pre-computed batch for 2022-01-14 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-01-14.pt
+Loaded pre-computed batch for 2022-01-15 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-01-15.pt
+Loaded pre-computed batch for 2022-01-16 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-01-16.pt
+Loaded pre-computed batch for 2022-02-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-02-03.pt
+Loaded pre-computed batch for 2022-02-12 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-02-12.pt
+Loaded pre-computed batch for 2022-03-02 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-03-02.pt
+Loaded pre-computed batch for 2022-03-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-03-03.pt
+Loaded pre-computed batch for 2022-03-18 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-03-18.pt
+Loaded pre-computed batch for 2022-03-31 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-03-31.pt
+Loaded pre-computed batch for 2022-04-03 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-04-03.pt
+Loaded pre-computed batch for 2022-04-24 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-04-24.pt
+Loaded pre-computed batch for 2022-04-29 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-04-29.pt
+Loaded pre-computed batch for 2022-04-30 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-04-30.pt
+Loaded pre-computed batch for 2022-05-08 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-05-08.pt
+Loaded pre-computed batch for 2022-05-09 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-05-09.pt
+Loaded pre-computed batch for 2022-05-13 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-05-13.pt
+Loaded pre-computed batch for 2022-05-22 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-05-22.pt
+Loaded pre-computed batch for 2022-06-01 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-06-01.pt
+Loaded pre-computed batch for 2022-06-02 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-06-02.pt
+Loaded pre-computed batch for 2022-06-04 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-06-04.pt
+Loaded pre-computed batch for 2022-06-06 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-06-06.pt
+Loaded pre-computed batch for 2022-06-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-06-07.pt
+Loaded pre-computed batch for 2022-07-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-07-07.pt
+Loaded pre-computed batch for 2022-07-08 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-07-08.pt
+Loaded pre-computed batch for 2022-07-11 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-07-11.pt
+Loaded pre-computed batch for 2022-07-28 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-07-28.pt
+Loaded pre-computed batch for 2022-08-10 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-08-10.pt
+Loaded pre-computed batch for 2022-08-17 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-08-17.pt
+Loaded pre-computed batch for 2022-10-05 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-10-05.pt
+Loaded pre-computed batch for 2022-10-06 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-10-06.pt
+Loaded pre-computed batch for 2022-10-22 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-10-22.pt
+Loaded pre-computed batch for 2022-10-23 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-10-23.pt
+Loaded pre-computed batch for 2022-11-30 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-11-30.pt
+Loaded pre-computed batch for 2022-12-07 from: /scratch-shared/ekasteleyn/aurora_data/batch_2022-12-07.pt
+Averaging batches...
+Running base inference (alpha=0.0) without hook...
+Saved base output to base_aao_medium_climo_climo_alpha_0.0.nc
+Applying hook with alpha=-0.5...
+Running steered inference (alpha=-0.5)...
+Converting prediction to xarray for alpha=-0.5...
+Saved steered output to steered_aao_medium_climo_climo_alpha_-0.5.nc
+Applying hook with alpha=-0.2...
+Running steered inference (alpha=-0.2)...
+Converting prediction to xarray for alpha=-0.2...
+Saved steered output to steered_aao_medium_climo_climo_alpha_-0.2.nc
+Applying hook with alpha=-0.1...
+Running steered inference (alpha=-0.1)...
+Converting prediction to xarray for alpha=-0.1...
+Saved steered output to steered_aao_medium_climo_climo_alpha_-0.1.nc
+Applying hook with alpha=-0.05...
+Running steered inference (alpha=-0.05)...
+Converting prediction to xarray for alpha=-0.05...
+Saved steered output to steered_aao_medium_climo_climo_alpha_-0.05.nc
+Applying hook with alpha=0.05...
+Running steered inference (alpha=0.05)...
+Converting prediction to xarray for alpha=0.05...
+Saved steered output to steered_aao_medium_climo_climo_alpha_0.05.nc
+Applying hook with alpha=0.1...
+Running steered inference (alpha=0.1)...
+Converting prediction to xarray for alpha=0.1...
+Saved steered output to steered_aao_medium_climo_climo_alpha_0.1.nc
+Applying hook with alpha=0.2...
+Running steered inference (alpha=0.2)...
+Converting prediction to xarray for alpha=0.2...
+Saved steered output to steered_aao_medium_climo_climo_alpha_0.2.nc
+Applying hook with alpha=0.5...
+Running steered inference (alpha=0.5)...
+Converting prediction to xarray for alpha=0.5...
+Saved steered output to steered_aao_medium_climo_climo_alpha_0.5.nc
+Done!
+COMPLETE: $(date)

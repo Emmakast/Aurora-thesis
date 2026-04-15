@@ -13,9 +13,9 @@ import cartopy.feature as cfeature
 from pathlib import Path
 import argparse
 
-AURORA_DIR = Path("/home/ekasteleyn/aurora_thesis")
+AURORA_DIR = Path("/home/ekasteleyn/aurora_thesis/thesis/steering/results")
 
-def plot_alpha_grid(base_ds, steered_ds_dict, var, alphas, phenomenon, level=None, output_path=None):
+def plot_alpha_grid(base_ds, steered_ds_dict, var, alphas, phenomenon, level=None, output_path=None, base_file=None):
     if level is not None and 'level' in base_ds[var].dims:
         base_field = base_ds[var].sel(level=level).values
         title_suffix = f" @ {level} hPa"
@@ -29,20 +29,31 @@ def plot_alpha_grid(base_ds, steered_ds_dict, var, alphas, phenomenon, level=Non
     data_proj = ccrs.PlateCarree()
     if phenomenon == "AO":
         proj, extent = ccrs.NorthPolarStereo(), [-180, 180, 30, 90]
+    elif phenomenon == "AAO":
+        proj, extent = ccrs.SouthPolarStereo(), [-180, 180, -90, -30]
     else:
         proj, extent = ccrs.PlateCarree(central_longitude=180), [-180, 180, -40, 40]
 
     cols = len(alphas) + 1 # +1 for Base (alpha=0)
     fig, axes = plt.subplots(2, cols, figsize=(4 * cols, 8), subplot_kw={"projection": proj})
 
-    vmin, vmax = np.nanpercentile(base_field, 2), np.nanpercentile(base_field, 98)
+    if np.isnan(base_field).all():
+        file_msg = f" in {base_file}" if base_file else ""
+        print(f"Warning: {var.upper()}{title_suffix}{file_msg} contains only NaNs.")
+        vmin, vmax = -1.0, 1.0
+    else:
+        vmin, vmax = np.nanpercentile(base_field, 2), np.nanpercentile(base_field, 98)
     
     # Pre-calculate diff_max across all available alphas
     max_diff = 1.0
     for a in alphas:
         if a in steered_ds_dict:
             sf = steered_ds_dict[a][var].sel(level=level).values if level else steered_ds_dict[a][var].values
-            max_diff = max(max_diff, np.nanpercentile(np.abs(sf - base_field), 98))
+            if np.isnan(sf).all():
+                print(f"Warning: {var.upper()}{title_suffix} in steered file for alpha={a} contains only NaNs.")
+            diff_abs = np.abs(sf - base_field)
+            if not np.isnan(diff_abs).all():
+                max_diff = max(max_diff, np.nanpercentile(diff_abs, 98))
 
     def draw_map(ax, field, cmap, vm, vM, title):
         ax.set_extent(extent, crs=data_proj)
@@ -85,21 +96,24 @@ def plot_alpha_grid(base_ds, steered_ds_dict, var, alphas, phenomenon, level=Non
 
 def main():
     parser = argparse.ArgumentParser(description="Grid plot across alphas")
-    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "MJO", "ENSO"])
-    parser.add_argument("--variant", type=str, default="", help="Variant tag (e.g., 'ao3' for extreme polar vortex)")
-    parser.add_argument("--date", type=str, required=True, help="Date tag (e.g., 20201202)")
-    parser.add_argument("--alphas", type=float, nargs='+', default=[1.0, 2.0, 5.0, 10.0, 20.0, 50.0])
+    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "AAO", "MJO", "ENSO"])
+    parser.add_argument("--variant", type=str, default="medium", help="Variant tag (e.g., 'medium' or 'ao3')")
+    parser.add_argument("--date", type=str, default="climo_climo", help="Date tag (e.g., 20201202 or climo_climo)")
+    parser.add_argument("--alphas", type=float, nargs='+', default=[-0.5, -0.2, -0.1, -0.05, 0.05, 0.1, 0.2, 0.5])
     args = parser.parse_args()
 
     phenom_str = f"{args.phenomenon.lower()}_{args.variant}" if args.variant else args.phenomenon.lower()
 
-    base_file = AURORA_DIR / f"base_{phenom_str}_{args.date}_alpha_0.0.nc"
-    if not base_file.exists():
-        # Fallback to standard base file if variant-specific doesn't exist
-        base_file = AURORA_DIR / f"base_{args.phenomenon.lower()}_{args.date}_alpha_0.0.nc"
-        if not base_file.exists():
-            print(f"Base file not found: {base_file}")
-            return
+    base_file_1 = AURORA_DIR / f"base_{phenom_str}_{args.date}_alpha_0.0.nc"
+    base_file_2 = AURORA_DIR / f"base_{args.phenomenon.lower()}_{args.date}_alpha_0.0.nc"
+
+    if base_file_1.exists():
+        base_file = base_file_1
+    elif base_file_2.exists():
+        base_file = base_file_2
+    else:
+        print(f"Base file not found. Tried:\n  {base_file_1}\n  {base_file_2}")
+        return
 
     base_ds = xr.open_dataset(base_file)
     steered_ds_dict = {}
@@ -113,11 +127,11 @@ def main():
 
     # Generate plots
     plot_alpha_grid(base_ds, steered_ds_dict, 'z', args.alphas, args.phenomenon, level=50,
-                    output_path=AURORA_DIR / f"grid_{phenom_str}_{args.date}_z50.png")
+                    output_path=AURORA_DIR / f"grid_{phenom_str}_{args.date}_z50.png", base_file=base_file)
     plot_alpha_grid(base_ds, steered_ds_dict, 'z', args.alphas, args.phenomenon, level=500,
-                    output_path=AURORA_DIR / f"grid_{phenom_str}_{args.date}_z500.png")
+                    output_path=AURORA_DIR / f"grid_{phenom_str}_{args.date}_z500.png", base_file=base_file)
     plot_alpha_grid(base_ds, steered_ds_dict, 'msl', args.alphas, args.phenomenon,
-                    output_path=AURORA_DIR / f"grid_{phenom_str}_{args.date}_msl.png")
+                    output_path=AURORA_DIR / f"grid_{phenom_str}_{args.date}_msl.png", base_file=base_file)
     
 if __name__ == "__main__":
     main()

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 361, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 291, in main
+    batch = torch.mean(torch.stack(batch_list), dim=0)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected Tensor as element 0 in argument 0, but got Batch

@@ -282,13 +282,25 @@ def main():
         print("Averaging batches...")
         # Average the batches (assuming batch is a tuple of tensors)
         def average_tuple_of_tensors(t_list):
-            return tuple(torch.mean(torch.stack([b[i] for b in t_list]), dim=0) for i in range(len(t_list[0])))
+            return tuple(torch.nan_to_num(torch.nanmean(torch.stack([b[i] for b in t_list]), dim=0), nan=0.0) for i in range(len(t_list[0])))
         
         if isinstance(batch_list[0], tuple):
             batch = average_tuple_of_tensors(batch_list)
+        elif type(batch_list[0]).__name__ == 'Batch':
+            # It's an aurora Batch dataclass
+            from aurora import Batch
+            avg_surf = {k: torch.nan_to_num(torch.nanmean(torch.stack([b.surf_vars[k] for b in batch_list]), dim=0), nan=0.0) for k in batch_list[0].surf_vars.keys()}
+            avg_static = {k: torch.nan_to_num(torch.nanmean(torch.stack([b.static_vars[k] for b in batch_list]), dim=0), nan=0.0) for k in batch_list[0].static_vars.keys()}
+            avg_atmos = {k: torch.nan_to_num(torch.nanmean(torch.stack([b.atmos_vars[k] for b in batch_list]), dim=0), nan=0.0) for k in batch_list[0].atmos_vars.keys()}
+            batch = type(batch_list[0])(
+                surf_vars=avg_surf,
+                static_vars=avg_static,
+                atmos_vars=avg_atmos,
+                metadata=batch_list[0].metadata
+            )
         else:
             # Fallback if it's a single tensor
-            batch = torch.mean(torch.stack(batch_list), dim=0)
+            batch = torch.nan_to_num(torch.nanmean(torch.stack(batch_list), dim=0), nan=0.0)
             
         base_day_str = "climatology"
         date_tag = "climo"
