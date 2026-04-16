@@ -1,0 +1,32 @@
+#!/bin/bash
+#SBATCH --job-name=steer_aao_high_3day
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_aao_high_3day_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_aao_high_3day_%j.err
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+ALPHAS="-0.5 -0.2 -0.1 -0.05 0.05 0.1 0.2 0.5"
+
+echo "Running with alphas: $ALPHAS for 12 steps (3-day prediction)"
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python steer_aurora.py \
+    --phenomenon AAO \
+    --alphas $ALPHAS \
+    --csv /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_aao_high.csv \
+    --neutral-csv /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_aao_steer.csv \
+    --name-suffix high_3day \
+    --steps 12
+
+echo "COMPLETE: $(date)"

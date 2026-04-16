@@ -39,6 +39,7 @@ def main():
     parser.add_argument("--csv", type=str, default="target_dates.csv", help="Target dates CSV file")
     parser.add_argument("--neutral-csv", type=str, default=None, help="Optional separate CSV file for Neutral dates")
     parser.add_argument("--name-suffix", type=str, default="", help="Suffix to append to the output filename (e.g., '_ao81')")
+    parser.add_argument("--steps", type=int, default=1, help="Number of rollout steps (e.g. 12 for 3 days)")
     args = parser.parse_args()
     
     suffix_str = args.name_suffix if args.name_suffix.startswith("_") or args.name_suffix == "" else f"_{args.name_suffix}"
@@ -240,14 +241,13 @@ def main():
     base_output_filename = f"base_{args.phenomenon.lower()}{suffix_str}_{date_tag}_alpha_0.0.nc"
     
     if not os.path.exists(base_output_filename):
-        print("Running base inference (alpha=0.0) without hook...")
+        print(f"Running base inference (alpha=0.0) without hook for {args.steps} steps...")
         with torch.inference_mode():
-            for pred in rollout(model, batch, steps=1):
+            for pred in rollout(model, batch, steps=args.steps):
                 base_pred_batch = pred
-                break
                 
         base_pred_batch = base_pred_batch.to("cpu")
-        base_ds = batch_to_dataset(base_pred_batch, step=1)
+        base_ds = batch_to_dataset(base_pred_batch, step=args.steps)
         
         tmp_base_filename = f"{base_output_filename}.tmp_base"
         base_ds.to_netcdf(tmp_base_filename)
@@ -265,11 +265,10 @@ def main():
             make_intervention_hook(masked_delta_v, alpha=alpha_val)
         )
         
-        print(f"Running steered inference (alpha={alpha_val})...")
+        print(f"Running steered inference (alpha={alpha_val}) for {args.steps} steps...")
         with torch.inference_mode():
-            for pred in rollout(model, batch, steps=1):
+            for pred in rollout(model, batch, steps=args.steps):
                 pred_batch = pred
-                break
                 
         pred_batch = pred_batch.to("cpu")
             
@@ -277,7 +276,7 @@ def main():
         hook_handle.remove()
         
         print(f"Converting prediction to xarray for alpha={alpha_val}...")
-        ds = batch_to_dataset(pred_batch, step=1)
+        ds = batch_to_dataset(pred_batch, step=args.steps)
 
         output_filename = f"steered_{args.phenomenon.lower()}{suffix_str}_{date_tag}_alpha_{alpha_val}.nc"
         ds.to_netcdf(output_filename)

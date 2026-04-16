@@ -30,26 +30,40 @@ cd /home/ekasteleyn/aurora_thesis/thesis/steering/scripts
 
 # ── NEW RESULTS ──────────────────────────────────────────────────────────────
 
-# Visualize AO Global (High Index, variant "ao3")
-/home/ekasteleyn/aurora_thesis/aurora_env/bin/python visualize_alphas_grid_global.py \
-    --phenomenon AO \
-    --variant ao3 \
-    --date 20170308
+# # Visualize AO Global (High Index, variant "ao3")
+# /home/ekasteleyn/aurora_thesis/aurora_env/bin/python visualize_alphas_grid_global.py \
+#     --phenomenon AO \
+#     --variant ao3 \
+#     --date 20170308
 
-# Visualize AAO Global (High Index, variant "high")
+# # Visualize AAO Global (High Index, variant "high")
+# /home/ekasteleyn/aurora_thesis/aurora_env/bin/python visualize_alphas_grid_global.py \
+#     --phenomenon AAO \
+#     --variant high \
+#     --date 20160113
+
+# # Visualize AO Polar (High Index, variant "ao3")
+# /home/ekasteleyn/aurora_thesis/aurora_env/bin/python visualize_alphas_grid.py \
+#     --phenomenon AO \
+#     --variant ao3 \
+#     --date 20170308
+
+# # Visualize AAO Polar (High Index, variant "high")
+# /home/ekasteleyn/aurora_thesis/aurora_env/bin/python visualize_alphas_grid.py \
+#     --phenomenon AAO \
+#     --variant high \
+#     --date 20160113
+
+# ── 3-DAY RESULTS ────────────────────────────────────────────────────────────
+
+# Visualize AAO Global (High Index 3-day, variant "high_3day")
 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python visualize_alphas_grid_global.py \
     --phenomenon AAO \
-    --variant high \
+    --variant high_3day \
     --date 20160113
 
-# Visualize AO Polar (High Index, variant "ao3")
-/home/ekasteleyn/aurora_thesis/aurora_env/bin/python visualize_alphas_grid.py \
-    --phenomenon AO \
-    --variant ao3 \
-    --date 20170308
-
-# Visualize AAO Polar (High Index, variant "high")
+# Visualize AAO Polar (High Index 3-day, variant "high_3day")
 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python visualize_alphas_grid.py \
     --phenomenon AAO \
-    --variant high \
+    --variant high_3day \
     --date 20160113
