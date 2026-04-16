@@ -25,7 +25,6 @@ PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python steer_au
     --phenomenon AAO \
     --alphas $ALPHAS \
     --csv /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_aao_steer.csv \
-    --use-climatology \
-    --name-suffix medium_climo
+    --name-suffix medium
 
 echo "COMPLETE: \$(date)"

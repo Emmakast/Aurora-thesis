@@ -92,8 +92,8 @@ def plot_alpha_grid_global(base_ds, steered_ds_dict, var, alphas, phenomenon, le
 def main():
     parser = argparse.ArgumentParser(description="Grid plot across alphas (Global)")
     parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "AAO", "MJO", "ENSO"])
-    parser.add_argument("--variant", type=str, default="medium", help="Variant tag (e.g., 'medium' or 'ao3')")
-    parser.add_argument("--date", type=str, default="climo_climo", help="Date tag (e.g., 20201202 or climo_climo)")
+    parser.add_argument("--variant", type=str, default="climo", help="Variant tag (e.g., 'medium', 'climo' or 'ao3')")
+    parser.add_argument("--date", type=str, default="climo", help="Date tag (e.g., 20201202 or climo)")
     parser.add_argument("--alphas", type=float, nargs='+', default=[-0.5, -0.2, -0.1, -0.05, 0.05, 0.1, 0.2, 0.5])
     args = parser.parse_args()
 

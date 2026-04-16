@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 281, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 139, in main
+    mean_neutral = load_mean_latent(neutral_dates)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/steer_aurora.py", line 125, in load_mean_latent
+    print(f"Warning: No valid latent files found for {dates_df['Type'].iloc[0]}. Returning empty.")
+                                                      ~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1192, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1753, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1686, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds

@@ -1,0 +1,1 @@
+/var/spool/slurm/slurmd/job21898316/slurm_script: line 29: 3409826 Segmentation fault      PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python steer_aurora.py --phenomenon AO --alphas $ALPHAS --csv /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_ao_232.csv --use-climatology --name-suffix climo

@@ -37,8 +37,8 @@ def main():
     parser.add_argument("--alphas", type=float, nargs="+", default=[1.0], help="List of steering strengths")
     parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "MJO", "ENSO", "AAO"], help="Phenomenon to steer")
     parser.add_argument("--csv", type=str, default="target_dates.csv", help="Target dates CSV file")
+    parser.add_argument("--neutral-csv", type=str, default=None, help="Optional separate CSV file for Neutral dates")
     parser.add_argument("--name-suffix", type=str, default="", help="Suffix to append to the output filename (e.g., '_ao81')")
-    parser.add_argument("--use-climatology", action="store_true", help="Use an average of neutral dates as the base state")
     args = parser.parse_args()
     
     suffix_str = args.name_suffix if args.name_suffix.startswith("_") or args.name_suffix == "" else f"_{args.name_suffix}"
@@ -59,7 +59,14 @@ def main():
     # Filter for the chosen phenomenon
     phenom_df = df[df['Phenomenon'] == args.phenomenon]
     active_dates = phenom_df[phenom_df['Type'] == 'Active']
-    neutral_dates = phenom_df[phenom_df['Type'] == 'Neutral']
+    
+    if args.neutral_csv and os.path.exists(args.neutral_csv):
+        neutral_df = pd.read_csv(args.neutral_csv)
+        neutral_phenom_df = neutral_df[neutral_df['Phenomenon'] == args.phenomenon]
+        neutral_dates = neutral_phenom_df[neutral_phenom_df['Type'] == 'Neutral']
+        print(f"Loaded Neutral dates from separate CSV: {args.neutral_csv}")
+    else:
+        neutral_dates = phenom_df[phenom_df['Type'] == 'Neutral']
     
     print(f"Loaded CSV: {csv_path}")
     print(f"Found {len(active_dates)} Active dates and {len(neutral_dates)} Neutral dates.")
@@ -186,16 +193,9 @@ def main():
         return hook
         
     # ==========================================
-    # Step 3: Run the Steered Inference
+    # Step 3: Prepare the Data
     # ==========================================
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"Loading Aurora Model on {device}...")
-    
-    # Needs Aurora installed
-    model = Aurora()
-    model.load_checkpoint("microsoft/aurora", "aurora-0.25-finetuned.ckpt")
-    model.eval()
-    model = model.to(device)
     
     # Prioritize persistent scratch-shared so we don't redownload data on every new job
     shared_scratch = Path("/scratch-shared/ekasteleyn/aurora_data")
@@ -210,110 +210,26 @@ def main():
     print("Downloading static/base data if needed...")
     download_static(download_dir)
 
-    if args.use_climatology:
-        print(f"Building climatological base state from {len(neutral_dates)} neutral dates...")
-        sample_dates = neutral_dates # Removed the .head(10) to use all provided dates
-        batch_list = []
-        for _, row in sample_dates.iterrows():
-            day_str = f"{int(row['Year']):04d}-{int(row['Month']):02d}-{int(row['Day']):02d}"
-            
-            batch_loaded = False
-            
-            # 1. Try to fetch cached batch from local scratch first
-            local_batch_paths = [
-                download_dir / f"batch_{day_str}.pt",
-                Path(f"/scratch-shared/ekasteleyn/aurora_data/batch_{day_str}.pt"),
-                Path(f"/scratch-shared/ekasteleyn/aurora_hres_validation/batch_{day_str}.pt"),
-                Path(os.environ.get("TMPDIR", "/tmp")) / f"aurora_data/batch_{day_str}.pt",
-                Path(f"thesis/results/batch_{day_str}.pt")
-            ]
-            
-            for local_path in local_batch_paths:
-                if local_path.exists():
-                    try:
-                        b = torch.load(local_path, weights_only=False, map_location='cpu')
-                        batch_list.append(b)
-                        batch_loaded = True
-                        print(f"Loaded pre-computed batch for {day_str} from: {local_path}")
-                        break
-                    except Exception as e:
-                        print(f"Failed to load local batch {local_path}: {e}")
-            
-            # 2. Try S3 if not locally available
-            if not batch_loaded and s3_client is not None:
-                # Assuming batch is saved as batch_YYYY-MM-DD.pt on S3
-                s3_key = f"aurora_hres_validation/batch_{day_str}.pt"
-                try:
-                    with tempfile.NamedTemporaryFile(suffix=".pt", delete=False) as tmp:
-                        s3_client.download_file("ekasteleyn-aurora-predictions", s3_key, tmp.name)
-                        b = torch.load(tmp.name, weights_only=False, map_location='cpu')
-                        batch_list.append(b)
-                        batch_loaded = True
-                        print(f"Loaded batch for {day_str} from S3.")
-                        Path(tmp.name).unlink()
-                except Exception:
-                    pass
-            
-            if not batch_loaded:
-                # Check for raw .nc files; skip download if they're already in shared-scratch
-                surface_path = download_dir / f"surface_{day_str}.nc"
-                atmos_path = download_dir / f"atmospheric_{day_str}.nc"
-                
-                if surface_path.exists() and atmos_path.exists():
-                    # print(f"Found raw surface/atmospheric files for {day_str}, skipping download.")
-                    pass
-                else:
-                    # print(f"Data not found locally or on S3 for {day_str}. Downloading raw variables...")
-                    try:
-                        download_data(day_str, download_dir)
-                    except Exception as e:
-                        print(f"Skipping {day_str} due to download error: {e}")
-                        continue
-                        
-                b = prepare_batch(day_str, download_dir, init_hour=12)
-                batch_list.append(b)
-                
-                # Optionally save it locally so you don't have to re-extract it later
-                try:
-                    torch.save(b, download_dir / f"batch_{day_str}.pt")
-                except:
-                    pass
-        
-        print("Averaging batches...")
-        # Average the batches (assuming batch is a tuple of tensors)
-        def average_tuple_of_tensors(t_list):
-            return tuple(torch.nan_to_num(torch.nanmean(torch.stack([b[i] for b in t_list]), dim=0), nan=0.0) for i in range(len(t_list[0])))
-        
-        if isinstance(batch_list[0], tuple):
-            batch = average_tuple_of_tensors(batch_list)
-        elif type(batch_list[0]).__name__ == 'Batch':
-            # It's an aurora Batch dataclass
-            from aurora import Batch
-            avg_surf = {k: torch.nan_to_num(torch.nanmean(torch.stack([b.surf_vars[k] for b in batch_list]), dim=0), nan=0.0) for k in batch_list[0].surf_vars.keys()}
-            avg_static = {k: torch.nan_to_num(torch.nanmean(torch.stack([b.static_vars[k] for b in batch_list]), dim=0), nan=0.0) for k in batch_list[0].static_vars.keys()}
-            avg_atmos = {k: torch.nan_to_num(torch.nanmean(torch.stack([b.atmos_vars[k] for b in batch_list]), dim=0), nan=0.0) for k in batch_list[0].atmos_vars.keys()}
-            batch = type(batch_list[0])(
-                surf_vars=avg_surf,
-                static_vars=avg_static,
-                atmos_vars=avg_atmos,
-                metadata=batch_list[0].metadata
-            )
-        else:
-            # Fallback if it's a single tensor
-            batch = torch.nan_to_num(torch.nanmean(torch.stack(batch_list), dim=0), nan=0.0)
-            
-        base_day_str = "climatology"
-        date_tag = "climo"
-    else:
-        # Select a base Neutral date, let's just pick one from the CSV
-        base_date = neutral_dates.iloc[0]
-        base_day_str = f"{int(base_date['Year']):04d}-{int(base_date['Month']):02d}-{int(base_date['Day']):02d}"
-        print(f"Selected Base Neutral Date: {base_day_str}")
-        
-        download_data(base_day_str, download_dir)
-        print("Preparing batch...")
-        batch = prepare_batch(base_day_str, download_dir, init_hour=12)
-        date_tag = base_day_str.replace("-", "")
+    # Select a fallback base date from the CSV (using the first Neutral date)
+    base_date = neutral_dates.iloc[0]
+    base_day_str = f"{int(base_date['Year']):04d}-{int(base_date['Month']):02d}-{int(base_date['Day']):02d}"
+    print(f"Selected Base Date: {base_day_str}")
+    
+    download_data(base_day_str, download_dir)
+    print("Preparing batch...")
+    batch = prepare_batch(base_day_str, download_dir, init_hour=12)
+    date_tag = base_day_str.replace("-", "")
+
+    # ==========================================
+    # Step 4: Run the Steered Inference
+    # ==========================================
+    print(f"Loading Aurora Model on {device}...")
+    
+    # Needs Aurora installed
+    model = Aurora()
+    model.load_checkpoint("microsoft/aurora", "aurora-0.25-finetuned.ckpt")
+    model.eval()
+    model = model.to(device)
 
     # Move to device (handle tuples or direct tensors)
     if isinstance(batch, tuple):

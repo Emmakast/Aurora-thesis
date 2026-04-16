@@ -1,0 +1,2 @@
+/var/spool/slurm/slurmd/job21890742/slurm_script: line 29: 3219230 Killed                  PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python steer_aurora.py --phenomenon AAO --alphas $ALPHAS --csv /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_aao_steer.csv --use-climatology --name-suffix medium_climo
+[2026-04-15T09:20:17.180] error: Detected 1 oom_kill event in StepId=21890742.batch. Some of the step tasks have been OOM Killed.
