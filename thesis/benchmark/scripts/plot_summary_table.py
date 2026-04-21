@@ -683,6 +683,171 @@ def render_unified_png_table(leads: list[int], summaries: dict[str, pd.DataFrame
     print(f"Saved {out}")
 
 
+def render_grouped_transposed_tables(leads: list[int], summaries: dict[str, pd.DataFrame],
+                                     outdir: Path):
+    """Render three transposed tables (Models on columns, Metrics+Leads on rows)."""
+    models_to_plot = [m for m in MODELS if m != "aurora"]
+    
+    groups = {
+        "Conservation_Variability": [
+            "dry_mass_drift_pct_per_day",
+            "water_mass_drift_pct_per_day",
+            "total_energy_drift_pct_per_day",
+        ],
+        "Spectral": [
+            "effective_resolution_km",
+            "spectral_residual",
+            "spectral_divergence",
+        ],
+        "Balance": [
+            "hydrostatic_rmse",
+            "geostrophic_rmse",
+        ]
+    }
+    
+    header_color = np.array([0.9, 0.9, 0.9])
+    
+    blue = np.array([0.7, 0.85, 1.0])
+    red = np.array([1.0, 0.75, 0.75])
+    white = np.array([1.0, 1.0, 1.0])
+
+    # Pre-compute maximum absolute value for each metric globally (across all leads/models)
+    max_abs = {}
+    for metrics_list in groups.values():
+        for metric in metrics_list:
+            vals = []
+            for m in models_to_plot:
+                if m in summaries:
+                    df = summaries[m]
+                    for lead in leads:
+                        df_lt = df[df["lead_time_hours"] == lead]
+                        if df_lt.empty:
+                            avail = sorted(df["lead_time_hours"].unique())
+                            nearest = min(avail, key=lambda x: abs(x - lead))
+                            df_lt = df[df["lead_time_hours"] == nearest]
+                        val = get_value(df_lt, metric)
+                        if not np.isnan(val):
+                            vals.append(val)
+            max_abs[metric] = max([abs(v) for v in vals]) if vals else 1.0
+            if max_abs[metric] == 0: 
+                max_abs[metric] = 1.0
+
+    for group_name, metrics_list in groups.items():
+        # Exclude fuxi from Conservation table
+        if group_name == "Conservation_Variability":
+            current_models = [m for m in models_to_plot if m != "fuxi"]
+        else:
+            current_models = list(models_to_plot)
+
+        model_labels = [NICE.get(m, m) for m in current_models]
+
+        cell_texts = []
+        cell_colors = []
+        
+        # Header Row
+        row0_text = ["Metric", "Lead Time"] + model_labels
+        row0_color = [header_color] * len(row0_text)
+        cell_texts.append(row0_text)
+        cell_colors.append(row0_color)
+            
+        for metric in metrics_list:
+            for l_idx, lead in enumerate(leads):
+                if l_idx == len(leads)//2:
+                    m_label = METRICS[metric][0].replace('\n', ' ')
+                    if metric in ["dry_mass_drift_pct_per_day", "water_mass_drift_pct_per_day", "total_energy_drift_pct_per_day", "hydrostatic_rmse", "geostrophic_rmse"]:
+                        m_label += " →0"
+                    elif metric in ["spectral_residual", "spectral_divergence"]:
+                        m_label += " ↓0"
+                    elif metric == "effective_resolution_km":
+                        m_label += " ↓111.5"
+                else:
+                    m_label = ""
+                
+                row_t = [m_label, f"{lead}h"]
+                row_c = [white.copy(), white.copy()]
+
+                for m in current_models:
+                    if m not in summaries:
+                        row_t.append("—")
+                        row_c.append(white)
+                        continue
+
+                    df = summaries[m]
+                    df_lt = df[df["lead_time_hours"] == lead]
+                    is_appx = False
+                    if df_lt.empty:
+                        avail = sorted(df["lead_time_hours"].unique())
+                        nearest = min(avail, key=lambda x: abs(x - lead))
+                        df_lt = df[df["lead_time_hours"] == nearest]
+                        is_appx = True
+
+                    val = get_value(df_lt, metric)
+                    if np.isnan(val):
+                        row_t.append("—")
+                        row_c.append(white)
+                    else:
+                        text = fmt(val, metric)
+                        if metric == "effective_resolution_km" and m == "neuralgcm":
+                            text += "*"
+                        if is_appx: text += " *"
+                        row_t.append(text)
+
+                        # Color assignment with global normalization (everything mapped to red spectrum)
+                        if metric == "effective_resolution_km" and m in NATIVE_RESOLUTION_MODELS:
+                            row_c.append(white)
+                        else:
+                            intensity = min(abs(val) / max_abs[metric], 1.0) * 0.8
+                            row_c.append(white * (1 - intensity) + red * intensity)
+                    
+                cell_texts.append(row_t)
+                cell_colors.append(row_c)
+
+        n_cols = len(cell_texts[0])
+        n_rows = len(cell_texts)
+        fig_w = max(1.5 * n_cols, 10)
+        fig_h = max(0.4 * n_rows, 4)
+
+        fig, ax = plt.subplots(figsize=(fig_w, fig_h))
+        ax.axis("off")
+        
+        # Give more space to the metric column for Conservation and Balance groups
+        if group_name in ["Balance", "Conservation_Variability"]:
+            metric_width = 0.35
+        else:
+            metric_width = 0.25
+            
+        colWidths = [metric_width, 0.1] + [0.12] * len(current_models)
+        table = ax.table(
+            cellText=cell_texts,
+            cellColours=[[tuple(c) for c in row] for row in cell_colors],
+            colWidths=colWidths,
+            loc="center",
+            cellLoc="center"
+        )
+        table.auto_set_font_size(False)
+        table.set_fontsize(9)
+        table.scale(1.0, 1.8)
+
+        # Merge metric column cells roughly
+        for j in range(n_cols):
+            table[0, j].set_text_props(fontweight="bold")
+            table[0, j].set_facecolor(tuple(header_color))
+
+        row_idx = 1
+        for metric in metrics_list:
+            for r in range(row_idx, row_idx + len(leads)):
+                if r == row_idx: table[r, 0].visible_edges = 'LRT'
+                elif r == row_idx + len(leads) - 1: table[r, 0].visible_edges = 'LRB'
+                else: table[r, 0].visible_edges = 'LR'
+                table[r, 0].set_text_props(fontweight="bold")
+            row_idx += len(leads)
+
+        out = outdir / f"summary_table_transposed_{group_name.lower()}_aurora.png"
+        fig.savefig(out, dpi=200, bbox_inches="tight")
+        plt.close(fig)
+        print(f"Saved {out}")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--results-dir", default=None)
@@ -709,6 +874,7 @@ def main():
     render_combined_table_by_model(leads, summaries, outdir)
     render_split_tables(leads, summaries, outdir)
     render_unified_png_table(leads, summaries, outdir)
+    render_grouped_transposed_tables(leads, summaries, outdir)
 
 
 if __name__ == "__main__":

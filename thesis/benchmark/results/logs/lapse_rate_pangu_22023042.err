@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/pip/__main__.py", line 22, in <module>
+    from pip._internal.cli.main import main as _main
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/pip/_internal/cli/main.py", line 11, in <module>
+    from pip._internal.cli.autocompletion import autocomplete
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/pip/_internal/cli/autocompletion.py", line 12, in <module>
+    from pip._internal.cli.main_parser import create_main_parser
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/pip/_internal/cli/main_parser.py", line 9, in <module>
+    from pip._internal.build_env import get_runnable_pip
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/pip/_internal/build_env.py", line 19, in <module>
+    from pip._internal.cli.spinners import open_spinner
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/pip/_internal/cli/spinners.py", line 11, in <module>
+    from pip._vendor.rich.console import (
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/pip/_vendor/rich/console.py", line 40, in <module>
+    from . import errors, themes
+ImportError: cannot import name 'themes' from 'pip._vendor.rich' (/home/ekasteleyn/.local/lib/python3.9/site-packages/pip/_vendor/rich/__init__.py)
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/benchmark/scripts/run_lapse_rate.py", line 29, in <module>
+    from physics_metrics import (
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/benchmark/scripts/physics_metrics.py", line 27, in <module>
+    from scipy.stats import linregress, wasserstein_distance
+ModuleNotFoundError: No module named 'scipy'

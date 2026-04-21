@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/zarr.py", line 1868, in _get_open_params
+    zarr_root_group = zarr.open_consolidated(store, **open_kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/zarr/api/synchronous.py", line 231, in open_consolidated
+    sync(async_api.open_consolidated(*args, use_consolidated=use_consolidated, **kwargs))
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/zarr/core/sync.py", line 163, in sync
+    raise return_result
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/zarr/core/sync.py", line 119, in _runner
+    return await coro
+           ^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/zarr/api/asynchronous.py", line 408, in open_consolidated
+    return await open_group(*args, use_consolidated=use_consolidated, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/zarr/api/asynchronous.py", line 872, in open_group
+    raise GroupNotFoundError(msg)
+zarr.errors.GroupNotFoundError: No group found in store 'gs://weatherbench2/datasets/neuralgcm/2020_0012_1p4.zarr' at path ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/benchmark/scripts/run_lapse_rate.py", line 209, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/benchmark/scripts/run_lapse_rate.py", line 196, in main
+    df = compute_lapse_rates(
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/benchmark/scripts/run_lapse_rate.py", line 84, in compute_lapse_rates
+    ds_pred_full = open_zarr_anonymous(prediction_zarr)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/benchmark/scripts/run_lapse_rate.py", line 46, in open_zarr_anonymous
+    ds = xr.open_zarr(url, storage_options={"token": "anon"})
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/zarr.py", line 1586, in open_zarr
+    ds = open_dataset(
+         ^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/api.py", line 606, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/zarr.py", line 1660, in open_dataset
+    store = ZarrStore.open_group(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/zarr.py", line 714, in open_group
+    ) = _get_open_params(
+        ^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/backends/zarr.py", line 1872, in _get_open_params
+    zarr_root_group = zarr.open_group(store, **open_kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/zarr/api/synchronous.py", line 540, in open_group
+    sync(
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/zarr/core/sync.py", line 163, in sync
+    raise return_result
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/zarr/core/sync.py", line 119, in _runner
+    return await coro
+           ^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/zarr/api/asynchronous.py", line 872, in open_group
+    raise GroupNotFoundError(msg)
+zarr.errors.GroupNotFoundError: No group found in store 'gs://weatherbench2/datasets/neuralgcm/2020_0012_1p4.zarr' at path ''

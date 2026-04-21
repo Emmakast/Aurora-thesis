@@ -94,14 +94,23 @@ def _infer_n_dates(path: str) -> int:
     return 365
 
 
+def _standardize_time_col(df: pd.DataFrame) -> pd.DataFrame:
+    """Standardize the time step column name to 'lead_time_hours'."""
+    for col in ["forecast_hour", "lead_time", "step", "time", "lead_time_hours"]:
+        if col in df.columns:
+            df = df.rename(columns={col: "lead_time_hours"})
+            return df
+    raise KeyError(f"Could not find a valid time step column in: {df.columns.tolist()}")
+
+
 def _compute_relative(df: pd.DataFrame) -> pd.DataFrame:
     """Add *_rel columns for conservation metrics (% change from first timestep)."""
-    first_hour = df["forecast_hour"].min()
+    first_hour = df["lead_time_hours"].min()
     for col in CONSERVATION_METRICS:
         if col not in df.columns or df[col].isna().all():
             continue
         t0_map = (
-            df.loc[df["forecast_hour"] == first_hour]
+            df.loc[df["lead_time_hours"] == first_hour]
             .drop_duplicates(subset=["date"])
             .set_index("date")[col]
         )
@@ -152,8 +161,9 @@ def _load_era5_from_summary(summary_path: str) -> dict[str, dict[int, float]]:
 def plot_single(csv_path: str, era5_csv: str | None = None):
     """Plot per-metric timeseries for one model, with optional ERA5 baseline."""
     df = pd.read_csv(csv_path)
+    df = _standardize_time_col(df)
     df["date"] = pd.to_datetime(df["date"])
-    df = df.drop_duplicates(subset=["date", "forecast_hour"])
+    df = df.drop_duplicates(subset=["date", "lead_time_hours"])
     df = _compute_relative(df)
 
     era5_means = _load_era5_from_summary(era5_csv) if era5_csv else {}
@@ -165,7 +175,7 @@ def plot_single(csv_path: str, era5_csv: str | None = None):
     outdir.mkdir(exist_ok=True)
 
     sns.set_theme(style="whitegrid")
-    max_hour = int(df["forecast_hour"].max())
+    max_hour = int(df["lead_time_hours"].max())
 
     for col, title in METRICS.items():
         if col not in df.columns:
@@ -174,7 +184,7 @@ def plot_single(csv_path: str, era5_csv: str | None = None):
         # Absolute plot
         fig, ax = plt.subplots(figsize=(12, 6))
         sns.lineplot(
-            data=df, x="forecast_hour", y=col, errorbar=("ci", 95),
+            data=df, x="lead_time_hours", y=col, errorbar=("ci", 95),
             marker="o", markersize=6, color="royalblue",
             label=f"{model_label} Mean ± 95% CI ({n_dates} dates)", zorder=3, ax=ax,
         )
@@ -185,9 +195,9 @@ def plot_single(csv_path: str, era5_csv: str | None = None):
                     marker="*", markersize=10, label="ERA5 (intrinsic)",
                     zorder=5, alpha=0.8)
 
-        ax.set_title(f"{title} over Forecast Horizon (1 yr average)", fontsize=14, pad=15)
-        ax.set_xlabel("Forecast Hour", fontsize=12)
-        ax.set_ylabel(title, fontsize=12)
+        ax.set_title(f"{title} ", fontsize=16, pad=15)
+        ax.set_xlabel("Forecast Hour", fontsize=16)
+        ax.set_ylabel(title, fontsize=16)
         ax.set_xticks(range(0, max_hour + 1, 24))
         ax.legend()
         fig.tight_layout()
@@ -203,14 +213,14 @@ def plot_single(csv_path: str, era5_csv: str | None = None):
                 continue
             fig, ax = plt.subplots(figsize=(12, 6))
             sns.lineplot(
-                data=df, x="forecast_hour", y=rel_col, errorbar=("ci", 95),
+                data=df, x="lead_time_hours", y=rel_col, errorbar=("ci", 95),
                 marker="o", markersize=6, color="royalblue",
                 label=f"{model_label} Mean ± 95% CI ({n_dates} dates)", zorder=3, ax=ax,
             )
             ax.axhline(y=0, color="grey", linestyle="-", linewidth=1, alpha=0.5)
-            ax.set_title(f"{title} — Relative Change from t₀ (%, shading = 95% CI)", fontsize=14, pad=15)
-            ax.set_xlabel("Forecast Hour", fontsize=12)
-            ax.set_ylabel("Relative Change (%)", fontsize=12)
+            ax.set_title(f"{title}(%, shading = 95% CI)", fontsize=16, pad=15)
+            ax.set_xlabel("Forecast Hour", fontsize=16)
+            ax.set_ylabel("Relative Change (%)", fontsize=16)
             ax.set_xticks(range(0, max_hour + 1, 24))
             ax.legend()
             fig.tight_layout()
@@ -228,14 +238,15 @@ def _load_and_preagg(csv_paths: list[str]) -> dict[str, pd.DataFrame]:
     for path in csv_paths:
         model = _extract_model_name(path)
         df = pd.read_csv(path)
+        df = _standardize_time_col(df)
         df["date"] = pd.to_datetime(df["date"])
-        df = df.drop_duplicates(subset=["date", "forecast_hour"])
+        df = df.drop_duplicates(subset=["date", "lead_time_hours"])
         df = _compute_relative(df)
 
         # Only keep numeric columns for aggregation
-        value_cols = [c for c in df.columns if c not in ("date", "forecast_hour") and df[c].dtype in ["float64", "float32", "int64", "int32"]]
-        agg = df.groupby("forecast_hour")[value_cols].agg(["mean", "std"]).reset_index()
-        agg.columns = ["forecast_hour"] + [f"{c}_{s}" for c, s in agg.columns[1:]]
+        value_cols = [c for c in df.columns if c not in ("date", "lead_time_hours") and df[c].dtype in ["float64", "float32", "int64", "int32"]]
+        agg = df.groupby("lead_time_hours")[value_cols].agg(["mean", "std"]).reset_index()
+        agg.columns = ["lead_time_hours"] + [f"{c}_{s}" for c, s in agg.columns[1:]]
         models[model] = agg
     return models
 
@@ -250,7 +261,7 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
     outdir.mkdir(exist_ok=True)
 
     sns.set_theme(style="whitegrid")
-    max_hour = max(df["forecast_hour"].max() for df in models.values())
+    max_hour = max(df["lead_time_hours"].max() for df in models.values())
 
     for col, title in METRICS.items():
         mean_col = f"{col}_mean"
@@ -266,7 +277,7 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
         for model, df in sorted(has_data.items()):
             style = MODEL_STYLES.get(model, {"color": "grey", "marker": "."})
             nice = NICE_NAMES.get(model, model)
-            x = df["forecast_hour"].values
+            x = df["lead_time_hours"].values
             y = df[mean_col].values
             yerr = df[std_col].values if std_col in df.columns else None
             ax.plot(x, y, marker=style["marker"], markersize=6,
@@ -283,11 +294,12 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
                     zorder=5, alpha=0.8)
 
         mode_str = " (vs IFS HRES)" if ifs_mode else " (vs ERA5)"
-        ax.set_title(f"{title}{mode_str} over Forecast Horizon (shading = ±1σ)", fontsize=14, pad=15)
-        ax.set_xlabel("Forecast Hour", fontsize=12)
-        ax.set_ylabel(title, fontsize=12)
+        ax.set_title(f"{title}{mode_str} (shading = ±σ)", fontsize=24, pad=15)
+        ax.set_xlabel("Forecast Hour", fontsize=16)
+        ax.set_ylabel(title, fontsize=16)
         ax.set_xticks(range(0, int(max_hour) + 1, 24))
-        ax.legend(fontsize=10)
+        ax.tick_params(axis='both', which='major', labelsize=14)
+        ax.legend(fontsize=16)
         fig.tight_layout()
         outfile = outdir / f"{col}_combined.png"
         fig.savefig(outfile, dpi=300)
@@ -307,7 +319,7 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
             for model, df in sorted(has_rel.items()):
                 style = MODEL_STYLES.get(model, {"color": "grey", "marker": "."})
                 nice = NICE_NAMES.get(model, model)
-                x = df["forecast_hour"].values
+                x = df["lead_time_hours"].values
                 y = df[rel_mean].values
                 yerr = df[rel_std].values if rel_std in df.columns else None
                 ax.plot(x, y, marker=style["marker"], markersize=6,
@@ -318,11 +330,12 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
 
             ax.axhline(y=0, color="grey", linestyle="-", linewidth=1, alpha=0.5)
             mode_str = " (vs IFS HRES)" if ifs_mode else " (vs ERA5)"
-            ax.set_title(f"{title}{mode_str} — Relative Change from t₀ (%, shading = ±1σ)", fontsize=14, pad=15)
-            ax.set_xlabel("Forecast Hour", fontsize=12)
-            ax.set_ylabel("Relative Change (%)", fontsize=12)
+            ax.set_title(f"{title}{mode_str} (shading = ±σ)", fontsize=24, pad=15)
+            ax.set_xlabel("Forecast Hour", fontsize=16)
+            ax.set_ylabel("Relative Change (%)", fontsize=16)
             ax.set_xticks(range(0, int(max_hour) + 1, 24))
-            ax.legend(fontsize=10)
+            ax.tick_params(axis='both', which='major', labelsize=14)
+            ax.legend(fontsize=16)
             fig.tight_layout()
             outfile = outdir / f"{col}_relative_combined.png"
             fig.savefig(outfile, dpi=300)

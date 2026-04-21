@@ -1,0 +1,12 @@
+Starting Lapse Rate evaluation for NeuralGCM...
+Using Python: /gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/bin/python
+
+======================================================================
+  LAPSE RATE W1 EVALUATION: neuralgcm (2020)
+  Prediction: gs://weatherbench2/datasets/neuralgcm/2020_0012_1p4.zarr
+  Reference:  gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Lead times: [12, 24, 48, 72, 120, 168, 240]
+  Output: /home/ekasteleyn/aurora_thesis/thesis/benchmark/results/lapse_rate_w1_neuralgcm_2020.csv
+======================================================================
+
+Done!

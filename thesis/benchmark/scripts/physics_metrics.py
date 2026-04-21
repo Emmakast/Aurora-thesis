@@ -24,7 +24,7 @@ from typing import Optional
 
 import numpy as np
 import xarray as xr
-from scipy.stats import linregress
+from scipy.stats import linregress, wasserstein_distance
 
 
 # ============================================================================
@@ -1218,3 +1218,73 @@ def compute_pure_tcwv(
         attrs={"units": "kg/m²",
                "long_name": "TCWV (fixed pressure levels, no surface pressure)"},
     )
+
+def compute_lapse_rate_wasserstein(
+    ds_pred: xr.Dataset,
+    ds_ref: xr.Dataset,
+    area: xr.DataArray,
+    t_name: str | None = None,
+    phi_name: str | None = None,
+    level_dim_pred: str | None = None,
+    level_dim_ref: str | None = None,
+) -> dict[str, float]:
+    """
+    Computes the 1D Wasserstein distance (W1) of the environmental lapse rate 
+    (between 500 hPa and 850 hPa) for three geographical bands. The calculation 
+    is area-weighted to account for poleward grid cell convergence.
+    """
+    t_name_p = t_name or _find_var(ds_pred, T_NAMES)
+    phi_name_p = phi_name or _find_var(ds_pred, PHI_NAMES)
+    t_name_r = t_name or _find_var(ds_ref, T_NAMES)
+    phi_name_r = phi_name or _find_var(ds_ref, PHI_NAMES)
+
+    ld_p = level_dim_pred or _detect_level_dim(ds_pred)
+    ld_r = level_dim_ref or _detect_level_dim(ds_ref)
+
+    def _calc_gamma(ds, t_var, phi_var, ld):
+        t_500 = ds[t_var].sel({ld: 500})
+        t_850 = ds[t_var].sel({ld: 850})
+        phi_500 = ds[phi_var].sel({ld: 500})
+        phi_850 = ds[phi_var].sel({ld: 850})
+        
+        # Lapse rate formulation, units converted to K/km
+        return -GRAVITY * (t_500 - t_850) / (phi_500 - phi_850) * 1000.0
+
+    gamma_p = _calc_gamma(ds_pred, t_name_p, phi_name_p, ld_p)
+    gamma_r = _calc_gamma(ds_ref, t_name_r, phi_name_r, ld_r)
+
+    lat_p = ds_pred.latitude
+    lat_r = ds_ref.latitude
+
+    bands = {
+        "tropics": ((lat_p >= -30) & (lat_p <= 30), (lat_r >= -30) & (lat_r <= 30)),
+        "nh_mid": ((lat_p > 30) & (lat_p <= 60), (lat_r > 30) & (lat_r <= 60)),
+        "sh_mid": ((lat_p >= -60) & (lat_p < -30), (lat_r >= -60) & (lat_r < -30)),
+    }
+
+    # Re-calculate native areas to avoid cross-dataset float coordinate alignment issues
+    area_p = get_grid_cell_area(ds_pred)
+    area_r = get_grid_cell_area(ds_ref)
+
+    results = {}
+    for band_name, (mask_p, mask_r) in bands.items():
+        # Mask arrays by band and flatten to 1D
+        gp_band = gamma_p.where(mask_p, drop=True).values.flatten()
+        gr_band = gamma_r.where(mask_r, drop=True).values.flatten()
+        
+        area_p_band = area_p.where(mask_p, drop=True).values.flatten()
+        area_r_band = area_r.where(mask_r, drop=True).values.flatten()
+
+        # Isolate valid data points (exclude NaNs introduced by the mask padding)
+        valid_p = ~np.isnan(gp_band) & ~np.isnan(area_p_band)
+        valid_r = ~np.isnan(gr_band) & ~np.isnan(area_r_band)
+
+        w1 = wasserstein_distance(
+            u_values=gp_band[valid_p],
+            v_values=gr_band[valid_r],
+            u_weights=area_p_band[valid_p],
+            v_weights=area_r_band[valid_r]
+        )
+        results[f"lapse_rate_w1_{band_name}"] = float(w1)
+
+    return results

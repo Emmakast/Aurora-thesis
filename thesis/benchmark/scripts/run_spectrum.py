@@ -45,7 +45,7 @@ from physics_metrics import (
 
 ERA5_ZARR = "gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr"
 DEFAULT_LEAD_HOURS = [6, 24, 48, 72, 120, 168, 240]
-RESULTS_DIR = Path.home() / "aurora_thesis" / "thesis" / "results"
+RESULTS_DIR = Path.home() / "aurora_thesis" / "thesis" / "benchmark" / "results"
 
 
 @dataclass(frozen=True)

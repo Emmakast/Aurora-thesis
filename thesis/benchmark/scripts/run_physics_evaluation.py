@@ -80,7 +80,7 @@ ERA5_DAILY_ZARR = "gs://weatherbench2/datasets/era5_daily/1959-2023_01_10-full_3
 IFS_T0_ZARR = "gs://weatherbench2/datasets/hres_t0/2016-2022-6h-1440x721.zarr"
 IFS_T0_LOWRES_ZARR = "gs://weatherbench2/datasets/hres_t0/2016-2022-6h-512x256_equiangular_conservative.zarr"
 
-OUTPUT_DIR = Path.home() / "aurora_thesis" / "results"
+OUTPUT_DIR = Path.home() / "aurora_thesis" / "thesis" / "benchmark" / "results"
 
 # Target lead times: (label, timedelta)
 # Using 12h as the first lead time to align with NeuralGCM (which lacks 6h step)

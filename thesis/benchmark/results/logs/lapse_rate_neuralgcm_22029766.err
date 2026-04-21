@@ -1,0 +1,5 @@
+usage: run_lapse_rate.py [-h] --model MODEL [--year YEAR] --prediction-zarr
+                         PREDICTION_ZARR [--era5-zarr ERA5_ZARR]
+                         [--lead-hours LEAD_HOURS] [--max-dates MAX_DATES]
+                         [--append] [--output OUTPUT] [--quiet]
+run_lapse_rate.py: error: unrecognized arguments: --ground-truth-zarr gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr

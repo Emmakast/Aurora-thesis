@@ -16,6 +16,7 @@ Usage:
     python plot_spectrum.py q                          # Specific humidity
     python plot_spectrum.py ke --models pangu graphcast
     python plot_spectrum.py ke --thresholds 0.3 0.5 0.7 0.9
+    python plot_spectrum.py ke --exclude aurora_s3     # Exclude a model
 """
 from __future__ import annotations
 
@@ -256,23 +257,24 @@ def plot_per_model_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, ref_labe
         colors = LEAD_CMAP(np.linspace(0, 0.85, len(lead_times)))
 
         fig, ax = plt.subplots(figsize=(12, 7))
-        era5_df = mdf[(mdf["source"] == "era5") & (mdf["lead_hours"] == lead_times[0])]
+        era5_df = mdf[(mdf["source"] == "era5") & (mdf["lead_hours"] == lead_times[0]) & (mdf["wavenumber"] > 0)]
         if not era5_df.empty:
-            ax.loglog(era5_df["wavenumber"], era5_df[vcol],
+            ax.loglog(_wl(era5_df["wavenumber"].values), era5_df[vcol],
                       color="black", linewidth=2, alpha=0.7, label=("IFS HRES" if "IFS" in outdir.name else "ERA5"), zorder=5)
 
         for i, lh in enumerate(lead_times):
-            pred = mdf[(mdf["source"] == "pred") & (mdf["lead_hours"] == lh)]
+            pred = mdf[(mdf["source"] == "pred") & (mdf["lead_hours"] == lh) & (mdf["wavenumber"] > 0)]
             if pred.empty:
                 continue
-            ax.loglog(pred["wavenumber"], pred[vcol],
+            ax.loglog(_wl(pred["wavenumber"].values), pred[vcol],
                       color=colors[i], linewidth=1.5, alpha=0.85, label=_lead_label(lh))
 
-        ax.set_title(f"{cfg.title} — {_model_style(model)['label']}", fontsize=14, pad=12)
-        ax.set_xlabel("Spherical harmonic degree $l$", fontsize=12)
-        ax.set_ylabel(cfg.ylabel, fontsize=12)
-        ax.set_xlim(1, None)
-        ax.legend(fontsize=9, ncol=2)
+        ax.set_title(f"{cfg.title} — {_model_style(model)['label']}", fontsize=24, pad=15)
+        ax.set_xlabel("Wavelength (km)", fontsize=16)
+        ax.set_ylabel(cfg.ylabel, fontsize=16)
+        ax.invert_xaxis()
+        ax.tick_params(axis='both', which='major', labelsize=14)
+        ax.legend(fontsize=16, ncol=2)
         fig.tight_layout()
         fig.savefig(outdir / f"{cfg.csv_prefix}_{model}.png", dpi=300)
         plt.close(fig)
@@ -286,25 +288,26 @@ def plot_combined_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, target_le
     vcol = cfg.value_col
 
     fig, ax = plt.subplots(figsize=(12, 7))
-    era5_df = df[(df["source"] == "era5") & (df["lead_hours"] == target_lead)]
+    era5_df = df[(df["source"] == "era5") & (df["lead_hours"] == target_lead) & (df["wavenumber"] > 0)]
     if not era5_df.empty:
         era5_mean = era5_df.groupby("wavenumber")[vcol].mean()
-        ax.loglog(era5_mean.index, era5_mean.values,
+        ax.loglog(_wl(era5_mean.index.values), era5_mean.values,
                   color="black", linewidth=2, alpha=0.7, label=("IFS HRES" if "IFS" in outdir.name else "ERA5"), zorder=5)
 
     for model in sorted(df["model"].unique()):
-        pred = df[(df["model"] == model) & (df["source"] == "pred") & (df["lead_hours"] == target_lead)]
+        pred = df[(df["model"] == model) & (df["source"] == "pred") & (df["lead_hours"] == target_lead) & (df["wavenumber"] > 0)]
         if pred.empty:
             continue
         s = _model_style(model)
-        ax.loglog(pred["wavenumber"], pred[vcol],
+        ax.loglog(_wl(pred["wavenumber"].values), pred[vcol],
                   color=s["color"], linewidth=1.5, alpha=0.85, label=s["label"])
 
-    ax.set_title(f"{cfg.title} Comparison — {_lead_label(target_lead)}", fontsize=14, pad=12)
-    ax.set_xlabel("Spherical harmonic degree $l$", fontsize=12)
-    ax.set_ylabel(cfg.ylabel, fontsize=12)
-    ax.set_xlim(1, None)
-    ax.legend(fontsize=10)
+    ax.set_title(f"{cfg.title} Comparison — {_lead_label(target_lead)}", fontsize=24, pad=15)
+    ax.set_xlabel("Wavelength (km)", fontsize=16)
+    ax.set_ylabel(cfg.ylabel, fontsize=16)
+    ax.invert_xaxis()
+    ax.tick_params(axis='both', which='major', labelsize=14)
+    ax.legend(fontsize=16)
     fig.tight_layout()
     fname = f"{cfg.csv_prefix}_combined_{target_lead}h.png"
     fig.savefig(outdir / fname, dpi=300)
@@ -335,11 +338,12 @@ def plot_per_model_wl(models: dict[str, pd.DataFrame], outdir: Path, cfg: Analys
             ax.loglog(_wl(sub["wavenumber"].values), sub[cfg.wide_pred].values,
                       color=colors[i], linewidth=1.5, alpha=0.85, label=_lead_label(lh))
 
-        ax.set_title(f"{cfg.title} — {_model_style(model)['label']}", fontsize=14, pad=12)
-        ax.set_xlabel("Wavelength (km)", fontsize=12)
-        ax.set_ylabel(cfg.ylabel, fontsize=12)
+        ax.set_title(f"{cfg.title} — {_model_style(model)['label']}", fontsize=24, pad=15)
+        ax.set_xlabel("Wavelength (km)", fontsize=16)
+        ax.set_ylabel(cfg.ylabel, fontsize=16)
         ax.invert_xaxis()
-        ax.legend(fontsize=9, ncol=2)
+        ax.tick_params(axis='both', which='major', labelsize=14)
+        ax.legend(fontsize=16, ncol=2)
         fig.tight_layout()
         fname = f"{cfg.csv_prefix}_wavelength_{model}.png"
         fig.savefig(outdir / fname, dpi=300)
@@ -370,11 +374,12 @@ def plot_combined_wl(
         ax.loglog(_wl(sub["wavenumber"].values), sub[cfg.wide_pred].values,
                   color=s["color"], linewidth=1.5, alpha=0.85, label=s["label"])
 
-    ax.set_title(f"{cfg.title} Comparison — {_lead_label(target_lead)}", fontsize=14, pad=12)
-    ax.set_xlabel("Wavelength (km)", fontsize=12)
-    ax.set_ylabel(cfg.ylabel, fontsize=12)
+    ax.set_title(f"{cfg.title} Comparison — {_lead_label(target_lead)}", fontsize=24, pad=15)
+    ax.set_xlabel("Wavelength (km)", fontsize=16)
+    ax.set_ylabel(cfg.ylabel, fontsize=16)
     ax.invert_xaxis()
-    ax.legend(fontsize=10)
+    ax.tick_params(axis='both', which='major', labelsize=14)
+    ax.legend(fontsize=16)
     fig.tight_layout()
     fname = f"{cfg.csv_prefix}_wavelength_combined_{target_lead}h.png"
     fig.savefig(outdir / fname, dpi=300)
@@ -414,13 +419,14 @@ def plot_ratio_per_model(
 
         ax.set_title(
             f"Spectral Ratio — {_model_style(model)['label']}",
-            fontsize=14, pad=12,
+            fontsize=24, pad=15,
         )
-        ax.set_xlabel("Wavelength (km)", fontsize=12)
-        ax.set_ylabel(cfg.ratio_ylabel, fontsize=12)
+        ax.set_xlabel("Wavelength (km)", fontsize=16)
+        ax.set_ylabel(cfg.ratio_ylabel, fontsize=16)
         ax.set_ylim(-0.05, None)
         ax.invert_xaxis()
-        ax.legend(fontsize=10, ncol=2)
+        ax.tick_params(axis='both', which='major', labelsize=14)
+        ax.legend(fontsize=16, ncol=2)
         fig.tight_layout()
         fname = f"{cfg.csv_prefix}_ratio_{model}.png"
         fig.savefig(outdir / fname, dpi=300)
@@ -456,13 +462,14 @@ def plot_ratio_combined(
     ax.axhline(y=1.0, color="black", linewidth=1.0, linestyle="-", alpha=0.4)
 
     ax.set_title(
-        f"Spectral Ratio — All Models — {_lead_label(target_lead)}", fontsize=14, pad=12,
+        f"Spectral Ratio — All Models — {_lead_label(target_lead)}", fontsize=24, pad=15,
     )
-    ax.set_xlabel("Wavelength (km)", fontsize=12)
-    ax.set_ylabel(cfg.ratio_ylabel, fontsize=12)
+    ax.set_xlabel("Wavelength (km)", fontsize=16)
+    ax.set_ylabel(cfg.ratio_ylabel, fontsize=16)
     ax.set_ylim(-0.05, None)
     ax.invert_xaxis()
-    ax.legend(fontsize=10)
+    ax.tick_params(axis='both', which='major', labelsize=14)
+    ax.legend(fontsize=16)
     fig.tight_layout()
     fname = f"{cfg.csv_prefix}_ratio_combined_{target_lead}h.png"
     fig.savefig(outdir / fname, dpi=300)
@@ -577,8 +584,8 @@ def main():
     parser.add_argument("--results-dir", type=str, default=str(RESULTS_DIR))
     parser.add_argument("--combined-lead", type=int, default=240,
                         help="Primary lead time for combined plots (default: 240)")
-    parser.add_argument("--short-lead", type=int, default=6,
-                        help="Short lead time for combined plots (default: 6)")
+    parser.add_argument("--short-lead", type=int, default=12,
+                        help="Short lead time for combined plots (default: 12)")
     parser.add_argument("--thresholds", nargs="+", type=float, default=DEFAULT_THRESHOLDS,
                         help="Ratio thresholds for sensitivity table (default: 0.3 0.5 0.7 0.9)")
     parser.add_argument("--ifs", action="store_true",
