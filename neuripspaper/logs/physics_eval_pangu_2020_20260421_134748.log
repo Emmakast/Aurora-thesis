@@ -1,0 +1,1357 @@
+========================================
+  PHYSICS EVALUATION (ALL METRICS)
+========================================
+Job ID:       22071735
+Date:         Tue Apr 21 13:47:48 CEST 2026
+Model:        pangu
+Mode:         joint
+Reference:    era5
+Workers:      64
+Prediction:   gs://weatherbench2/datasets/pangu/2018-2022_0012_0p25.zarr
+Output:       /home/ekasteleyn/aurora_thesis/neuripspaper/results/physics_evaluation_pangu_2020.csv
+========================================
+
+
+======================================================================
+  PHYSICS EVALUATION — WeatherBench 2 Zarr Streaming
+======================================================================
+  Prediction : gs://weatherbench2/datasets/pangu/2018-2022_0012_0p25.zarr
+  Reference  : gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+  Dates  : 366
+  Lead times : ['12h', '5d', '10d']
+  Total evals: 1098
+  Workers    : 64
+  Mode       : joint
+  Output : /home/ekasteleyn/aurora_thesis/neuripspaper/results/physics_evaluation_pangu_2020.csv
+======================================================================
+
+  Checking Zarr stores (anonymous) …
+  Model vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']
+  Reference vars  : ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_dewpoint_temperature', '2m_temperature', 'above_ground', 'ageostrophic_wind_speed', 'angle_of_sub_gridscale_orography', 'anisotropy_of_sub_gridscale_orography', 'boundary_layer_height', 'divergence', 'eddy_kinetic_energy']
+  Reference time dtype: datetime64[ns]
+  Reference time range: 1959-01-01T00:00:00.000000000 → 2023-01-10T18:00:00.000000000
+
+  Sanity check — verifying Reference time selection on 'temperature':
+    requested=1975-01-03T12:00:00.000000000  actual=1975-01-03T12:00:00.000000000  mean=242.724
+    requested=1991-01-06T00:00:00.000000000  actual=1991-01-06T00:00:00.000000000  mean=242.87
+    requested=2007-01-08T12:00:00.000000000  actual=2007-01-08T12:00:00.000000000  mean=242.841
+  ✓ Reference time selection looks correct (values differ).
+
+
+  Launching 64 processes …
+
+  [1/1098] init=2020-01-01T00:00:00  lead=12h  — Connecting to dataset...
+  [2/1098] init=2020-01-01T00:00:00  lead=5d  — Connecting to dataset...
+  [3/1098] init=2020-01-01T00:00:00  lead=10d  — Connecting to dataset...
+  [4/1098] init=2020-01-02T00:00:00  lead=12h  — Connecting to dataset...
+  [5/1098] init=2020-01-02T00:00:00  lead=5d  — Connecting to dataset...
+  [6/1098] init=2020-01-02T00:00:00  lead=10d  — Connecting to dataset...
+  [7/1098] init=2020-01-03T00:00:00  lead=12h  — Connecting to dataset...
+  [8/1098] init=2020-01-03T00:00:00  lead=5d  — Connecting to dataset...
+  [9/1098] init=2020-01-03T00:00:00  lead=10d  — Connecting to dataset...
+  [10/1098] init=2020-01-04T00:00:00  lead=12h  — Connecting to dataset...
+  [11/1098] init=2020-01-04T00:00:00  lead=5d  — Connecting to dataset...
+  [12/1098] init=2020-01-04T00:00:00  lead=10d  — Connecting to dataset...
+  [13/1098] init=2020-01-05T00:00:00  lead=12h  — Connecting to dataset...
+  [14/1098] init=2020-01-05T00:00:00  lead=5d  — Connecting to dataset...
+  [15/1098] init=2020-01-05T00:00:00  lead=10d  — Connecting to dataset...
+  [16/1098] init=2020-01-06T00:00:00  lead=12h  — Connecting to dataset...
+  [17/1098] init=2020-01-06T00:00:00  lead=5d  — Connecting to dataset...
+  [18/1098] init=2020-01-06T00:00:00  lead=10d  — Connecting to dataset...
+  [19/1098] init=2020-01-07T00:00:00  lead=12h  — Connecting to dataset...
+  [20/1098] init=2020-01-07T00:00:00  lead=5d  — Connecting to dataset...
+  [21/1098] init=2020-01-07T00:00:00  lead=10d  — Connecting to dataset...
+  [22/1098] init=2020-01-08T00:00:00  lead=12h  — Connecting to dataset...
+  [23/1098] init=2020-01-08T00:00:00  lead=5d  — Connecting to dataset...
+  [24/1098] init=2020-01-08T00:00:00  lead=10d  — Connecting to dataset...
+  [25/1098] init=2020-01-09T00:00:00  lead=12h  — Connecting to dataset...
+  [26/1098] init=2020-01-09T00:00:00  lead=5d  — Connecting to dataset...
+  [27/1098] init=2020-01-09T00:00:00  lead=10d  — Connecting to dataset...
+  [28/1098] init=2020-01-10T00:00:00  lead=12h  — Connecting to dataset...
+  [29/1098] init=2020-01-10T00:00:00  lead=5d  — Connecting to dataset...
+  [31/1098] init=2020-01-11T00:00:00  lead=12h  — Connecting to dataset...
+  [32/1098] init=2020-01-11T00:00:00  lead=5d  — Connecting to dataset...
+  [33/1098] init=2020-01-11T00:00:00  lead=10d  — Connecting to dataset...
+  [34/1098] init=2020-01-12T00:00:00  lead=12h  — Connecting to dataset...
+  [30/1098] init=2020-01-10T00:00:00  lead=10d  — Connecting to dataset...
+  [35/1098] init=2020-01-12T00:00:00  lead=5d  — Connecting to dataset...
+  [36/1098] init=2020-01-12T00:00:00  lead=10d  — Connecting to dataset...
+  [37/1098] init=2020-01-13T00:00:00  lead=12h  — Connecting to dataset...
+  [38/1098] init=2020-01-13T00:00:00  lead=5d  — Connecting to dataset...
+  [39/1098] init=2020-01-13T00:00:00  lead=10d  — Connecting to dataset...
+  [40/1098] init=2020-01-14T00:00:00  lead=12h  — Connecting to dataset...
+  [41/1098] init=2020-01-14T00:00:00  lead=5d  — Connecting to dataset...
+  [42/1098] init=2020-01-14T00:00:00  lead=10d  — Connecting to dataset...
+  [43/1098] init=2020-01-15T00:00:00  lead=12h  — Connecting to dataset...
+  [44/1098] init=2020-01-15T00:00:00  lead=5d  — Connecting to dataset...
+  [45/1098] init=2020-01-15T00:00:00  lead=10d  — Connecting to dataset...
+  [46/1098] init=2020-01-16T00:00:00  lead=12h  — Connecting to dataset...
+  [47/1098] init=2020-01-16T00:00:00  lead=5d  — Connecting to dataset...
+  [48/1098] init=2020-01-16T00:00:00  lead=10d  — Connecting to dataset...
+  [49/1098] init=2020-01-17T00:00:00  lead=12h  — Connecting to dataset...
+  [50/1098] init=2020-01-17T00:00:00  lead=5d  — Connecting to dataset...
+  [51/1098] init=2020-01-17T00:00:00  lead=10d  — Connecting to dataset...
+  [52/1098] init=2020-01-18T00:00:00  lead=12h  — Connecting to dataset...
+  [53/1098] init=2020-01-18T00:00:00  lead=5d  — Connecting to dataset...
+  [54/1098] init=2020-01-18T00:00:00  lead=10d  — Connecting to dataset...
+  [55/1098] init=2020-01-19T00:00:00  lead=12h  — Connecting to dataset...
+  [56/1098] init=2020-01-19T00:00:00  lead=5d  — Connecting to dataset...
+  [57/1098] init=2020-01-19T00:00:00  lead=10d  — Connecting to dataset...
+  [58/1098] init=2020-01-20T00:00:00  lead=12h  — Connecting to dataset...
+  [59/1098] init=2020-01-20T00:00:00  lead=5d  — Connecting to dataset...
+  [60/1098] init=2020-01-20T00:00:00  lead=10d  — Connecting to dataset...
+  [61/1098] init=2020-01-21T00:00:00  lead=12h  — Connecting to dataset...
+  [62/1098] init=2020-01-21T00:00:00  lead=5d  — Connecting to dataset...
+  [63/1098] init=2020-01-21T00:00:00  lead=10d  — Connecting to dataset...
+  [64/1098] init=2020-01-22T00:00:00  lead=12h  — Connecting to dataset...
+  [40/1098] init=2020-01-14T00:00:00.000000000  lead=12h (12h)  valid=2020-01-14T12:00:00.000000000 — Data connected, processing...
+    [40] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [20/1098] init=2020-01-07T00:00:00.000000000  lead=5d (120h)  valid=2020-01-12T00:00:00.000000000 — Data connected, processing...
+  [16/1098] init=2020-01-06T00:00:00.000000000  lead=12h (12h)  valid=2020-01-06T12:00:00.000000000 — Data connected, processing...
+    [20] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [16] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [8/1098] init=2020-01-03T00:00:00.000000000  lead=5d (120h)  valid=2020-01-08T00:00:00.000000000 — Data connected, processing...
+  [22/1098] init=2020-01-08T00:00:00.000000000  lead=12h (12h)  valid=2020-01-08T12:00:00.000000000 — Data connected, processing...
+  [31/1098] init=2020-01-11T00:00:00.000000000  lead=12h (12h)  valid=2020-01-11T12:00:00.000000000 — Data connected, processing...
+    [22] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [8] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [10/1098] init=2020-01-04T00:00:00.000000000  lead=12h (12h)  valid=2020-01-04T12:00:00.000000000 — Data connected, processing...
+  [29/1098] init=2020-01-10T00:00:00.000000000  lead=5d (120h)  valid=2020-01-15T00:00:00.000000000 — Data connected, processing...
+  [45/1098] init=2020-01-15T00:00:00.000000000  lead=10d (240h)  valid=2020-01-25T00:00:00.000000000 — Data connected, processing...
+    [31] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [29] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [58/1098] init=2020-01-20T00:00:00.000000000  lead=12h (12h)  valid=2020-01-20T12:00:00.000000000 — Data connected, processing...
+    [45] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [9/1098] init=2020-01-03T00:00:00.000000000  lead=10d (240h)  valid=2020-01-13T00:00:00.000000000 — Data connected, processing...
+    [10] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [37/1098] init=2020-01-13T00:00:00.000000000  lead=12h (12h)  valid=2020-01-13T12:00:00.000000000 — Data connected, processing...
+  [28/1098] init=2020-01-10T00:00:00.000000000  lead=12h (12h)  valid=2020-01-10T12:00:00.000000000 — Data connected, processing...
+  [17/1098] init=2020-01-06T00:00:00.000000000  lead=5d (120h)  valid=2020-01-11T00:00:00.000000000 — Data connected, processing...
+  [42/1098] init=2020-01-14T00:00:00.000000000  lead=10d (240h)  valid=2020-01-24T00:00:00.000000000 — Data connected, processing...
+    [9] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [58] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [44/1098] init=2020-01-15T00:00:00.000000000  lead=5d (120h)  valid=2020-01-20T00:00:00.000000000 — Data connected, processing...
+  [56/1098] init=2020-01-19T00:00:00.000000000  lead=5d (120h)  valid=2020-01-24T00:00:00.000000000 — Data connected, processing...
+  [3/1098] init=2020-01-01T00:00:00.000000000  lead=10d (240h)  valid=2020-01-11T00:00:00.000000000 — Data connected, processing...
+    [42] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [28] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [2/1098] init=2020-01-01T00:00:00.000000000  lead=5d (120h)  valid=2020-01-06T00:00:00.000000000 — Data connected, processing...
+  [26/1098] init=2020-01-09T00:00:00.000000000  lead=5d (120h)  valid=2020-01-14T00:00:00.000000000 — Data connected, processing...
+  [5/1098] init=2020-01-02T00:00:00.000000000  lead=5d (120h)  valid=2020-01-07T00:00:00.000000000 — Data connected, processing...
+  [25/1098] init=2020-01-09T00:00:00.000000000  lead=12h (12h)  valid=2020-01-09T12:00:00.000000000 — Data connected, processing...
+    [37] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [17] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [44] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [60/1098] init=2020-01-20T00:00:00.000000000  lead=10d (240h)  valid=2020-01-30T00:00:00.000000000 — Data connected, processing...
+  [1/1098] init=2020-01-01T00:00:00.000000000  lead=12h (12h)  valid=2020-01-01T12:00:00.000000000 — Data connected, processing...
+    [25] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [7/1098] init=2020-01-03T00:00:00.000000000  lead=12h (12h)  valid=2020-01-03T12:00:00.000000000 — Data connected, processing...
+    [2] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [3] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [26] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [23/1098] init=2020-01-08T00:00:00.000000000  lead=5d (120h)  valid=2020-01-13T00:00:00.000000000 — Data connected, processing...
+    [56] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [1] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [5] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [57/1098] init=2020-01-19T00:00:00.000000000  lead=10d (240h)  valid=2020-01-29T00:00:00.000000000 — Data connected, processing...
+    [60] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [7] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [23] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [59/1098] init=2020-01-20T00:00:00.000000000  lead=5d (120h)  valid=2020-01-25T00:00:00.000000000 — Data connected, processing...
+  [34/1098] init=2020-01-12T00:00:00.000000000  lead=12h (12h)  valid=2020-01-12T12:00:00.000000000 — Data connected, processing...
+  [19/1098] init=2020-01-07T00:00:00.000000000  lead=12h (12h)  valid=2020-01-07T12:00:00.000000000 — Data connected, processing...
+    [57] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [11/1098] init=2020-01-04T00:00:00.000000000  lead=5d (120h)  valid=2020-01-09T00:00:00.000000000 — Data connected, processing...
+  [43/1098] init=2020-01-15T00:00:00.000000000  lead=12h (12h)  valid=2020-01-15T12:00:00.000000000 — Data connected, processing...
+  [14/1098] init=2020-01-05T00:00:00.000000000  lead=5d (120h)  valid=2020-01-10T00:00:00.000000000 — Data connected, processing...
+    [59] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [19] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [32/1098] init=2020-01-11T00:00:00.000000000  lead=5d (120h)  valid=2020-01-16T00:00:00.000000000 — Data connected, processing...
+  [53/1098] init=2020-01-18T00:00:00.000000000  lead=5d (120h)  valid=2020-01-23T00:00:00.000000000 — Data connected, processing...
+    [14] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [34] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [48/1098] init=2020-01-16T00:00:00.000000000  lead=10d (240h)  valid=2020-01-26T00:00:00.000000000 — Data connected, processing...
+    [43] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [15/1098] init=2020-01-05T00:00:00.000000000  lead=10d (240h)  valid=2020-01-15T00:00:00.000000000 — Data connected, processing...
+  [50/1098] init=2020-01-17T00:00:00.000000000  lead=5d (120h)  valid=2020-01-22T00:00:00.000000000 — Data connected, processing...
+    [11] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [36/1098] init=2020-01-12T00:00:00.000000000  lead=10d (240h)  valid=2020-01-22T00:00:00.000000000 — Data connected, processing...
+  [18/1098] init=2020-01-06T00:00:00.000000000  lead=10d (240h)  valid=2020-01-16T00:00:00.000000000 — Data connected, processing...
+    [53] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [64/1098] init=2020-01-22T00:00:00.000000000  lead=12h (12h)  valid=2020-01-22T12:00:00.000000000 — Data connected, processing...
+    [15] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [12/1098] init=2020-01-04T00:00:00.000000000  lead=10d (240h)  valid=2020-01-14T00:00:00.000000000 — Data connected, processing...
+    [32] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [30/1098] init=2020-01-10T00:00:00.000000000  lead=10d (240h)  valid=2020-01-20T00:00:00.000000000 — Data connected, processing...
+  [62/1098] init=2020-01-21T00:00:00.000000000  lead=5d (120h)  valid=2020-01-26T00:00:00.000000000 — Data connected, processing...
+    [50] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [36] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [52/1098] init=2020-01-18T00:00:00.000000000  lead=12h (12h)  valid=2020-01-18T12:00:00.000000000 — Data connected, processing...
+  [63/1098] init=2020-01-21T00:00:00.000000000  lead=10d (240h)  valid=2020-01-31T00:00:00.000000000 — Data connected, processing...
+    [48] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [55/1098] init=2020-01-19T00:00:00.000000000  lead=12h (12h)  valid=2020-01-19T12:00:00.000000000 — Data connected, processing...
+  [6/1098] init=2020-01-02T00:00:00.000000000  lead=10d (240h)  valid=2020-01-12T00:00:00.000000000 — Data connected, processing...
+    [64] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [24/1098] init=2020-01-08T00:00:00.000000000  lead=10d (240h)  valid=2020-01-18T00:00:00.000000000 — Data connected, processing...
+    [18] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [51/1098] init=2020-01-17T00:00:00.000000000  lead=10d (240h)  valid=2020-01-27T00:00:00.000000000 — Data connected, processing...
+    [30] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [52] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [62] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [12] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [54/1098] init=2020-01-18T00:00:00.000000000  lead=10d (240h)  valid=2020-01-28T00:00:00.000000000 — Data connected, processing...
+  [27/1098] init=2020-01-09T00:00:00.000000000  lead=10d (240h)  valid=2020-01-19T00:00:00.000000000 — Data connected, processing...
+    [24] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [21/1098] init=2020-01-07T00:00:00.000000000  lead=10d (240h)  valid=2020-01-17T00:00:00.000000000 — Data connected, processing...
+  [41/1098] init=2020-01-14T00:00:00.000000000  lead=5d (120h)  valid=2020-01-19T00:00:00.000000000 — Data connected, processing...
+    [51] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [55] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [6] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [63] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [54] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [46/1098] init=2020-01-16T00:00:00.000000000  lead=12h (12h)  valid=2020-01-16T12:00:00.000000000 — Data connected, processing...
+  [49/1098] init=2020-01-17T00:00:00.000000000  lead=12h (12h)  valid=2020-01-17T12:00:00.000000000 — Data connected, processing...
+  [33/1098] init=2020-01-11T00:00:00.000000000  lead=10d (240h)  valid=2020-01-21T00:00:00.000000000 — Data connected, processing...
+  [47/1098] init=2020-01-16T00:00:00.000000000  lead=5d (120h)  valid=2020-01-21T00:00:00.000000000 — Data connected, processing...
+  [61/1098] init=2020-01-21T00:00:00.000000000  lead=12h (12h)  valid=2020-01-21T12:00:00.000000000 — Data connected, processing...
+  [38/1098] init=2020-01-13T00:00:00.000000000  lead=5d (120h)  valid=2020-01-18T00:00:00.000000000 — Data connected, processing...
+  [35/1098] init=2020-01-12T00:00:00.000000000  lead=5d (120h)  valid=2020-01-17T00:00:00.000000000 — Data connected, processing...
+    [21] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [27] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [41] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [49] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [38] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [33] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [4/1098] init=2020-01-02T00:00:00.000000000  lead=12h (12h)  valid=2020-01-02T12:00:00.000000000 — Data connected, processing...
+    [46] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [61] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [35] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [47] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+    [4] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [13/1098] init=2020-01-05T00:00:00.000000000  lead=12h (12h)  valid=2020-01-05T12:00:00.000000000 — Data connected, processing...
+    [13] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  [39/1098] init=2020-01-13T00:00:00.000000000  lead=10d (240h)  valid=2020-01-23T00:00:00.000000000 — Data connected, processing...
+    [39] Dropping 4 unneeded vars: ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', 'wind_speed']
+  ⚠ Worker exception (task 1): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 2): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 3): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 4): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 5): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 6): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 7): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 8): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 9): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 10): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 11): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 12): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 13): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 14): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 15): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 16): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 17): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 18): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 19): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 20): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 21): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 22): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 23): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 24): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 25): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 26): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 27): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 28): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 29): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 30): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 31): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 32): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 33): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 34): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 35): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 36): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 37): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 38): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 39): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 40): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 41): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 42): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 43): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 44): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 45): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 46): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 47): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 48): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 49): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 50): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 51): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 52): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 53): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 54): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 55): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 56): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 57): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 58): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 59): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 60): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 61): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 62): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 63): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 64): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 65): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 66): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 67): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 68): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 69): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 70): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 71): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 72): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 73): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 74): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 75): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 76): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 77): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 78): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 79): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 80): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 81): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 82): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 83): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 84): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 85): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 86): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 87): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 88): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 89): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 90): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 91): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 92): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 93): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 94): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 95): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 96): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 97): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 98): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 99): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 100): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 101): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 102): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 103): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 104): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 105): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 106): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 107): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 108): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 109): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 110): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 111): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 112): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 113): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 114): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 115): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 116): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 117): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 118): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 119): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 120): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 121): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 122): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 123): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 124): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 125): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 126): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 127): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 128): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 129): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 130): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 131): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 132): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 133): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 134): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 135): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 136): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 137): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 138): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 139): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 140): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 141): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 142): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 143): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 144): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 145): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 146): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 147): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 148): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 149): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 150): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 151): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 152): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 153): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 154): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 155): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 156): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 157): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 158): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 159): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 160): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 161): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 162): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 163): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 164): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 165): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 166): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 167): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 168): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 169): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 170): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 171): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 172): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 173): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 174): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 175): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 176): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 177): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 178): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 179): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 180): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 181): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 182): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 183): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 184): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 185): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 186): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 187): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 188): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 189): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 190): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 191): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 192): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 193): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 194): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 195): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 196): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 197): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 198): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 199): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 200): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 201): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 202): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 203): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 204): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 205): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 206): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 207): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 208): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 209): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 210): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 211): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 212): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 213): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 214): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 215): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 216): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 217): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 218): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 219): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 220): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 221): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 222): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 223): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 224): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 225): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 226): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 227): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 228): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 229): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 230): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 231): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 232): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 233): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 234): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 235): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 236): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 237): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 238): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 239): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 240): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 241): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 242): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 243): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 244): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 245): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 246): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 247): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 248): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 249): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 250): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 251): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 252): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 253): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 254): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 255): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 256): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 257): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 258): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 259): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 260): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 261): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 262): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 263): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 264): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 265): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 266): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 267): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 268): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 269): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 270): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 271): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 272): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 273): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 274): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 275): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 276): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 277): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 278): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 279): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 280): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 281): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 282): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 283): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 284): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 285): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 286): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 287): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 288): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 289): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 290): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 291): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 292): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 293): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 294): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 295): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 296): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 297): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 298): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 299): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 300): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 301): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 302): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 303): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 304): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 305): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 306): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 307): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 308): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 309): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 310): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 311): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 312): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 313): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 314): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 315): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 316): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 317): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 318): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 319): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 320): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 321): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 322): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 323): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 324): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 325): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 326): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 327): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 328): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 329): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 330): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 331): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 332): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 333): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 334): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 335): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 336): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 337): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 338): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 339): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 340): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 341): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 342): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 343): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 344): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 345): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 346): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 347): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 348): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 349): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 350): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 351): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 352): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 353): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 354): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 355): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 356): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 357): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 358): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 359): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 360): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 361): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 362): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 363): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 364): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 365): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 366): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 367): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 368): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 369): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 370): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 371): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 372): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 373): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 374): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 375): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 376): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 377): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 378): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 379): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 380): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 381): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 382): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 383): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 384): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 385): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 386): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 387): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 388): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 389): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 390): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 391): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 392): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 393): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 394): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 395): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 396): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 397): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 398): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 399): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 400): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 401): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 402): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 403): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 404): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 405): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 406): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 407): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 408): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 409): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 410): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 411): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 412): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 413): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 414): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 415): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 416): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 417): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 418): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 419): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 420): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 421): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 422): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 423): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 424): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 425): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 426): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 427): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 428): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 429): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 430): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 431): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 432): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 433): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 434): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 435): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 436): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 437): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 438): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 439): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 440): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 441): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 442): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 443): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 444): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 445): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 446): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 447): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 448): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 449): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 450): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 451): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 452): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 453): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 454): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 455): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 456): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 457): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 458): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 459): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 460): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 461): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 462): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 463): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 464): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 465): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 466): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 467): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 468): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 469): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 470): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 471): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 472): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 473): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 474): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 475): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 476): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 477): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 478): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 479): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 480): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 481): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 482): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 483): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 484): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 485): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 486): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 487): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 488): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 489): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 490): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 491): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 492): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 493): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 494): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 495): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 496): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 497): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 498): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 499): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 500): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 501): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 502): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 503): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 504): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 505): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 506): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 507): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 508): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 509): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 510): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 511): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 512): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 513): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 514): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 515): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 516): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 517): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 518): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 519): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 520): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 521): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 522): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 523): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 524): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 525): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 526): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 527): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 528): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 529): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 530): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 531): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 532): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 533): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 534): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 535): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 536): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 537): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 538): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 539): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 540): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 541): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 542): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 543): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 544): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 545): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 546): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 547): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 548): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 549): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 550): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 551): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 552): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 553): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 554): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 555): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 556): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 557): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 558): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 559): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 560): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 561): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 562): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 563): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 564): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 565): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 566): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 567): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 568): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 569): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 570): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 571): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 572): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 573): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 574): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 575): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 576): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 577): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 578): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 579): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 580): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 581): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 582): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 583): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 584): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 585): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 586): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 587): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 588): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 589): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 590): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 591): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 592): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 593): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 594): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 595): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 596): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 597): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 598): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 599): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 600): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 601): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 602): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 603): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 604): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 605): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 606): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 607): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 608): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 609): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 610): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 611): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 612): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 613): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 614): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 615): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 616): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 617): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 618): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 619): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 620): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 621): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 622): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 623): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 624): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 625): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 626): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 627): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 628): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 629): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 630): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 631): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 632): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 633): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 634): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 635): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 636): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 637): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 638): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 639): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 640): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 641): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 642): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 643): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 644): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 645): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 646): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 647): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 648): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 649): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 650): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 651): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 652): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 653): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 654): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 655): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 656): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 657): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 658): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 659): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 660): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 661): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 662): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 663): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 664): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 665): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 666): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 667): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 668): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 669): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 670): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 671): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 672): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 673): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 674): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 675): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 676): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 677): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 678): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 679): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 680): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 681): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 682): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 683): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 684): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 685): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 686): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 687): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 688): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 689): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 690): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 691): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 692): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 693): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 694): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 695): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 696): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 697): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 698): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 699): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 700): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 701): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 702): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 703): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 704): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 705): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 706): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 707): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 708): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 709): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 710): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 711): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 712): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 713): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 714): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 715): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 716): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 717): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 718): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 719): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 720): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 721): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 722): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 723): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 724): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 725): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 726): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 727): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 728): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 729): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 730): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 731): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 732): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 733): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 734): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 735): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 736): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 737): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 738): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 739): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 740): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 741): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 742): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 743): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 744): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 745): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 746): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 747): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 748): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 749): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 750): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 751): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 752): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 753): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 754): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 755): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 756): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 757): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 758): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 759): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 760): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 761): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 762): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 763): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 764): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 765): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 766): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 767): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 768): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 769): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 770): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 771): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 772): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 773): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 774): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 775): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 776): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 777): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 778): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 779): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 780): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 781): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 782): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 783): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 784): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 785): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 786): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 787): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 788): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 789): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 790): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 791): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 792): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 793): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 794): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 795): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 796): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 797): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 798): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 799): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 800): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 801): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 802): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 803): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 804): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 805): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 806): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 807): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 808): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 809): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 810): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 811): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 812): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 813): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 814): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 815): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 816): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 817): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 818): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 819): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 820): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 821): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 822): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 823): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 824): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 825): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 826): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 827): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 828): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 829): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 830): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 831): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 832): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 833): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 834): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 835): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 836): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 837): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 838): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 839): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 840): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 841): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 842): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 843): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 844): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 845): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 846): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 847): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 848): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 849): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 850): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 851): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 852): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 853): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 854): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 855): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 856): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 857): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 858): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 859): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 860): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 861): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 862): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 863): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 864): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 865): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 866): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 867): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 868): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 869): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 870): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 871): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 872): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 873): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 874): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 875): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 876): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 877): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 878): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 879): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 880): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 881): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 882): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 883): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 884): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 885): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 886): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 887): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 888): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 889): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 890): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 891): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 892): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 893): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 894): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 895): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 896): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 897): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 898): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 899): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 900): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 901): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 902): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 903): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 904): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 905): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 906): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 907): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 908): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 909): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 910): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 911): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 912): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 913): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 914): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 915): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 916): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 917): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 918): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 919): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 920): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 921): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 922): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 923): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 924): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 925): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 926): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 927): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 928): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 929): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 930): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 931): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 932): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 933): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 934): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 935): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 936): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 937): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 938): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 939): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 940): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 941): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 942): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 943): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 944): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 945): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 946): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 947): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 948): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 949): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 950): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 951): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 952): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 953): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 954): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 955): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 956): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 957): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 958): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 959): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 960): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 961): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 962): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 963): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 964): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 965): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 966): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 967): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 968): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 969): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 970): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 971): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 972): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 973): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 974): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 975): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 976): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 977): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 978): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 979): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 980): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 981): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 982): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 983): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 984): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 985): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 986): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 987): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 988): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 989): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 990): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 991): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 992): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 993): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 994): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 995): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 996): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 997): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 998): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 999): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1000): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1001): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1002): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1003): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1004): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1005): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1006): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1007): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1008): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1009): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1010): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1011): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1012): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1013): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1014): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1015): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1016): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1017): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1018): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1019): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1020): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1021): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1022): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1023): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1024): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1025): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1026): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1027): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1028): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1029): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1030): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1031): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1032): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1033): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1034): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1035): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1036): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1037): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1038): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1039): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1040): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1041): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1042): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1043): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1044): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1045): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1046): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1047): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1048): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1049): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1050): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1051): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1052): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1053): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1054): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1055): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1056): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1057): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1058): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1059): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1060): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1061): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1062): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1063): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1064): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1065): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1066): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1067): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1068): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1069): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1070): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1071): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1072): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1073): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1074): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1075): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1076): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1077): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1078): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1079): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1080): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1081): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1082): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1083): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1084): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1085): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1086): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1087): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1088): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1089): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1090): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1091): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1092): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1093): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1094): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1095): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1096): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1097): A process in the process pool was terminated abruptly while the future was running or pending.
+  ⚠ Worker exception (task 1098): A process in the process pool was terminated abruptly while the future was running or pending.
+
+======================================================================
+  SUMMARY
+======================================================================
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/neuripspaper/scripts/run_all_metrics.py", line 1618, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/neuripspaper/scripts/run_all_metrics.py", line 1601, in main
+    run_evaluation(
+  File "/home/ekasteleyn/aurora_thesis/neuripspaper/scripts/run_all_metrics.py", line 1411, in run_evaluation
+    _print_summary(df)
+  File "/home/ekasteleyn/aurora_thesis/neuripspaper/scripts/run_all_metrics.py", line 1461, in _print_summary
+    ok = df[df["metric_name"] != "ERROR"]
+            ~~^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/pandas/core/indexes/range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: 'metric_name'
+
+========================================
+  FAILED (exit code: 1)
+========================================
+Finished: Tue Apr 21 13:48:33 CEST 2026

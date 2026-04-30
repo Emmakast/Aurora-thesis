@@ -36,14 +36,15 @@ RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
 EARTH_RADIUS_KM = 6371.0
 
 MODEL_STYLES = {
-    "aurora":    {"color": "#1f77b4", "label": "Aurora"},
-    "pangu":     {"color": "#ff7f0e", "label": "Pangu-Weather"},
-    "fuxi":      {"color": "#2ca02c", "label": "FuXi"},
-    "graphcast": {"color": "#d62728", "label": "GraphCast"},
-    "neuralgcm": {"color": "#9467bd", "label": "NeuralGCM"},
-    "hres":      {"color": "#8c564b", "label": "HRES"},
+    "aurora":    {"color": "#0072B2", "label": "Aurora"},        # Blue
+    "pangu":     {"color": "#D55E00", "label": "Pangu"},         # Vermilion
+    "fuxi":      {"color": "#009E73", "label": "FuXi"},          # Bluish Green
+    "graphcast": {"color": "#000000", "label": "GraphCast"},     # Black
+    "neuralgcm": {"color": "#E69F00", "label": "NeuralGCM"},     # Orange
+    "hres":      {"color": "#56B4E9", "label": "HRES"},          # Sky Blue
 }
 
+DESIRED_ORDER = ["hres", "pangu", "graphcast", "neuralgcm", "fuxi", "aurora"]
 LEAD_CMAP = plt.cm.viridis_r
 DEFAULT_THRESHOLDS = [0.3, 0.5, 0.7, 0.9]
 
@@ -79,20 +80,20 @@ ANALYSES: dict[str, AnalysisCfg] = {
         value_col="energy",
         wide_pred="energy_pred",
         wide_era5="energy_era5",
-        ylabel=r"Kinetic Energy $E(l)$",
-        title="KE Spectrum (850 hPa)",
+        ylabel=r"Kinetic Energy",
+        title="KE Spectrum 850 hPa",
         ratio_ylabel=r"$E_{pred}(l) \;/\; E_{ERA5}(l)$",
-        outdir_name="plots_ke_spectrum_850hpa",
+        outdir_name="plots_ke_850",
     ),
     "q": AnalysisCfg(
         csv_prefix="q_spectrum",
         value_col="power",
         wide_pred="power_pred",
         wide_era5="power_era5",
-        ylabel=r"Specific Humidity Power $S_q(l)$",
-        title="Humidity Spectrum",
+        ylabel=r"Specific Humidity",
+        title="Q Spectrum",
         ratio_ylabel=r"$S_{pred}(l) \;/\; S_{ERA5}(l)$",
-        outdir_name="plots_q_spectrum",
+        outdir_name="plots_q_spec",
     ),
 }
 
@@ -106,7 +107,7 @@ def _wl(l: np.ndarray) -> np.ndarray:
 
 
 def _lead_label(lh: int) -> str:
-    return f"{lh}h" if lh < 24 else f"Day {lh // 24}"
+    return f"{lh}h"
 
 
 def _model_style(model: str) -> dict:
@@ -226,14 +227,24 @@ def load_spectra_wide(
         model = _extract_model(p, cfg.csv_prefix)
         if model in exclude or (models and model not in models):
             continue
-        df = _normalise_wide(pd.read_csv(p), cfg)
+            
+        raw_df = pd.read_csv(p)
+        if "source" in raw_df.columns and raw_df[raw_df["source"] == "pred"].empty:
+            print(f"  Skipped {Path(p).name}: CSV contains only era5 rows, no pred spectrum.")
+            continue
+            
+        df = _normalise_wide(raw_df, cfg)
+        if cfg.wide_pred not in df.columns or cfg.wide_era5 not in df.columns:
+            print(f"  Skipped {Path(p).name}: missing required wide columns.")
+            continue
+            
         agg = (
             df.groupby(["lead_hours", "wavenumber"])[[cfg.wide_pred, cfg.wide_era5]]
             .mean()
             .reset_index()
         )
         out[model] = agg
-        print(f"  Loaded {Path(p).name}: {len(df):,} → {len(agg):,} after averaging  (model={model})")
+        print(f"  Loaded {Path(p).name}: {len(raw_df):,} → {len(agg):,} after averaging  (model={model})")
     return out
 
 
@@ -269,12 +280,12 @@ def plot_per_model_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, ref_labe
             ax.loglog(_wl(pred["wavenumber"].values), pred[vcol],
                       color=colors[i], linewidth=1.5, alpha=0.85, label=_lead_label(lh))
 
-        ax.set_title(f"{cfg.title} — {_model_style(model)['label']}", fontsize=24, pad=15)
-        ax.set_xlabel("Wavelength (km)", fontsize=16)
-        ax.set_ylabel(cfg.ylabel, fontsize=16)
+        ax.set_title(f"{cfg.title} — {_model_style(model)['label']}", fontsize=30, pad=15)
+        ax.set_xlabel("Wavelength (km)", fontsize=25)
+        ax.set_ylabel(cfg.ylabel, fontsize=25)
         ax.invert_xaxis()
-        ax.tick_params(axis='both', which='major', labelsize=14)
-        ax.legend(fontsize=16, ncol=2)
+        ax.tick_params(axis='both', which='major', labelsize=20)
+        ax.legend(fontsize=18, ncol=2, loc="lower left")
         fig.tight_layout()
         fig.savefig(outdir / f"{cfg.csv_prefix}_{model}.png", dpi=300)
         plt.close(fig)
@@ -294,7 +305,7 @@ def plot_combined_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, target_le
         ax.loglog(_wl(era5_mean.index.values), era5_mean.values,
                   color="black", linewidth=2, alpha=0.7, label=("IFS HRES" if "IFS" in outdir.name else "ERA5"), zorder=5)
 
-    for model in sorted(df["model"].unique()):
+    for model in [m for m in DESIRED_ORDER if m in df["model"].unique()]:
         pred = df[(df["model"] == model) & (df["source"] == "pred") & (df["lead_hours"] == target_lead) & (df["wavenumber"] > 0)]
         if pred.empty:
             continue
@@ -302,12 +313,13 @@ def plot_combined_wn(df: pd.DataFrame, outdir: Path, cfg: AnalysisCfg, target_le
         ax.loglog(_wl(pred["wavenumber"].values), pred[vcol],
                   color=s["color"], linewidth=1.5, alpha=0.85, label=s["label"])
 
-    ax.set_title(f"{cfg.title} Comparison — {_lead_label(target_lead)}", fontsize=24, pad=15)
-    ax.set_xlabel("Wavelength (km)", fontsize=16)
-    ax.set_ylabel(cfg.ylabel, fontsize=16)
+    ax.set_title(f"{cfg.title} — {_lead_label(target_lead)}", fontsize=30, pad=15)
+    ax.set_xlabel("Wavelength (km)", fontsize=25)
+    ax.set_ylabel(cfg.ylabel, fontsize=25)
     ax.invert_xaxis()
-    ax.tick_params(axis='both', which='major', labelsize=14)
-    ax.legend(fontsize=16)
+    ax.tick_params(axis='both', which='major', labelsize=20)
+    if target_lead == 240:
+        ax.legend(fontsize=18, loc="lower left")
     fig.tight_layout()
     fname = f"{cfg.csv_prefix}_combined_{target_lead}h.png"
     fig.savefig(outdir / fname, dpi=300)
@@ -338,12 +350,12 @@ def plot_per_model_wl(models: dict[str, pd.DataFrame], outdir: Path, cfg: Analys
             ax.loglog(_wl(sub["wavenumber"].values), sub[cfg.wide_pred].values,
                       color=colors[i], linewidth=1.5, alpha=0.85, label=_lead_label(lh))
 
-        ax.set_title(f"{cfg.title} — {_model_style(model)['label']}", fontsize=24, pad=15)
-        ax.set_xlabel("Wavelength (km)", fontsize=16)
-        ax.set_ylabel(cfg.ylabel, fontsize=16)
+        ax.set_title(f"{cfg.title} — {_model_style(model)['label']}", fontsize=30, pad=15)
+        ax.set_xlabel("Wavelength (km)", fontsize=25)
+        ax.set_ylabel(cfg.ylabel, fontsize=25)
         ax.invert_xaxis()
-        ax.tick_params(axis='both', which='major', labelsize=14)
-        ax.legend(fontsize=16, ncol=2)
+        ax.tick_params(axis='both', which='major', labelsize=20)
+        ax.legend(fontsize=18, ncol=2, loc="lower left")
         fig.tight_layout()
         fname = f"{cfg.csv_prefix}_wavelength_{model}.png"
         fig.savefig(outdir / fname, dpi=300)
@@ -366,7 +378,8 @@ def plot_combined_wl(
         ax.loglog(_wl(era5["wavenumber"].values), era5[cfg.wide_era5].values,
                   color="black", linewidth=2, alpha=0.7, label=("IFS HRES" if "IFS" in outdir.name else "ERA5"), zorder=5)
 
-    for model, df in sorted(models.items()):
+    for model in [m for m in DESIRED_ORDER if m in models]:
+        df = models[model]
         sub = df[(df["lead_hours"] == target_lead) & (df["wavenumber"] > 0)]
         if sub.empty:
             continue
@@ -374,15 +387,75 @@ def plot_combined_wl(
         ax.loglog(_wl(sub["wavenumber"].values), sub[cfg.wide_pred].values,
                   color=s["color"], linewidth=1.5, alpha=0.85, label=s["label"])
 
-    ax.set_title(f"{cfg.title} Comparison — {_lead_label(target_lead)}", fontsize=24, pad=15)
-    ax.set_xlabel("Wavelength (km)", fontsize=16)
-    ax.set_ylabel(cfg.ylabel, fontsize=16)
+    ax.set_title(f"{cfg.title} — {_lead_label(target_lead)}", fontsize=30, pad=15)
+    ax.set_xlabel("Wavelength (km)", fontsize=25)
+    ax.set_ylabel(cfg.ylabel, fontsize=25)
     ax.invert_xaxis()
-    ax.tick_params(axis='both', which='major', labelsize=14)
-    ax.legend(fontsize=16)
+    ax.tick_params(axis='both', which='major', labelsize=20)
+    if target_lead == 240:
+        ax.legend(fontsize=18, loc="lower left")
     fig.tight_layout()
     fname = f"{cfg.csv_prefix}_wavelength_combined_{target_lead}h.png"
     fig.savefig(outdir / fname, dpi=300)
+    plt.close(fig)
+    print(f"  Saved {fname}")
+
+
+# ── Combined 3-Panel Plot (NeurIPS Style) ────────────────────────────────────
+
+def _get_shared_legend_handles(axes):
+    handles_dict = {}
+    for ax in axes:
+        h, l = ax.get_legend_handles_labels()
+        for handle, label in zip(h, l):
+            if label not in handles_dict:
+                handles_dict[label] = handle
+    return list(handles_dict.values()), list(handles_dict.keys())
+
+def plot_combined_3panel(
+    models: dict[str, pd.DataFrame], outdir: Path, cfg: AnalysisCfg, ref_label: str = "ERA5", leads=(12, 120, 240)
+):
+    """1x3 Combined panel for Spectra mimicking the style of plot_neurips_metrics."""
+    sns.set_theme(style="whitegrid")
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    fig, axes = plt.subplots(1, 3, figsize=(18, 4))
+    
+    first_model = next(iter(models.values())) if models else None
+    
+    for ax, lt in zip(axes, leads):
+        if first_model is not None:
+            era5 = first_model[(first_model["lead_hours"] == lt) & (first_model["wavenumber"] > 0)]
+            if not era5.empty:
+                ax.loglog(_wl(era5["wavenumber"].values), era5[cfg.wide_era5].values,
+                          color="black", linewidth=2, alpha=0.7, label=ref_label, zorder=5)
+
+        for model in [m for m in DESIRED_ORDER if m in models]:
+            df = models[model]
+            sub = df[(df["lead_hours"] == lt) & (df["wavenumber"] > 0)]
+            if sub.empty:
+                continue
+            s = _model_style(model)
+            ax.loglog(_wl(sub["wavenumber"].values), sub[cfg.wide_pred].values,
+                      color=s["color"], linewidth=1.5, alpha=0.85, label=s["label"])
+
+        ax.set_title(f"{lt}h", fontsize=28)
+        ax.set_xlabel("Wavelength (km)", fontsize=24)
+        if ax == axes[0]: 
+            ax.set_ylabel(cfg.ylabel, fontsize=24)
+        ax.set_xlim(40000, 100)
+        ax.tick_params(axis='both', which='major', labelsize=20)
+
+    handles, labels = _get_shared_legend_handles(axes)
+    if handles:
+        fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, -0.18), ncol=len(labels), fontsize=22)
+        
+    fig.tight_layout()
+    # Add extra padding to the left to prevent the long y-axis label from getting cut off
+    fig.subplots_adjust(left=0.08)
+    
+    fname = f"{cfg.csv_prefix}_combined_3panel.png"
+    fig.savefig(outdir / fname, dpi=200, bbox_inches="tight")
     plt.close(fig)
     print(f"  Saved {fname}")
 
@@ -419,14 +492,14 @@ def plot_ratio_per_model(
 
         ax.set_title(
             f"Spectral Ratio — {_model_style(model)['label']}",
-            fontsize=24, pad=15,
+            fontsize=30, pad=15,
         )
-        ax.set_xlabel("Wavelength (km)", fontsize=16)
-        ax.set_ylabel(cfg.ratio_ylabel, fontsize=16)
+        ax.set_xlabel("Wavelength (km)", fontsize=25)
+        ax.set_ylabel(cfg.ratio_ylabel, fontsize=25)
         ax.set_ylim(-0.05, None)
         ax.invert_xaxis()
-        ax.tick_params(axis='both', which='major', labelsize=14)
-        ax.legend(fontsize=16, ncol=2)
+        ax.tick_params(axis='both', which='major', labelsize=20)
+        ax.legend(fontsize=18, ncol=2)
         fig.tight_layout()
         fname = f"{cfg.csv_prefix}_ratio_{model}.png"
         fig.savefig(outdir / fname, dpi=300)
@@ -462,14 +535,14 @@ def plot_ratio_combined(
     ax.axhline(y=1.0, color="black", linewidth=1.0, linestyle="-", alpha=0.4)
 
     ax.set_title(
-        f"Spectral Ratio — All Models — {_lead_label(target_lead)}", fontsize=24, pad=15,
+        f"Spectral Ratio — All Models — {_lead_label(target_lead)}", fontsize=30, pad=15,
     )
-    ax.set_xlabel("Wavelength (km)", fontsize=16)
-    ax.set_ylabel(cfg.ratio_ylabel, fontsize=16)
+    ax.set_xlabel("Wavelength (km)", fontsize=25)
+    ax.set_ylabel(cfg.ratio_ylabel, fontsize=25)
     ax.set_ylim(-0.05, None)
     ax.invert_xaxis()
-    ax.tick_params(axis='both', which='major', labelsize=14)
-    ax.legend(fontsize=16)
+    ax.tick_params(axis='both', which='major', labelsize=20)
+    ax.legend(fontsize=18)
     fig.tight_layout()
     fname = f"{cfg.csv_prefix}_ratio_combined_{target_lead}h.png"
     fig.savefig(outdir / fname, dpi=300)
@@ -483,12 +556,10 @@ def _find_effective_resolution(
     wavenumber: np.ndarray,
     ratio: np.ndarray,
     threshold: float,
-    k_min: int = 10,
     n_consecutive: int = 5,
 ) -> float:
     """Effective resolution (km) at a given ratio threshold."""
-    mask = wavenumber >= k_min
-    k_sel, r_sel = wavenumber[mask], ratio[mask]
+    k_sel, r_sel = wavenumber, ratio
     below = r_sel < threshold
     n = len(r_sel)
     fallback = 2.0 * np.pi * EARTH_RADIUS_KM / (float(k_sel[-1]) if len(k_sel) else float(wavenumber[-1]))
@@ -526,9 +597,90 @@ def _find_effective_resolution(
 # ---------------------------------------------------------------------------
 
 
+def plot_sensitivity_table_image(df: pd.DataFrame, cfg: AnalysisCfg, thresholds: list[float], leads: list[int], outdir: Path):
+    """Render a color-coded image table for effective resolution matching NeurIPS style."""
+    models_to_plot = [m for m in DESIRED_ORDER if m in df["model"].unique()]
+    if not models_to_plot:
+        return
+
+    model_labels = [_model_style(m)["label"] for m in models_to_plot]
+    
+    header_color = np.array([0.9, 0.9, 0.9])
+    red = np.array([1.0, 0.75, 0.75])
+    white = np.array([1.0, 1.0, 1.0])
+
+    cell_texts = [["Threshold", "Lead Time"] + model_labels]
+    cell_colors = [[header_color] * len(cell_texts[0])]
+        
+    for thr in thresholds:
+        col_name = f"eff_res_{thr}"
+        
+        # Max value for normalization (worst resolution)
+        max_val = df[col_name].max()
+        if pd.isna(max_val) or max_val <= 111.5:
+            max_val = 111.6
+            
+        for l_idx, lead in enumerate(leads):
+            text_label = f"thr = {thr}" if l_idx == len(leads)//2 else ""
+            row_t = [text_label, f"{lead}h"]
+            row_c = [white.copy(), white.copy()]
+
+            for m in models_to_plot:
+                sub = df[(df["model"] == m) & (df["lead_hours"] == lead)]
+                if sub.empty:
+                    row_t.append("—")
+                    row_c.append(white)
+                else:
+                    val = sub.iloc[0][col_name]
+                    if pd.isna(val):
+                        row_t.append("—")
+                        row_c.append(white)
+                    else:
+                        row_t.append(f"{val:.1f}")
+                        # Color intensity: 111.5 is perfect (white), max_val is worst (red)
+                        intensity = min(max(val - 111.5, 0) / max(max_val - 111.5, 1.0), 1.0) * 0.8
+                        row_c.append(white * (1 - intensity) + red * intensity)
+                
+            cell_texts.append(row_t)
+            cell_colors.append(row_c)
+
+    n_cols = len(cell_texts[0])
+    n_rows = len(cell_texts)
+    fig, ax = plt.subplots(figsize=(max(1.8 * n_cols, 12), max(0.3 * n_rows, 3.0)))
+    ax.axis("off")
+    
+    colWidths = [0.25, 0.12] + [0.15] * len(models_to_plot)
+    table = ax.table(
+        cellText=cell_texts,
+        cellColours=[[tuple(c) for c in row] for row in cell_colors],
+        colWidths=colWidths, loc="center", cellLoc="center"
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(14)
+    table.scale(1.0, 1.6)
+
+    for j in range(n_cols):
+        table[0, j].set_text_props(fontweight="bold")
+        table[0, j].set_facecolor(tuple(header_color))
+
+    row_idx = 1
+    for _ in thresholds:
+        for r in range(row_idx, row_idx + len(leads)):
+            if r == row_idx: table[r, 0].visible_edges = 'LRT'
+            elif r == row_idx + len(leads) - 1: table[r, 0].visible_edges = 'LRB'
+            else: table[r, 0].visible_edges = 'LR'
+            table[r, 0].set_text_props(fontweight="bold")
+        row_idx += len(leads)
+
+    fname = f"sensitivity_table_{cfg.csv_prefix}.png"
+    fig.savefig(outdir / fname, dpi=200, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved sensitivity table image → {outdir / fname}")
+
+
 def sensitivity_table(
     models: dict[str, pd.DataFrame], cfg: AnalysisCfg,
-    thresholds: list[float], outdir: Path,
+    thresholds: list[float], leads: list[int], outdir: Path,
 ) -> pd.DataFrame:
     rows = []
     for model, df in sorted(models.items()):
@@ -550,8 +702,11 @@ def sensitivity_table(
     csv_path = outdir / f"sensitivity_effective_resolution_{cfg.csv_prefix}.csv"
     result.to_csv(csv_path, index=False)
     print(f"\n  Saved sensitivity table → {csv_path}")
+    
+    # Draw image table
+    plot_sensitivity_table_image(result, cfg, thresholds, leads, outdir)
 
-    # Pretty-print
+    # Pretty-print text logic
     thr_cols = [c for c in result.columns if c.startswith("eff_res_")]
     header = f"  {'Model':<12} {'Lead':>6}"
     for c in thr_cols:
@@ -595,10 +750,7 @@ def main():
     # Create a copy so we can mutate safely if needed, or just modify since frozen=False
     cfg = ANALYSES[args.analysis]
     if args.ifs:
-        cfg.title += " (vs IFS HRES)"
         cfg.ratio_ylabel = cfg.ratio_ylabel.replace("ERA5", "IFS")
-    else:
-        cfg.title += " (vs ERA5)"
     
     results_dir = Path(args.results_dir)
     exclude = set(args.exclude)
@@ -613,7 +765,7 @@ def main():
             wide_pred=cfg.wide_pred,
             wide_era5=cfg.wide_era5,
             ylabel=cfg.ylabel,
-            title=cfg.title + " (vs IFS HRES)",
+            title=cfg.title,
             ratio_ylabel=cfg.ratio_ylabel.replace("ERA5", "IFS"),
             outdir_name=cfg.outdir_name + "_ifs",
         )
@@ -657,6 +809,10 @@ def main():
     for lt in key_leads:
         plot_combined_wl(models_wide, outdir, cfg, target_lead=lt, ref_label=ref_label)
 
+    # 4b. Combined 3-panel spectrum (NeurIPS style)
+    print("\n--- Combined 3-panel spectrum (NeurIPS style) ---")
+    plot_combined_3panel(models_wide, outdir, cfg, ref_label=ref_label, leads=(12, 120, 240))
+
     # 5. Spectral ratio per model
     print("\n--- Per-model spectral ratio ---")
     plot_ratio_per_model(models_wide, outdir, cfg, thresholds)
@@ -668,7 +824,7 @@ def main():
 
     # 7. Sensitivity table
     print("\n--- Sensitivity table ---")
-    sensitivity_table(models_wide, cfg, thresholds, outdir)
+    sensitivity_table(models_wide, cfg, thresholds, key_leads, outdir)
 
     print(f"\nAll plots saved to {outdir}/")
 

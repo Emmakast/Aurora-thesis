@@ -40,8 +40,9 @@ def _print(*args, **kwargs):
 # Configuration
 # ============================================================================
 
-RESULTS_DIR = Path.home() / "aurora_thesis" / "thesis" / "results"
-PLOTS_DIR = RESULTS_DIR / "plots_correlation"
+PHYSICS_RESULTS_DIR = Path("/home/ekasteleyn/aurora_thesis/neuripspaper/results")
+RMSE_RESULTS_DIR = Path("/home/ekasteleyn/aurora_thesis/thesis/benchmark/results")
+PLOTS_DIR = RMSE_RESULTS_DIR / "plots_correlation"
 
 # Model configurations: prediction Zarr, ERA5 Zarr (for grid matching)
 MODEL_CONFIG = {
@@ -77,7 +78,6 @@ PHYSICAL_METRICS = [
     "effective_resolution_km",
     "spectral_divergence",
     "spectral_residual",
-    "small_scale_ratio",
     "dry_mass_drift_pct_per_day",
     "water_mass_drift_pct_per_day",
     "total_energy_drift_pct_per_day",
@@ -86,13 +86,12 @@ PHYSICAL_METRICS = [
 METRIC_LABELS = {
     "geostrophic_rmse": "Geostrophic RMSE",
     "hydrostatic_rmse": "Hydrostatic RMSE",
-    "effective_resolution_km": "Effective Resolution (km)",
+    "effective_resolution_km": "Effective Resolution",
     "spectral_divergence": "Spectral Divergence",
     "spectral_residual": "Spectral Residual",
-    "small_scale_ratio": "Small-Scale Ratio",
-    "dry_mass_drift_pct_per_day": "Dry Mass Drift (%/day)",
-    "water_mass_drift_pct_per_day": "Water Mass Drift (%/day)",
-    "total_energy_drift_pct_per_day": "Energy Drift (%/day)",
+    "dry_mass_drift_pct_per_day": "Dry Air Mass",
+    "water_mass_drift_pct_per_day": "Water Mass",
+    "total_energy_drift_pct_per_day": "Total Energy",
 }
 
 
@@ -116,7 +115,7 @@ def open_zarr_anonymous(url: str) -> xr.Dataset:
 
 def load_physics_metrics(model: str, year: int = 2020) -> pd.DataFrame:
     """Load local physics evaluation CSV."""
-    csv_path = RESULTS_DIR / f"physics_evaluation_{model}_{year}.csv"
+    csv_path = PHYSICS_RESULTS_DIR / f"physics_evaluation_{model}_{year}.csv"
     if not csv_path.exists():
         raise FileNotFoundError(f"Physics CSV not found: {csv_path}")
     
@@ -263,16 +262,14 @@ def compute_daily_rmse(
                 results.append(row)
                 
             except Exception as e:
-                _print(f"    ⚠ Error for {date_str} lead={lead_h}h: {e}")
-                row["error"] = str(e)
-                results.append(row)
+                pass # suppress printing errors for every date
     
     return pd.DataFrame(results)
 
 
 def load_cached_rmse(model: str, year: int = 2020) -> Optional[pd.DataFrame]:
     """Load cached daily RMSE from CSV if available."""
-    cache_path = RESULTS_DIR / f"daily_rmse_{model}_{year}.csv"
+    cache_path = RMSE_RESULTS_DIR / f"daily_rmse_{model}_{year}.csv"
     if cache_path.exists():
         _print(f"  Loading cached RMSE from {cache_path}")
         df = pd.read_csv(cache_path)
@@ -283,7 +280,7 @@ def load_cached_rmse(model: str, year: int = 2020) -> Optional[pd.DataFrame]:
 
 def save_cached_rmse(df: pd.DataFrame, model: str, year: int = 2020) -> None:
     """Save daily RMSE to CSV for caching."""
-    cache_path = RESULTS_DIR / f"daily_rmse_{model}_{year}.csv"
+    cache_path = RMSE_RESULTS_DIR / f"daily_rmse_{model}_{year}.csv"
     df.to_csv(cache_path, index=False)
     _print(f"  Saved RMSE cache to {cache_path}")
 
@@ -486,6 +483,117 @@ def compute_correlations(
 # Visualization
 # ============================================================================
 
+def plot_correlation_table(corr_df: pd.DataFrame, model: str, outdir: Path, lead_times: list[int]):
+    """Draw a color-coded Matplotlib table and print the LaTeX version for Correlative summaries."""
+    if corr_df.empty: return
+    
+    header_color = np.array([0.9, 0.9, 0.9])
+    red = np.array([1.0, 0.75, 0.75])
+    white = np.array([1.0, 1.0, 1.0])
+
+    cols = ["Metric", "Statistic"]
+    for lh in lead_times:
+        cols.extend([f"{lh}h Z500", f"{lh}h T850"])
+
+    cell_texts = [cols]
+    cell_colors = [[header_color] * len(cols)]
+
+    latex_lines = [
+        "\\begin{table}[H]",
+        "    \\centering",
+        f"    \\caption{{Coefficient of determination ($R^2$) and Spearman's rank correlation ($\\rho$) between standard predictive error (RMSE) and physical consistency metrics for {model.upper()}.}}",
+        "    \\label{tab:rmse_correlation_" + model + "}",
+        "    \\resizebox{\\textwidth}{!}{%",
+        "    \\begin{tabular}{@{}ll" + "rr" * len(lead_times) + "@{}}",
+        "        \\toprule",
+        "        \\multirow{2}{*}{\\textbf{Metric}} & \\multirow{2}{*}{\\textbf{Statistic}} & " + 
+        " & ".join([f"\\multicolumn{{2}}{{c}}{{\\textbf{{{lh}h}}}}" for lh in lead_times]) + " \\\\",
+        "        " + " ".join([f"\\cmidrule(lr){{{3+2*i}-{4+2*i}}}" for i in range(len(lead_times))]),
+        "        & & " + " & ".join(["\\textbf{Z500} & \\textbf{T850}" for _ in lead_times]) + " \\\\",
+        "        \\midrule"
+    ]
+
+    for m_idx, metric in enumerate(PHYSICAL_METRICS):
+        label = METRIC_LABELS.get(metric, metric)
+        row_r2_t = [label, "$R^2$"]
+        row_rho_t = [label, "$\\rho$"]
+        row_r2_c = [white, white.copy()]
+        row_rho_c = [white, white.copy()]
+        
+        latex_r2 = f"        \\multirow{{2}}{{*}}{{{label}}} & $R^2$"
+        latex_rho = f"         & $\\rho$"
+
+        for lh in lead_times:
+            for rmse_t in ["z500_rmse", "t850_rmse"]:
+                sub = corr_df[(corr_df["metric"] == metric) & (corr_df["lead_time_hours"] == lh) & (corr_df["rmse_type"] == rmse_t)]
+                if not sub.empty:
+                    val_r2 = sub["pearson_r2"].values[0]
+                    val_rho = sub["spearman_r"].values[0]
+                    
+                    row_r2_t.append(f"{val_r2:.3f}")
+                    row_rho_t.append(f"{val_rho:.3f}")
+                    latex_r2 += f" & {val_r2:.3f}"
+                    latex_rho += f" & {val_rho:.3f}"
+                    
+                    intensity_r2 = min(abs(val_r2), 1.0) * 0.9
+                    intensity_rho = min(abs(val_rho), 1.0) * 0.7
+                    row_r2_c.append(white * (1 - intensity_r2) + red * intensity_r2)
+                    row_rho_c.append(white * (1 - intensity_rho) + red * intensity_rho)
+                else:
+                    for r, l_ref in zip([row_r2_t, row_rho_t], [latex_r2, latex_rho]):
+                        r.append("—")
+                    latex_r2 += " & —"
+                    latex_rho += " & —"
+                    row_r2_c.append(white.copy())
+                    row_rho_c.append(white.copy())
+
+        latex_lines.append(latex_r2 + " \\\\")
+        latex_lines.append(latex_rho + " \\\\ \\addlinespace")
+
+        cell_texts.extend([row_r2_t, row_rho_t])
+        cell_colors.extend([row_r2_c, row_rho_c])
+        
+    latex_lines[-1] = latex_lines[-1].replace(" \\addlinespace", "")
+    latex_lines.extend([
+        "        \\bottomrule",
+        "    \\end{tabular}%",
+        "    }",
+        "\\end{table}"
+    ])
+    
+    print("\n" + "\n".join(latex_lines) + "\n")
+
+    fig, ax = plt.subplots(figsize=(max(12, 1.4 * len(cols)), len(cell_texts) * 0.45))
+    ax.axis("off")
+    
+    # ── Allocate more space to the first metric column ──
+    col_widths = [0.35, 0.15] + [0.12] * (len(cols) - 2)
+    
+    table = ax.table(
+        cellText=cell_texts,
+        cellColours=[[tuple(c) for c in row] for row in cell_colors],
+        colWidths=col_widths,
+        loc="center", cellLoc="center"
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(13)
+    table.scale(1.0, 1.6)
+
+    for j in range(len(cols)):
+        table[0, j].set_text_props(fontweight="bold")
+        table[0, j].set_facecolor(tuple(header_color))
+
+    # Cell borders logic to mimic multi-row
+    for r in range(1, len(cell_texts), 2):
+        table[r, 0].visible_edges = 'LRT'
+        table[r+1, 0].visible_edges = 'LRB'
+        table[r+1, 0].get_text().set_text("")
+
+    out_file = outdir / f"correlation_table_{model}.png"
+    fig.savefig(out_file, dpi=200, bbox_inches="tight")
+    plt.close(fig)
+    _print(f"  Saved image table to: {out_file}")
+
 def plot_scatter_grid(
     df: pd.DataFrame,
     model: str,
@@ -686,6 +794,8 @@ def main():
                         row_str += f" {'N/A':>8}"
                 _print(row_str)
             
+            plot_correlation_table(corr_df, model, PLOTS_DIR, args.lead_times)
+            
             # Create scatter plots
             fig = plot_scatter_grid(
                 df_merged,
@@ -717,75 +827,6 @@ def main():
             df_merged["model"] = model
             all_merged_dfs.append(df_merged)
 
-    # ========================================================================
-    # Aggregate Analysis (All Models Combined)
-    # ========================================================================
-    if all_merged_dfs:
-        _print(f"\n{'='*60}")
-        _print(f"  Processing: ALL MODELS (Combined)")
-        _print(f"{'='*60}")
-        
-        df_all = pd.concat(all_merged_dfs, ignore_index=True)
-        _print(f"  Total merged samples: {len(df_all)}")
-        
-        if len(df_all) >= 10:
-            avail_metrics_all = [m for m in PHYSICAL_METRICS if m in df_all.columns]
-            corr_df_all = compute_correlations(df_all, avail_metrics_all)
-            corr_df_all["model"] = "ALL_MODELS"
-            all_correlations.append(corr_df_all)
-            
-            # Print correlation summary
-            _print(f"\n  Correlation Summary (Z500 RMSE) - ALL MODELS:")
-            _print(f"  {'Metric':<35} {'12h R²':>8} {'120h R²':>8} {'240h R²':>8}")
-            _print(f"  {'-'*60}")
-            for metric in avail_metrics_all:
-                row_str = f"  {metric:<35}"
-                for lead_h in args.lead_times:
-                    if "metric" not in corr_df_all.columns or corr_df_all.empty:
-                        row_str += f" {'N/A':>8}"
-                        continue
-                    sub = corr_df_all[
-                        (corr_df_all["metric"] == metric) &
-                        (corr_df_all["lead_time_hours"] == lead_h) &
-                        (corr_df_all["rmse_type"] == "z500_rmse")
-                    ]
-                    if len(sub) > 0:
-                        r2 = sub["pearson_r2"].values[0]
-                        row_str += f" {r2:>8.3f}"
-                    else:
-                        row_str += f" {'N/A':>8}"
-                _print(row_str)
-
-            # Create scatter plots for combined data
-            # To make the plot clearer, we can color by model using hue (requires modifying plot_scatter_grid)
-            # But simpler for now is just scatter all points.
-            
-            # We'll create a new function for colored scatter plots or just reuse the existing one
-            # Reuse existing one first
-            fig = plot_scatter_grid(
-                df_all,
-                "ALL_MODELS",
-                avail_metrics_all,
-                args.lead_times,
-                rmse_col="z500_rmse",
-                corr_df=corr_df_all,
-            )
-            fig.savefig(PLOTS_DIR / f"scatter_ALL_MODELS_z500.png", dpi=150, bbox_inches="tight")
-            plt.close(fig)
-            _print(f"\n  Saved: {PLOTS_DIR / f'scatter_ALL_MODELS_z500.png'}")
-
-            fig = plot_scatter_grid(
-                df_all,
-                "ALL_MODELS",
-                avail_metrics_all,
-                args.lead_times,
-                rmse_col="t850_rmse",
-                corr_df=corr_df_all,
-            )
-            fig.savefig(PLOTS_DIR / f"scatter_ALL_MODELS_t850.png", dpi=150, bbox_inches="tight")
-            plt.close(fig)
-            _print(f"  Saved: {PLOTS_DIR / f'scatter_ALL_MODELS_t850.png'}")
-    
     # Save all correlations
     if all_correlations:
         df_all_corr = pd.concat(all_correlations, ignore_index=True)

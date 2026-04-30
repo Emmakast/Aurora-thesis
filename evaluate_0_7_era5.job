@@ -1,0 +1,54 @@
+#!/bin/bash
+#SBATCH --job-name=eval_0_7_era5
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=128G
+#SBATCH --time=02:00:00
+#SBATCH --output=slurm-%j.out
+
+$HOME/aurora_thesis/aurora_env/bin/python << 'PYEOF'
+import sys, xarray as xr, numpy as np
+sys.path.append("/home/ekasteleyn/aurora_thesis/neuripspaper/scripts")
+from run_all_metrics import compute_hydrostatic_imbalance, get_grid_cell_area, _detect_level_dim, compute_geostrophic_imbalance
+import logging
+logging.basicConfig(level=logging.INFO)
+
+zarr_path = "gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr"
+logging.info(f"Opening {zarr_path}...")
+ds = xr.open_zarr(zarr_path, consolidated=True)[['geopotential', 'temperature', 'u_component_of_wind', 'v_component_of_wind']].isel(time=slice(0, 50))
+
+# Fix transposed dims!
+# Find the actual names of lat/lon
+lat_name = [d for d in ds.dims if 'lat' in d.lower() or d == 'latitude'][0]
+lon_name = [d for d in ds.dims if 'lon' in d.lower() or d == 'longitude'][0]
+
+ds = ds.transpose('time', 'level', lat_name, lon_name)
+
+ld = _detect_level_dim(ds)
+area = get_grid_cell_area(ds.isel(time=0))
+h_vals, g_vals = [], []
+
+for i in range(50):
+    logging.info(f"Step {i}")
+    snap = ds.isel(time=i).load()
+    try:
+        h = compute_hydrostatic_imbalance(snap, area, level_dim=ld)
+        h_vals.append(h)
+    except Exception as e:
+        pass
+    try:
+        g = compute_geostrophic_imbalance(snap, area, level_dim=ld)
+        g_vals.append(g)
+    except Exception as e:
+        pass
+
+import pandas as pd
+hr = float(np.mean(h_vals))
+gr = float(np.mean(g_vals))
+logging.info(f"Results: H={hr}, G={gr}")
+
+with open("/home/ekasteleyn/aurora_thesis/neuripspaper/results/era5_0_7_rmse.txt", "w") as f:
+    f.write(f"hydrostatic_rmse,{hr}\n")
+    f.write(f"geostrophic_rmse,{gr}\n")
+
+PYEOF

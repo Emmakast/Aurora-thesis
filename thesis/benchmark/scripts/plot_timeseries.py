@@ -233,7 +233,7 @@ def plot_single(csv_path: str, era5_csv: str | None = None):
 # ── Combined multi-model plotting ────────────────────────────────────────────
 
 def _load_and_preagg(csv_paths: list[str]) -> dict[str, pd.DataFrame]:
-    """Load CSVs and pre-aggregate to mean/std per forecast_hour (fast)."""
+    """Load CSVs and pre-aggregate to mean/std/count per lead time (fast)."""
     models: dict[str, pd.DataFrame] = {}
     for path in csv_paths:
         model = _extract_model_name(path)
@@ -245,7 +245,11 @@ def _load_and_preagg(csv_paths: list[str]) -> dict[str, pd.DataFrame]:
 
         # Only keep numeric columns for aggregation
         value_cols = [c for c in df.columns if c not in ("date", "lead_time_hours") and df[c].dtype in ["float64", "float32", "int64", "int32"]]
-        agg = df.groupby("lead_time_hours")[value_cols].agg(["mean", "std"]).reset_index()
+        agg = (
+            df.groupby("lead_time_hours")[value_cols]
+            .agg(["mean", "std", "count"])
+            .reset_index()
+        )
         agg.columns = ["lead_time_hours"] + [f"{c}_{s}" for c, s in agg.columns[1:]]
         models[model] = agg
     return models
@@ -255,6 +259,21 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
     """Create combined multi-model overlay plots."""
     models = _load_and_preagg(csv_paths)
     era5_rmse = _load_era5_rmse(results_dir) if not ifs_mode else None
+
+    def _ci95_half_width(df: pd.DataFrame, metric: str) -> np.ndarray:
+        """Return 95% CI half-width from pre-aggregated std/count columns."""
+        std_col = f"{metric}_std"
+        n_col = f"{metric}_count"
+        if std_col not in df.columns:
+            return np.zeros(len(df), dtype=float)
+
+        std = pd.to_numeric(df[std_col], errors="coerce").to_numpy(dtype=float)
+        if n_col not in df.columns:
+            return np.nan_to_num(std, nan=0.0)
+
+        n = pd.to_numeric(df[n_col], errors="coerce").to_numpy(dtype=float)
+        sem = np.divide(std, np.sqrt(n), out=np.zeros_like(std), where=n > 1)
+        return 1.96 * np.nan_to_num(sem, nan=0.0)
     
     # Use different output folder for IFS mode
     outdir = results_dir / ("plots_combined_IFS" if ifs_mode else "plots_combined")
@@ -265,8 +284,6 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
 
     for col, title in METRICS.items():
         mean_col = f"{col}_mean"
-        std_col = f"{col}_std"
-
         has_data = {m: df for m, df in models.items()
                     if mean_col in df.columns and not df[mean_col].isna().all()}
         if not has_data:
@@ -279,10 +296,10 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
             nice = NICE_NAMES.get(model, model)
             x = df["lead_time_hours"].values
             y = df[mean_col].values
-            yerr = df[std_col].values if std_col in df.columns else None
+            yerr = _ci95_half_width(df, col)
             ax.plot(x, y, marker=style["marker"], markersize=6,
                     color=style["color"], label=nice, zorder=3)
-            if yerr is not None:
+            if np.any(yerr > 0):
                 ax.fill_between(x, y - yerr, y + yerr,
                                 color=style["color"], alpha=0.15, zorder=2)
 
@@ -294,7 +311,7 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
                     zorder=5, alpha=0.8)
 
         mode_str = " (vs IFS HRES)" if ifs_mode else " (vs ERA5)"
-        ax.set_title(f"{title}{mode_str} (shading = ±σ)", fontsize=24, pad=15)
+        ax.set_title(f"{title}{mode_str} (shading = 95% CI)", fontsize=24, pad=15)
         ax.set_xlabel("Forecast Hour", fontsize=16)
         ax.set_ylabel(title, fontsize=16)
         ax.set_xticks(range(0, int(max_hour) + 1, 24))
@@ -309,7 +326,6 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
         # Relative plot for conservation metrics
         if col in CONSERVATION_METRICS:
             rel_mean = f"{col}_rel_mean"
-            rel_std = f"{col}_rel_std"
             has_rel = {m: df for m, df in models.items()
                        if rel_mean in df.columns and not df[rel_mean].isna().all()}
             if not has_rel:
@@ -321,16 +337,16 @@ def plot_combined(csv_paths: list[str], results_dir: Path, ifs_mode: bool = Fals
                 nice = NICE_NAMES.get(model, model)
                 x = df["lead_time_hours"].values
                 y = df[rel_mean].values
-                yerr = df[rel_std].values if rel_std in df.columns else None
+                yerr = _ci95_half_width(df, f"{col}_rel")
                 ax.plot(x, y, marker=style["marker"], markersize=6,
                         color=style["color"], label=nice, zorder=3)
-                if yerr is not None:
+                if np.any(yerr > 0):
                     ax.fill_between(x, y - yerr, y + yerr,
                                     color=style["color"], alpha=0.15, zorder=2)
 
             ax.axhline(y=0, color="grey", linestyle="-", linewidth=1, alpha=0.5)
             mode_str = " (vs IFS HRES)" if ifs_mode else " (vs ERA5)"
-            ax.set_title(f"{title}{mode_str} (shading = ±σ)", fontsize=24, pad=15)
+            ax.set_title(f"{title}{mode_str} (shading = 95% CI)", fontsize=24, pad=15)
             ax.set_xlabel("Forecast Hour", fontsize=16)
             ax.set_ylabel("Relative Change (%)", fontsize=16)
             ax.set_xticks(range(0, int(max_hour) + 1, 24))

@@ -1,0 +1,25 @@
+INFO:root:Opening gs://weatherbench2/datasets/era5/1959-2022-6h-512x256_equiangular_conservative.zarr...
+INFO:root:Step 0
+ERROR:root:Area shape (256, 512) and error shape (512, 256) do not match in Hydrostatic check.
+INFO:root:Step 1
+ERROR:root:Area shape (256, 512) and error shape (512, 256) do not match in Hydrostatic check.
+INFO:root:Step 2
+ERROR:root:Area shape (256, 512) and error shape (512, 256) do not match in Hydrostatic check.
+INFO:root:Step 3
+ERROR:root:Area shape (256, 512) and error shape (512, 256) do not match in Hydrostatic check.
+INFO:root:Step 4
+ERROR:root:Area shape (256, 512) and error shape (512, 256) do not match in Hydrostatic check.
+INFO:root:Step 5
+ERROR:root:Area shape (256, 512) and error shape (512, 256) do not match in Hydrostatic check.
+INFO:root:Step 6
+ERROR:root:Area shape (256, 512) and error shape (512, 256) do not match in Hydrostatic check.
+INFO:root:Step 7
+ERROR:root:Area shape (256, 512) and error shape (512, 256) do not match in Hydrostatic check.
+INFO:root:Step 8
+ERROR:root:Area shape (256, 512) and error shape (512, 256) do not match in Hydrostatic check.
+INFO:root:Step 9
+ERROR:root:Area shape (256, 512) and error shape (512, 256) do not match in Hydrostatic check.
+/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3860: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
