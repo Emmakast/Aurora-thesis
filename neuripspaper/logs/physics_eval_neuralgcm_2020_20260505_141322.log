@@ -1,0 +1,232 @@
+========================================
+  PHYSICS EVALUATION: neuralgcm
+========================================
+Job ID:       22482542
+Date:         Tue May  5 14:13:22 CEST 2026
+Prediction:   gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr
+Reference:    ifs (from gs://weatherbench2/datasets/hres_t0/2016-2022-6h-512x256_equiangular_conservative.zarr)
+Output:       /home/ekasteleyn/aurora_thesis/neuripspaper/results_ifs/physics_evaluation_neuralgcm_2020.csv
+========================================
+
+======================================================================
+  PHYSICS EVALUATION — WeatherBench 2 Zarr Streaming
+======================================================================
+  Prediction : gs://weatherbench2/datasets/neuralgcm_deterministic/2020-512x256.zarr
+  Reference  : gs://weatherbench2/datasets/hres_t0/2016-2022-6h-512x256_equiangular_conservative.zarr
+  Dates  : 366
+  Lead times : ['12h', '5d', '10d']
+  Total evals: 1098
+  Workers    : 16
+  Mode       : joint
+  Output : /home/ekasteleyn/aurora_thesis/neuripspaper/results_ifs/physics_evaluation_neuralgcm_2020.csv
+======================================================================
+
+  Checking Zarr stores (anonymous) …
+  Model vars: ['P_minus_E_cumulative', 'geopotential', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'specific_humidity', 'temperature', 'u_component_of_wind', 'v_component_of_wind', 'wind_speed']
+  Reference vars  : ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_temperature', 'geopotential', 'mean_sea_level_pressure', 'specific_humidity', 'surface_pressure', 'temperature', 'total_precipitation_6hr', 'u_component_of_wind', 'v_component_of_wind']
+  Reference time dtype: datetime64[ns]
+  Reference time range: 2016-01-01T00:00:00.000000000 → 2022-12-31T18:00:00.000000000
+
+  Sanity check — verifying Reference time selection on 'temperature':
+    requested=2017-10-01T06:00:00.000000000  actual=2017-10-01T06:00:00.000000000  mean=243.206
+    requested=2019-07-02T12:00:00.000000000  actual=2019-07-02T12:00:00.000000000  mean=244.575
+    requested=2021-04-01T18:00:00.000000000  actual=2021-04-01T18:00:00.000000000  mean=242.794
+  ✓ Reference time selection looks correct (values differ).
+
+
+  Launching 16 processes …
+
+  [1/1098] init=2020-01-01T00:00:00  lead=12h  — Connecting to dataset...
+  [2/1098] init=2020-01-01T00:00:00  lead=5d  — Connecting to dataset...
+  [3/1098] init=2020-01-01T00:00:00  lead=10d  — Connecting to dataset...
+  [4/1098] init=2020-01-02T00:00:00  lead=12h  — Connecting to dataset...
+  [5/1098] init=2020-01-02T00:00:00  lead=5d  — Connecting to dataset...
+  [6/1098] init=2020-01-02T00:00:00  lead=10d  — Connecting to dataset...
+  [7/1098] init=2020-01-03T00:00:00  lead=12h  — Connecting to dataset...
+  [8/1098] init=2020-01-03T00:00:00  lead=5d  — Connecting to dataset...
+  [9/1098] init=2020-01-03T00:00:00  lead=10d  — Connecting to dataset...
+  [11/1098] init=2020-01-04T00:00:00  lead=5d  — Connecting to dataset...
+  [12/1098] init=2020-01-04T00:00:00  lead=10d  — Connecting to dataset...
+  [13/1098] init=2020-01-05T00:00:00  lead=12h  — Connecting to dataset...
+  [14/1098] init=2020-01-05T00:00:00  lead=5d  — Connecting to dataset...
+  [10/1098] init=2020-01-04T00:00:00  lead=12h  — Connecting to dataset...
+  [15/1098] init=2020-01-05T00:00:00  lead=10d  — Connecting to dataset...
+  [16/1098] init=2020-01-06T00:00:00  lead=12h  — Connecting to dataset...
+  [2/1098] init=2020-01-01T00:00:00.000000000  lead=5d (120h)  valid=2020-01-06T00:00:00.000000000 — Data connected, processing...
+  [13/1098] init=2020-01-05T00:00:00.000000000  lead=12h (12h)  valid=2020-01-05T12:00:00.000000000 — Data connected, processing...
+    [2] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [2] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [13] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [13] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [9/1098] init=2020-01-03T00:00:00.000000000  lead=10d (240h)  valid=2020-01-13T00:00:00.000000000 — Data connected, processing...
+  [5/1098] init=2020-01-02T00:00:00.000000000  lead=5d (120h)  valid=2020-01-07T00:00:00.000000000 — Data connected, processing...
+  [16/1098] init=2020-01-06T00:00:00.000000000  lead=12h (12h)  valid=2020-01-06T12:00:00.000000000 — Data connected, processing...
+  [12/1098] init=2020-01-04T00:00:00.000000000  lead=10d (240h)  valid=2020-01-14T00:00:00.000000000 — Data connected, processing...
+    [9] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [9] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [15/1098] init=2020-01-05T00:00:00.000000000  lead=10d (240h)  valid=2020-01-15T00:00:00.000000000 — Data connected, processing...
+    [5] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+  [7/1098] init=2020-01-03T00:00:00.000000000  lead=12h (12h)  valid=2020-01-03T12:00:00.000000000 — Data connected, processing...
+    [16] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [5] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [16] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [12] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [12] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [6/1098] init=2020-01-02T00:00:00.000000000  lead=10d (240h)  valid=2020-01-12T00:00:00.000000000 — Data connected, processing...
+  [4/1098] init=2020-01-02T00:00:00.000000000  lead=12h (12h)  valid=2020-01-02T12:00:00.000000000 — Data connected, processing...
+    [15] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [15] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [7] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [7] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [6] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [6] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [4] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [4] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [11/1098] init=2020-01-04T00:00:00.000000000  lead=5d (120h)  valid=2020-01-09T00:00:00.000000000 — Data connected, processing...
+    [11] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [11] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [3/1098] init=2020-01-01T00:00:00.000000000  lead=10d (240h)  valid=2020-01-11T00:00:00.000000000 — Data connected, processing...
+  [8/1098] init=2020-01-03T00:00:00.000000000  lead=5d (120h)  valid=2020-01-08T00:00:00.000000000 — Data connected, processing...
+  [1/1098] init=2020-01-01T00:00:00.000000000  lead=12h (12h)  valid=2020-01-01T12:00:00.000000000 — Data connected, processing...
+    [3] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [3] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [8] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [8] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [1] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [1] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [10/1098] init=2020-01-04T00:00:00.000000000  lead=12h (12h)  valid=2020-01-04T12:00:00.000000000 — Data connected, processing...
+    [10] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [10] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [14/1098] init=2020-01-05T00:00:00.000000000  lead=5d (120h)  valid=2020-01-10T00:00:00.000000000 — Data connected, processing...
+    [14] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [14] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [11] Model grid differs from Reference — interpolating static fields
+    [11] Model lacks SP/MSL — will use Reference surface pressure
+    [11] Computing area from model grid (256 lats vs Reference 256)
+    [6] Model grid differs from Reference — interpolating static fields
+    [6] Model lacks SP/MSL — will use Reference surface pressure
+    [6] Computing area from model grid (256 lats vs Reference 256)
+    [15] Model grid differs from Reference — interpolating static fields
+    [15] Model lacks SP/MSL — will use Reference surface pressure
+    [15] Computing area from model grid (256 lats vs Reference 256)
+    [3] Model grid differs from Reference — interpolating static fields
+    [3] Model lacks SP/MSL — will use Reference surface pressure
+    [3] Computing area from model grid (256 lats vs Reference 256)
+    [5] Model grid differs from Reference — interpolating static fields
+    [5] Model lacks SP/MSL — will use Reference surface pressure
+    [5] Computing area from model grid (256 lats vs Reference 256)
+    [7] Model grid differs from Reference — interpolating static fields
+    [7] Model lacks SP/MSL — will use Reference surface pressure
+    [7] Computing area from model grid (256 lats vs Reference 256)
+    [16] Model grid differs from Reference — interpolating static fields
+    [16] Model lacks SP/MSL — will use Reference surface pressure
+    [16] Computing area from model grid (256 lats vs Reference 256)
+    [10] Model grid differs from Reference — interpolating static fields
+    [10] Model lacks SP/MSL — will use Reference surface pressure
+    [10] Computing area from model grid (256 lats vs Reference 256)
+    [2] Model grid differs from Reference — interpolating static fields
+    [2] Model lacks SP/MSL — will use Reference surface pressure
+    [2] Computing area from model grid (256 lats vs Reference 256)
+    [12] Model grid differs from Reference — interpolating static fields
+    [12] Model lacks SP/MSL — will use Reference surface pressure
+    [12] Computing area from model grid (256 lats vs Reference 256)
+    [4] Model grid differs from Reference — interpolating static fields
+    [4] Model lacks SP/MSL — will use Reference surface pressure
+    [4] Computing area from model grid (256 lats vs Reference 256)
+    [8] Model grid differs from Reference — interpolating static fields
+    [8] Model lacks SP/MSL — will use Reference surface pressure
+    [8] Computing area from model grid (256 lats vs Reference 256)
+    [13] Model grid differs from Reference — interpolating static fields
+    [13] Model lacks SP/MSL — will use Reference surface pressure
+    [13] Computing area from model grid (256 lats vs Reference 256)
+    [14] Model grid differs from Reference — interpolating static fields
+    [14] Model lacks SP/MSL — will use Reference surface pressure
+    [14] Computing area from model grid (256 lats vs Reference 256)
+    [9] Model grid differs from Reference — interpolating static fields
+    [9] Model lacks SP/MSL — will use Reference surface pressure
+    [9] Computing area from model grid (256 lats vs Reference 256)
+    [1] Model grid differs from Reference — interpolating static fields
+    [1] Model lacks SP/MSL — will use Reference surface pressure
+    [1] Computing area from model grid (256 lats vs Reference 256)
+    [3] Using Reference surface pressure for conservation metrics
+    [4] Using Reference surface pressure for conservation metrics
+    [6] Using Reference surface pressure for conservation metrics
+    [12] Using Reference surface pressure for conservation metrics
+    [11] Using Reference surface pressure for conservation metrics
+    [5] Using Reference surface pressure for conservation metrics
+    [14] Using Reference surface pressure for conservation metrics
+    [10] Using Reference surface pressure for conservation metrics
+    [13] Using Reference surface pressure for conservation metrics
+    [1] Using Reference surface pressure for conservation metrics
+    [2] Using Reference surface pressure for conservation metrics
+    [15] Using Reference surface pressure for conservation metrics
+    [8] Using Reference surface pressure for conservation metrics
+    [16] Using Reference surface pressure for conservation metrics
+    [9] Using Reference surface pressure for conservation metrics
+    [7] Using Reference surface pressure for conservation metrics
+    [4] Drift: 2 steps [12h–24h]  sp_method=ref_sp
+    [13] Drift: 2 steps [12h–24h]  sp_method=ref_sp
+    [1] Drift: 2 steps [12h–24h]  sp_method=ref_sp
+    [10] Drift: 2 steps [12h–24h]  sp_method=ref_sp
+    [16] Drift: 2 steps [12h–24h]  sp_method=ref_sp
+    [4] ✓ Drift: dry=-0.00314023%/day  water=-0.308098%/day  energy=-0.0126861%/day
+    [7] Drift: 2 steps [12h–24h]  sp_method=ref_sp
+    [4] ✓ Spectra saved
+  [17/1098] init=2020-01-06T00:00:00  lead=5d  — Connecting to dataset...
+  [17/1098] init=2020-01-06T00:00:00.000000000  lead=5d (120h)  valid=2020-01-11T00:00:00.000000000 — Data connected, processing...
+    [17] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [17] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [1] ✓ Drift: dry=-0.00149145%/day  water=-0.141233%/day  energy=+0.0213934%/day
+    [13] ✓ Drift: dry=-0.000145269%/day  water=+0.13368%/day  energy=-0.0125904%/day
+    [1] ✓ Spectra saved
+  [18/1098] init=2020-01-06T00:00:00  lead=10d  — Connecting to dataset...
+    [10] ✓ Drift: dry=+0.00117753%/day  water=-0.448981%/day  energy=-0.0138223%/day
+    [13] ✓ Spectra saved
+  [19/1098] init=2020-01-07T00:00:00  lead=12h  — Connecting to dataset...
+  [18/1098] init=2020-01-06T00:00:00.000000000  lead=10d (240h)  valid=2020-01-16T00:00:00.000000000 — Data connected, processing...
+    [18] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [18] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [10] ✓ Spectra saved
+  [20/1098] init=2020-01-07T00:00:00  lead=5d  — Connecting to dataset...
+  [19/1098] init=2020-01-07T00:00:00.000000000  lead=12h (12h)  valid=2020-01-07T12:00:00.000000000 — Data connected, processing...
+    [19] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [19] Transposing spatial dims from (lon, lat) to (lat, lon)
+  [20/1098] init=2020-01-07T00:00:00.000000000  lead=5d (120h)  valid=2020-01-12T00:00:00.000000000 — Data connected, processing...
+    [20] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [20] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [17] Model grid differs from Reference — interpolating static fields
+    [17] Model lacks SP/MSL — will use Reference surface pressure
+    [17] Computing area from model grid (256 lats vs Reference 256)
+    [18] Model grid differs from Reference — interpolating static fields
+    [18] Model lacks SP/MSL — will use Reference surface pressure
+    [18] Computing area from model grid (256 lats vs Reference 256)
+    [20] Model grid differs from Reference — interpolating static fields
+    [20] Model lacks SP/MSL — will use Reference surface pressure
+    [20] Computing area from model grid (256 lats vs Reference 256)
+    [19] Model grid differs from Reference — interpolating static fields
+    [19] Model lacks SP/MSL — will use Reference surface pressure
+    [19] Computing area from model grid (256 lats vs Reference 256)
+    [16] ✓ Drift: dry=+0.000478088%/day  water=-0.267961%/day  energy=-0.0115989%/day
+    [16] ✓ Spectra saved
+  [21/1098] init=2020-01-07T00:00:00  lead=10d  — Connecting to dataset...
+  [21/1098] init=2020-01-07T00:00:00.000000000  lead=10d (240h)  valid=2020-01-17T00:00:00.000000000 — Data connected, processing...
+    [21] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [21] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [7] ✓ Drift: dry=-2.62427e-05%/day  water=-0.201426%/day  energy=-0.0103456%/day
+    [17] Using Reference surface pressure for conservation metrics
+    [7] ✓ Spectra saved
+  [22/1098] init=2020-01-08T00:00:00  lead=12h  — Connecting to dataset...
+  [22/1098] init=2020-01-08T00:00:00.000000000  lead=12h (12h)  valid=2020-01-08T12:00:00.000000000 — Data connected, processing...
+    [22] Dropping 4 unneeded vars: ['P_minus_E_cumulative', 'specific_cloud_ice_water_content', 'specific_cloud_liquid_water_content', 'wind_speed']
+    [22] Transposing spatial dims from (lon, lat) to (lat, lon)
+    [19] Using Reference surface pressure for conservation metrics
+    [18] Using Reference surface pressure for conservation metrics
+    [21] Model grid differs from Reference — interpolating static fields
+    [21] Model lacks SP/MSL — will use Reference surface pressure
+    [21] Computing area from model grid (256 lats vs Reference 256)
+    [20] Using Reference surface pressure for conservation metrics
+    [22] Model grid differs from Reference — interpolating static fields
+    [22] Model lacks SP/MSL — will use Reference surface pressure
+    [22] Computing area from model grid (256 lats vs Reference 256)
+    [21] Using Reference surface pressure for conservation metrics
+    [22] Using Reference surface pressure for conservation metrics

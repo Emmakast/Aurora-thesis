@@ -1,0 +1,2 @@
+hydrostatic_rmse,254.2813594368571
+geostrophic_rmse,4.719532049612489

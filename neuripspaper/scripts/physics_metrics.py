@@ -847,8 +847,8 @@ def compute_spectral_scores(
 def compute_hydrostatic_imbalance(
     ds: xr.Dataset,
     area: xr.DataArray,
-    phi_name: str = "geopotential",
-    t_name: str = "temperature",
+    phi_name: str | None = None,
+    t_name: str | None = None, 
     q_name: str = "q",
     level_dim: str = "level",
     lat_name: str = "latitude",
@@ -870,6 +870,17 @@ def compute_hydrostatic_imbalance(
     if level_dim not in ds.dims:
         level_dim = _detect_level_dim(ds)
     levels = ds[level_dim].values
+
+    if phi_name is None:
+        phi_name = _find_var(ds, PHI_NAMES)
+        if phi_name is None:
+            raise ValueError(f"No geopotential variable found. Tried {PHI_NAMES}. Available: {list(ds.data_vars)}")
+    if t_name is None:
+        t_name = _find_var(ds, T_NAMES)
+        if t_name is None:
+            raise ValueError(f"No temperature variable found. Tried {T_NAMES}. Available: {list(ds.data_vars)}")
+    if q_name not in ds.data_vars:
+        q_name = _find_var(ds, Q_NAMES) or q_name 
 
     def _sel_level(var, p):
         idx = int(np.abs(levels - p).argmin())
@@ -899,11 +910,17 @@ def compute_hydrostatic_imbalance(
     rhs = r_dry * Tv_mean * np.log(p_bot / p_top)
     error = lhs - rhs
 
+    # Ensure error has the same (lat, lon) dim order as area
+    lat_dim_e = next((d for d in error.dims if "lat" in d.lower()), None)
+    lon_dim_e = next((d for d in error.dims if "lon" in d.lower()), None)
+    if lat_dim_e and lon_dim_e and error.dims != (lat_dim_e, lon_dim_e):
+        error = error.transpose(lat_dim_e, lon_dim_e)
+
     # Area-weighted RMSE
     if area.shape != error.shape:
         raise ValueError(f"Area shape {area.shape} and error shape {error.shape} do not match in Hydrostatic check.")
     weights = area / float(area.sum())
-    mse = float((weights * error**2).sum())
+    mse = float((weights.values * error.values**2).sum())
     return float(np.sqrt(mse))
 
 

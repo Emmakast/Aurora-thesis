@@ -56,6 +56,21 @@ def pretty_region_name(region: str) -> str:
     }
     return mapping.get(region, region.replace("_", " ").title())
 
+def get_model_baselines(summaries: dict[str, pd.DataFrame], metric: str) -> dict[str, float]:
+    """Extract reference baselines for a specific metric for each model."""
+    bases = {}
+    for m, df in summaries.items():
+        metric_col = next((c for c in ["metric_name", "metric", "variable", "name"] if c in df.columns), None)
+        if metric_col:
+            sub = df[df[metric_col] == metric]
+            if not sub.empty:
+                ref_col = next((c for c in ["ref_value", "mean_ref"] if c in sub.columns), None)
+                if ref_col:
+                    vals = pd.to_numeric(sub[ref_col], errors="coerce")
+                    if vals.notna().any():
+                        bases[m] = float(vals.mean())
+    return bases
+
 # ── 1. Timeseries plotting ───────────────────────────────────────────────────
 
 def plot_timeseries(results_dir: Path, outdir: Path):
@@ -64,6 +79,8 @@ def plot_timeseries(results_dir: Path, outdir: Path):
     if not csv_paths:
         print("No time_series_*.csv found.")
         return
+
+    summaries = load_summaries(results_dir)
 
     frames = []
     for path in csv_paths:
@@ -80,8 +97,8 @@ def plot_timeseries(results_dir: Path, outdir: Path):
         "dry_mass_Eg": "Dry Air Mass (Eg)",
         "water_mass_kg": "Water Mass (kg)",
         "total_energy_J": "Total Energy (J)",
-        "hydrostatic_rmse": "Hydrostatic RMSE",
-        "geostrophic_rmse": "Geostrophic RMSE"
+        "hydrostatic_rmse": "Hydrostatic RMSE Δ",
+        "geostrophic_rmse": "Geostrophic RMSE Δ"
     }
 
     outdir.mkdir(exist_ok=True)
@@ -90,6 +107,8 @@ def plot_timeseries(results_dir: Path, outdir: Path):
     for col, title in metrics.items():
         if col not in df_all.columns: continue
 
+        bases = get_model_baselines(summaries, col) if "rmse" in col else {}
+        
         fig, ax = plt.subplots(figsize=(10, 5))
         
         # Define a default ylabel just in case
@@ -128,7 +147,12 @@ def plot_timeseries(results_dir: Path, outdir: Path):
                 
             else:
                 # Raw means for Hydrostatic and Geostrophic RMSE
-                agg = mdf.groupby("forecast_hour")[col].agg(["mean", "std"]).reset_index()
+                mdf_clean = mdf.copy()
+                if "rmse" in col:
+                    base_val = bases.get(model, 0.0)
+                    mdf_clean[col] = pd.to_numeric(mdf_clean[col], errors="coerce") - base_val
+
+                agg = mdf_clean.groupby("forecast_hour")[col].agg(["mean", "std"]).reset_index()
                 if agg.empty:
                     continue
                 x = agg["forecast_hour"].values
@@ -136,8 +160,10 @@ def plot_timeseries(results_dir: Path, outdir: Path):
                 y_sigma = agg["std"].fillna(0.0).values
                 
                 # Abbreviate the y-axis label for RMSE 
-                if col in ["hydrostatic_rmse", "geostrophic_rmse"]:
-                    ylabel = "RMSE (Pa)"
+                if col == "hydrostatic_rmse":
+                    ylabel = "Δ RMSE (m²/s²)"
+                elif col == "geostrophic_rmse":
+                    ylabel = "Δ RMSE (m/s)"
                 else:
                     ylabel = title
                 
@@ -606,8 +632,8 @@ def plot_summary_tables(results_dir: Path, outdir: Path, leads=[12, 120, 240]):
             ("spectral_divergence", "Spec. Divergence ↓0"),
         ],
         "Balance": [
-            ("hydrostatic_rmse", "Hydrostatic RMSE Δ →0 [Pa]"),
-            ("geostrophic_rmse", "Geostrophic RMSE Δ →0 [Pa]"),
+            ("geostrophic_rmse", "Geostrophic RMSE Δ →0 [m/s]"),
+            ("hydrostatic_rmse", "Hydrostatic RMSE Δ →0 [m²/s²]"),
             ("lapse_rate_wasserstein", "Mean Lapse Rate W-Dist ↓0"),
         ]
     }
@@ -637,11 +663,9 @@ def plot_summary_tables(results_dir: Path, outdir: Path, leads=[12, 120, 240]):
                         if not df_lt.empty:
                             val = get_value(df_lt, metric)
                             if metric in ["hydrostatic_rmse", "geostrophic_rmse"] and not np.isnan(val):
-                                ref_val = hardcoded_rmse.get(metric, np.nan)
-                                if not np.isnan(ref_val): val -= ref_val
-                                elif "era5" in summaries:
-                                    df_lt_era5 = summaries["era5"][summaries["era5"][lead_col] == lead] if lead_col and lead_col in summaries["era5"].columns else summaries["era5"]
-                                    if not df_lt_era5.empty: val -= np.nan_to_num(get_value(df_lt_era5, metric))
+                                ref_val = get_value(df_lt, metric, is_ref=True)
+                                if not np.isnan(ref_val):
+                                    val -= ref_val
                             if not np.isnan(val): vals.append(val)
             max_abs[metric] = max([abs(v) for v in vals]) if vals else 1.0
             if max_abs[metric] == 0: max_abs[metric] = 1.0
@@ -677,13 +701,9 @@ def plot_summary_tables(results_dir: Path, outdir: Path, leads=[12, 120, 240]):
                                 val = get_value(df_lt, metric)
                                 
                     if metric in ["hydrostatic_rmse", "geostrophic_rmse"] and not np.isnan(val):
-                        ref_val = hardcoded_rmse.get(metric, np.nan)
-                        if not np.isnan(ref_val): val -= ref_val
-                        elif "era5" in summaries:
-                            df_era5 = summaries["era5"]
-                            lead_col_era5 = next((c for c in ["lead_hours", "lead_time_hours", "lead_time", "forecast_hour"] if c in df_era5.columns), None)
-                            df_lt_era5 = df_era5[df_era5[lead_col_era5] == lead] if lead_col_era5 else df_era5
-                            if not df_lt_era5.empty: val -= np.nan_to_num(get_value(df_lt_era5, metric))
+                        ref_val = get_value(df_lt, metric, is_ref=True)
+                        if not np.isnan(ref_val):
+                            val -= ref_val
                             
                     if np.isnan(val):
                         row_t.append("—")
@@ -867,6 +887,8 @@ def plot_combined_balance(results_dir: Path, outdir: Path, reference_label: str)
     df_ts = pd.concat(ts_frames, ignore_index=True)
     df_lr = pd.concat(lr_frames, ignore_index=True)
     sub_240 = df_lr[df_lr["lead_hours"] == 240]
+    
+    summaries = load_summaries(results_dir)
 
     # Create a 1x5 grid where RMSE plots take 2/3 (3+3 parts) and Lapse Rates take 1/3 (1+1+1 parts)
     fig = plt.figure(figsize=(24, 4))
@@ -875,20 +897,28 @@ def plot_combined_balance(results_dir: Path, outdir: Path, reference_label: str)
     
     # Plot RMSEs
     for ax, col in zip(axes[:2], ["geostrophic_rmse", "hydrostatic_rmse"]):
+        bases = get_model_baselines(summaries, col)
+        
         for model in MODELS:
             mdf = df_ts[df_ts["model"] == model]
             if mdf.empty or col not in mdf.columns: continue
-            agg = mdf.groupby("forecast_hour")[col].agg(["mean", "std"]).reset_index()
+            
+            mdf_clean = mdf.copy()
+            base_val = bases.get(model, 0.0)
+            mdf_clean[col] = pd.to_numeric(mdf_clean[col], errors="coerce") - base_val
+            
+            agg = mdf_clean.groupby("forecast_hour")[col].agg(["mean", "std"]).reset_index()
             if agg.empty: continue
             
             style = MODEL_STYLES.get(model, {"color": "grey", "marker": "."})
             ax.plot(agg["forecast_hour"], agg["mean"], label=NICE.get(model, model), color=style["color"], marker=style["marker"], markersize=3)
             ax.fill_between(agg["forecast_hour"], agg["mean"] - agg["std"].fillna(0), agg["mean"] + agg["std"].fillna(0), color=style["color"], alpha=0.18, linewidth=0)
             
-        title_base = "Geostrophic RMSE" if col.startswith("geo") else "Hydrostatic RMSE"
+        title_base = "Geostrophic RMSE Δ" if col.startswith("geo") else "Hydrostatic RMSE Δ"
+        ylabel = "Δ RMSE (m/s)" if col.startswith("geo") else "Δ RMSE (m²/s²)"
         ax.set_title(title_base, fontsize=28)
         ax.set_xlabel("Forecast Hour", fontsize=24)
-        ax.set_ylabel("RMSE (Pa)", fontsize=24)
+        ax.set_ylabel(ylabel, fontsize=24)
         ax.tick_params(axis='both', which='major', labelsize=20)
 
     # Plot Lapse Rates

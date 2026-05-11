@@ -313,6 +313,7 @@ def _evaluate_one(
     static_zarr_path: str | None = None,
     model_name: str = "model",
     extended_spectra: bool = False,
+    sp_ablation: str = "default",
 ) -> tuple[list[dict], list[dict], list[dict], list[dict]]:
     """
     Fetch, load, and evaluate one (date × lead_time) combination.
@@ -425,8 +426,20 @@ def _evaluate_one(
             # Critical for datasets with large chunks (e.g. FuXi chunks
             # span all 60 prediction timedeltas, so each var is ~120 MB).
             _NEEDED_VARS = set()
+            my_sp_names = SP_NAMES
+            my_msl_names = MSL_NAMES
+            my_q_names = Q_NAMES
+            
+            if sp_ablation == "hypsometric":
+                my_sp_names = ()
+            elif sp_ablation == "ref_sp":
+                my_sp_names = ()
+                my_msl_names = ()
+            elif sp_ablation == "dry_hydro":
+                my_q_names = ()
+
             for names in (T_NAMES, PHI_NAMES, U_NAMES, V_NAMES,
-                          Q_NAMES, MSL_NAMES, SP_NAMES, T2M_NAMES, ZSFC_NAMES):
+                          my_q_names, my_msl_names, my_sp_names, T2M_NAMES, ZSFC_NAMES):
                 _NEEDED_VARS.update(names)
             drop_vars = [v for v in ds_model_t.data_vars
                          if v.strip() not in _NEEDED_VARS]
@@ -636,12 +649,16 @@ def _evaluate_one(
             _CONS_VARS = {
                 "temperature", "geopotential",
                 "u_component_of_wind", "v_component_of_wind",
-                "specific_humidity", "q",
-                "mean_sea_level_pressure", "msl",
-                "surface_pressure", "sp",
                 "2m_temperature", "t2m",
                 "P_minus_E_cumulative",
             }
+            if sp_ablation != "dry_hydro":
+                _CONS_VARS.update({"specific_humidity", "q"})
+            if sp_ablation not in ("hypsometric", "ref_sp"):
+                _CONS_VARS.update({"surface_pressure", "sp"})
+            if sp_ablation != "ref_sp":
+                _CONS_VARS.update({"mean_sea_level_pressure", "msl"})
+
             drop_vars = [v for v in ds_pred_window.data_vars
                          if v.strip() not in _CONS_VARS]
             if drop_vars:
@@ -896,7 +913,7 @@ def _evaluate_one(
             else:
                 # Reference series unavailable — compute dry-only drift
                 slope_dry = compute_drift_slope(hours_model, dry_vals)
-                dry_ref = float(dry_vals[0])
+                dry_ref = float(dry_vals[0]) if len(dry_vals) > 0 else 0
                 drift = {
                     "dry_mass_drift_pct_per_day": (
                         (slope_dry / dry_ref) * 100.0
@@ -1237,6 +1254,7 @@ def run_evaluation(
     lead_times: list[tuple[str, np.timedelta64]] | None = None,
     static_zarr: str | None = None,
     extended_spectra: bool = False,
+    sp_ablation: str = "default",
 ) -> pd.DataFrame:
     """
     Compute all physics metrics for each (date × lead time), parallelised.
@@ -1346,6 +1364,7 @@ def run_evaluation(
                 static_zarr,
                 model_name,
                 extended_spectra,
+                sp_ablation,
             )
             futures[fut] = (idx, date_str, lead_label)
 
@@ -1537,6 +1556,10 @@ def main():
         "--extended-spectra", action="store_true",
         help="Compute Q spectrum and 850hPa KE spectrum in addition to 500hPa KE spectrum.",
     )
+    parser.add_argument(
+        "--sp-ablation", type=str, choices=["default", "hypsometric", "ref_sp", "dry_hydro"], default="default",
+        help="Ablation study for SP method by dropping specific variables.",
+    )
     args = parser.parse_args()
 
     dates = _resolve_dates(args)
@@ -1577,6 +1600,7 @@ def main():
         lead_times=lt,
         static_zarr=static_zarr,
         extended_spectra=args.extended_spectra,
+        sp_ablation=args.sp_ablation,
     )
 
 
