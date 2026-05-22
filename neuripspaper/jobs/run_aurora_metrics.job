@@ -1,0 +1,56 @@
+#!/bin/bash
+#SBATCH --job-name=aurora_metrics
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/neuripspaper/logs/aurora_metrics_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/neuripspaper/logs/aurora_metrics_%j.err
+#SBATCH --time=48:00:00          # Request 48 hours to prevent timeout
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=128G               # Request sufficient memory to prevent OOM
+#SBATCH --partition=rome
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/neuripspaper/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# Load S3 credentials from the steering .env file
+if [ -f "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env" ]; then
+    export $(grep -v '^#' /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env | xargs)
+    export AWS_ACCESS_KEY_ID=$UVA_S3_ACCESS_KEY
+    export AWS_SECRET_ACCESS_KEY=$UVA_S3_SECRET_KEY
+    export AWS_ENDPOINT_URL="https://ceph-gw.science.uva.nl:8000"
+fi
+
+REF="${REF:-ifs}"  # set REF=ifs to compare against HRES/IFS
+YEAR="${YEAR:-2022}"
+WORKERS="${WORKERS:-16}"
+
+if [ "$REF" = "ifs" ]; then
+  OUTDIR="/home/ekasteleyn/aurora_thesis/neuripspaper/results_ifs"
+else
+  OUTDIR="/home/ekasteleyn/aurora_thesis/neuripspaper/results"
+fi
+mkdir -p "$OUTDIR" /home/ekasteleyn/aurora_thesis/neuripspaper/logs
+
+echo "========================================"
+echo "AURORA METRICS RUN"
+echo "REF:      $REF"
+echo "YEAR:     $YEAR"
+echo "WORKERS:  $WORKERS"
+echo "OUTDIR:   $OUTDIR"
+echo "========================================"
+
+# Update the --prediction-zarr path below to point to the specific Zarr store or file in your S3 bucket
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python run_all_metrics.py \
+  --mode prediction \
+  --model aurora \
+  --year "$YEAR" \
+  --workers "$WORKERS" \
+  --prediction-zarr "s3://ekasteleyn-aurora-predictions/aurora_${YEAR}.zarr" \
+  --reference "$REF" \
+  --lead-times "12h,5d,10d" \
+  --output "$OUTDIR/physics_evaluation_aurora_${YEAR}.csv"
+
+echo "COMPLETE: $(date)"

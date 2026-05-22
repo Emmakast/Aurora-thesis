@@ -1,2 +1,0 @@
-usage: steer_aurora.py [-h] [--alpha ALPHA] [--phenomenon {AO,MJO,ENSO}]
-steer_aurora.py: error: argument --alpha: expected one argument

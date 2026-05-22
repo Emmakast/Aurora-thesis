@@ -1,0 +1,47 @@
+#!/bin/bash
+#SBATCH --job-name=generate_all_eofs
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eof_gen_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eof_gen_%j.err
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=192G
+#SBATCH --partition=rome  # <-- Change this to your cluster's standard CPU partition
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# Ensure eofs package is installed
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python -m pip install --quiet eofs
+
+# ── Define Variables ─────────────────────────────────────────────────────────
+# Pointing to the massive WB2 historical bucket you used for the AO
+ZARR_INPUT="gs://weatherbench2/datasets/era5/1959-2022-6h-1440x721.zarr"
+
+# Where you want the .nc loading patterns saved
+OUTPUT_DIR="/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator"
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+echo "Starting Full EOF Generation Pipeline: $(date)"
+
+#echo "-----------------------------------------------------"
+#echo "1. Generating NAO, PNA, and AAO Patterns..."
+#echo "-----------------------------------------------------"
+#PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_ao_eof.py \
+#    --input $ZARR_INPUT \
+#    --output_dir $OUTPUT_DIR
+
+echo "-----------------------------------------------------"
+echo "2. Generating MJO Combined EOF Patterns..."
+echo "-----------------------------------------------------"
+MJO_ZARR_INPUT="gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr"
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py \
+    --input $MJO_ZARR_INPUT \
+    --output_dir $OUTPUT_DIR
+
+echo "COMPLETE: $(date)"

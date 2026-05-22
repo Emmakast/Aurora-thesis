@@ -1,0 +1,17 @@
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.1
+[notice] To update, run: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python -m pip install --upgrade pip
+2026-05-21 15:25:39,274 - INFO - Loading Zarr store from gs://weatherbench2/datasets/era5/1959-2022-6h-1440x721.zarr
+2026-05-21 15:26:08,054 - INFO - Slicing tropical domain...
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 132, in <module>
+    generate_mjo_eofs(args.input, args.output_dir)
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 57, in generate_mjo_eofs
+    ds_tropics = slice_tropics(ds)
+                 ^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 13, in slice_tropics
+    ds = ds.assign_coords(lon=(ds.lon % 360)).sortby('lon')
+                               ^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/xarray/core/common.py", line 306, in __getattr__
+    raise AttributeError(
+AttributeError: 'Dataset' object has no attribute 'lon'. Did you mean: 'loc'?

@@ -149,7 +149,7 @@ def plot_timeseries(results_dir: Path, outdir: Path):
                 # Raw means for Hydrostatic and Geostrophic RMSE
                 mdf_clean = mdf.copy()
                 if "rmse" in col:
-                    base_val = bases.get(model, 0.0)
+                    base_val = bases.get(model, bases.get("hres", bases.get("era5", 0.0)))
                     mdf_clean[col] = pd.to_numeric(mdf_clean[col], errors="coerce") - base_val
 
                 agg = mdf_clean.groupby("forecast_hour")[col].agg(["mean", "std"]).reset_index()
@@ -493,12 +493,24 @@ def load_summaries(results_dir: Path) -> dict[str, pd.DataFrame]:
             results_dir / f"physics_summary_{m}_2020.csv",
             results_dir / f"physics_summary_{m}_2020_vs_era5.csv",
             results_dir / f"physics_summary_{m}_s3_2022.csv",
-            results_dir / f"physics_summary_{m}_2022.csv"
+            results_dir / f"physics_summary_{m}_2022.csv",
+            results_dir / f"physics_evaluation_{m}.csv",
+            results_dir / f"physics_summary_{m}.csv",
         ]
+        
+        found = False
         for p in paths:
             if p.exists():
                 out[m] = pd.read_csv(p)
+                found = True
                 break
+                
+        # Fallback: search for any summary/evaluation file matching the model
+        if not found:
+            for p in results_dir.glob(f"*{m}*.csv"):
+                if "summary" in p.name or "evaluation" in p.name:
+                    out[m] = pd.read_csv(p)
+                    break
     return out
 
 def get_value(df: pd.DataFrame, metric: str, is_ref: bool = False) -> float:
@@ -618,7 +630,7 @@ def plot_summary_tables(results_dir: Path, outdir: Path, leads=[12, 120, 240]):
     w_dists = calculate_wasserstein(results_dir)
     hardcoded_rmse = get_or_compute_hardcoded_rmse(results_dir, summaries)
     
-    models_to_plot = [m for m in MODELS if m != "aurora"]
+    models_to_plot = MODELS
     
     groups = {
         "Conservation_Variability": [
@@ -664,6 +676,8 @@ def plot_summary_tables(results_dir: Path, outdir: Path, leads=[12, 120, 240]):
                             val = get_value(df_lt, metric)
                             if metric in ["hydrostatic_rmse", "geostrophic_rmse"] and not np.isnan(val):
                                 ref_val = get_value(df_lt, metric, is_ref=True)
+                                if np.isnan(ref_val) and metric in hardcoded_rmse:
+                                    ref_val = hardcoded_rmse[metric]
                                 if not np.isnan(ref_val):
                                     val -= ref_val
                             if not np.isnan(val): vals.append(val)
@@ -702,6 +716,8 @@ def plot_summary_tables(results_dir: Path, outdir: Path, leads=[12, 120, 240]):
                                 
                     if metric in ["hydrostatic_rmse", "geostrophic_rmse"] and not np.isnan(val):
                         ref_val = get_value(df_lt, metric, is_ref=True)
+                        if np.isnan(ref_val) and metric in hardcoded_rmse:
+                            ref_val = hardcoded_rmse[metric]
                         if not np.isnan(ref_val):
                             val -= ref_val
                             
@@ -904,7 +920,7 @@ def plot_combined_balance(results_dir: Path, outdir: Path, reference_label: str)
             if mdf.empty or col not in mdf.columns: continue
             
             mdf_clean = mdf.copy()
-            base_val = bases.get(model, 0.0)
+            base_val = bases.get(model, bases.get("hres", bases.get("era5", 0.0)))
             mdf_clean[col] = pd.to_numeric(mdf_clean[col], errors="coerce") - base_val
             
             agg = mdf_clean.groupby("forecast_hour")[col].agg(["mean", "std"]).reset_index()

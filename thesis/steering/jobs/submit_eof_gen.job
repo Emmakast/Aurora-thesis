@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH --job-name=generate_eof
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eof_gen_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eof_gen_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# Ensure eofs package is installed
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python -m pip install --quiet eofs
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+echo "Starting EOF Generation: $(date)"
+
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python generate_ao_eof.py
+
+echo "COMPLETE: $(date)"

@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH --job-name=batch_viz
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/batch_viz_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/batch_viz_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
+#SBATCH --partition=rome
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+echo "Starting batch visualization..."
+
+bash run_batch_viz.sh
+
+echo "COMPLETE: $(date)"

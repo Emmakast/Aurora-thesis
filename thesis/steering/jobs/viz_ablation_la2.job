@@ -1,0 +1,72 @@
+#!/bin/bash
+#SBATCH --job-name=viz_ablation_2
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/viz_ablation_2_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/viz_ablation_2_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
+#SBATCH --partition=rome
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+BASE_DIR="/home/ekasteleyn/aurora_thesis/thesis/steering/vectors"
+SCRIPT_GLOBAL="/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization/visualize_alphas_grid_global.py"
+SCRIPT_GRID="/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization/visualize_alphas_grid.py"
+
+LA_IDX=2
+TARGET_DIR="${BASE_DIR}/AO_1encoder(2)_la${LA_IDX}"
+
+echo "Processing $TARGET_DIR ..."
+
+if [ ! -d "$TARGET_DIR" ]; then
+    echo "Directory not found, aborting."
+    exit 1
+fi
+
+# 1. Clean up old interfering files
+mkdir -p "$TARGET_DIR/archived_old"
+mv "$TARGET_DIR"/*cont_232* "$TARGET_DIR/archived_old/" 2>/dev/null || true
+mv "$TARGET_DIR"/*20201202* "$TARGET_DIR/archived_old/" 2>/dev/null || true
+
+# 2. Fix capitalized "AO" in filenames
+for f in "$TARGET_DIR"/steered_AO_*.nc; do
+    [ -e "$f" ] && mv "$f" "${f/steered_AO_/steered_ao_}"
+done
+for f in "$TARGET_DIR"/base_AO_*.nc; do
+    [ -e "$f" ] && mv "$f" "${f/base_AO_/base_ao_}"
+done
+
+# 3. Parameters
+PHENOM="AO"
+SUFFIX="1encoder(2)_la${LA_IDX}"
+DATE="20170203"
+INIT="12"
+MASK="polar_both_lat60p0"
+
+# Fix base file missing/mismatch
+EXPECTED_BASE="$TARGET_DIR/base_ao_${SUFFIX}_${DATE}_${INIT}00_alpha_0.0.nc"
+CONT10_BASE="${BASE_DIR}/AO_1encoder(2)_cont10/base_ao_cont_10_${DATE}_${INIT}00_alpha_0.0.nc"
+
+if [ ! -f "$EXPECTED_BASE" ]; then
+    EXISTING_BASE=$(ls "$TARGET_DIR"/base_*${DATE}_${INIT}00*.nc 2>/dev/null | head -n 1)
+    if [ -n "$EXISTING_BASE" ]; then
+        cp "$EXISTING_BASE" "$EXPECTED_BASE"
+    elif [ -f "$CONT10_BASE" ]; then
+        cp "$CONT10_BASE" "$EXPECTED_BASE"
+    fi
+fi
+
+echo "Running plots for $DATE with suffix $SUFFIX"
+
+# 4. Generate plots
+python3 "$SCRIPT_GLOBAL" --data-dir "$TARGET_DIR" --phenomenon "$PHENOM" --name-suffix "$SUFFIX" --date "$DATE" --init-hour "$INIT" --mask-tag "$MASK"
+python3 "$SCRIPT_GRID" --data-dir "$TARGET_DIR" --phenomenon "$PHENOM" --name-suffix "$SUFFIX" --date "$DATE" --init-hour "$INIT" --mask-tag "$MASK"
+
+echo "COMPLETE: $(date)"

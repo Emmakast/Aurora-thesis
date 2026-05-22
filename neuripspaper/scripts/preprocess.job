@@ -1,0 +1,36 @@
+#!/bin/bash
+#SBATCH --job-name=aurora_nc_to_zarr
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/neuripspaper/logs/aurora_preprocess_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/neuripspaper/logs/aurora_preprocess_%j.err
+#SBATCH --time=12:00:00
+#SBATCH --partition=rome
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=120G
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/neuripspaper/scripts
+
+set -e  # Exit immediately if a command exits with a non-zero status
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# Ensure required packages are installed
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python -m pip install "dask[distributed]" h5netcdf --quiet
+
+# Load S3 credentials
+if [ -f "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env" ]; then
+    # Use tr -d '\r' to remove Windows line endings before parsing
+    export $(cat /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env | tr -d '\r' | grep -v '^#' | xargs)
+    export AWS_ACCESS_KEY_ID=$UVA_S3_ACCESS_KEY
+    export AWS_SECRET_ACCESS_KEY=$UVA_S3_SECRET_KEY
+    export AWS_ENDPOINT_URL="https://ceph-gw.science.uva.nl:8000"
+fi
+
+# Run the preprocessing script
+echo "Starting preprocessing (streaming directly from S3)..."
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python preprocess_nc_to_zarr.py
+
+echo "Job complete!"

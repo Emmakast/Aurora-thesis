@@ -81,7 +81,9 @@ REF_ZARR = "gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_wi
 IFS_T0_ZARR = "gs://weatherbench2/datasets/hres_t0/2016-2022-6h-1440x721.zarr"
 IFS_T0_LOWRES_ZARR = "gs://weatherbench2/datasets/hres_t0/2016-2022-6h-512x256_equiangular_conservative.zarr"
 
-OUTPUT_DIR = Path.home() / "aurora_thesis" / "thesis" / "benchmark" / "results"
+# Default output roots (split by reference type)
+OUTPUT_DIR_ERA5 = Path("/home/ekasteleyn/aurora_thesis/neuripspaper/results")
+OUTPUT_DIR_IFS = Path("/home/ekasteleyn/aurora_thesis/neuripspaper/results_ifs")
 
 # Target lead times: (label, timedelta)
 # Using 12h as the first lead time to align with NeuralGCM (which lacks 6h step)
@@ -106,9 +108,45 @@ DEFAULT_WORKERS = 16
 # Zarr I/O
 # ============================================================================
 
-def open_zarr_anonymous(url: str) -> xr.Dataset:
-    """Open a public GCS Zarr store without authentication."""
-    ds = xr.open_zarr(url, storage_options={"token": "anon"})
+def open_dataset_uri(url: str) -> xr.Dataset:
+    """Open a Zarr store or NetCDF file, handling GCS anon and S3 auth."""
+    import os
+    
+    storage_options = {}
+    if url.startswith("gs://"):
+        storage_options = {"token": "anon"}
+    elif url.startswith("s3://"):
+        key = os.environ.get("AWS_ACCESS_KEY_ID")
+        secret = os.environ.get("AWS_SECRET_ACCESS_KEY")
+        endpoint = os.environ.get("AWS_ENDPOINT_URL")
+        storage_options = {
+            "key": key.strip() if key else None,
+            "secret": secret.strip() if secret else None,
+            "client_kwargs": {"endpoint_url": endpoint.strip() if endpoint else None}
+        }
+        
+    if "*" in url:
+        import fsspec
+        fs, _, _ = fsspec.get_fs_token_paths(url, storage_options=storage_options)
+        protocol = url.split("://")[0] + "://" if "://" in url else ""
+        files = [protocol + p.lstrip(protocol) for p in fs.glob(url)]
+        
+        ds = xr.open_mfdataset(
+            files, 
+            engine="h5netcdf", 
+            storage_options=storage_options, 
+            combine="by_coords",
+            parallel=True,       # Open files concurrently
+            chunks={},           # Required to use parallel=True
+            coords="minimal",    # Crucial S3 speedup: don't strictly compare identical coordinate arrays
+            data_vars="minimal",
+            compat="override"
+        )
+    elif url.endswith(".nc"):
+        ds = xr.open_dataset(url, engine="h5netcdf", storage_options=storage_options)
+    else:
+        ds = xr.open_zarr(url, storage_options=storage_options)
+        
     # Sanitise variable AND dimension names (some Zarrs have trailing whitespace)
     rename = {}
     for v in ds.data_vars:
@@ -314,6 +352,7 @@ def _evaluate_one(
     model_name: str = "model",
     extended_spectra: bool = False,
     sp_ablation: str = "default",
+    aurora_nc_dir: str | None = None,
 ) -> tuple[list[dict], list[dict], list[dict], list[dict]]:
     """
     Fetch, load, and evaluate one (date × lead_time) combination.
@@ -337,15 +376,15 @@ def _evaluate_one(
 
     # Open datasets inside the worker process to avoid pickling issues
     ds_model_full = None
-    if mode in ("joint", "prediction", "model"):
-        ds_model_full = open_zarr_anonymous(model_zarr_path)
+    if mode in ("joint", "prediction", "model") and not aurora_nc_dir:
+        ds_model_full = open_dataset_uri(model_zarr_path)
     
-    ds_ref_full = open_zarr_anonymous(ref_zarr_path)
+    ds_ref_full = open_dataset_uri(ref_zarr_path)
     
     # Load static fields — from a dedicated static Zarr if provided
     # (needed when ref_zarr is e.g. HRES-T0 which lacks static fields)
     if static_zarr_path:
-        ds_static_src = open_zarr_anonymous(static_zarr_path)
+        ds_static_src = open_dataset_uri(static_zarr_path)
     else:
         ds_static_src = ds_ref_full
     ds_static = load_static_fields(ds_static_src)
@@ -398,29 +437,39 @@ def _evaluate_one(
         area_model = None
         _lead_td_mismatch = False
 
-        if ds_model_full is not None:
-            # Normalise dimension names (some zarrs have trailing whitespace)
-            dim_rename = {d: d.strip() for d in ds_model_full.dims if d != d.strip()}
-            if dim_rename:
-                ds_model_full = ds_model_full.rename(dim_rename)
-
-            ds_model_t = ds_model_full.sel(time=init_time)
-
-            # Auto-detect prediction_timedelta dimension name
-            pred_td_dim = _detect_pred_td_dim(ds_model_t)
-            _lead_td_mismatch = False  # track if nearest != requested
-            if pred_td_dim is not None and pred_td_dim in ds_model_t.dims:
-                ds_model_t = ds_model_t.sel(
-                    {pred_td_dim: lead_td}, method="nearest"
-                )
-                # Check if the actual selected timedelta matches requested
-                actual_td = ds_model_t.coords.get(pred_td_dim)
-                if actual_td is not None:
-                    actual_td_val = actual_td.values
-                    if isinstance(actual_td_val, np.timedelta64) and actual_td_val != lead_td:
-                        _log(f"    [{counter}] ⚠ Requested lead={lead_td}, "
-                             f"nearest available={actual_td_val} — skipping metrics for this lead time")
-                        _lead_td_mismatch = True
+        if ds_model_full is not None or aurora_nc_dir:
+            if aurora_nc_dir:
+                date_fmt = init_time.astype('datetime64[s]').item().strftime('%Y%m%d')
+                lead_int = int(lead_td / np.timedelta64(1, "h"))
+                step = lead_int // 6
+                nc_path = f"{aurora_nc_dir.rstrip('/')}/aurora_pred_{date_fmt}_0000_step{step:02d}_{lead_int:03d}h.nc"
+                _log(f"    [{counter}] Fetching NC: {nc_path}")
+                ds_model_t = open_dataset_uri(nc_path).load()
+                pred_td_dim = "prediction_timedelta"
+                _lead_td_mismatch = False
+            else:
+                # Normalise dimension names (some zarrs have trailing whitespace)
+                dim_rename = {d: d.strip() for d in ds_model_full.dims if d != d.strip()}
+                if dim_rename:
+                    ds_model_full = ds_model_full.rename(dim_rename)
+    
+                ds_model_t = ds_model_full.sel(time=init_time)
+    
+                # Auto-detect prediction_timedelta dimension name
+                pred_td_dim = _detect_pred_td_dim(ds_model_t)
+                _lead_td_mismatch = False  # track if nearest != requested
+                if pred_td_dim is not None and pred_td_dim in ds_model_t.dims:
+                    ds_model_t = ds_model_t.sel(
+                        {pred_td_dim: lead_td}, method="nearest"
+                    )
+                    # Check if the actual selected timedelta matches requested
+                    actual_td = ds_model_t.coords.get(pred_td_dim)
+                    if actual_td is not None:
+                        actual_td_val = actual_td.values
+                        if isinstance(actual_td_val, np.timedelta64) and actual_td_val != lead_td:
+                            _log(f"    [{counter}] ⚠ Requested lead={lead_td}, "
+                                 f"nearest available={actual_td_val} — skipping metrics for this lead time")
+                            _lead_td_mismatch = True
 
             # Drop variables not needed for physics metrics to reduce I/O.
             # Critical for datasets with large chunks (e.g. FuXi chunks
@@ -631,21 +680,12 @@ def _evaluate_one(
     spectrum_rows: list[dict] = []  # Combined KE and Q spectra
     lr_dist_rows: list[dict] = []   # Full lapse rate distributions
 
-    if mode in ("joint", "prediction", "model") and ds_model_full is not None and not _lead_td_mismatch:
+    if mode in ("joint", "prediction", "model") and (ds_model_full is not None or aurora_nc_dir is not None) and not _lead_td_mismatch:
         try:
             td_start = np.timedelta64(12, "h")  # Start at 12h to align with NeuralGCM
             td_end = DRIFT_WINDOW_END.get(lead_hours, lead_td)
 
-            # --- Model time-series ---
-            ds_pred_init = ds_model_full.sel(time=init_time)
-            pred_td_dim = _detect_pred_td_dim(ds_pred_init) or "prediction_timedelta"
-
-            # Lazy selection of timedelta window [12 h … end_time]
-            ds_pred_window = ds_pred_init.sel(
-                {pred_td_dim: slice(td_start, td_end)}
-            )
-
-            # Drop unneeded variables lazily (before any .load())
+            # Define unneeded variables lazily (before any .load())
             _CONS_VARS = {
                 "temperature", "geopotential",
                 "u_component_of_wind", "v_component_of_wind",
@@ -659,19 +699,36 @@ def _evaluate_one(
             if sp_ablation != "ref_sp":
                 _CONS_VARS.update({"mean_sea_level_pressure", "msl"})
 
-            drop_vars = [v for v in ds_pred_window.data_vars
-                         if v.strip() not in _CONS_VARS]
-            if drop_vars:
-                ds_pred_window = ds_pred_window.drop_vars(drop_vars)
+            if aurora_nc_dir:
+                td_start_hours = 12
+                td_end_hours = int(td_end / np.timedelta64(1, "h"))
+                avail_tds = [np.timedelta64(h, "h") for h in range(td_start_hours, td_end_hours + 6, 6)]
+                ds_pred_window = None
+                pred_td_dim = "prediction_timedelta"
+            else:
+                # --- Model time-series ---
+                ds_pred_init = ds_model_full.sel(time=init_time)
+                pred_td_dim = _detect_pred_td_dim(ds_pred_init) or "prediction_timedelta"
+    
+                # Lazy selection of timedelta window [12 h … end_time]
+                ds_pred_window = ds_pred_init.sel(
+                    {pred_td_dim: slice(td_start, td_end)}
+                )
+    
+                drop_vars = [v for v in ds_pred_window.data_vars
+                             if v.strip() not in _CONS_VARS]
+                if drop_vars:
+                    ds_pred_window = ds_pred_window.drop_vars(drop_vars)
+    
+                # Squeeze time if still present as a dimension
+                if "time" in ds_pred_window.dims:
+                    ds_pred_window = ds_pred_window.isel(time=0)
+    
+                # Keep every available timestep (no subsampling) so that
+                # diurnal cycles are fully resolved in the time-series output.
+    
+                avail_tds = ds_pred_window[pred_td_dim].values
 
-            # Squeeze time if still present as a dimension
-            if "time" in ds_pred_window.dims:
-                ds_pred_window = ds_pred_window.isel(time=0)
-
-            # Keep every available timestep (no subsampling) so that
-            # diurnal cycles are fully resolved in the time-series output.
-
-            avail_tds = ds_pred_window[pred_td_dim].values
             if len(avail_tds) < 2:
                 _log(f"    [{counter}] ⚠ Drift: <2 time steps in window — skipping")
                 raise ValueError("Need ≥2 time steps for drift regression")
@@ -680,10 +737,18 @@ def _evaluate_one(
             dry_vals, water_vals, energy_vals = [], [], []
             pe_vals = []
             hydro_vals, geo_vals = [], []
-            model_level_dim_d = _detect_level_dim(ds_pred_window)
+            
+            # For detecting level dim, if using NC files, default to "level", otherwise detect from ds
+            model_level_dim_d = "level" if aurora_nc_dir else _detect_level_dim(ds_pred_window)
 
             for td_val in avail_tds:
-                snap = ds_pred_window.sel({pred_td_dim: td_val}).load()
+                if aurora_nc_dir:
+                    h = int(td_val / np.timedelta64(1, "h"))
+                    date_fmt = init_time.astype('datetime64[s]').item().strftime('%Y%m%d')
+                    nc_path = f"{aurora_nc_dir.rstrip('/')}/aurora_pred_{date_fmt}_0000_step{int(h//6):02d}_{h:03d}h.nc"
+                    snap = open_dataset_uri(nc_path).load()
+                else:
+                    snap = ds_pred_window.sel({pred_td_dim: td_val}).load()
 
                 # Ensure (lat, lon) ordering
                 if "latitude" in snap.dims and "longitude" in snap.dims:
@@ -1255,6 +1320,7 @@ def run_evaluation(
     static_zarr: str | None = None,
     extended_spectra: bool = False,
     sp_ablation: str = "default",
+    aurora_nc_dir: str | None = None,
 ) -> pd.DataFrame:
     """
     Compute all physics metrics for each (date × lead time), parallelised.
@@ -1310,14 +1376,14 @@ def run_evaluation(
     # For ProcessPoolExecutor, we pass paths to workers and they open datasets themselves.
     # But checking if we can open them first is good practice.
     if verbose:
-        print("\n  Checking Zarr stores (anonymous) …")
+        print("\n  Checking datastores …")
     
     # Just open to check presence and print metadata
     ds_model_check = None
     if mode in ("joint", "prediction", "model"):
-        ds_model_check = open_zarr_anonymous(prediction_zarr)
+        ds_model_check = open_dataset_uri(prediction_zarr)
     
-    ds_ref_check = open_zarr_anonymous(ref_zarr)
+    ds_ref_check = open_dataset_uri(ref_zarr)
 
     if verbose:
         if ds_model_check is not None:
@@ -1365,6 +1431,7 @@ def run_evaluation(
                 model_name,
                 extended_spectra,
                 sp_ablation,
+                aurora_nc_dir,
             )
             futures[fut] = (idx, date_str, lead_label)
 
@@ -1560,6 +1627,10 @@ def main():
         "--sp-ablation", type=str, choices=["default", "hypsometric", "ref_sp", "dry_hydro"], default="default",
         help="Ablation study for SP method by dropping specific variables.",
     )
+    parser.add_argument(
+        "--aurora-nc-dir", type=str, default=None,
+        help="Path to directory containing individual Aurora NetCDF files. If set, bypasses prediction-zarr.",
+    )
     args = parser.parse_args()
 
     dates = _resolve_dates(args)
@@ -1568,7 +1639,7 @@ def main():
     ref_zarr_path = args.ref_zarr
     static_zarr = args.static_zarr
     ref_suffix = ""
-    
+
     if args.reference == "ifs":
         # Use IFS HRES t=0 as reference instead of ERA5
         # Check if model uses low-res grid (NeuralGCM)
@@ -1584,7 +1655,8 @@ def main():
     if args.output:
         output = Path(args.output)
     else:
-        output = OUTPUT_DIR / f"physics_evaluation_{args.model}_{args.year}{ref_suffix}.csv"
+        default_root = OUTPUT_DIR_IFS if args.reference == "ifs" else OUTPUT_DIR_ERA5
+        output = default_root / f"physics_evaluation_{args.model}_{args.year}{ref_suffix}.csv"
 
     lt = _parse_lead_times(args.lead_times) if args.lead_times else None
 
@@ -1601,6 +1673,7 @@ def main():
         static_zarr=static_zarr,
         extended_spectra=args.extended_spectra,
         sp_ablation=args.sp_ablation,
+        aurora_nc_dir=args.aurora_nc_dir,
     )
 
 

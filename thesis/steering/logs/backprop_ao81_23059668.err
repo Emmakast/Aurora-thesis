@@ -1,0 +1,5 @@
+/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/torch/autograd/graph.py:841: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:897.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/torch/autograd/graph.py:841: UserWarning: Flash Attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:114.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[W522 16:24:29.005282042 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

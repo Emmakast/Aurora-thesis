@@ -1,0 +1,42 @@
+#!/bin/bash
+#SBATCH --job-name=aurora_ablation
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/aurora_ablation_%A_%a.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/aurora_ablation_%A_%a.err
+#SBATCH --time=02:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --array=0-2
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
+
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+cd /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/steering
+
+BASE_DIR="/home/ekasteleyn/aurora_thesis/thesis/steering"
+ALPHAS="-10.0 -5.0 -2.0 -1.0 1.0 2.0 5.0 10.0"
+
+# Define the latents based on array ID
+latents=(0 1 2)
+LATENT_IDX=${latents[$SLURM_ARRAY_TASK_ID]}
+
+OUT_DIR="${BASE_DIR}/vectors/AO_1encoder(2)_la${LATENT_IDX}"
+mkdir -p "${OUT_DIR}"
+
+echo "Running Ablation for Latent: ${LATENT_IDX}"
+echo "Output Directory: ${OUT_DIR}"
+
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python steer_aurora_ablated.py \
+    --phenomenon "AO" \
+    --csv "${BASE_DIR}/data/target_dates.csv" \
+    --latent-idx ${LATENT_IDX} \
+    --alphas ${ALPHAS} \
+    --out-dir "${OUT_DIR}"
+
+echo "Ablation run complete for Latent ${LATENT_IDX}."

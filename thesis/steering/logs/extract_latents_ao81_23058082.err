@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/1_extract_and_mask_latents.py", line 164, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/1_extract_and_mask_latents.py", line 99, in main
+    active_inputs = load_initial_states(active_dates, device)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/1_extract_and_mask_latents.py", line 53, in load_initial_states
+    batch = batch.to(device)
+            ^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/batch.py", line 186, in to
+    return self._fmap(lambda x: x.to(device))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/batch.py", line 174, in _fmap
+    atmos_vars={k: f(v) for k, v in self.atmos_vars.items()},
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/batch.py", line 174, in <dictcomp>
+    atmos_vars={k: f(v) for k, v in self.atmos_vars.items()},
+                   ^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/batch.py", line 186, in <lambda>
+    return self._fmap(lambda x: x.to(device))
+                                ^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 104.00 MiB. GPU 0 has a total capacity of 39.49 GiB of which 3.25 MiB is free. Including non-PyTorch memory, this process has 39.48 GiB memory in use. Of the allocated memory 38.68 GiB is allocated by PyTorch, and 330.99 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

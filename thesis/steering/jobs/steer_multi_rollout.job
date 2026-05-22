@@ -1,0 +1,55 @@
+#!/bin/bash
+#SBATCH --job-name=steer_ao_multiroll
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_ao_multiroll_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_ao_multiroll_%j.err
+#SBATCH --time=24:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# Base output directory
+BASE_OUT_DIR="/home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_multiroll"
+mkdir -p "$BASE_OUT_DIR"
+mkdir -p /home/ekasteleyn/aurora_thesis/thesis/steering/logs
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+ALPHAS="-10.0 -5.0 -2.0 -1.0 1.0 2.0 5.0 10.0"
+
+# Rollout steps (1 step = 6 hours)
+# 1=6h, 4=1d, 8=2d, 12=3d, 16=4d, 20=5d, 24=6d, 28=7d, 32=8d, 36=9d, 40=10d
+STEPS_ARRAY=(1 4 8 12 16 20 24 28 32 36 40)
+
+echo "Starting Aurora Steering (Multiple Rollouts)..."
+echo "Running with alphas: $ALPHAS"
+
+for STEPS in "${STEPS_ARRAY[@]}"; do
+    echo "=========================================================="
+    echo "Running for $STEPS steps ($((STEPS * 6)) hours)..."
+    
+    STEP_OUT_DIR="${BASE_OUT_DIR}/steps_${STEPS}"
+    mkdir -p "$STEP_OUT_DIR"
+    
+    PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python steering/steer_aurora.py \
+        --phenomenon AO \
+        --csv /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_ao_81.csv \
+        --steps $STEPS \
+        --init-hour 12 \
+        --alphas $ALPHAS \
+        --mask-region none \
+        --name-suffix "ao81_steps${STEPS}" \
+        --output-dir "$STEP_OUT_DIR"
+        
+    echo "Finished steps $STEPS"
+done
+
+echo "COMPLETE: $(date)"

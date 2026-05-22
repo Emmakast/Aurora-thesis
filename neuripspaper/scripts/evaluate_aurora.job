@@ -1,0 +1,37 @@
+#!/bin/bash
+#SBATCH --job-name=aurora_eval
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/neuripspaper/logs/aurora_eval_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/neuripspaper/logs/aurora_eval_%j.err
+#SBATCH --time=24:00:00
+#SBATCH --partition=rome
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=120G
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/neuripspaper/scripts
+
+set -e  # Exit immediately if a command exits with a non-zero status
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# Load S3 credentials
+if [ -f "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env" ]; then
+    # Use tr -d '\r' to remove Windows line endings before parsing
+    export $(cat /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env | tr -d '\r' | grep -v '^#' | xargs)
+    export AWS_ACCESS_KEY_ID=$UVA_S3_ACCESS_KEY
+    export AWS_SECRET_ACCESS_KEY=$UVA_S3_SECRET_KEY
+    export AWS_ENDPOINT_URL="https://ceph-gw.science.uva.nl:8000"
+fi
+
+# Run the evaluation script
+echo "Starting Aurora 2022 evaluation (streaming directly from S3)..."
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python run_all_metrics.py \
+    --year 2022 \
+    --model aurora \
+    --aurora-nc-dir "s3://ekasteleyn-aurora-predictions/aurora_hres_validation" \
+    --workers 16
+
+echo "Job complete!"

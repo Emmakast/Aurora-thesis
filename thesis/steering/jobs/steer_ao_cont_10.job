@@ -1,0 +1,46 @@
+#!/bin/bash
+#SBATCH --job-name=steer_ao_cont_10
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_ao_cont_10_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_ao_cont_10_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+# Ensure output directory exists
+OUT_DIR="/home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_cont10"
+mkdir -p "${OUT_DIR}"
+
+CSV_FILE="thesis/steering/data/contrastive_pairs_10.csv"
+
+# Extract dates from the CSV file
+DATES=$(python3 -c "import pandas as pd; df=pd.read_csv('$CSV_FILE'); print(' '.join(list(df['active_date']) + list(df['neutral_date'])))")
+
+echo "Extracting latents for dates: $DATES"
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python thesis/steering/scripts/data_loader/extract_latents_hres.py \
+    --dates $DATES \
+    --init-hours 0
+
+echo "Starting Steering Job with Top 10 Contrastive Pairs..."
+ALPHAS="-10.0 -5.0 -2.0 -1.0 1.0 2.0 5.0 10.0"
+# Run Steer Aurora Script
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python thesis/steering/scripts/steering/steer_aurora.py \
+    --csv "$CSV_FILE" \
+    --phenomenon AO \
+    --base-date 2017-03-08 \
+    --name-suffix cont_10 \
+    --alphas $ALPHAS \
+    --output-dir "${OUT_DIR}"
+
+echo "Done."

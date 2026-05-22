@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH --job-name=steer_ao_cont_232
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_ao_cont_232_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_ao_cont_232_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+# Ensure output directory exists
+OUT_DIR="/home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_cont232"
+mkdir -p "${OUT_DIR}"
+
+echo "Starting Steering Job with 232 Contrastive Pairs..."
+ALPHAS="-10.0 -5.0 -2.0 -1.0 1.0 2.0 5.0 10.0"
+# Run Steer Aurora Script
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python thesis/steering/scripts/steering/steer_aurora.py \
+    --csv thesis/steering/data/target_dates_ao_232.csv \
+    --phenomenon AO \
+    --name-suffix cont_232 \
+    --alphas $ALPHAS  \
+    --output-dir "${OUT_DIR}"
+
+echo "Done."

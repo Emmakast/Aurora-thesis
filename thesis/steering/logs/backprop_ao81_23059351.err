@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/2_rollout_and_backprop.py", line 177, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/2_rollout_and_backprop.py", line 108, in main
+    target_layer = dict([*model.named_modules()])[target_layer_name]
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'backbone.encoder_layers.2'

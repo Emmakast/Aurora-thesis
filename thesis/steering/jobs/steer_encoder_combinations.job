@@ -1,0 +1,66 @@
+#!/bin/bash
+#SBATCH --job-name=steer_enc_combos
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_combos_%A_%a.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_combos_%A_%a.err
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --array=0-4
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+BASE_DIR="/home/ekasteleyn/aurora_thesis/thesis/steering"
+SCRIPT="${BASE_DIR}/scripts/steering/steer_aurora_multi.py"
+ALPHAS="-10.0 -5.0 -2.0 -1.0 1.0 2.0 5.0 10.0"
+
+# Define arrays for the 5 configurations mapped to SLURM_ARRAY_TASK_ID
+keys=("enc0" "enc1" "enc01" "enc12" "enc02")
+
+out_dirs=(
+    "${BASE_DIR}/vectors/AO_1encoder(0)"
+    "${BASE_DIR}/vectors/AO_1encoder(1)"
+    "${BASE_DIR}/vectors/AO_2encoders(0,1)"
+    "${BASE_DIR}/vectors/AO_2encoders(1,2)"
+    "${BASE_DIR}/vectors/AO_2encoders(0,2)"
+)
+
+weights=(
+    "1.0 0.0 0.0"
+    "0.0 1.0 0.0"
+    "1.0 1.0 0.0"
+    "0.0 1.0 1.0"
+    "1.0 0.0 1.0"
+)
+
+# Select configuration based on array task ID (0 through 4)
+KEY=${keys[$SLURM_ARRAY_TASK_ID]}
+OUT_DIR=${out_dirs[$SLURM_ARRAY_TASK_ID]}
+LAYER_WEIGHTS=${weights[$SLURM_ARRAY_TASK_ID]}
+
+echo "Running configuration: ${KEY} (Array ID: $SLURM_ARRAY_TASK_ID)"
+echo "Output directory: ${OUT_DIR}"
+echo "Layer weights: ${LAYER_WEIGHTS}"
+echo "Alphas: ${ALPHAS}"
+
+mkdir -p "${OUT_DIR}"
+
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python "${SCRIPT}" \
+    --out-dir "${OUT_DIR}" \
+    --layer-weights ${LAYER_WEIGHTS} \
+    --phenomenon "AO" \
+    --csv "${BASE_DIR}/data/target_dates_ao_81.csv" \
+    --mask-region "polar" \
+    --hemisphere "north" \
+    --alphas ${ALPHAS}
+    
+echo "Completed configuration: ${KEY}"

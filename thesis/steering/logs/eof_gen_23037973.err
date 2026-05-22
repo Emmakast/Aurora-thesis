@@ -1,0 +1,13 @@
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.1
+[notice] To update, run: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python -m pip install --upgrade pip
+2026-05-22 09:52:17,803 - INFO - Loading Zarr store from gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+2026-05-22 09:52:47,136 - INFO - Slicing tropical domain...
+2026-05-22 09:53:12,113 - WARNING - Could not find all required variables. Found: ['u850', 'u200']
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 148, in <module>
+    generate_mjo_eofs(args.input, args.output_dir)
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 76, in generate_mjo_eofs
+    olr = vars_dict['olr']
+          ~~~~~~~~~^^^^^^^
+KeyError: 'olr'

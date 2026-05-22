@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH --job-name=viz_multiroll
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/viz_multiroll_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/viz_multiroll_%j.err
+#SBATCH --time=08:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
+#SBATCH --partition=rome
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+echo "Starting Multi-Rollout Visualization Batch Job (CPU)..."
+
+# Run the bash visualization script
+bash /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization/run_multiroll_viz.sh
+
+echo "COMPLETE: $(date)"

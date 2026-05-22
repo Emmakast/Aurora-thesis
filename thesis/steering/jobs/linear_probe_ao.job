@@ -1,0 +1,44 @@
+#!/bin/bash
+#SBATCH --job-name=probe_ao
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/probe_ao_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/probe_ao_%j.err
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+# Step 1: Train the probe (no GPU needed, but the job already has one)
+# Step 2: Run steered inference with the learned W vector
+
+STEERING_ALPHAS="-10.0 -5.0 -2.0 -1.0 -0.5 -0.2 -0.1 -0.05 0.05 0.1 0.2 0.5 1.0 2.0 5.0 10.0"
+
+echo "=== Linear Probe AO Steering ==="
+echo "Start: $(date)"
+
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python linear_probe.py \
+    --phenomenon AO \
+    --csv /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_ao_81.csv \
+    --layer encoder_2 \
+    --n-folds 5 \
+    --mask-region polar \
+    --hemisphere north \
+    --polar-lat-min 60 \
+    --name-suffix ao81_polar \
+    --run-inference \
+    --base-date 2017-03-08 \
+    --init-hour 12 \
+    --steps 12 \
+    --steering-alphas $STEERING_ALPHAS
+
+echo "COMPLETE: $(date)"
