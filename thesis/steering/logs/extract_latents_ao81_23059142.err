@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/1_extract_and_mask_latents.py", line 163, in <module>
+    
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/1_extract_and_mask_latents.py", line 153, in main
+    # Apply mask (broadcasting across channel dimension)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: The size of tensor a (16200) must match the size of tensor b (0) at non-singleton dimension 1

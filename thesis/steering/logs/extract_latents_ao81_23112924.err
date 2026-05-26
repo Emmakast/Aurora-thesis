@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/torch/serialization.py", line 967, in save
+    _save(
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/torch/serialization.py", line 1268, in _save
+    zip_file.write_record(name, storage, num_bytes)
+RuntimeError: [enforce fail at inline_container.cc:858] . PytorchStreamWriter failed writing file data/0: file write failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/1_extract_and_mask_latents.py", line 166, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/1_extract_and_mask_latents.py", line 162, in main
+    torch.save(mean_neutral, output_dir / "mean_neutral_latent.pt")
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/torch/serialization.py", line 966, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/torch/serialization.py", line 798, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:664] . unexpected pos 704 vs 598

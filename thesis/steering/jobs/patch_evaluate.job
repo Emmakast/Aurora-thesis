@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --job-name=patch_evaluate
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/patch_evaluate_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/patch_evaluate_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=128G
+#SBATCH --partition=thin
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+echo "Evaluating Spatio-Temporal Causal Tracing results..."
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python activation_patching/3_evaluate_patching.py
+
+echo "COMPLETE: $(date)"

@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/test_nan.py", line 5, in <module>
+    model = Aurora()
+            ^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/model/aurora.py", line 220, in __init__
+    self.backbone = Swin3DTransformerBackbone(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/model/swin3d.py", line 819, in __init__
+    layer = Basic3DEncoderLayer(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/model/swin3d.py", line 672, in __init__
+    [
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/model/swin3d.py", line 673, in <listcomp>
+    Swin3DTransformerBlock(
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/model/swin3d.py", line 433, in __init__
+    self.mlp = MLP(
+               ^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/aurora/model/swin3d.py", line 54, in __init__
+    self.fc1 = nn.Linear(in_features, hidden_features)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 115, in __init__
+    self.reset_parameters()
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 124, in reset_parameters
+    init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+  File "/home/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/torch/nn/init.py", line 573, in kaiming_uniform_
+    return tensor.uniform_(-bound, bound, generator=generator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

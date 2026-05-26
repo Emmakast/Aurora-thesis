@@ -5,6 +5,9 @@ Goal: Extract the "Clean" (Active) and "Corrupted" (Neutral) latents from the
 Aurora Swin Transformer model, calculate the mean difference (delta_v), 
 and apply a geographic mask (e.g., polar region > 60°N).
 """
+import os
+os.environ["HDF5_USE_FILE_LOCKING"] = "FALSE"
+
 import torch
 import numpy as np
 import pandas as pd
@@ -50,12 +53,25 @@ def process_dates(dates, model, device, static_vars_ds, extracted_latents, downl
         for pred in rollout(model, batch, steps=1):
             pass
             
-        latents_list.append(extracted_latents['latent'])
-        print(f"    ✓ Latent captured, shape: {extracted_latents['latent'].shape}", flush=True)
+        latent = extracted_latents['latent']
+        num_nans = torch.isnan(latent).sum().item()
+        num_infs = torch.isinf(latent).sum().item()
+        
+        if num_nans > 0 or num_infs > 0:
+            print(f"    WARNING: Latent contains {num_nans} NaNs and {num_infs} Infs! Skipping {day} to prevent corruption.", flush=True)
+            del batch
+            torch.cuda.empty_cache()
+            continue
+            
+        latents_list.append(latent)
+        print(f"    ✓ Latent captured, shape: {latent.shape}", flush=True)
         
         # Free memory immediately
         del batch
         torch.cuda.empty_cache()
+        
+    if len(latents_list) == 0:
+        raise ValueError("All dates resulted in NaN/Inf latents! Check input data.")
         
     return latents_list
 
@@ -76,7 +92,7 @@ def main():
     # We use backbone.encoder_layers.2 as this is exactly how it is named in PyTorch dict([*model.named_modules()])
     target_layer_name = "backbone.encoder_layers.2"  
     dates_csv = "/home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_ao_81.csv"
-    output_dir = Path("./output")
+    output_dir = Path("/scratch-shared/ekasteleyn/aurora_thesis_output")
     output_dir.mkdir(parents=True, exist_ok=True)
     
     download_path = Path("/scratch-shared/ekasteleyn/downloads/hres_t0")
@@ -94,11 +110,11 @@ def main():
     extracted_latents = {}
     
     def hook_fn(module, input, output):
-        # Detach and move to CPU to save GPU memory
+        # Detach and move to CPU, cast to float32 immediately to prevent FP16 overflow during accumulation
         if isinstance(output, tuple):
-            extracted_latents['latent'] = output[0].detach().cpu()
+            extracted_latents['latent'] = output[0].detach().cpu().to(torch.float32)
         else:
-            extracted_latents['latent'] = output.detach().cpu()
+            extracted_latents['latent'] = output.detach().cpu().to(torch.float32)
 
     # Register the hook on the target layer
     target_layer = dict([*model.named_modules()])[target_layer_name]
@@ -131,6 +147,7 @@ def main():
     # 6. Calculate Delta V
     print("Calculating delta_v...")
     delta_v = mean_active - mean_neutral
+    delta_v = delta_v.squeeze(0)
     
     # 7. Apply Geographic Mask with Dynamic Reshaping
     print("Applying geographic mask dynamically based on sequence length...")
@@ -157,10 +174,20 @@ def main():
     # 8. Save Tensors
     hook_handle.remove()
     print("Saving tensors to disk...")
-    torch.save(masked_delta_v, output_dir / "delta_v.pt")
-    torch.save(mean_neutral, output_dir / "mean_neutral_latent.pt")
+    
+    # Save to a temporary file first, then rename (atomic save)
+    # This prevents corrupted .pt files if the script crashes during save
+    tmp_path_delta = output_dir / "delta_v.pt.tmp"
+    final_path_delta = output_dir / "delta_v.pt"
+    torch.save(masked_delta_v, tmp_path_delta)
+    os.rename(tmp_path_delta, final_path_delta)
+    
+    tmp_path_neutral = output_dir / "mean_neutral_latent.pt.tmp"
+    final_path_neutral = output_dir / "mean_neutral_latent.pt"
+    torch.save(mean_neutral, tmp_path_neutral)
+    os.rename(tmp_path_neutral, final_path_neutral)
+    
     print("Done!")
 
 if __name__ == "__main__":
     main()
-            

@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH --job-name=compute_attribution_ao81
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/compute_attribution_ao81_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/compute_attribution_ao81_%j.err
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+echo "Running 3D attribution computation for AO 81..."
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python attribution_patching/3_compute_3d_attribution.py
+
+echo "COMPLETE: $(date)"

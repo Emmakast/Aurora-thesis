@@ -1,0 +1,25 @@
+#!/bin/bash
+#SBATCH --job-name=patch_extract_active
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/patch_extract_active_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/patch_extract_active_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+echo "Running active latent extraction for Causal Tracing..."
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python activation_patching/1_extract_mean_active_patch.py
+
+echo "COMPLETE: $(date)"

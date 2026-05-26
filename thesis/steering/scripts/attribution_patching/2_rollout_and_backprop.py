@@ -11,6 +11,9 @@ NOTE: The rollout logic mirrors Aurora's own rollout.py exactly:
   3. batch.crop(patch_size) — crops 721→720 to be divisible by patch size
   4. dataclasses.replace    — proper batch re-wrapping with history concatenation
 """
+import os
+os.environ["HDF5_USE_FILE_LOCKING"] = "FALSE"
+
 import dataclasses
 import torch
 import numpy as np
@@ -90,7 +93,7 @@ def main():
     target_layer_name = "backbone.encoder_layers.2"
     dates_csv = "/home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_ao_81.csv"
     rollout_steps = 1  # 1 step = 6h forecast; more steps OOM even on H100
-    output_dir = Path("./output")
+    output_dir = Path("/scratch-shared/ekasteleyn/aurora_thesis_output")
     output_dir.mkdir(parents=True, exist_ok=True)
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -101,25 +104,19 @@ def main():
     # 3. Register Forward Hook with retain_grad()
     saved_tensors = {}
     
-    def hook_fn_backward_prep(module, input, output):
-        # Extract the tensor
-        tensor = output[0] if isinstance(output, tuple) else output
-        
-        # We only want to track gradients for the initial state (t=0)
-        # So we check if we've already saved it
-        if 'target_latent' not in saved_tensors:
-            # Tell PyTorch to keep the gradient for this intermediate tensor
-            tensor.retain_grad()
-            saved_tensors['target_latent'] = tensor
+    def hook_fn_backward(module, grad_input, grad_output):
+        # grad_output is a tuple of gradients matching the module's outputs.
+        # We want the gradient of the first output (the latent tensor).
+        if 'target_latent_grad' not in saved_tensors:
+            saved_tensors['target_latent_grad'] = grad_output[0].detach().cpu()
 
-    # Register hook on the original module BEFORE checkpointing wrappers rename it
+    # Register backward hook on the original module BEFORE checkpointing wrappers rename it
     target_layer = dict([*model.named_modules()])[target_layer_name]
-    hook_handle = target_layer.register_forward_hook(hook_fn_backward_prep)
+    hook_handle = target_layer.register_full_backward_hook(hook_fn_backward)
 
     # 3.5 Enable Activation Checkpointing
-    # CRITICAL: Enable activation checkpointing to save memory during backpropagation.
-    # This must be done AFTER registering the hook so the hook attaches to the real module, 
-    # but the wrappers will still trigger it when they call the underlying module.
+    # We now use a backward hook, so activation checkpointing is perfectly safe 
+    # and crucial to prevent 90GB+ VRAM OOMs.
     model.configure_activation_checkpointing()
 
     # 4. Temporal Rollout — mirrors Aurora's own rollout.py exactly
@@ -171,12 +168,15 @@ def main():
     loss.backward()
     
     # 7. Extract and Save Gradients
-    gradient_tensor = saved_tensors['target_latent'].grad
+    gradient_tensor = saved_tensors.get('target_latent_grad')
     
     if gradient_tensor is None:
-        raise ValueError("Gradient was not computed. Check if the computation graph was broken.")
+        raise ValueError("Gradient was not computed. Check if the backward hook fired.")
         
     print(f"Gradient captured! Shape: {gradient_tensor.shape}")
+    print(f"Gradient magnitude (sum of abs): {gradient_tensor.abs().sum().item():.6e}")
+    if gradient_tensor.abs().sum() == 0:
+        print("WARNING: Gradient is entirely zero! Backprop did not reach this tensor.")
     
     # Move to CPU for saving to save VRAM footprint
     gradient_tensor = gradient_tensor.detach().cpu()

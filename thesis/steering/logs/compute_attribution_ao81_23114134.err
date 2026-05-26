@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/3_compute_3d_attribution.py", line 125, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/attribution_patching/3_compute_3d_attribution.py", line 77, in main
+    attribution_2d = attribution_1d.view(*grid_shape)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: shape '[0, 0]' is invalid for input of size 16200
