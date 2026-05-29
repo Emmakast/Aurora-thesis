@@ -4,6 +4,7 @@ import os
 import xarray as xr
 import numpy as np
 from eofs.xarray import Eof
+from windspharm.xarray import VectorWind
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -32,15 +33,9 @@ def slice_tropics(ds):
     return ds
 
 def extract_variables(ds):
-    """Attempt to extract OLR, U850, and U200 from dataset."""
+    """Attempt to extract U850, U200, and V200 from dataset."""
     vars_dict = {}
     
-    # OLR
-    for v in ['olr', 'OLR', 'ttr', 'rlut', 'top_net_thermal_radiation', 'toa_outgoing_longwave_flux', 'mean_top_net_long_wave_radiation_flux']:
-        if v in ds.data_vars:
-            vars_dict['olr'] = ds[v]
-            break
-            
     # U850 and U200
     if 'u850' in ds.data_vars:
         vars_dict['u850'] = ds['u850']
@@ -55,6 +50,13 @@ def extract_variables(ds):
         vars_dict['u200'] = ds['u'].sel(level=200, method='nearest')
     elif 'u_component_of_wind' in ds.data_vars and 'level' in ds.coords:
         vars_dict['u200'] = ds['u_component_of_wind'].sel(level=200, method='nearest')
+
+    if 'v200' in ds.data_vars:
+        vars_dict['v200'] = ds['v200']
+    elif 'v' in ds.data_vars and 'level' in ds.coords:
+        vars_dict['v200'] = ds['v'].sel(level=200, method='nearest')
+    elif 'v_component_of_wind' in ds.data_vars and 'level' in ds.coords:
+        vars_dict['v200'] = ds['v_component_of_wind'].sel(level=200, method='nearest')
         
     if len(vars_dict) < 3:
         logging.warning(f"Could not find all required variables. Found: {list(vars_dict.keys())}")
@@ -68,69 +70,84 @@ def generate_mjo_eofs(input_zarr, output_dir):
     
     os.makedirs(output_dir, exist_ok=True)
     
-    # 1. Slice data to 15°N-15°S.
-    logging.info("Slicing tropical domain...")
-    ds_tropics = slice_tropics(ds)
-    vars_dict = extract_variables(ds_tropics)
+    vars_dict_global = extract_variables(ds)
+    u200 = vars_dict_global['u200']
+    v200 = vars_dict_global['v200']
+    u850 = vars_dict_global['u850']
+
+    logging.info("Calculating velocity potential globally in chunks and reducing...")
+    vp200_1d_chunks = []
+    chunk_size = 30 * 4  # 30 day chunks to avoid OverflowError in windspharm Fortran code
+    n_time = len(u200.time)
     
-    olr = vars_dict['olr']
-    u850 = vars_dict['u850']
-    u200 = vars_dict['u200']
+    for start in range(0, n_time, chunk_size):
+        end = min(start + chunk_size, n_time)
+        u_chunk = u200.isel(time=slice(start, end)).load()
+        v_chunk = v200.isel(time=slice(start, end)).load()
+        w = VectorWind(u_chunk, v_chunk)
+        vp_chunk = w.velocitypotential()
+        
+        vp_ds = xr.Dataset({'vp200': vp_chunk})
+        vp_tropics = slice_tropics(vp_ds)['vp200']
+        vp_1d = vp_tropics.mean(dim='lat')
+        vp200_1d_chunks.append(vp_1d)
+        
+    vp200_1d = xr.concat(vp200_1d_chunks, dim='time')
     
-    # Calculate anomalies against daily climatology
+    logging.info("Extracting U850 and U200 and reducing...")
+    def process_wind_component(da):
+        lat_min, lat_max = -15, 15
+        if da.lat.values[0] > da.lat.values[-1]:
+            da_tropics = da.sel(lat=slice(lat_max, lat_min))
+        else:
+            da_tropics = da.sel(lat=slice(lat_min, lat_max))
+        da_1d = da_tropics.mean(dim='lat').compute()
+        da_1d = da_1d.assign_coords(lon=(da_1d.lon % 360)).sortby('lon')
+        return da_1d
+
+    u850_1d = process_wind_component(u850)
+    u200_1d = process_wind_component(u200)
+    
     logging.info("Calculating anomalies...")
     def get_anomalies(da):
         clim = da.groupby('time.dayofyear').mean('time')
         return da.groupby('time.dayofyear') - clim
         
-    olr_anom = get_anomalies(olr)
-    u850_anom = get_anomalies(u850)
-    u200_anom = get_anomalies(u200)
+    vp200_anom = get_anomalies(vp200_1d)
+    u850_anom = get_anomalies(u850_1d)
+    u200_anom = get_anomalies(u200_1d)
     
-    # 2. Average each variable meridionally (across latitude)
-    logging.info("Meridional averaging...")
-    olr_1d = olr_anom.mean(dim='lat')
-    u850_1d = u850_anom.mean(dim='lat')
-    u200_1d = u200_anom.mean(dim='lat')
-    
-    # 3. CRITICAL: Normalize each of the three 1D arrays by dividing by their global longitudinal standard deviations.
     logging.info("Normalizing by global standard deviations...")
-    olr_std = olr_1d.std(dim=['time', 'lon'])
-    u850_std = u850_1d.std(dim=['time', 'lon'])
-    u200_std = u200_1d.std(dim=['time', 'lon'])
+    vp200_std = vp200_anom.std(dim=['time', 'lon'])
+    u850_std = u850_anom.std(dim=['time', 'lon'])
+    u200_std = u200_anom.std(dim=['time', 'lon'])
     
-    olr_norm = olr_1d / olr_std
-    u850_norm = u850_1d / u850_std
-    u200_norm = u200_1d / u200_std
+    vp200_norm = vp200_anom / vp200_std
+    u850_norm = u850_anom / u850_std
+    u200_norm = u200_anom / u200_std
     
-    # 4. Concatenate the three normalized 1D arrays along the longitude axis
     logging.info("Concatenating into combined vector...")
-    n_lon = len(olr_norm.lon)
-    olr_c = olr_norm.rename({'lon': 'combined_lon'}).assign_coords(combined_lon=np.arange(n_lon)).drop_vars('level', errors='ignore')
+    n_lon = len(vp200_norm.lon)
+    vp200_c = vp200_norm.rename({'lon': 'combined_lon'}).assign_coords(combined_lon=np.arange(n_lon)).drop_vars('level', errors='ignore')
     u850_c = u850_norm.rename({'lon': 'combined_lon'}).assign_coords(combined_lon=np.arange(n_lon) + n_lon).drop_vars('level', errors='ignore')
     u200_c = u200_norm.rename({'lon': 'combined_lon'}).assign_coords(combined_lon=np.arange(n_lon) + 2*n_lon).drop_vars('level', errors='ignore')
     
-    combined = xr.concat([olr_c, u850_c, u200_c], dim='combined_lon')
-    
-    # Call compute to load into memory for Eof solver
+    combined = xr.concat([vp200_c, u850_c, u200_c], dim='combined_lon')
     combined = combined.compute()
     
-    # 5. Run the EOF solver on this combined vector.
     logging.info("Running EOF solver...")
     solver = Eof(combined)
     
     eofs = solver.eofs(neofs=2).squeeze()
-    pcs = solver.pcs(npcs=2).squeeze()
     
     eof1 = eofs.sel(mode=0).drop_vars('mode')
     eof2 = eofs.sel(mode=1).drop_vars('mode')
     
-    # 6. Save the EOF patterns and the normalization factors
     logging.info("Saving results...")
     out_ds = xr.Dataset({
         'eof1': eof1,
         'eof2': eof2,
-        'olr_std': olr_std,
+        'vp200_std': vp200_std,
         'u850_std': u850_std,
         'u200_std': u200_std
     })

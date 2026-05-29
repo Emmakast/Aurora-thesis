@@ -2,7 +2,7 @@
 #SBATCH --job-name=patch_extract_active
 #SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/patch_extract_active_%j.out
 #SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/patch_extract_active_%j.err
-#SBATCH --time=04:00:00
+#SBATCH --time=00:30:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16

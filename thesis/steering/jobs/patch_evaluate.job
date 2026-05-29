@@ -7,7 +7,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
-#SBATCH --partition=thin
+#SBATCH --partition=rome
 #SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts
 
 # ── Environment ──────────────────────────────────────────────────────────────

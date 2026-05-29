@@ -461,7 +461,13 @@ def main():
     if args.dates:
         dates = args.dates
     elif args.dates_csv:
-        dates = pd.read_csv(args.dates_csv)["date"].tolist()
+        df = pd.read_csv(args.dates_csv)
+        if "date" in df.columns:
+            dates = df["date"].tolist()
+        elif "Year" in df.columns and "Month" in df.columns and "Day" in df.columns:
+            dates = [f"{int(r.Year):04d}-{int(r.Month):02d}-{int(r.Day):02d}" for _, r in df.iterrows()]
+        else:
+            raise ValueError("CSV must contain either 'date' or 'Year', 'Month', 'Day' columns.")
     else:
         dates = DEFAULT_DATES
     
@@ -473,7 +479,7 @@ def main():
     
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    load_dotenv("/home/ekasteleyn/aurora_thesis/thesis/scripts/steering/.env")
+    load_dotenv("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env")
     s3_client = None
     bucket_name = "ekasteleyn-aurora-predictions"
     s3_folder = "aurora_hres_validation" 
@@ -577,6 +583,19 @@ def main():
                 eta_str = ""
             
             timestamp = datetime.now().strftime("%H:%M:%S")
+            
+            # Check if it already exists on S3 to save time
+            if extract_latents and s3_client is not None:
+                date_fmt = date_str.replace("-", "")
+                init_fmt = f"{init_hour:02d}00"
+                s3_key = f"{s3_folder}/latent_{date_fmt}_{init_fmt}_encoder_2.pt"
+                try:
+                    s3_client.head_object(Bucket=bucket_name, Key=s3_key)
+                    print(f"\n  [{timestamp}] [{run_idx}/{total_runs}] {date_str} init {init_hour:02d}:00 UTC [skipped - already on S3]")
+                    continue
+                except Exception:
+                    pass
+
             print(f"\n  [{timestamp}] [{run_idx}/{total_runs}] {date_str} init {init_hour:02d}:00 UTC", end="")
             if extract_latents:
                 print(f" [+latents]{eta_str}")

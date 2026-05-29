@@ -1,0 +1,67 @@
+Running Spatio-Temporal Causal Rollouts...
+Running causal rollouts for 81 Neutral dates...
+Initializing Aurora model locally...
+
+[1/81] Processing Neutral date: 2017-03-08
+    Base file base_2017-03-08.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[2/81] Processing Neutral date: 2020-03-28
+    Base file base_2020-03-28.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[3/81] Processing Neutral date: 2017-03-09
+    Base file base_2017-03-09.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[4/81] Processing Neutral date: 2016-03-20
+    Base file base_2016-03-20.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[5/81] Processing Neutral date: 2018-03-30
+    Base file base_2018-03-30.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[6/81] Processing Neutral date: 2021-03-18
+    Base file base_2021-03-18.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[7/81] Processing Neutral date: 2016-03-16
+    Base file base_2016-03-16.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[8/81] Processing Neutral date: 2022-03-21
+    Base file base_2022-03-21.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[9/81] Processing Neutral date: 2020-03-29
+    Base file base_2020-03-29.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[10/81] Processing Neutral date: 2017-03-04
+    Base file base_2017-03-04.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[11/81] Processing Neutral date: 2022-03-10
+    Base file base_2022-03-10.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[12/81] Processing Neutral date: 2022-03-03
+    Base file base_2022-03-03.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[13/81] Processing Neutral date: 2016-03-22
+    Base file base_2016-03-22.nc already exists locally. Skipping base rollout.
+    Running Patched Rollout (Causal Tracing)...

@@ -1,0 +1,36 @@
+Evaluating Spatio-Temporal Causal Tracing results...
+Evaluating 81 Neutral dates...
+
+[1/81] Evaluating date: 2017-03-08
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-08.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-08.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-03-08: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-08.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-08.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: /home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 100, in main
+    base_anom_1000 = get_anomaly(ds_base, ds_clim, 'z', 1000, doy, hour).squeeze()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 38, in get_anomaly
+    clim_interp = clim_slice.interp(lat=data.lat, lon=data.lon, method='linear')
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataarray.py", line 2341, in interp
+    ds = self._to_temp_dataset().interp(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 4077, in interp
+    variables[name] = missing.interp(var, var_indexers, method, **kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/missing.py", line 634, in interp
+    interped = interp_func(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/missing.py", line 751, in interp_func
+    return _interpnd(var, x, new_x, func, kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/missing.py", line 769, in _interpnd
+    return _interp1d(var, x, new_x, func, kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/missing.py", line 757, in _interp1d
+    rslt = func(x, var, assume_sorted=True, **kwargs)(np.ravel(new_x))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/missing.py", line 143, in __init__
+    from scipy.interpolate import interp1d
+ModuleNotFoundError: No module named 'scipy'
+
+
+[2/81] Evaluating date: 2020-03-28
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-03-28.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-03-28.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr

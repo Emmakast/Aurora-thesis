@@ -3,6 +3,7 @@ import logging
 import os
 import xarray as xr
 import numpy as np
+from windspharm.xarray import VectorWind
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -30,11 +31,7 @@ def slice_tropics(ds):
 
 def extract_variables(ds):
     vars_dict = {}
-    for v in ['olr', 'OLR', 'ttr', 'rlut', 'top_net_thermal_radiation', 'toa_outgoing_longwave_flux', 'mean_top_net_long_wave_radiation_flux']:
-        if v in ds.data_vars:
-            vars_dict['olr'] = ds[v]
-            break
-            
+    
     if 'u850' in ds.data_vars:
         vars_dict['u850'] = ds['u850']
     elif 'u' in ds.data_vars and 'level' in ds.coords:
@@ -48,18 +45,55 @@ def extract_variables(ds):
         vars_dict['u200'] = ds['u'].sel(level=200, method='nearest')
     elif 'u_component_of_wind' in ds.data_vars and 'level' in ds.coords:
         vars_dict['u200'] = ds['u_component_of_wind'].sel(level=200, method='nearest')
+
+    if 'v200' in ds.data_vars:
+        vars_dict['v200'] = ds['v200']
+    elif 'v' in ds.data_vars and 'level' in ds.coords:
+        vars_dict['v200'] = ds['v'].sel(level=200, method='nearest')
+    elif 'v_component_of_wind' in ds.data_vars and 'level' in ds.coords:
+        vars_dict['v200'] = ds['v_component_of_wind'].sel(level=200, method='nearest')
         
     return vars_dict
 
-def calculate_mjo(target_file, climatology_file, eof_file):
-    logging.info(f"Loading target file: {target_file}")
-    target_ds = standardize_coords(xr.open_dataset(target_file))
+def calculate_mjo(target_file, climatology, eof_file):
+    if isinstance(target_file, str):
+        logging.info(f"Loading target file: {target_file}")
+        target_ds = standardize_coords(xr.open_dataset(target_file))
+        if 'time' not in target_ds.coords:
+            import re, pandas as pd
+            match = re.search(r'(\d{8})_(\d{4})', target_file)
+            if match:
+                from datetime import datetime
+                init_time = datetime.strptime(f"{match.group(1)}{match.group(2)}", "%Y%m%d%H%M")
+                target_time = pd.to_datetime(init_time) + pd.Timedelta(hours=72)
+                target_ds = target_ds.assign_coords(time=[target_time])
+    else:
+        target_ds = standardize_coords(target_file)
     
-    logging.info(f"Loading climatology file: {climatology_file}")
-    clim_ds = standardize_coords(xr.open_dataset(climatology_file))
+    if isinstance(climatology, str):
+        logging.info(f"Loading climatology file: {climatology}")
+        if climatology.startswith('gs://') or climatology.endswith('.zarr'):
+            clim_ds = standardize_coords(xr.open_zarr(climatology, consolidated=True))
+        else:
+            clim_ds = standardize_coords(xr.open_dataset(climatology))
+    else:
+        clim_ds = climatology
     
-    logging.info(f"Loading EOF pattern file: {eof_file}")
-    eof_ds = xr.open_dataset(eof_file)
+    if isinstance(eof_file, str):
+        logging.info(f"Loading EOF pattern file: {eof_file}")
+        eof_ds = xr.open_dataset(eof_file)
+    else:
+        eof_ds = eof_file
+    
+    # Compute velocity potential on the global domain first
+    target_vars_g = extract_variables(target_ds)
+    clim_vars_g = extract_variables(clim_ds)
+    
+    w_t = VectorWind(target_vars_g['u200'], target_vars_g['v200'])
+    w_c = VectorWind(clim_vars_g['u200'], clim_vars_g['v200'])
+    
+    target_ds = target_ds.assign(vp200=w_t.velocitypotential())
+    clim_ds = clim_ds.assign(vp200=w_c.velocitypotential())
     
     target_sliced = slice_tropics(target_ds)
     clim_sliced = slice_tropics(clim_ds)
@@ -69,9 +103,13 @@ def calculate_mjo(target_file, climatology_file, eof_file):
     
     combined_list = []
     
-    for var_key in ['olr', 'u850', 'u200']:
-        t_var = target_vars[var_key]
-        c_var = clim_vars[var_key]
+    for var_key in ['vp200', 'u850', 'u200']:
+        if var_key == 'vp200':
+            t_var = target_sliced['vp200']
+            c_var = clim_sliced['vp200']
+        else:
+            t_var = target_vars[var_key]
+            c_var = clim_vars[var_key]
         
         # 1. Calculate anomalies
         if 'time' in t_var.coords:
@@ -106,14 +144,14 @@ def calculate_mjo(target_file, climatology_file, eof_file):
         combined_list.append(anom_norm)
         
     # 4. Concatenate and project
-    olr_norm, u850_norm, u200_norm = combined_list
-    n_lon = len(olr_norm.lon)
+    vp200_norm, u850_norm, u200_norm = combined_list
+    n_lon = len(vp200_norm.lon)
     
-    olr_c = olr_norm.rename({'lon': 'combined_lon'}).assign_coords(combined_lon=np.arange(n_lon)).drop_vars('level', errors='ignore')
+    vp200_c = vp200_norm.rename({'lon': 'combined_lon'}).assign_coords(combined_lon=np.arange(n_lon)).drop_vars('level', errors='ignore')
     u850_c = u850_norm.rename({'lon': 'combined_lon'}).assign_coords(combined_lon=np.arange(n_lon) + n_lon).drop_vars('level', errors='ignore')
     u200_c = u200_norm.rename({'lon': 'combined_lon'}).assign_coords(combined_lon=np.arange(n_lon) + 2*n_lon).drop_vars('level', errors='ignore')
     
-    combined = xr.concat([olr_c, u850_c, u200_c], dim='combined_lon')
+    combined = xr.concat([vp200_c, u850_c, u200_c], dim='combined_lon')
     
     eof1 = eof_ds['eof1']
     eof2 = eof_ds['eof2']

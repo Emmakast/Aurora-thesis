@@ -1,0 +1,96 @@
+#!/bin/bash
+#SBATCH --job-name=eval_ao81
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eval_ao81_%A_%a.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eval_ao81_%A_%a.err
+#SBATCH --time=0:30:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
+#SBATCH --partition=rome
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+#SBATCH --array=0-80
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── 1. Get the date for this task ────────────────────────────────────────────
+DATES=($(awk -F, 'NR>1 && $5=="Neutral" {print $1"-"sprintf("%02d", $2)"-"sprintf("%02d", $3)}' thesis/steering/data/target_dates_ao_81.csv))
+BASE_DATE=${DATES[$SLURM_ARRAY_TASK_ID]}
+DATE_TAG=$(echo $BASE_DATE | tr -d '-')
+
+echo "========================================"
+echo "  EVAL AO - Base Date: $BASE_DATE"
+echo "========================================"
+
+OUTPUT_DIR="/scratch-shared/ekasteleyn/ao_neutral_steered"
+BASE_NC="${OUTPUT_DIR}/base_ao_ao81_polar_${DATE_TAG}_1200_alpha_0.0.nc"
+EVAL_RESULTS="${OUTPUT_DIR}/eval_results_${DATE_TAG}.csv"
+
+echo "Alpha,AO_Index_Diff" > $EVAL_RESULTS
+
+# ── 2. Evaluate AO Index ─────────────────────────────────────────────────────
+for ALPHA in 1.0 2.0 5.0 10.0; do
+    STEERED_NC="${OUTPUT_DIR}/steered_ao_ao81_polar_${DATE_TAG}_1200_polar_north_lat60p0_alpha_${ALPHA}.nc"
+    EVAL_OUT="${OUTPUT_DIR}/eval_ao_${DATE_TAG}_alpha_${ALPHA}.log"
+    
+    if [ -f "$STEERED_NC" ]; then
+        echo "Evaluating alpha $ALPHA..."
+        /home/ekasteleyn/aurora_thesis/aurora_env/bin/python thesis/steering/scripts/oscillation_calculator/evaluate_ao.py \
+            --base $BASE_NC \
+            --steered $STEERED_NC \
+            --eof thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc \
+            > $EVAL_OUT 2>&1
+            
+        DELTA=$(grep "Delta:" $EVAL_OUT | awk '{print $2}')
+        echo "${ALPHA},${DELTA}" >> $EVAL_RESULTS
+    else
+        echo "Warning: $STEERED_NC not found!"
+    fi
+done
+
+echo "Evaluation Complete. Results saved to $EVAL_RESULTS"
+
+# ── 3. Upload to S3 ──────────────────────────────────────────────────────────
+echo "Uploading results to S3..."
+cat << 'EOF' > /tmp/upload_s3_eval_${SLURM_ARRAY_TASK_ID}.py
+import sys
+import os
+import boto3
+from dotenv import load_dotenv
+from pathlib import Path
+
+load_dotenv("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env")
+access_key = os.getenv('UVA_S3_ACCESS_KEY')
+secret_key = os.getenv('UVA_S3_SECRET_KEY')
+bucket_name = "ekasteleyn-aurora-predictions"
+
+s3_client = boto3.client(
+    's3',
+    endpoint_url="https://ceph-gw.science.uva.nl:8000",
+    aws_access_key_id=access_key,
+    aws_secret_access_key=secret_key
+)
+
+output_dir = Path(sys.argv[1])
+date_tag = sys.argv[2]
+s3_prefix = "ao_neutral_steered"
+
+for f in output_dir.glob(f"*{date_tag}*"):
+    if f.is_file():
+        s3_key = f"{s3_prefix}/{f.name}"
+        print(f"  Uploading {f.name} -> s3://{bucket_name}/{s3_key}")
+        try:
+            s3_client.upload_file(str(f), bucket_name, s3_key)
+        except Exception as e:
+            print(f"Failed to upload {f.name}: {e}")
+            
+print("S3 Upload Complete!")
+EOF
+
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python /tmp/upload_s3_eval_${SLURM_ARRAY_TASK_ID}.py $OUTPUT_DIR $DATE_TAG
+rm /tmp/upload_s3_eval_${SLURM_ARRAY_TASK_ID}.py
+
+echo "Job Finished: $(date)"

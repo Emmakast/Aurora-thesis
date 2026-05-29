@@ -45,12 +45,17 @@ def build_polar_lat_mask(lat_size: int, lat_min: float = 60.0, hemisphere: str =
         return latitudes <= -lat_min
     return latitudes.abs() >= lat_min
 
+def build_tropical_lat_mask(lat_size: int, lat_max: float = 30.0) -> torch.Tensor:
+    """Create a 1D boolean mask over latent latitude rows for the tropics."""
+    latitudes = torch.linspace(90.0, -90.0, steps=lat_size)
+    return latitudes.abs() <= lat_max
 
 def apply_spatial_mask_to_delta(
     delta_v: torch.Tensor,
     mask_region: str = "polar",
     polar_lat_min: float = 60.0,
     hemisphere: str = "both",
+    tropical_lat_max: float = 30.0,
 ) -> torch.Tensor:
     """
     Apply spatial mask to steering vector.
@@ -65,10 +70,13 @@ def apply_spatial_mask_to_delta(
 
     _, seq_len, _ = delta_v.shape
     # Aurora uses 90 lat x 180 lon = 16200 tokens
-    if seq_len == 16200 and mask_region == "polar":
+    if seq_len == 16200 and mask_region in ["polar", "tropical"]:
         lat_size = 90
         lon_size = 180
-        lat_mask_1d = build_polar_lat_mask(lat_size, lat_min=polar_lat_min, hemisphere=hemisphere)
+        if mask_region == "polar":
+            lat_mask_1d = build_polar_lat_mask(lat_size, lat_min=polar_lat_min, hemisphere=hemisphere)
+        elif mask_region == "tropical":
+            lat_mask_1d = build_tropical_lat_mask(lat_size, lat_max=tropical_lat_max)
         # Expand to lat x lon, then flatten to match token sequence
         spatial_mask = lat_mask_1d.unsqueeze(1).expand(lat_size, lon_size).reshape(1, seq_len, 1)
         spatial_mask = spatial_mask.to(dtype=delta_v.dtype, device=delta_v.device)
@@ -81,15 +89,16 @@ def apply_spatial_mask_to_delta(
 def main():
     parser = argparse.ArgumentParser(description="Contrastive Activation Addition Steering")
     parser.add_argument("--alphas", type=float, nargs="+", default=[1.0], help="List of steering strengths")
-    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "MJO", "ENSO", "AAO"], help="Phenomenon to steer")
+    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "MJO", "ENSO", "AAO", "NAO", "PNA"], help="Phenomenon to steer")
     parser.add_argument("--csv", type=str, default="target_dates.csv", help="Target dates CSV file")
     parser.add_argument("--neutral-csv", type=str, default=None, help="Optional separate CSV file for Neutral dates")
     parser.add_argument("--name-suffix", type=str, default="", help="Suffix to append to the output filename (e.g., '_ao81')")
     parser.add_argument("--steps", type=int, default=12, help="Number of rollout steps (12 = 3 days at 6-hour steps)")
     parser.add_argument("--init-hour", type=int, default=12, choices=[0, 12], help="Initialization hour for inference (0 or 12)")
     parser.add_argument("--base-date", type=str, default=None, help="Optional fixed base date YYYY-MM-DD (otherwise first neutral date)")
-    parser.add_argument("--mask-region", type=str, default="polar", choices=["none", "polar"], help="Spatial mask region for steering vector")
+    parser.add_argument("--mask-region", type=str, default="polar", choices=["none", "polar", "tropical"], help="Spatial mask region for steering vector")
     parser.add_argument("--polar-lat-min", type=float, default=60.0, help="Polar mask starts at |lat| >= this value")
+    parser.add_argument("--tropical-lat-max", type=float, default=30.0, help="Tropical mask ends at |lat| <= this value")
     parser.add_argument("--hemisphere", type=str, default="both", choices=["both", "north", "south"], help="Polar mask hemisphere")
     parser.add_argument("--output-dir", type=str, default="thesis/results", help="Directory to save the vectors and netcdf outputs")
     parser.add_argument("--data-dir", type=str, default=None, help="Directory for downloaded HRES data (shared between scripts to avoid re-downloading)")
@@ -128,7 +137,7 @@ def main():
     if args.neutral_csv and os.path.exists(args.neutral_csv):
         neutral_df = pd.read_csv(args.neutral_csv)
         neutral_phenom_df = neutral_df[neutral_df['Phenomenon'] == args.phenomenon]
-        neutral_dates = neutral_phenomenon_df[neutral_phenom_df['Type'] == 'Neutral']
+        neutral_dates = neutral_phenom_df[neutral_phenom_df['Type'] == 'Neutral']
         print(f"Loaded Neutral dates from separate CSV: {args.neutral_csv}")
     else:
         neutral_dates = phenom_df[phenom_df['Type'] == 'Neutral']
@@ -136,120 +145,137 @@ def main():
     print(f"Loaded CSV: {csv_path}")
     print(f"Found {len(active_dates)} Active dates and {len(neutral_dates)} Neutral dates.")
     
-# S3 Client setup
-    s3_client = None
-    if HAS_BOTO3:
-        load_dotenv("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env")
-        access_key = os.getenv('UVA_S3_ACCESS_KEY')
-        secret_key = os.getenv('UVA_S3_SECRET_KEY')
-        if access_key and secret_key:
-            s3_client = boto3.client(
-                's3',
-                endpoint_url="https://ceph-gw.science.uva.nl:8000",
-                aws_access_key_id=access_key,
-                aws_secret_access_key=secret_key
-            )
-            print("S3 Client initialized.")
-            
-    def load_mean_latent(dates_df, layer='encoder_2', hhmm='0000'):
-        tensors = []
-        for _, row in dates_df.iterrows():
-            date_str = f"{int(row['Year']):04d}{int(row['Month']):02d}{int(row['Day']):02d}"
-            filename = f"latent_{date_str}_{hhmm}_{layer}.pt"
-            
-            # Check local first
-            possible_paths = [
-                Path(filename),
-                Path("thesis/results") / filename,
-                Path(os.environ.get('TMPDIR', '/tmp/ekasteleyn')) / "aurora_hres_latents" / filename
-            ]
-            
-            file_path = None
-            for p in possible_paths:
-                if p.exists():
-                    file_path = p
-                    break
-                    
-            if file_path is None and s3_client is not None:
-                # Try downloading from S3
-                s3_key = f"aurora_hres_validation/{filename}"
-                try:
-                    with tempfile.NamedTemporaryFile(suffix=".pt", delete=False) as tmp:
-                        s3_client.download_file("ekasteleyn-aurora-predictions", s3_key, tmp.name)
-                        file_path = Path(tmp.name)
-                except Exception as e:
-                    # print(f"Could not download {filename} from S3: {e}")
-                    pass
-                    
-            if file_path is None or not file_path.exists():
-                print(f"Warning: Latent file {filename} not found locally or on S3.")
-                continue
-                
-            try:
-                t = torch.load(file_path, weights_only=True, map_location='cpu').float()
-                tensors.append(t)
-            except Exception as e:
-                print(f"Error loading {file_path}: {e}")
-                
-            if str(file_path).startswith('/tmp') and 'tmp' in file_path.name:
-                file_path.unlink() # cleanup named temp file
-            
-        if not tensors:
-            print(f"Warning: No valid latent files found for {dates_df['Type'].iloc[0]}. Returning empty.")
-            return None
-            
-        stacked = torch.stack(tensors, dim=0)
-        # Use nanmean to ignore NaNs in the dataset, and zero out any fully-NaN results
-        mean_val = torch.nanmean(stacked, dim=0)
-        mean_val = torch.nan_to_num(mean_val, nan=0.0, posinf=0.0, neginf=0.0)
-        return mean_val
-
-        
-    print(f"Loading Active latents ({len(active_dates)} dates)...")
-    mean_active = load_mean_latent(active_dates)
-    
-    print(f"Loading Neutral latents ({len(neutral_dates)} dates)...")
-    mean_neutral = load_mean_latent(neutral_dates)
-    
-    if mean_active is None or mean_neutral is None:
-        print("Missing latents. Creating dummy delta_v for demonstration purposes.")
-        # Dummy shape for Aurora Swin: [1, 4, H, W, C]
-        delta_v = torch.zeros((1, 4, 18, 36, 1536))
-    else:
-        delta_v = mean_active - mean_neutral
-        delta_v = torch.nan_to_num(delta_v, nan=0.0, posinf=0.0, neginf=0.0)
-
-    print(f"Steering vector (delta_v) shape: {delta_v.shape}, max={torch.max(delta_v)}, min={torch.min(delta_v)}, norm={torch.norm(delta_v)}")
-
-    # Apply user-selected spatial mask (polar by default)
-    masked_delta_v = apply_spatial_mask_to_delta(
-        delta_v,
-        mask_region=args.mask_region,
-        polar_lat_min=args.polar_lat_min,
-        hemisphere=args.hemisphere,
-    )
-    nz_ratio = (masked_delta_v != 0).float().mean().item()
-    print(
-        f"Applied mask: region={args.mask_region}, hemisphere={args.hemisphere}, "
-        f"lat_min={args.polar_lat_min}. Non-zero fraction={nz_ratio:.4f}"
-    )
-
-    # Keep the masked steering vector; do not overwrite it
-    steering_vec = masked_delta_v
-
-    # Save plot-ready tensors
+    # Check if pre-computed steering vector already exists
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     steering_vec_path = output_dir / f"steering_vector_{args.phenomenon.lower()}{suffix_str}.pt"
     steering_norm_path = output_dir / f"steering_vector_norm_{args.phenomenon.lower()}{suffix_str}.pt"
-    torch.save(steering_vec.cpu(), steering_vec_path)
-    torch.save(torch.norm(steering_vec, dim=-1).squeeze(0).cpu(), steering_norm_path)
-    print(f"Saved steering vector to {steering_vec_path.name}")
-    print(f"Saved steering norm to {steering_norm_path.name}")
 
-    # Remove or comment out the line that was overwriting it back to full delta_v
-    # masked_delta_v = delta_v.clone()
-    # print(f"Keeping all Z levels for 3D structure (shape: {masked_delta_v.shape})")
+    if steering_vec_path.exists():
+        print(f"✓ Found PRE-COMPUTED steering vector! Loading {steering_vec_path.name} directly...")
+        steering_vec = torch.load(steering_vec_path, map_location='cpu', weights_only=True)
+    else:
+        print("Pre-computed steering vector not found. Computing from scratch...")
+        # S3 Client setup
+        s3_client = None
+        if HAS_BOTO3:
+            load_dotenv("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/.env")
+            access_key = os.getenv('UVA_S3_ACCESS_KEY')
+            secret_key = os.getenv('UVA_S3_SECRET_KEY')
+            if access_key and secret_key:
+                s3_client = boto3.client(
+                    's3',
+                    endpoint_url="https://ceph-gw.science.uva.nl:8000",
+                    aws_access_key_id=access_key,
+                    aws_secret_access_key=secret_key
+                )
+                print("S3 Client initialized.")
+                
+        def load_mean_latent(dates_df, layer='encoder_2', hhmm='0000'):
+            tensors = []
+            for _, row in dates_df.iterrows():
+                date_str = f"{int(row['Year']):04d}{int(row['Month']):02d}{int(row['Day']):02d}"
+                filename = f"latent_{date_str}_{hhmm}_{layer}.pt"
+                
+                # Check local first
+                possible_paths = [
+                    Path(filename),
+                    Path("thesis/results") / filename,
+                    Path(os.environ.get('TMPDIR', '/tmp/ekasteleyn')) / "aurora_hres_latents" / filename
+                ]
+                
+                file_path = None
+                for p in possible_paths:
+                    if p.exists():
+                        file_path = p
+                        break
+                        
+                if file_path is None and s3_client is not None:
+                    # Try downloading from S3
+                    s3_key = f"aurora_hres_validation/{filename}"
+                    try:
+                        with tempfile.NamedTemporaryFile(suffix=".pt", delete=False) as tmp:
+                            s3_client.download_file("ekasteleyn-aurora-predictions", s3_key, tmp.name)
+                            file_path = Path(tmp.name)
+                    except Exception as e:
+                        # print(f"Could not download {filename} from S3: {e}")
+                        pass
+                        
+                if file_path is None or not file_path.exists():
+                    print(f"Warning: Latent file {filename} not found locally or on S3.")
+                    continue
+                    
+                try:
+                    t = torch.load(file_path, weights_only=True, map_location='cpu').float()
+                    tensors.append(t)
+                except Exception as e:
+                    print(f"Error loading {file_path}: {e}")
+                    
+                if str(file_path).startswith('/tmp') and 'tmp' in file_path.name:
+                    file_path.unlink() # cleanup named temp file
+                
+            if not tensors:
+                print(f"Warning: No valid latent files found for {dates_df['Type'].iloc[0]}. Returning empty.")
+                return None
+                
+            stacked = torch.stack(tensors, dim=0)
+            # Use nanmean to ignore NaNs in the dataset, and zero out any fully-NaN results
+            mean_val = torch.nanmean(stacked, dim=0)
+            mean_val = torch.nan_to_num(mean_val, nan=0.0, posinf=0.0, neginf=0.0)
+            return mean_val
+    
+            
+        print(f"Loading Active latents ({len(active_dates)} dates)...")
+        mean_active = load_mean_latent(active_dates)
+        
+        print(f"Loading Neutral latents ({len(neutral_dates)} dates)...")
+        mean_neutral = load_mean_latent(neutral_dates)
+        
+        if mean_active is None or mean_neutral is None:
+            print("Missing latents. Creating dummy delta_v for demonstration purposes.")
+            # Dummy shape for Aurora Swin: [1, 4, H, W, C]
+            delta_v = torch.zeros((1, 4, 18, 36, 1536))
+        else:
+            delta_v = mean_active - mean_neutral
+            delta_v = torch.nan_to_num(delta_v, nan=0.0, posinf=0.0, neginf=0.0)
+    
+        print(f"Steering vector (delta_v) shape: {delta_v.shape}, max={torch.max(delta_v)}, min={torch.min(delta_v)}, norm={torch.norm(delta_v)}")
+    
+        # Apply user-selected spatial mask (polar by default)
+        masked_delta_v = apply_spatial_mask_to_delta(
+            delta_v,
+            mask_region=args.mask_region,
+            polar_lat_min=args.polar_lat_min,
+            hemisphere=args.hemisphere,
+            tropical_lat_max=args.tropical_lat_max,
+        )
+        nz_ratio = (masked_delta_v != 0).float().mean().item()
+        lat_info = f"lat_min={args.polar_lat_min}" if args.mask_region == "polar" else f"lat_max={args.tropical_lat_max}" if args.mask_region == "tropical" else ""
+        print(
+            f"Applied mask: region={args.mask_region}, hemisphere={args.hemisphere}, "
+            f"{lat_info}. Non-zero fraction={nz_ratio:.4f}"
+        )
+    
+        # Keep the masked steering vector; do not overwrite it
+        steering_vec = masked_delta_v
+    
+        # Save plot-ready tensors
+        torch.save(steering_vec.cpu(), steering_vec_path)
+        torch.save(torch.norm(steering_vec, dim=-1).squeeze(0).cpu(), steering_norm_path)
+        print(f"Saved steering vector to {steering_vec_path.name}")
+        print(f"Saved steering norm to {steering_norm_path.name}")
+        
+        if s3_client is not None:
+            try:
+                s3_key_vec = f"aurora_hres_validation/vectors/{steering_vec_path.name}"
+                s3_client.upload_file(str(steering_vec_path), "ekasteleyn-aurora-predictions", s3_key_vec)
+                print(f"      ↑ Uploaded steering vector to S3: s3://ekasteleyn-aurora-predictions/{s3_key_vec}")
+                
+                s3_key_norm = f"aurora_hres_validation/vectors/{steering_norm_path.name}"
+                s3_client.upload_file(str(steering_norm_path), "ekasteleyn-aurora-predictions", s3_key_norm)
+                print(f"      ↑ Uploaded steering norm to S3: s3://ekasteleyn-aurora-predictions/{s3_key_norm}")
+            except Exception as e:
+                print(f"      ⚠ Failed to upload steering vector to S3: {e}")
         
     # ==========================================
     # Step 2: Implement the Intervention Hook (Normalized)
@@ -369,8 +395,14 @@ def main():
         print(f"Converting prediction to xarray for alpha={alpha_val}...")
         ds = batch_to_dataset(pred_batch, step=args.steps)
 
-        lat_tag = str(args.polar_lat_min).replace(".", "p")
-        mask_tag = "nomask" if args.mask_region == "none" else f"polar_{args.hemisphere}_lat{lat_tag}"
+        if args.mask_region == "none":
+            mask_tag = "nomask"
+        elif args.mask_region == "tropical":
+            lat_tag = str(args.tropical_lat_max).replace(".", "p")
+            mask_tag = f"tropical_lat{lat_tag}"
+        else:
+            lat_tag = str(args.polar_lat_min).replace(".", "p")
+            mask_tag = f"polar_{args.hemisphere}_lat{lat_tag}"
         output_filename = output_dir / (
             f"steered_{args.phenomenon.lower()}{suffix_str}_{date_tag}_{init_tag}_"
             f"{mask_tag}_alpha_{alpha_val}.nc"

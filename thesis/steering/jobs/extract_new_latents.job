@@ -1,0 +1,49 @@
+#!/bin/bash
+#SBATCH --job-name=ext_latents
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/ext_latents_%A_%a.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/ext_latents_%A_%a.err
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=128G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+#SBATCH --array=0-3
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# Array of CSVs to extract
+CSVS=(
+    "thesis/steering/data/target_dates_mjo.csv"
+    "thesis/steering/data/target_dates_enso.csv"
+    "thesis/steering/data/target_dates_nao.csv"
+    "thesis/steering/data/target_dates_pna_81.csv"
+)
+
+TARGET_CSV=${CSVS[$SLURM_ARRAY_TASK_ID]}
+
+echo "========================================"
+echo "  EXTRACTING LATENTS FOR: $TARGET_CSV"
+echo "========================================"
+
+# Run extraction for 00:00 UTC
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python thesis/steering/scripts/data_loader/extract_latents_hres.py \
+    --dates-csv $TARGET_CSV \
+    --init-hours 0 \
+    --latent-init-hour 0 \
+    --num-steps 1
+
+# Run extraction for 12:00 UTC
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python thesis/steering/scripts/data_loader/extract_latents_hres.py \
+    --dates-csv $TARGET_CSV \
+    --init-hours 12 \
+    --latent-init-hour 12 \
+    --num-steps 1
+
+echo "Finished extraction for $TARGET_CSV at $(date)"

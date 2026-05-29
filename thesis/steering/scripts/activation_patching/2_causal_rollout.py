@@ -100,7 +100,7 @@ def upload_base_prediction_to_s3(s3_client, local_path, date_str, hhmm="0000"):
     except Exception as e:
         print(f"    Failed to upload base prediction to S3: {e}")
 
-def make_patch_hook(mean_active_latent, polar_mask):
+def make_patch_hook(mean_active_latent):
     """
     Creates a forward hook that physically replaces the polar tokens in the 
     neutral latent with those from the mean_active_latent.
@@ -109,17 +109,30 @@ def make_patch_hook(mean_active_latent, polar_mask):
         is_tuple = isinstance(output, tuple)
         x = output[0] if is_tuple else output
         
-        # Ensure mask and active_latent are on the correct device and dtype
+        # args[2] contains the input resolution (C, H, W) to this layer
+        C_in, H_in, W_in = args[2]
+        
+        # Determine the spatial dimensions of the output x based on actual token count
+        num_tokens = x.shape[1]
+        import math
+        H_out = int(math.sqrt(num_tokens / 2))
+        W_out = num_tokens // H_out
+        
+        # Create spatial mask correctly accounting for H, W layout
+        lat_1d = torch.linspace(90, -90, H_out, device=x.device)
+        lon_1d = torch.linspace(0, 360, W_out + 1, device=x.device)[:-1]
+        lat_grid, _ = torch.meshgrid(lat_1d, lon_1d, indexing='ij')
+        
+        spatial_mask = lat_grid > 60.0 # [H_out, W_out]
+        
+        # Apply the boolean spatial mask over the 1D tokens
+        mask = spatial_mask.flatten() # Shape: [Tokens]
+        
+        # Ensure active_latent is on the correct device and dtype
         m_active = mean_active_latent.to(dtype=x.dtype, device=x.device)
-        mask = polar_mask.to(device=x.device) # Shape: [Tokens]
         
         # Broadcast mask to match [Batch, Tokens, Channels]
-        # Assuming Aurora latent shape is [1, 16200, Channels]
-        if mask.dim() == 1:
-            # We want [1, Tokens, 1]
-            mask_expanded = mask.unsqueeze(0).unsqueeze(-1)
-        else:
-            mask_expanded = mask
+        mask_expanded = mask.unsqueeze(0).unsqueeze(-1)
             
         # Hard replacement of tokens where mask is True
         new_x = torch.where(mask_expanded, m_active, x)
@@ -149,26 +162,9 @@ def main():
     
     mean_active_latent = torch.load(mean_latent_path, map_location='cpu', weights_only=True)
     
-    # Calculate spatial dimensions dynamically for Aurora
-    # Assume mean_active_latent shape is [Tokens, Channels] or [1, Tokens, Channels]
-    if mean_active_latent.dim() == 3:
-        num_tokens = mean_active_latent.shape[1]
-    else:
-        num_tokens = mean_active_latent.shape[0]
-        mean_active_latent = mean_active_latent.unsqueeze(0) # Ensure [1, Tokens, Channels]
-        
-    # Earth grid has 1:2 aspect ratio
-    lat_size = int(np.sqrt(num_tokens / 2))
-    lon_size = lat_size * 2
-    print(f"Dynamic grid shape calculated: Lat={lat_size}, Lon={lon_size}")
-    
-    lat_1d = torch.linspace(90, -90, lat_size)
-    lon_1d = torch.linspace(0, 360, lon_size + 1)[:-1]
-    lat_grid, _ = torch.meshgrid(lat_1d, lon_1d, indexing='ij')
-    lat_tokens = lat_grid.flatten()
-    
-    # Polar mask > 60°N
-    polar_mask = lat_tokens > 60.0
+    # Ensure [1, Tokens, Channels]
+    if mean_active_latent.dim() == 2:
+        mean_active_latent = mean_active_latent.unsqueeze(0)
     
     # 2. Setup Base and Steered Neutral runs
     neutral_dates = load_dates(dates_csv, phase="Neutral")
@@ -186,8 +182,12 @@ def main():
     for i, day in enumerate(neutral_dates):
         print(f"\n[{i+1}/{len(neutral_dates)}] Processing Neutral date: {day}")
         
-        base_nc_path = output_dir / f"base_{day}.nc"
-        patched_nc_path = output_dir / f"patched_{day}.nc"
+        steps_to_save = [4, 8, 12]
+        base_files = {s: output_dir / f"base_{day}_step{s:02d}.nc" for s in steps_to_save}
+        patched_files = {s: output_dir / f"patched_{day}_step{s:02d}.nc" for s in steps_to_save}
+        
+        all_base_exist = all(p.exists() for p in base_files.values())
+        all_patched_exist = all(p.exists() for p in patched_files.values())
         
         # Download input batch data
         download_data(day, download_path)
@@ -196,36 +196,31 @@ def main():
         download_data(prev_day, download_path)
         
         # --- Base Run ---
-        if base_nc_path.exists():
-            print(f"    Base file {base_nc_path.name} already exists locally. Skipping base rollout.")
-        elif fetch_base_prediction_from_s3(s3_client, day, base_nc_path):
-            pass # S3 downloaded it
+        if all_base_exist:
+            print(f"    Base files for {day} already exist locally. Skipping base rollout.")
         else:
             print("    Running Base Rollout...")
             batch = prepare_batch(day, download_path, init_hour=0, static_vars_ds=static_vars_ds)
             batch = batch.to(device)
             
             with torch.inference_mode():
-                for pred in rollout(model, batch, steps=rollout_steps):
-                    base_pred = pred
-                    
-            base_pred = base_pred.to("cpu")
-            base_ds = batch_to_dataset(base_pred, step=rollout_steps)
-            
-            tmp_base = output_dir / f"base_{day}.nc.tmp"
-            base_ds.to_netcdf(tmp_base)
-            os.rename(tmp_base, base_nc_path)
-            
-            # Upload to S3 so future runs can skip it
-            upload_base_prediction_to_s3(s3_client, base_nc_path, day)
+                for step_idx, pred in enumerate(rollout(model, batch, steps=rollout_steps)):
+                    actual_step = step_idx + 1
+                    if actual_step in steps_to_save:
+                        pred_cpu = pred.to("cpu")
+                        base_ds = batch_to_dataset(pred_cpu, step=actual_step)
+                        tmp_base = output_dir / f"base_{day}_step{actual_step:02d}.nc.tmp"
+                        base_ds.to_netcdf(tmp_base)
+                        os.rename(tmp_base, base_files[actual_step])
+                        print(f"      Saved base step {actual_step}")
             
             del batch
             torch.cuda.empty_cache()
             print("    ✓ Base rollout completed and saved.")
 
         # --- Patched Run ---
-        if patched_nc_path.exists():
-            print(f"    Patched file {patched_nc_path.name} already exists. Skipping patched rollout.")
+        if all_patched_exist:
+            print(f"    Patched files for {day} already exist. Skipping patched rollout.")
         else:
             print("    Running Patched Rollout (Causal Tracing)...")
             # We must re-prepare the batch to ensure it's clean
@@ -233,22 +228,24 @@ def main():
             batch = batch.to(device)
             
             hook_handle = target_layer.register_forward_hook(
-                make_patch_hook(mean_active_latent, polar_mask)
+                make_patch_hook(mean_active_latent)
             )
             
             with torch.inference_mode():
-                for pred in rollout(model, batch, steps=rollout_steps):
-                    patched_pred = pred
+                for step_idx, pred in enumerate(rollout(model, batch, steps=rollout_steps)):
+                    actual_step = step_idx + 1
                     
-            patched_pred = patched_pred.to("cpu")
-            hook_handle.remove()
-            
-            patched_ds = batch_to_dataset(patched_pred, step=rollout_steps)
-            
-            tmp_patched = output_dir / f"patched_{day}.nc.tmp"
-            patched_ds.to_netcdf(tmp_patched)
-            os.rename(tmp_patched, patched_nc_path)
-            
+                    if actual_step in steps_to_save:
+                        pred_cpu = pred.to("cpu")
+                        patched_ds = batch_to_dataset(pred_cpu, step=actual_step)
+                        tmp_patched = output_dir / f"patched_{day}_step{actual_step:02d}.nc.tmp"
+                        patched_ds.to_netcdf(tmp_patched)
+                        os.rename(tmp_patched, patched_files[actual_step])
+                        print(f"      Saved patched step {actual_step}")
+                    
+                    if step_idx == 0:
+                        hook_handle.remove()
+                        
             del batch
             torch.cuda.empty_cache()
             print("    ✓ Patched rollout completed and saved.")

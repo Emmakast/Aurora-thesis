@@ -1,0 +1,73 @@
+Evaluating Spatio-Temporal Causal Tracing results...
+Evaluating 81 Neutral dates...
+
+[1/81] Evaluating date: 2017-03-08
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-08.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-08.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: 0.0892, Patched AO: -0.4161, Causal Effect: -0.5053
+
+[2/81] Evaluating date: 2020-03-28
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-03-28.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-03-28.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: -0.3934, Patched AO: -0.5536, Causal Effect: -0.1602
+
+[3/81] Evaluating date: 2017-03-09
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-09.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-09.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: 0.3398, Patched AO: -0.1888, Causal Effect: -0.5286
+
+[4/81] Evaluating date: 2016-03-20
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-20.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-20.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: 0.5319, Patched AO: 0.0986, Causal Effect: -0.4333
+
+[5/81] Evaluating date: 2018-03-30
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-03-30.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-03-30.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: -0.1293, Patched AO: -0.4249, Causal Effect: -0.2956
+
+[6/81] Evaluating date: 2021-03-18
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-03-18.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-03-18.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: -0.3169, Patched AO: -0.5348, Causal Effect: -0.2179
+
+[7/81] Evaluating date: 2016-03-16
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-16.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-16.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: 0.0000, Patched AO: 0.0000, Causal Effect: 0.0000
+
+[8/81] Evaluating date: 2022-03-21
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-21.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-21.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: -0.6703, Patched AO: -0.8265, Causal Effect: -0.1562
+
+[9/81] Evaluating date: 2020-03-29
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-03-29.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-03-29.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: -0.4626, Patched AO: -0.6071, Causal Effect: -0.1445
+
+[10/81] Evaluating date: 2017-03-04
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-04.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-04.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: -0.0283, Patched AO: -0.4872, Causal Effect: -0.4589
+
+[11/81] Evaluating date: 2022-03-10
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-10.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-10.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: 0.0514, Patched AO: -0.4007, Causal Effect: -0.4521
+
+[12/81] Evaluating date: 2022-03-03
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-03.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-03.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: -0.7198, Patched AO: -1.0207, Causal Effect: -0.3009
+
+[13/81] Evaluating date: 2016-03-22
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-22.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-22.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: 0.6313, Patched AO: 0.3045, Causal Effect: -0.3268
+
+[14/81] Evaluating date: 2022-03-13
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-13.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-13.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: 0.2280, Patched AO: -0.3015, Causal Effect: -0.5295
+
+[15/81] Evaluating date: 2017-03-28
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-28.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-28.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: 0.4891, Patched AO: 0.1178, Causal Effect: -0.3713
+
+[16/81] Evaluating date: 2021-03-16
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-03-16.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-03-16.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: -0.0380, Patched AO: -0.4400, Causal Effect: -0.4020
+
+[17/81] Evaluating date: 2018-03-29
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-03-29.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-03-29.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  ✓ Extracted Base AO: -0.3129, Patched AO: -0.4804, Causal Effect: -0.1675
+
+[18/81] Evaluating date: 2022-03-23
+  Running subprocess: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-23.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-23.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr

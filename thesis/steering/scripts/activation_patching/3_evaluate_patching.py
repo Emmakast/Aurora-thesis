@@ -8,6 +8,7 @@ for each Neutral date and computes the Average Treatment Effect (ATE).
 
 import subprocess
 import os
+import sys
 import pandas as pd
 from pathlib import Path
 import re
@@ -38,56 +39,51 @@ def main():
     for i, day in enumerate(neutral_dates):
         print(f"\n[{i+1}/{len(neutral_dates)}] Evaluating date: {day}")
         
-        base_nc = output_dir / f"base_{day}.nc"
-        patched_nc = output_dir / f"patched_{day}.nc"
-        
-        if not base_nc.exists() or not patched_nc.exists():
-            print(f"  Missing base or patched NetCDF for {day}. Skipping.")
-            continue
+        for step in [4, 8, 12]:
+            base_nc = output_dir / f"base_{day}_step{step:02d}.nc"
+            patched_nc = output_dir / f"patched_{day}_step{step:02d}.nc"
             
-        cmd = [
-            "python", evaluator_script,
-            "--base", str(base_nc),
-            "--steered", str(patched_nc),
-            "--eof", eof_path,
-            "--climatology", climatology_path
-        ]
-        
-        print(f"  Running subprocess: {' '.join(cmd)}")
-        try:
-            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-            output = result.stdout
-            
-            # Use Regex to extract AO Indices from stdout
-            # Expected stdout contains lines like:
-            # Base AO Index:    1.2345
-            # Steered AO Index: 1.5678
-            # Delta:            0.3333
-            
-            base_ao_match = re.search(r"Base AO Index:\s+([-\d\.]+)", output)
-            steered_ao_match = re.search(r"Steered AO Index:\s+([-\d\.]+)", output)
-            
-            if base_ao_match and steered_ao_match:
-                base_ao = float(base_ao_match.group(1))
-                steered_ao = float(steered_ao_match.group(1))
-                delta = steered_ao - base_ao
+            if not base_nc.exists() or not patched_nc.exists():
+                print(f"  Missing base or patched NetCDF for {day} step {step}. Skipping.")
+                continue
                 
-                print(f"  ✓ Extracted Base AO: {base_ao:.4f}, Patched AO: {steered_ao:.4f}, Causal Effect: {delta:.4f}")
+            cmd = [
+                sys.executable, evaluator_script,
+                "--base", str(base_nc),
+                "--steered", str(patched_nc),
+                "--eof", eof_path,
+                "--climatology", climatology_path
+            ]
+            
+            # print(f"  Running subprocess: {' '.join(cmd)}")
+            try:
+                result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+                output = result.stdout
                 
-                results.append({
-                    "Date": day,
-                    "Base_AO": base_ao,
-                    "Patched_AO": steered_ao,
-                    "Causal_Effect": delta
-                })
-            else:
-                print("  Failed to parse AO indices from output.")
-                print(f"  Output was: \n{output}")
+                base_ao_match = re.search(r"Base AO Index:\s+([-\d\.]+)", output)
+                steered_ao_match = re.search(r"Steered AO Index:\s+([-\d\.]+)", output)
                 
-        except subprocess.CalledProcessError as e:
-            print(f"  Error running evaluator for {day}: {e}")
-            print(f"  Stderr: {e.stderr}")
-            continue
+                if base_ao_match and steered_ao_match:
+                    base_ao = float(base_ao_match.group(1))
+                    steered_ao = float(steered_ao_match.group(1))
+                    delta = steered_ao - base_ao
+                    
+                    print(f"  ✓ Step {step:02d} (Day {step//4}): Base AO: {base_ao:.4f}, Patched AO: {steered_ao:.4f}, Causal Effect: {delta:.4f}")
+                    
+                    results.append({
+                        "Date": day,
+                        "Step": step,
+                        "Day_Lead": step // 4,
+                        "Base_AO": base_ao,
+                        "Patched_AO": steered_ao,
+                        "Causal_Effect": delta
+                    })
+                else:
+                    print(f"  Failed to parse AO indices from output for step {step}.")
+                    
+            except subprocess.CalledProcessError as e:
+                print(f"  Error running evaluator for {day} step {step}: {e}")
+                continue
 
     if len(results) == 0:
         print("\nNo results were generated. Check the error logs above.")
@@ -95,14 +91,15 @@ def main():
         
     results_df = pd.DataFrame(results)
     
-    # Calculate Average Treatment Effect (ATE)
-    ate = results_df["Causal_Effect"].mean()
-    
     print("\n=============================================")
     print("      SPATIO-TEMPORAL CAUSAL TRACING RESULTS  ")
     print("=============================================")
-    print(f"Evaluated Dates: {len(results_df)}")
-    print(f"Average Treatment Effect (ATE): {ate:.4f}")
+    print(f"Evaluated Dates: {len(results_df['Date'].unique())}")
+    for lead_day in [1, 2, 3]:
+        df_lead = results_df[results_df["Day_Lead"] == lead_day]
+        if not df_lead.empty:
+            ate = df_lead["Causal_Effect"].mean()
+            print(f"Day {lead_day} Average Treatment Effect (ATE): {ate:.4f} (n={len(df_lead)})")
     
     summary_csv = output_dir / "causal_tracing_summary.csv"
     results_df.to_csv(summary_csv, index=False)

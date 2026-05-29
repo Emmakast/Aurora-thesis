@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization/visualize_alphas_grid_global.py", line 15, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization/visualize_alphas_grid_global.py", line 15, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization/visualize_alphas_grid_global.py", line 15, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'

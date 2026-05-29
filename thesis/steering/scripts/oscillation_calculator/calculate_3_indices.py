@@ -6,12 +6,37 @@ import numpy as np
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def calculate_indices(target_file, climatology_file, eofs_dir):
-    logging.info(f"Loading target file: {target_file}")
-    target_ds = xr.open_dataset(target_file)
+def calculate_indices(target_file, climatology, eofs_dir):
+    def std_coords(d):
+        r = {}
+        if 'latitude' in d.coords: r['latitude'] = 'lat'
+        if 'longitude' in d.coords: r['longitude'] = 'lon'
+        if 'valid_time' in d.coords: r['valid_time'] = 'time'
+        if 'geopotential' in d.variables: r['geopotential'] = 'z'
+        return d.rename(r) if r else d
+
+    if isinstance(target_file, str):
+        logging.info(f"Loading target file: {target_file}")
+        target_ds = std_coords(xr.open_dataset(target_file))
+        if 'time' not in target_ds.coords:
+            import re, pandas as pd
+            match = re.search(r'(\d{8})_(\d{4})', target_file)
+            if match:
+                from datetime import datetime
+                init_time = datetime.strptime(f"{match.group(1)}{match.group(2)}", "%Y%m%d%H%M")
+                target_time = pd.to_datetime(init_time) + pd.Timedelta(hours=72)
+                target_ds = target_ds.assign_coords(time=[target_time])
+    else:
+        target_ds = std_coords(target_file)
     
-    logging.info(f"Loading climatology file: {climatology_file}")
-    clim_ds = xr.open_dataset(climatology_file)
+    if isinstance(climatology, str):
+        logging.info(f"Loading climatology file: {climatology}")
+        if climatology.startswith('gs://') or climatology.endswith('.zarr'):
+            clim_ds = std_coords(xr.open_zarr(climatology, consolidated=True))
+        else:
+            clim_ds = std_coords(xr.open_dataset(climatology))
+    else:
+        clim_ds = std_coords(climatology)
     
     var_name = 'z'
     if var_name not in target_ds.data_vars:
@@ -27,7 +52,7 @@ def calculate_indices(target_file, climatology_file, eofs_dir):
             continue
             
         logging.info(f"Calculating {index}...")
-        eof_ds = xr.open_dataset(eof_path)
+        eof_ds = std_coords(xr.open_dataset(eof_path))
         eof_pattern = eof_ds['eof']
         pc_std = eof_ds['pc_std']
         

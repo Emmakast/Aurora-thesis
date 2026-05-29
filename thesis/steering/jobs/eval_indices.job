@@ -1,0 +1,36 @@
+#!/bin/bash
+#SBATCH --job-name=eval_indices
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eval_indices_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eval_indices_%j.err
+#SBATCH --time=1:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
+#SBATCH --partition=rome
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+export HDF5_USE_FILE_LOCKING=FALSE
+export PYTHONUNBUFFERED=1
+
+echo "==================== NAO ===================="
+for f in /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_*.nc; do
+    echo -e "\nFile: $f"
+    python thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py --target "$f" --climatology "gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr" --eofs_dir thesis/steering/scripts/oscillation_calculator/indices
+done
+
+echo "==================== MJO ===================="
+for f in thesis/results/steered_mjo_20160123_1200_tropical_lat30p0_alpha_*.nc; do
+    echo -e "\nFile: $f"
+    python thesis/steering/scripts/oscillation_calculator/calculate_mjo.py --target "$f" --climatology "gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr" --eof_file thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc
+done
+
+echo "==================== ENSO ===================="
+for f in thesis/results/steered_enso_20170103_1200_tropical_lat30p0_alpha_*.nc; do
+    echo -e "\nFile: $f"
+    python thesis/steering/scripts/oscillation_calculator/calculate_enso.py --target "$f" --climatology "gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr"
+done

@@ -128,7 +128,7 @@ def plot_steering_vector(vector_path: Path, output_path: Path | None = None):
 
 def main():
     parser = argparse.ArgumentParser(description="Grid plot across alphas (Global)")
-    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "AAO", "MJO", "ENSO"])
+    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "AAO", "MJO", "ENSO", "NAO", "PNA"])
     parser.add_argument("--name-suffix", type=str, default="ao81_polar", help="Suffix appended to phenomenon (e.g., 'ao81_polar')")
     parser.add_argument("--date", type=str, default="20170308", help="Date tag (e.g., 20170308)")
     parser.add_argument("--init-hour", type=int, default=12, help="Initialization hour (e.g., 12 or 0)")

@@ -1,0 +1,163 @@
+2026-05-28 14:12:26,030 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_-1.0.nc
+2026-05-28 14:12:26,355 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:12:54,518 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:12:54,522 - INFO - Calculating PNA...
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 112, in <module>
+    calculate_indices(args.target, args.climatology, args.eofs_dir)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 37, in calculate_indices
+    lat_min, lat_max = float(eof_pattern.lat.min()), float(eof_pattern.lat.max())
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/common.py", line 286, in __getattr__
+    raise AttributeError(
+AttributeError: 'DataArray' object has no attribute 'lat'
+2026-05-28 14:12:55,094 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_-2.0.nc
+2026-05-28 14:12:55,392 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:13:23,048 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:13:23,048 - INFO - Calculating PNA...
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 112, in <module>
+    calculate_indices(args.target, args.climatology, args.eofs_dir)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 37, in calculate_indices
+    lat_min, lat_max = float(eof_pattern.lat.min()), float(eof_pattern.lat.max())
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/common.py", line 286, in __getattr__
+    raise AttributeError(
+AttributeError: 'DataArray' object has no attribute 'lat'
+2026-05-28 14:13:23,621 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_1.0.nc
+2026-05-28 14:13:23,943 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:13:51,487 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:13:51,487 - INFO - Calculating PNA...
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 112, in <module>
+    calculate_indices(args.target, args.climatology, args.eofs_dir)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 37, in calculate_indices
+    lat_min, lat_max = float(eof_pattern.lat.min()), float(eof_pattern.lat.max())
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/common.py", line 286, in __getattr__
+    raise AttributeError(
+AttributeError: 'DataArray' object has no attribute 'lat'
+2026-05-28 14:13:52,110 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_2.0.nc
+2026-05-28 14:13:52,503 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:14:20,502 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:14:20,502 - INFO - Calculating PNA...
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 112, in <module>
+    calculate_indices(args.target, args.climatology, args.eofs_dir)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 37, in calculate_indices
+    lat_min, lat_max = float(eof_pattern.lat.min()), float(eof_pattern.lat.max())
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/common.py", line 286, in __getattr__
+    raise AttributeError(
+AttributeError: 'DataArray' object has no attribute 'lat'
+2026-05-28 14:14:21,076 - INFO - Loading target file: thesis/results/steered_mjo_20160123_1200_tropical_lat30p0_alpha_-0.5.nc
+2026-05-28 14:14:21,128 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:14:49,395 - INFO - Loading EOF pattern file: thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 156, in <module>
+    calculate_mjo(args.target, args.climatology, args.eof_file)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 76, in calculate_mjo
+    t_var = target_vars[var_key]
+KeyError: 'olr'
+2026-05-28 14:14:49,999 - INFO - Loading target file: thesis/results/steered_mjo_20160123_1200_tropical_lat30p0_alpha_-1.0.nc
+2026-05-28 14:14:50,053 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:15:17,890 - INFO - Loading EOF pattern file: thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 156, in <module>
+    calculate_mjo(args.target, args.climatology, args.eof_file)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 76, in calculate_mjo
+    t_var = target_vars[var_key]
+KeyError: 'olr'
+2026-05-28 14:15:18,553 - INFO - Loading target file: thesis/results/steered_mjo_20160123_1200_tropical_lat30p0_alpha_0.5.nc
+2026-05-28 14:15:18,608 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:15:46,870 - INFO - Loading EOF pattern file: thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 156, in <module>
+    calculate_mjo(args.target, args.climatology, args.eof_file)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 76, in calculate_mjo
+    t_var = target_vars[var_key]
+KeyError: 'olr'
+2026-05-28 14:15:47,466 - INFO - Loading target file: thesis/results/steered_mjo_20160123_1200_tropical_lat30p0_alpha_1.0.nc
+2026-05-28 14:15:47,521 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:16:15,288 - INFO - Loading EOF pattern file: thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 156, in <module>
+    calculate_mjo(args.target, args.climatology, args.eof_file)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 76, in calculate_mjo
+    t_var = target_vars[var_key]
+KeyError: 'olr'
+2026-05-28 14:16:15,886 - INFO - Loading target file: thesis/results/steered_enso_20170103_1200_tropical_lat30p0_alpha_-0.5.nc
+2026-05-28 14:16:15,940 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:16:42,939 - WARNING - SST not found. Using '2t' (2-meter temperature) as proxy.
+2026-05-28 14:16:42,964 - INFO - Calculating SST anomalies...
+2026-05-28 14:16:51,242 - INFO - Calculating area-weighted spatial mean over Niño 3.4 region...
+2026-05-28 14:16:51,298 - INFO - Applying 3-month rolling mean (assuming monthly input data)...
+2026-05-28 14:16:51,299 - WARNING - Time series is shorter than 3 steps or has no time dimension. Skipping rolling mean.
+2026-05-28 14:16:51,299 - INFO - ONI Index Values: 
+[[-0.5238256  -0.52278227 -0.5218204  ... -0.5271094  -0.52596456
+  -0.5248804 ]
+ [-0.5522918  -0.5514679  -0.550762   ... -0.5549362  -0.5540034
+  -0.55312926]
+ [-0.17073749 -0.16970679 -0.16881871 ... -0.17401463 -0.17289232
+  -0.17180814]
+ [-0.3129027  -0.3113385  -0.3099127  ... -0.31770444 -0.3161194
+  -0.31451842]]
+2026-05-28 14:16:52,039 - INFO - Loading target file: thesis/results/steered_enso_20170103_1200_tropical_lat30p0_alpha_-1.0.nc
+2026-05-28 14:16:52,094 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:17:18,924 - WARNING - SST not found. Using '2t' (2-meter temperature) as proxy.
+2026-05-28 14:17:18,950 - INFO - Calculating SST anomalies...
+2026-05-28 14:17:27,466 - INFO - Calculating area-weighted spatial mean over Niño 3.4 region...
+2026-05-28 14:17:27,522 - INFO - Applying 3-month rolling mean (assuming monthly input data)...
+2026-05-28 14:17:27,523 - WARNING - Time series is shorter than 3 steps or has no time dimension. Skipping rolling mean.
+2026-05-28 14:17:27,523 - INFO - ONI Index Values: 
+[[-0.5973741  -0.59633076 -0.5953689  ... -0.6006577  -0.59951293
+  -0.59842885]
+ [-0.62584037 -0.6250165  -0.62431043 ... -0.6284846  -0.6275519
+  -0.62667775]
+ [-0.24428591 -0.24325532 -0.24236712 ... -0.24756318 -0.24644075
+  -0.24535656]
+ [-0.3864512  -0.38488695 -0.38346115 ... -0.3912529  -0.38966796
+  -0.3880669 ]]
+2026-05-28 14:17:28,204 - INFO - Loading target file: thesis/results/steered_enso_20170103_1200_tropical_lat30p0_alpha_0.5.nc
+2026-05-28 14:17:28,259 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+[2026-05-28T14:17:52.584] error: *** JOB 23179803 ON tcn476 CANCELLED AT 2026-05-28T14:17:52 DUE to SIGNAL Terminated ***

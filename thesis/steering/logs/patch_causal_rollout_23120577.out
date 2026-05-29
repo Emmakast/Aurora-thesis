@@ -1,0 +1,75 @@
+Running Spatio-Temporal Causal Rollouts...
+Dynamic grid shape calculated: Lat=90, Lon=180
+Running causal rollouts for 81 Neutral dates...
+Initializing Aurora model locally...
+
+[1/81] Processing Neutral date: 2017-03-08
+    Base file base_2017-03-08.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-03-08.nc already exists. Skipping patched rollout.
+
+[2/81] Processing Neutral date: 2020-03-28
+    Base file base_2020-03-28.nc already exists locally. Skipping base rollout.
+    Patched file patched_2020-03-28.nc already exists. Skipping patched rollout.
+
+[3/81] Processing Neutral date: 2017-03-09
+    Base file base_2017-03-09.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-03-09.nc already exists. Skipping patched rollout.
+
+[4/81] Processing Neutral date: 2016-03-20
+    Running Base Rollout...
+    ↑ Uploaded base prediction to S3: aurora_hres_validation/prediction_20160320_0000_hres.nc
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[5/81] Processing Neutral date: 2018-03-30
+    Running Base Rollout...
+    ↑ Uploaded base prediction to S3: aurora_hres_validation/prediction_20180330_0000_hres.nc
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[6/81] Processing Neutral date: 2021-03-18
+    Running Base Rollout...
+    ↑ Uploaded base prediction to S3: aurora_hres_validation/prediction_20210318_0000_hres.nc
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[7/81] Processing Neutral date: 2016-03-16
+    Running Base Rollout...
+    ↑ Uploaded base prediction to S3: aurora_hres_validation/prediction_20160316_0000_hres.nc
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[8/81] Processing Neutral date: 2022-03-21
+    Running Base Rollout...
+    ↑ Uploaded base prediction to S3: aurora_hres_validation/prediction_20220321_0000_hres.nc
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[9/81] Processing Neutral date: 2020-03-29
+    Running Base Rollout...
+    ↑ Uploaded base prediction to S3: aurora_hres_validation/prediction_20200329_0000_hres.nc
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[10/81] Processing Neutral date: 2017-03-04
+    Running Base Rollout...
+    ↑ Uploaded base prediction to S3: aurora_hres_validation/prediction_20170304_0000_hres.nc
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[11/81] Processing Neutral date: 2022-03-10
+    Running Base Rollout...
+    ↑ Uploaded base prediction to S3: aurora_hres_validation/prediction_20220310_0000_hres.nc
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+    ✓ Patched rollout completed and saved.
+
+[12/81] Processing Neutral date: 2022-03-03
+    Running Base Rollout...

@@ -1,0 +1,38 @@
+Starting upload from scratch-node/ekasteleyn.23166236
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/upload_to_s3_scratch.py", line 3, in <module>
+    import boto3
+  File "/usr/lib/python3.9/site-packages/boto3/__init__.py", line 17, in <module>
+    from boto3.session import Session
+  File "/usr/lib/python3.9/site-packages/boto3/session.py", line 17, in <module>
+    import botocore.session
+  File "/usr/lib/python3.9/site-packages/botocore/session.py", line 26, in <module>
+    import botocore.client
+  File "/usr/lib/python3.9/site-packages/botocore/client.py", line 15, in <module>
+    from botocore import waiter, xform_name
+  File "/usr/lib/python3.9/site-packages/botocore/waiter.py", line 18, in <module>
+    from botocore.docs.docstring import WaiterDocstring
+  File "/usr/lib/python3.9/site-packages/botocore/docs/__init__.py", line 15, in <module>
+    from botocore.docs.service import ServiceDocumenter
+  File "/usr/lib/python3.9/site-packages/botocore/docs/service.py", line 14, in <module>
+    from botocore.docs.client import ClientDocumenter, ClientExceptionsDocumenter
+  File "/usr/lib/python3.9/site-packages/botocore/docs/client.py", line 17, in <module>
+    from botocore.docs.example import ResponseExampleDocumenter
+  File "/usr/lib/python3.9/site-packages/botocore/docs/example.py", line 13, in <module>
+    from botocore.docs.shape import ShapeDocumenter
+  File "/usr/lib/python3.9/site-packages/botocore/docs/shape.py", line 19, in <module>
+    from botocore.utils import is_json_value_header
+  File "/usr/lib/python3.9/site-packages/botocore/utils.py", line 37, in <module>
+    import botocore.httpsession
+  File "/usr/lib/python3.9/site-packages/botocore/httpsession.py", line 45, in <module>
+    from urllib3.contrib.pyopenssl import (
+  File "/usr/lib/python3.9/site-packages/urllib3/contrib/pyopenssl.py", line 50, in <module>
+    import OpenSSL.SSL
+  File "/usr/lib/python3.9/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/usr/lib/python3.9/site-packages/OpenSSL/crypto.py", line 1579, in <module>
+    class X509StoreFlags(object):
+  File "/usr/lib/python3.9/site-packages/OpenSSL/crypto.py", line 1598, in X509StoreFlags
+    NOTIFY_POLICY = _lib.X509_V_FLAG_NOTIFY_POLICY
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_NOTIFY_POLICY'
+Finished upload job.

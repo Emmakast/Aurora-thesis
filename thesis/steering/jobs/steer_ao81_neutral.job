@@ -1,0 +1,46 @@
+#!/bin/bash
+#SBATCH --job-name=steer_ao81
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_ao81_%A_%a.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_ao81_%A_%a.err
+#SBATCH --time=1:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=128G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+#SBATCH --array=0-80
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── 1. Get the date for this task ────────────────────────────────────────────
+DATES=($(awk -F, 'NR>1 && $5=="Neutral" {print $1"-"sprintf("%02d", $2)"-"sprintf("%02d", $3)}' thesis/steering/data/target_dates_ao_81.csv))
+BASE_DATE=${DATES[$SLURM_ARRAY_TASK_ID]}
+
+echo "========================================"
+echo "  STEER AO - Base Date: $BASE_DATE"
+echo "========================================"
+
+# ── 2. Run Steering ──────────────────────────────────────────────────────────
+OUTPUT_DIR="/scratch-shared/ekasteleyn/ao_neutral_steered"
+mkdir -p $OUTPUT_DIR
+
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python thesis/steering/scripts/steering/steer_aurora.py \
+    --phenomenon AO \
+    --csv thesis/steering/data/target_dates_ao_81.csv \
+    --base-date $BASE_DATE \
+    --alphas 1.0 2.0 5.0 10.0 \
+    --steps 12 \
+    --mask-region polar \
+    --polar-lat-min 60.0 \
+    --hemisphere north \
+    --name-suffix ao81_polar \
+    --data-dir /scratch-shared/ekasteleyn/downloads/hres_t0 \
+    --output-dir $OUTPUT_DIR
+
+echo "Steering Complete: $(date)"

@@ -1,0 +1,328 @@
+Running Spatio-Temporal Causal Rollouts...
+Running causal rollouts for 81 Neutral dates...
+Initializing Aurora model locally...
+
+[1/81] Processing Neutral date: 2017-03-08
+    Base file base_2017-03-08.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-03-08.nc already exists. Skipping patched rollout.
+
+[2/81] Processing Neutral date: 2020-03-28
+    Base file base_2020-03-28.nc already exists locally. Skipping base rollout.
+    Patched file patched_2020-03-28.nc already exists. Skipping patched rollout.
+
+[3/81] Processing Neutral date: 2017-03-09
+    Base file base_2017-03-09.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-03-09.nc already exists. Skipping patched rollout.
+
+[4/81] Processing Neutral date: 2016-03-20
+    Base file base_2016-03-20.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-03-20.nc already exists. Skipping patched rollout.
+
+[5/81] Processing Neutral date: 2018-03-30
+    Base file base_2018-03-30.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-03-30.nc already exists. Skipping patched rollout.
+
+[6/81] Processing Neutral date: 2021-03-18
+    Base file base_2021-03-18.nc already exists locally. Skipping base rollout.
+    Patched file patched_2021-03-18.nc already exists. Skipping patched rollout.
+
+[7/81] Processing Neutral date: 2016-03-16
+    Base file base_2016-03-16.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-03-16.nc already exists. Skipping patched rollout.
+
+[8/81] Processing Neutral date: 2022-03-21
+    Base file base_2022-03-21.nc already exists locally. Skipping base rollout.
+    Patched file patched_2022-03-21.nc already exists. Skipping patched rollout.
+
+[9/81] Processing Neutral date: 2020-03-29
+    Base file base_2020-03-29.nc already exists locally. Skipping base rollout.
+    Patched file patched_2020-03-29.nc already exists. Skipping patched rollout.
+
+[10/81] Processing Neutral date: 2017-03-04
+    Base file base_2017-03-04.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-03-04.nc already exists. Skipping patched rollout.
+
+[11/81] Processing Neutral date: 2022-03-10
+    Base file base_2022-03-10.nc already exists locally. Skipping base rollout.
+    Patched file patched_2022-03-10.nc already exists. Skipping patched rollout.
+
+[12/81] Processing Neutral date: 2022-03-03
+    Base file base_2022-03-03.nc already exists locally. Skipping base rollout.
+    Patched file patched_2022-03-03.nc already exists. Skipping patched rollout.
+
+[13/81] Processing Neutral date: 2016-03-22
+    Base file base_2016-03-22.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-03-22.nc already exists. Skipping patched rollout.
+
+[14/81] Processing Neutral date: 2022-03-13
+    Base file base_2022-03-13.nc already exists locally. Skipping base rollout.
+    Patched file patched_2022-03-13.nc already exists. Skipping patched rollout.
+
+[15/81] Processing Neutral date: 2017-03-28
+    Base file base_2017-03-28.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-03-28.nc already exists. Skipping patched rollout.
+
+[16/81] Processing Neutral date: 2021-03-16
+    Base file base_2021-03-16.nc already exists locally. Skipping base rollout.
+    Patched file patched_2021-03-16.nc already exists. Skipping patched rollout.
+
+[17/81] Processing Neutral date: 2018-03-29
+    Base file base_2018-03-29.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-03-29.nc already exists. Skipping patched rollout.
+
+[18/81] Processing Neutral date: 2022-03-23
+    Base file base_2022-03-23.nc already exists locally. Skipping base rollout.
+    Patched file patched_2022-03-23.nc already exists. Skipping patched rollout.
+
+[19/81] Processing Neutral date: 2022-03-04
+    Base file base_2022-03-04.nc already exists locally. Skipping base rollout.
+    Patched file patched_2022-03-04.nc already exists. Skipping patched rollout.
+
+[20/81] Processing Neutral date: 2018-03-31
+    Base file base_2018-03-31.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-03-31.nc already exists. Skipping patched rollout.
+
+[21/81] Processing Neutral date: 2018-03-19
+    Base file base_2018-03-19.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-03-19.nc already exists. Skipping patched rollout.
+
+[22/81] Processing Neutral date: 2017-03-10
+    Base file base_2017-03-10.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-03-10.nc already exists. Skipping patched rollout.
+
+[23/81] Processing Neutral date: 2022-03-08
+    Base file base_2022-03-08.nc already exists locally. Skipping base rollout.
+    Patched file patched_2022-03-08.nc already exists. Skipping patched rollout.
+
+[24/81] Processing Neutral date: 2016-03-01
+    Base file base_2016-03-01.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-03-01.nc already exists. Skipping patched rollout.
+
+[25/81] Processing Neutral date: 2021-03-02
+    Base file base_2021-03-02.nc already exists locally. Skipping base rollout.
+    Patched file patched_2021-03-02.nc already exists. Skipping patched rollout.
+
+[26/81] Processing Neutral date: 2017-02-16
+    Base file base_2017-02-16.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-02-16.nc already exists. Skipping patched rollout.
+
+[27/81] Processing Neutral date: 2021-02-15
+    Base file base_2021-02-15.nc already exists locally. Skipping base rollout.
+    Patched file patched_2021-02-15.nc already exists. Skipping patched rollout.
+
+[28/81] Processing Neutral date: 2018-02-20
+    Base file base_2018-02-20.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-02-20.nc already exists. Skipping patched rollout.
+
+[29/81] Processing Neutral date: 2017-02-04
+    Base file base_2017-02-04.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-02-04.nc already exists. Skipping patched rollout.
+
+[30/81] Processing Neutral date: 2016-02-04
+    Base file base_2016-02-04.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-02-04.nc already exists. Skipping patched rollout.
+
+[31/81] Processing Neutral date: 2018-02-24
+    Base file base_2018-02-24.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-02-24.nc already exists. Skipping patched rollout.
+
+[32/81] Processing Neutral date: 2018-02-06
+    Base file base_2018-02-06.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-02-06.nc already exists. Skipping patched rollout.
+
+[33/81] Processing Neutral date: 2016-02-03
+    Base file base_2016-02-03.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-02-03.nc already exists. Skipping patched rollout.
+
+[34/81] Processing Neutral date: 2016-02-09
+    Base file base_2016-02-09.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-02-09.nc already exists. Skipping patched rollout.
+
+[35/81] Processing Neutral date: 2018-02-21
+    Base file base_2018-02-21.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-02-21.nc already exists. Skipping patched rollout.
+
+[36/81] Processing Neutral date: 2018-02-17
+    Base file base_2018-02-17.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-02-17.nc already exists. Skipping patched rollout.
+
+[37/81] Processing Neutral date: 2016-02-29
+    Base file base_2016-02-29.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-02-29.nc already exists. Skipping patched rollout.
+
+[38/81] Processing Neutral date: 2021-02-20
+    Base file base_2021-02-20.nc already exists locally. Skipping base rollout.
+    Patched file patched_2021-02-20.nc already exists. Skipping patched rollout.
+
+[39/81] Processing Neutral date: 2018-02-23
+    Base file base_2018-02-23.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-02-23.nc already exists. Skipping patched rollout.
+
+[40/81] Processing Neutral date: 2018-02-19
+    Base file base_2018-02-19.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-02-19.nc already exists. Skipping patched rollout.
+
+[41/81] Processing Neutral date: 2019-02-08
+    Base file base_2019-02-08.nc already exists locally. Skipping base rollout.
+    Patched file patched_2019-02-08.nc already exists. Skipping patched rollout.
+
+[42/81] Processing Neutral date: 2016-02-22
+    Base file base_2016-02-22.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-02-22.nc already exists. Skipping patched rollout.
+
+[43/81] Processing Neutral date: 2019-01-17
+    Base file base_2019-01-17.nc already exists locally. Skipping base rollout.
+    Patched file patched_2019-01-17.nc already exists. Skipping patched rollout.
+
+[44/81] Processing Neutral date: 2018-01-25
+    Base file base_2018-01-25.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-01-25.nc already exists. Skipping patched rollout.
+
+[45/81] Processing Neutral date: 2022-01-31
+    Base file base_2022-01-31.nc already exists locally. Skipping base rollout.
+    Patched file patched_2022-01-31.nc already exists. Skipping patched rollout.
+
+[46/81] Processing Neutral date: 2016-01-25
+    Base file base_2016-01-25.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-01-25.nc already exists. Skipping patched rollout.
+
+[47/81] Processing Neutral date: 2018-01-18
+    Base file base_2018-01-18.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-01-18.nc already exists. Skipping patched rollout.
+
+[48/81] Processing Neutral date: 2017-01-02
+    Base file base_2017-01-02.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-01-02.nc already exists. Skipping patched rollout.
+
+[49/81] Processing Neutral date: 2017-01-16
+    Base file base_2017-01-16.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-01-16.nc already exists. Skipping patched rollout.
+
+[50/81] Processing Neutral date: 2017-01-13
+    Base file base_2017-01-13.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-01-13.nc already exists. Skipping patched rollout.
+
+[51/81] Processing Neutral date: 2020-01-28
+    Base file base_2020-01-28.nc already exists locally. Skipping base rollout.
+    Patched file patched_2020-01-28.nc already exists. Skipping patched rollout.
+
+[52/81] Processing Neutral date: 2020-01-29
+    Base file base_2020-01-29.nc already exists locally. Skipping base rollout.
+    Patched file patched_2020-01-29.nc already exists. Skipping patched rollout.
+
+[53/81] Processing Neutral date: 2016-01-23
+    Base file base_2016-01-23.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-01-23.nc already exists. Skipping patched rollout.
+
+[54/81] Processing Neutral date: 2019-01-20
+    Base file base_2019-01-20.nc already exists locally. Skipping base rollout.
+    Patched file patched_2019-01-20.nc already exists. Skipping patched rollout.
+
+[55/81] Processing Neutral date: 2019-01-07
+    Base file base_2019-01-07.nc already exists locally. Skipping base rollout.
+    Patched file patched_2019-01-07.nc already exists. Skipping patched rollout.
+
+[56/81] Processing Neutral date: 2022-01-10
+    Base file base_2022-01-10.nc already exists locally. Skipping base rollout.
+    Patched file patched_2022-01-10.nc already exists. Skipping patched rollout.
+
+[57/81] Processing Neutral date: 2018-01-13
+    Base file base_2018-01-13.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-01-13.nc already exists. Skipping patched rollout.
+
+[58/81] Processing Neutral date: 2020-12-02
+    Base file base_2020-12-02.nc already exists locally. Skipping base rollout.
+    Patched file patched_2020-12-02.nc already exists. Skipping patched rollout.
+
+[59/81] Processing Neutral date: 2018-12-25
+    Base file base_2018-12-25.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-12-25.nc already exists. Skipping patched rollout.
+
+[60/81] Processing Neutral date: 2016-12-06
+    Base file base_2016-12-06.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-12-06.nc already exists. Skipping patched rollout.
+
+[61/81] Processing Neutral date: 2019-12-22
+    Base file base_2019-12-22.nc already exists locally. Skipping base rollout.
+    Patched file patched_2019-12-22.nc already exists. Skipping patched rollout.
+
+[62/81] Processing Neutral date: 2018-12-05
+    Base file base_2018-12-05.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-12-05.nc already exists. Skipping patched rollout.
+
+[63/81] Processing Neutral date: 2018-12-24
+    Base file base_2018-12-24.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-12-24.nc already exists. Skipping patched rollout.
+
+[64/81] Processing Neutral date: 2017-12-27
+    Base file base_2017-12-27.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-12-27.nc already exists. Skipping patched rollout.
+
+[65/81] Processing Neutral date: 2017-11-14
+    Base file base_2017-11-14.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-11-14.nc already exists. Skipping patched rollout.
+
+[66/81] Processing Neutral date: 2016-11-09
+    Base file base_2016-11-09.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-11-09.nc already exists. Skipping patched rollout.
+
+[67/81] Processing Neutral date: 2021-11-13
+    Base file base_2021-11-13.nc already exists locally. Skipping base rollout.
+    Patched file patched_2021-11-13.nc already exists. Skipping patched rollout.
+
+[68/81] Processing Neutral date: 2017-11-26
+    Base file base_2017-11-26.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-11-26.nc already exists. Skipping patched rollout.
+
+[69/81] Processing Neutral date: 2020-11-30
+    Base file base_2020-11-30.nc already exists locally. Skipping base rollout.
+    Patched file patched_2020-11-30.nc already exists. Skipping patched rollout.
+
+[70/81] Processing Neutral date: 2018-11-08
+    Base file base_2018-11-08.nc already exists locally. Skipping base rollout.
+    Patched file patched_2018-11-08.nc already exists. Skipping patched rollout.
+
+[71/81] Processing Neutral date: 2016-05-04
+    Base file base_2016-05-04.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-05-04.nc already exists. Skipping patched rollout.
+
+[72/81] Processing Neutral date: 2020-05-12
+    Base file base_2020-05-12.nc already exists locally. Skipping base rollout.
+    Patched file patched_2020-05-12.nc already exists. Skipping patched rollout.
+
+[73/81] Processing Neutral date: 2016-05-26
+    Base file base_2016-05-26.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-05-26.nc already exists. Skipping patched rollout.
+
+[74/81] Processing Neutral date: 2016-05-24
+    Base file base_2016-05-24.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-05-24.nc already exists. Skipping patched rollout.
+
+[75/81] Processing Neutral date: 2020-05-06
+    Base file base_2020-05-06.nc already exists locally. Skipping base rollout.
+    Patched file patched_2020-05-06.nc already exists. Skipping patched rollout.
+
+[76/81] Processing Neutral date: 2017-10-30
+    Base file base_2017-10-30.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-10-30.nc already exists. Skipping patched rollout.
+
+[77/81] Processing Neutral date: 2019-10-24
+    Base file base_2019-10-24.nc already exists locally. Skipping base rollout.
+    Patched file patched_2019-10-24.nc already exists. Skipping patched rollout.
+
+[78/81] Processing Neutral date: 2021-10-09
+    Base file base_2021-10-09.nc already exists locally. Skipping base rollout.
+    Patched file patched_2021-10-09.nc already exists. Skipping patched rollout.
+
+[79/81] Processing Neutral date: 2017-10-23
+    Base file base_2017-10-23.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-10-23.nc already exists. Skipping patched rollout.
+
+[80/81] Processing Neutral date: 2017-04-13
+    Base file base_2017-04-13.nc already exists locally. Skipping base rollout.
+    Patched file patched_2017-04-13.nc already exists. Skipping patched rollout.
+
+[81/81] Processing Neutral date: 2016-04-08
+    Base file base_2016-04-08.nc already exists locally. Skipping base rollout.
+    Patched file patched_2016-04-08.nc already exists. Skipping patched rollout.
+COMPLETE: Wed May 27 09:29:16 CEST 2026

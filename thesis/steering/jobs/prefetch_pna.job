@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --job-name=prefetch_pna
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/prefetch_pna_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/prefetch_pna_%j.err
+#SBATCH --time=2:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=32G
+#SBATCH --partition=rome
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python thesis/steering/scripts/data_loader/prefetch_pna_data.py

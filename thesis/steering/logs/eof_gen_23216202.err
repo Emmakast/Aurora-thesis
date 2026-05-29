@@ -1,0 +1,5 @@
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.1
+[notice] To update, run: /home/ekasteleyn/aurora_thesis/aurora_env/bin/python -m pip install --upgrade pip
+2026-05-29 13:39:56,205 - INFO - Loading Zarr store from gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+2026-05-29 13:40:25,394 - INFO - Calculating velocity potential globally in chunks and reducing...

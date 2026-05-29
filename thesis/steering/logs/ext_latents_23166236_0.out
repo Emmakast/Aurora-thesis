@@ -1,0 +1,2816 @@
+========================================
+  EXTRACTING LATENTS FOR: thesis/steering/data/target_dates_mjo.csv
+========================================
+  ⚠ S3 credentials not found in .env. Files will only be saved locally.
+======================================================================
+  AURORA LATENT EXTRACTION - IFS HRES T0
+======================================================================
+  Dates: 96 dates
+  Init hours: [0]
+  Latent extraction init: 0:00 UTC only
+  Rollout steps: 1
+  Device: cuda
+  Output: /scratch-node/ekasteleyn.23166238/aurora_hres_latents
+  Cache: /scratch-shared/ekasteleyn/downloads/hres_t0
+  Target layers: [('perceiver', 0), ('encoder', 0), ('encoder', 1), ('encoder', 2)]
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+  2016-01-21
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-01-22
+  2016-01-23
+  2016-01-24
+  2016-02-22
+  2016-02-23
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-04-17
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-04-18
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-05-30
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-05-31
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-10-18
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-10-19
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-10-20
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-10-23
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-10-24
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-10-25
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-01-04
+  2017-01-05
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-02-12
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-02-13
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-02-14
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-02-15
+  2017-02-16
+  2017-04-02
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-04-03
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-04-04
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-05-23
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-05-24
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-09-07
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-09-08
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-10-02
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-10-03
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-10-14
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-10-15
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-10-16
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-10-17
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-10-18
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-10-19
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-10-20
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-01-26
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-01-27
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-01-28
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-01-29
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-01-30
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-01-31
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-02-01
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-02-02
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-02-03
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-02-04
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-02-05
+  2018-02-06
+  2018-02-07
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-02-08
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-02-09
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-12-24
+  2018-12-25
+  2018-12-26
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2018-12-27
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2019-01-13
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2019-01-14
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2019-04-07
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2019-04-08
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2019-09-24
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2019-09-25
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2019-09-26
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2019-12-31
+  2020-01-01
+  2020-01-02
+  2020-01-03
+  2020-01-04
+  2020-01-08
+  2020-01-09
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-01-10
+  2020-01-11
+  2020-01-12
+  2020-01-13
+  2020-01-14
+  2020-01-15
+  2020-01-16
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-01-17
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-01-18
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-01-31
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-02-01
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-02-02
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-02-03
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-02-04
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-02-25
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-02-26
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-02-27
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-02-28
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-02-29
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-12-23
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-12-24
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-12-26
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-12-27
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-01-18
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-01-19
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-02-21
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-02-22
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-04-26
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-04-27
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-04-28
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-04-29
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-04-30
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-05-01
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-05-02
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-05-03
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-05-04
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-10-16
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2021-10-17
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-01-15
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-01-16
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-01-17
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-01-18
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-01-19
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-01-26
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-01-27
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-01-31
+  2022-02-01
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-02-02
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-02-25
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-02-26
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-02-27
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-02-28
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-04-30
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-01
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-24
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-05-25
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-09-12
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-09-13
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-12-01
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2022-12-02
+    Downloading surface variables...
+    Downloading atmospheric variables...
+
+[3/4] Loading Aurora 0.25° Fine-Tuned model...
+  ✓ Model loaded
+
+[4/4] Processing 96 runs (96 dates × 1 init times)...
+  Loading static variables into memory...
+  ✓ Static variables loaded
+
+  [09:25:26] [1/96] 2016-02-23 init 00:00 UTC [+latents]
+    Init time: 2016-02-23 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160223_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160223_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160223_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160223_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160223_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160223_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160223_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160223_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.5s
+
+  [09:25:40] [2/96] 2017-02-13 init 00:00 UTC [+latents] | ETA: 21.4 min
+    Init time: 2017-02-13 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170213_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170213_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170213_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170213_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170213_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170213_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170213_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170213_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.7s
+
+  [09:25:53] [3/96] 2017-02-14 init 00:00 UTC [+latents] | ETA: 21.3 min
+    Init time: 2017-02-14 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170214_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170214_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170214_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170214_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170214_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170214_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170214_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170214_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.9s
+
+  [09:26:05] [4/96] 2017-02-15 init 00:00 UTC [+latents] | ETA: 20.2 min
+    Init time: 2017-02-15 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170215_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170215_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170215_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170215_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170215_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170215_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170215_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170215_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.8s
+
+  [09:26:17] [5/96] 2017-02-16 init 00:00 UTC [+latents] | ETA: 19.5 min
+    Init time: 2017-02-16 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170216_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170216_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170216_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170216_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170216_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170216_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170216_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170216_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [09:26:29] [6/96] 2017-10-15 init 00:00 UTC [+latents] | ETA: 18.9 min
+    Init time: 2017-10-15 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171015_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171015_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171015_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171015_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171015_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171015_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171015_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171015_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.9s
+
+  [09:26:41] [7/96] 2017-10-16 init 00:00 UTC [+latents] | ETA: 18.8 min
+    Init time: 2017-10-16 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171016_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171016_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171016_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171016_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171016_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171016_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171016_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171016_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.7s
+
+  [09:26:55] [8/96] 2017-10-17 init 00:00 UTC [+latents] | ETA: 18.9 min
+    Init time: 2017-10-17 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171017_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171017_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171017_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171017_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171017_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171017_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171017_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171017_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.8s
+
+  [09:27:10] [9/96] 2017-10-18 init 00:00 UTC [+latents] | ETA: 19.0 min
+    Init time: 2017-10-18 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171018_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171018_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171018_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171018_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171018_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171018_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171018_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171018_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.5s
+
+  [09:27:24] [10/96] 2017-10-19 init 00:00 UTC [+latents] | ETA: 18.9 min
+    Init time: 2017-10-19 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171019_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171019_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171019_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171019_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171019_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171019_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171019_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171019_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 15.4s
+
+  [09:27:39] [11/96] 2017-10-20 init 00:00 UTC [+latents] | ETA: 19.0 min
+    Init time: 2017-10-20 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171020_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171020_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171020_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171020_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171020_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171020_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171020_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171020_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.0s
+
+  [09:27:51] [12/96] 2018-01-27 init 00:00 UTC [+latents] | ETA: 18.6 min
+    Init time: 2018-01-27 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180127_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180127_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180127_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180127_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180127_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180127_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180127_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180127_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.6s
+
+  [09:28:04] [13/96] 2018-01-28 init 00:00 UTC [+latents] | ETA: 18.3 min
+    Init time: 2018-01-28 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180128_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180128_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180128_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180128_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180128_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180128_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180128_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180128_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.8s
+
+  [09:28:16] [14/96] 2018-01-29 init 00:00 UTC [+latents] | ETA: 18.1 min
+    Init time: 2018-01-29 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180129_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180129_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180129_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180129_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180129_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180129_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180129_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180129_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.8s
+
+  [09:28:28] [15/96] 2018-01-30 init 00:00 UTC [+latents] | ETA: 17.8 min
+    Init time: 2018-01-30 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180130_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180130_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180130_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180130_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180130_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180130_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180130_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180130_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:28:40] [16/96] 2018-01-31 init 00:00 UTC [+latents] | ETA: 17.4 min
+    Init time: 2018-01-31 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180131_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180131_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180131_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180131_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180131_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180131_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180131_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180131_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.8s
+
+  [09:28:52] [17/96] 2018-02-01 init 00:00 UTC [+latents] | ETA: 17.2 min
+    Init time: 2018-02-01 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180201_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180201_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180201_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180201_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180201_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180201_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180201_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180201_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.2s
+
+  [09:29:05] [18/96] 2018-02-02 init 00:00 UTC [+latents] | ETA: 16.9 min
+    Init time: 2018-02-02 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180202_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180202_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180202_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180202_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180202_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180202_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180202_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180202_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.9s
+
+  [09:29:19] [19/96] 2018-02-03 init 00:00 UTC [+latents] | ETA: 16.8 min
+    Init time: 2018-02-03 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180203_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180203_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180203_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180203_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180203_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180203_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180203_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180203_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.9s
+
+  [09:29:32] [20/96] 2018-02-04 init 00:00 UTC [+latents] | ETA: 16.6 min
+    Init time: 2018-02-04 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180204_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180204_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180204_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180204_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180204_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180204_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180204_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180204_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.4s
+
+  [09:29:46] [21/96] 2018-02-05 init 00:00 UTC [+latents] | ETA: 16.4 min
+    Init time: 2018-02-05 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180205_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180205_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180205_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180205_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180205_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180205_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180205_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180205_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.2s
+
+  [09:29:59] [22/96] 2018-02-06 init 00:00 UTC [+latents] | ETA: 16.2 min
+    Init time: 2018-02-06 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180206_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180206_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180206_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180206_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180206_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180206_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180206_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180206_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.8s
+
+  [09:30:11] [23/96] 2018-02-07 init 00:00 UTC [+latents] | ETA: 15.9 min
+    Init time: 2018-02-07 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180207_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180207_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180207_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180207_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180207_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180207_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180207_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180207_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.9s
+
+  [09:30:23] [24/96] 2018-02-08 init 00:00 UTC [+latents] | ETA: 15.7 min
+    Init time: 2018-02-08 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180208_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180208_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180208_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180208_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180208_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180208_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180208_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180208_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.8s
+
+  [09:30:34] [25/96] 2018-02-09 init 00:00 UTC [+latents] | ETA: 15.4 min
+    Init time: 2018-02-09 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180209_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180209_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180209_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180209_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180209_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180209_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180209_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180209_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.5s
+
+  [09:30:47] [26/96] 2018-12-25 init 00:00 UTC [+latents] | ETA: 15.2 min
+    Init time: 2018-12-25 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20181225_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20181225_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20181225_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20181225_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20181225_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20181225_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20181225_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20181225_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.1s
+
+  [09:30:59] [27/96] 2018-12-26 init 00:00 UTC [+latents] | ETA: 14.9 min
+    Init time: 2018-12-26 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20181226_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20181226_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20181226_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20181226_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20181226_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20181226_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20181226_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20181226_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.9s
+
+  [09:31:12] [28/96] 2018-12-27 init 00:00 UTC [+latents] | ETA: 14.7 min
+    Init time: 2018-12-27 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20181227_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20181227_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20181227_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20181227_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20181227_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20181227_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20181227_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20181227_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.2s
+
+  [09:31:24] [29/96] 2019-09-25 init 00:00 UTC [+latents] | ETA: 14.5 min
+    Init time: 2019-09-25 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20190925_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20190925_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20190925_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20190925_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20190925_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20190925_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20190925_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20190925_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.6s
+
+  [09:31:39] [30/96] 2019-09-26 init 00:00 UTC [+latents] | ETA: 14.3 min
+    Init time: 2019-09-26 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20190926_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20190926_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20190926_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20190926_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20190926_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20190926_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20190926_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20190926_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 15.5s
+
+  [09:31:54] [31/96] 2020-01-09 init 00:00 UTC [+latents] | ETA: 14.2 min
+    Init time: 2020-01-09 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200109_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200109_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200109_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200109_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200109_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200109_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200109_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200109_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 15.1s
+
+  [09:32:09] [32/96] 2020-01-10 init 00:00 UTC [+latents] | ETA: 14.1 min
+    Init time: 2020-01-10 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200110_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200110_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200110_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200110_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200110_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200110_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200110_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200110_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.8s
+
+  [09:32:21] [33/96] 2020-01-11 init 00:00 UTC [+latents] | ETA: 13.8 min
+    Init time: 2020-01-11 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200111_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200111_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200111_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200111_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200111_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200111_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200111_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200111_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:32:32] [34/96] 2020-01-12 init 00:00 UTC [+latents] | ETA: 13.6 min
+    Init time: 2020-01-12 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200112_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200112_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200112_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200112_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200112_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200112_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200112_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200112_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.8s
+
+  [09:32:43] [35/96] 2020-01-13 init 00:00 UTC [+latents] | ETA: 13.3 min
+    Init time: 2020-01-13 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200113_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200113_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200113_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200113_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200113_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200113_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200113_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200113_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.8s
+
+  [09:32:54] [36/96] 2020-01-14 init 00:00 UTC [+latents] | ETA: 13.0 min
+    Init time: 2020-01-14 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200114_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200114_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200114_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200114_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200114_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200114_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200114_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200114_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.7s
+
+  [09:33:07] [37/96] 2020-01-15 init 00:00 UTC [+latents] | ETA: 12.8 min
+    Init time: 2020-01-15 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200115_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200115_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200115_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200115_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200115_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200115_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200115_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200115_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.2s
+
+  [09:33:19] [38/96] 2020-01-16 init 00:00 UTC [+latents] | ETA: 12.6 min
+    Init time: 2020-01-16 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200116_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200116_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200116_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200116_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200116_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200116_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200116_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200116_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [09:33:30] [39/96] 2020-01-17 init 00:00 UTC [+latents] | ETA: 12.3 min
+    Init time: 2020-01-17 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200117_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200117_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200117_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200117_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200117_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200117_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200117_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200117_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.2s
+
+  [09:33:43] [40/96] 2020-01-18 init 00:00 UTC [+latents] | ETA: 12.1 min
+    Init time: 2020-01-18 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200118_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200118_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200118_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200118_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200118_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200118_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200118_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200118_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.6s
+
+  [09:33:57] [41/96] 2021-04-27 init 00:00 UTC [+latents] | ETA: 11.9 min
+    Init time: 2021-04-27 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210427_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210427_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210427_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210427_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210427_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210427_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210427_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210427_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 16.2s
+
+  [09:34:13] [42/96] 2021-04-28 init 00:00 UTC [+latents] | ETA: 11.8 min
+    Init time: 2021-04-28 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210428_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210428_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210428_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210428_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210428_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210428_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210428_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210428_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.3s
+
+  [09:34:27] [43/96] 2021-04-29 init 00:00 UTC [+latents] | ETA: 11.6 min
+    Init time: 2021-04-29 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210429_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210429_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210429_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210429_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210429_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210429_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210429_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210429_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 15.6s
+
+  [09:34:42] [44/96] 2021-04-30 init 00:00 UTC [+latents] | ETA: 11.4 min
+    Init time: 2021-04-30 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210430_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210430_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210430_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210430_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210430_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210430_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210430_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210430_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.4s
+
+  [09:34:55] [45/96] 2021-05-01 init 00:00 UTC [+latents] | ETA: 11.2 min
+    Init time: 2021-05-01 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210501_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210501_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210501_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210501_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210501_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210501_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210501_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210501_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.2s
+
+  [09:35:07] [46/96] 2021-05-02 init 00:00 UTC [+latents] | ETA: 11.0 min
+    Init time: 2021-05-02 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210502_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210502_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210502_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210502_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210502_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210502_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210502_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210502_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.8s
+
+  [09:35:19] [47/96] 2021-05-03 init 00:00 UTC [+latents] | ETA: 10.7 min
+    Init time: 2021-05-03 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210503_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210503_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210503_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210503_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210503_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210503_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210503_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210503_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.4s
+
+  [09:35:31] [48/96] 2021-05-04 init 00:00 UTC [+latents] | ETA: 10.5 min
+    Init time: 2021-05-04 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210504_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210504_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210504_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210504_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210504_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210504_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210504_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210504_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.2s
+
+  [09:35:43] [49/96] 2016-01-23 init 00:00 UTC [+latents] | ETA: 10.3 min
+    Init time: 2016-01-23 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160123_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160123_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160123_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160123_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160123_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160123_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160123_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160123_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.5s
+
+  [09:35:56] [50/96] 2020-01-03 init 00:00 UTC [+latents] | ETA: 10.1 min
+    Init time: 2020-01-03 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200103_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200103_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200103_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200103_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200103_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200103_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200103_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200103_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.9s
+
+  [09:36:10] [51/96] 2016-01-22 init 00:00 UTC [+latents] | ETA: 9.9 min
+    Init time: 2016-01-22 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160122_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160122_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160122_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160122_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160122_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160122_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160122_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160122_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.6s
+
+  [09:36:23] [52/96] 2022-01-17 init 00:00 UTC [+latents] | ETA: 9.7 min
+    Init time: 2022-01-17 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220117_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220117_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220117_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220117_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220117_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220117_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220117_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220117_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.5s
+
+  [09:36:37] [53/96] 2022-01-18 init 00:00 UTC [+latents] | ETA: 9.5 min
+    Init time: 2022-01-18 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220118_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220118_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220118_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220118_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220118_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220118_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220118_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220118_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.1s
+
+  [09:36:50] [54/96] 2020-01-02 init 00:00 UTC [+latents] | ETA: 9.2 min
+    Init time: 2020-01-02 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200102_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200102_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200102_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200102_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200102_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200102_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200102_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200102_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.3s
+
+  [09:37:02] [55/96] 2021-01-19 init 00:00 UTC [+latents] | ETA: 9.0 min
+    Init time: 2021-01-19 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210119_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210119_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210119_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210119_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210119_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210119_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210119_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210119_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.6s
+
+  [09:37:17] [56/96] 2022-01-27 init 00:00 UTC [+latents] | ETA: 8.8 min
+    Init time: 2022-01-27 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220127_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220127_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220127_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220127_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220127_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220127_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220127_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220127_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.5s
+
+  [09:37:29] [57/96] 2019-01-14 init 00:00 UTC [+latents] | ETA: 8.6 min
+    Init time: 2019-01-14 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20190114_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20190114_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20190114_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20190114_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20190114_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20190114_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20190114_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20190114_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.6s
+
+  [09:37:42] [58/96] 2016-01-24 init 00:00 UTC [+latents] | ETA: 8.4 min
+    Init time: 2016-01-24 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160124_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160124_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160124_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160124_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160124_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160124_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160124_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160124_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.3s
+
+  [09:37:54] [59/96] 2020-01-04 init 00:00 UTC [+latents] | ETA: 8.2 min
+    Init time: 2020-01-04 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200104_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200104_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200104_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200104_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200104_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200104_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200104_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200104_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.5s
+
+  [09:38:06] [60/96] 2020-01-01 init 00:00 UTC [+latents] | ETA: 7.9 min
+    Init time: 2020-01-01 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200101_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200101_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200101_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200101_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200101_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200101_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200101_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200101_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.7s
+
+  [09:38:19] [61/96] 2017-01-05 init 00:00 UTC [+latents] | ETA: 7.7 min
+    Init time: 2017-01-05 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170105_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170105_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170105_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170105_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170105_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170105_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170105_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170105_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.1s
+
+  [09:38:32] [62/96] 2022-01-19 init 00:00 UTC [+latents] | ETA: 7.5 min
+    Init time: 2022-01-19 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220119_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220119_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220119_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220119_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220119_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220119_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220119_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220119_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.5s
+
+  [09:38:46] [63/96] 2022-01-16 init 00:00 UTC [+latents] | ETA: 7.3 min
+    Init time: 2022-01-16 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220116_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220116_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220116_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220116_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220116_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220116_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220116_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220116_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.5s
+
+  [09:38:59] [64/96] 2020-02-27 init 00:00 UTC [+latents] | ETA: 7.1 min
+    Init time: 2020-02-27 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200227_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200227_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200227_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200227_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200227_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200227_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200227_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200227_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.9s
+
+  [09:39:12] [65/96] 2020-02-28 init 00:00 UTC [+latents] | ETA: 6.9 min
+    Init time: 2020-02-28 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200228_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200228_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200228_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200228_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200228_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200228_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200228_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200228_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.6s
+
+  [09:39:24] [66/96] 2020-02-26 init 00:00 UTC [+latents] | ETA: 6.7 min
+    Init time: 2020-02-26 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200226_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200226_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200226_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200226_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200226_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200226_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200226_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200226_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.2s
+
+  [09:39:39] [67/96] 2022-02-01 init 00:00 UTC [+latents] | ETA: 6.5 min
+    Init time: 2022-02-01 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220201_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220201_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220201_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220201_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220201_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220201_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220201_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220201_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.6s
+
+  [09:39:51] [68/96] 2020-02-04 init 00:00 UTC [+latents] | ETA: 6.2 min
+    Init time: 2020-02-04 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200204_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200204_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200204_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200204_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200204_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200204_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200204_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200204_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.4s
+
+  [09:40:04] [69/96] 2020-02-02 init 00:00 UTC [+latents] | ETA: 6.0 min
+    Init time: 2020-02-02 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200202_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200202_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200202_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200202_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200202_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200202_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200202_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200202_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.8s
+
+  [09:40:16] [70/96] 2021-02-22 init 00:00 UTC [+latents] | ETA: 5.8 min
+    Init time: 2021-02-22 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210222_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210222_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210222_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210222_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210222_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210222_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210222_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210222_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.3s
+
+  [09:40:29] [71/96] 2022-02-02 init 00:00 UTC [+latents] | ETA: 5.6 min
+    Init time: 2022-02-02 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220202_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220202_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220202_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220202_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220202_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220202_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220202_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220202_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.5s
+
+  [09:40:41] [72/96] 2022-02-28 init 00:00 UTC [+latents] | ETA: 5.4 min
+    Init time: 2022-02-28 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220228_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220228_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220228_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220228_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220228_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220228_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220228_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220228_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.5s
+
+  [09:40:56] [73/96] 2020-02-03 init 00:00 UTC [+latents] | ETA: 5.2 min
+    Init time: 2020-02-03 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200203_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200203_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200203_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200203_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200203_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200203_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200203_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200203_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.2s
+
+  [09:41:09] [74/96] 2020-02-01 init 00:00 UTC [+latents] | ETA: 4.9 min
+    Init time: 2020-02-01 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200201_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200201_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200201_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200201_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200201_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200201_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200201_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200201_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.6s
+
+  [09:41:21] [75/96] 2020-02-29 init 00:00 UTC [+latents] | ETA: 4.7 min
+    Init time: 2020-02-29 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200229_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200229_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200229_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200229_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200229_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200229_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200229_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200229_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.1s
+
+  [09:41:35] [76/96] 2022-02-26 init 00:00 UTC [+latents] | ETA: 4.5 min
+    Init time: 2022-02-26 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220226_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220226_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220226_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220226_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220226_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220226_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220226_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220226_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.2s
+
+  [09:41:48] [77/96] 2022-02-27 init 00:00 UTC [+latents] | ETA: 4.3 min
+    Init time: 2022-02-27 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220227_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220227_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220227_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220227_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220227_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220227_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220227_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220227_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.6s
+
+  [09:42:00] [78/96] 2016-10-24 init 00:00 UTC [+latents] | ETA: 4.1 min
+    Init time: 2016-10-24 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161024_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161024_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161024_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161024_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161024_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161024_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161024_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161024_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.1s
+
+  [09:42:13] [79/96] 2016-10-25 init 00:00 UTC [+latents] | ETA: 3.9 min
+    Init time: 2016-10-25 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161025_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161025_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161025_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161025_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161025_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161025_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161025_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161025_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.1s
+
+  [09:42:26] [80/96] 2016-10-20 init 00:00 UTC [+latents] | ETA: 3.7 min
+    Init time: 2016-10-20 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161020_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161020_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161020_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161020_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161020_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161020_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161020_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161020_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.6s
+
+  [09:42:39] [81/96] 2016-10-19 init 00:00 UTC [+latents] | ETA: 3.4 min
+    Init time: 2016-10-19 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161019_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161019_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161019_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161019_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161019_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161019_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161019_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161019_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.7s
+
+  [09:42:52] [82/96] 2017-10-03 init 00:00 UTC [+latents] | ETA: 3.2 min
+    Init time: 2017-10-03 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171003_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171003_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171003_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171003_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171003_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171003_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171003_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171003_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.5s
+
+  [09:43:06] [83/96] 2021-10-17 init 00:00 UTC [+latents] | ETA: 3.0 min
+    Init time: 2021-10-17 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20211017_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20211017_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20211017_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20211017_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20211017_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20211017_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20211017_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20211017_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.9s
+
+  [09:43:19] [84/96] 2017-05-24 init 00:00 UTC [+latents] | ETA: 2.8 min
+    Init time: 2017-05-24 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170524_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170524_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170524_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170524_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170524_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170524_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170524_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170524_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.1s
+
+  [09:43:32] [85/96] 2016-05-31 init 00:00 UTC [+latents] | ETA: 2.6 min
+    Init time: 2016-05-31 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160531_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160531_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160531_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160531_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160531_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160531_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160531_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160531_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.1s
+
+  [09:43:45] [86/96] 2022-05-01 init 00:00 UTC [+latents] | ETA: 2.4 min
+    Init time: 2022-05-01 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220501_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220501_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220501_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220501_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220501_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220501_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220501_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220501_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.0s
+
+  [09:43:57] [87/96] 2022-05-25 init 00:00 UTC [+latents] | ETA: 2.2 min
+    Init time: 2022-05-25 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220525_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220525_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220525_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220525_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220525_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220525_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220525_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220525_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.1s
+
+  [09:44:12] [88/96] 2017-04-04 init 00:00 UTC [+latents] | ETA: 1.9 min
+    Init time: 2017-04-04 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170404_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170404_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170404_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170404_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170404_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170404_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170404_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170404_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.9s
+
+  [09:44:24] [89/96] 2017-04-03 init 00:00 UTC [+latents] | ETA: 1.7 min
+    Init time: 2017-04-03 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170403_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170403_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170403_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170403_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170403_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170403_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170403_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170403_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.2s
+
+  [09:44:37] [90/96] 2016-04-18 init 00:00 UTC [+latents] | ETA: 1.5 min
+    Init time: 2016-04-18 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160418_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160418_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160418_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160418_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160418_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160418_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160418_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160418_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.8s
+
+  [09:44:50] [91/96] 2019-04-08 init 00:00 UTC [+latents] | ETA: 1.3 min
+    Init time: 2019-04-08 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20190408_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20190408_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20190408_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20190408_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20190408_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20190408_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20190408_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20190408_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.0s
+
+  [09:45:03] [92/96] 2020-12-27 init 00:00 UTC [+latents] | ETA: 1.1 min
+    Init time: 2020-12-27 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20201227_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20201227_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20201227_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20201227_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20201227_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20201227_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20201227_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20201227_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.0s
+
+  [09:45:16] [93/96] 2022-12-02 init 00:00 UTC [+latents] | ETA: 0.9 min
+    Init time: 2022-12-02 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20221202_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20221202_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20221202_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20221202_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20221202_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20221202_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20221202_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20221202_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.8s
+
+  [09:45:29] [94/96] 2020-12-24 init 00:00 UTC [+latents] | ETA: 0.6 min
+    Init time: 2020-12-24 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20201224_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20201224_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20201224_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20201224_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20201224_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20201224_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20201224_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20201224_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.3s
+
+  [09:45:43] [95/96] 2022-09-13 init 00:00 UTC [+latents] | ETA: 0.4 min
+    Init time: 2022-09-13 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220913_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220913_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220913_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220913_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220913_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220913_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220913_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220913_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.3s
+
+  [09:45:56] [96/96] 2017-09-08 init 00:00 UTC [+latents] | ETA: 0.2 min
+    Init time: 2017-09-08 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170908_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170908_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170908_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170908_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170908_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170908_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170908_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170908_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.5s
+
+  Waiting for background saves to complete...
+
+======================================================================
+  COMPLETE
+======================================================================
+  Output saved to: /scratch-node/ekasteleyn.23166238/aurora_hres_latents
+  Files: 768 .pt files, 0 .nc files
+  ⚠ S3 credentials not found in .env. Files will only be saved locally.
+======================================================================
+  AURORA LATENT EXTRACTION - IFS HRES T0
+======================================================================
+  Dates: 96 dates
+  Init hours: [12]
+  Latent extraction init: 12:00 UTC only
+  Rollout steps: 1
+  Device: cuda
+  Output: /scratch-node/ekasteleyn.23166238/aurora_hres_latents
+  Cache: /scratch-shared/ekasteleyn/downloads/hres_t0
+  Target layers: [('perceiver', 0), ('encoder', 0), ('encoder', 1), ('encoder', 2)]
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+  2016-01-22
+  2016-01-23
+  2016-01-24
+  2016-02-23
+  2016-04-18
+  2016-05-31
+  2016-10-19
+  2016-10-20
+  2016-10-24
+  2016-10-25
+  2017-01-05
+  2017-02-13
+  2017-02-14
+  2017-02-15
+  2017-02-16
+  2017-04-03
+  2017-04-04
+  2017-05-24
+  2017-09-08
+  2017-10-03
+  2017-10-15
+  2017-10-16
+  2017-10-17
+  2017-10-18
+  2017-10-19
+  2017-10-20
+  2018-01-27
+  2018-01-28
+  2018-01-29
+  2018-01-30
+  2018-01-31
+  2018-02-01
+  2018-02-02
+  2018-02-03
+  2018-02-04
+  2018-02-05
+  2018-02-06
+  2018-02-07
+  2018-02-08
+  2018-02-09
+  2018-12-25
+  2018-12-26
+  2018-12-27
+  2019-01-14
+  2019-04-08
+  2019-09-25
+  2019-09-26
+  2020-01-01
+  2020-01-02
+  2020-01-03
+  2020-01-04
+  2020-01-09
+  2020-01-10
+  2020-01-11
+  2020-01-12
+  2020-01-13
+  2020-01-14
+  2020-01-15
+  2020-01-16
+  2020-01-17
+  2020-01-18
+  2020-02-01
+  2020-02-02
+  2020-02-03
+  2020-02-04
+  2020-02-26
+  2020-02-27
+  2020-02-28
+  2020-02-29
+  2020-12-24
+  2020-12-27
+  2021-01-19
+  2021-02-22
+  2021-04-27
+  2021-04-28
+  2021-04-29
+  2021-04-30
+  2021-05-01
+  2021-05-02
+  2021-05-03
+  2021-05-04
+  2021-10-17
+  2022-01-16
+  2022-01-17
+  2022-01-18
+  2022-01-19
+  2022-01-27
+  2022-02-01
+  2022-02-02
+  2022-02-26
+  2022-02-27
+  2022-02-28
+  2022-05-01
+  2022-05-25
+  2022-09-13
+  2022-12-02
+
+[3/4] Loading Aurora 0.25° Fine-Tuned model...
+  ✓ Model loaded
+
+[4/4] Processing 96 runs (96 dates × 1 init times)...
+  Loading static variables into memory...
+  ✓ Static variables loaded
+
+  [09:46:34] [1/96] 2016-02-23 init 12:00 UTC [+latents]
+    Init time: 2016-02-23 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160223_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160223_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160223_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160223_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160223_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160223_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160223_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160223_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.1s
+
+  [09:46:45] [2/96] 2017-02-13 init 12:00 UTC [+latents] | ETA: 17.5 min
+    Init time: 2017-02-13 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170213_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170213_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170213_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170213_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170213_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170213_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170213_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170213_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.7s
+
+  [09:46:56] [3/96] 2017-02-14 init 12:00 UTC [+latents] | ETA: 17.0 min
+    Init time: 2017-02-14 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170214_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170214_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170214_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170214_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170214_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170214_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170214_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170214_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:47:07] [4/96] 2017-02-15 init 12:00 UTC [+latents] | ETA: 17.1 min
+    Init time: 2017-02-15 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170215_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170215_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170215_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170215_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170215_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170215_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170215_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170215_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [09:47:18] [5/96] 2017-02-16 init 12:00 UTC [+latents] | ETA: 16.9 min
+    Init time: 2017-02-16 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170216_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170216_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170216_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170216_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170216_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170216_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170216_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170216_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.2s
+
+  [09:47:29] [6/96] 2017-10-15 init 12:00 UTC [+latents] | ETA: 16.5 min
+    Init time: 2017-10-15 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171015_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171015_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171015_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171015_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171015_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171015_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171015_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171015_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [09:47:40] [7/96] 2017-10-16 init 12:00 UTC [+latents] | ETA: 16.3 min
+    Init time: 2017-10-16 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171016_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171016_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171016_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171016_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171016_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171016_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171016_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171016_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [09:47:51] [8/96] 2017-10-17 init 12:00 UTC [+latents] | ETA: 16.2 min
+    Init time: 2017-10-17 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171017_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171017_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171017_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171017_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171017_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171017_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171017_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171017_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.6s
+
+  [09:48:02] [9/96] 2017-10-18 init 12:00 UTC [+latents] | ETA: 16.0 min
+    Init time: 2017-10-18 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171018_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171018_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171018_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171018_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171018_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171018_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171018_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171018_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [09:48:13] [10/96] 2017-10-19 init 12:00 UTC [+latents] | ETA: 15.8 min
+    Init time: 2017-10-19 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171019_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171019_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171019_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171019_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171019_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171019_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171019_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171019_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [09:48:23] [11/96] 2017-10-20 init 12:00 UTC [+latents] | ETA: 15.6 min
+    Init time: 2017-10-20 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171020_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171020_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171020_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171020_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171020_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171020_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171020_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171020_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.2s
+
+  [09:48:35] [12/96] 2018-01-27 init 12:00 UTC [+latents] | ETA: 15.5 min
+    Init time: 2018-01-27 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180127_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180127_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180127_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180127_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180127_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180127_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180127_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180127_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.2s
+
+  [09:48:46] [13/96] 2018-01-28 init 12:00 UTC [+latents] | ETA: 15.4 min
+    Init time: 2018-01-28 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180128_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180128_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180128_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180128_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180128_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180128_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180128_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180128_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.2s
+
+  [09:48:57] [14/96] 2018-01-29 init 12:00 UTC [+latents] | ETA: 15.2 min
+    Init time: 2018-01-29 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180129_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180129_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180129_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180129_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180129_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180129_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180129_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180129_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [09:49:08] [15/96] 2018-01-30 init 12:00 UTC [+latents] | ETA: 15.0 min
+    Init time: 2018-01-30 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180130_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180130_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180130_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180130_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180130_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180130_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180130_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180130_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [09:49:19] [16/96] 2018-01-31 init 12:00 UTC [+latents] | ETA: 14.8 min
+    Init time: 2018-01-31 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180131_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180131_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180131_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180131_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180131_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180131_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180131_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180131_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [09:49:30] [17/96] 2018-02-01 init 12:00 UTC [+latents] | ETA: 14.6 min
+    Init time: 2018-02-01 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180201_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180201_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180201_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180201_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180201_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180201_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180201_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180201_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [09:49:41] [18/96] 2018-02-02 init 12:00 UTC [+latents] | ETA: 14.5 min
+    Init time: 2018-02-02 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180202_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180202_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180202_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180202_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180202_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180202_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180202_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180202_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [09:49:52] [19/96] 2018-02-03 init 12:00 UTC [+latents] | ETA: 14.3 min
+    Init time: 2018-02-03 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180203_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180203_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180203_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180203_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180203_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180203_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180203_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180203_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [09:50:03] [20/96] 2018-02-04 init 12:00 UTC [+latents] | ETA: 14.1 min
+    Init time: 2018-02-04 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180204_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180204_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180204_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180204_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180204_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180204_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180204_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180204_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.8s
+
+  [09:50:14] [21/96] 2018-02-05 init 12:00 UTC [+latents] | ETA: 13.9 min
+    Init time: 2018-02-05 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180205_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180205_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180205_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180205_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180205_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180205_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180205_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180205_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.1s
+
+  [09:50:25] [22/96] 2018-02-06 init 12:00 UTC [+latents] | ETA: 13.8 min
+    Init time: 2018-02-06 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180206_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180206_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180206_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180206_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180206_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180206_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180206_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180206_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [09:50:36] [23/96] 2018-02-07 init 12:00 UTC [+latents] | ETA: 13.6 min
+    Init time: 2018-02-07 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180207_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180207_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180207_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180207_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180207_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180207_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180207_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180207_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.5s
+
+  [09:50:48] [24/96] 2018-02-08 init 12:00 UTC [+latents] | ETA: 13.4 min
+    Init time: 2018-02-08 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180208_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180208_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180208_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180208_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180208_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180208_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180208_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180208_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.1s
+
+  [09:51:00] [25/96] 2018-02-09 init 12:00 UTC [+latents] | ETA: 13.3 min
+    Init time: 2018-02-09 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20180209_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20180209_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20180209_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20180209_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20180209_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20180209_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20180209_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20180209_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:51:11] [26/96] 2018-12-25 init 12:00 UTC [+latents] | ETA: 13.1 min
+    Init time: 2018-12-25 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20181225_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20181225_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20181225_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20181225_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20181225_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20181225_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20181225_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20181225_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.8s
+
+  [09:51:22] [27/96] 2018-12-26 init 12:00 UTC [+latents] | ETA: 12.9 min
+    Init time: 2018-12-26 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20181226_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20181226_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20181226_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20181226_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20181226_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20181226_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20181226_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20181226_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [09:51:33] [28/96] 2018-12-27 init 12:00 UTC [+latents] | ETA: 12.7 min
+    Init time: 2018-12-27 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20181227_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20181227_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20181227_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20181227_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20181227_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20181227_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20181227_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20181227_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.2s
+
+  [09:51:45] [29/96] 2019-09-25 init 12:00 UTC [+latents] | ETA: 12.6 min
+    Init time: 2019-09-25 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20190925_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20190925_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20190925_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20190925_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20190925_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20190925_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20190925_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20190925_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [09:51:56] [30/96] 2019-09-26 init 12:00 UTC [+latents] | ETA: 12.4 min
+    Init time: 2019-09-26 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20190926_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20190926_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20190926_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20190926_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20190926_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20190926_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20190926_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20190926_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:52:07] [31/96] 2020-01-09 init 12:00 UTC [+latents] | ETA: 12.2 min
+    Init time: 2020-01-09 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200109_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200109_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200109_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200109_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200109_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200109_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200109_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200109_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:52:19] [32/96] 2020-01-10 init 12:00 UTC [+latents] | ETA: 12.0 min
+    Init time: 2020-01-10 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200110_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200110_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200110_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200110_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200110_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200110_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200110_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200110_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.6s
+
+  [09:52:29] [33/96] 2020-01-11 init 12:00 UTC [+latents] | ETA: 11.8 min
+    Init time: 2020-01-11 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200111_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200111_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200111_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200111_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200111_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200111_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200111_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200111_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.5s
+
+  [09:52:40] [34/96] 2020-01-12 init 12:00 UTC [+latents] | ETA: 11.6 min
+    Init time: 2020-01-12 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200112_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200112_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200112_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200112_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200112_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200112_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200112_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200112_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.3s
+
+  [09:52:50] [35/96] 2020-01-13 init 12:00 UTC [+latents] | ETA: 11.4 min
+    Init time: 2020-01-13 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200113_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200113_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200113_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200113_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200113_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200113_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200113_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200113_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.5s
+
+  [09:53:01] [36/96] 2020-01-14 init 12:00 UTC [+latents] | ETA: 11.2 min
+    Init time: 2020-01-14 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200114_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200114_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200114_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200114_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200114_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200114_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200114_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200114_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.7s
+
+  [09:53:11] [37/96] 2020-01-15 init 12:00 UTC [+latents] | ETA: 11.0 min
+    Init time: 2020-01-15 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200115_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200115_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200115_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200115_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200115_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200115_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200115_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200115_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [09:53:23] [38/96] 2020-01-16 init 12:00 UTC [+latents] | ETA: 10.8 min
+    Init time: 2020-01-16 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200116_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200116_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200116_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200116_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200116_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200116_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200116_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200116_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [09:53:33] [39/96] 2020-01-17 init 12:00 UTC [+latents] | ETA: 10.7 min
+    Init time: 2020-01-17 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200117_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200117_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200117_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200117_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200117_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200117_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200117_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200117_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:53:45] [40/96] 2020-01-18 init 12:00 UTC [+latents] | ETA: 10.5 min
+    Init time: 2020-01-18 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200118_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200118_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200118_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200118_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200118_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200118_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200118_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200118_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.8s
+
+  [09:53:56] [41/96] 2021-04-27 init 12:00 UTC [+latents] | ETA: 10.3 min
+    Init time: 2021-04-27 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210427_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210427_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210427_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210427_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210427_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210427_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210427_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210427_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:54:07] [42/96] 2021-04-28 init 12:00 UTC [+latents] | ETA: 10.1 min
+    Init time: 2021-04-28 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210428_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210428_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210428_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210428_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210428_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210428_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210428_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210428_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.1s
+
+  [09:54:18] [43/96] 2021-04-29 init 12:00 UTC [+latents] | ETA: 9.9 min
+    Init time: 2021-04-29 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210429_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210429_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210429_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210429_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210429_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210429_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210429_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210429_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.1s
+
+  [09:54:29] [44/96] 2021-04-30 init 12:00 UTC [+latents] | ETA: 9.8 min
+    Init time: 2021-04-30 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210430_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210430_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210430_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210430_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210430_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210430_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210430_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210430_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [09:54:40] [45/96] 2021-05-01 init 12:00 UTC [+latents] | ETA: 9.6 min
+    Init time: 2021-05-01 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210501_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210501_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210501_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210501_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210501_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210501_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210501_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210501_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [09:54:51] [46/96] 2021-05-02 init 12:00 UTC [+latents] | ETA: 9.4 min
+    Init time: 2021-05-02 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210502_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210502_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210502_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210502_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210502_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210502_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210502_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210502_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.2s
+
+  [09:55:03] [47/96] 2021-05-03 init 12:00 UTC [+latents] | ETA: 9.2 min
+    Init time: 2021-05-03 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210503_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210503_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210503_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210503_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210503_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210503_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210503_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210503_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:55:14] [48/96] 2021-05-04 init 12:00 UTC [+latents] | ETA: 9.0 min
+    Init time: 2021-05-04 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210504_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210504_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210504_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210504_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210504_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210504_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210504_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210504_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.1s
+
+  [09:55:25] [49/96] 2016-01-23 init 12:00 UTC [+latents] | ETA: 8.8 min
+    Init time: 2016-01-23 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160123_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160123_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160123_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160123_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160123_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160123_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160123_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160123_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.3s
+
+  [09:55:35] [50/96] 2020-01-03 init 12:00 UTC [+latents] | ETA: 8.6 min
+    Init time: 2020-01-03 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200103_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200103_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200103_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200103_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200103_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200103_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200103_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200103_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [09:55:46] [51/96] 2016-01-22 init 12:00 UTC [+latents] | ETA: 8.5 min
+    Init time: 2016-01-22 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160122_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160122_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160122_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160122_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160122_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160122_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160122_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160122_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.8s
+
+  [09:55:57] [52/96] 2022-01-17 init 12:00 UTC [+latents] | ETA: 8.3 min
+    Init time: 2022-01-17 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220117_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220117_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220117_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220117_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220117_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220117_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220117_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220117_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.1s
+
+  [09:56:08] [53/96] 2022-01-18 init 12:00 UTC [+latents] | ETA: 8.1 min
+    Init time: 2022-01-18 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220118_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220118_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220118_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220118_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220118_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220118_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220118_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220118_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.4s
+
+  [09:56:21] [54/96] 2020-01-02 init 12:00 UTC [+latents] | ETA: 7.9 min
+    Init time: 2020-01-02 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200102_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200102_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200102_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200102_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200102_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200102_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200102_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200102_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.8s
+
+  [09:56:31] [55/96] 2021-01-19 init 12:00 UTC [+latents] | ETA: 7.7 min
+    Init time: 2021-01-19 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210119_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210119_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210119_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210119_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210119_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210119_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210119_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210119_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.6s
+
+  [09:56:43] [56/96] 2022-01-27 init 12:00 UTC [+latents] | ETA: 7.6 min
+    Init time: 2022-01-27 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220127_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220127_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220127_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220127_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220127_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220127_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220127_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220127_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:56:54] [57/96] 2019-01-14 init 12:00 UTC [+latents] | ETA: 7.4 min
+    Init time: 2019-01-14 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20190114_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20190114_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20190114_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20190114_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20190114_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20190114_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20190114_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20190114_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.1s
+
+  [09:57:06] [58/96] 2016-01-24 init 12:00 UTC [+latents] | ETA: 7.2 min
+    Init time: 2016-01-24 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160124_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160124_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160124_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160124_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160124_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160124_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160124_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160124_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.3s
+
+  [09:57:19] [59/96] 2020-01-04 init 12:00 UTC [+latents] | ETA: 7.0 min
+    Init time: 2020-01-04 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200104_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200104_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200104_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200104_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200104_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200104_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200104_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200104_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.6s
+
+  [09:57:29] [60/96] 2020-01-01 init 12:00 UTC [+latents] | ETA: 6.8 min
+    Init time: 2020-01-01 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200101_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200101_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200101_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200101_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200101_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200101_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200101_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200101_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.7s
+
+  [09:57:40] [61/96] 2017-01-05 init 12:00 UTC [+latents] | ETA: 6.7 min
+    Init time: 2017-01-05 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170105_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170105_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170105_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170105_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170105_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170105_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170105_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170105_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [09:57:51] [62/96] 2022-01-19 init 12:00 UTC [+latents] | ETA: 6.5 min
+    Init time: 2022-01-19 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220119_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220119_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220119_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220119_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220119_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220119_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220119_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220119_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [09:58:02] [63/96] 2022-01-16 init 12:00 UTC [+latents] | ETA: 6.3 min
+    Init time: 2022-01-16 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220116_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220116_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220116_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220116_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220116_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220116_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220116_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220116_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 13.0s
+
+  [09:58:15] [64/96] 2020-02-27 init 12:00 UTC [+latents] | ETA: 6.1 min
+    Init time: 2020-02-27 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200227_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200227_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200227_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200227_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200227_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200227_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200227_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200227_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [09:58:27] [65/96] 2020-02-28 init 12:00 UTC [+latents] | ETA: 5.9 min
+    Init time: 2020-02-28 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200228_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200228_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200228_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200228_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200228_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200228_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200228_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200228_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.6s
+
+  [09:58:38] [66/96] 2020-02-26 init 12:00 UTC [+latents] | ETA: 5.8 min
+    Init time: 2020-02-26 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200226_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200226_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200226_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200226_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200226_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200226_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200226_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200226_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.6s
+
+  [09:58:50] [67/96] 2022-02-01 init 12:00 UTC [+latents] | ETA: 5.6 min
+    Init time: 2022-02-01 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220201_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220201_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220201_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220201_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220201_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220201_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220201_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220201_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [09:59:01] [68/96] 2020-02-04 init 12:00 UTC [+latents] | ETA: 5.4 min
+    Init time: 2020-02-04 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200204_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200204_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200204_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200204_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200204_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200204_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200204_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200204_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [09:59:13] [69/96] 2020-02-02 init 12:00 UTC [+latents] | ETA: 5.2 min
+    Init time: 2020-02-02 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200202_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200202_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200202_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200202_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200202_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200202_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200202_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200202_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.6s
+
+  [09:59:24] [70/96] 2021-02-22 init 12:00 UTC [+latents] | ETA: 5.0 min
+    Init time: 2021-02-22 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210222_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210222_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210222_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210222_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210222_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210222_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210222_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210222_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.1s
+
+  [09:59:36] [71/96] 2022-02-02 init 12:00 UTC [+latents] | ETA: 4.8 min
+    Init time: 2022-02-02 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220202_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220202_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220202_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220202_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220202_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220202_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220202_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220202_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.5s
+
+  [09:59:49] [72/96] 2022-02-28 init 12:00 UTC [+latents] | ETA: 4.7 min
+    Init time: 2022-02-28 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220228_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220228_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220228_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220228_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220228_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220228_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220228_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220228_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.1s
+
+  [10:00:00] [73/96] 2020-02-03 init 12:00 UTC [+latents] | ETA: 4.5 min
+    Init time: 2020-02-03 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200203_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200203_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200203_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200203_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200203_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200203_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200203_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200203_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [10:00:11] [74/96] 2020-02-01 init 12:00 UTC [+latents] | ETA: 4.3 min
+    Init time: 2020-02-01 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200201_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200201_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200201_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200201_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200201_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200201_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200201_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200201_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.1s
+
+  [10:00:23] [75/96] 2020-02-29 init 12:00 UTC [+latents] | ETA: 4.1 min
+    Init time: 2020-02-29 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20200229_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20200229_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20200229_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20200229_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20200229_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20200229_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20200229_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20200229_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.2s
+
+  [10:00:36] [76/96] 2022-02-26 init 12:00 UTC [+latents] | ETA: 3.9 min
+    Init time: 2022-02-26 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220226_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220226_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220226_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220226_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220226_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220226_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220226_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220226_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.8s
+
+  [10:00:47] [77/96] 2022-02-27 init 12:00 UTC [+latents] | ETA: 3.7 min
+    Init time: 2022-02-27 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220227_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220227_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220227_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220227_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220227_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220227_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220227_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220227_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [10:00:58] [78/96] 2016-10-24 init 12:00 UTC [+latents] | ETA: 3.6 min
+    Init time: 2016-10-24 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161024_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161024_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161024_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161024_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161024_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161024_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161024_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161024_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.6s
+
+  [10:01:10] [79/96] 2016-10-25 init 12:00 UTC [+latents] | ETA: 3.4 min
+    Init time: 2016-10-25 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161025_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161025_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161025_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161025_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161025_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161025_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161025_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161025_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [10:01:21] [80/96] 2016-10-20 init 12:00 UTC [+latents] | ETA: 3.2 min
+    Init time: 2016-10-20 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161020_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161020_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161020_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161020_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161020_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161020_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161020_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161020_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.9s
+
+  [10:01:32] [81/96] 2016-10-19 init 12:00 UTC [+latents] | ETA: 3.0 min
+    Init time: 2016-10-19 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20161019_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20161019_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20161019_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20161019_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20161019_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20161019_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20161019_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20161019_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.2s
+
+  [10:01:43] [82/96] 2017-10-03 init 12:00 UTC [+latents] | ETA: 2.8 min
+    Init time: 2017-10-03 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20171003_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20171003_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20171003_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20171003_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20171003_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20171003_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20171003_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20171003_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.5s
+
+  [10:01:54] [83/96] 2021-10-17 init 12:00 UTC [+latents] | ETA: 2.6 min
+    Init time: 2021-10-17 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20211017_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20211017_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20211017_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20211017_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20211017_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20211017_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20211017_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20211017_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.5s
+
+  [10:02:06] [84/96] 2017-05-24 init 12:00 UTC [+latents] | ETA: 2.4 min
+    Init time: 2017-05-24 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170524_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170524_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170524_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170524_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170524_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170524_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170524_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170524_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 12.4s
+
+  [10:02:18] [85/96] 2016-05-31 init 12:00 UTC [+latents] | ETA: 2.2 min
+    Init time: 2016-05-31 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160531_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160531_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160531_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160531_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160531_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160531_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160531_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160531_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.1s
+
+  [10:02:29] [86/96] 2022-05-01 init 12:00 UTC [+latents] | ETA: 2.1 min
+    Init time: 2022-05-01 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220501_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220501_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220501_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220501_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220501_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220501_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220501_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220501_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.0s
+
+  [10:02:40] [87/96] 2022-05-25 init 12:00 UTC [+latents] | ETA: 1.9 min
+    Init time: 2022-05-25 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220525_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220525_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220525_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220525_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220525_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220525_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220525_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220525_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.7s
+
+  [10:02:51] [88/96] 2017-04-04 init 12:00 UTC [+latents] | ETA: 1.7 min
+    Init time: 2017-04-04 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170404_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170404_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170404_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170404_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170404_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170404_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170404_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170404_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.3s
+
+  [10:03:02] [89/96] 2017-04-03 init 12:00 UTC [+latents] | ETA: 1.5 min
+    Init time: 2017-04-03 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170403_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170403_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170403_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170403_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170403_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170403_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170403_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170403_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 14.1s
+
+  [10:03:16] [90/96] 2016-04-18 init 12:00 UTC [+latents] | ETA: 1.3 min
+    Init time: 2016-04-18 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20160418_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20160418_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20160418_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20160418_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20160418_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20160418_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20160418_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20160418_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.7s
+
+  [10:03:27] [91/96] 2019-04-08 init 12:00 UTC [+latents] | ETA: 1.1 min
+    Init time: 2019-04-08 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20190408_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20190408_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20190408_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20190408_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20190408_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20190408_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20190408_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20190408_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.8s
+
+  [10:03:38] [92/96] 2020-12-27 init 12:00 UTC [+latents] | ETA: 0.9 min
+    Init time: 2020-12-27 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20201227_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20201227_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20201227_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20201227_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20201227_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20201227_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20201227_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20201227_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.1s
+
+  [10:03:49] [93/96] 2022-12-02 init 12:00 UTC [+latents] | ETA: 0.7 min
+    Init time: 2022-12-02 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20221202_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20221202_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20221202_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20221202_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20221202_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20221202_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20221202_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20221202_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.2s
+
+  [10:04:00] [94/96] 2020-12-24 init 12:00 UTC [+latents] | ETA: 0.6 min
+    Init time: 2020-12-24 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20201224_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20201224_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20201224_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20201224_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20201224_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20201224_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20201224_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20201224_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.7s
+
+  [10:04:12] [95/96] 2022-09-13 init 12:00 UTC [+latents] | ETA: 0.4 min
+    Init time: 2022-09-13 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20220913_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20220913_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20220913_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20220913_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20220913_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20220913_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20220913_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20220913_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 10.8s
+
+  [10:04:23] [96/96] 2017-09-08 init 12:00 UTC [+latents] | ETA: 0.2 min
+    Init time: 2017-09-08 12:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170908_1200_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170908_1200_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170908_1200_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170908_1200_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170908_1200_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170908_1200_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170908_1200_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170908_1200_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.6s
+
+  Waiting for background saves to complete...
+
+======================================================================
+  COMPLETE
+======================================================================
+  Output saved to: /scratch-node/ekasteleyn.23166238/aurora_hres_latents
+  Files: 1536 .pt files, 0 .nc files
+Finished extraction for thesis/steering/data/target_dates_mjo.csv at Thu May 28 10:04:35 CEST 2026

@@ -1,0 +1,143 @@
+2026-05-28 14:22:09,949 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_-1.0.nc
+2026-05-28 14:22:10,611 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:22:38,161 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:22:38,161 - INFO - Calculating PNA...
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1477, in _construct_dataarray
+    variable = self._variables[name]
+KeyError: 'z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1576, in __getitem__
+    return self._construct_dataarray(key)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1479, in _construct_dataarray
+    _, name, variable = _get_virtual_variable(self._variables, name, self.sizes)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 213, in _get_virtual_variable
+    raise KeyError(key)
+KeyError: 'z'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 119, in <module>
+    calculate_indices(args.target, args.climatology, args.eofs_dir)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 71, in calculate_indices
+    clim_var = clim_sliced[var_name]
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1578, in __getitem__
+    raise KeyError(
+KeyError: "No variable named 'z'. Variables on the dataset include ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_dewpoint_temperature', '2m_temperature', ..., 'volumetric_soil_water_layer_3', 'volumetric_soil_water_layer_4', 'vorticity', 'wind_speed', 'lon']"
+2026-05-28 14:22:38,757 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_-2.0.nc
+2026-05-28 14:22:39,016 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:23:07,019 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:23:07,019 - INFO - Calculating PNA...
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1477, in _construct_dataarray
+    variable = self._variables[name]
+KeyError: 'z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1576, in __getitem__
+    return self._construct_dataarray(key)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1479, in _construct_dataarray
+    _, name, variable = _get_virtual_variable(self._variables, name, self.sizes)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 213, in _get_virtual_variable
+    raise KeyError(key)
+KeyError: 'z'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 119, in <module>
+    calculate_indices(args.target, args.climatology, args.eofs_dir)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 71, in calculate_indices
+    clim_var = clim_sliced[var_name]
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1578, in __getitem__
+    raise KeyError(
+KeyError: "No variable named 'z'. Variables on the dataset include ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_dewpoint_temperature', '2m_temperature', ..., 'volumetric_soil_water_layer_3', 'volumetric_soil_water_layer_4', 'vorticity', 'wind_speed', 'lon']"
+2026-05-28 14:23:07,629 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_1.0.nc
+2026-05-28 14:23:07,814 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:23:35,405 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:23:35,406 - INFO - Calculating PNA...
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1477, in _construct_dataarray
+    variable = self._variables[name]
+KeyError: 'z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1576, in __getitem__
+    return self._construct_dataarray(key)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1479, in _construct_dataarray
+    _, name, variable = _get_virtual_variable(self._variables, name, self.sizes)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 213, in _get_virtual_variable
+    raise KeyError(key)
+KeyError: 'z'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 119, in <module>
+    calculate_indices(args.target, args.climatology, args.eofs_dir)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 71, in calculate_indices
+    clim_var = clim_sliced[var_name]
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1578, in __getitem__
+    raise KeyError(
+KeyError: "No variable named 'z'. Variables on the dataset include ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_dewpoint_temperature', '2m_temperature', ..., 'volumetric_soil_water_layer_3', 'volumetric_soil_water_layer_4', 'vorticity', 'wind_speed', 'lon']"
+2026-05-28 14:23:36,079 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_2.0.nc
+2026-05-28 14:23:36,484 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:24:03,389 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:24:03,391 - INFO - Calculating PNA...
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1477, in _construct_dataarray
+    variable = self._variables[name]
+KeyError: 'z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1576, in __getitem__
+    return self._construct_dataarray(key)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1479, in _construct_dataarray
+    _, name, variable = _get_virtual_variable(self._variables, name, self.sizes)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 213, in _get_virtual_variable
+    raise KeyError(key)
+KeyError: 'z'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 119, in <module>
+    calculate_indices(args.target, args.climatology, args.eofs_dir)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_3_indices.py", line 71, in calculate_indices
+    clim_var = clim_sliced[var_name]
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/core/dataset.py", line 1578, in __getitem__
+    raise KeyError(
+KeyError: "No variable named 'z'. Variables on the dataset include ['10m_u_component_of_wind', '10m_v_component_of_wind', '10m_wind_speed', '2m_dewpoint_temperature', '2m_temperature', ..., 'volumetric_soil_water_layer_3', 'volumetric_soil_water_layer_4', 'vorticity', 'wind_speed', 'lon']"
+2026-05-28 14:24:04,010 - INFO - Loading target file: thesis/results/steered_mjo_20160123_1200_tropical_lat30p0_alpha_-0.5.nc
+2026-05-28 14:24:04,063 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+[2026-05-28T14:24:27.113] error: *** JOB 23180200 ON tcn219 CANCELLED AT 2026-05-28T14:24:27 DUE to SIGNAL Terminated ***

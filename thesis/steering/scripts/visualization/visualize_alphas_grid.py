@@ -25,7 +25,7 @@ def plot_alpha_grid(base_ds, steered_ds_dict, var, alphas, phenomenon, level=Non
     lons2d, lats2d = np.meshgrid(lon, lat)
 
     data_proj = ccrs.PlateCarree()
-    if phenomenon == "AO":
+    if phenomenon in ["AO", "NAO", "PNA"]:
         proj, extent = ccrs.NorthPolarStereo(), [-180, 180, 30, 90]
     elif phenomenon == "AAO":
         proj, extent = ccrs.SouthPolarStereo(), [-180, 180, -90, -30]
@@ -99,7 +99,7 @@ def plot_alpha_grid(base_ds, steered_ds_dict, var, alphas, phenomenon, level=Non
 
 def main():
     parser = argparse.ArgumentParser(description="Grid plot across alphas")
-    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "AAO", "MJO", "ENSO"])
+    parser.add_argument("--phenomenon", type=str, default="AO", choices=["AO", "AAO", "MJO", "ENSO", "NAO", "PNA"])
     parser.add_argument("--name-suffix", type=str, default="ao81_polar", help="Suffix appended to phenomenon (e.g., 'ao81_polar')")
     parser.add_argument("--date", type=str, default="20170308", help="Date tag (e.g., 20170308)")
     parser.add_argument("--init-hour", type=int, default=12, help="Initialization hour (e.g., 12 or 0)")

@@ -72,19 +72,28 @@ def main():
     print("\n--- Part 3: Formal AO Index (1000 hPa spatial projection) ---")
     print("Calculating 1000 hPa anomalies...")
     
-    # Accurately determine target time (initialization + 3 days rollout)
+    # Accurately determine target time based on step in filename
     if 'time' in ds_base.coords:
         valid_times = ds_base['time'].values
-        # Evaluate at the very last step in the rollout
         target_time = pd.to_datetime(valid_times[-1]) 
     else:
-        # Fallback: Parse initialization from filename and add 72 hrs (12 steps * 6 hrs)
         match = re.search(r'(\d{8})_(\d{4})', args.base)
-        if not match:
-            raise ValueError(f"Could not extract date and time from filename '{args.base}'. Expected format like '20170308_1200'.")
-        date_str, time_str = match.groups()
-        init_time = datetime.strptime(f"{date_str}{time_str}", "%Y%m%d%H%M")
-        target_time = pd.to_datetime(init_time) + pd.Timedelta(hours=72)
+        match_hyphen = re.search(r'(\d{4})-(\d{2})-(\d{2})(?:_step(\d+))?', args.base)
+        if match:
+            date_str, time_str = match.groups()
+            init_time = datetime.strptime(f"{date_str}{time_str}", "%Y%m%d%H%M")
+            target_time = pd.to_datetime(init_time) + pd.Timedelta(hours=72)
+        elif match_hyphen:
+            groups = match_hyphen.groups()
+            y, m, d = groups[:3]
+            step_str = groups[3]
+            init_time = datetime.strptime(f"{y}{m}{d}0000", "%Y%m%d%H%M")
+            if step_str:
+                target_time = pd.to_datetime(init_time) + pd.Timedelta(hours=int(step_str)*6)
+            else:
+                target_time = pd.to_datetime(init_time) + pd.Timedelta(hours=72)
+        else:
+            raise ValueError(f"Could not extract date and time from filename '{args.base}'.")
         
     doy = target_time.dayofyear
     hour = target_time.hour

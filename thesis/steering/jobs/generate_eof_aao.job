@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH --job-name=eof_aao
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eof_aao_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eof_aao_%j.err
+#SBATCH --time=4:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=128G
+#SBATCH --partition=rome
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+export PYTHONUNBUFFERED=1
+
+ZARR_INPUT="gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr"
+OUTPUT_DIR="thesis/steering/scripts/oscillation_calculator/indices"
+
+echo "Generating AAO EOF: $(date)"
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python \
+    thesis/steering/scripts/oscillation_calculator/generate_eof.py \
+    --input "$ZARR_INPUT" \
+    --output_dir "$OUTPUT_DIR" \
+    --index AAO
+echo "COMPLETE: $(date)"

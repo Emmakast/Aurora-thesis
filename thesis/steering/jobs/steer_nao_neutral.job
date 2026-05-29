@@ -1,0 +1,39 @@
+#!/bin/bash
+#SBATCH --job-name=steer_nao
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_nao_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_nao_%j.err
+#SBATCH --time=1:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=128G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# Use the fast scratch disk for output
+OUTPUT_DIR="/scratch-shared/ekasteleyn/nao_steered"
+mkdir -p $OUTPUT_DIR
+
+echo "Steering NAO for one neutral date (2020-02-06)..."
+
+# Note: We use a Northern Hemisphere polar mask (lat > 30.0) 
+# because the NAO is a North Atlantic/Northern Hemisphere phenomenon.
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python thesis/steering/scripts/steering/steer_aurora.py \
+    --phenomenon NAO \
+    --csv thesis/steering/data/target_dates_nao.csv \
+    --base-date 2020-02-06 \
+    --alphas -10.0 -5.0 5.0 10.0 \
+    --steps 12 \
+    --mask-region polar \
+    --hemisphere north \
+    --polar-lat-min 30.0 \
+    --data-dir /scratch-shared/ekasteleyn/downloads/hres_t0 \
+    --output-dir $OUTPUT_DIR
+
+echo "Job Finished: $(date)"

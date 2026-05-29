@@ -1,0 +1,976 @@
+Running Spatio-Temporal Causal Rollouts...
+Running causal rollouts for 81 Neutral dates...
+Initializing Aurora model locally...
+
+[1/81] Processing Neutral date: 2017-03-08
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[2/81] Processing Neutral date: 2020-03-28
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[3/81] Processing Neutral date: 2017-03-09
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[4/81] Processing Neutral date: 2016-03-20
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[5/81] Processing Neutral date: 2018-03-30
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[6/81] Processing Neutral date: 2021-03-18
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[7/81] Processing Neutral date: 2016-03-16
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[8/81] Processing Neutral date: 2022-03-21
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[9/81] Processing Neutral date: 2020-03-29
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[10/81] Processing Neutral date: 2017-03-04
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[11/81] Processing Neutral date: 2022-03-10
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[12/81] Processing Neutral date: 2022-03-03
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[13/81] Processing Neutral date: 2016-03-22
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[14/81] Processing Neutral date: 2022-03-13
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[15/81] Processing Neutral date: 2017-03-28
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[16/81] Processing Neutral date: 2021-03-16
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[17/81] Processing Neutral date: 2018-03-29
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[18/81] Processing Neutral date: 2022-03-23
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[19/81] Processing Neutral date: 2022-03-04
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[20/81] Processing Neutral date: 2018-03-31
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[21/81] Processing Neutral date: 2018-03-19
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[22/81] Processing Neutral date: 2017-03-10
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[23/81] Processing Neutral date: 2022-03-08
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[24/81] Processing Neutral date: 2016-03-01
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[25/81] Processing Neutral date: 2021-03-02
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[26/81] Processing Neutral date: 2017-02-16
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[27/81] Processing Neutral date: 2021-02-15
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[28/81] Processing Neutral date: 2018-02-20
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[29/81] Processing Neutral date: 2017-02-04
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[30/81] Processing Neutral date: 2016-02-04
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[31/81] Processing Neutral date: 2018-02-24
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[32/81] Processing Neutral date: 2018-02-06
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[33/81] Processing Neutral date: 2016-02-03
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[34/81] Processing Neutral date: 2016-02-09
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[35/81] Processing Neutral date: 2018-02-21
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[36/81] Processing Neutral date: 2018-02-17
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[37/81] Processing Neutral date: 2016-02-29
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[38/81] Processing Neutral date: 2021-02-20
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[39/81] Processing Neutral date: 2018-02-23
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[40/81] Processing Neutral date: 2018-02-19
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[41/81] Processing Neutral date: 2019-02-08
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[42/81] Processing Neutral date: 2016-02-22
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[43/81] Processing Neutral date: 2019-01-17
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[44/81] Processing Neutral date: 2018-01-25
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[45/81] Processing Neutral date: 2022-01-31
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[46/81] Processing Neutral date: 2016-01-25
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[47/81] Processing Neutral date: 2018-01-18
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[48/81] Processing Neutral date: 2017-01-02
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[49/81] Processing Neutral date: 2017-01-16
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[50/81] Processing Neutral date: 2017-01-13
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[51/81] Processing Neutral date: 2020-01-28
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[52/81] Processing Neutral date: 2020-01-29
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[53/81] Processing Neutral date: 2016-01-23
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[54/81] Processing Neutral date: 2019-01-20
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[55/81] Processing Neutral date: 2019-01-07
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[56/81] Processing Neutral date: 2022-01-10
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[57/81] Processing Neutral date: 2018-01-13
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[58/81] Processing Neutral date: 2020-12-02
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[59/81] Processing Neutral date: 2018-12-25
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[60/81] Processing Neutral date: 2016-12-06
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[61/81] Processing Neutral date: 2019-12-22
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[62/81] Processing Neutral date: 2018-12-05
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[63/81] Processing Neutral date: 2018-12-24
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[64/81] Processing Neutral date: 2017-12-27
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[65/81] Processing Neutral date: 2017-11-14
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[66/81] Processing Neutral date: 2016-11-09
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[67/81] Processing Neutral date: 2021-11-13
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[68/81] Processing Neutral date: 2017-11-26
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[69/81] Processing Neutral date: 2020-11-30
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[70/81] Processing Neutral date: 2018-11-08
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[71/81] Processing Neutral date: 2016-05-04
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[72/81] Processing Neutral date: 2020-05-12
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[73/81] Processing Neutral date: 2016-05-26
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[74/81] Processing Neutral date: 2016-05-24
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[75/81] Processing Neutral date: 2020-05-06
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[76/81] Processing Neutral date: 2017-10-30
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[77/81] Processing Neutral date: 2019-10-24
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[78/81] Processing Neutral date: 2021-10-09
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[79/81] Processing Neutral date: 2017-10-23
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[80/81] Processing Neutral date: 2017-04-13
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+
+[81/81] Processing Neutral date: 2016-04-08
+    Running Base Rollout...
+      Saved base step 4
+      Saved base step 8
+      Saved base step 12
+    ✓ Base rollout completed and saved.
+    Running Patched Rollout (Causal Tracing)...
+      Saved patched step 4
+      Saved patched step 8
+      Saved patched step 12
+    ✓ Patched rollout completed and saved.
+COMPLETE: Wed May 27 17:55:58 CEST 2026

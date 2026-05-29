@@ -37,14 +37,24 @@ def calculate_enso(target_file, climatology_file):
     target_ds = standardize_coords(xr.open_dataset(target_file))
     
     logging.info(f"Loading climatology file: {climatology_file}")
-    clim_ds = standardize_coords(xr.open_dataset(climatology_file))
+    if climatology_file.startswith('gs://') or climatology_file.endswith('.zarr'):
+        clim_ds = standardize_coords(xr.open_zarr(climatology_file, consolidated=True))
+    else:
+        clim_ds = standardize_coords(xr.open_dataset(climatology_file))
     
-    # Identify SST variable
+    # Identify SST variable (with 2t fallback for Aurora)
     var_name = None
-    for v in ['sst', 'SST', 'tos']:
+    clim_var_name = None
+    for v in ['sst', 'SST', 'tos', 'sea_surface_temperature']:
         if v in target_ds.data_vars:
             var_name = v
+            clim_var_name = v
             break
+            
+    if var_name is None and '2t' in target_ds.data_vars:
+        logging.warning("SST not found. Using '2t' (2-meter temperature) as proxy.")
+        var_name = '2t'
+        clim_var_name = '2m_temperature'
             
     if var_name is None:
         raise ValueError(f"SST variable not found. Available vars: {list(target_ds.data_vars.keys())}")
@@ -53,7 +63,7 @@ def calculate_enso(target_file, climatology_file):
     clim_sliced = slice_nino34(clim_ds)
     
     target_var = target_sliced[var_name]
-    clim_var = clim_sliced[var_name]
+    clim_var = clim_sliced[clim_var_name]
     
     # 1. Calculate anomalies
     logging.info("Calculating SST anomalies...")

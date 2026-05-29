@@ -1,0 +1,30 @@
+#!/bin/bash
+#SBATCH --job-name=plot_indices
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/plot_indices_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/plot_indices_%j.err
+#SBATCH --time=1:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
+#SBATCH --partition=rome
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+export PYTHONUNBUFFERED=1
+echo "Plotting NAO..."
+python thesis/steering/scripts/visualization/visualize_alphas_grid.py --phenomenon NAO --name-suffix "" --date 20200206 --init-hour 12 --alphas -2.0 -1.0 1.0 2.0 --mask-tag polar_north_lat30p0 --data-dir /scratch-shared/ekasteleyn/nao_steered
+python thesis/steering/scripts/visualization/visualize_alphas_grid_global.py --phenomenon NAO --name-suffix "" --date 20200206 --init-hour 12 --alphas -2.0 -1.0 1.0 2.0 --mask-tag polar_north_lat30p0 --data-dir /scratch-shared/ekasteleyn/nao_steered
+
+echo "Plotting MJO..."
+python thesis/steering/scripts/visualization/visualize_alphas_grid.py --phenomenon MJO --name-suffix "" --date 20160123 --init-hour 12 --alphas -1.0 -0.5 0.5 1.0 --mask-tag tropical_lat30p0 --data-dir thesis/results
+python thesis/steering/scripts/visualization/visualize_alphas_grid_global.py --phenomenon MJO --name-suffix "" --date 20160123 --init-hour 12 --alphas -1.0 -0.5 0.5 1.0 --mask-tag tropical_lat30p0 --data-dir thesis/results
+
+echo "Plotting ENSO..."
+python thesis/steering/scripts/visualization/visualize_alphas_grid.py --phenomenon ENSO --name-suffix "" --date 20170103 --init-hour 12 --alphas -1.0 -0.5 0.5 1.0 --mask-tag tropical_lat30p0 --data-dir thesis/results
+python thesis/steering/scripts/visualization/visualize_alphas_grid_global.py --phenomenon ENSO --name-suffix "" --date 20170103 --init-hour 12 --alphas -1.0 -0.5 0.5 1.0 --mask-tag tropical_lat30p0 --data-dir thesis/results
+
+echo "Done!"

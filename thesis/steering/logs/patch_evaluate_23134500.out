@@ -1,0 +1,1861 @@
+Evaluating Spatio-Temporal Causal Tracing results...
+Evaluating 81 Neutral dates...
+
+[1/81] Evaluating date: 2017-03-08
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-08.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-08.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-03-08: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-08.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-08.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[2/81] Evaluating date: 2020-03-28
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-03-28.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-03-28.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2020-03-28: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-03-28.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-03-28.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[3/81] Evaluating date: 2017-03-09
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-09.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-09.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-03-09: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-09.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-09.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[4/81] Evaluating date: 2016-03-20
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-20.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-20.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-03-20: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-20.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-20.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[5/81] Evaluating date: 2018-03-30
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-03-30.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-03-30.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-03-30: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-03-30.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-03-30.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[6/81] Evaluating date: 2021-03-18
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-03-18.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-03-18.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2021-03-18: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-03-18.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-03-18.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[7/81] Evaluating date: 2016-03-16
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-16.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-16.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-03-16: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-16.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-16.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[8/81] Evaluating date: 2022-03-21
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-21.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-21.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2022-03-21: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-21.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-21.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[9/81] Evaluating date: 2020-03-29
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-03-29.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-03-29.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2020-03-29: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-03-29.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-03-29.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[10/81] Evaluating date: 2017-03-04
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-04.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-04.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-03-04: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-04.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-04.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[11/81] Evaluating date: 2022-03-10
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-10.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-10.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2022-03-10: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-10.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-10.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[12/81] Evaluating date: 2022-03-03
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-03.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-03.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2022-03-03: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-03.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-03.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[13/81] Evaluating date: 2016-03-22
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-22.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-22.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-03-22: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-22.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-22.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[14/81] Evaluating date: 2022-03-13
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-13.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-13.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2022-03-13: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-13.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-13.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[15/81] Evaluating date: 2017-03-28
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-28.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-28.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-03-28: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-28.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-28.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[16/81] Evaluating date: 2021-03-16
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-03-16.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-03-16.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2021-03-16: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-03-16.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-03-16.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[17/81] Evaluating date: 2018-03-29
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-03-29.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-03-29.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-03-29: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-03-29.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-03-29.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[18/81] Evaluating date: 2022-03-23
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-23.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-23.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2022-03-23: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-23.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-23.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[19/81] Evaluating date: 2022-03-04
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-04.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-04.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2022-03-04: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-04.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-04.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[20/81] Evaluating date: 2018-03-31
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-03-31.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-03-31.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-03-31: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-03-31.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-03-31.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[21/81] Evaluating date: 2018-03-19
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-03-19.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-03-19.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-03-19: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-03-19.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-03-19.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[22/81] Evaluating date: 2017-03-10
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-10.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-10.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-03-10: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-03-10.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-03-10.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[23/81] Evaluating date: 2022-03-08
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-08.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-08.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2022-03-08: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-03-08.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-03-08.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[24/81] Evaluating date: 2016-03-01
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-01.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-01.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-03-01: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-03-01.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-03-01.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[25/81] Evaluating date: 2021-03-02
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-03-02.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-03-02.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2021-03-02: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-03-02.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-03-02.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[26/81] Evaluating date: 2017-02-16
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-02-16.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-02-16.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-02-16: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-02-16.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-02-16.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[27/81] Evaluating date: 2021-02-15
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-02-15.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-02-15.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2021-02-15: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-02-15.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-02-15.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[28/81] Evaluating date: 2018-02-20
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-20.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-20.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-02-20: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-20.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-20.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[29/81] Evaluating date: 2017-02-04
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-02-04.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-02-04.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-02-04: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-02-04.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-02-04.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[30/81] Evaluating date: 2016-02-04
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-02-04.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-02-04.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-02-04: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-02-04.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-02-04.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[31/81] Evaluating date: 2018-02-24
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-24.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-24.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-02-24: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-24.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-24.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[32/81] Evaluating date: 2018-02-06
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-06.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-06.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-02-06: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-06.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-06.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[33/81] Evaluating date: 2016-02-03
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-02-03.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-02-03.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-02-03: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-02-03.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-02-03.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[34/81] Evaluating date: 2016-02-09
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-02-09.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-02-09.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-02-09: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-02-09.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-02-09.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[35/81] Evaluating date: 2018-02-21
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-21.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-21.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-02-21: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-21.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-21.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[36/81] Evaluating date: 2018-02-17
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-17.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-17.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-02-17: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-17.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-17.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[37/81] Evaluating date: 2016-02-29
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-02-29.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-02-29.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-02-29: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-02-29.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-02-29.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[38/81] Evaluating date: 2021-02-20
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-02-20.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-02-20.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2021-02-20: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2021-02-20.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2021-02-20.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[39/81] Evaluating date: 2018-02-23
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-23.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-23.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-02-23: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-23.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-23.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[40/81] Evaluating date: 2018-02-19
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-19.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-19.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-02-19: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-02-19.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-02-19.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[41/81] Evaluating date: 2019-02-08
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2019-02-08.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2019-02-08.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2019-02-08: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2019-02-08.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2019-02-08.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[42/81] Evaluating date: 2016-02-22
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-02-22.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-02-22.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-02-22: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-02-22.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-02-22.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[43/81] Evaluating date: 2019-01-17
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2019-01-17.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2019-01-17.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2019-01-17: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2019-01-17.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2019-01-17.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[44/81] Evaluating date: 2018-01-25
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-01-25.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-01-25.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-01-25: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-01-25.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-01-25.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[45/81] Evaluating date: 2022-01-31
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-01-31.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-01-31.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2022-01-31: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-01-31.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-01-31.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[46/81] Evaluating date: 2016-01-25
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-01-25.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-01-25.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-01-25: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-01-25.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-01-25.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[47/81] Evaluating date: 2018-01-18
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-01-18.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-01-18.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-01-18: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-01-18.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-01-18.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[48/81] Evaluating date: 2017-01-02
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-01-02.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-01-02.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-01-02: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-01-02.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-01-02.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[49/81] Evaluating date: 2017-01-16
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-01-16.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-01-16.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-01-16: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-01-16.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-01-16.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[50/81] Evaluating date: 2017-01-13
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-01-13.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-01-13.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-01-13: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-01-13.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-01-13.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[51/81] Evaluating date: 2020-01-28
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-01-28.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-01-28.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2020-01-28: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-01-28.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-01-28.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[52/81] Evaluating date: 2020-01-29
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-01-29.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-01-29.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2020-01-29: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-01-29.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-01-29.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[53/81] Evaluating date: 2016-01-23
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-01-23.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-01-23.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-01-23: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-01-23.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-01-23.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[54/81] Evaluating date: 2019-01-20
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2019-01-20.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2019-01-20.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2019-01-20: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2019-01-20.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2019-01-20.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[55/81] Evaluating date: 2019-01-07
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2019-01-07.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2019-01-07.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2019-01-07: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2019-01-07.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2019-01-07.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[56/81] Evaluating date: 2022-01-10
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-01-10.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-01-10.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2022-01-10: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2022-01-10.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2022-01-10.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[57/81] Evaluating date: 2018-01-13
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-01-13.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-01-13.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-01-13: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-01-13.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-01-13.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[58/81] Evaluating date: 2020-12-02
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-12-02.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-12-02.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2020-12-02: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2020-12-02.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2020-12-02.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[59/81] Evaluating date: 2018-12-25
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-12-25.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-12-25.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-12-25: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-12-25.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-12-25.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[60/81] Evaluating date: 2016-12-06
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-12-06.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-12-06.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2016-12-06: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2016-12-06.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2016-12-06.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[61/81] Evaluating date: 2019-12-22
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2019-12-22.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2019-12-22.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2019-12-22: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2019-12-22.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2019-12-22.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[62/81] Evaluating date: 2018-12-05
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-12-05.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-12-05.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-12-05: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-12-05.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-12-05.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[63/81] Evaluating date: 2018-12-24
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-12-24.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-12-24.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2018-12-24: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2018-12-24.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2018-12-24.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[64/81] Evaluating date: 2017-12-27
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-12-27.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-12-27.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+  Error running evaluator for 2017-12-27: Command '['python', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py', '--base', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-12-27.nc', '--steered', '/scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-12-27.nc', '--eof', '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc', '--climatology', 'gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr']' returned non-zero exit status 1.
+  Stderr: Traceback (most recent call last):
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 141, in <module>
+    main()
+  File "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py", line 55, in main
+    ds_clim = standardize_coords(xr.open_zarr(args.climatology, consolidated=True))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1103, in open_zarr
+    ds = open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1173, in open_dataset
+    store = ZarrStore.open_group(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 483, in open_group
+    zarr_group, consolidate_on_close, close_store_on_close = _get_open_params(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/zarr.py", line 1336, in _get_open_params
+    zarr_group = zarr.open_consolidated(store, **open_kwargs)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/convenience.py", line 1343, in open_consolidated
+    store = normalize_store_arg(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 201, in normalize_store_arg
+    return normalize_store(store, storage_options, mode)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 171, in _normalize_store_arg_v2
+    return FSStore(store, mode=mode, **(storage_options or {}))
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/zarr/storage.py", line 1368, in __init__
+    raise ImportError("`fsspec` is required to use zarr's FSStore")
+ImportError: `fsspec` is required to use zarr's FSStore
+
+
+[65/81] Evaluating date: 2017-11-14
+  Running subprocess: python /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/evaluate_ao.py --base /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/base_2017-11-14.nc --steered /scratch-shared/ekasteleyn/aurora_thesis_output/patched_rollouts/patched_2017-11-14.nc --eof /home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc --climatology gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr

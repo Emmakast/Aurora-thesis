@@ -1,0 +1,312 @@
+2026-05-28 14:24:39,397 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_-1.0.nc
+2026-05-28 14:24:39,451 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:25:06,788 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:25:06,792 - INFO - Calculating PNA...
+2026-05-28 14:25:22,295 - INFO - PNA Index Value:
+[[0.23841184 0.22933146 0.2205144  ... 0.26476657 0.25641313 0.24757665]
+ [0.2791406  0.2702615  0.2616838  ... 0.305414   0.29701078 0.28819677]
+ [0.27214867 0.26357493 0.25530952 ... 0.29788658 0.2896015  0.28095898]
+ [0.3255347  0.31697968 0.30876556 ... 0.3514106  0.343036   0.33434677]]
+2026-05-28 14:25:22,298 - ERROR - EOF file not found for AAO: thesis/steering/scripts/oscillation_calculator/indices/aao_loading_pattern.nc
+2026-05-28 14:25:22,961 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_-2.0.nc
+2026-05-28 14:25:23,011 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:25:50,075 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:25:50,077 - INFO - Calculating PNA...
+2026-05-28 14:26:04,938 - INFO - PNA Index Value:
+[[0.59996235 0.59088206 0.58206505 ... 0.6263171  0.6179638  0.60912716]
+ [0.64069116 0.63181186 0.6232344  ... 0.66696453 0.6585614  0.64974743]
+ [0.6336991  0.62512547 0.61686015 ... 0.6594373  0.6511521  0.64250964]
+ [0.6870854  0.6785303  0.67031604 ... 0.7129612  0.70458645 0.6958974 ]]
+2026-05-28 14:26:04,939 - ERROR - EOF file not found for AAO: thesis/steering/scripts/oscillation_calculator/indices/aao_loading_pattern.nc
+2026-05-28 14:26:05,675 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_1.0.nc
+2026-05-28 14:26:05,727 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:26:33,779 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:26:33,779 - INFO - Calculating PNA...
+2026-05-28 14:26:48,559 - INFO - PNA Index Value:
+[[-0.40919644 -0.4182768  -0.42709392 ... -0.38284153 -0.3911952
+  -0.40003166]
+ [-0.3684677  -0.37734675 -0.38592458 ... -0.3421943  -0.35059744
+  -0.3594115 ]
+ [-0.37545976 -0.3840333  -0.39229888 ... -0.3497218  -0.3580068
+  -0.3666493 ]
+ [-0.3220735  -0.3306287  -0.33884272 ... -0.29619768 -0.3045724
+  -0.3132614 ]]
+2026-05-28 14:26:48,559 - ERROR - EOF file not found for AAO: thesis/steering/scripts/oscillation_calculator/indices/aao_loading_pattern.nc
+2026-05-28 14:26:49,225 - INFO - Loading target file: /scratch-shared/ekasteleyn/nao_steered/steered_nao_20200206_1200_polar_north_lat30p0_alpha_2.0.nc
+2026-05-28 14:26:49,276 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:27:17,057 - ERROR - EOF file not found for NAO: thesis/steering/scripts/oscillation_calculator/indices/nao_loading_pattern.nc
+2026-05-28 14:27:17,059 - INFO - Calculating PNA...
+2026-05-28 14:27:31,884 - INFO - PNA Index Value:
+[[-0.5852305  -0.5943109  -0.6031281  ... -0.55887574 -0.56722915
+  -0.5760658 ]
+ [-0.5445018  -0.55338085 -0.56195855 ... -0.51822823 -0.52663153
+  -0.5354455 ]
+ [-0.5514937  -0.5600674  -0.56833285 ... -0.52575576 -0.53404087
+  -0.54268336]
+ [-0.49810752 -0.50666255 -0.5148768  ... -0.4722317  -0.48060638
+  -0.4892956 ]]
+2026-05-28 14:27:31,897 - ERROR - EOF file not found for AAO: thesis/steering/scripts/oscillation_calculator/indices/aao_loading_pattern.nc
+2026-05-28 14:27:32,628 - INFO - Loading target file: thesis/results/steered_mjo_20160123_1200_tropical_lat30p0_alpha_-0.5.nc
+2026-05-28 14:27:32,677 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:27:59,613 - INFO - Loading EOF pattern file: thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '4880af80-27d1-45bb-8b04-d1c94cb8619e']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 156, in <module>
+    calculate_mjo(args.target, args.climatology, args.eof_file)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 65, in calculate_mjo
+    eof_ds = xr.open_dataset(eof_file)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 645, in open_dataset
+    store = NetCDF4DataStore.open(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 408, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 355, in __init__
+    self.format = self.ds.data_model
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 417, in ds
+    return self._acquire()
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 411, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/usr/lib64/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+  File "src/netCDF4/_netCDF4.pyx", line 2521, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2158, in netCDF4._netCDF4._ensure_nc_success
+FileNotFoundError: [Errno 2] No such file or directory: '/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc'
+2026-05-28 14:28:00,178 - INFO - Loading target file: thesis/results/steered_mjo_20160123_1200_tropical_lat30p0_alpha_-1.0.nc
+2026-05-28 14:28:00,228 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:28:28,190 - INFO - Loading EOF pattern file: thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'aa2c3935-d96b-4c7b-a6a6-c04cf47fe496']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 156, in <module>
+    calculate_mjo(args.target, args.climatology, args.eof_file)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 65, in calculate_mjo
+    eof_ds = xr.open_dataset(eof_file)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 645, in open_dataset
+    store = NetCDF4DataStore.open(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 408, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 355, in __init__
+    self.format = self.ds.data_model
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 417, in ds
+    return self._acquire()
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 411, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/usr/lib64/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+  File "src/netCDF4/_netCDF4.pyx", line 2521, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2158, in netCDF4._netCDF4._ensure_nc_success
+FileNotFoundError: [Errno 2] No such file or directory: '/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc'
+2026-05-28 14:28:28,739 - INFO - Loading target file: thesis/results/steered_mjo_20160123_1200_tropical_lat30p0_alpha_0.5.nc
+2026-05-28 14:28:28,788 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:28:55,376 - INFO - Loading EOF pattern file: thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'b92c68c7-e1e4-4711-b5c7-1007e6a7fe11']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 156, in <module>
+    calculate_mjo(args.target, args.climatology, args.eof_file)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 65, in calculate_mjo
+    eof_ds = xr.open_dataset(eof_file)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 645, in open_dataset
+    store = NetCDF4DataStore.open(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 408, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 355, in __init__
+    self.format = self.ds.data_model
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 417, in ds
+    return self._acquire()
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 411, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/usr/lib64/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+  File "src/netCDF4/_netCDF4.pyx", line 2521, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2158, in netCDF4._netCDF4._ensure_nc_success
+FileNotFoundError: [Errno 2] No such file or directory: '/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc'
+2026-05-28 14:28:55,994 - INFO - Loading target file: thesis/results/steered_mjo_20160123_1200_tropical_lat30p0_alpha_1.0.nc
+2026-05-28 14:28:56,044 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:29:22,889 - INFO - Loading EOF pattern file: thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc
+Traceback (most recent call last):
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '2eb7b701-5b10-4cb7-9463-ae03b21398e5']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 156, in <module>
+    calculate_mjo(args.target, args.climatology, args.eof_file)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_mjo.py", line 65, in calculate_mjo
+    eof_ds = xr.open_dataset(eof_file)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/api.py", line 588, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 645, in open_dataset
+    store = NetCDF4DataStore.open(
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 408, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 355, in __init__
+    self.format = self.ds.data_model
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 417, in ds
+    return self._acquire()
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 411, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/usr/lib64/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+  File "/home/ekasteleyn/.local/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+  File "src/netCDF4/_netCDF4.pyx", line 2521, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2158, in netCDF4._netCDF4._ensure_nc_success
+FileNotFoundError: [Errno 2] No such file or directory: '/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/mjo_loading_pattern.nc'
+2026-05-28 14:29:23,443 - INFO - Loading target file: thesis/results/steered_enso_20170103_1200_tropical_lat30p0_alpha_-0.5.nc
+2026-05-28 14:29:23,490 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:29:50,475 - WARNING - SST not found. Using '2t' (2-meter temperature) as proxy.
+2026-05-28 14:29:50,502 - INFO - Calculating SST anomalies...
+2026-05-28 14:29:58,875 - INFO - Calculating area-weighted spatial mean over Niño 3.4 region...
+2026-05-28 14:29:58,934 - INFO - Applying 3-month rolling mean (assuming monthly input data)...
+2026-05-28 14:29:58,934 - WARNING - Time series is shorter than 3 steps or has no time dimension. Skipping rolling mean.
+2026-05-28 14:29:58,934 - INFO - ONI Index Values: 
+[[-0.5238256  -0.52278227 -0.5218204  ... -0.5271094  -0.52596456
+  -0.5248804 ]
+ [-0.5522918  -0.5514679  -0.550762   ... -0.5549362  -0.5540034
+  -0.55312926]
+ [-0.17073749 -0.16970679 -0.16881871 ... -0.17401463 -0.17289232
+  -0.17180814]
+ [-0.3129027  -0.3113385  -0.3099127  ... -0.31770444 -0.3161194
+  -0.31451842]]
+2026-05-28 14:29:59,689 - INFO - Loading target file: thesis/results/steered_enso_20170103_1200_tropical_lat30p0_alpha_-1.0.nc
+2026-05-28 14:29:59,883 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:30:28,121 - WARNING - SST not found. Using '2t' (2-meter temperature) as proxy.
+2026-05-28 14:30:28,147 - INFO - Calculating SST anomalies...
+2026-05-28 14:30:36,512 - INFO - Calculating area-weighted spatial mean over Niño 3.4 region...
+2026-05-28 14:30:36,566 - INFO - Applying 3-month rolling mean (assuming monthly input data)...
+2026-05-28 14:30:36,566 - WARNING - Time series is shorter than 3 steps or has no time dimension. Skipping rolling mean.
+2026-05-28 14:30:36,567 - INFO - ONI Index Values: 
+[[-0.5973741  -0.59633076 -0.5953689  ... -0.6006577  -0.59951293
+  -0.59842885]
+ [-0.62584037 -0.6250165  -0.62431043 ... -0.6284846  -0.6275519
+  -0.62667775]
+ [-0.24428591 -0.24325532 -0.24236712 ... -0.24756318 -0.24644075
+  -0.24535656]
+ [-0.3864512  -0.38488695 -0.38346115 ... -0.3912529  -0.38966796
+  -0.3880669 ]]
+2026-05-28 14:30:37,241 - INFO - Loading target file: thesis/results/steered_enso_20170103_1200_tropical_lat30p0_alpha_0.5.nc
+2026-05-28 14:30:37,288 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:31:04,617 - WARNING - SST not found. Using '2t' (2-meter temperature) as proxy.
+2026-05-28 14:31:04,642 - INFO - Calculating SST anomalies...
+2026-05-28 14:31:13,042 - INFO - Calculating area-weighted spatial mean over Niño 3.4 region...
+2026-05-28 14:31:13,098 - INFO - Applying 3-month rolling mean (assuming monthly input data)...
+2026-05-28 14:31:13,098 - WARNING - Time series is shorter than 3 steps or has no time dimension. Skipping rolling mean.
+2026-05-28 14:31:13,099 - INFO - ONI Index Values: 
+[[-0.36791644 -0.36687317 -0.36591133 ... -0.3712003  -0.37005544
+  -0.36897135]
+ [-0.3963828  -0.39555886 -0.39485285 ... -0.39902708 -0.3980944
+  -0.39722013]
+ [-0.0148284  -0.01379771 -0.01290961 ... -0.01810557 -0.01698325
+  -0.01589905]
+ [-0.15699363 -0.1554294  -0.15400362 ... -0.16179536 -0.16021036
+  -0.15860929]]
+2026-05-28 14:31:13,830 - INFO - Loading target file: thesis/results/steered_enso_20170103_1200_tropical_lat30p0_alpha_1.0.nc
+2026-05-28 14:31:13,888 - INFO - Loading climatology file: gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/home/ekasteleyn/.local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+2026-05-28 14:31:42,447 - WARNING - SST not found. Using '2t' (2-meter temperature) as proxy.
+2026-05-28 14:31:42,476 - INFO - Calculating SST anomalies...
+2026-05-28 14:31:50,819 - INFO - Calculating area-weighted spatial mean over Niño 3.4 region...
+2026-05-28 14:31:50,873 - INFO - Applying 3-month rolling mean (assuming monthly input data)...
+2026-05-28 14:31:50,873 - WARNING - Time series is shorter than 3 steps or has no time dimension. Skipping rolling mean.
+2026-05-28 14:31:50,874 - INFO - ONI Index Values: 
+[[-3.5180765e-01 -3.5076439e-01 -3.4980258e-01 ... -3.5509148e-01
+  -3.5394672e-01 -3.5286263e-01]
+ [-3.8027409e-01 -3.7945002e-01 -3.7874404e-01 ... -3.8291818e-01
+  -3.8198566e-01 -3.8111129e-01]
+ [ 1.2804045e-03  2.3111033e-03  3.1991915e-03 ... -1.9967672e-03
+  -8.7443378e-04  2.0974244e-04]
+ [-1.4088485e-01 -1.3932060e-01 -1.3789482e-01 ... -1.4568657e-01
+  -1.4410153e-01 -1.4250048e-01]]
