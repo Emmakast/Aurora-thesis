@@ -5,7 +5,7 @@ BASE_DIR="/home/ekasteleyn/aurora_thesis/thesis/steering/vectors"
 
 # Paths to the scripts and references
 SCRIPT_CALC="/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/calculate_all_indices.py"
-EOF_PATTERN="/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc"
+EOF_PATTERN="/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/indices/ao_loading_pattern.nc"
 OUTPUT_CSV="${BASE_DIR}/all_ao_indices.csv"
 
 echo "Starting batch calculation of AO indices..."

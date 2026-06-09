@@ -119,7 +119,7 @@ def calculate_indices(target_file, climatology, eofs_dir):
         index_value = raw_projection / pc_std
         
         # Print the final scalar index values (-4 to +4 range)
-        logging.info(f"{index} Index Value:\n{index_value.values}")
+        logging.info(f"{index} Index Value:\n{index_value.values}\nindex dims: {index_value.dims}\nraw dims: {raw_projection.dims}")
         results[index] = index_value
         
     return results

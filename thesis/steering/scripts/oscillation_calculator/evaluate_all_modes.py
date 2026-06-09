@@ -88,6 +88,18 @@ def calculate_enso_inline(target_ds, clim_sliced):
     return val
 
 def main():
+    parser = argparse.ArgumentParser(description='Evaluate indices')
+    parser.add_argument('--AO', action='store_true', help='Evaluate AO')
+    parser.add_argument('--NAO', action='store_true', help='Evaluate NAO')
+    parser.add_argument('--PNA', action='store_true', help='Evaluate PNA')
+    parser.add_argument('--MJO', action='store_true', help='Evaluate MJO')
+    parser.add_argument('--AAO', action='store_true', help='Evaluate AAO')
+    parser.add_argument('--date', type=str, default=None, help='Filter by specific date (e.g. 20160123_1200)')
+    parser.add_argument('--negative_only', action='store_true', help='Only evaluate negative alphas and base state')
+    args = parser.parse_args()
+
+    run_all = not any([args.AO, args.NAO, args.PNA, args.MJO, args.AAO])
+
     print("Loading global climatology (this takes ~1 min)...")
     clim_ds = standardize_coords(xr.open_zarr("gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr", consolidated=True))
     
@@ -95,12 +107,12 @@ def main():
     clim_enso = slice_nino34(clim_ds)['2m_temperature']
     
     # Load AO pattern
-    ao_ds = standardize_coords(xr.open_dataset("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc"))
+    ao_ds = standardize_coords(xr.open_dataset("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/indices/ao_loading_pattern.nc"))
     ao_pattern = ao_ds['eof'].squeeze()
     ao_std = float(ao_ds['pc_std'].values)
     
     # MJO EOF
-    mjo_eof_path = Path("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/mjo_eof.nc")
+    mjo_eof_path = Path("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/indices/mjo_loading_pattern.nc")
     if mjo_eof_path.exists():
         mjo_eof = xr.open_dataset(mjo_eof_path)
     else:
@@ -109,14 +121,13 @@ def main():
     
     EOFS_DIR = "/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/indices"
     
-    directories = [
-        "/home/ekasteleyn/aurora_thesis/thesis/results",
-        "/home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AAO_1encoder(2)",
-        "/scratch-shared/ekasteleyn/nao_steered",
-        "/scratch-shared/ekasteleyn/pna_neutral_steered",
-        "/scratch-shared/ekasteleyn/ao_neutral_steered",
-        "/scratch-shared/ekasteleyn/mjo_steered" # Added just in case
-    ]
+    directories = []
+    if run_all: directories.append("/home/ekasteleyn/aurora_thesis/thesis/results")
+    if run_all or args.AAO: directories.append("/home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AAO_1encoder(2)")
+    if run_all or args.NAO: directories.append("/scratch-shared/ekasteleyn/nao_steered")
+    if run_all or args.PNA: directories.append("/scratch-shared/ekasteleyn/pna_neutral_steered")
+    if run_all or args.AO: directories.append("/scratch-shared/ekasteleyn/ao_neutral_steered")
+    if run_all or args.MJO: directories.append("/scratch-shared/ekasteleyn/mjo_steered")
     
     for directory in directories:
         dir_path = Path(directory)
@@ -134,6 +145,10 @@ def main():
         results = []
         for nc_file in sorted(nc_files):
             filename = nc_file.name
+            
+            if args.date and args.date not in filename:
+                continue
+                
             is_base = "base_" in filename
             is_steered = "steered_" in filename
             if not is_base and not is_steered:
@@ -141,6 +156,9 @@ def main():
                 
             alpha_match = re.search(r'alpha_(-?\d+\.?\d*)', filename)
             alpha = float(alpha_match.group(1)) if alpha_match else (0.0 if is_base else None)
+            
+            if args.negative_only and alpha is not None and alpha > 0:
+                continue
             
             print(f"  -> {filename}")
             try:
@@ -151,28 +169,32 @@ def main():
                         from datetime import datetime
                         init_time = datetime.strptime(f"{match.group(1)}{match.group(2)}", "%Y%m%d%H%M")
                         target_time = pd.to_datetime(init_time) + pd.Timedelta(hours=72)
-                        target_ds = target_ds.assign_coords(time=[target_time])
+                        target_ds = target_ds.expand_dims(time=[target_time])
                 
                 
                 def extract_val(arr):
                     if 'mode' in arr.dims:
                         arr = arr.sel(mode=0)
-                    if 'time' in arr.dims or arr.ndim > 0:
-                        return float(arr.values[-1])
+                    if 'time' in arr.dims:
+                        arr = arr.isel(time=-1)
+                    if arr.ndim > 0:
+                        return float(arr.mean().values)
                     return float(arr.values)
 
+                target_ds_last = target_ds.isel(time=[-1]) if 'time' in target_ds.dims else target_ds
+
                 # 1. NAO, PNA, AAO
-                res_3 = calculate_indices(target_ds, clim_ds, EOFS_DIR)
+                res_3 = calculate_indices(target_ds_last, clim_ds, EOFS_DIR)
                 val_nao = extract_val(res_3["NAO"])
                 val_pna = extract_val(res_3["PNA"])
                 val_aao = extract_val(res_3["AAO"])
                 
                 # 2. AO
-                val_ao = calculate_ao(target_ds, clim_ds, ao_pattern, ao_std)
+                val_ao = calculate_ao(target_ds_last, clim_ds, ao_pattern, ao_std)
                 
                 # 3. MJO
                 if mjo_eof is not None and calculate_mjo is not None:
-                    mjo_res = calculate_mjo(target_ds, clim_ds, mjo_eof)
+                    mjo_res = calculate_mjo(target_ds_last, clim_ds, mjo_eof)
                     val_mjo = float(np.array(mjo_res['amplitude'].values).flatten()[-1])
                 else:
                     val_mjo = np.nan
@@ -197,11 +219,32 @@ def main():
                 traceback.print_exc()
                 
         if results:
-            df = pd.DataFrame(results).sort_values(by="Alpha")
-            print(df.to_markdown(index=False))
+            df = pd.DataFrame(results)
             out_csv = dir_path / f"all_indices_evaluated.csv"
+            
+            if out_csv.exists():
+                existing_df = pd.read_csv(out_csv)
+                df = pd.concat([existing_df, df]).drop_duplicates(subset=['Filename'], keep='last')
+                
+            df = df.sort_values(by=["Type", "Alpha", "Filename"])
+            print(df.to_markdown(index=False))
             df.to_csv(out_csv, index=False)
             print(f"Saved {out_csv}")
+            
+            # Move to normal directory
+            normal_dir = Path("/home/ekasteleyn/aurora_thesis/thesis/results")
+            normal_dir.mkdir(parents=True, exist_ok=True)
+            normal_csv = normal_dir / "all_indices_evaluated.csv"
+            
+            if normal_csv.exists():
+                existing_normal_df = pd.read_csv(normal_csv)
+                df_normal = pd.concat([existing_normal_df, df]).drop_duplicates(subset=['Filename'], keep='last')
+                df_normal = df_normal.sort_values(by=["Type", "Alpha", "Filename"])
+                df_normal.to_csv(normal_csv, index=False)
+            else:
+                df.to_csv(normal_csv, index=False)
+                
+            print(f"Also appended results to the master CSV at {normal_csv}")
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,864 @@
+2026-06-08 09:37:47,875 - INFO - Calculating NAO...
+2026-06-08 09:37:50,651 - INFO - NAO Index Value:
+[0.47362283]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:37:50,651 - INFO - Calculating PNA...
+2026-06-08 09:37:52,537 - INFO - PNA Index Value:
+[-4.3669715]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:37:52,538 - INFO - Calculating AAO...
+2026-06-08 09:37:54,510 - INFO - AAO Index Value:
+[-1.0208739]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:38:10,369 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:38:12,358 - INFO - Calculating NAO...
+2026-06-08 09:38:14,575 - INFO - NAO Index Value:
+[3.271875]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:38:14,575 - INFO - Calculating PNA...
+2026-06-08 09:38:16,510 - INFO - PNA Index Value:
+[3.3219116]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:38:16,510 - INFO - Calculating AAO...
+2026-06-08 09:38:18,635 - INFO - AAO Index Value:
+[1.0353258]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:38:34,598 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:38:36,363 - INFO - Calculating NAO...
+2026-06-08 09:38:38,560 - INFO - NAO Index Value:
+[0.62271136]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:38:38,561 - INFO - Calculating PNA...
+2026-06-08 09:38:39,835 - INFO - PNA Index Value:
+[-4.314312]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:38:39,835 - INFO - Calculating AAO...
+2026-06-08 09:38:41,781 - INFO - AAO Index Value:
+[-1.1222006]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:38:56,698 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:38:57,913 - INFO - Calculating NAO...
+2026-06-08 09:38:59,961 - INFO - NAO Index Value:
+[0.74779093]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:38:59,961 - INFO - Calculating PNA...
+2026-06-08 09:39:01,875 - INFO - PNA Index Value:
+[-4.250672]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:39:01,875 - INFO - Calculating AAO...
+2026-06-08 09:39:03,648 - INFO - AAO Index Value:
+[-1.2225667]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:39:18,455 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:39:19,972 - INFO - Calculating NAO...
+2026-06-08 09:39:22,005 - INFO - NAO Index Value:
+[0.20772088]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:39:22,006 - INFO - Calculating PNA...
+2026-06-08 09:39:23,844 - INFO - PNA Index Value:
+[-3.121602]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:39:23,844 - INFO - Calculating AAO...
+2026-06-08 09:39:25,711 - INFO - AAO Index Value:
+[-2.07429]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:39:39,927 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:39:41,505 - INFO - Calculating NAO...
+2026-06-08 09:39:43,547 - INFO - NAO Index Value:
+[0.9237624]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:39:43,547 - INFO - Calculating PNA...
+2026-06-08 09:39:44,959 - INFO - PNA Index Value:
+[-4.1124306]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:39:44,959 - INFO - Calculating AAO...
+2026-06-08 09:39:46,761 - INFO - AAO Index Value:
+[-1.3388937]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:40:00,381 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:40:01,798 - INFO - Calculating NAO...
+2026-06-08 09:40:03,740 - INFO - NAO Index Value:
+[0.81404436]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:40:03,741 - INFO - Calculating PNA...
+2026-06-08 09:40:05,637 - INFO - PNA Index Value:
+[-3.7477934]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:40:05,637 - INFO - Calculating AAO...
+2026-06-08 09:40:07,438 - INFO - AAO Index Value:
+[-1.5073507]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:40:21,732 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:40:23,203 - INFO - Calculating NAO...
+2026-06-08 09:40:25,301 - INFO - NAO Index Value:
+[0.31761003]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:40:25,301 - INFO - Calculating PNA...
+2026-06-08 09:40:26,974 - INFO - PNA Index Value:
+[-4.4125023]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:40:26,974 - INFO - Calculating AAO...
+2026-06-08 09:40:28,763 - INFO - AAO Index Value:
+[-0.9352196]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:40:42,631 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:40:43,565 - INFO - Calculating NAO...
+2026-06-08 09:40:45,750 - INFO - NAO Index Value:
+[0.15755726]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:40:45,750 - INFO - Calculating PNA...
+2026-06-08 09:40:47,568 - INFO - PNA Index Value:
+[-4.465158]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:40:47,568 - INFO - Calculating AAO...
+2026-06-08 09:40:49,266 - INFO - AAO Index Value:
+[-0.86206883]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:41:03,086 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:41:04,325 - INFO - Calculating NAO...
+2026-06-08 09:41:06,423 - INFO - NAO Index Value:
+[-1.4940593]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:41:06,423 - INFO - Calculating PNA...
+2026-06-08 09:41:08,271 - INFO - PNA Index Value:
+[-1.1733106]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:41:08,271 - INFO - Calculating AAO...
+2026-06-08 09:41:10,117 - INFO - AAO Index Value:
+[0.43128878]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:41:23,284 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:41:25,042 - INFO - Calculating NAO...
+2026-06-08 09:41:27,160 - INFO - NAO Index Value:
+[-0.183787]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:41:27,161 - INFO - Calculating PNA...
+2026-06-08 09:41:29,108 - INFO - PNA Index Value:
+[-4.4432936]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:41:29,108 - INFO - Calculating AAO...
+2026-06-08 09:41:30,805 - INFO - AAO Index Value:
+[-0.7733276]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:41:44,635 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:41:46,219 - INFO - Calculating NAO...
+2026-06-08 09:41:48,450 - INFO - NAO Index Value:
+[-1.3308859]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:41:48,450 - INFO - Calculating PNA...
+2026-06-08 09:41:50,320 - INFO - PNA Index Value:
+[-3.3879902]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:41:50,321 - INFO - Calculating AAO...
+2026-06-08 09:41:52,169 - INFO - AAO Index Value:
+[-0.4211819]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:42:06,130 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:42:07,637 - INFO - Calculating NAO...
+2026-06-08 09:42:09,858 - INFO - NAO Index Value:
+[3.427628]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:42:09,859 - INFO - Calculating PNA...
+2026-06-08 09:42:11,716 - INFO - PNA Index Value:
+[3.4512506]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:42:11,717 - INFO - Calculating AAO...
+2026-06-08 09:42:13,605 - INFO - AAO Index Value:
+[1.0033718]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:42:27,449 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:42:29,310 - INFO - Calculating NAO...
+2026-06-08 09:42:30,848 - INFO - NAO Index Value:
+[3.4912994]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:42:30,848 - INFO - Calculating PNA...
+2026-06-08 09:42:32,688 - INFO - PNA Index Value:
+[3.5606165]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:42:32,688 - INFO - Calculating AAO...
+2026-06-08 09:42:34,801 - INFO - AAO Index Value:
+[0.9561252]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:42:48,779 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:42:50,338 - INFO - Calculating NAO...
+2026-06-08 09:42:52,467 - INFO - NAO Index Value:
+[1.2323724]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:42:52,467 - INFO - Calculating PNA...
+2026-06-08 09:42:54,277 - INFO - PNA Index Value:
+[2.4204957]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:42:54,277 - INFO - Calculating AAO...
+2026-06-08 09:42:56,086 - INFO - AAO Index Value:
+[-0.23278573]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:43:08,663 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:43:10,365 - INFO - Calculating NAO...
+2026-06-08 09:43:11,974 - INFO - NAO Index Value:
+[3.405723]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:43:11,975 - INFO - Calculating PNA...
+2026-06-08 09:43:13,823 - INFO - PNA Index Value:
+[3.593484]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:43:13,823 - INFO - Calculating AAO...
+2026-06-08 09:43:15,172 - INFO - AAO Index Value:
+[0.82504606]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:43:29,060 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:43:30,443 - INFO - Calculating NAO...
+2026-06-08 09:43:32,543 - INFO - NAO Index Value:
+[2.438773]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:43:32,543 - INFO - Calculating PNA...
+2026-06-08 09:43:34,486 - INFO - PNA Index Value:
+[3.1369987]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:43:34,486 - INFO - Calculating AAO...
+2026-06-08 09:43:36,364 - INFO - AAO Index Value:
+[0.3347415]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:43:48,303 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:43:49,866 - INFO - Calculating NAO...
+2026-06-08 09:43:51,570 - INFO - NAO Index Value:
+[3.0712254]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:43:51,570 - INFO - Calculating PNA...
+2026-06-08 09:43:53,438 - INFO - PNA Index Value:
+[3.1974132]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:43:53,438 - INFO - Calculating AAO...
+2026-06-08 09:43:55,268 - INFO - AAO Index Value:
+[1.0282531]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:44:07,790 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:44:08,849 - INFO - Calculating NAO...
+2026-06-08 09:44:10,358 - INFO - NAO Index Value:
+[2.8440192]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:44:10,359 - INFO - Calculating PNA...
+2026-06-08 09:44:11,793 - INFO - PNA Index Value:
+[3.0906308]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:44:11,793 - INFO - Calculating AAO...
+2026-06-08 09:44:13,638 - INFO - AAO Index Value:
+[1.0222868]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:44:26,610 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:44:27,995 - INFO - Calculating NAO...
+2026-06-08 09:44:29,718 - INFO - NAO Index Value:
+[0.39089262]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:44:29,718 - INFO - Calculating PNA...
+2026-06-08 09:44:30,997 - INFO - PNA Index Value:
+[-0.94982815]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:44:30,997 - INFO - Calculating AAO...
+2026-06-08 09:44:32,862 - INFO - AAO Index Value:
+[0.20698978]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:44:46,522 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:44:47,703 - INFO - Calculating NAO...
+2026-06-08 09:44:49,226 - INFO - NAO Index Value:
+[2.2022989]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:44:49,226 - INFO - Calculating PNA...
+2026-06-08 09:44:50,561 - INFO - PNA Index Value:
+[2.9170585]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:44:50,561 - INFO - Calculating AAO...
+2026-06-08 09:44:52,407 - INFO - AAO Index Value:
+[1.0091847]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:45:05,189 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:45:06,756 - INFO - Calculating NAO...
+2026-06-08 09:45:08,824 - INFO - NAO Index Value:
+[1.0359284]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:45:08,825 - INFO - Calculating PNA...
+2026-06-08 09:45:10,149 - INFO - PNA Index Value:
+[1.668542]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:45:10,150 - INFO - Calculating AAO...
+2026-06-08 09:45:12,159 - INFO - AAO Index Value:
+[0.6807413]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:45:25,342 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:45:26,558 - INFO - Calculating NAO...
+2026-06-08 09:45:28,867 - INFO - NAO Index Value:
+[-3.6952562]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:45:28,868 - INFO - Calculating PNA...
+2026-06-08 09:45:30,662 - INFO - PNA Index Value:
+[3.338912]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:45:30,663 - INFO - Calculating AAO...
+2026-06-08 09:45:32,315 - INFO - AAO Index Value:
+[0.8643064]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:45:46,364 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:45:47,921 - INFO - Calculating NAO...
+2026-06-08 09:45:49,604 - INFO - NAO Index Value:
+[-3.6684954]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:45:49,604 - INFO - Calculating PNA...
+2026-06-08 09:45:50,957 - INFO - PNA Index Value:
+[3.594754]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:45:50,957 - INFO - Calculating AAO...
+2026-06-08 09:45:52,879 - INFO - AAO Index Value:
+[-0.6009255]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:46:06,754 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:46:07,865 - INFO - Calculating NAO...
+2026-06-08 09:46:09,728 - INFO - NAO Index Value:
+[-2.539658]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:46:09,728 - INFO - Calculating PNA...
+2026-06-08 09:46:11,596 - INFO - PNA Index Value:
+[3.671694]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:46:11,596 - INFO - Calculating AAO...
+2026-06-08 09:46:13,893 - INFO - AAO Index Value:
+[-4.9066486]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:46:26,946 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:46:28,144 - INFO - Calculating NAO...
+2026-06-08 09:46:29,738 - INFO - NAO Index Value:
+[-3.592822]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:46:29,738 - INFO - Calculating PNA...
+2026-06-08 09:46:31,196 - INFO - PNA Index Value:
+[3.6969326]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:46:31,197 - INFO - Calculating AAO...
+2026-06-08 09:46:32,530 - INFO - AAO Index Value:
+[-1.8470693]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:46:45,557 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:46:47,061 - INFO - Calculating NAO...
+2026-06-08 09:46:48,638 - INFO - NAO Index Value:
+[-3.1338503]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:46:48,638 - INFO - Calculating PNA...
+2026-06-08 09:46:49,989 - INFO - PNA Index Value:
+[3.805002]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:46:49,989 - INFO - Calculating AAO...
+2026-06-08 09:46:51,846 - INFO - AAO Index Value:
+[-3.398843]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:47:04,668 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:47:05,633 - INFO - Calculating NAO...
+2026-06-08 09:47:07,802 - INFO - NAO Index Value:
+[-3.6794505]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:47:07,802 - INFO - Calculating PNA...
+2026-06-08 09:47:09,613 - INFO - PNA Index Value:
+[2.9723778]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:47:09,613 - INFO - Calculating AAO...
+2026-06-08 09:47:11,274 - INFO - AAO Index Value:
+[1.8775884]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:47:23,331 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:47:24,899 - INFO - Calculating NAO...
+2026-06-08 09:47:26,972 - INFO - NAO Index Value:
+[-2.7357123]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:47:26,972 - INFO - Calculating PNA...
+2026-06-08 09:47:28,840 - INFO - PNA Index Value:
+[0.7129459]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:47:28,840 - INFO - Calculating AAO...
+2026-06-08 09:47:30,149 - INFO - AAO Index Value:
+[4.121955]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:47:42,421 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:47:43,517 - INFO - Calculating NAO...
+2026-06-08 09:47:45,590 - INFO - NAO Index Value:
+[-3.6004786]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:47:45,590 - INFO - Calculating PNA...
+2026-06-08 09:47:46,858 - INFO - PNA Index Value:
+[2.479916]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:47:46,858 - INFO - Calculating AAO...
+2026-06-08 09:47:48,208 - INFO - AAO Index Value:
+[2.2637565]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:47:59,957 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:48:01,544 - INFO - Calculating NAO...
+2026-06-08 09:48:03,608 - INFO - NAO Index Value:
+[-3.3822887]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:48:03,609 - INFO - Calculating PNA...
+2026-06-08 09:48:05,500 - INFO - PNA Index Value:
+[1.4753007]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:48:05,501 - INFO - Calculating AAO...
+2026-06-08 09:48:06,804 - INFO - AAO Index Value:
+[2.7936137]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:48:20,719 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:48:22,315 - INFO - Calculating NAO...
+2026-06-08 09:48:24,039 - INFO - NAO Index Value:
+[4.195467]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:48:24,039 - INFO - Calculating PNA...
+2026-06-08 09:48:25,663 - INFO - PNA Index Value:
+[-3.1288977]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:48:25,664 - INFO - Calculating AAO...
+2026-06-08 09:48:27,607 - INFO - AAO Index Value:
+[-0.9765603]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:48:41,962 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:48:44,212 - INFO - Calculating NAO...
+2026-06-08 09:48:46,322 - INFO - NAO Index Value:
+[2.2402403]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:48:46,323 - INFO - Calculating PNA...
+2026-06-08 09:48:48,159 - INFO - PNA Index Value:
+[-3.3912065]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:48:48,159 - INFO - Calculating AAO...
+2026-06-08 09:48:49,408 - INFO - AAO Index Value:
+[-1.0476233]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:49:03,220 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:49:05,094 - INFO - Calculating NAO...
+2026-06-08 09:49:06,650 - INFO - NAO Index Value:
+[-4.7626505]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:49:06,651 - INFO - Calculating PNA...
+2026-06-08 09:49:07,998 - INFO - PNA Index Value:
+[-2.1376107]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:49:07,999 - INFO - Calculating AAO...
+2026-06-08 09:49:09,406 - INFO - AAO Index Value:
+[-1.3652524]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:49:21,854 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:49:23,647 - INFO - Calculating NAO...
+2026-06-08 09:49:25,199 - INFO - NAO Index Value:
+[0.30840462]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:49:25,199 - INFO - Calculating PNA...
+2026-06-08 09:49:26,570 - INFO - PNA Index Value:
+[-3.4195914]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:49:26,570 - INFO - Calculating AAO...
+2026-06-08 09:49:27,969 - INFO - AAO Index Value:
+[-1.1140103]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:49:40,377 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:49:42,487 - INFO - Calculating NAO...
+2026-06-08 09:49:44,079 - INFO - NAO Index Value:
+[-2.947892]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:49:44,079 - INFO - Calculating PNA...
+2026-06-08 09:49:45,433 - INFO - PNA Index Value:
+[-2.753092]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:49:45,433 - INFO - Calculating AAO...
+2026-06-08 09:49:46,800 - INFO - AAO Index Value:
+[-1.2440094]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:49:58,979 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:50:00,398 - INFO - Calculating NAO...
+2026-06-08 09:50:02,014 - INFO - NAO Index Value:
+[5.2137938]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:50:02,014 - INFO - Calculating PNA...
+2026-06-08 09:50:03,306 - INFO - PNA Index Value:
+[-2.4333496]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:50:03,306 - INFO - Calculating AAO...
+2026-06-08 09:50:05,122 - INFO - AAO Index Value:
+[-0.9153221]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:50:18,195 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:50:19,870 - INFO - Calculating NAO...
+2026-06-08 09:50:21,926 - INFO - NAO Index Value:
+[4.623969]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:50:21,927 - INFO - Calculating PNA...
+2026-06-08 09:50:23,174 - INFO - PNA Index Value:
+[0.04713042]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:50:23,175 - INFO - Calculating AAO...
+2026-06-08 09:50:24,399 - INFO - AAO Index Value:
+[-0.5785853]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:50:37,005 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:50:38,529 - INFO - Calculating NAO...
+2026-06-08 09:50:40,069 - INFO - NAO Index Value:
+[5.5455027]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:50:40,070 - INFO - Calculating PNA...
+2026-06-08 09:50:41,941 - INFO - PNA Index Value:
+[-1.9326265]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:50:41,941 - INFO - Calculating AAO...
+2026-06-08 09:50:43,272 - INFO - AAO Index Value:
+[-0.8550253]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:50:56,175 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:50:58,469 - INFO - Calculating NAO...
+2026-06-08 09:51:00,182 - INFO - NAO Index Value:
+[5.084901]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:51:00,182 - INFO - Calculating PNA...
+2026-06-08 09:51:01,438 - INFO - PNA Index Value:
+[-0.9853155]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:51:01,439 - INFO - Calculating AAO...
+2026-06-08 09:51:02,750 - INFO - AAO Index Value:
+[-0.68701404]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:51:16,178 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:51:17,728 - INFO - Calculating NAO...
+2026-06-08 09:51:19,582 - INFO - NAO Index Value:
+[0.13671425]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:51:19,582 - INFO - Calculating PNA...
+2026-06-08 09:51:21,350 - INFO - PNA Index Value:
+[-0.10122113]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:51:21,350 - INFO - Calculating AAO...
+2026-06-08 09:51:22,933 - INFO - AAO Index Value:
+[-1.0504221]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:51:36,891 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:51:38,455 - INFO - Calculating NAO...
+2026-06-08 09:51:40,181 - INFO - NAO Index Value:
+[0.01511615]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:51:40,181 - INFO - Calculating PNA...
+2026-06-08 09:51:42,032 - INFO - PNA Index Value:
+[-1.7919737]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:51:42,033 - INFO - Calculating AAO...
+2026-06-08 09:51:44,074 - INFO - AAO Index Value:
+[-0.33402517]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:51:56,596 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:51:58,229 - INFO - Calculating NAO...
+2026-06-08 09:51:59,730 - INFO - NAO Index Value:
+[-2.2381454]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:51:59,730 - INFO - Calculating PNA...
+2026-06-08 09:52:01,146 - INFO - PNA Index Value:
+[-3.982551]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:52:01,146 - INFO - Calculating AAO...
+2026-06-08 09:52:02,367 - INFO - AAO Index Value:
+[-3.3690603]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:52:13,297 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:52:14,792 - INFO - Calculating NAO...
+2026-06-08 09:52:16,472 - INFO - NAO Index Value:
+[0.03150424]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:52:16,473 - INFO - Calculating PNA...
+2026-06-08 09:52:18,303 - INFO - PNA Index Value:
+[-2.9906015]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:52:18,303 - INFO - Calculating AAO...
+2026-06-08 09:52:19,631 - INFO - AAO Index Value:
+[-0.15983306]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:52:30,900 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:52:32,437 - INFO - Calculating NAO...
+2026-06-08 09:52:33,933 - INFO - NAO Index Value:
+[-0.5323216]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:52:33,933 - INFO - Calculating PNA...
+2026-06-08 09:52:35,823 - INFO - PNA Index Value:
+[-3.9942513]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:52:35,823 - INFO - Calculating AAO...
+2026-06-08 09:52:37,044 - INFO - AAO Index Value:
+[-1.2573096]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:52:49,885 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:52:51,894 - INFO - Calculating NAO...
+2026-06-08 09:52:53,958 - INFO - NAO Index Value:
+[0.6721654]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:52:53,959 - INFO - Calculating PNA...
+2026-06-08 09:52:55,281 - INFO - PNA Index Value:
+[1.2698572]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:52:55,281 - INFO - Calculating AAO...
+2026-06-08 09:52:56,644 - INFO - AAO Index Value:
+[-0.5457262]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:53:08,949 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:53:10,691 - INFO - Calculating NAO...
+2026-06-08 09:53:12,681 - INFO - NAO Index Value:
+[1.022374]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:53:12,681 - INFO - Calculating PNA...
+2026-06-08 09:53:14,509 - INFO - PNA Index Value:
+[8.0687275]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:53:14,510 - INFO - Calculating AAO...
+2026-06-08 09:53:15,742 - INFO - AAO Index Value:
+[-0.29527912]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:53:28,934 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:53:30,940 - INFO - Calculating NAO...
+2026-06-08 09:53:32,542 - INFO - NAO Index Value:
+[1.5486246]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:53:32,542 - INFO - Calculating PNA...
+2026-06-08 09:53:33,694 - INFO - PNA Index Value:
+[2.3822658]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:53:33,694 - INFO - Calculating AAO...
+2026-06-08 09:53:35,022 - INFO - AAO Index Value:
+[-0.6184762]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:53:46,570 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:53:47,947 - INFO - Calculating NAO...
+2026-06-08 09:53:49,490 - INFO - NAO Index Value:
+[0.82445526]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:53:49,490 - INFO - Calculating PNA...
+2026-06-08 09:53:50,964 - INFO - PNA Index Value:
+[5.328379]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:53:50,965 - INFO - Calculating AAO...
+2026-06-08 09:53:52,172 - INFO - AAO Index Value:
+[-0.8418276]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:54:05,645 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:54:07,842 - INFO - Calculating NAO...
+2026-06-08 09:54:09,612 - INFO - NAO Index Value:
+[3.271875]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:54:09,612 - INFO - Calculating PNA...
+2026-06-08 09:54:11,094 - INFO - PNA Index Value:
+[3.3219116]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:54:11,094 - INFO - Calculating AAO...
+2026-06-08 09:54:12,543 - INFO - AAO Index Value:
+[1.0353258]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:54:24,456 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:54:26,044 - INFO - Calculating NAO...
+2026-06-08 09:54:27,557 - INFO - NAO Index Value:
+[3.5205047]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:54:27,557 - INFO - Calculating PNA...
+2026-06-08 09:54:28,860 - INFO - PNA Index Value:
+[3.3970435]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:54:28,860 - INFO - Calculating AAO...
+2026-06-08 09:54:30,758 - INFO - AAO Index Value:
+[1.0097617]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:54:41,966 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:54:43,572 - INFO - Calculating NAO...
+2026-06-08 09:54:45,370 - INFO - NAO Index Value:
+[4.9141016]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:54:45,370 - INFO - Calculating PNA...
+2026-06-08 09:54:46,779 - INFO - PNA Index Value:
+[2.931886]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:54:46,779 - INFO - Calculating AAO...
+2026-06-08 09:54:48,036 - INFO - AAO Index Value:
+[0.7357415]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:54:59,741 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:55:01,202 - INFO - Calculating NAO...
+2026-06-08 09:55:02,818 - INFO - NAO Index Value:
+[3.688277]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:55:02,818 - INFO - Calculating PNA...
+2026-06-08 09:55:04,172 - INFO - PNA Index Value:
+[3.4291372]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:55:04,173 - INFO - Calculating AAO...
+2026-06-08 09:55:05,428 - INFO - AAO Index Value:
+[0.98410285]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:55:16,656 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.
+2026-06-08 09:55:18,056 - INFO - Calculating NAO...
+2026-06-08 09:55:19,889 - INFO - NAO Index Value:
+[4.1056013]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:55:19,889 - INFO - Calculating PNA...
+2026-06-08 09:55:21,782 - INFO - PNA Index Value:
+[3.3123982]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:55:21,783 - INFO - Calculating AAO...
+2026-06-08 09:55:23,216 - INFO - AAO Index Value:
+[0.90613854]
+index dims: ('time',)
+raw dims: ('time',)
+2026-06-08 09:55:35,173 - WARNING - MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.

@@ -1,0 +1,393 @@
+Loading global climatology (this takes ~1 min)...
+MJO EOF not found, skipping MJO index calculations.
+
+======================================
+Evaluating all indices for results
+======================================
+  -> base_enso_20170103_1200_alpha_0.0.nc
+Error evaluating base_enso_20170103_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_mjo_20160123_1200_alpha_0.0.nc
+Error evaluating base_mjo_20160123_1200_alpha_0.0.nc: No module named 'scipy'
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-0.5.nc
+Error evaluating steered_enso_20170103_1200_tropical_lat30p0_alpha_-0.5.nc: No module named 'scipy'
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-1.0.nc
+Error evaluating steered_enso_20170103_1200_tropical_lat30p0_alpha_-1.0.nc: No module named 'scipy'
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-10.0.nc
+Error evaluating steered_enso_20170103_1200_tropical_lat30p0_alpha_-10.0.nc: No module named 'scipy'
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-2.0.nc
+Error evaluating steered_enso_20170103_1200_tropical_lat30p0_alpha_-2.0.nc: No module named 'scipy'
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-5.0.nc
+Error evaluating steered_enso_20170103_1200_tropical_lat30p0_alpha_-5.0.nc: No module named 'scipy'
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_0.5.nc
+Error evaluating steered_enso_20170103_1200_tropical_lat30p0_alpha_0.5.nc: No module named 'scipy'
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_1.0.nc
+Error evaluating steered_enso_20170103_1200_tropical_lat30p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_10.0.nc
+Error evaluating steered_enso_20170103_1200_tropical_lat30p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_2.0.nc
+Error evaluating steered_enso_20170103_1200_tropical_lat30p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_5.0.nc
+Error evaluating steered_enso_20170103_1200_tropical_lat30p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-0.5.nc
+Error evaluating steered_mjo_20160123_1200_tropical_lat30p0_alpha_-0.5.nc: No module named 'scipy'
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-1.0.nc
+Error evaluating steered_mjo_20160123_1200_tropical_lat30p0_alpha_-1.0.nc: No module named 'scipy'
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-10.0.nc
+Error evaluating steered_mjo_20160123_1200_tropical_lat30p0_alpha_-10.0.nc: No module named 'scipy'
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-2.0.nc
+Error evaluating steered_mjo_20160123_1200_tropical_lat30p0_alpha_-2.0.nc: No module named 'scipy'
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-5.0.nc
+Error evaluating steered_mjo_20160123_1200_tropical_lat30p0_alpha_-5.0.nc: No module named 'scipy'
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_0.5.nc
+Error evaluating steered_mjo_20160123_1200_tropical_lat30p0_alpha_0.5.nc: No module named 'scipy'
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_1.0.nc
+Error evaluating steered_mjo_20160123_1200_tropical_lat30p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_10.0.nc
+Error evaluating steered_mjo_20160123_1200_tropical_lat30p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_2.0.nc
+Error evaluating steered_mjo_20160123_1200_tropical_lat30p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_5.0.nc
+Error evaluating steered_mjo_20160123_1200_tropical_lat30p0_alpha_5.0.nc: No module named 'scipy'
+
+======================================
+Evaluating all indices for AAO_1encoder(2)
+======================================
+  -> base_aao_aao_antarctic_20160113_1200_alpha_0.0.nc
+Error evaluating base_aao_aao_antarctic_20160113_1200_alpha_0.0.nc: No module named 'scipy'
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-1.0.nc
+Error evaluating steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-1.0.nc: No module named 'scipy'
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-10.0.nc
+Error evaluating steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-10.0.nc: No module named 'scipy'
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-2.0.nc
+Error evaluating steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-2.0.nc: No module named 'scipy'
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-5.0.nc
+Error evaluating steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-5.0.nc: No module named 'scipy'
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_1.0.nc
+Error evaluating steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_10.0.nc
+Error evaluating steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_2.0.nc
+Error evaluating steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_5.0.nc
+Error evaluating steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_5.0.nc: No module named 'scipy'
+
+======================================
+Evaluating all indices for nao_steered
+======================================
+  -> base_nao_20200206_1200_alpha_0.0.nc
+Error evaluating base_nao_20200206_1200_alpha_0.0.nc: No module named 'scipy'
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-1.0.nc
+Error evaluating steered_nao_20200206_1200_polar_north_lat30p0_alpha_-1.0.nc: No module named 'scipy'
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-10.0.nc
+Error evaluating steered_nao_20200206_1200_polar_north_lat30p0_alpha_-10.0.nc: No module named 'scipy'
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-2.0.nc
+Error evaluating steered_nao_20200206_1200_polar_north_lat30p0_alpha_-2.0.nc: No module named 'scipy'
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-5.0.nc
+Error evaluating steered_nao_20200206_1200_polar_north_lat30p0_alpha_-5.0.nc: No module named 'scipy'
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_1.0.nc
+Error evaluating steered_nao_20200206_1200_polar_north_lat30p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_10.0.nc
+Error evaluating steered_nao_20200206_1200_polar_north_lat30p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_2.0.nc
+Error evaluating steered_nao_20200206_1200_polar_north_lat30p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_5.0.nc
+Error evaluating steered_nao_20200206_1200_polar_north_lat30p0_alpha_5.0.nc: No module named 'scipy'
+
+======================================
+Evaluating all indices for pna_neutral_steered
+======================================
+  -> base_pna_20190826_1200_alpha_0.0.nc
+Error evaluating base_pna_20190826_1200_alpha_0.0.nc: No module named 'scipy'
+  -> steered_pna_20190826_1200_nomask_alpha_-1.0.nc
+Error evaluating steered_pna_20190826_1200_nomask_alpha_-1.0.nc: No module named 'scipy'
+  -> steered_pna_20190826_1200_nomask_alpha_-10.0.nc
+Error evaluating steered_pna_20190826_1200_nomask_alpha_-10.0.nc: No module named 'scipy'
+  -> steered_pna_20190826_1200_nomask_alpha_-2.0.nc
+Error evaluating steered_pna_20190826_1200_nomask_alpha_-2.0.nc: No module named 'scipy'
+  -> steered_pna_20190826_1200_nomask_alpha_-5.0.nc
+Error evaluating steered_pna_20190826_1200_nomask_alpha_-5.0.nc: No module named 'scipy'
+  -> steered_pna_20190826_1200_nomask_alpha_1.0.nc
+Error evaluating steered_pna_20190826_1200_nomask_alpha_1.0.nc: No module named 'scipy'
+  -> steered_pna_20190826_1200_nomask_alpha_10.0.nc
+Error evaluating steered_pna_20190826_1200_nomask_alpha_10.0.nc: No module named 'scipy'
+  -> steered_pna_20190826_1200_nomask_alpha_2.0.nc
+Error evaluating steered_pna_20190826_1200_nomask_alpha_2.0.nc: No module named 'scipy'
+  -> steered_pna_20190826_1200_nomask_alpha_5.0.nc
+Error evaluating steered_pna_20190826_1200_nomask_alpha_5.0.nc: No module named 'scipy'
+
+======================================
+Evaluating all indices for ao_neutral_steered
+======================================
+  -> base_ao_ao81_polar_20160123_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160123_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160125_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160125_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160203_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160203_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160204_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160204_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160209_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160209_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160222_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160222_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160229_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160229_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160301_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160301_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160316_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160316_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160320_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160320_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160322_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160322_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160408_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160408_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160504_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160504_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160524_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160524_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20160526_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20160526_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20161109_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20161109_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20161206_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20161206_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170102_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170102_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170113_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170113_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170116_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170116_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170204_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170204_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170216_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170216_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170304_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170304_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170308_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170308_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170309_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170309_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170310_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170310_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170328_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170328_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20170413_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20170413_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20171023_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20171023_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20171030_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20171030_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20171114_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20171114_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20171126_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20171126_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20171227_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20171227_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180113_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180113_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180118_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180118_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180125_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180125_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180206_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180206_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180217_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180217_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180219_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180219_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180220_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180220_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180221_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180221_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180223_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180223_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180224_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180224_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180319_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180319_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180329_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180329_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180330_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180330_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20180331_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20180331_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20181108_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20181108_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20181205_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20181205_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20181224_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20181224_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20181225_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20181225_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20190107_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20190107_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20190117_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20190117_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20190120_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20190120_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20190208_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20190208_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20191024_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20191024_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20191222_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20191222_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20200128_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20200128_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20200129_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20200129_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20200328_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20200328_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20200329_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20200329_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20200506_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20200506_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20200512_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20200512_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20201130_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20201130_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20201202_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20201202_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20210215_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20210215_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20210220_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20210220_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20210302_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20210302_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20210316_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20210316_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20210318_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20210318_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20211009_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20211009_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20211113_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20211113_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20220110_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20220110_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20220131_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20220131_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20220303_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20220303_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20220304_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20220304_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20220308_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20220308_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20220310_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20220310_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20220313_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20220313_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20220321_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20220321_1200_alpha_0.0.nc: No module named 'scipy'
+  -> base_ao_ao81_polar_20220323_1200_alpha_0.0.nc
+Error evaluating base_ao_ao81_polar_20220323_1200_alpha_0.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_5.0.nc
+Error evaluating steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_5.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_1.0.nc
+Error evaluating steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_1.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_10.0.nc
+Error evaluating steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_10.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_2.0.nc
+Error evaluating steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_2.0.nc: No module named 'scipy'
+  -> steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_5.0.nc

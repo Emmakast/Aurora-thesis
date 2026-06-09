@@ -63,10 +63,54 @@ def extract_variables(ds):
         
     return vars_dict
 
+def process_chunk(args):
+    start, chunk_size, n_time, input_zarr = args
+    # We re-open the zarr store in the worker to avoid pickling the global dataset or locks
+    import xarray as xr
+    from windspharm.xarray import VectorWind
+    ds_local = xr.open_zarr(input_zarr)
+    ds_local = standardize_coords(ds_local)
+    
+    ds_local = ds_local.sel(time=slice('1990-01-01', '2019-12-31'))
+    
+    vars_local = extract_variables(ds_local)
+    u200_local = vars_local['u200']
+    v200_local = vars_local['v200']
+    u850_local = vars_local['u850']
+    
+    end = min(start + chunk_size, n_time)
+    u_chunk = u200_local.isel(time=slice(start, end)).load()
+    v_chunk = v200_local.isel(time=slice(start, end)).load()
+    u850_chunk = u850_local.isel(time=slice(start, end)).load()
+    w = VectorWind(u_chunk, v_chunk)
+    vp_chunk = w.velocitypotential()
+    
+    def process_wind_component(da):
+        lat_min, lat_max = -15, 15
+        if da.lat.values[0] > da.lat.values[-1]:
+            da_tropics = da.sel(lat=slice(lat_max, lat_min))
+        else:
+            da_tropics = da.sel(lat=slice(lat_min, lat_max))
+        da_1d = da_tropics.mean(dim='lat')
+        da_1d = da_1d.assign_coords(lon=(da_1d.lon % 360)).sortby('lon')
+        return da_1d
+
+    vp_ds = xr.Dataset({'vp200': vp_chunk})
+    vp_tropics = slice_tropics(vp_ds)['vp200']
+    vp_1d = vp_tropics.mean(dim='lat').compute()
+    
+    u850_1d = process_wind_component(u850_chunk).compute()
+    u200_1d = process_wind_component(u_chunk).compute()
+    
+    return start, vp_1d, u850_1d, u200_1d
+
 def generate_mjo_eofs(input_zarr, output_dir):
     logging.info(f"Loading Zarr store from {input_zarr}")
     ds = xr.open_zarr(input_zarr)
     ds = standardize_coords(ds)
+    
+    logging.info("Slicing time (1990-2019)...")
+    ds = ds.sel(time=slice('1990-01-01', '2019-12-31'))
     
     os.makedirs(output_dir, exist_ok=True)
     
@@ -76,37 +120,38 @@ def generate_mjo_eofs(input_zarr, output_dir):
     u850 = vars_dict_global['u850']
 
     logging.info("Calculating velocity potential globally in chunks and reducing...")
-    vp200_1d_chunks = []
-    chunk_size = 30 * 4  # 30 day chunks to avoid OverflowError in windspharm Fortran code
+    chunk_size = 30  # 30 day chunks to avoid OverflowError in windspharm Fortran code
     n_time = len(u200.time)
-    
-    for start in range(0, n_time, chunk_size):
-        end = min(start + chunk_size, n_time)
-        u_chunk = u200.isel(time=slice(start, end)).load()
-        v_chunk = v200.isel(time=slice(start, end)).load()
-        w = VectorWind(u_chunk, v_chunk)
-        vp_chunk = w.velocitypotential()
-        
-        vp_ds = xr.Dataset({'vp200': vp_chunk})
-        vp_tropics = slice_tropics(vp_ds)['vp200']
-        vp_1d = vp_tropics.mean(dim='lat')
-        vp200_1d_chunks.append(vp_1d)
-        
+
+    import concurrent.futures
+    vp200_1d_dict = {}
+    u850_1d_dict = {}
+    u200_1d_dict = {}
+    # Use ProcessPoolExecutor to be 100% safe regarding Fortran thread-safety and xarray memory leaks
+    # Use 16 workers to fully utilize the 1/8 node Snellius allocation
+    n_workers = int(os.environ.get('SLURM_CPUS_PER_TASK', 16))
+    with concurrent.futures.ProcessPoolExecutor(max_workers=n_workers) as executor:
+        args_list = [(start, chunk_size, n_time, input_zarr) for start in range(0, n_time, chunk_size)]
+        futures = {executor.submit(process_chunk, arg): arg[0] for arg in args_list}
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                start, vp_1d, u850_1d_chk, u200_1d_chk = future.result()
+                vp200_1d_dict[start] = vp_1d
+                u850_1d_dict[start] = u850_1d_chk
+                u200_1d_dict[start] = u200_1d_chk
+                logging.info(f"Completed chunk starting at {start}/{n_time}")
+            except Exception as e:
+                logging.error(f"Error processing chunk starting at {futures[future]}: {e}")
+                raise e
+                
+    vp200_1d_chunks = [vp200_1d_dict[start] for start in sorted(vp200_1d_dict.keys())]
     vp200_1d = xr.concat(vp200_1d_chunks, dim='time')
     
-    logging.info("Extracting U850 and U200 and reducing...")
-    def process_wind_component(da):
-        lat_min, lat_max = -15, 15
-        if da.lat.values[0] > da.lat.values[-1]:
-            da_tropics = da.sel(lat=slice(lat_max, lat_min))
-        else:
-            da_tropics = da.sel(lat=slice(lat_min, lat_max))
-        da_1d = da_tropics.mean(dim='lat').compute()
-        da_1d = da_1d.assign_coords(lon=(da_1d.lon % 360)).sortby('lon')
-        return da_1d
-
-    u850_1d = process_wind_component(u850)
-    u200_1d = process_wind_component(u200)
+    u850_1d_chunks = [u850_1d_dict[start] for start in sorted(u850_1d_dict.keys())]
+    u850_1d = xr.concat(u850_1d_chunks, dim='time')
+    
+    u200_1d_chunks = [u200_1d_dict[start] for start in sorted(u200_1d_dict.keys())]
+    u200_1d = xr.concat(u200_1d_chunks, dim='time')
     
     logging.info("Calculating anomalies...")
     def get_anomalies(da):
@@ -144,12 +189,20 @@ def generate_mjo_eofs(input_zarr, output_dir):
     eof2 = eofs.sel(mode=1).drop_vars('mode')
     
     logging.info("Saving results...")
+    
+    # Calculate PC standard deviations from eigenvalues
+    eigenvalues = solver.eigenvalues(neigs=2)
+    pc1_std = np.sqrt(eigenvalues.sel(mode=0).drop_vars('mode'))
+    pc2_std = np.sqrt(eigenvalues.sel(mode=1).drop_vars('mode'))
+    
     out_ds = xr.Dataset({
         'eof1': eof1,
         'eof2': eof2,
         'vp200_std': vp200_std,
         'u850_std': u850_std,
-        'u200_std': u200_std
+        'u200_std': u200_std,
+        'pc1_std': pc1_std,
+        'pc2_std': pc2_std
     })
     
     out_path = os.path.join(output_dir, "mjo_loading_pattern.nc")

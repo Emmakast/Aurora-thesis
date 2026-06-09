@@ -1,0 +1,2790 @@
+Loading global climatology (this takes ~1 min)...
+
+======================================
+Evaluating all indices for results
+======================================
+  -> base_enso_20170103_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 5.41s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_mjo_20160123_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.70s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-0.5.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.68s
+Interpolation: 0.02s
+Initialized VectorWind: 3.83s
+Computed velocitypotential: 0.48s
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 5.22s
+Interpolation: 0.02s
+Initialized VectorWind: 3.83s
+Computed velocitypotential: 0.48s
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.73s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.41s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.03s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_0.5.nc
+Extracted vars: 0.08s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.23s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.72s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.72s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.49s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.22s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-0.5.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 5.03s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.78s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.58s
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.49s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.08s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.49s
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.54s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_0.5.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.46s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.37s
+Interpolation: 0.02s
+Initialized VectorWind: 3.83s
+Computed velocitypotential: 0.51s
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.67s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.68s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.18s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.59s
+| Filename                                                   | Type    |   Alpha |       NAO |       PNA |       AAO |         AO |       MJO |        ENSO |
+|:-----------------------------------------------------------|:--------|--------:|----------:|----------:|----------:|-----------:|----------:|------------:|
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_-10.0.nc | Steered |   -10   |  0.207721 | -3.1216   | -2.07429  |  0.11903   |  37.2068  | -0.85117    |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_-10.0.nc  | Steered |   -10   |  1.23237  |  2.4205   | -0.232786 |  0.794411  | 148.751   |  0.877928   |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_-5.0.nc  | Steered |    -5   |  0.814044 | -3.74779  | -1.50735  |  0.0275734 |  39.0485  | -0.711432   |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_-5.0.nc   | Steered |    -5   |  2.43877  |  3.137    |  0.334742 |  1.16304   | 133.339   |  1.34881    |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_-2.0.nc   | Steered |    -2   |  3.40572  |  3.59348  |  0.825046 |  1.2844    | 104.662   |  1.70248    |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_-2.0.nc  | Steered |    -2   |  0.923762 | -4.11243  | -1.33889  | -0.174577  |  44.8918  | -0.347772   |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_-1.0.nc  | Steered |    -1   |  0.747791 | -4.25067  | -1.22257  | -0.331804  |  43.542   | -0.240334   |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_-1.0.nc   | Steered |    -1   |  3.4913   |  3.56062  |  0.956125 |  1.19646   |  66.5796  |  1.83131    |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_-0.5.nc   | Steered |    -0.5 |  3.42763  |  3.45125  |  1.00337  |  1.11798   |  38.2117  |  1.93507    |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_-0.5.nc  | Steered |    -0.5 |  0.622711 | -4.31431  | -1.1222   | -0.418132  |  40.4707  | -0.166786   |
+| base_enso_20170103_1200_alpha_0.0.nc                       | Base    |     0   |  0.473623 | -4.36697  | -1.02087  | -0.487961  |  37.0213  | -0.0830769  |
+| base_mjo_20160123_1200_alpha_0.0.nc                        | Base    |     0   |  3.27187  |  3.32191  |  1.03533  |  1.04315   |   6.02888 |  1.96126    |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_0.5.nc    | Steered |     0.5 |  3.07123  |  3.19741  |  1.02825  |  1.0092    |  34.5001  |  1.9242     |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_0.5.nc   | Steered |     0.5 |  0.31761  | -4.4125   | -0.93522  | -0.544273  |  31.5254  | -0.0108766  |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_1.0.nc   | Steered |     1   |  0.157557 | -4.46516  | -0.862069 | -0.591006  |  16.9351  |  0.00523218 |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_1.0.nc    | Steered |     1   |  2.84402  |  3.09063  |  1.02229  |  0.979097  |  74.0018  |  1.8223     |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_2.0.nc   | Steered |     2   | -0.183787 | -4.44329  | -0.773328 | -0.622736  |  27.9714  | -0.0731317  |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_2.0.nc    | Steered |     2   |  2.2023   |  2.91706  |  1.00918  |  0.881417  | 117.417   |  1.51018    |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_5.0.nc    | Steered |     5   |  1.03593  |  1.66854  |  0.680741 |  0.605225  | 184.751   |  1.48805    |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_5.0.nc   | Steered |     5   | -1.33089  | -3.38799  | -0.421182 | -0.611566  |  69.6755  | -0.77956    |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_10.0.nc  | Steered |    10   | -1.49406  | -1.17331  |  0.431289 | -0.651615  | 109.057   | -1.54816    |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_10.0.nc   | Steered |    10   |  0.390893 | -0.949828 |  0.20699  |  0.233334  | 203.425   |  1.2851     |
+Saved /home/ekasteleyn/aurora_thesis/thesis/results/all_indices_evaluated.csv
+
+======================================
+Evaluating all indices for AAO_1encoder(2)
+======================================
+  -> base_aao_aao_antarctic_20160113_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 5.31s
+Interpolation: 0.02s
+Initialized VectorWind: 3.83s
+Computed velocitypotential: 0.48s
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.21s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.87s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.58s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.49s
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.71s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.73s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.49s
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.31s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.34s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.05s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+| Filename                                                                   | Type    |   Alpha |      NAO |      PNA |       AAO |        AO |      MJO |    ENSO |
+|:---------------------------------------------------------------------------|:--------|--------:|---------:|---------:|----------:|----------:|---------:|--------:|
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-10.0.nc | Steered |     -10 | -2.53966 | 3.67169  | -4.90665  | 0.280152  | 103.798  | 1.53516 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-5.0.nc  | Steered |      -5 | -3.13385 | 3.805    | -3.39884  | 0.29608   |  79.4827 | 1.9106  |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-2.0.nc  | Steered |      -2 | -3.59282 | 3.69693  | -1.84707  | 0.300892  |  46.7378 | 1.95181 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-1.0.nc  | Steered |      -1 | -3.6685  | 3.59475  | -0.600926 | 0.305766  |  32.4206 | 2.04161 |
+| base_aao_aao_antarctic_20160113_1200_alpha_0.0.nc                          | Base    |       0 | -3.69526 | 3.33891  |  0.864306 | 0.282744  |  17.282  | 2.28321 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_1.0.nc   | Steered |       1 | -3.67945 | 2.97238  |  1.87759  | 0.254072  |  15.4704 | 2.29604 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_2.0.nc   | Steered |       2 | -3.60048 | 2.47992  |  2.26376  | 0.2346    |  23.8038 | 2.23401 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_5.0.nc   | Steered |       5 | -3.38229 | 1.4753   |  2.79361  | 0.097072  |  52.6488 | 1.94066 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_10.0.nc  | Steered |      10 | -2.73571 | 0.712946 |  4.12195  | 0.0025734 |  78.5654 | 1.61743 |
+Saved /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AAO_1encoder(2)/all_indices_evaluated.csv
+
+======================================
+Evaluating all indices for nao_steered
+======================================
+  -> base_nao_20200206_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.07s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.71s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.57s
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.82s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 6.09s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.59s
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 6.26s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 6.45s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.10s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.57s
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 6.74s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 6.19s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.49s
+| Filename                                                     | Type    |   Alpha |       NAO |        PNA |       AAO |         AO |      MJO |       ENSO |
+|:-------------------------------------------------------------|:--------|--------:|----------:|-----------:|----------:|-----------:|---------:|-----------:|
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_-10.0.nc | Steered |     -10 | -4.76265  | -2.13761   | -1.36525  | -1.67465   |  9.80781 | -1.76633   |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_-5.0.nc  | Steered |      -5 | -2.94789  | -2.75309   | -1.24401  | -1.22561   | 13.0817  | -0.686384  |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_-2.0.nc  | Steered |      -2 |  0.308405 | -3.41959   | -1.11401  | -0.716372  | 20.4394  |  0.0755811 |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_-1.0.nc  | Steered |      -1 |  2.24024  | -3.39121   | -1.04762  | -0.374819  | 23.8002  |  0.365108  |
+| base_nao_20200206_1200_alpha_0.0.nc                          | Base    |       0 |  4.19547  | -3.1289    | -0.97656  | -0.109347  | 28.0025  |  0.653844  |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_1.0.nc   | Steered |       1 |  5.21379  | -2.43335   | -0.915322 |  0.0228855 | 31.9444  |  0.911837  |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_2.0.nc   | Steered |       2 |  5.5455   | -1.93263   | -0.855025 |  0.0590295 | 35.2908  |  1.10092   |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_5.0.nc   | Steered |       5 |  5.0849   | -0.985316  | -0.687014 |  0.197041  | 39.4617  |  1.39438   |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_10.0.nc  | Steered |      10 |  4.62397  |  0.0471304 | -0.578585 |  0.648462  | 37.8057  |  1.41968   |
+Saved /scratch-shared/ekasteleyn/nao_steered/all_indices_evaluated.csv
+
+======================================
+Evaluating all indices for pna_neutral_steered
+======================================
+  -> base_pna_20190826_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 7.91s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_pna_20190826_1200_nomask_alpha_-1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.57s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_pna_20190826_1200_nomask_alpha_-10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.56s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_pna_20190826_1200_nomask_alpha_-2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.55s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_pna_20190826_1200_nomask_alpha_-5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.89s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_pna_20190826_1200_nomask_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.03s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_pna_20190826_1200_nomask_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.77s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_pna_20190826_1200_nomask_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.67s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.53s
+  -> steered_pna_20190826_1200_nomask_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.81s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+| Filename                                        | Type    |   Alpha |        NAO |       PNA |       AAO |         AO |      MJO |        ENSO |
+|:------------------------------------------------|:--------|--------:|-----------:|----------:|----------:|-----------:|---------:|------------:|
+| steered_pna_20190826_1200_nomask_alpha_-10.0.nc | Steered |     -10 | -2.23815   | -3.98255  | -3.36906  |  0.0681523 | 160.715  | -0.130047   |
+| steered_pna_20190826_1200_nomask_alpha_-5.0.nc  | Steered |      -5 | -0.532322  | -3.99425  | -1.25731  | -0.0751517 | 124.535  | -0.168727   |
+| steered_pna_20190826_1200_nomask_alpha_-2.0.nc  | Steered |      -2 |  0.0315042 | -2.9906   | -0.159833 | -0.203566  |  79.641  | -0.00455647 |
+| steered_pna_20190826_1200_nomask_alpha_-1.0.nc  | Steered |      -1 |  0.0151161 | -1.79197  | -0.334025 | -0.020443  |  52.0873 |  0.0998866  |
+| base_pna_20190826_1200_alpha_0.0.nc             | Base    |       0 |  0.136714  | -0.101221 | -1.05042  |  0.285022  |  19.2732 |  0.0935135  |
+| steered_pna_20190826_1200_nomask_alpha_1.0.nc   | Steered |       1 |  0.672165  |  1.26986  | -0.545726 |  0.487525  |  35.3912 | -0.0536055  |
+| steered_pna_20190826_1200_nomask_alpha_2.0.nc   | Steered |       2 |  1.54862   |  2.38227  | -0.618476 |  0.757423  |  83.4771 | -0.404655   |
+| steered_pna_20190826_1200_nomask_alpha_5.0.nc   | Steered |       5 |  0.824455  |  5.32838  | -0.841828 |  1.25383   | 190.484  | -0.900597   |
+| steered_pna_20190826_1200_nomask_alpha_10.0.nc  | Steered |      10 |  1.02237   |  8.06873  | -0.295279 |  1.48097   | 265.936  | -1.42296    |
+Saved /scratch-shared/ekasteleyn/pna_neutral_steered/all_indices_evaluated.csv
+
+======================================
+Evaluating all indices for ao_neutral_steered
+======================================
+  -> base_ao_ao81_polar_20160123_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.71s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20160125_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.34s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20160203_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.73s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.49s
+  -> base_ao_ao81_polar_20160204_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.94s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20160209_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.07s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20160222_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.73s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20160229_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 5.14s
+Interpolation: 0.02s
+Error evaluating base_ao_ao81_polar_20160229_1200_alpha_0.0.nc: u and v cannot contain missing values
+  -> base_ao_ao81_polar_20160301_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.41s
+Interpolation: 0.02s
+Error evaluating base_ao_ao81_polar_20160301_1200_alpha_0.0.nc: u and v cannot contain missing values
+  -> base_ao_ao81_polar_20160316_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.67s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20160320_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.45s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20160322_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.65s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20160408_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.61s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20160504_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.52s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20160524_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.11s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20160526_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.08s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20161109_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.01s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20161206_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.97s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.50s
+  -> base_ao_ao81_polar_20170102_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.85s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20170113_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.06s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.50s
+  -> base_ao_ao81_polar_20170116_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.23s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20170204_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.62s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20170216_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.59s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.60s
+  -> base_ao_ao81_polar_20170304_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.70s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.49s
+  -> base_ao_ao81_polar_20170308_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.83s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20170309_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.64s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20170310_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.21s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20170328_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.76s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20170413_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.19s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20171023_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 5.49s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20171030_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.48s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20171114_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.61s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20171126_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.72s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20171227_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.60s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180113_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.41s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180118_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.79s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180125_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.22s
+Interpolation: 0.02s
+Error evaluating base_ao_ao81_polar_20180125_1200_alpha_0.0.nc: u and v cannot contain missing values
+  -> base_ao_ao81_polar_20180206_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.71s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180217_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.07s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180219_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.02s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180220_1200_alpha_0.0.nc
+Extracted vars: 0.08s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.74s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180221_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.97s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180223_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.33s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20180224_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.94s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.49s
+  -> base_ao_ao81_polar_20180319_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.24s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180329_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.78s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180330_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.96s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20180331_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.75s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20181108_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.39s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20181205_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.94s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20181224_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.39s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20181225_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.00s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20190107_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.11s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20190117_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.68s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20190120_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.81s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20190208_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.21s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20191024_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.34s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20191222_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.91s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20200128_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.02s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20200129_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.26s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20200328_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.22s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20200329_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.37s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20200506_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.78s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20200512_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.49s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20201130_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 5.15s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20201202_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.59s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.49s
+  -> base_ao_ao81_polar_20210215_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.65s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20210220_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.56s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20210302_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.29s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20210316_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.33s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.49s
+  -> base_ao_ao81_polar_20210318_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.83s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20211009_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.26s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20211113_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.78s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20220110_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 5.46s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20220131_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.13s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20220303_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.33s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.58s
+  -> base_ao_ao81_polar_20220304_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.82s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20220308_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.05s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> base_ao_ao81_polar_20220310_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.57s
+Interpolation: 0.02s
+Error evaluating base_ao_ao81_polar_20220310_1200_alpha_0.0.nc: u and v cannot contain missing values
+  -> base_ao_ao81_polar_20220313_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.92s
+Interpolation: 0.02s
+Error evaluating base_ao_ao81_polar_20220313_1200_alpha_0.0.nc: u and v cannot contain missing values
+  -> base_ao_ao81_polar_20220321_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.12s
+Computed anomalies (loading data): 3.00s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> base_ao_ao81_polar_20220323_1200_alpha_0.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.54s
+Interpolation: 0.02s
+Error evaluating base_ao_ao81_polar_20220323_1200_alpha_0.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.66s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.46s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.49s
+  -> steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.45s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160123_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.28s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.59s
+  -> steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.33s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.11s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.23s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160125_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.70s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.17s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.32s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.36s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160203_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.16s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.45s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.34s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.44s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160204_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.70s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.44s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.49s
+  -> steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.91s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.84s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160209_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.75s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.34s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.38s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.53s
+  -> steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.58s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160222_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.41s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.39s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_1.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.79s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_10.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.75s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_2.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.82s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20160229_1200_polar_north_lat60p0_alpha_5.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.90s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_1.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.69s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_10.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.72s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_2.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.96s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20160301_1200_polar_north_lat60p0_alpha_5.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.90s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.49s
+  -> steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.32s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.84s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160316_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.86s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.02s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.89s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.03s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160320_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.18s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.58s
+  -> steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.72s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.49s
+  -> steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.37s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.83s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160322_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.33s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.13s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.82s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.12s
+Computed anomalies (loading data): 2.87s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160408_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.18s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.62s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.00s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.88s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160504_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.68s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.42s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.70s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.94s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160524_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.73s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160526_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.00s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160526_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.32s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20160526_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.83s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20160526_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.14s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20161109_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.19s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20161109_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.51s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20161109_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.33s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20161109_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.09s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20161206_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.25s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20161206_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.18s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20161206_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.04s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20161206_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.67s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170102_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.21s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20170102_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.03s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170102_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.00s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.53s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170102_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.90s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170113_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.33s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170113_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.20s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170113_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.55s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170113_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.04s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170116_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.42s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170116_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.76s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170116_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.13s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170116_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.23s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20170204_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.33s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20170204_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.89s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170204_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.00s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.13s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170204_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.42s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170216_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.22s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170216_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.16s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170216_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.12s
+Computed anomalies (loading data): 2.88s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170216_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.46s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170304_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.75s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170304_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.92s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.62s
+  -> steered_ao_ao81_polar_20170304_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.28s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170304_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.81s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170308_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.69s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170308_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.09s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170308_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.39s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170308_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.52s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.61s
+  -> steered_ao_ao81_polar_20170309_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.58s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170309_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.68s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170309_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.95s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170309_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.01s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170310_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.62s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170310_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.15s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170310_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.14s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170310_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.71s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170328_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.32s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170328_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.88s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.63s
+  -> steered_ao_ao81_polar_20170328_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.20s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170328_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.78s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20170413_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.45s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170413_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.22s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170413_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.84s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20170413_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.83s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171023_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 5.29s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171023_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.00s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171023_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.16s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171023_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.37s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171030_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 5.46s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171030_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.73s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171030_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.76s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171030_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.85s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171114_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.68s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171114_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.49s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171114_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.38s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171114_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.25s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171126_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.19s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20171126_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.68s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171126_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.12s
+Computed anomalies (loading data): 3.09s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171126_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.74s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171227_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.29s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20171227_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.91s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171227_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.56s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20171227_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.11s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180113_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.64s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180113_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.34s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180113_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.66s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180113_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.48s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180118_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.72s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180118_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.65s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180118_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.52s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180118_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.83s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180125_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.98s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20180125_1200_polar_north_lat60p0_alpha_1.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20180125_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.84s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20180125_1200_polar_north_lat60p0_alpha_10.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20180125_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.95s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20180125_1200_polar_north_lat60p0_alpha_2.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20180125_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.80s
+Interpolation: 0.02s
+Error evaluating steered_ao_ao81_polar_20180125_1200_polar_north_lat60p0_alpha_5.0.nc: u and v cannot contain missing values
+  -> steered_ao_ao81_polar_20180206_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.18s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180206_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.91s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.60s
+  -> steered_ao_ao81_polar_20180206_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.14s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180206_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.40s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180217_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.05s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180217_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.42s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180217_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.82s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180217_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.00s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180219_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.75s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180219_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.22s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180219_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.66s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180219_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.90s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180220_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.30s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180220_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.93s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.49s
+  -> steered_ao_ao81_polar_20180220_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.76s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180220_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.67s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180221_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.95s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180221_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.47s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180221_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.79s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180221_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.01s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180223_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.60s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180223_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.75s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180223_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.47s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180223_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.02s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.61s
+  -> steered_ao_ao81_polar_20180224_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.88s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180224_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.77s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180224_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.09s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.20s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20180224_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.17s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180319_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.49s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180319_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.88s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180319_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.95s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180319_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.02s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180329_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.10s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180329_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.62s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180329_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.00s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180329_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.40s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.57s
+  -> steered_ao_ao81_polar_20180330_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.75s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180330_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.78s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180330_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.96s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180330_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.94s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180331_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.73s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180331_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.22s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20180331_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.48s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.60s
+  -> steered_ao_ao81_polar_20180331_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.04s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181108_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.36s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181108_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.45s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181108_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.38s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181108_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.97s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181205_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.44s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181205_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.67s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181205_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.21s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181205_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.16s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181224_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.98s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181224_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.37s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181224_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.58s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181224_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.74s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181225_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.63s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181225_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.54s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181225_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.65s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20181225_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.70s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190107_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.34s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190107_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.45s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190107_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.04s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190107_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.78s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190117_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.42s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190117_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.09s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.60s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190117_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.90s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190117_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.67s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190120_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.37s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190120_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.73s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190120_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.97s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190120_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.71s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190208_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.19s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190208_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.41s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190208_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.15s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20190208_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.33s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20191024_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.56s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20191024_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.76s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20191024_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.66s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20191024_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.54s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20191222_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.00s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20191222_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.76s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20191222_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.84s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20191222_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.61s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200128_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.48s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200128_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.04s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200128_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.67s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200128_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.67s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200129_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.63s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.62s
+  -> steered_ao_ao81_polar_20200129_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.61s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200129_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.91s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200129_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.70s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200328_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.59s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200328_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.70s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200328_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.61s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200328_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.65s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200329_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.57s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200329_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.52s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200329_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.71s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200329_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.75s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200506_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.64s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.59s
+  -> steered_ao_ao81_polar_20200506_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.62s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200506_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.00s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200506_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.71s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200512_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 3.84s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200512_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.12s
+Computed anomalies (loading data): 2.65s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200512_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.54s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20200512_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.58s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20201130_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 4.42s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20201130_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.74s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20201130_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.83s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20201130_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.49s
+Interpolation: 0.02s
+Initialized VectorWind: 3.82s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20201202_1200_polar_north_lat60p0_alpha_1.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.52s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20201202_1200_polar_north_lat60p0_alpha_10.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.88s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.47s
+  -> steered_ao_ao81_polar_20201202_1200_polar_north_lat60p0_alpha_2.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s
+Computed anomalies (loading data): 2.59s
+Interpolation: 0.02s
+Initialized VectorWind: 3.81s
+Computed velocitypotential: 0.48s
+  -> steered_ao_ao81_polar_20201202_1200_polar_north_lat60p0_alpha_5.0.nc
+Extracted vars: 0.01s
+Calculated anomaly graphs: 0.04s

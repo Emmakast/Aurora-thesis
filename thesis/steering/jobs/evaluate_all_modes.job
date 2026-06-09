@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --job-name=eval_all_modes
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eval_all_modes_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eval_all_modes_%j.err
+#SBATCH --time=2:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
+#SBATCH --partition=rome
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator
+
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+export HDF5_USE_FILE_LOCKING=FALSE
+export PYTHONUNBUFFERED=1
+
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python evaluate_all_modes.py --AO --negative_only --date 20160123_1200

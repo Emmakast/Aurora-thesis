@@ -80,7 +80,7 @@ def calculate_indices(filepath: Path, ds_clim: xr.Dataset, eof_pattern: xr.DataA
 def main():
     parser = argparse.ArgumentParser(description="Batch calculate AO indices for steered and base files.")
     parser.add_argument("--vectors-dir", type=str, default="/home/ekasteleyn/aurora_thesis/thesis/steering/vectors", help="Path to vectors directory")
-    parser.add_argument("--eof", type=str, default="/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/ao_loading_pattern.nc", help="Path to EOF pattern file")
+    parser.add_argument("--eof", type=str, default="/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/indices/ao_loading_pattern.nc", help="Path to EOF pattern file")
     parser.add_argument("--output", type=str, default="/home/ekasteleyn/aurora_thesis/thesis/steering/vectors/all_ao_indices.csv", help="Global output CSV path")
     parser.add_argument("--climatology", type=str, default="gs://weatherbench2/datasets/era5-hourly-climatology/1990-2017_6h_1440x721.zarr", help="Path to climatology Zarr store or local NC file")
     args = parser.parse_args()

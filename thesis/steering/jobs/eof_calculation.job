@@ -2,7 +2,7 @@
 #SBATCH --job-name=generate_all_eofs
 #SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eof_gen_%j.out
 #SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/eof_gen_%j.err
-#SBATCH --time=12:00:00
+#SBATCH --time=48:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16

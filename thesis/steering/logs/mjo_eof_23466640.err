@@ -1,0 +1,9 @@
+2026-06-04 15:20:51,914 - INFO - Loading Zarr store from gs://weatherbench2/datasets/era5_daily/1959-2023_01_10-full_37-1h-0p25deg-chunk-1-s2s.zarr
+2026-06-04 15:21:21,373 - INFO - Slicing time (1990-2019)...
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 211, in <module>
+    generate_mjo_eofs(args.input, args.output_dir)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 115, in generate_mjo_eofs
+    os.makedirs(output_dir, exist_ok=True)
+    ^^
+UnboundLocalError: cannot access local variable 'os' where it is not associated with a value

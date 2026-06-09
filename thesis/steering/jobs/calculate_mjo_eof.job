@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH --job-name=mjo_eof
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/mjo_eof_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/mjo_eof_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=120G
+#SBATCH --partition=rome
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+echo "Running MJO EOF calculation..."
+
+# Adjust the output directory if needed
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python generate_mjo_eof.py \
+    --input "gs://weatherbench2/datasets/era5_daily/1959-2023_01_10-full_37-1h-0p25deg-chunk-1-s2s.zarr" \
+    --output_dir "../../data/mjo"
+
+echo "COMPLETE: $(date)"

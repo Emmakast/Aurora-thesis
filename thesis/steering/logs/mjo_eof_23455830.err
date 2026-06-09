@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 7, in <module>
+    from windspharm.xarray import VectorWind
+ModuleNotFoundError: No module named 'windspharm'

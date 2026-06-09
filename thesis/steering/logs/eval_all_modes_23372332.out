@@ -1,0 +1,169 @@
+Loading global climatology (this takes ~1 min)...
+MJO EOF not found, skipping MJO index calculations.
+
+======================================
+Evaluating all indices for results
+======================================
+  -> base_enso_20170103_1200_alpha_0.0.nc
+  -> base_mjo_20160123_1200_alpha_0.0.nc
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-0.5.nc
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-1.0.nc
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-10.0.nc
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-2.0.nc
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_-5.0.nc
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_0.5.nc
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_1.0.nc
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_10.0.nc
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_2.0.nc
+  -> steered_enso_20170103_1200_tropical_lat30p0_alpha_5.0.nc
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-0.5.nc
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-1.0.nc
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-10.0.nc
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-2.0.nc
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_-5.0.nc
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_0.5.nc
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_1.0.nc
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_10.0.nc
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_2.0.nc
+  -> steered_mjo_20160123_1200_tropical_lat30p0_alpha_5.0.nc
+| Filename                                                   | Type    |   Alpha |      NAO |       PNA |        AAO |         AO |   MJO |      ENSO |
+|:-----------------------------------------------------------|:--------|--------:|---------:|----------:|-----------:|-----------:|------:|----------:|
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_-10.0.nc | Steered |   -10   | 1.87876  | -1.22763  | -3.32671   |  0.11903   |   nan | -1.20821  |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_-10.0.nc  | Steered |   -10   | 2.95068  |  4.50636  | -0.997688  |  0.794411  |   nan |  0.548941 |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_-5.0.nc  | Steered |    -5   | 2.48508  | -1.85382  | -2.75977   |  0.0275734 |   nan | -1.06847  |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_-5.0.nc   | Steered |    -5   | 4.15708  |  5.22287  | -0.430161  |  1.16304   |   nan |  1.01982  |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_-2.0.nc   | Steered |    -2   | 5.12403  |  5.67935  |  0.0601434 |  1.2844    |   nan |  1.3735   |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_-2.0.nc  | Steered |    -2   | 2.5948   | -2.21846  | -2.59131   | -0.174577  |   nan | -0.704812 |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_-1.0.nc  | Steered |    -1   | 2.41883  | -2.3567   | -2.47498   | -0.331804  |   nan | -0.597374 |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_-1.0.nc   | Steered |    -1   | 5.2096   |  5.64648  |  0.191223  |  1.19646   |   nan |  1.50233  |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_-0.5.nc   | Steered |    -0.5 | 5.14593  |  5.53712  |  0.238469  |  1.11798   |   nan |  1.60608  |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_-0.5.nc  | Steered |    -0.5 | 2.29375  | -2.42034  | -2.37462   | -0.418132  |   nan | -0.523826 |
+| base_enso_20170103_1200_alpha_0.0.nc                       | Base    |     0   | 2.14466  | -2.473    | -2.27329   | -0.487961  |   nan | -0.440117 |
+| base_mjo_20160123_1200_alpha_0.0.nc                        | Base    |     0   | 4.99018  |  5.40778  |  0.270423  |  1.04315   |   nan |  1.63227  |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_0.5.nc    | Steered |     0.5 | 4.78953  |  5.28328  |  0.26335   |  1.0092    |   nan |  1.59521  |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_0.5.nc   | Steered |     0.5 | 1.98865  | -2.51853  | -2.18764   | -0.544273  |   nan | -0.367916 |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_1.0.nc   | Steered |     1   | 1.8286   | -2.57119  | -2.11448   | -0.591006  |   nan | -0.351808 |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_1.0.nc    | Steered |     1   | 4.56232  |  5.1765   |  0.257384  |  0.979097  |   nan |  1.49331  |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_2.0.nc   | Steered |     2   | 1.48725  | -2.54932  | -2.02574   | -0.622736  |   nan | -0.430172 |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_2.0.nc    | Steered |     2   | 3.9206   |  5.00293  |  0.244282  |  0.881417  |   nan |  1.1812   |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_5.0.nc    | Steered |     5   | 2.75423  |  3.75441  | -0.0841613 |  0.605225  |   nan |  1.15906  |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_5.0.nc   | Steered |     5   | 0.340152 | -1.49402  | -1.6736    | -0.611566  |   nan | -1.1366   |
+| steered_enso_20170103_1200_tropical_lat30p0_alpha_10.0.nc  | Steered |    10   | 0.176979 |  0.720661 | -0.821127  | -0.651615  |   nan | -1.9052   |
+| steered_mjo_20160123_1200_tropical_lat30p0_alpha_10.0.nc   | Steered |    10   | 2.1092   |  1.13604  | -0.557913  |  0.233334  |   nan |  0.956116 |
+Saved /home/ekasteleyn/aurora_thesis/thesis/results/all_indices_evaluated.csv
+
+======================================
+Evaluating all indices for AAO_1encoder(2)
+======================================
+  -> base_aao_aao_antarctic_20160113_1200_alpha_0.0.nc
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-1.0.nc
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-10.0.nc
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-2.0.nc
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-5.0.nc
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_1.0.nc
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_10.0.nc
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_2.0.nc
+  -> steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_5.0.nc
+| Filename                                                                   | Type    |   Alpha |       NAO |     PNA |       AAO |        AO |   MJO |    ENSO |
+|:---------------------------------------------------------------------------|:--------|--------:|----------:|--------:|----------:|----------:|------:|--------:|
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-10.0.nc | Steered |     -10 | -0.775857 | 5.7251  | -5.96669  | 0.280152  |   nan | 1.18246 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-5.0.nc  | Steered |      -5 | -1.37005  | 5.8584  | -4.45888  | 0.29608   |   nan | 1.5579  |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-2.0.nc  | Steered |      -2 | -1.82902  | 5.75034 | -2.90711  | 0.300892  |   nan | 1.59911 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-1.0.nc  | Steered |      -1 | -1.9047   | 5.64816 | -1.66097  | 0.305766  |   nan | 1.68891 |
+| base_aao_aao_antarctic_20160113_1200_alpha_0.0.nc                          | Base    |       0 | -1.93146  | 5.39232 | -0.195735 | 0.282744  |   nan | 1.93051 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_1.0.nc   | Steered |       1 | -1.91565  | 5.02578 |  0.817547 | 0.254072  |   nan | 1.94334 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_2.0.nc   | Steered |       2 | -1.83668  | 4.53332 |  1.20372  | 0.2346    |   nan | 1.88131 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_5.0.nc   | Steered |       5 | -1.61849  | 3.5287  |  1.73357  | 0.097072  |   nan | 1.58796 |
+| steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_10.0.nc  | Steered |      10 | -0.971912 | 2.76635 |  3.06191  | 0.0025734 |   nan | 1.26472 |
+Saved /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AAO_1encoder(2)/all_indices_evaluated.csv
+
+======================================
+Evaluating all indices for nao_steered
+======================================
+  -> base_nao_20200206_1200_alpha_0.0.nc
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-1.0.nc
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-10.0.nc
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-2.0.nc
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_-5.0.nc
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_1.0.nc
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_10.0.nc
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_2.0.nc
+  -> steered_nao_20200206_1200_polar_north_lat30p0_alpha_5.0.nc
+| Filename                                                     | Type    |   Alpha |      NAO |        PNA |       AAO |         AO |   MJO |      ENSO |
+|:-------------------------------------------------------------|:--------|--------:|---------:|-----------:|----------:|-----------:|------:|----------:|
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_-10.0.nc | Steered |     -10 | -3.18172 | -0.21529   | -1.70783  | -1.67465   |   nan | -2.015    |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_-5.0.nc  | Steered |      -5 | -1.36696 | -0.830771  | -1.58659  | -1.22561   |   nan | -0.935054 |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_-2.0.nc  | Steered |      -2 |  1.88933 | -1.49727   | -1.45659  | -0.716372  |   nan | -0.173089 |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_-1.0.nc  | Steered |      -1 |  3.82117 | -1.46889   | -1.3902   | -0.374819  |   nan |  0.116438 |
+| base_nao_20200206_1200_alpha_0.0.nc                          | Base    |       0 |  5.7764  | -1.20658   | -1.31914  | -0.109347  |   nan |  0.405174 |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_1.0.nc   | Steered |       1 |  6.79472 | -0.511029  | -1.2579   |  0.0228855 |   nan |  0.663168 |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_2.0.nc   | Steered |       2 |  7.12643 | -0.0103059 | -1.19761  |  0.0590295 |   nan |  0.85225  |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_5.0.nc   | Steered |       5 |  6.66583 |  0.937005  | -1.0296   |  0.197041  |   nan |  1.14571  |
+| steered_nao_20200206_1200_polar_north_lat30p0_alpha_10.0.nc  | Steered |      10 |  6.2049  |  1.96945   | -0.921167 |  0.648462  |   nan |  1.17101  |
+Saved /scratch-shared/ekasteleyn/nao_steered/all_indices_evaluated.csv
+
+======================================
+Evaluating all indices for pna_neutral_steered
+======================================
+  -> base_pna_20190826_1200_alpha_0.0.nc
+  -> steered_pna_20190826_1200_nomask_alpha_-1.0.nc
+  -> steered_pna_20190826_1200_nomask_alpha_-10.0.nc
+  -> steered_pna_20190826_1200_nomask_alpha_-2.0.nc
+  -> steered_pna_20190826_1200_nomask_alpha_-5.0.nc
+  -> steered_pna_20190826_1200_nomask_alpha_1.0.nc
+  -> steered_pna_20190826_1200_nomask_alpha_10.0.nc
+  -> steered_pna_20190826_1200_nomask_alpha_2.0.nc
+  -> steered_pna_20190826_1200_nomask_alpha_5.0.nc
+| Filename                                        | Type    |   Alpha |        NAO |       PNA |          AAO |         AO |   MJO |       ENSO |
+|:------------------------------------------------|:--------|--------:|-----------:|----------:|-------------:|-----------:|------:|-----------:|
+| steered_pna_20190826_1200_nomask_alpha_-10.0.nc | Steered |     -10 | -3.04826   | -6.13797  | -2.74985     |  0.0681523 |   nan | -0.313049  |
+| steered_pna_20190826_1200_nomask_alpha_-5.0.nc  | Steered |      -5 | -1.34243   | -6.14967  | -0.638099    | -0.0751517 |   nan | -0.351729  |
+| steered_pna_20190826_1200_nomask_alpha_-2.0.nc  | Steered |      -2 | -0.778605  | -5.14602  |  0.459377    | -0.203566  |   nan | -0.187558  |
+| steered_pna_20190826_1200_nomask_alpha_-1.0.nc  | Steered |      -1 | -0.794993  | -3.9474   |  0.285185    | -0.020443  |   nan | -0.0831154 |
+| base_pna_20190826_1200_alpha_0.0.nc             | Base    |       0 | -0.673395  | -2.25664  | -0.431212    |  0.285022  |   nan | -0.0894885 |
+| steered_pna_20190826_1200_nomask_alpha_1.0.nc   | Steered |       1 | -0.137944  | -0.885565 |  0.073484    |  0.487525  |   nan | -0.236607  |
+| steered_pna_20190826_1200_nomask_alpha_2.0.nc   | Steered |       2 |  0.738516  |  0.226844 |  0.000733746 |  0.757423  |   nan | -0.587657  |
+| steered_pna_20190826_1200_nomask_alpha_5.0.nc   | Steered |       5 |  0.0143462 |  3.17296  | -0.222617    |  1.25383   |   nan | -1.0836    |
+| steered_pna_20190826_1200_nomask_alpha_10.0.nc  | Steered |      10 |  0.212265  |  5.91331  |  0.323931    |  1.48097   |   nan | -1.60597   |
+Saved /scratch-shared/ekasteleyn/pna_neutral_steered/all_indices_evaluated.csv
+
+======================================
+Evaluating all indices for ao_neutral_steered
+======================================
+  -> base_ao_ao81_polar_20160123_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160125_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160203_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160204_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160209_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160222_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160229_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160301_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160316_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160320_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160322_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160408_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160504_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160524_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20160526_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20161109_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20161206_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170102_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170113_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170116_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170204_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170216_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170304_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170308_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170309_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170310_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170328_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20170413_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20171023_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20171030_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20171114_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20171126_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20171227_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20180113_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20180118_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20180125_1200_alpha_0.0.nc
+  -> base_ao_ao81_polar_20180206_1200_alpha_0.0.nc

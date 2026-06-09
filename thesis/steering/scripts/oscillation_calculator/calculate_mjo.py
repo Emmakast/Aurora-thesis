@@ -3,12 +3,12 @@ import logging
 import os
 import xarray as xr
 import numpy as np
+import pandas as pd
 from windspharm.xarray import VectorWind
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def standardize_coords(ds: xr.Dataset) -> xr.Dataset:
-    """Standardize latitude and longitude coordinate names."""
     rename_dict = {}
     if 'latitude' in ds.coords:
         rename_dict['latitude'] = 'lat'
@@ -19,9 +19,7 @@ def standardize_coords(ds: xr.Dataset) -> xr.Dataset:
     return ds.rename(rename_dict) if rename_dict else ds
 
 def slice_tropics(ds):
-    """Slice to 15°N-15°S and ensure longitudes are 0-360 continuously."""
     ds = ds.assign_coords(lon=(ds.lon % 360)).sortby('lon')
-    
     lat_min, lat_max = -15, 15
     if ds.lat.values[0] > ds.lat.values[-1]:
         ds = ds.sel(lat=slice(lat_max, lat_min))
@@ -55,12 +53,37 @@ def extract_variables(ds):
         
     return vars_dict
 
+def get_anomaly(t_var, c_var):
+    if 'time' in t_var.coords:
+        anom_list = []
+        t_var_expanded = t_var if 'time' in t_var.dims else t_var.expand_dims('time')
+        
+        for t in t_var_expanded.time:
+            t_val = t.values
+            t_dt = pd.to_datetime(t_val)
+            
+            c_slice = c_var
+            if 'dayofyear' in c_slice.coords:
+                c_slice = c_slice.sel(dayofyear=t_dt.dayofyear)
+            elif 'month' in c_slice.coords:
+                c_slice = c_slice.sel(month=t_dt.month)
+            if 'hour' in c_slice.coords:
+                c_slice = c_slice.sel(hour=t_dt.hour)
+            
+            anom_list.append(t_var_expanded.sel(time=t) - c_slice)
+            
+        anom = xr.concat(anom_list, dim='time')
+        if 'time' not in t_var.dims:
+            anom = anom.squeeze('time')
+        return anom
+    else:
+        return t_var - c_var
+
 def calculate_mjo(target_file, climatology, eof_file):
     if isinstance(target_file, str):
-        logging.info(f"Loading target file: {target_file}")
         target_ds = standardize_coords(xr.open_dataset(target_file))
         if 'time' not in target_ds.coords:
-            import re, pandas as pd
+            import re
             match = re.search(r'(\d{8})_(\d{4})', target_file)
             if match:
                 from datetime import datetime
@@ -71,7 +94,6 @@ def calculate_mjo(target_file, climatology, eof_file):
         target_ds = standardize_coords(target_file)
     
     if isinstance(climatology, str):
-        logging.info(f"Loading climatology file: {climatology}")
         if climatology.startswith('gs://') or climatology.endswith('.zarr'):
             clim_ds = standardize_coords(xr.open_zarr(climatology, consolidated=True))
         else:
@@ -80,70 +102,68 @@ def calculate_mjo(target_file, climatology, eof_file):
         clim_ds = climatology
     
     if isinstance(eof_file, str):
-        logging.info(f"Loading EOF pattern file: {eof_file}")
         eof_ds = xr.open_dataset(eof_file)
     else:
         eof_ds = eof_file
     
-    # Compute velocity potential on the global domain first
+    import time
+    t0 = time.time()
+    
     target_vars_g = extract_variables(target_ds)
     clim_vars_g = extract_variables(clim_ds)
+    print(f"Extracted vars: {time.time() - t0:.2f}s")
     
-    w_t = VectorWind(target_vars_g['u200'], target_vars_g['v200'])
-    w_c = VectorWind(clim_vars_g['u200'], clim_vars_g['v200'])
+    # 1. Compute anomalies globally FIRST to avoid computing VectorWind on the huge climatology
+    t1 = time.time()
+    u200_anom = get_anomaly(target_vars_g['u200'], clim_vars_g['u200'])
+    v200_anom = get_anomaly(target_vars_g['v200'], clim_vars_g['v200'])
+    u850_anom = get_anomaly(target_vars_g['u850'], clim_vars_g['u850'])
+    print(f"Calculated anomaly graphs: {time.time() - t1:.2f}s")
     
-    target_ds = target_ds.assign(vp200=w_t.velocitypotential())
-    clim_ds = clim_ds.assign(vp200=w_c.velocitypotential())
+    t2 = time.time()
+    # Force evaluation here to see if data loading is the bottleneck
+    u200_anom = u200_anom.compute()
+    v200_anom = v200_anom.compute()
+    u850_anom = u850_anom.compute()
+    print(f"Computed anomalies (loading data): {time.time() - t2:.2f}s")
     
-    target_sliced = slice_tropics(target_ds)
-    clim_sliced = slice_tropics(clim_ds)
+    # 2. Ensure global grid for windspharm by interpolating to 721 latitudes if needed
+    t3 = time.time()
+    if len(u200_anom.lat) == 720:
+        new_lat = np.linspace(90, -90, 721)
+        u200_anom_w = u200_anom.interp(lat=new_lat, kwargs={'fill_value': 'extrapolate'})
+        v200_anom_w = v200_anom.interp(lat=new_lat, kwargs={'fill_value': 'extrapolate'})
+    else:
+        u200_anom_w = u200_anom
+        v200_anom_w = v200_anom
+    print(f"Interpolation: {time.time() - t3:.2f}s")
+
+    # 3. Compute velocity potential of the anomaly
+    t4 = time.time()
+    w = VectorWind(u200_anom_w, v200_anom_w)
+    print(f"Initialized VectorWind: {time.time() - t4:.2f}s")
     
-    target_vars = extract_variables(target_sliced)
-    clim_vars = extract_variables(clim_sliced)
+    t5 = time.time()
+    vp200_anom = w.velocitypotential()
+    print(f"Computed velocitypotential: {time.time() - t5:.2f}s")
+    
+    # Slice to tropics
+    vp200_tropics = slice_tropics(vp200_anom)
+    u850_tropics = slice_tropics(u850_anom)
+    u200_tropics = slice_tropics(u200_anom)
     
     combined_list = []
     
-    for var_key in ['vp200', 'u850', 'u200']:
-        if var_key == 'vp200':
-            t_var = target_sliced['vp200']
-            c_var = clim_sliced['vp200']
-        else:
-            t_var = target_vars[var_key]
-            c_var = clim_vars[var_key]
-        
-        # 1. Calculate anomalies
-        if 'time' in t_var.coords:
-            anom_list = []
-            t_var_expanded = t_var if 'time' in t_var.dims else t_var.expand_dims('time')
-            
-            for t in t_var_expanded.time:
-                t_val = t.values
-                t_dt = xr.DataArray(t_val).dt
-                
-                c_slice = c_var
-                if 'dayofyear' in c_slice.coords:
-                    c_slice = c_slice.sel(dayofyear=t_dt.dayofyear)
-                elif 'month' in c_slice.coords:
-                    c_slice = c_slice.sel(month=t_dt.month)
-                
-                anom_list.append(t_var_expanded.sel(time=t) - c_slice)
-                
-            anom = xr.concat(anom_list, dim='time')
-            if 'time' not in t_var.dims:
-                anom = anom.squeeze('time')
-        else:
-            anom = t_var - c_var
-            
-        # 2. Meridionally average (15N-15S)
+    for var_key, anom in zip(['vp200', 'u850', 'u200'], [vp200_tropics, u850_tropics, u200_tropics]):
+        # Meridionally average (15N-15S)
         anom_1d = anom.mean(dim='lat')
         
-        # 3. Normalize with saved standard deviations
+        # Normalize with saved standard deviations
         std_val = eof_ds[f"{var_key}_std"]
         anom_norm = anom_1d / std_val
-        
         combined_list.append(anom_norm)
         
-    # 4. Concatenate and project
+    # Concatenate and project
     vp200_norm, u850_norm, u200_norm = combined_list
     n_lon = len(vp200_norm.lon)
     
@@ -159,20 +179,19 @@ def calculate_mjo(target_file, climatology, eof_file):
     rmm1 = (combined * eof1).sum(dim='combined_lon')
     rmm2 = (combined * eof2).sum(dim='combined_lon')
     
-    # 5. Calculate MJO Phase: arctan2(RMM2, RMM1) (mapped to phases 1-8)
-    # Using standard angle mapping starting at 0 deg, with 45 degree phase bins
+    # Normalize by PC standard deviation to get standardized RMM index
+    if 'pc1_std' in eof_ds and 'pc2_std' in eof_ds:
+        rmm1 = rmm1 / eof_ds['pc1_std']
+        rmm2 = rmm2 / eof_ds['pc2_std']
+    else:
+        logging.warning("MJO EOF file does not contain pc1_std and pc2_std. Using approximate scaling (22.75) to prevent RMM inflation. Please re-run generate_mjo_eof.py.")
+        rmm1 = rmm1 / 22.75
+        rmm2 = rmm2 / 22.75
+    
     angle = np.arctan2(rmm2, rmm1) * 180.0 / np.pi
     angle = (angle + 360) % 360
-    
     mjo_phase = np.floor(((angle + 22.5) % 360) / 45.0) + 1
-    
-    # 6. Calculate MJO Amplitude
     mjo_amp = np.sqrt(rmm1**2 + rmm2**2)
-    
-    logging.info(f"RMM1: \n{rmm1.values}")
-    logging.info(f"RMM2: \n{rmm2.values}")
-    logging.info(f"MJO Phase (1-8): \n{mjo_phase.values}")
-    logging.info(f"MJO Amplitude: \n{mjo_amp.values}")
     
     return {
         'rmm1': rmm1,

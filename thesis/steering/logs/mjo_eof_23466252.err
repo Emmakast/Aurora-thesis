@@ -1,0 +1,3 @@
+2026-06-04 15:10:15,012 - INFO - Loading Zarr store from gs://weatherbench2/datasets/era5/1959-2023_01_10-wb13-6h-1440x721_with_derived_variables.zarr
+2026-06-04 15:10:44,343 - INFO - Slicing time (1990-2019) and resampling to daily means...
+[2026-06-04T15:19:01.017] error: *** JOB 23466252 ON tcn466 CANCELLED AT 2026-06-04T15:19:01 DUE to SIGNAL Terminated ***

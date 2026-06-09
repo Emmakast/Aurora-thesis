@@ -1,0 +1,19 @@
+2026-06-04 16:23:02,771 - INFO - Loading Zarr store from gs://weatherbench2/datasets/era5_daily/1959-2023_01_10-full_37-1h-0p25deg-chunk-1-s2s.zarr
+2026-06-04 16:23:32,553 - INFO - Slicing time (1990-2019)...
+2026-06-04 16:23:37,406 - INFO - Calculating velocity potential globally in chunks and reducing...
+2026-06-04 16:24:19,947 - ERROR - Error processing chunk starting at 0: A process in the process pool was terminated abruptly while the future was running or pending.
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 210, in <module>
+    generate_mjo_eofs(args.input, args.output_dir)
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 145, in generate_mjo_eofs
+    raise e
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/generate_mjo_eof.py", line 138, in generate_mjo_eofs
+    start, vp_1d, u850_1d_chk, u200_1d_chk = future.result()
+                                             ^^^^^^^^^^^^^^^
+  File "/sw/arch/RHEL8/EB_production/2023/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/sw/arch/RHEL8/EB_production/2023/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+concurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.
+[2026-06-04T16:24:22.252] error: Detected 2 oom_kill events in StepId=23468450.batch. Some of the step tasks have been OOM Killed.
