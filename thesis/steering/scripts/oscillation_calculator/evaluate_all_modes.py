@@ -126,7 +126,7 @@ def main():
     if run_all or args.AAO: directories.append("/home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AAO_1encoder(2)")
     if run_all or args.NAO: directories.append("/scratch-shared/ekasteleyn/nao_steered")
     if run_all or args.PNA: directories.append("/scratch-shared/ekasteleyn/pna_neutral_steered")
-    if run_all or args.AO: directories.append("/scratch-shared/ekasteleyn/ao_neutral_steered")
+    if run_all or args.AO: directories.append("/home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)")
     if run_all or args.MJO: directories.append("/scratch-shared/ekasteleyn/mjo_steered")
     
     for directory in directories:

@@ -45,10 +45,10 @@ import cartopy.feature as cfeature
 
 # Phenomenon → projection / extent
 PROJ_CONFIG = {
-    "AO":   {"proj_cls": ccrs.PlateCarree, "proj_kw": {}, "extent": [-180, 180, -90, 90],  "circle_lat": 60},
-    "NAO":  {"proj_cls": ccrs.PlateCarree, "proj_kw": {}, "extent": [-180, 180, -90, 90],  "circle_lat": 60},
-    "PNA":  {"proj_cls": ccrs.PlateCarree, "proj_kw": {"central_longitude": 180}, "extent": [-180, 180, -90, 90],  "circle_lat": 60},
-    "AAO":  {"proj_cls": ccrs.PlateCarree, "proj_kw": {}, "extent": [-180, 180, -90, 90],  "circle_lat": -60},
+    "AO":   {"proj_cls": ccrs.NorthPolarStereo, "proj_kw": {"central_longitude": 0}, "extent": [-180, 180, 20, 90],  "circle_lat": 60},
+    "NAO":  {"proj_cls": ccrs.PlateCarree, "proj_kw": {}, "extent": [-90, 40, 20, 80],  "circle_lat": None},
+    "PNA":  {"proj_cls": ccrs.PlateCarree, "proj_kw": {"central_longitude": 180}, "extent": [150, 310, 10, 80],  "circle_lat": None},
+    "AAO":  {"proj_cls": ccrs.SouthPolarStereo, "proj_kw": {"central_longitude": 0}, "extent": [-180, 180, -90, -20],  "circle_lat": -60},
     "ENSO": {"proj_cls": ccrs.PlateCarree, "proj_kw": {"central_longitude": 180}, "extent": [-180, 180, -90, 90], "circle_lat": None},
     "MJO":  {"proj_cls": ccrs.PlateCarree, "proj_kw": {"central_longitude": 180}, "extent": [-180, 180, -90, 90], "circle_lat": None},
 }
@@ -73,7 +73,7 @@ PHENOM_INDEX_COL = {
 FIG1_PRIMARY_VAR = {
     "ENSO": ("msl", None, "Mean Sea-Level Pressure",            "Pa"),
     "MJO":  ("u",   850,  "Zonal Wind (850 hPa)",               "m s⁻¹"),
-    "AO":   ("z",   1000, "Geopotential Height (1000 hPa)",     "m² s⁻²"),
+    "AO":   ("z",   50,   "Geopotential Height (50 hPa)",     "m² s⁻²"),
     "AAO":  ("z",   500,  "Geopotential Height (500 hPa)",      "m² s⁻²"),
     "NAO":  ("z",   500,  "Geopotential Height (500 hPa)",      "m² s⁻²"),
     "PNA":  ("z",   500,  "Geopotential Height (500 hPa)",      "m² s⁻²"),
@@ -194,15 +194,15 @@ def _set_map_extent(ax, proj_cfg, data_crs):
 # ──────────────────────────────────────────────────────────────
 
 def _draw_map(ax, lons2d, lats2d, field, cmap, vmin, vmax, title,
-              proj_cfg, data_crs, draw_mask=False, extend="both"):
+              proj_cfg, data_crs, draw_mask=False, extend="both", title_fontsize=14):
     _set_map_extent(ax, proj_cfg, data_crs)
     im = ax.pcolormesh(
         lons2d, lats2d, field,
         cmap=cmap, vmin=vmin, vmax=vmax,
         transform=data_crs, rasterized=True, shading="auto",
     )
-    ax.add_feature(cfeature.COASTLINE, linewidth=0.5, color="#333333")
-    ax.add_feature(cfeature.BORDERS,   linewidth=0.3, alpha=0.4, color="#555555")
+    ax.add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="#333333")
+    ax.add_feature(cfeature.BORDERS,   linewidth=0.3, alpha=0.4, edgecolor="#555555")
     # Gridlines
     gl_kw = dict(draw_labels=False, linewidth=0.3, color="grey", alpha=0.5, linestyle=":")
     try:
@@ -213,7 +213,7 @@ def _draw_map(ax, lons2d, lats2d, field, cmap, vmin, vmax, title,
     if draw_mask:
         _draw_mask_boundary(ax, proj_cfg, data_crs)
 
-    ax.set_title(title, fontsize=10, fontweight="bold", pad=6)
+    ax.set_title(title, fontsize=title_fontsize, fontweight="bold", pad=6)
     return im
 
 
@@ -222,7 +222,7 @@ def _draw_map(ax, lons2d, lats2d, field, cmap, vmin, vmax, title,
 # ──────────────────────────────────────────────────────────────
 
 def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
-                         phenomenon, date, proj_cfg, output_path):
+                         phenomenon, date, proj_cfg, output_path, has_mask=True):
     """
     2×3 grid with GridSpec layout.
     Row 1: raw primary variable for α=-5, α=0, α=+5  +  colorbar row
@@ -273,21 +273,21 @@ def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
 
     # ── build figure with GridSpec ──
     # 4 rows: map_row1, cbar1, map_row2, cbar2
-    fig_h = 14 if is_polar else 11
-    fig = plt.figure(figsize=(16, fig_h))
+    fig_h = 13 if is_polar else 8.5
+    fig = plt.figure(figsize=(15, fig_h))
     gs = GridSpec(
-        4, 3, figure=fig,
-        height_ratios=[1, 0.05, 1, 0.05],
-        hspace=0.30, wspace=0.15,
-        left=0.05, right=0.95, top=0.93, bottom=0.04,
+        6, 3, figure=fig,
+        height_ratios=[1, 0.03, 0.15, 1, 0.08, 0.03],
+        hspace=0.02, wspace=0.15,
+        left=0.05, right=0.95, top=0.92, bottom=0.04,
     )
 
     # Row 1: three map axes
     ax_r1 = [fig.add_subplot(gs[0, i], projection=proj) for i in range(3)]
     # Row 2: two map axes + one Cartesian axis
-    ax_r2_left  = fig.add_subplot(gs[2, 0], projection=proj)
-    ax_r2_right = fig.add_subplot(gs[2, 2], projection=proj)
-    ax_line     = fig.add_subplot(gs[2, 1])  # plain cartesian
+    ax_r2_left  = fig.add_subplot(gs[3, 0], projection=proj)
+    ax_r2_right = fig.add_subplot(gs[3, 2], projection=proj)
+    ax_line     = fig.add_subplot(gs[3, 1])  # plain cartesian
 
     row1_axes = ax_r1
     row2_map_axes = [ax_r2_left, ax_r2_right]
@@ -301,11 +301,11 @@ def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
         if field is not None:
             im_raw = _draw_map(ax, lons2d, lats2d, field, cmap_raw,
                                vmin_raw, vmax_raw, title,
-                               proj_cfg, data_crs, draw_mask=True)
+                               proj_cfg, data_crs, draw_mask=has_mask, title_fontsize=18)
         else:
             _set_map_extent(ax, proj_cfg, data_crs)
-            ax.add_feature(cfeature.COASTLINE, linewidth=0.5)
-            ax.set_title(title + " (missing)", fontsize=10)
+            ax.add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
+            ax.set_title(title + " (missing)", fontsize=18)
 
     # ── Row 2: diff maps ──
     cmap_diff = "RdBu_r"
@@ -316,35 +316,33 @@ def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
         if field is not None:
             im_diff = _draw_map(ax, lons2d, lats2d, field, cmap_diff,
                                 -max_diff, max_diff, title,
-                                proj_cfg, data_crs, draw_mask=False)
+                                proj_cfg, data_crs, draw_mask=False, title_fontsize=18)
         else:
             _set_map_extent(ax, proj_cfg, data_crs)
-            ax.add_feature(cfeature.COASTLINE, linewidth=0.5)
-            ax.set_title(title + " (missing)", fontsize=10)
+            ax.add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
+            ax.set_title(title + " (missing)", fontsize=18)
 
     # ── Row 2 centre: dose-response line graph ──
-    _plot_dose_response_line(ax_line, csv_df, phenomenon, date)
+    extent = proj_cfg["extent"]
+    aspect = 1.0 if is_polar else (extent[3] - extent[2]) / (extent[1] - extent[0])
+    _plot_dose_response_line(ax_line, csv_df, phenomenon, date, aspect=aspect)
 
     # ── Colorbars ──
     # Shared sequential colorbar below row 1
     if im_raw is not None:
         cbar_ax_raw = fig.add_subplot(gs[1, :])
         cb_raw = fig.colorbar(im_raw, cax=cbar_ax_raw, orientation="horizontal", extend="both")
-        cb_raw.set_label(f"{plabel}  [{punit}]", fontsize=9)
-        cb_raw.ax.tick_params(labelsize=8)
+        cb_raw.set_label(f"{plabel}  [{punit}]", fontsize=18)
+        cb_raw.ax.tick_params(labelsize=16)
 
     # Shared diverging colorbar below row 2
     if im_diff is not None:
-        cbar_ax_diff = fig.add_subplot(gs[3, :])
+        cbar_ax_diff = fig.add_subplot(gs[5, :])
         cb_diff = fig.colorbar(im_diff, cax=cbar_ax_diff, orientation="horizontal", extend="both")
-        cb_diff.set_label(f"Δ {plabel}  [{punit}]", fontsize=9)
-        cb_diff.ax.tick_params(labelsize=8)
+        cb_diff.set_label(f"Δ {plabel}  [{punit}]", fontsize=18)
+        cb_diff.ax.tick_params(labelsize=16)
 
-    fig.suptitle(
-        f"Dose-Response Grid  —  {phenomenon} Steering   "
-        f"(init: {date[:4]}-{date[4:6]}-{date[6:]}  12:00 UTC, +72 h)",
-        fontsize=14, fontweight="bold", y=0.97,
-    )
+    # fig.suptitle removed
 
     fig.savefig(output_path, dpi=250, bbox_inches="tight", facecolor="white")
     plt.close(fig)
@@ -355,7 +353,7 @@ def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
 # Dose-response line graph (centre panel of Fig 1, row 2)
 # ──────────────────────────────────────────────────────────────
 
-def _plot_dose_response_line(ax, csv_df, phenomenon, date):
+def _plot_dose_response_line(ax, csv_df, phenomenon, date, aspect=0.5):
     """
     Plot target oscillation index vs α from the CSV.
     Highlight α ∈ {-5, 0, +5} with star markers and drop-lines.
@@ -378,10 +376,21 @@ def _plot_dose_response_line(ax, csv_df, phenomenon, date):
     if df.empty:
         ax.text(0.5, 0.5, "No CSV data found", transform=ax.transAxes,
                 ha="center", va="center", fontsize=11, color="grey")
-        ax.set_title("Dose-Response", fontsize=10, fontweight="bold")
+        ax.set_title("Steering response curve", fontsize=18, fontweight="bold")
         return
 
     df = df.sort_values("Alpha")
+
+    if idx_col not in df.columns:
+        fallback = f"{idx_col}_Index_Corrected"
+        if fallback in df.columns:
+            idx_col = fallback
+        else:
+            ax.text(0.5, 0.5, f"Column '{idx_col}' not found", transform=ax.transAxes,
+                    ha="center", va="center", fontsize=11, color="grey")
+            ax.set_title("Steering response curve", fontsize=18, fontweight="bold")
+            return
+
     alphas = df["Alpha"].values
     indices = df[idx_col].values
 
@@ -409,11 +418,11 @@ def _plot_dose_response_line(ax, csv_df, phenomenon, date):
     # Force strictly linear x-axis from -10 to 10
     ax.set_xlim(-11, 11)
     ax.xaxis.set_major_locator(mticker.FixedLocator([-10, -5, 0, 5, 10]))
-    ax.set_xlabel(r"Steering magnitude $\alpha$", fontsize=10)
-    ax.set_ylabel(f"{idx_col} Index", fontsize=10)
-    ax.set_title("Dose-Response Curve", fontsize=10, fontweight="bold", pad=6)
-    ax.tick_params(labelsize=9)
-    ax.legend(fontsize=8, loc="best", framealpha=0.8)
+    ax.set_xlabel(r"Steering magnitude $\alpha$", fontsize=18)
+    ax.set_ylabel("")
+    ax.set_title("Steering response curve", fontsize=18, fontweight="bold", pad=6)
+    ax.tick_params(labelsize=16)
+    # ax.legend(fontsize=8, loc="best", framealpha=0.8)
     ax.grid(True, linewidth=0.3, alpha=0.5)
 
     # Subtle background
@@ -421,8 +430,8 @@ def _plot_dose_response_line(ax, csv_df, phenomenon, date):
     for spine in ax.spines.values():
         spine.set_linewidth(0.6)
 
-    # Set same aspect ratio as the map plots (global PlateCarree is 0.5)
-    ax.set_box_aspect(0.5)
+    # Set same aspect ratio as the map plots
+    ax.set_box_aspect(aspect)
 
 
 # ──────────────────────────────────────────────────────────────
@@ -439,26 +448,30 @@ def figure_physical_profile(base_ds, steered_ds, phenomenon, date,
     from matplotlib.gridspec import GridSpec
 
     data_crs = ccrs.PlateCarree()
-    proj = proj_cfg["proj_cls"](**proj_cfg["proj_kw"])
-    is_polar = proj_cfg["circle_lat"] is not None
+    proj = ccrs.PlateCarree()
+    is_polar = False
+    
+    local_proj_cfg = proj_cfg.copy()
+    local_proj_cfg["extent"] = [-180, 180, -90, 90]
+    local_proj_cfg["circle_lat"] = None
 
     lat = base_ds.latitude.values
     lon = base_ds.longitude.values
     lons2d, lats2d = np.meshgrid(lon, lat)
 
-    # 4 rows: map_row1, cbar1, map_row2, cbar2
-    fig_h = 14 if is_polar else 11
+    # 5 rows: map_row1, cbar1, spacer, map_row2, cbar2
+    fig_h = 8.5
     fig = plt.figure(figsize=(18, fig_h))
     gs = GridSpec(
-        4, 3, figure=fig,
-        height_ratios=[1, 0.04, 1, 0.04],
-        hspace=0.25, wspace=0.12,
-        left=0.04, right=0.96, top=0.92, bottom=0.03,
+        5, 3, figure=fig,
+        height_ratios=[1, 0.03, 0.15, 1, 0.03],
+        hspace=0.02, wspace=0.05,
+        left=0.04, right=0.96, top=0.94, bottom=0.04,
     )
 
     # Map axes
     axes_r1 = [fig.add_subplot(gs[0, i], projection=proj) for i in range(3)]
-    axes_r2 = [fig.add_subplot(gs[2, i], projection=proj) for i in range(3)]
+    axes_r2 = [fig.add_subplot(gs[3, i], projection=proj) for i in range(3)]
 
     # Track colormaps for per-column colorbars
     im_row1_list = []
@@ -468,9 +481,9 @@ def figure_physical_profile(base_ds, steered_ds, phenomenon, date,
         # Check variable exists
         if var not in base_ds:
             for ax in [axes_r1[col_idx], axes_r2[col_idx]]:
-                ax.set_title(f"{var} not found", fontsize=9)
-                _set_map_extent(ax, proj_cfg, data_crs)
-                ax.add_feature(cfeature.COASTLINE, linewidth=0.5)
+                ax.set_title(f"{var} not found", fontsize=14)
+                _set_map_extent(ax, local_proj_cfg, data_crs)
+                ax.add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
             continue
 
         base_field    = _extract_field(base_ds, var, level)
@@ -495,43 +508,39 @@ def figure_physical_profile(base_ds, steered_ds, phenomenon, date,
             im1 = _draw_map(axes_r1[col_idx], lons2d, lats2d, steered_field,
                             "viridis", vmin_r, vmax_r,
                             f"{label}\n" + r"Steered ($\alpha=+5$)",
-                            proj_cfg, data_crs, draw_mask=False)
+                            local_proj_cfg, data_crs, draw_mask=False)
             im_row1_list.append((im1, col_idx, unit))
         else:
-            _set_map_extent(axes_r1[col_idx], proj_cfg, data_crs)
-            axes_r1[col_idx].add_feature(cfeature.COASTLINE, linewidth=0.5)
-            axes_r1[col_idx].set_title(f"{label}\n(missing)", fontsize=9)
+            _set_map_extent(axes_r1[col_idx], local_proj_cfg, data_crs)
+            axes_r1[col_idx].add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
+            axes_r1[col_idx].set_title(f"{label}\n(missing)", fontsize=14)
 
         # Row 2: difference
         if diff_field is not None:
             im2 = _draw_map(axes_r2[col_idx], lons2d, lats2d, diff_field,
                             "RdBu_r", -md, md,
                             f"Δ {label}\n" + r"($\alpha=+5$ – Base)",
-                            proj_cfg, data_crs, draw_mask=False)
+                            local_proj_cfg, data_crs, draw_mask=False)
             im_row2_list.append((im2, col_idx, unit))
         else:
-            _set_map_extent(axes_r2[col_idx], proj_cfg, data_crs)
-            axes_r2[col_idx].add_feature(cfeature.COASTLINE, linewidth=0.5)
-            axes_r2[col_idx].set_title(f"Δ {label}\n(missing)", fontsize=9)
+            _set_map_extent(axes_r2[col_idx], local_proj_cfg, data_crs)
+            axes_r2[col_idx].add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
+            axes_r2[col_idx].set_title(f"Δ {label}\n(missing)", fontsize=14)
 
     # ── Per-column colorbars using GridSpec sub-axes ──
     for im, col_idx, unit in im_row1_list:
         cbar_ax = fig.add_subplot(gs[1, col_idx])
         cb = fig.colorbar(im, cax=cbar_ax, orientation="horizontal", extend="both")
-        cb.ax.tick_params(labelsize=7)
-        cb.set_label(f"[{unit}]", fontsize=7)
+        cb.ax.tick_params(labelsize=12)
+        cb.set_label(f"[{unit}]", fontsize=14)
 
     for im, col_idx, unit in im_row2_list:
-        cbar_ax = fig.add_subplot(gs[3, col_idx])
+        cbar_ax = fig.add_subplot(gs[4, col_idx])
         cb = fig.colorbar(im, cax=cbar_ax, orientation="horizontal", extend="both")
-        cb.ax.tick_params(labelsize=7)
-        cb.set_label(f"Δ [{unit}]", fontsize=7)
+        cb.ax.tick_params(labelsize=12)
+        cb.set_label(f"Δ [{unit}]", fontsize=14)
 
-    fig.suptitle(
-        f"Physical Profile  —  {phenomenon} Steering  "
-        r"($\alpha = +5$)" + f"   (init: {date[:4]}-{date[4:6]}-{date[6:]}  12:00 UTC, +72 h)",
-        fontsize=14, fontweight="bold", y=0.97,
-    )
+    # fig.suptitle removed
 
     fig.savefig(output_path, dpi=250, bbox_inches="tight", facecolor="white")
     plt.close(fig)
@@ -569,6 +578,10 @@ def main():
              "Defaults to the canonical directory for each phenomenon.",
     )
     parser.add_argument(
+        "--out-dir", type=str, default=None,
+        help="Directory to save the figures (defaults to data-dir).",
+    )
+    parser.add_argument(
         "--csv-path", type=str,
         default="/home/ekasteleyn/aurora_thesis/thesis/results/all_indices_evaluated.csv",
         help="Path to the master CSV with evaluated oscillation indices.",
@@ -591,7 +604,7 @@ def main():
     mask_tag   = args.mask_tag    or defaults["mask_tag"]
     name_suffix = args.name_suffix or defaults["name_suffix"]
     data_dir   = Path(args.data_dir or defaults["data_dir"])
-    output_dir = Path(args.output_dir) if args.output_dir else data_dir
+    out_dir    = Path(args.out_dir) if args.out_dir else data_dir
     csv_path   = Path(args.csv_path)
 
     proj_cfg = PROJ_CONFIG[phenom]
@@ -626,16 +639,17 @@ def main():
         print("  ⚠ α=+5 file not found – right column will be empty.")
 
     # ── Figure 1 ──
-    out1 = output_dir / f"fig1_dose_response_{phenom.lower()}_{date}.png"
+    fig1_out = out_dir / f"fig1_dose_response_{phenom.lower()}_{date}.png"
+    has_mask = mask_tag != "nomask"
     figure_dose_response(
         base_ds, steered_neg, steered_pos,
-        csv_df, phenom, date, proj_cfg, out1,
+        csv_df, phenom, date, proj_cfg, fig1_out, has_mask=has_mask
     )
 
     # ── Figure 2 (uses α=+5) ──
     steered_profile = steered_pos  # reuse the +5 dataset
     if steered_profile is not None:
-        out2 = output_dir / f"fig2_physical_profile_{phenom.lower()}_{date}.png"
+        out2 = out_dir / f"fig2_physical_profile_{phenom.lower()}_{date}.png"
         figure_physical_profile(
             base_ds, steered_profile, phenom, date, proj_cfg, out2,
         )

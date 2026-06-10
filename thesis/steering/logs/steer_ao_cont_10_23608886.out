@@ -1,0 +1,203 @@
+Extracting latents for dates: 2020-02-09 2020-01-05 2016-01-28 2021-03-11 2020-01-04 2020-02-08 2020-03-17 2016-01-29 2020-02-10 2021-03-12 2017-02-03 2017-01-04 2016-02-03 2021-03-16 2017-01-04 2017-02-03 2016-03-08 2016-02-03 2017-02-03 2021-03-16
+  ✓ S3 Client initialized securely via .env
+======================================================================
+  AURORA LATENT EXTRACTION - IFS HRES T0
+======================================================================
+  Dates: 20 dates
+  Init hours: [0]
+  Latent extraction init: 0:00 UTC only
+  Rollout steps: 1
+  Device: cuda
+  Output: /scratch-node/ekasteleyn.23608886/aurora_hres_latents
+  Cache: /scratch-shared/ekasteleyn/downloads/hres_t0
+  Target layers: [('perceiver', 0), ('encoder', 0), ('encoder', 1), ('encoder', 2)]
+======================================================================
+
+[1/4] Downloading static variables...
+
+[2/4] Downloading HRES T0 data...
+  2016-01-27
+  2016-01-28
+  2016-01-29
+  2016-02-02
+  2016-02-03
+  2016-03-07
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2016-03-08
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2017-01-03
+  2017-01-04
+  2017-02-02
+  2017-02-03
+  2020-01-03
+  2020-01-04
+  2020-01-05
+  2020-02-07
+    Downloading surface variables...
+    Downloading atmospheric variables...
+  2020-02-08
+  2020-02-09
+  2020-02-10
+  2020-03-16
+  2020-03-17
+  2021-03-10
+  2021-03-11
+  2021-03-12
+  2021-03-15
+  2021-03-16
+
+[3/4] Loading Aurora 0.25° Fine-Tuned model...
+  ✓ Model loaded
+
+[4/4] Processing 20 runs (20 dates × 1 init times)...
+  Loading static variables into memory...
+  ✓ Static variables loaded
+
+  [16:26:11] [1/20] 2020-02-09 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [2/20] 2020-01-05 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [3/20] 2016-01-28 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [4/20] 2021-03-11 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [5/20] 2020-01-04 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [6/20] 2020-02-08 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [7/20] 2020-03-17 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [8/20] 2016-01-29 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [9/20] 2020-02-10 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [10/20] 2021-03-12 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [11/20] 2017-02-03 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:11] [12/20] 2017-01-04 init 00:00 UTC [+latents] | ETA: 0.0 min
+    Init time: 2017-01-04 00:00:00
+    perceiver_0: shape=(1, 259200, 512) -> latent_20170104_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20170104_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20170104_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20170104_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20170104_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20170104_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20170104_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20170104_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.9s
+
+  [16:26:23] [13/20] 2016-02-03 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:23] [14/20] 2021-03-16 init 00:00 UTC [+latents] | ETA: 0.1 min
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170104_0000_encoder_2.pt      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170104_0000_encoder_1.pt
+
+    Init time: 2021-03-16 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170104_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170104_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20170104_0000_perceiver_0.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210316_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210316_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210316_0000_encoder_1.pt (Disk)
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210316_0000_encoder_2.pt (Disk)
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210316_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210316_0000_encoder_0_attn.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170104_0000_encoder_2_attn.pt
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210316_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210316_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 11.4s
+
+  [16:26:34] [15/20] 2017-01-04 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:34] [16/20] 2017-02-03 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:34] [17/20] 2016-03-08 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:34] [18/20] 2016-02-03 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:34] [19/20] 2017-02-03 init 00:00 UTC [skipped - already on S3]
+
+  [16:26:34] [20/20] 2021-03-16 init 00:00 UTC [+latents] | ETA: 0.0 min
+    Init time: 2021-03-16 00:00:00
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170104_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20210316_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20170104_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20210316_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20210316_0000_encoder_1.pt
+    perceiver_0: shape=(1, 259200, 512) -> latent_20210316_0000_perceiver_0.pt (Disk)
+    encoder_0: shape=(1, 64800, 1024) -> latent_20210316_0000_encoder_0.pt (Disk)
+    encoder_1: shape=(1, 16200, 2048) -> latent_20210316_0000_encoder_1.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20210316_0000_encoder_2.pt
+    encoder_2: shape=(1, 16200, 2048) -> latent_20210316_0000_encoder_2.pt (Disk)
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20210316_0000_perceiver_0.pt
+    perceiver_cross_attn: shape=(64800, 16, 3, 13) -> attn_20210316_0000_perceiver_cross_attn.pt (Disk)
+    encoder_0_attn: shape=(1800, 8, 144, 144) -> attn_20210316_0000_encoder_0_attn.pt (Disk)
+    encoder_1_attn: shape=(450, 16, 144, 144) -> attn_20210316_0000_encoder_1_attn.pt (Disk)
+    encoder_2_attn: shape=(128, 32, 144, 144) -> attn_20210316_0000_encoder_2_attn.pt (Disk)
+    ✓ Done in 9.7s
+
+  Waiting for background saves to complete...
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20210316_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20210316_0000_encoder_1_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20210316_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20210316_0000_perceiver_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20210316_0000_perceiver_cross_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20210316_0000_encoder_0.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20210316_0000_encoder_2.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/latent_20210316_0000_encoder_1.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20210316_0000_encoder_2_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20210316_0000_encoder_0_attn.pt
+      ↑ Uploaded to S3: s3://ekasteleyn-aurora-predictions/aurora_hres_validation/attn_20210316_0000_encoder_1_attn.pt
+
+======================================================================
+  COMPLETE
+======================================================================
+  Output saved to: /scratch-node/ekasteleyn.23608886/aurora_hres_latents
+  Files: 16 .pt files, 0 .nc files
+Starting Steering Job with Top 10 Contrastive Pairs...
+Starting Contrastive Activation Addition (CAA) Steering Pipeline (AO, alphas=[-10.0, -5.0, -2.0, -1.0, 1.0, 2.0, 5.0, 10.0])...
+Loaded CSV: thesis/steering/data/contrastive_pairs_10.csv
+Found 10 Active dates and 10 Neutral dates.
+✓ Found PRE-COMPUTED steering vector! Loading steering_vector_ao_cont_10.pt directly...
+Using /scratch-shared/ekasteleyn/aurora_data for data...
+Downloading static/base data if needed...
+Selected Base Date: 2017-03-08
+Preparing batch...
+Loading Aurora Model on cuda...
+Base output base_ao_cont_10_20170308_1200_alpha_0.0.nc already exists, skipping base inference.
+Applying hook with alpha=-10.0...
+Running steered inference (alpha=-10.0) for 12 steps...
+Converting prediction to xarray for alpha=-10.0...
+Saved steered output to /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_cont10/steered_ao_cont_10_20170308_1200_polar_both_lat60p0_alpha_-10.0.nc
+Applying hook with alpha=-5.0...
+Running steered inference (alpha=-5.0) for 12 steps...
+Converting prediction to xarray for alpha=-5.0...
+Saved steered output to /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_cont10/steered_ao_cont_10_20170308_1200_polar_both_lat60p0_alpha_-5.0.nc
+Applying hook with alpha=-2.0...
+Running steered inference (alpha=-2.0) for 12 steps...
+Converting prediction to xarray for alpha=-2.0...
+Saved steered output to /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_cont10/steered_ao_cont_10_20170308_1200_polar_both_lat60p0_alpha_-2.0.nc
+Applying hook with alpha=-1.0...
+Running steered inference (alpha=-1.0) for 12 steps...
+Converting prediction to xarray for alpha=-1.0...
+Saved steered output to /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_cont10/steered_ao_cont_10_20170308_1200_polar_both_lat60p0_alpha_-1.0.nc
+Applying hook with alpha=1.0...
+Running steered inference (alpha=1.0) for 12 steps...
+Converting prediction to xarray for alpha=1.0...
+Saved steered output to /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_cont10/steered_ao_cont_10_20170308_1200_polar_both_lat60p0_alpha_1.0.nc
+Applying hook with alpha=2.0...
+Running steered inference (alpha=2.0) for 12 steps...
+Converting prediction to xarray for alpha=2.0...
+Saved steered output to /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_cont10/steered_ao_cont_10_20170308_1200_polar_both_lat60p0_alpha_2.0.nc
+Applying hook with alpha=5.0...
+Running steered inference (alpha=5.0) for 12 steps...
+Converting prediction to xarray for alpha=5.0...
+Saved steered output to /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_cont10/steered_ao_cont_10_20170308_1200_polar_both_lat60p0_alpha_5.0.nc
+Applying hook with alpha=10.0...
+Running steered inference (alpha=10.0) for 12 steps...
+Converting prediction to xarray for alpha=10.0...
+Saved steered output to /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder(2)_cont10/steered_ao_cont_10_20170308_1200_polar_both_lat60p0_alpha_10.0.nc
+Done!
+Done.
