@@ -54,7 +54,7 @@ def calculate_indices(target_file, climatology, eofs_dir):
         logging.info(f"Calculating {index}...")
         eof_ds = std_coords(xr.open_dataset(eof_path))
         eof_pattern = eof_ds['eof']
-        pc_std = eof_ds['pc_std']
+        pc_std = eof_ds['daily_pc_std'] if 'daily_pc_std' in eof_ds else eof_ds['pc_std']
         
         lat_min, lat_max = float(eof_pattern.lat.min()), float(eof_pattern.lat.max())
         lon_min, lon_max = float(eof_pattern.lon.min()), float(eof_pattern.lon.max())

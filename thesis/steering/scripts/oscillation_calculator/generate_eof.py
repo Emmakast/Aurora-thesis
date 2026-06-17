@@ -55,6 +55,15 @@ INDICES = {
         'check_lat': -90,
         'check_lon': 0,
         'expected_sign': -1
+    },
+    'AO': {
+        'level': 1000,
+        'lat_range': (20, 90),
+        'lon_range': (0, 360),
+        'lon_format': '360',
+        'check_lat': 90,
+        'check_lon': 0,
+        'expected_sign': -1
     }
 }
 
@@ -160,8 +169,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Generate EOF loading patterns for atmospheric indices.')
     parser.add_argument('--input', type=str, required=True, help='Path to input Zarr store (e.g., ERA5)')
     parser.add_argument('--output_dir', type=str, required=True, help='Directory to save the generated NetCDF files')
-    parser.add_argument('--index', type=str, default=None, choices=['NAO', 'PNA', 'AAO'],
-                        help='Generate EOF for a single index (default: all)')
+    parser.add_argument('--index', type=str, choices=['NAO', 'PNA', 'AAO', 'AO'], help='Specific index to generate (optional, generates all if omitted)')
     
     args = parser.parse_args()
     generate_eofs(args.input, args.output_dir, args.index)

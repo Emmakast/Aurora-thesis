@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --job-name=aurora_eval
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=32
+#SBATCH --mem=700G
+#SBATCH --partition=fat_genoa
+#SBATCH --time=04:00:00
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/benchmark/jobs/logs/eval_steered_%j.out
+
+echo "Starting evaluation..."
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+cd /home/ekasteleyn/aurora_thesis/thesis/benchmark/scripts
+
+# Remove partial results just in case to start fresh
+rm -f /home/ekasteleyn/aurora_thesis/thesis/results/physics_aurora_ao81_steered.csv
+
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python run_physics_evaluation_steered.py --workers 32

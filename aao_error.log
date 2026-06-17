@@ -1,0 +1,59 @@
+Loading base file for AAO / 20160113 …
+  Base: base_aao_aao_antarctic_20160113_1200_alpha_0.0.nc
+  α=-5: steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-5.0.nc
+  α=+5: steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_5.0.nc
+Traceback (most recent call last):
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization/generate_steering_figures.py", line 663, in <module>
+    main()
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization/generate_steering_figures.py", line 637, in main
+    figure_dose_response(
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization/generate_steering_figures.py", line 303, in figure_dose_response
+    im_raw = _draw_map(ax, lons2d, lats2d, field, cmap_raw,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/thesis/steering/scripts/visualization/generate_steering_figures.py", line 200, in _draw_map
+    im = ax.pcolormesh(
+         ^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/cartopy/mpl/geoaxes.py", line 291, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/cartopy/mpl/geoaxes.py", line 1764, in pcolormesh
+    result = self._wrap_quadmesh(result, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/cartopy/mpl/geoaxes.py", line 1954, in _wrap_quadmesh
+    pcolor_col = self.pcolor(coords[..., 0], coords[..., 1],
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/cartopy/mpl/geoaxes.py", line 291, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/cartopy/mpl/geoaxes.py", line 1993, in pcolor
+    limits = result.get_datalim(self.transData)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/matplotlib/collections.py", line 273, in get_datalim
+    paths = [transform.transform_path_non_affine(p) for p in paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/matplotlib/collections.py", line 273, in <listcomp>
+    paths = [transform.transform_path_non_affine(p) for p in paths]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/matplotlib/transforms.py", line 2427, in transform_path_non_affine
+    return self._a.transform_path_non_affine(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/cartopy/mpl/geoaxes.py", line 174, in transform_path_non_affine
+    transformed_geom = self.target_projection.project_geometry(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/cartopy/crs.py", line 833, in project_geometry
+    return getattr(self, method_name)(geometry, src_crs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/cartopy/crs.py", line 972, in _project_polygon
+    geom_collection = self._project_linear_ring(src_ring, src_crs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/cartopy/crs.py", line 853, in _project_linear_ring
+    multi_line_string = cartopy.trace.project_linear(linear_ring,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib/cartopy/trace.pyx", line 590, in cartopy.trace.project_linear
+  File "lib/cartopy/trace.pyx", line 481, in cartopy.trace._project_segment
+  File "lib/cartopy/trace.pyx", line 418, in cartopy.trace.bisect
+  File "lib/cartopy/trace.pyx", line 377, in cartopy.trace.straightAndDomain
+  File "/gpfs/home5/ekasteleyn/aurora_thesis/aurora_env/lib/python3.11/site-packages/shapely/prepared.py", line 47, in disjoint
+    def disjoint(self, other):
+
+KeyboardInterrupt

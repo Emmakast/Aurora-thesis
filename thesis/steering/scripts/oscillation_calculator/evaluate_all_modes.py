@@ -109,7 +109,7 @@ def main():
     # Load AO pattern
     ao_ds = standardize_coords(xr.open_dataset("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/indices/ao_loading_pattern.nc"))
     ao_pattern = ao_ds['eof'].squeeze()
-    ao_std = float(ao_ds['pc_std'].values)
+    ao_std = float(ao_ds['daily_pc_std'].values) if 'daily_pc_std' in ao_ds else float(ao_ds['pc_std'].values)
     
     # MJO EOF
     mjo_eof_path = Path("/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/indices/mjo_loading_pattern.nc")

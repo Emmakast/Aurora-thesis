@@ -38,8 +38,8 @@ def _set_map_extent(ax, extent, data_crs):
 def _draw_map(ax, lons2d, lats2d, field, cmap, vmin, vmax, title, extent, data_crs):
     _set_map_extent(ax, extent, data_crs)
     ax.add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
-    im = ax.contourf(lons2d, lats2d, field, levels=100, cmap=cmap, vmin=vmin, vmax=vmax,
-                       transform=data_crs)
+    im = ax.pcolormesh(lons2d, lats2d, field, cmap=cmap, vmin=vmin, vmax=vmax,
+                       transform=data_crs, shading="nearest")
     
     # Draw mask circle at 60N
     theta = np.linspace(0, 2 * np.pi, 360)
@@ -91,14 +91,16 @@ def main():
     diff_fields = []
     
     # Read table data and numerical values for color-coding
-    base_csv = base_dir / "AO_1encoder(2)" / "all_indices_evaluated.csv"
+    unified_csv = Path("/home/ekasteleyn/aurora_thesis/thesis/results/all_indices_evaluated.csv")
+    unified_df = pd.read_csv(unified_csv) if unified_csv.exists() else None
+    
     base_index_val = "N/A"
     base_num = np.nan
-    if base_csv.exists():
-        df = pd.read_csv(base_csv)
-        base_row = df[(df["Alpha"] == 0.0) & (df["Filename"].str.contains(date))]
+    if unified_df is not None:
+        # Match base file
+        base_row = unified_df[(unified_df["Alpha"] == 0.0) & (unified_df["Filename"] == f"base_ao_ao81_polar_{date}_1200_alpha_0.0.nc")]
         if not base_row.empty:
-            base_num = base_row.iloc[0]["AO"]
+            base_num = base_row.iloc[0]["AO_Index_Corrected"]
             base_index_val = f'{base_num:.4f}'
             
     table_data = [["Base", base_index_val]]
@@ -117,15 +119,25 @@ def main():
             steered_fields.append(np.zeros_like(base_field))
             diff_fields.append(np.zeros_like(base_field))
             
-        csv_path = base_dir / cfg["dir"] / "all_indices_evaluated.csv"
         idx_val = "N/A"
         num_val = np.nan
-        if csv_path.exists():
-            df = pd.read_csv(csv_path)
-            steered_row = df[(df["Alpha"] == 5.0) & (df["Filename"].str.contains(date))]
+        found = False
+        if unified_df is not None:
+            steered_row = unified_df[unified_df["Filename"] == cfg["file"]]
             if not steered_row.empty:
-                num_val = steered_row.iloc[0]["AO"]
+                num_val = steered_row.iloc[0]["AO_Index_Corrected"]
                 idx_val = f'{num_val:.4f}'
+                found = True
+                
+        if not found:
+            local_csv = base_dir / cfg["dir"] / "all_indices_evaluated.csv"
+            if local_csv.exists():
+                local_df = pd.read_csv(local_csv)
+                steered_row = local_df[local_df["Filename"] == cfg["file"]]
+                if not steered_row.empty:
+                    num_val = steered_row.iloc[0]["AO_Index_Corrected"]
+                    idx_val = f'{num_val:.4f}'
+
         table_data.append([cfg["label"], idx_val])
         index_nums.append(num_val)
 
@@ -182,11 +194,12 @@ def main():
     # Calculate color coding based on diff from base
     import matplotlib.cm as cm
     import matplotlib.colors as mcolors
-    valid_diffs_list = [abs(val - base_num) for val in index_nums if not np.isnan(val)]
-    max_diff = max(valid_diffs_list) if valid_diffs_list and max(valid_diffs_list) > 0 else 1.0
+    valid_diffs_list = [val - base_num for val in index_nums if not np.isnan(val)]
+    max_diff = max(valid_diffs_list) if valid_diffs_list and max(valid_diffs_list) > 0 else 0.1
+    min_diff = min(valid_diffs_list) if valid_diffs_list and min(valid_diffs_list) < 0 else -0.1
     
-    cmap = cm.Blues
-    norm = mcolors.Normalize(vmin=0, vmax=max_diff)
+    cmap = cm.RdBu
+    norm = mcolors.TwoSlopeNorm(vmin=min_diff, vcenter=0.0, vmax=max_diff)
 
     # Apply bold header and color coding
     for (row, col), cell in table.get_celld().items():
@@ -195,10 +208,10 @@ def main():
         elif col == 1:
             val = index_nums[row - 1]
             if not np.isnan(val):
-                diff = abs(val - base_num)
+                diff = val - base_num
                 color = cmap(norm(diff))
-                # Soften the deepest blue so text remains highly readable
-                color = tuple(min(1.0, c + 0.35) for c in color[:3]) + (1.0,)
+                # Mix with white to soften (70% white) to avoid deep navy looking gray
+                color = tuple(c*0.3 + 0.7 for c in color[:3]) + (1.0,)
                 cell.set_facecolor(color)
 
     # ── Col 1-4: Encoders ──

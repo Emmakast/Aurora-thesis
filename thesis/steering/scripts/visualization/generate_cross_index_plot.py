@@ -37,15 +37,15 @@ def main():
     fig, axes = plt.subplots(2, 3, figsize=(18, 10), sharex=True)
     axes = axes.flatten()
     
-    # Use a nice distinct color palette for the 6 lines
-    colors = sns.color_palette("husl", 6)
+    # Use a bolder, colorblind-friendly palette
+    colors = sns.color_palette("colorblind", 6)
     
     for i, phenom in enumerate(phenomena):
         ax = axes[i]
         subset = df[df['Steered_Phenomenon'] == phenom].copy()
         
         if subset.empty:
-            ax.set_title(f"Steering {phenom} (No Data)", fontsize=14, fontweight="bold")
+            ax.set_title(f"Steering {phenom} (No Data)", fontsize=18, fontweight="bold")
             continue
             
         subset = subset.sort_values(by="Alpha")
@@ -54,37 +54,49 @@ def main():
         for j, idx_name in enumerate(indices):
             # Emphasize the diagonal (i.e. if we steer NAO, make the NAO line thicker)
             is_target = (idx_name == phenom)
-            linewidth = 4.0 if is_target else 2.0
-            alpha_val = 1.0 if is_target else 0.6
+            linewidth = 4.5 if is_target else 2.5
+            alpha_val = 1.0 if is_target else 0.85
+            linestyle = '-' if is_target else ':'
+            
+            col_name = "AO_Index_Corrected" if idx_name == "AO" else idx_name
             
             ax.plot(
                 subset['Alpha'], 
-                subset[idx_name], 
+                subset[col_name], 
                 marker='o', 
                 linewidth=linewidth, 
+                linestyle=linestyle,
                 markersize=6,
                 alpha=alpha_val,
                 color=colors[j],
                 label=idx_name
             )
             
-        ax.set_title(f"Steering {phenom}", fontsize=14, fontweight="bold")
+        ax.set_title(f"Steering {phenom}", fontsize=18, fontweight="bold")
         ax.axvline(0, color='black', linestyle='--', alpha=0.5) # Mark alpha=0
         
         if i >= 3:
-            ax.set_xlabel("Steering Magnitude (α)", fontsize=12, fontweight="bold")
+            ax.set_xlabel("Steering Magnitude (α)", fontsize=16, fontweight="bold")
         if i % 3 == 0:
-            ax.set_ylabel("Index Value", fontsize=12, fontweight="bold")
+            ax.set_ylabel("Index Value", fontsize=16, fontweight="bold")
             
+        ax.tick_params(axis='both', which='major', labelsize=14)
         ax.grid(True, alpha=0.3)
 
     # Add a single shared legend at the top or right
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, title="Evaluated Index", loc='center right', 
-               bbox_to_anchor=(1.08, 0.5), fontsize=12, title_fontsize=14)
-               
-    plt.suptitle("Cross-Index Evaluation: How Steering One Phenomenon Affects the Others", 
-                 fontsize=18, fontweight="bold", y=1.02)
+    
+    # Make all legend lines uniform (not bold/dotted)
+    import copy
+    uniform_handles = []
+    for h in handles:
+        h_new = copy.copy(h)
+        h_new.set_linewidth(3.0)
+        h_new.set_linestyle('-')
+        uniform_handles.append(h_new)
+        
+    fig.legend(uniform_handles, labels, title="Evaluated Index", loc='center right', 
+               bbox_to_anchor=(1.08, 0.5), fontsize=16, title_fontsize=18)
                  
     plt.tight_layout()
     plt.savefig(out_path, dpi=200, bbox_inches="tight")

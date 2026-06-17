@@ -1,0 +1,38 @@
+#!/bin/bash
+#SBATCH --job-name=steer_aurora_ao81_enc0
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_ao81_enc0_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/steer_ao81_enc0_%j.err
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus=1
+#SBATCH --mem=192G
+#SBATCH --partition=gpu_a100
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/steering
+
+# ── Environment ──────────────────────────────────────────────────────────────
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+
+# ── Run ──────────────────────────────────────────────────────────────────────
+ALPHAS="-10.0 -5.0 -2.0 -1.0 1.0 2.0 5.0 10.0"
+
+echo "Running with alphas: $ALPHAS for encoder 0"
+PYTHONUNBUFFERED=1 /home/ekasteleyn/aurora_thesis/aurora_env/bin/python steer_aurora.py \
+    --phenomenon AO \
+    --alphas $ALPHAS \
+    --csv /home/ekasteleyn/aurora_thesis/thesis/steering/data/target_dates_ao_81.csv \
+    --steps 12 \
+    --init-hour 12 \
+    --base-date 2017-03-08 \
+    --encoder-idx 0 \
+    --mask-region polar \
+    --hemisphere north \
+    --polar-lat-min 60.0 \
+    --output-dir /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AO_1encoder\(0\) \
+    --name-suffix ao81_polar
+
+echo "COMPLETE: $(date)"

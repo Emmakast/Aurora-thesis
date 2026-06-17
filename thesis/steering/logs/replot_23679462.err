@@ -1,0 +1,2 @@
+/var/spool/slurm/slurmd/job23679462/slurm_script: line 9: /home/ekasteleyn/aurora_env/bin/activate: No such file or directory
+[2026-06-11T15:58:10.308] error: *** JOB 23679462 ON tcn350 CANCELLED AT 2026-06-11T15:58:10 DUE to SIGNAL Terminated ***

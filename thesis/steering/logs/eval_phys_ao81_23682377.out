@@ -1,0 +1,1252 @@
+========================================
+  Evaluating Physical Consistency AO81  
+========================================
+Starting evaluation of 405 items with 16 workers...
+  [1/405] 2017-03-08 alpha=0.0
+  [2/405] 2017-03-08 alpha=1.0
+  [3/405] 2017-03-08 alpha=2.0
+  [4/405] 2017-03-08 alpha=5.0
+  [5/405] 2017-03-08 alpha=10.0
+  [6/405] 2020-03-28 alpha=0.0
+  [7/405] 2020-03-28 alpha=1.0
+  [8/405] 2020-03-28 alpha=2.0
+  [9/405] 2020-03-28 alpha=5.0
+  [11/405] 2017-03-09 alpha=0.0
+  [10/405] 2020-03-28 alpha=10.0
+  [12/405] 2017-03-09 alpha=1.0
+  [13/405] 2017-03-09 alpha=2.0
+  [14/405] 2017-03-09 alpha=5.0
+  [15/405] 2017-03-09 alpha=10.0
+  [16/405] 2016-03-20 alpha=0.0
+    Hydrostatic RMSE: 294.1932 (ERA5: 253.1612)
+    Hydrostatic RMSE: 251.5026 (ERA5: 251.5093)
+    Hydrostatic RMSE: 298.2748 (ERA5: 251.5093)
+    Hydrostatic RMSE: 244.0562 (ERA5: 251.5093)
+    Geostrophic RMSE: 7.4705 (ERA5: 5.6247)
+    Hydrostatic RMSE: 298.2232 (ERA5: 265.9301)
+    Hydrostatic RMSE: 274.5756 (ERA5: 265.9301)
+    Hydrostatic RMSE: 233.7591 (ERA5: 251.5093)
+    Hydrostatic RMSE: 272.7367 (ERA5: 290.9656)
+    Hydrostatic RMSE: 261.3913 (ERA5: 265.9301)
+    Hydrostatic RMSE: 245.3562 (ERA5: 253.1612)
+    Geostrophic RMSE: 8.7236 (ERA5: 4.9550)
+    Hydrostatic RMSE: 262.7151 (ERA5: 251.5093)
+    Hydrostatic RMSE: 266.0279 (ERA5: 265.9301)
+    Geostrophic RMSE: 6.0043 (ERA5: 4.9550)
+    Geostrophic RMSE: 6.1335 (ERA5: 5.4975)
+    Geostrophic RMSE: 5.8918 (ERA5: 5.3438)
+    Hydrostatic RMSE: 256.1197 (ERA5: 265.9301)
+    Geostrophic RMSE: 6.3508 (ERA5: 5.6247)
+    Hydrostatic RMSE: 236.2145 (ERA5: 253.1612)
+    Hydrostatic RMSE: 252.7655 (ERA5: 253.1612)
+    Geostrophic RMSE: 6.2935 (ERA5: 5.4975)
+    Geostrophic RMSE: 6.1387 (ERA5: 4.9550)
+    Geostrophic RMSE: 7.7412 (ERA5: 5.4975)
+    Geostrophic RMSE: 6.2985 (ERA5: 5.6247)
+    Geostrophic RMSE: 5.9315 (ERA5: 4.9550)
+    Hydrostatic RMSE: 266.0787 (ERA5: 253.1612)
+    Geostrophic RMSE: 6.1947 (ERA5: 5.4975)
+    Geostrophic RMSE: 6.6391 (ERA5: 5.4975)
+    Geostrophic RMSE: 6.5501 (ERA5: 4.9550)
+    Geostrophic RMSE: 6.4450 (ERA5: 5.6247)
+    Geostrophic RMSE: 6.7562 (ERA5: 5.6247)
+  [17/405] 2016-03-20 alpha=1.0
+  [18/405] 2016-03-20 alpha=2.0
+  [19/405] 2016-03-20 alpha=5.0
+  [20/405] 2016-03-20 alpha=10.0
+  [21/405] 2018-03-30 alpha=0.0
+  [22/405] 2018-03-30 alpha=1.0
+  [23/405] 2018-03-30 alpha=2.0
+  [24/405] 2018-03-30 alpha=5.0
+  [25/405] 2018-03-30 alpha=10.0
+  [26/405] 2021-03-18 alpha=0.0
+  [27/405] 2021-03-18 alpha=1.0
+  [28/405] 2021-03-18 alpha=2.0
+  [29/405] 2021-03-18 alpha=5.0
+  [30/405] 2021-03-18 alpha=10.0
+  [31/405] 2016-03-16 alpha=0.0
+  [32/405] 2016-03-16 alpha=1.0
+    Hydrostatic RMSE: 311.3042 (ERA5: 290.9656)
+    Hydrostatic RMSE: 276.6266 (ERA5: 290.9656)
+    Geostrophic RMSE: 7.5151 (ERA5: 5.3438)
+    Geostrophic RMSE: 6.0920 (ERA5: 5.3438)
+    Hydrostatic RMSE: 244.4937 (ERA5: 258.5767)
+    Hydrostatic RMSE: 280.4944 (ERA5: 290.9656)
+    Hydrostatic RMSE: 236.8557 (ERA5: 236.9429)
+    Geostrophic RMSE: 5.9545 (ERA5: 5.1402)
+    Hydrostatic RMSE: 265.8038 (ERA5: 281.5014)
+    Hydrostatic RMSE: 258.3237 (ERA5: 281.5014)
+    Hydrostatic RMSE: 289.2672 (ERA5: 290.9656)
+    Hydrostatic RMSE: 291.7857 (ERA5: 258.5767)
+    Geostrophic RMSE: 5.3248 (ERA5: 4.5622)
+    Hydrostatic RMSE: 278.9705 (ERA5: 236.9429)
+    Hydrostatic RMSE: 267.8287 (ERA5: 258.5767)
+    Geostrophic RMSE: 6.4540 (ERA5: 5.3438)
+    Hydrostatic RMSE: 257.8350 (ERA5: 258.5767)
+    Geostrophic RMSE: 6.3152 (ERA5: 5.3986)
+    Geostrophic RMSE: 5.9503 (ERA5: 5.3986)
+    Geostrophic RMSE: 6.8277 (ERA5: 5.3438)
+    Geostrophic RMSE: 7.1862 (ERA5: 5.1402)
+    Hydrostatic RMSE: 242.3489 (ERA5: 236.9429)
+    Geostrophic RMSE: 6.7630 (ERA5: 4.5622)
+    Geostrophic RMSE: 6.5345 (ERA5: 5.1402)
+    Geostrophic RMSE: 6.1075 (ERA5: 5.1402)
+    Hydrostatic RMSE: 254.7671 (ERA5: 236.9429)
+    Geostrophic RMSE: 5.4403 (ERA5: 4.5622)
+    Hydrostatic RMSE: 252.8820 (ERA5: 258.5767)
+    Geostrophic RMSE: 5.8282 (ERA5: 4.5622)
+    Hydrostatic RMSE: 231.3497 (ERA5: 236.9429)
+    Geostrophic RMSE: 6.0016 (ERA5: 5.1402)
+    Geostrophic RMSE: 5.1356 (ERA5: 4.5622)
+  [33/405] 2016-03-16 alpha=2.0
+  [34/405] 2016-03-16 alpha=5.0
+  [35/405] 2016-03-16 alpha=10.0
+  [36/405] 2022-03-21 alpha=0.0
+  [37/405] 2022-03-21 alpha=1.0
+  [38/405] 2022-03-21 alpha=2.0
+  [39/405] 2022-03-21 alpha=5.0
+  [40/405] 2022-03-21 alpha=10.0
+  [41/405] 2020-03-29 alpha=0.0
+  [42/405] 2020-03-29 alpha=1.0
+  [43/405] 2020-03-29 alpha=2.0
+  [44/405] 2020-03-29 alpha=5.0
+  [45/405] 2020-03-29 alpha=10.0
+  [46/405] 2017-03-04 alpha=0.0
+  [47/405] 2017-03-04 alpha=1.0
+  [48/405] 2017-03-04 alpha=2.0
+    Hydrostatic RMSE: 273.6700 (ERA5: 281.5014)
+    Hydrostatic RMSE: 289.0189 (ERA5: 281.5014)
+    Geostrophic RMSE: 6.5247 (ERA5: 5.3986)
+    Geostrophic RMSE: 6.8020 (ERA5: 5.3986)
+    Hydrostatic RMSE: 314.1049 (ERA5: 281.5014)
+    Hydrostatic RMSE: 262.0561 (ERA5: 277.4240)
+    Hydrostatic RMSE: 314.6918 (ERA5: 277.4240)
+    Hydrostatic RMSE: 264.8013 (ERA5: 266.7493)
+    Hydrostatic RMSE: 227.6267 (ERA5: 228.6431)
+    Hydrostatic RMSE: 285.2809 (ERA5: 277.4240)
+    Geostrophic RMSE: 6.1181 (ERA5: 5.6973)
+    Hydrostatic RMSE: 258.8488 (ERA5: 266.7493)
+    Hydrostatic RMSE: 278.4892 (ERA5: 266.7493)
+    Geostrophic RMSE: 7.4687 (ERA5: 5.3986)
+    Hydrostatic RMSE: 301.1091 (ERA5: 266.7493)
+    Geostrophic RMSE: 7.1461 (ERA5: 5.8860)
+    Geostrophic RMSE: 5.9729 (ERA5: 5.0412)
+    Geostrophic RMSE: 9.6051 (ERA5: 5.0412)
+    Hydrostatic RMSE: 269.2758 (ERA5: 266.7493)
+    Hydrostatic RMSE: 273.6623 (ERA5: 277.4240)
+    Geostrophic RMSE: 6.5407 (ERA5: 5.0412)
+    Geostrophic RMSE: 7.6398 (ERA5: 5.6973)
+    Geostrophic RMSE: 5.8881 (ERA5: 5.0412)
+    Hydrostatic RMSE: 219.7337 (ERA5: 228.6431)
+    Geostrophic RMSE: 7.0262 (ERA5: 5.6973)
+    Hydrostatic RMSE: 267.9916 (ERA5: 277.4240)
+    Hydrostatic RMSE: 235.5028 (ERA5: 228.6431)
+    Geostrophic RMSE: 6.0506 (ERA5: 5.0412)
+    Geostrophic RMSE: 6.5720 (ERA5: 5.6973)
+    Geostrophic RMSE: 6.4408 (ERA5: 5.8860)
+    Geostrophic RMSE: 6.3525 (ERA5: 5.6973)
+    Geostrophic RMSE: 7.5054 (ERA5: 5.8860)
+  [49/405] 2017-03-04 alpha=5.0
+  [50/405] 2017-03-04 alpha=10.0
+  [51/405] 2022-03-10 alpha=0.0
+  [52/405] 2022-03-10 alpha=1.0
+  [53/405] 2022-03-10 alpha=2.0
+  [54/405] 2022-03-10 alpha=5.0
+  [55/405] 2022-03-10 alpha=10.0
+  [56/405] 2022-03-03 alpha=0.0
+  [57/405] 2022-03-03 alpha=1.0
+  [58/405] 2022-03-03 alpha=2.0
+  [59/405] 2022-03-03 alpha=5.0
+  [60/405] 2022-03-03 alpha=10.0
+  [61/405] 2016-03-22 alpha=0.0
+  [62/405] 2016-03-22 alpha=1.0
+  [63/405] 2016-03-22 alpha=2.0
+  [64/405] 2016-03-22 alpha=5.0
+    Hydrostatic RMSE: 247.2936 (ERA5: 228.6431)
+    Geostrophic RMSE: 7.4331 (ERA5: 5.8860)
+    Hydrostatic RMSE: 271.5011 (ERA5: 228.6431)
+    Geostrophic RMSE: 7.5437 (ERA5: 5.8860)
+    Hydrostatic RMSE: 0.0000 (ERA5: 274.7874)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.4637)
+    Hydrostatic RMSE: 0.0000 (ERA5: 274.7874)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.4637)
+    Hydrostatic RMSE: 0.0000 (ERA5: 274.7874)
+    Hydrostatic RMSE: 0.0000 (ERA5: 274.7874)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.4637)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.4637)
+    Hydrostatic RMSE: 0.0000 (ERA5: 274.7874)
+    Hydrostatic RMSE: 269.3914 (ERA5: 267.0302)
+  [65/405] 2016-03-22 alpha=10.0
+    Geostrophic RMSE: 0.0000 (ERA5: 5.4637)
+    Geostrophic RMSE: 6.2058 (ERA5: 5.3500)
+    Hydrostatic RMSE: 259.3087 (ERA5: 267.0302)
+    Hydrostatic RMSE: 292.0048 (ERA5: 267.0302)
+    Geostrophic RMSE: 5.9769 (ERA5: 5.3500)
+    Geostrophic RMSE: 7.1403 (ERA5: 5.3500)
+    Hydrostatic RMSE: 266.1348 (ERA5: 267.0302)
+    Hydrostatic RMSE: 264.1790 (ERA5: 269.9834)
+  [66/405] 2022-03-13 alpha=0.0
+    Hydrostatic RMSE: 283.3724 (ERA5: 269.9834)
+    Geostrophic RMSE: 6.0658 (ERA5: 5.3500)
+    Geostrophic RMSE: 6.3613 (ERA5: 5.2725)
+    Hydrostatic RMSE: 258.8739 (ERA5: 269.9834)
+    Hydrostatic RMSE: 273.5724 (ERA5: 267.0302)
+    Geostrophic RMSE: 6.8487 (ERA5: 5.2725)
+    Hydrostatic RMSE: 270.1821 (ERA5: 269.9834)
+    Geostrophic RMSE: 6.2487 (ERA5: 5.2725)
+    Geostrophic RMSE: 6.5351 (ERA5: 5.3500)
+    Geostrophic RMSE: 6.4608 (ERA5: 5.2725)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [67/405] 2022-03-13 alpha=1.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [68/405] 2022-03-13 alpha=2.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [69/405] 2022-03-13 alpha=5.0
+  [70/405] 2022-03-13 alpha=10.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [71/405] 2017-03-28 alpha=0.0
+  [72/405] 2017-03-28 alpha=1.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [73/405] 2017-03-28 alpha=2.0
+  [74/405] 2017-03-28 alpha=5.0
+  [75/405] 2017-03-28 alpha=10.0
+  [76/405] 2021-03-16 alpha=0.0
+  [77/405] 2021-03-16 alpha=1.0
+  [78/405] 2021-03-16 alpha=2.0
+  [79/405] 2021-03-16 alpha=5.0
+  [80/405] 2021-03-16 alpha=10.0
+    Hydrostatic RMSE: 304.8698 (ERA5: 269.9834)
+    Geostrophic RMSE: 7.4017 (ERA5: 5.2725)
+  [81/405] 2018-03-29 alpha=0.0
+    Hydrostatic RMSE: 0.0000 (ERA5: 271.6284)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.5312)
+    Hydrostatic RMSE: 0.0000 (ERA5: 271.6284)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.5312)
+    Hydrostatic RMSE: 0.0000 (ERA5: 271.6284)
+    Hydrostatic RMSE: 0.0000 (ERA5: 271.6284)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.5312)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.5312)
+    Hydrostatic RMSE: 0.0000 (ERA5: 271.6284)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.5312)
+    Hydrostatic RMSE: 245.0316 (ERA5: 257.3599)
+    Geostrophic RMSE: 6.2424 (ERA5: 5.1496)
+    Hydrostatic RMSE: 239.4022 (ERA5: 257.3599)
+    Hydrostatic RMSE: 253.4431 (ERA5: 257.3599)
+    Hydrostatic RMSE: 289.3533 (ERA5: 257.3599)
+    Geostrophic RMSE: 6.1519 (ERA5: 5.1496)
+    Geostrophic RMSE: 6.3952 (ERA5: 5.1496)
+    Geostrophic RMSE: 7.9099 (ERA5: 5.1496)
+    Hydrostatic RMSE: 269.9956 (ERA5: 257.3599)
+    Geostrophic RMSE: 6.7198 (ERA5: 5.1496)
+    Hydrostatic RMSE: 266.8235 (ERA5: 260.2429)
+    Geostrophic RMSE: 6.5286 (ERA5: 5.1162)
+    Hydrostatic RMSE: 293.1322 (ERA5: 260.2429)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+    Geostrophic RMSE: 7.4001 (ERA5: 5.1162)
+  [82/405] 2018-03-29 alpha=1.0
+    Hydrostatic RMSE: 248.6867 (ERA5: 260.2429)
+    Geostrophic RMSE: 5.9792 (ERA5: 5.1162)
+    Hydrostatic RMSE: 243.6111 (ERA5: 260.2429)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [83/405] 2018-03-29 alpha=2.0
+    Hydrostatic RMSE: 254.3201 (ERA5: 260.2429)
+    Geostrophic RMSE: 5.8881 (ERA5: 5.1162)
+  [84/405] 2018-03-29 alpha=5.0
+    Geostrophic RMSE: 6.1325 (ERA5: 5.1162)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [85/405] 2018-03-29 alpha=10.0
+  [86/405] 2022-03-23 alpha=0.0
+  [87/405] 2022-03-23 alpha=1.0
+  [88/405] 2022-03-23 alpha=2.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [89/405] 2022-03-23 alpha=5.0
+  [90/405] 2022-03-23 alpha=10.0
+  [91/405] 2022-03-04 alpha=0.0
+  [92/405] 2022-03-04 alpha=1.0
+  [93/405] 2022-03-04 alpha=2.0
+  [94/405] 2022-03-04 alpha=5.0
+  [95/405] 2022-03-04 alpha=10.0
+  [96/405] 2018-03-31 alpha=0.0
+    Hydrostatic RMSE: 234.8461 (ERA5: 238.6141)
+    Geostrophic RMSE: 5.2859 (ERA5: 4.8338)
+    Hydrostatic RMSE: 257.3325 (ERA5: 238.6141)
+    Hydrostatic RMSE: 247.3064 (ERA5: 238.6141)
+    Hydrostatic RMSE: 283.1064 (ERA5: 238.6141)
+    Geostrophic RMSE: 6.0113 (ERA5: 4.8338)
+    Geostrophic RMSE: 5.5694 (ERA5: 4.8338)
+    Geostrophic RMSE: 7.4076 (ERA5: 4.8338)
+  [97/405] 2018-03-31 alpha=1.0
+    Hydrostatic RMSE: 241.4034 (ERA5: 238.6141)
+    Geostrophic RMSE: 5.4905 (ERA5: 4.8338)
+    Hydrostatic RMSE: 0.0000 (ERA5: 271.0196)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.5406)
+  [98/405] 2018-03-31 alpha=2.0
+  [99/405] 2018-03-31 alpha=5.0
+    Hydrostatic RMSE: 0.0000 (ERA5: 271.0196)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.5406)
+    Hydrostatic RMSE: 0.0000 (ERA5: 271.0196)
+  [100/405] 2018-03-31 alpha=10.0
+    Geostrophic RMSE: 0.0000 (ERA5: 5.5406)
+    Hydrostatic RMSE: 0.0000 (ERA5: 271.0196)
+  [101/405] 2018-03-19 alpha=0.0
+    Hydrostatic RMSE: 0.0000 (ERA5: 271.0196)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.5406)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.5406)
+    Hydrostatic RMSE: 265.2103 (ERA5: 264.5893)
+    Hydrostatic RMSE: 256.0496 (ERA5: 264.5893)
+    Geostrophic RMSE: 5.7480 (ERA5: 5.1493)
+    Hydrostatic RMSE: 270.7245 (ERA5: 264.5893)
+    Geostrophic RMSE: 5.9370 (ERA5: 5.1493)
+    Hydrostatic RMSE: 278.3202 (ERA5: 264.5893)
+    Geostrophic RMSE: 6.2061 (ERA5: 5.1493)
+    Geostrophic RMSE: 6.5742 (ERA5: 5.1493)
+    Hydrostatic RMSE: 293.9829 (ERA5: 264.5893)
+    Geostrophic RMSE: 7.1777 (ERA5: 5.1493)
+    Hydrostatic RMSE: 231.1583 (ERA5: 240.3264)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+    Geostrophic RMSE: 5.1664 (ERA5: 4.7575)
+  [102/405] 2018-03-19 alpha=1.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [103/405] 2018-03-19 alpha=2.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [104/405] 2018-03-19 alpha=5.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [105/405] 2018-03-19 alpha=10.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [106/405] 2017-03-10 alpha=0.0
+  [107/405] 2017-03-10 alpha=1.0
+  [108/405] 2017-03-10 alpha=2.0
+  [109/405] 2017-03-10 alpha=5.0
+  [110/405] 2017-03-10 alpha=10.0
+  [111/405] 2022-03-08 alpha=0.0
+  [112/405] 2022-03-08 alpha=1.0
+    Hydrostatic RMSE: 237.2351 (ERA5: 240.3264)
+    Geostrophic RMSE: 5.2656 (ERA5: 4.7575)
+    Hydrostatic RMSE: 243.4829 (ERA5: 240.3264)
+    Geostrophic RMSE: 5.3909 (ERA5: 4.7575)
+    Hydrostatic RMSE: 280.9802 (ERA5: 240.3264)
+    Hydrostatic RMSE: 255.8621 (ERA5: 240.3264)
+    Geostrophic RMSE: 6.9386 (ERA5: 4.7575)
+    Geostrophic RMSE: 6.1468 (ERA5: 4.7575)
+  [113/405] 2022-03-08 alpha=2.0
+    Hydrostatic RMSE: 255.1608 (ERA5: 266.5200)
+    Geostrophic RMSE: 7.0522 (ERA5: 7.6473)
+  [114/405] 2022-03-08 alpha=5.0
+  [115/405] 2022-03-08 alpha=10.0
+  [116/405] 2016-03-01 alpha=0.0
+    Hydrostatic RMSE: 263.1773 (ERA5: 266.5200)
+    Geostrophic RMSE: 7.2857 (ERA5: 7.6473)
+    Hydrostatic RMSE: 279.2668 (ERA5: 266.5200)
+    Hydrostatic RMSE: 270.1227 (ERA5: 266.5200)
+    Geostrophic RMSE: 7.7284 (ERA5: 7.6473)
+    Geostrophic RMSE: 7.6374 (ERA5: 7.6473)
+    Hydrostatic RMSE: 291.6062 (ERA5: 266.5200)
+    Geostrophic RMSE: 7.8276 (ERA5: 7.6473)
+  [117/405] 2016-03-01 alpha=1.0
+    Hydrostatic RMSE: 235.5051 (ERA5: 239.2345)
+    Hydrostatic RMSE: 226.8509 (ERA5: 239.2345)
+    Hydrostatic RMSE: 257.8221 (ERA5: 239.2345)
+    Geostrophic RMSE: 6.2553 (ERA5: 5.5010)
+    Hydrostatic RMSE: 242.6944 (ERA5: 239.2345)
+    Geostrophic RMSE: 6.2680 (ERA5: 5.5010)
+    Geostrophic RMSE: 6.8097 (ERA5: 5.5010)
+    Geostrophic RMSE: 6.3360 (ERA5: 5.5010)
+    Hydrostatic RMSE: 291.6047 (ERA5: 239.2345)
+    Geostrophic RMSE: 7.4230 (ERA5: 5.5010)
+  [118/405] 2016-03-01 alpha=2.0
+  [119/405] 2016-03-01 alpha=5.0
+  [120/405] 2016-03-01 alpha=10.0
+  [121/405] 2021-03-02 alpha=0.0
+    Hydrostatic RMSE: 245.6185 (ERA5: 257.2959)
+    Geostrophic RMSE: 5.8990 (ERA5: 5.1502)
+    Hydrostatic RMSE: 257.3936 (ERA5: 257.2959)
+    Geostrophic RMSE: 6.1422 (ERA5: 5.1502)
+  [122/405] 2021-03-02 alpha=1.0
+  [123/405] 2021-03-02 alpha=2.0
+  [124/405] 2021-03-02 alpha=5.0
+  [125/405] 2021-03-02 alpha=10.0
+  [126/405] 2017-02-16 alpha=0.0
+  [127/405] 2017-02-16 alpha=1.0
+  [128/405] 2017-02-16 alpha=2.0
+    Hydrostatic RMSE: 267.6198 (ERA5: 257.2959)
+    Geostrophic RMSE: 6.3642 (ERA5: 5.1502)
+    Hydrostatic RMSE: 315.0596 (ERA5: 257.2959)
+    Geostrophic RMSE: 7.2890 (ERA5: 5.1502)
+    Hydrostatic RMSE: 290.6037 (ERA5: 257.2959)
+    Geostrophic RMSE: 6.8060 (ERA5: 5.1502)
+  [129/405] 2017-02-16 alpha=5.0
+  [130/405] 2017-02-16 alpha=10.0
+  [131/405] 2021-02-15 alpha=0.0
+    Hydrostatic RMSE: 0.0000 (ERA5: 256.7651)
+    Hydrostatic RMSE: 0.0000 (ERA5: 256.7651)
+    Hydrostatic RMSE: 0.0000 (ERA5: 256.7651)
+    Geostrophic RMSE: 0.0000 (ERA5: 4.8203)
+    Geostrophic RMSE: 0.0000 (ERA5: 4.8203)
+    Geostrophic RMSE: 0.0000 (ERA5: 4.8203)
+    Hydrostatic RMSE: 0.0000 (ERA5: 256.7651)
+    Geostrophic RMSE: 0.0000 (ERA5: 4.8203)
+    Hydrostatic RMSE: 0.0000 (ERA5: 256.7651)
+    Geostrophic RMSE: 0.0000 (ERA5: 4.8203)
+    Hydrostatic RMSE: 236.1105 (ERA5: 250.5306)
+    Geostrophic RMSE: 5.8601 (ERA5: 5.8007)
+    Hydrostatic RMSE: 242.9193 (ERA5: 250.5306)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+    Geostrophic RMSE: 6.1598 (ERA5: 5.8007)
+    Hydrostatic RMSE: 248.6745 (ERA5: 250.5306)
+  [132/405] 2021-02-15 alpha=1.0
+    Geostrophic RMSE: 6.3623 (ERA5: 5.8007)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+    Hydrostatic RMSE: 288.8557 (ERA5: 250.5306)
+  [133/405] 2021-02-15 alpha=2.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [134/405] 2021-02-15 alpha=5.0
+    Geostrophic RMSE: 7.6701 (ERA5: 5.8007)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [135/405] 2021-02-15 alpha=10.0
+    Hydrostatic RMSE: 261.2963 (ERA5: 250.5306)
+    Geostrophic RMSE: 6.8422 (ERA5: 5.8007)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [136/405] 2018-02-20 alpha=0.0
+    Hydrostatic RMSE: 233.6012 (ERA5: 248.6902)
+    Geostrophic RMSE: 6.2800 (ERA5: 5.6065)
+  [137/405] 2018-02-20 alpha=1.0
+    Hydrostatic RMSE: 245.6579 (ERA5: 248.6902)
+    Geostrophic RMSE: 6.3775 (ERA5: 5.6065)
+    Hydrostatic RMSE: 256.5832 (ERA5: 248.6902)
+    Geostrophic RMSE: 6.5032 (ERA5: 5.6065)
+  [138/405] 2018-02-20 alpha=2.0
+  [139/405] 2018-02-20 alpha=5.0
+  [140/405] 2018-02-20 alpha=10.0
+  [141/405] 2017-02-04 alpha=0.0
+  [142/405] 2017-02-04 alpha=1.0
+  [143/405] 2017-02-04 alpha=2.0
+  [144/405] 2017-02-04 alpha=5.0
+    Hydrostatic RMSE: 277.4271 (ERA5: 248.6902)
+    Geostrophic RMSE: 7.0876 (ERA5: 5.6065)
+    Hydrostatic RMSE: 308.5849 (ERA5: 248.6902)
+    Geostrophic RMSE: 8.3429 (ERA5: 5.6065)
+  [145/405] 2017-02-04 alpha=10.0
+  [146/405] 2016-02-04 alpha=0.0
+    Hydrostatic RMSE: 256.9000 (ERA5: 270.9626)
+    Geostrophic RMSE: 5.7857 (ERA5: 5.5923)
+    Hydrostatic RMSE: 267.3796 (ERA5: 270.9626)
+    Geostrophic RMSE: 5.9005 (ERA5: 5.5923)
+    Hydrostatic RMSE: 274.0662 (ERA5: 270.9626)
+    Geostrophic RMSE: 6.0545 (ERA5: 5.5923)
+    Hydrostatic RMSE: 296.8841 (ERA5: 270.9626)
+    Geostrophic RMSE: 7.7026 (ERA5: 5.5923)
+    Hydrostatic RMSE: 282.7374 (ERA5: 270.9626)
+  [147/405] 2016-02-04 alpha=1.0
+    Geostrophic RMSE: 6.5465 (ERA5: 5.5923)
+    Hydrostatic RMSE: 248.4904 (ERA5: 257.7533)
+    Hydrostatic RMSE: 254.2315 (ERA5: 257.7533)
+  [148/405] 2016-02-04 alpha=2.0
+    Geostrophic RMSE: 5.5620 (ERA5: 5.1909)
+  [149/405] 2016-02-04 alpha=5.0
+    Geostrophic RMSE: 5.6869 (ERA5: 5.1909)
+    Hydrostatic RMSE: 259.0500 (ERA5: 257.7533)
+    Geostrophic RMSE: 5.8458 (ERA5: 5.1909)
+    Hydrostatic RMSE: 287.6152 (ERA5: 257.7533)
+    Hydrostatic RMSE: 270.4554 (ERA5: 257.7533)
+    Geostrophic RMSE: 7.3044 (ERA5: 5.1909)
+    Geostrophic RMSE: 6.2713 (ERA5: 5.1909)
+  [150/405] 2016-02-04 alpha=10.0
+  [151/405] 2018-02-24 alpha=0.0
+    Hydrostatic RMSE: 249.2624 (ERA5: 263.6480)
+    Geostrophic RMSE: 6.0126 (ERA5: 5.4521)
+  [152/405] 2018-02-24 alpha=1.0
+    Hydrostatic RMSE: 259.2366 (ERA5: 263.6480)
+  [153/405] 2018-02-24 alpha=2.0
+    Geostrophic RMSE: 6.1044 (ERA5: 5.4521)
+  [154/405] 2018-02-24 alpha=5.0
+    Hydrostatic RMSE: 265.8716 (ERA5: 263.6480)
+  [155/405] 2018-02-24 alpha=10.0
+  [156/405] 2018-02-06 alpha=0.0
+    Geostrophic RMSE: 6.2079 (ERA5: 5.4521)
+    Hydrostatic RMSE: 280.1678 (ERA5: 263.6480)
+    Geostrophic RMSE: 6.6103 (ERA5: 5.4521)
+  [157/405] 2018-02-06 alpha=1.0
+  [158/405] 2018-02-06 alpha=2.0
+  [159/405] 2018-02-06 alpha=5.0
+  [160/405] 2018-02-06 alpha=10.0
+    Hydrostatic RMSE: 305.6477 (ERA5: 263.6480)
+    Geostrophic RMSE: 19.8345 (ERA5: 5.4521)
+  [161/405] 2016-02-03 alpha=0.0
+    Hydrostatic RMSE: 254.2117 (ERA5: 273.0518)
+    Geostrophic RMSE: 6.4403 (ERA5: 5.6615)
+    Hydrostatic RMSE: 267.0748 (ERA5: 273.0518)
+    Geostrophic RMSE: 6.6346 (ERA5: 5.6615)
+    Hydrostatic RMSE: 290.8125 (ERA5: 273.0518)
+    Geostrophic RMSE: 7.1631 (ERA5: 5.6615)
+    Hydrostatic RMSE: 276.6826 (ERA5: 273.0518)
+    Geostrophic RMSE: 6.8059 (ERA5: 5.6615)
+    Hydrostatic RMSE: 306.1509 (ERA5: 273.0518)
+    Geostrophic RMSE: 7.6776 (ERA5: 5.6615)
+  [162/405] 2016-02-03 alpha=1.0
+  [163/405] 2016-02-03 alpha=2.0
+    Hydrostatic RMSE: 246.3135 (ERA5: 258.6746)
+    Geostrophic RMSE: 5.9639 (ERA5: 5.3433)
+  [164/405] 2016-02-03 alpha=5.0
+    Hydrostatic RMSE: 256.3881 (ERA5: 258.6746)
+    Geostrophic RMSE: 6.2202 (ERA5: 5.3433)
+  [165/405] 2016-02-03 alpha=10.0
+    Hydrostatic RMSE: 266.9283 (ERA5: 258.6746)
+    Hydrostatic RMSE: 252.2108 (ERA5: 258.6746)
+    Hydrostatic RMSE: 290.2112 (ERA5: 258.6746)
+    Geostrophic RMSE: 6.6606 (ERA5: 5.3433)
+  [166/405] 2016-02-09 alpha=0.0
+    Geostrophic RMSE: 6.0772 (ERA5: 5.3433)
+    Geostrophic RMSE: 7.1174 (ERA5: 5.3433)
+    Hydrostatic RMSE: 258.3821 (ERA5: 272.7788)
+  [167/405] 2016-02-09 alpha=1.0
+    Geostrophic RMSE: 6.0721 (ERA5: 5.7909)
+  [168/405] 2016-02-09 alpha=2.0
+  [169/405] 2016-02-09 alpha=5.0
+  [170/405] 2016-02-09 alpha=10.0
+    Hydrostatic RMSE: 263.5495 (ERA5: 272.7788)
+  [171/405] 2018-02-21 alpha=0.0
+    Geostrophic RMSE: 6.3718 (ERA5: 5.7909)
+    Hydrostatic RMSE: 285.4821 (ERA5: 272.7788)
+    Hydrostatic RMSE: 269.2819 (ERA5: 272.7788)
+    Geostrophic RMSE: 6.5271 (ERA5: 5.7909)
+    Geostrophic RMSE: 6.9504 (ERA5: 5.7909)
+    Hydrostatic RMSE: 314.8595 (ERA5: 272.7788)
+    Geostrophic RMSE: 7.6264 (ERA5: 5.7909)
+  [172/405] 2018-02-21 alpha=1.0
+  [173/405] 2018-02-21 alpha=2.0
+  [174/405] 2018-02-21 alpha=5.0
+  [175/405] 2018-02-21 alpha=10.0
+  [176/405] 2018-02-17 alpha=0.0
+    Hydrostatic RMSE: 256.0346 (ERA5: 275.9941)
+    Geostrophic RMSE: 6.3662 (ERA5: 5.3723)
+    Hydrostatic RMSE: 276.8198 (ERA5: 275.9941)
+    Geostrophic RMSE: 6.7081 (ERA5: 5.3723)
+    Hydrostatic RMSE: 268.5147 (ERA5: 275.9941)
+    Geostrophic RMSE: 6.5646 (ERA5: 5.3723)
+  [177/405] 2018-02-17 alpha=1.0
+    Hydrostatic RMSE: 300.9384 (ERA5: 275.9941)
+    Hydrostatic RMSE: 284.6792 (ERA5: 275.9941)
+    Geostrophic RMSE: 7.5247 (ERA5: 5.3723)
+    Geostrophic RMSE: 6.9999 (ERA5: 5.3723)
+    Hydrostatic RMSE: 238.5995 (ERA5: 252.1568)
+    Geostrophic RMSE: 6.0072 (ERA5: 5.4893)
+  [178/405] 2018-02-17 alpha=2.0
+  [179/405] 2018-02-17 alpha=5.0
+  [180/405] 2018-02-17 alpha=10.0
+  [181/405] 2016-02-29 alpha=0.0
+    Hydrostatic RMSE: 302.6258 (ERA5: 252.1568)
+    Hydrostatic RMSE: 249.2242 (ERA5: 252.1568)
+    Geostrophic RMSE: 7.6791 (ERA5: 5.4893)
+    Geostrophic RMSE: 6.4027 (ERA5: 5.4893)
+    Hydrostatic RMSE: 257.3191 (ERA5: 252.1568)
+    Geostrophic RMSE: 6.6292 (ERA5: 5.4893)
+    Hydrostatic RMSE: 275.8743 (ERA5: 252.1568)
+    Geostrophic RMSE: 6.9408 (ERA5: 5.4893)
+  [182/405] 2016-02-29 alpha=1.0
+    Hydrostatic RMSE: 248.2569 (ERA5: 256.9637)
+    Geostrophic RMSE: 5.8824 (ERA5: 5.1245)
+  [183/405] 2016-02-29 alpha=2.0
+  [184/405] 2016-02-29 alpha=5.0
+  [185/405] 2016-02-29 alpha=10.0
+    Hydrostatic RMSE: 254.0278 (ERA5: 256.9637)
+  [186/405] 2021-02-20 alpha=0.0
+    Geostrophic RMSE: 5.8955 (ERA5: 5.1245)
+    Hydrostatic RMSE: 259.6470 (ERA5: 256.9637)
+    Geostrophic RMSE: 5.9062 (ERA5: 5.1245)
+    Hydrostatic RMSE: 294.3197 (ERA5: 256.9637)
+    Hydrostatic RMSE: 272.1889 (ERA5: 256.9637)
+    Geostrophic RMSE: 7.4087 (ERA5: 5.1245)
+    Geostrophic RMSE: 6.1792 (ERA5: 5.1245)
+  [187/405] 2021-02-20 alpha=1.0
+  [188/405] 2021-02-20 alpha=2.0
+    Hydrostatic RMSE: 253.3050 (ERA5: 263.9592)
+    Geostrophic RMSE: 5.3956 (ERA5: 4.9578)
+  [189/405] 2021-02-20 alpha=5.0
+  [190/405] 2021-02-20 alpha=10.0
+  [191/405] 2018-02-23 alpha=0.0
+  [192/405] 2018-02-23 alpha=1.0
+    Hydrostatic RMSE: 255.6333 (ERA5: 263.9592)
+    Geostrophic RMSE: 5.4913 (ERA5: 4.9578)
+    Hydrostatic RMSE: 256.9360 (ERA5: 263.9592)
+    Hydrostatic RMSE: 259.7950 (ERA5: 263.9592)
+    Geostrophic RMSE: 5.6524 (ERA5: 4.9578)
+    Geostrophic RMSE: 6.2978 (ERA5: 4.9578)
+    Hydrostatic RMSE: 280.6826 (ERA5: 263.9592)
+  [193/405] 2018-02-23 alpha=2.0
+    Geostrophic RMSE: 7.2505 (ERA5: 4.9578)
+    Hydrostatic RMSE: 0.0000 (ERA5: 249.3649)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.0351)
+    Hydrostatic RMSE: 0.0000 (ERA5: 249.3649)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.0351)
+  [194/405] 2018-02-23 alpha=5.0
+  [195/405] 2018-02-23 alpha=10.0
+  [196/405] 2018-02-19 alpha=0.0
+    Hydrostatic RMSE: 0.0000 (ERA5: 249.3649)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.0351)
+    Hydrostatic RMSE: 0.0000 (ERA5: 249.3649)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.0351)
+    Hydrostatic RMSE: 0.0000 (ERA5: 249.3649)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.0351)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [197/405] 2018-02-19 alpha=1.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [198/405] 2018-02-19 alpha=2.0
+    Hydrostatic RMSE: 246.4101 (ERA5: 261.8508)
+    Geostrophic RMSE: 6.1684 (ERA5: 5.6359)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [199/405] 2018-02-19 alpha=5.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [200/405] 2018-02-19 alpha=10.0
+  [201/405] 2019-02-08 alpha=0.0
+    Hydrostatic RMSE: 256.4822 (ERA5: 261.8508)
+    Geostrophic RMSE: 6.3264 (ERA5: 5.6359)
+    Hydrostatic RMSE: 263.2186 (ERA5: 261.8508)
+    Geostrophic RMSE: 6.4549 (ERA5: 5.6359)
+    Hydrostatic RMSE: 293.7064 (ERA5: 261.8508)
+    Geostrophic RMSE: 7.3455 (ERA5: 5.6359)
+  [202/405] 2019-02-08 alpha=1.0
+    Hydrostatic RMSE: 277.0341 (ERA5: 261.8508)
+    Geostrophic RMSE: 6.8295 (ERA5: 5.6359)
+  [203/405] 2019-02-08 alpha=2.0
+  [204/405] 2019-02-08 alpha=5.0
+  [205/405] 2019-02-08 alpha=10.0
+    Hydrostatic RMSE: 239.6088 (ERA5: 254.1704)
+    Geostrophic RMSE: 5.9670 (ERA5: 5.1675)
+    Hydrostatic RMSE: 247.9206 (ERA5: 254.1704)
+  [206/405] 2016-02-22 alpha=0.0
+    Geostrophic RMSE: 6.0397 (ERA5: 5.1675)
+    Hydrostatic RMSE: 254.8127 (ERA5: 254.1704)
+    Geostrophic RMSE: 6.0112 (ERA5: 5.1675)
+  [207/405] 2016-02-22 alpha=1.0
+  [208/405] 2016-02-22 alpha=2.0
+    Hydrostatic RMSE: 272.3362 (ERA5: 254.1704)
+  [209/405] 2016-02-22 alpha=5.0
+    Geostrophic RMSE: 6.3112 (ERA5: 5.1675)
+    Hydrostatic RMSE: 293.9346 (ERA5: 254.1704)
+    Geostrophic RMSE: 8.2331 (ERA5: 5.1675)
+    Hydrostatic RMSE: 247.5711 (ERA5: 258.2772)
+    Geostrophic RMSE: 5.4444 (ERA5: 4.9820)
+    Hydrostatic RMSE: 252.3248 (ERA5: 258.2772)
+    Hydrostatic RMSE: 249.8011 (ERA5: 258.2772)
+  [210/405] 2016-02-22 alpha=10.0
+    Geostrophic RMSE: 5.5202 (ERA5: 4.9820)
+    Geostrophic RMSE: 5.6386 (ERA5: 4.9820)
+  [211/405] 2019-01-17 alpha=0.0
+    Hydrostatic RMSE: 263.3268 (ERA5: 258.2772)
+    Geostrophic RMSE: 6.1257 (ERA5: 4.9820)
+    Hydrostatic RMSE: 287.3406 (ERA5: 258.2772)
+    Geostrophic RMSE: 7.2432 (ERA5: 4.9820)
+  [212/405] 2019-01-17 alpha=1.0
+    Hydrostatic RMSE: 254.7088 (ERA5: 260.5327)
+    Geostrophic RMSE: 6.5222 (ERA5: 5.7345)
+  [213/405] 2019-01-17 alpha=2.0
+  [214/405] 2019-01-17 alpha=5.0
+  [215/405] 2019-01-17 alpha=10.0
+    Hydrostatic RMSE: 265.5400 (ERA5: 260.5327)
+    Geostrophic RMSE: 6.6472 (ERA5: 5.7345)
+  [216/405] 2018-01-25 alpha=0.0
+    Hydrostatic RMSE: 272.1444 (ERA5: 260.5327)
+    Geostrophic RMSE: 6.7850 (ERA5: 5.7345)
+    Hydrostatic RMSE: 285.3542 (ERA5: 260.5327)
+    Geostrophic RMSE: 7.1710 (ERA5: 5.7345)
+  [217/405] 2018-01-25 alpha=1.0
+    Hydrostatic RMSE: 316.0057 (ERA5: 260.5327)
+    Geostrophic RMSE: 7.7080 (ERA5: 5.7345)
+  [218/405] 2018-01-25 alpha=2.0
+  [219/405] 2018-01-25 alpha=5.0
+  [220/405] 2018-01-25 alpha=10.0
+  [221/405] 2022-01-31 alpha=0.0
+    Hydrostatic RMSE: 237.2632 (ERA5: 252.3412)
+    Geostrophic RMSE: 5.6084 (ERA5: 4.8540)
+    Hydrostatic RMSE: 255.6410 (ERA5: 252.3412)
+    Geostrophic RMSE: 5.8755 (ERA5: 4.8540)
+    Hydrostatic RMSE: 246.6068 (ERA5: 252.3412)
+    Geostrophic RMSE: 5.7194 (ERA5: 4.8540)
+    Hydrostatic RMSE: 272.4495 (ERA5: 252.3412)
+    Geostrophic RMSE: 6.2912 (ERA5: 4.8540)
+  [222/405] 2022-01-31 alpha=1.0
+  [223/405] 2022-01-31 alpha=2.0
+  [224/405] 2022-01-31 alpha=5.0
+    Hydrostatic RMSE: 296.7038 (ERA5: 252.3412)
+    Geostrophic RMSE: 7.3537 (ERA5: 4.8540)
+  [225/405] 2022-01-31 alpha=10.0
+    Hydrostatic RMSE: 261.0384 (ERA5: 266.2533)
+    Geostrophic RMSE: 6.0464 (ERA5: 5.5468)
+    Hydrostatic RMSE: 270.1393 (ERA5: 266.2533)
+    Geostrophic RMSE: 6.3027 (ERA5: 5.5468)
+  [226/405] 2016-01-25 alpha=0.0
+    Hydrostatic RMSE: 284.8156 (ERA5: 266.2533)
+    Hydrostatic RMSE: 300.0700 (ERA5: 266.2533)
+  [227/405] 2016-01-25 alpha=1.0
+    Geostrophic RMSE: 6.9592 (ERA5: 5.5468)
+    Hydrostatic RMSE: 275.8826 (ERA5: 266.2533)
+    Geostrophic RMSE: 7.3827 (ERA5: 5.5468)
+    Geostrophic RMSE: 6.5444 (ERA5: 5.5468)
+  [228/405] 2016-01-25 alpha=2.0
+    Hydrostatic RMSE: 0.0000 (ERA5: 264.8986)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.9004)
+    Hydrostatic RMSE: 0.0000 (ERA5: 264.8986)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.9004)
+    Hydrostatic RMSE: 0.0000 (ERA5: 264.8986)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.9004)
+  [229/405] 2016-01-25 alpha=5.0
+  [230/405] 2016-01-25 alpha=10.0
+  [231/405] 2018-01-18 alpha=0.0
+    Hydrostatic RMSE: 0.0000 (ERA5: 264.8986)
+    Geostrophic RMSE: 0.0000 (ERA5: 5.9004)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+    Hydrostatic RMSE: 0.0000 (ERA5: 264.8986)
+  [232/405] 2018-01-18 alpha=1.0
+    Geostrophic RMSE: 0.0000 (ERA5: 5.9004)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [233/405] 2018-01-18 alpha=2.0
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [234/405] 2018-01-18 alpha=5.0
+    Hydrostatic RMSE: 234.0161 (ERA5: 239.0219)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [235/405] 2018-01-18 alpha=10.0
+    Geostrophic RMSE: 6.2881 (ERA5: 6.3057)
+    ⚠ Spectrum error: Weight array-like sum must be positive and finite. Set as None for an equal distribution of weight.
+  [236/405] 2017-01-02 alpha=0.0
+    Hydrostatic RMSE: 245.9079 (ERA5: 239.0219)
+    Geostrophic RMSE: 6.7051 (ERA5: 6.3057)
+  [237/405] 2017-01-02 alpha=1.0
+    Hydrostatic RMSE: 264.6715 (ERA5: 239.0219)
+    Hydrostatic RMSE: 254.3054 (ERA5: 239.0219)
+    Geostrophic RMSE: 7.4294 (ERA5: 6.3057)
+    Geostrophic RMSE: 7.0810 (ERA5: 6.3057)
+    Hydrostatic RMSE: 282.4289 (ERA5: 239.0219)
+    Geostrophic RMSE: 7.4356 (ERA5: 6.3057)
+  [238/405] 2017-01-02 alpha=2.0
+  [239/405] 2017-01-02 alpha=5.0
+  [240/405] 2017-01-02 alpha=10.0
+  [241/405] 2017-01-16 alpha=0.0
+    Hydrostatic RMSE: 269.2250 (ERA5: 284.0520)
+    Geostrophic RMSE: 6.2989 (ERA5: 5.7871)
+    Hydrostatic RMSE: 284.3830 (ERA5: 284.0520)
+    Geostrophic RMSE: 6.5690 (ERA5: 5.7871)
+    Hydrostatic RMSE: 295.3162 (ERA5: 284.0520)
+    Geostrophic RMSE: 6.8076 (ERA5: 5.7871)
+    Hydrostatic RMSE: 313.1434 (ERA5: 284.0520)
+    Geostrophic RMSE: 7.3789 (ERA5: 5.7871)
+    Hydrostatic RMSE: 340.2238 (ERA5: 284.0520)
+  [242/405] 2017-01-16 alpha=1.0
+    Geostrophic RMSE: 7.8575 (ERA5: 5.7871)
+    Hydrostatic RMSE: 239.4472 (ERA5: 250.4321)
+  [243/405] 2017-01-16 alpha=2.0
+    Geostrophic RMSE: 5.4557 (ERA5: 5.0234)
+  [244/405] 2017-01-16 alpha=5.0
+  [245/405] 2017-01-16 alpha=10.0
+    Hydrostatic RMSE: 250.6082 (ERA5: 250.4321)
+    Hydrostatic RMSE: 245.5262 (ERA5: 250.4321)
+    Geostrophic RMSE: 5.6959 (ERA5: 5.0234)
+    Geostrophic RMSE: 5.5222 (ERA5: 5.0234)
+    Hydrostatic RMSE: 281.2132 (ERA5: 250.4321)
+  [246/405] 2017-01-13 alpha=0.0
+    Geostrophic RMSE: 7.2303 (ERA5: 5.0234)
+    Hydrostatic RMSE: 259.1547 (ERA5: 250.4321)
+    Geostrophic RMSE: 6.5022 (ERA5: 5.0234)
+  [247/405] 2017-01-13 alpha=1.0
+  [248/405] 2017-01-13 alpha=2.0
+  [249/405] 2017-01-13 alpha=5.0
+    Hydrostatic RMSE: 227.5975 (ERA5: 245.6867)
+  [250/405] 2017-01-13 alpha=10.0
+    Geostrophic RMSE: 5.8974 (ERA5: 5.6743)
+  [251/405] 2020-01-28 alpha=0.0
+    Hydrostatic RMSE: 238.3875 (ERA5: 245.6867)
+    Geostrophic RMSE: 6.0080 (ERA5: 5.6743)
+  [252/405] 2020-01-28 alpha=1.0
+    Hydrostatic RMSE: 245.9793 (ERA5: 245.6867)
+    Geostrophic RMSE: 6.1410 (ERA5: 5.6743)
+  [253/405] 2020-01-28 alpha=2.0
+    Hydrostatic RMSE: 258.2442 (ERA5: 245.6867)
+    Hydrostatic RMSE: 282.7184 (ERA5: 245.6867)
+    Geostrophic RMSE: 7.2201 (ERA5: 5.6743)
+    Geostrophic RMSE: 6.5976 (ERA5: 5.6743)
+  [254/405] 2020-01-28 alpha=5.0
+    Hydrostatic RMSE: 244.2382 (ERA5: 258.7786)
+  [255/405] 2020-01-28 alpha=10.0
+    Geostrophic RMSE: 5.8313 (ERA5: 5.4568)
+  [256/405] 2020-01-29 alpha=0.0
+    Hydrostatic RMSE: 263.8354 (ERA5: 258.7786)
+    Geostrophic RMSE: 6.1585 (ERA5: 5.4568)
+    Hydrostatic RMSE: 255.3102 (ERA5: 258.7786)
+    Geostrophic RMSE: 5.9842 (ERA5: 5.4568)
+  [257/405] 2020-01-29 alpha=1.0
+    Hydrostatic RMSE: 283.8378 (ERA5: 258.7786)
+    Geostrophic RMSE: 6.7729 (ERA5: 5.4568)
+    Hydrostatic RMSE: 309.5944 (ERA5: 258.7786)
+    Geostrophic RMSE: 7.3745 (ERA5: 5.4568)
+  [258/405] 2020-01-29 alpha=2.0
+  [259/405] 2020-01-29 alpha=5.0
+    Hydrostatic RMSE: 240.7528 (ERA5: 254.9990)
+    Geostrophic RMSE: 5.5185 (ERA5: 5.0551)
+  [260/405] 2020-01-29 alpha=10.0
+    Hydrostatic RMSE: 249.7365 (ERA5: 254.9990)
+    Geostrophic RMSE: 5.5863 (ERA5: 5.0551)
+  [261/405] 2016-01-23 alpha=0.0
+    Hydrostatic RMSE: 256.0965 (ERA5: 254.9990)
+    Geostrophic RMSE: 5.7221 (ERA5: 5.0551)
+    Hydrostatic RMSE: 265.9517 (ERA5: 254.9990)
+    Hydrostatic RMSE: 290.1755 (ERA5: 254.9990)
+    Geostrophic RMSE: 6.2155 (ERA5: 5.0551)
+    Geostrophic RMSE: 6.9164 (ERA5: 5.0551)
+  [262/405] 2016-01-23 alpha=1.0
+  [263/405] 2016-01-23 alpha=2.0
+    Hydrostatic RMSE: 245.1288 (ERA5: 257.7683)
+    Geostrophic RMSE: 6.1363 (ERA5: 5.2695)
+  [264/405] 2016-01-23 alpha=5.0
+    Hydrostatic RMSE: 255.8690 (ERA5: 257.7683)
+    Geostrophic RMSE: 6.2963 (ERA5: 5.2695)
+  [265/405] 2016-01-23 alpha=10.0
+  [266/405] 2019-01-20 alpha=0.0
+    Hydrostatic RMSE: 264.8667 (ERA5: 257.7683)
+    Geostrophic RMSE: 6.4169 (ERA5: 5.2695)
+  [267/405] 2019-01-20 alpha=1.0
+    Hydrostatic RMSE: 282.8434 (ERA5: 257.7683)
+    Geostrophic RMSE: 6.7927 (ERA5: 5.2695)
+  [268/405] 2019-01-20 alpha=2.0
+    Hydrostatic RMSE: 303.5190 (ERA5: 257.7683)
+  [269/405] 2019-01-20 alpha=5.0
+    Geostrophic RMSE: 7.4602 (ERA5: 5.2695)
+    Hydrostatic RMSE: 247.7659 (ERA5: 255.2413)
+    Geostrophic RMSE: 6.1678 (ERA5: 5.3664)
+  [270/405] 2019-01-20 alpha=10.0
+  [271/405] 2019-01-07 alpha=0.0
+    Hydrostatic RMSE: 258.0083 (ERA5: 255.2413)
+    Geostrophic RMSE: 6.3061 (ERA5: 5.3664)
+  [272/405] 2019-01-07 alpha=1.0
+    Hydrostatic RMSE: 265.3742 (ERA5: 255.2413)
+    Geostrophic RMSE: 6.4806 (ERA5: 5.3664)
+    Hydrostatic RMSE: 282.1022 (ERA5: 255.2413)
+    Geostrophic RMSE: 8.5148 (ERA5: 5.3664)
+  [273/405] 2019-01-07 alpha=2.0
+    Hydrostatic RMSE: 305.6810 (ERA5: 255.2413)
+  [274/405] 2019-01-07 alpha=5.0
+    Geostrophic RMSE: 7.3738 (ERA5: 5.3664)
+    Hydrostatic RMSE: 268.9121 (ERA5: 281.0402)
+    Hydrostatic RMSE: 290.7010 (ERA5: 281.0402)
+  [275/405] 2019-01-07 alpha=10.0
+    Geostrophic RMSE: 6.3913 (ERA5: 5.5852)
+    Geostrophic RMSE: 6.1740 (ERA5: 5.5852)
+    Hydrostatic RMSE: 281.7908 (ERA5: 281.0402)
+    Geostrophic RMSE: 6.2729 (ERA5: 5.5852)
+    Hydrostatic RMSE: 307.7318 (ERA5: 281.0402)
+    Geostrophic RMSE: 7.1119 (ERA5: 5.5852)
+    Hydrostatic RMSE: 326.7740 (ERA5: 281.0402)
+  [276/405] 2022-01-10 alpha=0.0
+    Geostrophic RMSE: 7.6989 (ERA5: 5.5852)
+  [277/405] 2022-01-10 alpha=1.0
+  [278/405] 2022-01-10 alpha=2.0
+  [279/405] 2022-01-10 alpha=5.0
+  [280/405] 2022-01-10 alpha=10.0
+    Hydrostatic RMSE: 282.0892 (ERA5: 275.5591)
+    Geostrophic RMSE: 6.6974 (ERA5: 5.7088)
+    Hydrostatic RMSE: 276.7430 (ERA5: 275.5591)
+    Geostrophic RMSE: 6.5962 (ERA5: 5.7088)
+  [281/405] 2018-01-13 alpha=0.0
+    Hydrostatic RMSE: 289.2261 (ERA5: 275.5591)
+    Geostrophic RMSE: 7.1815 (ERA5: 5.7088)
+    Hydrostatic RMSE: 268.5247 (ERA5: 275.5591)
+    Geostrophic RMSE: 6.4606 (ERA5: 5.7088)
+  [282/405] 2018-01-13 alpha=1.0
+  [283/405] 2018-01-13 alpha=2.0
+    Hydrostatic RMSE: 303.2203 (ERA5: 275.5591)
+    Geostrophic RMSE: 7.7340 (ERA5: 5.7088)
+  [284/405] 2018-01-13 alpha=5.0
+  [285/405] 2018-01-13 alpha=10.0
+    Hydrostatic RMSE: 258.1259 (ERA5: 266.9512)
+    Geostrophic RMSE: 6.1707 (ERA5: 5.5873)
+    Hydrostatic RMSE: 269.7568 (ERA5: 266.9512)
+    Geostrophic RMSE: 6.3410 (ERA5: 5.5873)
+  [286/405] 2020-12-02 alpha=0.0
+    Hydrostatic RMSE: 288.0731 (ERA5: 266.9512)
+    Geostrophic RMSE: 6.8342 (ERA5: 5.5873)
+  [287/405] 2020-12-02 alpha=1.0
+    Hydrostatic RMSE: 277.4504 (ERA5: 266.9512)
+    Geostrophic RMSE: 6.4908 (ERA5: 5.5873)
+  [288/405] 2020-12-02 alpha=2.0
+    Hydrostatic RMSE: 303.2761 (ERA5: 266.9512)
+    Geostrophic RMSE: 7.3261 (ERA5: 5.5873)
+  [289/405] 2020-12-02 alpha=5.0
+  [290/405] 2020-12-02 alpha=10.0
+  [291/405] 2018-12-25 alpha=0.0
+    Hydrostatic RMSE: 252.4963 (ERA5: 248.6047)
+    Geostrophic RMSE: 6.2307 (ERA5: 5.3601)
+    Hydrostatic RMSE: 261.2302 (ERA5: 248.6047)
+    Geostrophic RMSE: 6.3758 (ERA5: 5.3601)
+    Hydrostatic RMSE: 242.2172 (ERA5: 248.6047)
+    Geostrophic RMSE: 6.1022 (ERA5: 5.3601)
+    Hydrostatic RMSE: 285.5124 (ERA5: 248.6047)
+    Hydrostatic RMSE: 305.4038 (ERA5: 248.6047)
+    Geostrophic RMSE: 6.7763 (ERA5: 5.3601)
+    Geostrophic RMSE: 7.4316 (ERA5: 5.3601)
+  [292/405] 2018-12-25 alpha=1.0
+  [293/405] 2018-12-25 alpha=2.0
+    Hydrostatic RMSE: 233.1779 (ERA5: 245.8696)
+  [294/405] 2018-12-25 alpha=5.0
+  [295/405] 2018-12-25 alpha=10.0
+    Geostrophic RMSE: 6.0040 (ERA5: 5.7142)
+  [296/405] 2016-12-06 alpha=0.0
+    Hydrostatic RMSE: 278.2099 (ERA5: 245.8696)
+    Hydrostatic RMSE: 253.1205 (ERA5: 245.8696)
+    Geostrophic RMSE: 6.9899 (ERA5: 5.7142)
+    Geostrophic RMSE: 6.1609 (ERA5: 5.7142)
+    Hydrostatic RMSE: 243.5838 (ERA5: 245.8696)
+    Geostrophic RMSE: 6.1047 (ERA5: 5.7142)
+  [297/405] 2016-12-06 alpha=1.0
+  [298/405] 2016-12-06 alpha=2.0
+  [299/405] 2016-12-06 alpha=5.0
+  [300/405] 2016-12-06 alpha=10.0
+    Hydrostatic RMSE: 252.6178 (ERA5: 253.0230)
+    Geostrophic RMSE: 5.8747 (ERA5: 5.5283)
+    Hydrostatic RMSE: 272.7409 (ERA5: 253.0230)
+    Geostrophic RMSE: 6.3574 (ERA5: 5.5283)
+    Hydrostatic RMSE: 263.8956 (ERA5: 253.0230)
+    Geostrophic RMSE: 6.1525 (ERA5: 5.5283)
+    Hydrostatic RMSE: 282.5500 (ERA5: 253.0230)
+    Geostrophic RMSE: 6.7835 (ERA5: 5.5283)
+  [301/405] 2019-12-22 alpha=0.0
+    Hydrostatic RMSE: 293.4224 (ERA5: 253.0230)
+    Geostrophic RMSE: 7.7034 (ERA5: 5.5283)
+  [302/405] 2019-12-22 alpha=1.0
+  [303/405] 2019-12-22 alpha=2.0
+  [304/405] 2019-12-22 alpha=5.0
+    Hydrostatic RMSE: 255.0008 (ERA5: 260.8474)
+    Geostrophic RMSE: 6.2236 (ERA5: 5.5916)
+  [305/405] 2019-12-22 alpha=10.0
+    Hydrostatic RMSE: 268.1877 (ERA5: 260.8474)
+    Geostrophic RMSE: 6.3529 (ERA5: 5.5916)
+    Hydrostatic RMSE: 274.9374 (ERA5: 260.8474)
+    Geostrophic RMSE: 6.5284 (ERA5: 5.5916)
+    Hydrostatic RMSE: 304.0357 (ERA5: 260.8474)
+    Geostrophic RMSE: 7.6721 (ERA5: 5.5916)
+  [306/405] 2018-12-05 alpha=0.0
+    Hydrostatic RMSE: 284.2933 (ERA5: 260.8474)
+    Geostrophic RMSE: 7.0393 (ERA5: 5.5916)
+    Hydrostatic RMSE: 239.5410 (ERA5: 252.8131)
+    Geostrophic RMSE: 5.5816 (ERA5: 5.2293)
+  [307/405] 2018-12-05 alpha=1.0
+  [308/405] 2018-12-05 alpha=2.0
+  [309/405] 2018-12-05 alpha=5.0
+  [310/405] 2018-12-05 alpha=10.0
+    Hydrostatic RMSE: 273.1138 (ERA5: 252.8131)
+    Hydrostatic RMSE: 250.0334 (ERA5: 252.8131)
+    Hydrostatic RMSE: 258.6197 (ERA5: 252.8131)
+    Geostrophic RMSE: 6.6447 (ERA5: 5.2293)
+    Geostrophic RMSE: 5.8325 (ERA5: 5.2293)
+    Geostrophic RMSE: 5.6470 (ERA5: 5.2293)
+  [311/405] 2018-12-24 alpha=0.0
+    Hydrostatic RMSE: 298.4125 (ERA5: 252.8131)
+    Hydrostatic RMSE: 308.0974 (ERA5: 245.8696)
+    Geostrophic RMSE: 7.5734 (ERA5: 5.2293)
+    Geostrophic RMSE: 8.8777 (ERA5: 5.7142)
+  [312/405] 2018-12-24 alpha=1.0
+  [313/405] 2018-12-24 alpha=2.0
+  [314/405] 2018-12-24 alpha=5.0
+  [315/405] 2018-12-24 alpha=10.0
+  [316/405] 2017-12-27 alpha=0.0
+    Hydrostatic RMSE: 255.1049 (ERA5: 261.9087)
+    Geostrophic RMSE: 5.9543 (ERA5: 5.4912)
+    Hydrostatic RMSE: 260.8394 (ERA5: 261.9087)
+    Hydrostatic RMSE: 264.8643 (ERA5: 261.9087)
+    Geostrophic RMSE: 6.1206 (ERA5: 5.4912)
+    Geostrophic RMSE: 6.3572 (ERA5: 5.4912)
+    Hydrostatic RMSE: 289.6680 (ERA5: 261.9087)
+    Hydrostatic RMSE: 268.6536 (ERA5: 261.9087)
+    Geostrophic RMSE: 6.9253 (ERA5: 5.4912)
+    Geostrophic RMSE: 7.3924 (ERA5: 5.4912)
+  [317/405] 2017-12-27 alpha=1.0
+  [318/405] 2017-12-27 alpha=2.0
+  [319/405] 2017-12-27 alpha=5.0
+  [320/405] 2017-12-27 alpha=10.0
+  [321/405] 2017-11-14 alpha=0.0
+    Hydrostatic RMSE: 257.3917 (ERA5: 258.0551)
+    Geostrophic RMSE: 5.9616 (ERA5: 5.2978)
+    Hydrostatic RMSE: 273.3649 (ERA5: 258.0551)
+    Hydrostatic RMSE: 283.9748 (ERA5: 258.0551)
+    Geostrophic RMSE: 6.5098 (ERA5: 5.2978)
+    Geostrophic RMSE: 6.8665 (ERA5: 5.2978)
+    Hydrostatic RMSE: 303.1480 (ERA5: 258.0551)
+    Hydrostatic RMSE: 266.8188 (ERA5: 258.0551)
+    Geostrophic RMSE: 7.5418 (ERA5: 5.2978)
+    Geostrophic RMSE: 6.2447 (ERA5: 5.2978)
+  [322/405] 2017-11-14 alpha=1.0
+  [323/405] 2017-11-14 alpha=2.0
+  [324/405] 2017-11-14 alpha=5.0
+  [325/405] 2017-11-14 alpha=10.0
+    Hydrostatic RMSE: 242.2348 (ERA5: 249.6428)
+    Geostrophic RMSE: 6.0553 (ERA5: 5.2557)
+  [326/405] 2016-11-09 alpha=0.0
+    Hydrostatic RMSE: 294.7472 (ERA5: 249.6428)
+    Geostrophic RMSE: 12.1639 (ERA5: 5.2557)
+    Hydrostatic RMSE: 268.4161 (ERA5: 249.6428)
+    Hydrostatic RMSE: 257.1868 (ERA5: 249.6428)
+    Hydrostatic RMSE: 252.0733 (ERA5: 249.6428)
+    Geostrophic RMSE: 6.2701 (ERA5: 5.2557)
+    Geostrophic RMSE: 6.8324 (ERA5: 5.2557)
+    Geostrophic RMSE: 6.1722 (ERA5: 5.2557)
+  [327/405] 2016-11-09 alpha=1.0
+  [328/405] 2016-11-09 alpha=2.0
+  [329/405] 2016-11-09 alpha=5.0
+  [330/405] 2016-11-09 alpha=10.0
+  [331/405] 2021-11-13 alpha=0.0
+    Hydrostatic RMSE: 249.4999 (ERA5: 257.4566)
+    Geostrophic RMSE: 5.5448 (ERA5: 5.0479)
+    Hydrostatic RMSE: 255.6580 (ERA5: 257.4566)
+    Hydrostatic RMSE: 271.3834 (ERA5: 257.4566)
+    Geostrophic RMSE: 5.6916 (ERA5: 5.0479)
+    Geostrophic RMSE: 6.2856 (ERA5: 5.0479)
+    Hydrostatic RMSE: 259.1932 (ERA5: 257.4566)
+    Hydrostatic RMSE: 293.8690 (ERA5: 257.4566)
+    Geostrophic RMSE: 5.8520 (ERA5: 5.0479)
+    Geostrophic RMSE: 7.0489 (ERA5: 5.0479)
+  [332/405] 2021-11-13 alpha=1.0
+  [333/405] 2021-11-13 alpha=2.0
+    Hydrostatic RMSE: 254.0204 (ERA5: 262.4853)
+  [334/405] 2021-11-13 alpha=5.0
+    Geostrophic RMSE: 5.5835 (ERA5: 5.4077)
+  [335/405] 2021-11-13 alpha=10.0
+  [336/405] 2017-11-26 alpha=0.0
+    Hydrostatic RMSE: 260.1791 (ERA5: 262.4853)
+    Geostrophic RMSE: 5.6760 (ERA5: 5.4077)
+    Hydrostatic RMSE: 273.2828 (ERA5: 262.4853)
+    Geostrophic RMSE: 6.3079 (ERA5: 5.4077)
+    Hydrostatic RMSE: 266.6170 (ERA5: 262.4853)
+    Geostrophic RMSE: 5.8077 (ERA5: 5.4077)
+  [337/405] 2017-11-26 alpha=1.0
+    Hydrostatic RMSE: 289.5186 (ERA5: 262.4853)
+  [338/405] 2017-11-26 alpha=2.0
+    Geostrophic RMSE: 7.3448 (ERA5: 5.4077)
+  [339/405] 2017-11-26 alpha=5.0
+  [340/405] 2017-11-26 alpha=10.0
+    Hydrostatic RMSE: 222.9119 (ERA5: 244.1742)
+    Hydrostatic RMSE: 232.3860 (ERA5: 244.1742)
+    Geostrophic RMSE: 5.2776 (ERA5: 5.0545)
+    Geostrophic RMSE: 5.3098 (ERA5: 5.0545)
+  [341/405] 2020-11-30 alpha=0.0
+    Hydrostatic RMSE: 241.3510 (ERA5: 244.1742)
+    Geostrophic RMSE: 5.3875 (ERA5: 5.0545)
+    Hydrostatic RMSE: 258.5689 (ERA5: 244.1742)
+    Hydrostatic RMSE: 284.0427 (ERA5: 244.1742)
+    Geostrophic RMSE: 6.0253 (ERA5: 5.0545)
+    Geostrophic RMSE: 7.0281 (ERA5: 5.0545)
+  [342/405] 2020-11-30 alpha=1.0
+  [343/405] 2020-11-30 alpha=2.0
+    Hydrostatic RMSE: 250.4374 (ERA5: 252.3898)
+    Geostrophic RMSE: 5.4457 (ERA5: 5.0282)
+  [344/405] 2020-11-30 alpha=5.0
+  [345/405] 2020-11-30 alpha=10.0
+  [346/405] 2018-11-08 alpha=0.0
+  [347/405] 2018-11-08 alpha=1.0
+    Hydrostatic RMSE: 259.2533 (ERA5: 252.3898)
+    Geostrophic RMSE: 5.5348 (ERA5: 5.0282)
+    Hydrostatic RMSE: 291.6325 (ERA5: 252.3898)
+    Geostrophic RMSE: 7.2018 (ERA5: 5.0282)
+    Hydrostatic RMSE: 281.6293 (ERA5: 252.3898)
+    Geostrophic RMSE: 6.6790 (ERA5: 5.0282)
+    Hydrostatic RMSE: 268.2159 (ERA5: 252.3898)
+    Geostrophic RMSE: 5.6998 (ERA5: 5.0282)
+  [348/405] 2018-11-08 alpha=2.0
+    Hydrostatic RMSE: 258.8262 (ERA5: 272.8338)
+    Geostrophic RMSE: 5.5844 (ERA5: 4.9567)
+  [349/405] 2018-11-08 alpha=5.0
+  [350/405] 2018-11-08 alpha=10.0
+  [351/405] 2016-05-04 alpha=0.0
+    Hydrostatic RMSE: 266.8564 (ERA5: 272.8338)
+    Hydrostatic RMSE: 274.9535 (ERA5: 272.8338)
+    Geostrophic RMSE: 5.7079 (ERA5: 4.9567)
+    Geostrophic RMSE: 5.8606 (ERA5: 4.9567)
+  [352/405] 2016-05-04 alpha=1.0
+    Hydrostatic RMSE: 306.6755 (ERA5: 272.8338)
+    Hydrostatic RMSE: 287.2590 (ERA5: 272.8338)
+    Geostrophic RMSE: 7.2057 (ERA5: 4.9567)
+    Geostrophic RMSE: 6.5496 (ERA5: 4.9567)
+  [353/405] 2016-05-04 alpha=2.0
+  [354/405] 2016-05-04 alpha=5.0
+    Hydrostatic RMSE: 239.0581 (ERA5: 247.4218)
+  [355/405] 2016-05-04 alpha=10.0
+    Geostrophic RMSE: 5.9033 (ERA5: 5.1511)
+  [356/405] 2020-05-12 alpha=0.0
+    Hydrostatic RMSE: 257.9745 (ERA5: 247.4218)
+    Geostrophic RMSE: 6.1811 (ERA5: 5.1511)
+    Hydrostatic RMSE: 249.3941 (ERA5: 247.4218)
+    Geostrophic RMSE: 6.0534 (ERA5: 5.1511)
+    Hydrostatic RMSE: 274.5484 (ERA5: 247.4218)
+    Geostrophic RMSE: 6.6236 (ERA5: 5.1511)
+  [357/405] 2020-05-12 alpha=1.0
+    Hydrostatic RMSE: 296.8566 (ERA5: 247.4218)
+    Geostrophic RMSE: 7.3582 (ERA5: 5.1511)
+    Hydrostatic RMSE: 252.2383 (ERA5: 260.1288)
+  [358/405] 2020-05-12 alpha=2.0
+  [359/405] 2020-05-12 alpha=5.0
+  [360/405] 2020-05-12 alpha=10.0
+    Geostrophic RMSE: 5.6740 (ERA5: 4.8943)
+    Hydrostatic RMSE: 258.7852 (ERA5: 260.1288)
+    Geostrophic RMSE: 5.8852 (ERA5: 4.8943)
+  [361/405] 2016-05-26 alpha=0.0
+  [362/405] 2016-05-26 alpha=1.0
+    Hydrostatic RMSE: 267.3203 (ERA5: 260.1288)
+  [363/405] 2016-05-26 alpha=2.0
+    Geostrophic RMSE: 6.5662 (ERA5: 4.8943)
+    Hydrostatic RMSE: 271.7962 (ERA5: 260.1288)
+    Geostrophic RMSE: 7.0842 (ERA5: 4.8943)
+    Hydrostatic RMSE: 264.9233 (ERA5: 260.1288)
+    Geostrophic RMSE: 6.1523 (ERA5: 4.8943)
+  [364/405] 2016-05-26 alpha=5.0
+    Hydrostatic RMSE: 242.6132 (ERA5: 261.6574)
+    Geostrophic RMSE: 5.8601 (ERA5: 5.3905)
+  [365/405] 2016-05-26 alpha=10.0
+    Hydrostatic RMSE: 257.6089 (ERA5: 261.6574)
+    Hydrostatic RMSE: 249.0648 (ERA5: 261.6574)
+    Geostrophic RMSE: 6.4343 (ERA5: 5.3905)
+    Geostrophic RMSE: 6.0479 (ERA5: 5.3905)
+  [366/405] 2016-05-24 alpha=0.0
+    Hydrostatic RMSE: 271.6497 (ERA5: 261.6574)
+    Geostrophic RMSE: 7.2455 (ERA5: 5.3905)
+  [367/405] 2016-05-24 alpha=1.0
+  [368/405] 2016-05-24 alpha=2.0
+  [369/405] 2016-05-24 alpha=5.0
+  [370/405] 2016-05-24 alpha=10.0
+    Hydrostatic RMSE: 240.7890 (ERA5: 250.6515)
+    Geostrophic RMSE: 5.5053 (ERA5: 4.9102)
+    Hydrostatic RMSE: 241.9008 (ERA5: 250.6515)
+    Geostrophic RMSE: 5.5299 (ERA5: 4.9102)
+    Hydrostatic RMSE: 243.6411 (ERA5: 250.6515)
+    Geostrophic RMSE: 5.5878 (ERA5: 4.9102)
+    Hydrostatic RMSE: 272.6184 (ERA5: 250.6515)
+    Hydrostatic RMSE: 251.2896 (ERA5: 250.6515)
+    Geostrophic RMSE: 7.5714 (ERA5: 4.9102)
+    Geostrophic RMSE: 5.9906 (ERA5: 4.9102)
+  [371/405] 2020-05-06 alpha=0.0
+  [372/405] 2020-05-06 alpha=1.0
+  [373/405] 2020-05-06 alpha=2.0
+  [374/405] 2020-05-06 alpha=5.0
+  [375/405] 2020-05-06 alpha=10.0
+    Hydrostatic RMSE: 228.0776 (ERA5: 246.2820)
+    Geostrophic RMSE: 5.2851 (ERA5: 4.7583)
+    Hydrostatic RMSE: 234.8302 (ERA5: 246.2820)
+    Geostrophic RMSE: 5.3357 (ERA5: 4.7583)
+    Hydrostatic RMSE: 229.5163 (ERA5: 246.2820)
+    Geostrophic RMSE: 5.2894 (ERA5: 4.7583)
+  [376/405] 2017-10-30 alpha=0.0
+    Hydrostatic RMSE: 252.4390 (ERA5: 246.2820)
+    Geostrophic RMSE: 5.6744 (ERA5: 4.7583)
+  [377/405] 2017-10-30 alpha=1.0
+  [378/405] 2017-10-30 alpha=2.0
+    Hydrostatic RMSE: 275.7850 (ERA5: 246.2820)
+    Geostrophic RMSE: 6.7972 (ERA5: 4.7583)
+  [379/405] 2017-10-30 alpha=5.0
+    Hydrostatic RMSE: 234.1015 (ERA5: 251.0902)
+    Geostrophic RMSE: 5.4764 (ERA5: 4.8705)
+    Hydrostatic RMSE: 232.6822 (ERA5: 251.0902)
+  [380/405] 2017-10-30 alpha=10.0
+    Geostrophic RMSE: 5.4591 (ERA5: 4.8705)
+    Hydrostatic RMSE: 275.9194 (ERA5: 251.0902)
+    Hydrostatic RMSE: 236.2273 (ERA5: 251.0902)
+    Geostrophic RMSE: 6.9358 (ERA5: 4.8705)
+    Geostrophic RMSE: 5.5440 (ERA5: 4.8705)
+    Hydrostatic RMSE: 249.1317 (ERA5: 251.0902)
+    Geostrophic RMSE: 5.8650 (ERA5: 4.8705)
+  [381/405] 2019-10-24 alpha=0.0
+  [382/405] 2019-10-24 alpha=1.0
+  [383/405] 2019-10-24 alpha=2.0
+  [384/405] 2019-10-24 alpha=5.0
+  [385/405] 2019-10-24 alpha=10.0
+    Hydrostatic RMSE: 261.4137 (ERA5: 262.4126)
+    Geostrophic RMSE: 5.8602 (ERA5: 5.0662)
+    Hydrostatic RMSE: 299.7588 (ERA5: 262.4126)
+    Geostrophic RMSE: 7.2609 (ERA5: 5.0662)
+    Hydrostatic RMSE: 254.5749 (ERA5: 262.4126)
+    Geostrophic RMSE: 5.7220 (ERA5: 5.0662)
+    Hydrostatic RMSE: 256.9347 (ERA5: 262.4126)
+    Geostrophic RMSE: 5.7429 (ERA5: 5.0662)
+    Hydrostatic RMSE: 275.1330 (ERA5: 262.4126)
+    Geostrophic RMSE: 6.6244 (ERA5: 5.0662)
+  [386/405] 2021-10-09 alpha=0.0
+  [387/405] 2021-10-09 alpha=1.0
+  [388/405] 2021-10-09 alpha=2.0
+  [389/405] 2021-10-09 alpha=5.0
+  [390/405] 2021-10-09 alpha=10.0
+    Hydrostatic RMSE: 248.3529 (ERA5: 254.1754)
+    Geostrophic RMSE: 5.9616 (ERA5: 5.1466)
+    Hydrostatic RMSE: 242.9438 (ERA5: 254.1754)
+    Hydrostatic RMSE: 251.0383 (ERA5: 254.1754)
+    Geostrophic RMSE: 6.0424 (ERA5: 5.1466)
+    Geostrophic RMSE: 5.7828 (ERA5: 5.1466)
+    Hydrostatic RMSE: 259.6211 (ERA5: 254.1754)
+    Geostrophic RMSE: 6.4467 (ERA5: 5.1466)
+    Hydrostatic RMSE: 281.3656 (ERA5: 254.1754)
+    Geostrophic RMSE: 7.2350 (ERA5: 5.1466)
+  [391/405] 2017-10-23 alpha=0.0
+  [392/405] 2017-10-23 alpha=1.0
+  [393/405] 2017-10-23 alpha=2.0
+  [394/405] 2017-10-23 alpha=5.0
+  [395/405] 2017-10-23 alpha=10.0
+    Hydrostatic RMSE: 238.2332 (ERA5: 243.3576)
+    Geostrophic RMSE: 6.4015 (ERA5: 5.6300)
+    Hydrostatic RMSE: 265.7093 (ERA5: 243.3576)
+    Hydrostatic RMSE: 244.4476 (ERA5: 243.3576)
+    Geostrophic RMSE: 7.2266 (ERA5: 5.6300)
+    Geostrophic RMSE: 6.0252 (ERA5: 5.6300)
+    Hydrostatic RMSE: 249.3015 (ERA5: 243.3576)
+    Hydrostatic RMSE: 248.5387 (ERA5: 243.3576)
+    Geostrophic RMSE: 5.9919 (ERA5: 5.6300)
+    Geostrophic RMSE: 6.6259 (ERA5: 5.6300)
+    Hydrostatic RMSE: 243.9645 (ERA5: 261.6574)
+    Geostrophic RMSE: 5.9325 (ERA5: 5.3905)
+  [396/405] 2017-04-13 alpha=0.0
+  [397/405] 2017-04-13 alpha=1.0
+  [398/405] 2017-04-13 alpha=2.0
+  [399/405] 2017-04-13 alpha=5.0
+  [400/405] 2017-04-13 alpha=10.0
+    Hydrostatic RMSE: 270.5886 (ERA5: 265.9312)
+    Geostrophic RMSE: 5.6668 (ERA5: 5.4774)
+    Hydrostatic RMSE: 258.7761 (ERA5: 265.9312)
+    Geostrophic RMSE: 5.7833 (ERA5: 5.4774)
+    Hydrostatic RMSE: 284.3820 (ERA5: 265.9312)
+    Hydrostatic RMSE: 265.7331 (ERA5: 265.9312)
+    Geostrophic RMSE: 7.2385 (ERA5: 5.4774)
+    Geostrophic RMSE: 5.6805 (ERA5: 5.4774)
+    Hydrostatic RMSE: 275.1084 (ERA5: 265.9312)
+    Geostrophic RMSE: 6.5839 (ERA5: 5.4774)
+  [401/405] 2016-04-08 alpha=0.0
+  [402/405] 2016-04-08 alpha=1.0
+  [403/405] 2016-04-08 alpha=2.0
+  [404/405] 2016-04-08 alpha=5.0
+  [405/405] 2016-04-08 alpha=10.0
+    Hydrostatic RMSE: 238.1178 (ERA5: 253.7159)
+    Hydrostatic RMSE: 257.1926 (ERA5: 253.7159)
+    Geostrophic RMSE: 6.1710 (ERA5: 5.0673)
+    Geostrophic RMSE: 6.0103 (ERA5: 5.0673)
+    Hydrostatic RMSE: 246.5105 (ERA5: 253.7159)
+    Geostrophic RMSE: 6.0760 (ERA5: 5.0673)
+    Hydrostatic RMSE: 273.2524 (ERA5: 253.7159)
+    Geostrophic RMSE: 6.5508 (ERA5: 5.0673)
+    Hydrostatic RMSE: 283.6554 (ERA5: 253.7159)
+    Geostrophic RMSE: 7.2808 (ERA5: 5.0673)
+    Hydrostatic RMSE: 237.5372 (ERA5: 252.0881)
+    Geostrophic RMSE: 5.5679 (ERA5: 5.0297)
+    Hydrostatic RMSE: 246.8008 (ERA5: 252.0881)
+    Geostrophic RMSE: 5.8408 (ERA5: 5.0297)
+    Hydrostatic RMSE: 242.2721 (ERA5: 252.0881)
+    Geostrophic RMSE: 5.7046 (ERA5: 5.0297)
+    Hydrostatic RMSE: 255.4232 (ERA5: 252.0881)
+    Hydrostatic RMSE: 282.6986 (ERA5: 252.0881)
+    Geostrophic RMSE: 6.3622 (ERA5: 5.0297)
+    Geostrophic RMSE: 7.2936 (ERA5: 5.0297)
+    Hydrostatic RMSE: 259.1907 (ERA5: 269.9504)
+    Geostrophic RMSE: 5.7739 (ERA5: 5.0723)
+    Hydrostatic RMSE: 254.0600 (ERA5: 269.9504)
+    Hydrostatic RMSE: 256.6729 (ERA5: 269.9504)
+    Geostrophic RMSE: 5.5967 (ERA5: 5.0723)
+    Geostrophic RMSE: 5.6150 (ERA5: 5.0723)
+    Hydrostatic RMSE: 268.0225 (ERA5: 269.9504)
+    Geostrophic RMSE: 6.4674 (ERA5: 5.0723)
+    Hydrostatic RMSE: 295.7458 (ERA5: 269.9504)
+    Geostrophic RMSE: 7.1206 (ERA5: 5.0723)
+
+✓ Saved 2775 rows to thesis/results/physics_aurora_ao81_steered.csv
+Job Finished: Thu Jun 11 17:14:09 CEST 2026

@@ -23,6 +23,7 @@ Usage:
       --csv-path /home/ekasteleyn/aurora_thesis/thesis/results/all_indices_evaluated.csv
 """
 
+from __future__ import annotations
 import argparse
 import re
 import sys
@@ -65,7 +66,7 @@ PHENOM_DEFAULTS = {
 
 # Phenomenon → target index column in the CSV
 PHENOM_INDEX_COL = {
-    "NAO": "NAO", "PNA": "PNA", "AO": "AO", "AAO": "AAO",
+    "NAO": "NAO", "PNA": "PNA", "AO": "AO_Index_Corrected", "AAO": "AAO",
     "ENSO": "ENSO", "MJO": "MJO",
 }
 
@@ -213,7 +214,7 @@ def _draw_map(ax, lons2d, lats2d, field, cmap, vmin, vmax, title,
     if draw_mask:
         _draw_mask_boundary(ax, proj_cfg, data_crs)
 
-    ax.set_title(title, fontsize=title_fontsize, fontweight="bold", pad=6)
+    ax.set_title(title, fontsize=26, fontweight="bold", pad=6)
     return im
 
 
@@ -222,7 +223,7 @@ def _draw_map(ax, lons2d, lats2d, field, cmap, vmin, vmax, title,
 # ──────────────────────────────────────────────────────────────
 
 def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
-                         phenomenon, date, proj_cfg, output_path, has_mask=True):
+                         phenomenon, date, name_suffix, proj_cfg, output_path, has_mask=True):
     """
     2×3 grid with GridSpec layout.
     Row 1: raw primary variable for α=-5, α=0, α=+5  +  colorbar row
@@ -301,11 +302,11 @@ def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
         if field is not None:
             im_raw = _draw_map(ax, lons2d, lats2d, field, cmap_raw,
                                vmin_raw, vmax_raw, title,
-                               proj_cfg, data_crs, draw_mask=has_mask, title_fontsize=18)
+                               proj_cfg, data_crs, draw_mask=has_mask, title_fontsize=26)
         else:
             _set_map_extent(ax, proj_cfg, data_crs)
             ax.add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
-            ax.set_title(title + " (missing)", fontsize=18)
+            ax.set_title(title + " (missing)", fontsize=26)
 
     # ── Row 2: diff maps ──
     cmap_diff = "RdBu_r"
@@ -316,31 +317,31 @@ def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
         if field is not None:
             im_diff = _draw_map(ax, lons2d, lats2d, field, cmap_diff,
                                 -max_diff, max_diff, title,
-                                proj_cfg, data_crs, draw_mask=False, title_fontsize=18)
+                                proj_cfg, data_crs, draw_mask=False, title_fontsize=26)
         else:
             _set_map_extent(ax, proj_cfg, data_crs)
             ax.add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
-            ax.set_title(title + " (missing)", fontsize=18)
+            ax.set_title(title + " (missing)", fontsize=26)
 
     # ── Row 2 centre: dose-response line graph ──
     extent = proj_cfg["extent"]
     aspect = 1.0 if is_polar else (extent[3] - extent[2]) / (extent[1] - extent[0])
-    _plot_dose_response_line(ax_line, csv_df, phenomenon, date, aspect=aspect)
+    _plot_dose_response_line(ax_line, csv_df, phenomenon, date, name_suffix, aspect=aspect)
 
     # ── Colorbars ──
     # Shared sequential colorbar below row 1
     if im_raw is not None:
         cbar_ax_raw = fig.add_subplot(gs[1, :])
         cb_raw = fig.colorbar(im_raw, cax=cbar_ax_raw, orientation="horizontal", extend="both")
-        cb_raw.set_label(f"{plabel}  [{punit}]", fontsize=18)
-        cb_raw.ax.tick_params(labelsize=16)
+        cb_raw.set_label(f"{plabel}  [{punit}]", fontsize=24)
+        cb_raw.ax.tick_params(labelsize=20)
 
     # Shared diverging colorbar below row 2
     if im_diff is not None:
         cbar_ax_diff = fig.add_subplot(gs[5, :])
         cb_diff = fig.colorbar(im_diff, cax=cbar_ax_diff, orientation="horizontal", extend="both")
-        cb_diff.set_label(f"Δ {plabel}  [{punit}]", fontsize=18)
-        cb_diff.ax.tick_params(labelsize=16)
+        cb_diff.set_label(f"Δ {plabel}  [{punit}]", fontsize=24)
+        cb_diff.ax.tick_params(labelsize=20)
 
     # fig.suptitle removed
 
@@ -353,30 +354,22 @@ def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
 # Dose-response line graph (centre panel of Fig 1, row 2)
 # ──────────────────────────────────────────────────────────────
 
-def _plot_dose_response_line(ax, csv_df, phenomenon, date, aspect=0.5):
+def _plot_dose_response_line(ax, csv_df, phenomenon, date, name_suffix, aspect=0.5):
     """
     Plot target oscillation index vs α from the CSV.
     Highlight α ∈ {-5, 0, +5} with star markers and drop-lines.
     """
     idx_col = PHENOM_INDEX_COL[phenomenon]
 
-    # Filter CSV rows for this phenomenon + date
-    mask = csv_df["Filename"].str.contains(phenomenon.lower(), case=False)
+    # Filter CSV rows for this phenomenon + date AND the correct name_suffix
+    mask = csv_df["Filename"].str.contains(name_suffix, case=False)
     mask &= csv_df["Filename"].str.contains(date)
     df = csv_df.loc[mask].copy()
 
     if df.empty:
-        # Fallback: try matching just the phenomenon prefix from the name_suffix
-        defaults = PHENOM_DEFAULTS.get(phenomenon, {})
-        suffix = defaults.get("name_suffix", phenomenon.lower())
-        mask = csv_df["Filename"].str.contains(suffix, case=False)
-        mask &= csv_df["Filename"].str.contains(date)
-        df = csv_df.loc[mask].copy()
-
-    if df.empty:
         ax.text(0.5, 0.5, "No CSV data found", transform=ax.transAxes,
                 ha="center", va="center", fontsize=11, color="grey")
-        ax.set_title("Steering response curve", fontsize=18, fontweight="bold")
+        ax.set_title("Steering response curve", fontsize=26, fontweight="bold")
         return
 
     df = df.sort_values("Alpha")
@@ -388,7 +381,7 @@ def _plot_dose_response_line(ax, csv_df, phenomenon, date, aspect=0.5):
         else:
             ax.text(0.5, 0.5, f"Column '{idx_col}' not found", transform=ax.transAxes,
                     ha="center", va="center", fontsize=11, color="grey")
-            ax.set_title("Steering response curve", fontsize=18, fontweight="bold")
+            ax.set_title("Steering response curve", fontsize=26, fontweight="bold")
             return
 
     alphas = df["Alpha"].values
@@ -398,7 +391,7 @@ def _plot_dose_response_line(ax, csv_df, phenomenon, date, aspect=0.5):
     # All points as small dots
     ax.plot(alphas, indices, "o-", color="#5a7dba", markersize=5, linewidth=1.5,
             markeredgecolor="white", markeredgewidth=0.5, zorder=3,
-            label=f"{idx_col} index")
+            label=f"{phenomenon} index")
 
     # Highlight α = -5, 0, +5
     highlight_alphas = [-5.0, 0.0, 5.0]
@@ -418,11 +411,11 @@ def _plot_dose_response_line(ax, csv_df, phenomenon, date, aspect=0.5):
     # Force strictly linear x-axis from -10 to 10
     ax.set_xlim(-11, 11)
     ax.xaxis.set_major_locator(mticker.FixedLocator([-10, -5, 0, 5, 10]))
-    ax.set_xlabel(r"Steering magnitude $\alpha$", fontsize=18)
+    ax.set_xlabel(r"Steering magnitude $\alpha$", fontsize=24)
     ax.set_ylabel("")
-    ax.set_title("Steering response curve", fontsize=18, fontweight="bold", pad=6)
-    ax.tick_params(labelsize=16)
-    # ax.legend(fontsize=8, loc="best", framealpha=0.8)
+    ax.set_title("Steering response curve", fontsize=26, fontweight="bold", pad=6)
+    ax.tick_params(labelsize=20)
+    ax.legend(fontsize=20, loc="best", framealpha=0.8)
     ax.grid(True, linewidth=0.3, alpha=0.5)
 
     # Subtle background
@@ -643,7 +636,7 @@ def main():
     has_mask = mask_tag != "nomask"
     figure_dose_response(
         base_ds, steered_neg, steered_pos,
-        csv_df, phenom, date, proj_cfg, fig1_out, has_mask=has_mask
+        csv_df, phenom, date, name_suffix, proj_cfg, fig1_out, has_mask=has_mask
     )
 
     # ── Figure 2 (uses α=+5) ──

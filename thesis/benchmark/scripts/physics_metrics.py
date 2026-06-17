@@ -1078,6 +1078,7 @@ def compute_lapse_rate_wasserstein(
     lat_r = ds_ref.latitude
 
     bands = {
+        "global": ((lat_p >= -90) & (lat_p <= 90), (lat_r >= -90) & (lat_r <= 90)),
         "tropics": ((lat_p >= -30) & (lat_p <= 30), (lat_r >= -30) & (lat_r <= 30)),
         "nh_mid": ((lat_p > 30) & (lat_p <= 60), (lat_r > 30) & (lat_r <= 60)),
         "sh_mid": ((lat_p >= -60) & (lat_p < -30), (lat_r >= -60) & (lat_r < -30)),
@@ -1099,6 +1100,9 @@ def compute_lapse_rate_wasserstein(
         # Isolate valid data points (exclude NaNs introduced by the mask padding)
         valid_p = ~np.isnan(gp_band) & ~np.isnan(area_p_band)
         valid_r = ~np.isnan(gr_band) & ~np.isnan(area_r_band)
+
+        if not valid_p.any() or not valid_r.any():
+            continue
 
         w1 = wasserstein_distance(
             u_values=gp_band[valid_p],

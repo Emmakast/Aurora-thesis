@@ -95,7 +95,7 @@ def main():
     print(f"Loading EOF pattern from {eof_path}...")
     ds_eof = standardize_coords(xr.open_dataset(eof_path))
     eof_pattern = ds_eof['eof'].squeeze()
-    pc1_std = float(ds_eof['pc_std'].values)
+    pc1_std = float(ds_eof['daily_pc_std'].values) if 'daily_pc_std' in ds_eof else float(ds_eof['pc_std'].values)
     
     print(f"Loading climatology from: {args.climatology}...")
     if args.climatology.startswith('gs://') or args.climatology.endswith('.zarr'):

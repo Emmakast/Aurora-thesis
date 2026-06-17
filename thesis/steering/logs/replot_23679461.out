@@ -1,0 +1,24 @@
+Loading base file for AAO / 20160113 …
+  Base: base_aao_aao_antarctic_20160113_1200_alpha_0.0.nc
+  α=-5: steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_-5.0.nc
+  α=+5: steered_aao_aao_antarctic_20160113_1200_polar_south_lat60p0_alpha_5.0.nc
+✓ Saved Figure 1 → /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AAO_1encoder(2)/fig1_dose_response_aao_20160113.png
+✓ Saved Figure 2 → /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/AAO_1encoder(2)/fig2_physical_profile_aao_20160113.png
+
+Done.
+Loading base file for MJO / 20160123 …
+  Base: base_mjo_20160123_1200_alpha_0.0.nc
+  α=-5: steered_mjo_20160123_1200_tropical_lat30p0_alpha_-5.0.nc
+  α=+5: steered_mjo_20160123_1200_tropical_lat30p0_alpha_5.0.nc
+✓ Saved Figure 1 → /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/MJO/fig1_dose_response_mjo_20160123.png
+✓ Saved Figure 2 → /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/MJO/fig2_physical_profile_mjo_20160123.png
+
+Done.
+Loading base file for ENSO / 20170103 …
+  Base: base_enso_20170103_1200_alpha_0.0.nc
+  α=-5: steered_enso_20170103_1200_tropical_lat30p0_alpha_-5.0.nc
+  α=+5: steered_enso_20170103_1200_tropical_lat30p0_alpha_5.0.nc
+✓ Saved Figure 1 → /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/ENSO/fig1_dose_response_enso_20170103.png
+✓ Saved Figure 2 → /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/ENSO/fig2_physical_profile_enso_20170103.png
+
+Done.

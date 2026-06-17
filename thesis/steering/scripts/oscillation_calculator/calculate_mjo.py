@@ -180,7 +180,12 @@ def calculate_mjo(target_file, climatology, eof_file):
     rmm2 = (combined * eof2).sum(dim='combined_lon')
     
     # Normalize by PC standard deviation to get standardized RMM index
-    if 'pc1_std' in eof_ds and 'pc2_std' in eof_ds:
+    # Prefer daily_pc_std (computed from daily projections) over monthly pc_std
+    if 'daily_pc1_std' in eof_ds and 'daily_pc2_std' in eof_ds:
+        rmm1 = rmm1 / eof_ds['daily_pc1_std']
+        rmm2 = rmm2 / eof_ds['daily_pc2_std']
+    elif 'pc1_std' in eof_ds and 'pc2_std' in eof_ds:
+        logging.warning("MJO EOF file does not contain daily_pc1_std/daily_pc2_std. Falling back to monthly pc_std. Run compute_daily_pc_std.py to fix.")
         rmm1 = rmm1 / eof_ds['pc1_std']
         rmm2 = rmm2 / eof_ds['pc2_std']
     else:

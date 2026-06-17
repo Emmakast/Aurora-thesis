@@ -66,14 +66,18 @@ def apply_spatial_mask_to_delta(
 
     _, seq_len, _ = delta_v.shape
     
-    if seq_len != 16200:
-        print(f"Warning: could not apply spatial mask for seq_len={seq_len} (expected 16200). Skipping mask for this layer.")
+    if seq_len not in [16200, 64800]:
+        print(f"Warning: could not apply spatial mask for seq_len={seq_len}. Skipping mask for this layer.")
         return delta_v
 
-    # Aurora uses 90 lat x 180 lon = 16200 tokens
-    if seq_len == 16200 and mask_region == "polar":
-        lat_size = 90
-        lon_size = 180
+    if mask_region == "polar":
+        if seq_len == 16200:
+            lat_size = 90
+            lon_size = 180
+        else:
+            lat_size = 180
+            lon_size = 360
+            
         lat_mask_1d = build_polar_lat_mask(lat_size, lat_min=polar_lat_min, hemisphere=hemisphere)
         # Expand to lat x lon, then flatten to match token sequence
         spatial_mask = lat_mask_1d.unsqueeze(1).expand(lat_size, lon_size).reshape(1, seq_len, 1)
@@ -204,45 +208,51 @@ def main():
     layer_names = ['encoder_0', 'encoder_1', 'encoder_2']
     
     for layer in layer_names:
-        print(f"Loading Active latents for {layer} ({len(active_dates)} dates)...")
-        mean_active = load_mean_latent(active_dates, layer=layer)
+        output_dir = Path(args.out_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        steering_vec_path = output_dir / f"steering_vector_{args.phenomenon.lower()}_{layer}{suffix_str}.pt"
+        steering_norm_path = output_dir / f"steering_vector_norm_{args.phenomenon.lower()}_{layer}{suffix_str}.pt"
         
-        print(f"Loading Neutral latents for {layer} ({len(neutral_dates)} dates)...")
-        mean_neutral = load_mean_latent(neutral_dates, layer=layer)
-        
-        if mean_active is None or mean_neutral is None:
-            print(f"Missing latents for {layer}. Creating dummy delta_v.")
-            delta_v = torch.zeros((1, 4, 18, 36, 1536))
+        if steering_vec_path.exists():
+            print(f"✓ Found PRE-COMPUTED steering vector! Loading {steering_vec_path.name} directly...")
+            raw_vec = torch.load(steering_vec_path, map_location='cpu', weights_only=True)
         else:
-            delta_v = mean_active - mean_neutral
-            delta_v = torch.nan_to_num(delta_v, nan=0.0, posinf=0.0, neginf=0.0)
+            print(f"Loading Active latents for {layer} ({len(active_dates)} dates)...")
+            mean_active = load_mean_latent(active_dates, layer=layer)
+            
+            print(f"Loading Neutral latents for {layer} ({len(neutral_dates)} dates)...")
+            mean_neutral = load_mean_latent(neutral_dates, layer=layer)
+            
+            if mean_active is None or mean_neutral is None:
+                print(f"Missing latents for {layer}. Creating dummy delta_v.")
+                delta_v = torch.zeros((1, 4, 18, 36, 1536)) if layer != 'encoder_0' else torch.zeros((1, 18, 36, 1536))
+            else:
+                delta_v = mean_active - mean_neutral
+                delta_v = torch.nan_to_num(delta_v, nan=0.0, posinf=0.0, neginf=0.0)
+    
+            print(f"{layer} Steering vector (delta_v) shape: {delta_v.shape}, max={torch.max(delta_v)}, min={torch.min(delta_v)}, norm={torch.norm(delta_v)}")
+            raw_vec = delta_v
+            
+            # Save unmasked plot-ready tensors before applying mask
+            torch.save(raw_vec.cpu(), steering_vec_path)
+            torch.save(torch.norm(raw_vec, dim=-1).squeeze(0).cpu(), steering_norm_path)
+            print(f"Saved {layer} steering vector to {steering_vec_path.name}")
+            print(f"Saved {layer} steering norm to {steering_norm_path.name}")
 
-        print(f"{layer} Steering vector (delta_v) shape: {delta_v.shape}, max={torch.max(delta_v)}, min={torch.min(delta_v)}, norm={torch.norm(delta_v)}")
-
-        # Apply user-selected spatial mask (polar by default)
+        # Always apply user-selected spatial mask on the fly
         masked_delta_v = apply_spatial_mask_to_delta(
-            delta_v,
+            raw_vec,
             mask_region=args.mask_region,
             polar_lat_min=args.polar_lat_min,
             hemisphere=args.hemisphere,
         )
         nz_ratio = (masked_delta_v != 0).float().mean().item()
         print(
-            f"Applied mask to {layer}: region={args.mask_region}, hemisphere={args.hemisphere}, "
+            f"Applied on-the-fly mask to {layer}: region={args.mask_region}, hemisphere={args.hemisphere}, "
             f"lat_min={args.polar_lat_min}. Non-zero fraction={nz_ratio:.4f}"
         )
 
         steering_vectors[layer] = masked_delta_v
-
-        # Save plot-ready tensors
-        output_dir = Path(args.out_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        steering_vec_path = output_dir / f"steering_vector_{args.phenomenon.lower()}_{layer}{suffix_str}.pt"
-        steering_norm_path = output_dir / f"steering_vector_norm_{args.phenomenon.lower()}_{layer}{suffix_str}.pt"
-        torch.save(masked_delta_v.cpu(), steering_vec_path)
-        torch.save(torch.norm(masked_delta_v, dim=-1).squeeze(0).cpu(), steering_norm_path)
-        print(f"Saved {layer} steering vector to {steering_vec_path.name}")
-        print(f"Saved {layer} steering norm to {steering_norm_path.name}")
         
     # ==========================================
     # Step 2: Implement the Intervention Hook (Normalized)

@@ -106,7 +106,7 @@ def main():
     try:
         ds_eof = standardize_coords(xr.open_dataset(args.eof))
         eof_pattern = ds_eof['eof'].squeeze()
-        pc1_std = ds_eof['pc_std'].values
+        pc1_std = ds_eof['daily_pc_std'].values if 'daily_pc_std' in ds_eof else ds_eof['pc_std'].values
     except FileNotFoundError:
         print(f"Warning: EOF file '{args.eof}' not found.")
         print("Creating a dummy uniform EOF pattern so the pipeline can complete.")
@@ -122,8 +122,8 @@ def main():
     steered_nh = steered_anom_1000.where(steered_anom_1000.lat >= 20, drop=True)
     eof_nh = eof_pattern.interp(lat=base_nh.lat, lon=base_nh.lon, method='nearest').where(base_nh.lat >= 20, drop=True)
 
-    # Apply latitude weighting (sqrt(cos(lat)) is standard for EOFs, but using cos(lat) as requested)
-    lat_weights = np.cos(np.deg2rad(base_nh.lat))
+    # Apply latitude weighting: sqrt(cos(lat)) to match the EOF generation weighting
+    lat_weights = np.sqrt(np.clip(np.cos(np.deg2rad(base_nh.lat)), 0, None))
     
     base_weighted = base_nh * lat_weights
     steered_weighted = steered_nh * lat_weights

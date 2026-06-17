@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -p rome
+#SBATCH -t 00:20:00
+#SBATCH -n 1
+#SBATCH --mem=32G
+#SBATCH -o thesis/steering/logs/replot_%j.out
+#SBATCH -e thesis/steering/logs/replot_%j.err
+
+source /home/ekasteleyn/aurora_env/bin/activate
+cd /home/ekasteleyn/aurora_thesis
+
+python thesis/steering/scripts/visualization/generate_steering_figures.py --phenomenon AAO
+python thesis/steering/scripts/visualization/generate_steering_figures.py --phenomenon MJO --out-dir /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/MJO
+python thesis/steering/scripts/visualization/generate_steering_figures.py --phenomenon ENSO --out-dir /home/ekasteleyn/aurora_thesis/thesis/steering/vectors/ENSO

@@ -4,10 +4,10 @@ from eofs.xarray import Eof
 import os
 
 def main():
-    output_path = '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/ao_loading_pattern.nc'
+    output_path = '/home/ekasteleyn/aurora_thesis/thesis/steering/scripts/oscillation_calculator/indices/ao_loading_pattern.nc'
     if os.path.exists(output_path):
-        print(f"File {output_path} already exists. Exiting.")
-        return
+        print(f"File {output_path} already exists. Removing to regenerate.")
+        os.remove(output_path)
 
     # 1. Lazily connect to the massive WB2 historical bucket
     historical_url = 'gs://weatherbench2/datasets/era5/1959-2022-6h-1440x721.zarr'
@@ -15,21 +15,25 @@ def main():
     ds = xr.open_zarr(historical_url, consolidated=True)
 
     # 2. Slice out ONLY what you need before loading into memory
-    print("Slicing data from cloud (1990-2019, 1000hPa, >20N)...")
-    nh_data = ds['geopotential'].sel(
-        level=1000, 
-        latitude=slice(90, 20),
-        time=slice('1990-01-01', '2019-12-31')
-    ).resample(time='1MS').mean() # Monthly average to reduce size and isolate low-frequency modes
-
-    # 3. NOW load this much smaller slice into memory
-    print("Downloading sliced data into memory (this will take a while, ~few GBs)...")
-    nh_data = nh_data.compute()
+    print("Slicing data from cloud (1990-2019, 1000hPa, >20N) and downloading year-by-year...")
+    
+    monthly_data_list = []
+    for year in range(1990, 2020):
+        print(f"  Downloading and processing year {year}...")
+        year_data = ds['geopotential'].sel(
+            level=1000, 
+            latitude=slice(90, 20),
+            time=slice(f'{year}-01-01', f'{year}-12-31')
+        ).resample(time='1MS').mean().compute()
+        monthly_data_list.append(year_data)
+        
+    print("Concatenating all years...")
+    nh_data = xr.concat(monthly_data_list, dim='time')
 
     # 4. Calculate anomalies
     print("Calculating anomalies...")
-    climatology_mean = nh_data.mean(dim='time')
-    anomalies = nh_data - climatology_mean
+    climatology = nh_data.groupby('time.month').mean('time')
+    anomalies = nh_data.groupby('time.month') - climatology
 
     # 5. Apply Latitude Weighting
     print("Applying latitude weighting...")

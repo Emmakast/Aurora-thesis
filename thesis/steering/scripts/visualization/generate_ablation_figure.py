@@ -64,17 +64,17 @@ def main():
     date = "20170308"
     
     configs = [
-        {"label": "Encoder 0", "dir": "AO_1encoder(0)", "file": f"steered_ao_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
+        {"label": "Encoder 0", "dir": "AO_1encoder(0)", "file": f"steered_ao_ao81_polar_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
         {"label": "Encoder 1", "dir": "AO_1encoder(1)", "file": f"steered_ao_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
         {"label": "Encoder 2", "dir": "AO_1encoder(2)", "file": f"steered_ao_ao81_polar_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
-        {"label": "Encoders (0,1)", "dir": "AO_2encoders(0,1)", "file": f"steered_ao_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
-        {"label": "Encoders (0,2)", "dir": "AO_2encoders(0,2)", "file": f"steered_ao_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
+        {"label": "Encoders (0,1)", "dir": "AO_2encoders(0,1)", "file": f"steered_ao_ao81_polar_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
+        {"label": "Encoders (0,2)", "dir": "AO_2encoders(0,2)", "file": f"steered_ao_ao81_polar_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
         {"label": "Encoders (1,2)", "dir": "AO_2encoders(1,2)", "file": f"steered_ao_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
-        {"label": "All 3 Encoders", "dir": "AO_3encoders", "file": f"steered_ao_ao81_polar_multi_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
+        {"label": "All 3 Encoders", "dir": "AO_3encoders", "file": f"steered_ao_ao81_polar_{date}_1200_polar_north_lat60p0_alpha_5.0.nc"},
     ]
 
     # Base file (assume same for all, load from encoder 0)
-    base_file = base_dir / "AO_1encoder(0)" / f"base_ao_{date}_1200_alpha_0.0.nc"
+    base_file = base_dir / "AO_1encoder(0)" / f"base_ao_ao81_polar_{date}_1200_alpha_0.0.nc"
     base_ds = xr.open_dataset(base_file)
     
     lat = base_ds.latitude.values

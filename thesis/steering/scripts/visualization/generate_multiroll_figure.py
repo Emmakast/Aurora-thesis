@@ -34,13 +34,14 @@ def main():
     plt.figure(figsize=(10, 6))
     sns.set_theme(style="whitegrid")
     
-    # Custom color palette so it looks nice
+    # Custom colorblind palette so it is distinct and accessible
+    cb_palette = sns.color_palette("colorblind")
     palette = {
         0.0: "black",
-        1.0: "#4ca3dd",  # Light blue
-        2.0: "#2a75bb",  # Medium blue
-        5.0: "#003f8a",  # Dark blue
-        10.0: "#001f4d"  # Very deep navy blue
+        1.0: cb_palette[0],  # Blue
+        2.0: cb_palette[1],  # Orange
+        5.0: cb_palette[2],  # Green
+        10.0: cb_palette[3]  # Red
     }
     
     for alpha in target_alphas:
@@ -55,6 +56,23 @@ def main():
             markersize=8,
             color=palette[alpha],
             label=label_str
+        )
+        
+    # Plot ERA5 reference if available
+    era5_path = Path("/home/ekasteleyn/aurora_thesis/era5_ao_reference.csv")
+    if era5_path.exists():
+        era5_df = pd.read_csv(era5_path)
+        # Data is 6-hourly starting from Day 0
+        era5_df['Days'] = [i * 0.25 for i in range(len(era5_df))]
+        plt.plot(
+            era5_df['Days'], 
+            era5_df['era5_ao'], 
+            marker='o', 
+            linewidth=3.0, 
+            linestyle='--',
+            markersize=8,
+            color='gray',
+            label='Actual ERA5 (Ground Truth)'
         )
         
     plt.title("Arctic Oscillation (AO) Index Over Rollout Time", fontsize=16, fontweight="bold", pad=15)

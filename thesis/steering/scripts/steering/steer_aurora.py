@@ -69,14 +69,21 @@ def apply_spatial_mask_to_delta(
         return delta_v
 
     _, seq_len, _ = delta_v.shape
-    # Aurora uses 90 lat x 180 lon = 16200 tokens
-    if seq_len == 16200 and mask_region in ["polar", "tropical"]:
-        lat_size = 90
-        lon_size = 180
+    # Aurora uses 90 lat x 180 lon = 16200 tokens (for encoder 1 and 2)
+    # and 180 lat x 360 lon = 64800 tokens (for encoder 0)
+    if seq_len in [16200, 64800] and mask_region in ["polar", "tropical"]:
+        if seq_len == 16200:
+            lat_size = 90
+            lon_size = 180
+        else:
+            lat_size = 180
+            lon_size = 360
+            
         if mask_region == "polar":
             lat_mask_1d = build_polar_lat_mask(lat_size, lat_min=polar_lat_min, hemisphere=hemisphere)
         elif mask_region == "tropical":
             lat_mask_1d = build_tropical_lat_mask(lat_size, lat_max=tropical_lat_max)
+            
         # Expand to lat x lon, then flatten to match token sequence
         spatial_mask = lat_mask_1d.unsqueeze(1).expand(lat_size, lon_size).reshape(1, seq_len, 1)
         spatial_mask = spatial_mask.to(dtype=delta_v.dtype, device=delta_v.device)
@@ -100,6 +107,7 @@ def main():
     parser.add_argument("--polar-lat-min", type=float, default=60.0, help="Polar mask starts at |lat| >= this value")
     parser.add_argument("--tropical-lat-max", type=float, default=30.0, help="Tropical mask ends at |lat| <= this value")
     parser.add_argument("--hemisphere", type=str, default="both", choices=["both", "north", "south"], help="Polar mask hemisphere")
+    parser.add_argument("--encoder-idx", type=int, default=2, help="Encoder index to steer (0, 1, or 2)")
     parser.add_argument("--output-dir", type=str, default="thesis/results", help="Directory to save the vectors and netcdf outputs")
     parser.add_argument("--data-dir", type=str, default=None, help="Directory for downloaded HRES data (shared between scripts to avoid re-downloading)")
     parser.add_argument("--inject-once", action="store_true", help="Only inject the steering vector at the first rollout step")
@@ -226,10 +234,10 @@ def main():
     
             
         print(f"Loading Active latents ({len(active_dates)} dates)...")
-        mean_active = load_mean_latent(active_dates)
+        mean_active = load_mean_latent(active_dates, layer=f'encoder_{args.encoder_idx}')
         
         print(f"Loading Neutral latents ({len(neutral_dates)} dates)...")
-        mean_neutral = load_mean_latent(neutral_dates)
+        mean_neutral = load_mean_latent(neutral_dates, layer=f'encoder_{args.encoder_idx}')
         
         if mean_active is None or mean_neutral is None:
             print("Missing latents. Creating dummy delta_v for demonstration purposes.")
@@ -241,23 +249,12 @@ def main():
     
         print(f"Steering vector (delta_v) shape: {delta_v.shape}, max={torch.max(delta_v)}, min={torch.min(delta_v)}, norm={torch.norm(delta_v)}")
     
-        # Apply user-selected spatial mask (polar by default)
-        masked_delta_v = apply_spatial_mask_to_delta(
-            delta_v,
-            mask_region=args.mask_region,
-            polar_lat_min=args.polar_lat_min,
-            hemisphere=args.hemisphere,
-            tropical_lat_max=args.tropical_lat_max,
-        )
-        nz_ratio = (masked_delta_v != 0).float().mean().item()
-        lat_info = f"lat_min={args.polar_lat_min}" if args.mask_region == "polar" else f"lat_max={args.tropical_lat_max}" if args.mask_region == "tropical" else ""
-        print(
-            f"Applied mask: region={args.mask_region}, hemisphere={args.hemisphere}, "
-            f"{lat_info}. Non-zero fraction={nz_ratio:.4f}"
-        )
     
-        # Keep the masked steering vector; do not overwrite it
-        steering_vec = masked_delta_v
+        # Save unmasked plot-ready tensors before applying mask (if generating new)
+        # Note: we save it unmasked so we can apply different masks on the fly later if needed
+        # Or keep it as is. Actually, if we just compute delta_v, we can save it.
+        steering_vec = delta_v
+
     
         # Save plot-ready tensors
         torch.save(steering_vec.cpu(), steering_vec_path)
@@ -276,6 +273,18 @@ def main():
                 print(f"      ↑ Uploaded steering norm to S3: s3://ekasteleyn-aurora-predictions/{s3_key_norm}")
             except Exception as e:
                 print(f"      ⚠ Failed to upload steering vector to S3: {e}")
+                
+    # Always apply spatial mask on the fly (whether loaded or newly computed)
+    steering_vec = apply_spatial_mask_to_delta(
+        steering_vec,
+        mask_region=args.mask_region,
+        polar_lat_min=args.polar_lat_min,
+        hemisphere=args.hemisphere,
+        tropical_lat_max=args.tropical_lat_max,
+    )
+    nz_ratio = (steering_vec != 0).float().mean().item()
+    lat_info = f"lat_min={args.polar_lat_min}" if args.mask_region == "polar" else f"lat_max={args.tropical_lat_max}" if args.mask_region == "tropical" else ""
+    print(f"Applied on-the-fly mask: region={args.mask_region}, hemisphere={args.hemisphere}, {lat_info}. Non-zero fraction={nz_ratio:.4f}")
         
     # ==========================================
     # Step 2: Implement the Intervention Hook (Normalized)
@@ -380,7 +389,7 @@ def main():
     for alpha_val in args.alphas:
         print(f"Applying hook with alpha={alpha_val}...")
 
-        hook_handle = model.backbone.encoder_layers[2].register_forward_hook(
+        hook_handle = model.backbone.encoder_layers[args.encoder_idx].register_forward_hook(
             make_intervention_hook(steering_vec, alpha=alpha_val, inject_once=args.inject_once)
         )
 

@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name=era5_ref
+#SBATCH --output=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/era5_ref_%j.out
+#SBATCH --error=/home/ekasteleyn/aurora_thesis/thesis/steering/logs/era5_ref_%j.err
+#SBATCH --time=1:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=128G
+#SBATCH --partition=rome
+#SBATCH --constraint=scratch-node
+#SBATCH --chdir=/home/ekasteleyn/aurora_thesis
+
+module load 2023
+module load PROJ/9.2.0-GCCcore-12.3.0
+source /home/ekasteleyn/aurora_thesis/aurora_env/bin/activate
+export PYTHONUNBUFFERED=1
+
+echo "Calculating ERA5 Reference AO: $(date)"
+/home/ekasteleyn/aurora_thesis/aurora_env/bin/python scratch_era5_ao.py
+echo "COMPLETE: $(date)"
