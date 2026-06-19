@@ -59,7 +59,7 @@ def _draw_map(ax, lons2d, lats2d, field, cmap, vmin, vmax, title, extent, data_c
     gl.bottom_labels = False
     gl.left_labels = False
 
-    ax.set_title(title, fontsize=18, fontweight="bold", pad=8)
+    ax.set_title(title, fontsize=42, fontweight="bold", pad=12)
     return im
 
 def main():
@@ -158,12 +158,12 @@ def main():
         vmin_diff, vmax_diff = -1, 1
 
     # Plot
-    fig = plt.figure(figsize=(20, 8))
+    fig = plt.figure(figsize=(20, 12))
     gs = GridSpec(
         3, 5, figure=fig,
         height_ratios=[1, 1, 0.05],
-        hspace=0.1, wspace=0.05,
-        left=0.02, right=0.98, top=0.95, bottom=0.08
+        hspace=0.15, wspace=0.05,
+        left=0.02, right=0.98, top=0.90, bottom=0.12
     )
 
     im_raw = None
@@ -173,23 +173,19 @@ def main():
     ax_base = fig.add_subplot(gs[0, 0], projection=proj)
     im_raw = _draw_map(ax_base, lons2d, lats2d, base_field, "viridis",
                        vmin_raw, vmax_raw, "Base", extent, data_crs)
-    ax_base.text(-0.05, 0.5, "Raw\\nPrediction", transform=ax_base.transAxes,
-                 fontsize=18, fontweight="bold", va="center", ha="right", rotation=90)
                  
     ax_table = fig.add_subplot(gs[1, 0])
     ax_table.axis("off")
-    ax_table.text(-0.05, 0.5, "Difference\\n(Steered - Base)", transform=ax_table.transAxes,
-                  fontsize=18, fontweight="bold", va="center", ha="right", rotation=90)
                   
     table = ax_table.table(
         cellText=table_data,
-        colLabels=["Configuration", "AO Index"],
+        colLabels=["N", "AO Index"],
         loc="center",
         cellLoc="center"
     )
     table.auto_set_font_size(False)
-    table.set_fontsize(14)
-    table.scale(1.0, 1.8)
+    table.set_fontsize(28)
+    table.scale(1.0, 3.5)
     
     # Calculate color coding based on diff from base
     import matplotlib.cm as cm
@@ -230,13 +226,13 @@ def main():
     # Colorbars
     cbar_ax1 = fig.add_subplot(gs[2, 1:3])
     cb_raw = fig.colorbar(im_raw, cax=cbar_ax1, orientation="horizontal")
-    cb_raw.set_label("Geopotential Height (50 hPa) [m² s⁻²]", fontsize=18, fontweight="bold")
-    cb_raw.ax.tick_params(labelsize=14)
+    cb_raw.set_label("Geopotential Height (50 hPa) [m² s⁻²]", fontsize=38, fontweight="bold")
+    cb_raw.ax.tick_params(labelsize=32)
 
     cbar_ax2 = fig.add_subplot(gs[2, 3:])
     cb_diff = fig.colorbar(im_diff, cax=cbar_ax2, orientation="horizontal")
-    cb_diff.set_label("Difference [m² s⁻²]", fontsize=18, fontweight="bold")
-    cb_diff.ax.tick_params(labelsize=14)
+    cb_diff.set_label("Diff [m² s⁻²]", fontsize=38, fontweight="bold")
+    cb_diff.ax.tick_params(labelsize=32)
 
     out_path = base_dir / "ablation_ao_contrastive_unified.png"
     plt.savefig(out_path, dpi=200, bbox_inches="tight", facecolor="white")

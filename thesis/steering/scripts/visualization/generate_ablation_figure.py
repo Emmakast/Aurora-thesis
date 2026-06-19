@@ -56,7 +56,7 @@ def _draw_map(ax, lons2d, lats2d, field, cmap, vmin, vmax, title, extent, data_c
     gl.bottom_labels = False
     gl.left_labels = False
 
-    ax.set_title(title, fontsize=18, fontweight="bold", pad=8)
+    ax.set_title(title, fontsize=20, fontweight="bold", pad=8)
     return im
 
 def main():
@@ -162,13 +162,9 @@ def main():
     ax_base = fig.add_subplot(gs[0, 0], projection=proj)
     im_raw = _draw_map(ax_base, lons2d, lats2d, base_field, "viridis",
                        vmin_raw, vmax_raw, "Base", extent, data_crs)
-    ax_base.text(-0.05, 0.5, "Raw\\nPrediction", transform=ax_base.transAxes,
-                 fontsize=18, fontweight="bold", va="center", ha="right", rotation=90)
                  
     ax_table = fig.add_subplot(gs[1, 0])
     ax_table.axis("off")
-    ax_table.text(-0.05, 0.5, "Difference\\n(Steered - Base)", transform=ax_table.transAxes,
-                  fontsize=18, fontweight="bold", va="center", ha="right", rotation=90)
                   
     table = ax_table.table(
         cellText=table_data,
@@ -177,7 +173,7 @@ def main():
         cellLoc="center"
     )
     table.auto_set_font_size(False)
-    table.set_fontsize(14)
+    table.set_fontsize(16)
     table.scale(1.0, 1.8) # Narrower width
     
     # Calculate color coding based on diff from base

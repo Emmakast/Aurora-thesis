@@ -22,14 +22,14 @@ def main():
     base_val = multi_vals[0.0]
 
     # Build table data
-    multi_row = [f"{multi_vals[a]:.4f}" for a in alphas]
-    single_row = [f"{single_vals[a]:.4f}" for a in alphas]
+    table_data = []
+    for a in alphas:
+        table_data.append([f"{multi_vals[a]:.4f}", f"{single_vals[a]:.4f}"])
 
-    table_data = [multi_row, single_row]
-    row_labels = ["Multi-Injection (Normal)", "Single-Injection (Step 0)"]
-    col_labels = [f"α = {a}" for a in alphas]
+    col_labels = ["Multi", "Single"]
+    row_labels = [f"α = {a}" for a in alphas]
 
-    fig, ax = plt.subplots(figsize=(14, 2))
+    fig, ax = plt.subplots(figsize=(3, 5))
     ax.axis('off')
 
     table = ax.table(
@@ -41,8 +41,8 @@ def main():
     )
 
     table.auto_set_font_size(False)
-    table.set_fontsize(14)
-    table.scale(1.0, 2.5)
+    table.set_fontsize(12)
+    table.scale(1.0, 2.0)
 
     # We want to map colors based on the difference from base_val
     all_diffs = [multi_vals[a] - base_val for a in alphas] + [single_vals[a] - base_val for a in alphas]
@@ -65,7 +65,7 @@ def main():
             cell.set_facecolor('#e1e6ed')
         elif row > 0 and col >= 0:
             # Data cells
-            alpha = alphas[col]
+            alpha = alphas[row-1]
             val = float(table_data[row-1][col])
             diff = val - base_val
             
@@ -75,11 +75,13 @@ def main():
             color = tuple(c*0.6 + 0.4 for c in color[:3]) + (1.0,)
             cell.set_facecolor(color)
             
-            # Emphasize alpha 0 column
+            # Emphasize alpha 0 row
             if alpha == 0.0:
                 cell.set_text_props(weight='bold')
 
-    plt.savefig(out_path, dpi=300, bbox_inches='tight', facecolor='white')
+    fig.canvas.draw()
+    bbox = table.get_window_extent(fig.canvas.get_renderer()).transformed(fig.dpi_scale_trans.inverted())
+    plt.savefig(out_path, dpi=300, bbox_inches=bbox.expanded(1.05, 1.05), facecolor='white')
     print(f"Saved table to {out_path}")
 
 if __name__ == "__main__":

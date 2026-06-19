@@ -45,7 +45,7 @@ def main():
         subset = df[df['Steered_Phenomenon'] == phenom].copy()
         
         if subset.empty:
-            ax.set_title(f"Steering {phenom} (No Data)", fontsize=18, fontweight="bold")
+            ax.set_title(f"Steering {phenom} (No Data)", fontsize=34, fontweight="bold")
             continue
             
         subset = subset.sort_values(by="Alpha")
@@ -72,15 +72,15 @@ def main():
                 label=idx_name
             )
             
-        ax.set_title(f"Steering {phenom}", fontsize=18, fontweight="bold")
+        ax.set_title(f"Steering {phenom}", fontsize=34, fontweight="bold")
         ax.axvline(0, color='black', linestyle='--', alpha=0.5) # Mark alpha=0
         
         if i >= 3:
-            ax.set_xlabel("Steering Magnitude (α)", fontsize=16, fontweight="bold")
+            ax.set_xlabel("Steering Magnitude (α)", fontsize=32, fontweight="bold")
         if i % 3 == 0:
-            ax.set_ylabel("Index Value", fontsize=16, fontweight="bold")
+            ax.set_ylabel("Index Value", fontsize=32, fontweight="bold")
             
-        ax.tick_params(axis='both', which='major', labelsize=14)
+        ax.tick_params(axis='both', which='major', labelsize=28)
         ax.grid(True, alpha=0.3)
 
     # Add a single shared legend at the top or right
@@ -95,8 +95,8 @@ def main():
         h_new.set_linestyle('-')
         uniform_handles.append(h_new)
         
-    fig.legend(uniform_handles, labels, title="Evaluated Index", loc='center right', 
-               bbox_to_anchor=(1.08, 0.5), fontsize=16, title_fontsize=18)
+    fig.legend(uniform_handles, labels, title="Evaluated Index", loc='upper center', 
+               bbox_to_anchor=(0.5, -0.05), ncol=6, fontsize=32, title_fontsize=36)
                  
     plt.tight_layout()
     plt.savefig(out_path, dpi=200, bbox_inches="tight")

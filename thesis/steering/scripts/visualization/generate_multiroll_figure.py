@@ -75,13 +75,12 @@ def main():
             label='Actual ERA5 (Ground Truth)'
         )
         
-    plt.title("Arctic Oscillation (AO) Index Over Rollout Time", fontsize=16, fontweight="bold", pad=15)
-    plt.xlabel("Forecast Lead Time (Days)", fontsize=14, fontweight="bold")
-    plt.ylabel("AO Index", fontsize=14, fontweight="bold")
+    plt.xlabel("Forecast Lead Time (Days)", fontsize=16, fontweight="bold")
+    plt.ylabel("AO Index", fontsize=16, fontweight="bold")
     
-    plt.xticks(fontsize=12)
-    plt.yticks(fontsize=12)
-    plt.legend(title="Configuration", title_fontsize=13, fontsize=12, loc="upper left")
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.legend(title="Configuration", title_fontsize=15, fontsize=14, loc="upper left")
     
     plt.tight_layout()
     plt.savefig(out_path, dpi=200, bbox_inches="tight")

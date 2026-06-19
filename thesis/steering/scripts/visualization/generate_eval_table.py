@@ -25,10 +25,10 @@ def main():
         
         table_data.append([alpha, abs_mean, abs_std, diff_mean, diff_std])
 
-    fig, ax = plt.subplots(figsize=(10, 3))
+    fig, ax = plt.subplots(figsize=(5, 3))
     ax.axis("off")
 
-    col_labels = ["Steering Magnitude (α)", "Mean Absolute", "Std Dev Absolute", "Mean Diff", "Std Dev Diff"]
+    col_labels = ["α", "Mean Absolute", "Std Dev Absolute", "Mean Diff", "Std Dev Diff"]
 
     table = ax.table(
         cellText=table_data,
@@ -37,7 +37,7 @@ def main():
         cellLoc="center"
     )
     table.auto_set_font_size(False)
-    table.set_fontsize(14)
+    table.set_fontsize(11)
     table.scale(1.0, 2.0)
     table.auto_set_column_width(list(range(len(col_labels))))
 

@@ -82,9 +82,9 @@ FIG1_PRIMARY_VAR = {
 
 # Figure 2 variable definitions  (var_name, level_or_None, display_label, unit)
 PROFILE_VARS = [
-    ("z",   500,  "Geopotential Height (500 hPa)",  "m² s⁻²"),
-    ("msl", None, "Mean Sea-Level Pressure",         "Pa"),
-    ("q",   850,  "Specific Humidity (850 hPa)",     "kg kg⁻¹"),
+    ("z",   500,  "z at 500hPa",  "m² s⁻²"),
+    ("msl", None, "MSLP",         "Pa"),
+    ("q",   850,  "q at 850hPa",     "kg kg⁻¹"),
 ]
 
 
@@ -214,7 +214,7 @@ def _draw_map(ax, lons2d, lats2d, field, cmap, vmin, vmax, title,
     if draw_mask:
         _draw_mask_boundary(ax, proj_cfg, data_crs)
 
-    ax.set_title(title, fontsize=26, fontweight="bold", pad=6)
+    ax.set_title(title, fontsize=title_fontsize, fontweight="bold", pad=6)
     return im
 
 
@@ -274,12 +274,12 @@ def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
 
     # ── build figure with GridSpec ──
     # 4 rows: map_row1, cbar1, map_row2, cbar2
-    fig_h = 13 if is_polar else 8.5
+    fig_h = 18 if is_polar else 11.5
     fig = plt.figure(figsize=(15, fig_h))
     gs = GridSpec(
         6, 3, figure=fig,
-        height_ratios=[1, 0.03, 0.15, 1, 0.08, 0.03],
-        hspace=0.02, wspace=0.15,
+        height_ratios=[1, 0.04, 0.20, 1, 0.10, 0.04],
+        hspace=0.05, wspace=0.15,
         left=0.05, right=0.95, top=0.92, bottom=0.04,
     )
 
@@ -302,26 +302,26 @@ def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
         if field is not None:
             im_raw = _draw_map(ax, lons2d, lats2d, field, cmap_raw,
                                vmin_raw, vmax_raw, title,
-                               proj_cfg, data_crs, draw_mask=has_mask, title_fontsize=26)
+                               proj_cfg, data_crs, draw_mask=has_mask, title_fontsize=42)
         else:
             _set_map_extent(ax, proj_cfg, data_crs)
             ax.add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
-            ax.set_title(title + " (missing)", fontsize=26)
+            ax.set_title(title + " (missing)", fontsize=42)
 
     # ── Row 2: diff maps ──
     cmap_diff = "RdBu_r"
-    diff_labels = [r"Diff ($\alpha=-5$ – Base)", r"Diff ($\alpha=+5$ – Base)"]
+    diff_labels = ["Difference", "Difference"]
     diff_fields = [diff_neg, diff_pos]
     im_diff = None
     for ax, field, title in zip(row2_map_axes, diff_fields, diff_labels):
         if field is not None:
             im_diff = _draw_map(ax, lons2d, lats2d, field, cmap_diff,
                                 -max_diff, max_diff, title,
-                                proj_cfg, data_crs, draw_mask=False, title_fontsize=26)
+                                proj_cfg, data_crs, draw_mask=False, title_fontsize=42)
         else:
             _set_map_extent(ax, proj_cfg, data_crs)
             ax.add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
-            ax.set_title(title + " (missing)", fontsize=26)
+            ax.set_title(title + " (missing)", fontsize=42)
 
     # ── Row 2 centre: dose-response line graph ──
     extent = proj_cfg["extent"]
@@ -333,15 +333,15 @@ def figure_dose_response(base_ds, steered_neg, steered_pos, csv_df,
     if im_raw is not None:
         cbar_ax_raw = fig.add_subplot(gs[1, :])
         cb_raw = fig.colorbar(im_raw, cax=cbar_ax_raw, orientation="horizontal", extend="both")
-        cb_raw.set_label(f"{plabel}  [{punit}]", fontsize=24)
-        cb_raw.ax.tick_params(labelsize=20)
+        cb_raw.set_label(f"{plabel}  [{punit}]", fontsize=38)
+        cb_raw.ax.tick_params(labelsize=34)
 
     # Shared diverging colorbar below row 2
     if im_diff is not None:
         cbar_ax_diff = fig.add_subplot(gs[5, :])
         cb_diff = fig.colorbar(im_diff, cax=cbar_ax_diff, orientation="horizontal", extend="both")
-        cb_diff.set_label(f"Δ {plabel}  [{punit}]", fontsize=24)
-        cb_diff.ax.tick_params(labelsize=20)
+        cb_diff.set_label(f"Δ {plabel}  [{punit}]", fontsize=38)
+        cb_diff.ax.tick_params(labelsize=34)
 
     # fig.suptitle removed
 
@@ -368,8 +368,8 @@ def _plot_dose_response_line(ax, csv_df, phenomenon, date, name_suffix, aspect=0
 
     if df.empty:
         ax.text(0.5, 0.5, "No CSV data found", transform=ax.transAxes,
-                ha="center", va="center", fontsize=11, color="grey")
-        ax.set_title("Steering response curve", fontsize=26, fontweight="bold")
+                ha="center", va="center", fontsize=24, color="grey")
+        ax.set_title("Response", fontsize=42, fontweight="bold")
         return
 
     df = df.sort_values("Alpha")
@@ -380,8 +380,8 @@ def _plot_dose_response_line(ax, csv_df, phenomenon, date, name_suffix, aspect=0
             idx_col = fallback
         else:
             ax.text(0.5, 0.5, f"Column '{idx_col}' not found", transform=ax.transAxes,
-                    ha="center", va="center", fontsize=11, color="grey")
-            ax.set_title("Steering response curve", fontsize=26, fontweight="bold")
+                    ha="center", va="center", fontsize=24, color="grey")
+            ax.set_title("Response", fontsize=42, fontweight="bold")
             return
 
     alphas = df["Alpha"].values
@@ -411,11 +411,10 @@ def _plot_dose_response_line(ax, csv_df, phenomenon, date, name_suffix, aspect=0
     # Force strictly linear x-axis from -10 to 10
     ax.set_xlim(-11, 11)
     ax.xaxis.set_major_locator(mticker.FixedLocator([-10, -5, 0, 5, 10]))
-    ax.set_xlabel(r"Steering magnitude $\alpha$", fontsize=24)
+    ax.set_xlabel(r"Steering magnitude $\alpha$", fontsize=38)
     ax.set_ylabel("")
-    ax.set_title("Steering response curve", fontsize=26, fontweight="bold", pad=6)
-    ax.tick_params(labelsize=20)
-    ax.legend(fontsize=20, loc="best", framealpha=0.8)
+    ax.set_title("Response", fontsize=42, fontweight="bold", pad=6)
+    ax.tick_params(labelsize=34)
     ax.grid(True, linewidth=0.3, alpha=0.5)
 
     # Subtle background
@@ -453,13 +452,13 @@ def figure_physical_profile(base_ds, steered_ds, phenomenon, date,
     lons2d, lats2d = np.meshgrid(lon, lat)
 
     # 5 rows: map_row1, cbar1, spacer, map_row2, cbar2
-    fig_h = 8.5
+    fig_h = 11.5
     fig = plt.figure(figsize=(18, fig_h))
     gs = GridSpec(
         5, 3, figure=fig,
-        height_ratios=[1, 0.03, 0.15, 1, 0.03],
-        hspace=0.02, wspace=0.05,
-        left=0.04, right=0.96, top=0.94, bottom=0.04,
+        height_ratios=[1, 0.05, 0.45, 1, 0.05],
+        hspace=0.05, wspace=0.05,
+        left=0.04, right=0.96, top=0.92, bottom=0.08,
     )
 
     # Map axes
@@ -474,7 +473,7 @@ def figure_physical_profile(base_ds, steered_ds, phenomenon, date,
         # Check variable exists
         if var not in base_ds:
             for ax in [axes_r1[col_idx], axes_r2[col_idx]]:
-                ax.set_title(f"{var} not found", fontsize=14)
+                ax.set_title(f"{var} not found", fontsize=38)
                 _set_map_extent(ax, local_proj_cfg, data_crs)
                 ax.add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
             continue
@@ -500,38 +499,38 @@ def figure_physical_profile(base_ds, steered_ds, phenomenon, date,
         if steered_field is not None:
             im1 = _draw_map(axes_r1[col_idx], lons2d, lats2d, steered_field,
                             "viridis", vmin_r, vmax_r,
-                            f"{label}\n" + r"Steered ($\alpha=+5$)",
-                            local_proj_cfg, data_crs, draw_mask=False)
+                            f"{label}",
+                            local_proj_cfg, data_crs, draw_mask=False, title_fontsize=38)
             im_row1_list.append((im1, col_idx, unit))
         else:
             _set_map_extent(axes_r1[col_idx], local_proj_cfg, data_crs)
             axes_r1[col_idx].add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
-            axes_r1[col_idx].set_title(f"{label}\n(missing)", fontsize=14)
+            axes_r1[col_idx].set_title(f"{label}\n(missing)", fontsize=38)
 
         # Row 2: difference
         if diff_field is not None:
             im2 = _draw_map(axes_r2[col_idx], lons2d, lats2d, diff_field,
                             "RdBu_r", -md, md,
-                            f"Δ {label}\n" + r"($\alpha=+5$ – Base)",
-                            local_proj_cfg, data_crs, draw_mask=False)
+                            "Difference",
+                            local_proj_cfg, data_crs, draw_mask=False, title_fontsize=38)
             im_row2_list.append((im2, col_idx, unit))
         else:
             _set_map_extent(axes_r2[col_idx], local_proj_cfg, data_crs)
             axes_r2[col_idx].add_feature(cfeature.COASTLINE, linewidth=0.5, edgecolor="black")
-            axes_r2[col_idx].set_title(f"Δ {label}\n(missing)", fontsize=14)
+            axes_r2[col_idx].set_title("Difference\n(missing)", fontsize=38)
 
     # ── Per-column colorbars using GridSpec sub-axes ──
     for im, col_idx, unit in im_row1_list:
         cbar_ax = fig.add_subplot(gs[1, col_idx])
         cb = fig.colorbar(im, cax=cbar_ax, orientation="horizontal", extend="both")
-        cb.ax.tick_params(labelsize=12)
-        cb.set_label(f"[{unit}]", fontsize=14)
+        cb.ax.tick_params(labelsize=30)
+        cb.set_label(f"[{unit}]", fontsize=34)
 
     for im, col_idx, unit in im_row2_list:
         cbar_ax = fig.add_subplot(gs[4, col_idx])
         cb = fig.colorbar(im, cax=cbar_ax, orientation="horizontal", extend="both")
-        cb.ax.tick_params(labelsize=12)
-        cb.set_label(f"Δ [{unit}]", fontsize=14)
+        cb.ax.tick_params(labelsize=30)
+        cb.set_label(f"Δ [{unit}]", fontsize=34)
 
     # fig.suptitle removed
 
